@@ -1,4 +1,4 @@
-{ suites, ... }:
+{ modulesPath, suites, ... }:
 {
   # Config
   boot.cleanTmpDir = true;
