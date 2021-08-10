@@ -11,13 +11,13 @@ bWWiZuNxq92HpR9ddIJ62w47ZdtCrikX6GQW9xJOdEtNFEKz+Y9HYOL8uXOv8w1tnM3RDgc5a145ENpm
 lnUteXuaejULw== openpgp:0x1E1A60D7"
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGPiPq3zWmsO7dEJS/xR8+YW2eEFpPoR7ybtXwh0kC3S imlonghao@hetzner-fi-helsinki-1"
   ];
-  networking.interfaces.enp3s0.ipv6.addresses = [
+  networking.interfaces.ens160.ipv6.addresses = [
     {
       address = "2a0f:9400:7a00:1111:deb4::";
       prefixLength = 48;
     }
   ];
-  networking.interfaces.enp11s0.ipv6.addresses = [
+  networking.interfaces.ens192.ipv6.addresses = [
     {
       address = "2a0f:9400:7a00:3333:9e62::1";
       prefixLength = 64;
@@ -25,7 +25,7 @@ lnUteXuaejULw== openpgp:0x1E1A60D7"
   ];
   networking.defaultGateway6 = {
     address = "2a0f:9400:7a00::1";
-    interface = "enp3s0";
+    interface = "ens160";
   };
 
   # hardware-configuration.nix
