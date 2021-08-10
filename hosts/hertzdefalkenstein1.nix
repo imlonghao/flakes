@@ -2,7 +2,6 @@
 {
   # Config
   boot.cleanTmpDir = true;
-  networking.hostName = "hertz-de-falkenstein-1";
   networking.firewall.allowPing = true;
   services.openssh.enable = true;
   users.users.root.openssh.authorizedKeys.keys = [
