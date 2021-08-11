@@ -1,4 +1,4 @@
-{ modulesPath, suites, ... }:
+{ modulesPath, profiles, ... }:
 {
   imports = [
     profiles.mycore

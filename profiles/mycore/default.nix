@@ -1,4 +1,4 @@
-{ profiles, ... }:
+{ ... }:
 {
   imports = [ ../cachix ];
 
