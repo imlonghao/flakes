@@ -1,4 +1,4 @@
-{ self, ... }:
+{ age, self, ... }:
 {
   age.secrets.root.file = "${self}/secrets/root.age";
   users.users.root = {
