@@ -19,7 +19,10 @@
   networking.firewall.allowPing = true;
 
   services.earlyoom.enable = true;
-  services.openssh.enable = true;
+  services.openssh = {
+    enable = true;
+    passwordAuthentication = false;
+  };
 
   users.mutableUsers = false;
 }
