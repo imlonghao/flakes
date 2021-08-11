@@ -1,9 +1,8 @@
 let
-  # set ssh public keys here for your system and user
-  system = "";
-  user = "";
-  allKeys = [ system user ];
+  me = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKv5fgCyrSdHw1z4Yvdi28fLs413vLFYk5sYyfC1YHJz imlonghao@imlonghao";
+  deployer = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGPiPq3zWmsO7dEJS/xR8+YW2eEFpPoR7ybtXwh0kC3S imlonghao@hetzner-fi-helsinki-1";
+  allKeys = [ me deployer ];
 in
 {
-  "secret.age".publicKeys = allKeys;
+  "root.age".publicKeys = allKeys;
 }
