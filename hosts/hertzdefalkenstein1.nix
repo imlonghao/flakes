@@ -29,7 +29,10 @@ lnUteXuaejULw== openpgp:0x1E1A60D7"
   };
 
   # hardware-configuration.nix
-  imports = [ (modulesPath + "/profiles/qemu-guest.nix") ];
+  virtualisation.vmware.guest = {
+    enable = true;
+    headless = true;
+  };
   boot.loader.grub.device = "/dev/sda";
   boot.initrd.kernelModules = [ "nvme" ];
   fileSystems."/" = { device = "/dev/sda1"; fsType = "ext4"; };
