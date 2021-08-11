@@ -20,4 +20,6 @@
 
   services.earlyoom.enable = true;
   services.openssh.enable = true;
+
+  users.mutableUsers = false;
 }
