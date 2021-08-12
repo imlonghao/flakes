@@ -2,19 +2,19 @@
 with lib;
 let
   cfg = config.services.rait;
-  cronJob = pkgs.writeText "rait.sh" ''
+  cronJob = pkgs.writeScript "rait.sh" ''
     #!/bin/sh
     set -e
 
-    ${pkgs.wget}/usr/bin/wget -q -O /tmp/rait.new ${cfg.registry}
+    ${pkgs.wget}/bin/wget -q -O /tmp/rait.new ${cfg.registry}
 
     if [ ! -f /tmp/rait.old ]; then
-      /usr/bin/rait u
+      ${pkgs.rait}/bin/rait u
       mv /tmp/rait.new /tmp/rait.old
       exit 0
     fi
 
-    cmp -s /tmp/rait.old /tmp/rait.new || (sleep $[ ( $RANDOM % 180 ) + 1 ]s && ${pkgs.rait}/usr/bin/rait u && mv /tmp/rait.new /tmp/rait.old)
+    cmp -s /tmp/rait.old /tmp/rait.new || (sleep $[ ( $RANDOM % 180 ) + 1 ]s && ${pkgs.rait}/bin/rait u && mv /tmp/rait.new /tmp/rait.old)
   '';
   configFile = pkgs.writeText "rait.conf" ''
     registry     = "${cfg.registry}" # url of rait registry
