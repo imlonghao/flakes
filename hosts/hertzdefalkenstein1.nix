@@ -83,4 +83,11 @@
       }
     '';
   };
+  services.gravity = {
+    enable = true;
+    address = "100.64.88.57/30";
+    addressV6 = "2602:feda:1bf:a:f::1/80";
+    hostAddress = "100.64.88.58/30";
+    hostAddressV6 = "2602:feda:1bf:a:f::2/80";
+  };
 }
