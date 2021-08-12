@@ -16,7 +16,7 @@
 
   boot.cleanTmpDir = true;
 
-  networking.firewall.allowPing = true;
+  networking.firewall.enable = false;
 
   services.earlyoom.enable = true;
   services.openssh = {
