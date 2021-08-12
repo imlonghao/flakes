@@ -24,5 +24,7 @@
     passwordAuthentication = false;
   };
 
+  time.timeZone = "Asia/Shanghai";
+
   users.mutableUsers = false;
 }
