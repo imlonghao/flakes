@@ -13,4 +13,17 @@
       sha256 = "1b7xi8c2drbwzfz70czddc4j33s7g1alirv12dwl91hbqxifx8qs";
     };
   };
+  rait = {
+    pname = "rait";
+    version = "19076c4a9e52c75c5b5a259f3b47bc3ef703eeb4";
+    src = fetchgit {
+      url = "https://gitlab.com/NickCao/RAIT";
+      rev = "19076c4a9e52c75c5b5a259f3b47bc3ef703eeb4";
+      fetchSubmodules = false;
+      deepClone = false;
+      leaveDotGit = false;
+      sha256 = "020gz8z4sn60kv9jasq682s8abmdlz841fwvf7zc86ksb79z4m99";
+    };
+    vendorSha256 = "sha256-55Zu1g+pwTt6dU1QloxfFkG2dbnK5gg84WvRhz2ND3M=";
+  };
 }

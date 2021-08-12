@@ -2,6 +2,7 @@
 {
   imports = [
     profiles.mycore
+    profiles.rait
     profiles.users.root
   ];
 
