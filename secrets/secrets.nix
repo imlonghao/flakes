@@ -4,5 +4,6 @@ let
   allKeys = [ me deployer ];
 in
 {
-  "root.age".publicKeys = allKeys;
+  "rait/rait.sh".publicKeys = allKeys;
+  "rait/hertzdefalkenstein1.conf".publicKeys = allKeys;
 }

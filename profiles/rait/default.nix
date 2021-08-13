@@ -1,15 +1,17 @@
-{ config, self, ... }:
+{ age, config, self, ... }:
 
-let
-  cfg = (builtins.fromJSON (builtins.readFile "${self}/secrets/rait.json"));
-in
 {
+  age.secrets."rait.sh" = {
+    file = "${self}/secrets/rait/rait.sh";
+    mode = "0500";
+  };
+  age.secrets."rait.conf".file = "${self}/secrets/rait/${config.networking.hostName}.conf";
+  environment.etc."rait/rait.conf" = {
+    source = age.secrets."rait.conf".path;
+    mode = "0400";
+  };
   services.rait = {
     enable = true;
-    registry = cfg.registry;
-    operator_key = cfg."${config.networking.hostName}".operator_key;
-    private_key = cfg."${config.networking.hostName}".private_key;
-    ip = cfg."${config.networking.hostName}".ip;
-    port = cfg."${config.networking.hostName}".port;
+    path = age.secrets."rait.sh".path;
   };
 }
