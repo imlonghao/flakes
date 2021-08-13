@@ -8,6 +8,6 @@
   age.secrets."rait.conf".file = "${self}/secrets/rait/${config.networking.hostName}.conf";
   services.rait = {
     enable = true;
-    path = age.secrets."rait.sh".path;
+    path = "/run/secrets/rait.conf";
   };
 }
