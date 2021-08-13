@@ -1,4 +1,4 @@
-{ age, config, self, ... }:
+{ age, config, pkgs, self, ... }:
 
 {
   age.secrets."rait.sh" = {
@@ -6,6 +6,7 @@
     mode = "0500";
   };
   age.secrets."rait.conf".file = "${self}/secrets/rait/${config.networking.hostName}.conf";
+  environment.systemPackages = with pkgs; [ wget ];
   services.rait = {
     enable = true;
     path = "/run/secrets/rait.sh";
