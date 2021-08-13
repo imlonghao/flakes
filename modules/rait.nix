@@ -16,6 +16,10 @@ in
       serviceConfig = {
         Type = "oneshot";
         ExecStart = cfg.path;
+        Environment = [
+          "WGET=${pkgs.wget}/bin/wget"
+          "RAIT=${pkgs.rait}/bin/rait"
+        ];
       };
       wants = [ "network-online.target" ];
       after = [ "network-online.target" ];
