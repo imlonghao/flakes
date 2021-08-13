@@ -7,3 +7,9 @@ fetch.github = "mlvzk/manix"
 src.git = "https://gitlab.com/NickCao/RAIT"
 fetch.git = "https://gitlab.com/NickCao/RAIT"
 passthru = { vendorSha256 = "sha256-55Zu1g+pwTt6dU1QloxfFkG2dbnK5gg84WvRhz2ND3M=" }
+
+[babeld]
+src.branch = "4via6"
+src.git = "https://github.com/imlonghao/babeld"
+fetch.github = "imlonghao/babeld"
+git.fetchSubmodules = true
