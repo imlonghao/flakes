@@ -7,7 +7,7 @@
   ];
 
   # Config
-  networking.dhcpcd.allowInterfaces = "ens160";
+  networking.dhcpcd.allowInterfaces = [ "ens160" ];
   networking.interfaces.ens160.ipv6.addresses = [
     {
       address = "2a0f:9400:7a00:1111:deb4::";
