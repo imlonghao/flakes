@@ -42,6 +42,7 @@
       protocol direct {
         ipv4;
         ipv6;
+        interface "gravity";
       }
       protocol device {
         scan time 10;
@@ -61,6 +62,18 @@
           import none;
           export where net != ::/0;
         };
+      }
+      protocol babel gravity {
+        ipv4 {
+          import all;
+          export where net ~ 100.64.88.0/24;
+        };
+        ipv6 {
+          import all;
+          export where net ~ 2602:feda:1bf::/48;
+        };
+        randomize router id;
+        interface "gravity";
       }
       protocol bgp AS135395v6 {
         neighbor 2a0f:9400:7a00::1 as 135395;
