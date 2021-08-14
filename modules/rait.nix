@@ -19,6 +19,7 @@ in
         Environment = [
           "WGET=${pkgs.wget}/bin/wget"
           "RAIT=${pkgs.rait}/bin/rait"
+          "CMP=${pkgs.diffutils}/bin/cmp"
         ];
       };
       wants = [ "network-online.target" ];
