@@ -4,6 +4,7 @@
     profiles.mycore
     profiles.rait
     profiles.users.root
+    profiles.teleport
   ];
 
   # Config
