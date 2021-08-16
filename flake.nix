@@ -149,6 +149,10 @@
             sshUser = "root";
             sshOpts = [ "-p" "22226" ];
           };
+          virmachusbuffalo1 = {
+            hostname = "virmach-us-buffalo-1.ni.sb";
+            sshUser = "root";
+          };
         };
 
         defaultTemplate = self.templates.bud;
