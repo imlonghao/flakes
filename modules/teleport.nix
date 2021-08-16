@@ -23,6 +23,7 @@ let
     };
     ssh_service = {
       enabled = "yes";
+      listen_addr = cfg.ssh_service.listen_addr;
       commands = [
         {
           name = "arch";
@@ -49,6 +50,12 @@ in
       auth_token = mkOption { type = types.str; };
       auth_servers = mkOption { type = types.listOf types.str; };
       ca_pin = mkOption { type = types.str; };
+    };
+    ssh_service = {
+      listen_addr = mkOption {
+        type = types.str;
+        default = "0.0.0.0:2222";
+      };
     };
   };
   config = mkIf cfg.enable {

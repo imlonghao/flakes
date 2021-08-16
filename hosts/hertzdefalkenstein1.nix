@@ -106,4 +106,5 @@
     hostAddress = "100.64.88.58/30";
     hostAddressV6 = "2602:feda:1bf:a:f::2/80";
   };
+  services.teleport.ssh_service.listen_addr = "0.0.0.0:13022";
 }
