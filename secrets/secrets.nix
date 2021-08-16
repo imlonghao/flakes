@@ -6,7 +6,7 @@ let
   virmachusbuffalo1 = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIa8dYtwsbAmVoohOb5VzpWoOGh/pwipKa8beVDvy6FA";
 
   users = [ me deployer ];
-  hosts = [ hertzdefalkenstein1 ];
+  hosts = [ hertzdefalkenstein1 virmachusbuffalo1 ];
 
   allKeys = users ++ hosts;
 in
