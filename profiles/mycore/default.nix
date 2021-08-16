@@ -21,6 +21,8 @@
     "net.ipv6.conf.all.forwarding" = 1;
   };
 
+  i18n.supportedLocales = [ "en_US.UTF-8/UTF-8" ];
+
   networking.firewall.enable = false;
 
   services.earlyoom.enable = true;
