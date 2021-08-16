@@ -34,6 +34,12 @@ let
         }
       ];
     };
+    auth_service = {
+      enabled = "no";
+    };
+    proxy_service = {
+      enabled = "no";
+    };
   });
 in
 {
