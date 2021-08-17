@@ -12,7 +12,7 @@ in
     enable = true;
     interface.bind = "gravity";
     extraConfig = {
-      start_join = [ "100.64.123.209" "100.64.123.246" "100.64.123.91" ];
+      start_join = [ "100.64.88.22" "100.64.88.42" "100.64.88.50" ];
     };
   };
 }
