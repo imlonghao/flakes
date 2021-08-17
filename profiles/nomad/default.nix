@@ -5,7 +5,7 @@ let
 in
 {
   networking.nameservers = [ "100.64.0.53" "1.1.1.1" "8.8.8.8" ];
-  networking.interface.lo.ip4 = [
+  networking.interfaces.lo.ip4 = [
     { address = "100.64.0.53"; prefixLength = 32; }
   ];
   services.consul = {
