@@ -68,4 +68,14 @@
     hostAddress = "100.64.88.26/30";
     hostAddressV6 = "2602:feda:1bf:a:7::2/80";
   };
+
+  environment.etc."nomad-mutable.hcl".text = ''
+    bind_addr = "23.95.222.131"
+    client {
+      meta = {
+        iinomiko = "23.95.222.131"
+      }
+    }
+  '';
+  services.nomad.extraSettingsPaths = [ "/etc/nomad-mutable.hcl" ];
 }
