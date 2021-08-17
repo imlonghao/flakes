@@ -5,6 +5,7 @@
     profiles.rait
     profiles.users.root
     profiles.teleport
+    profiles.nomad
     (modulesPath + "/profiles/qemu-guest.nix")
   ];
 
