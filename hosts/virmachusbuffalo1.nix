@@ -19,6 +19,9 @@
   swapDevices = [{ device = "/dev/vda2"; }];
 
   environment.persistence."/persist" = {
+    directories = [
+      "/var/lib"
+    ];
     files = [
       "/etc/machine-id"
       "/etc/ssh/ssh_host_rsa_key"
