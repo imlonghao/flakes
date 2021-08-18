@@ -18,6 +18,14 @@
   fileSystems."/" = { device = "/dev/vda1"; fsType = "ext4"; };
   swapDevices = [{ device = "/dev/vda2"; }];
 
+  environment.persistence."/persist" = {
+    files = [
+      "/etc/machine-id"
+      "/etc/ssh/ssh_host_rsa_key"
+      "/etc/ssh/ssh_host_ed25519_key"
+    ];
+  };
+
   # Bird
   services.bird2 = {
     enable = true;

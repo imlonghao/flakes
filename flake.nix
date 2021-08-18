@@ -40,6 +40,8 @@
 
       nixos-hardware.url = "github:nixos/nixos-hardware";
 
+      impermanence.url = "github:nix-community/impermanence";
+
       # start ANTI CORRUPTION LAYER
       # remove after https://github.com/NixOS/nix/pull/4641
       nixpkgs.follows = "nixos";
@@ -61,6 +63,7 @@
     , agenix
     , nvfetcher
     , deploy
+    , impermanence
     , ...
     } @ inputs:
     digga.lib.mkFlake
@@ -107,6 +110,7 @@
               home.nixosModules.home-manager
               agenix.nixosModules.age
               bud.nixosModules.bud
+              impermanence.nixosModules.impermanence
             ];
           };
 
