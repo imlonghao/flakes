@@ -117,6 +117,9 @@ in
           export where is_valid_network_v6();
         };
       }
+      protocol bgp AS4242421080 from dnpeers {
+        neighbor fe80::123 % 'wg1080' as 4242421080;
+      }
       protocol bgp AS4242423088 from dnpeers {
         neighbor fe80::3088:194 % 'wg3088' as 4242423088;
       }
@@ -144,6 +147,20 @@ in
   services.nomad.extraSettingsPaths = [ "/etc/nomad-mutable.hcl" ];
 
   networking.wireguard.interfaces = {
+    wg1080 = {
+      ips = [ "fe80::1888/64" ];
+      postSetup = "${pkgs.iproute2}/bin/ip addr add 172.22.68.0/32 peer 172.20.229.123/32 dev wg1080";
+      privateKey = wgPrivKey;
+      listenPort = 21080;
+      allowedIPsAsRoutes = false;
+      peers = [
+        {
+          endpoint = "dn42-us-nyc02.jlu5.com:21888";
+          publicKey = "YrlNsVP9bbTqNuNyQ/MVFzulZKNW5vMaDMzHVFNXSSE=";
+          allowedIPs = [ "10.0.0.0/8" "172.20.0.0/14" "172.31.0.0/16" "::/0" "fd00::/8" ];
+        }
+      ];
+    };
     wg3088 = {
       ips = [ "fe80::1888/64" ];
       postSetup = "${pkgs.iproute2}/bin/ip addr add 172.22.68.0/32 peer 172.21.100.194/32 dev wg3088";
