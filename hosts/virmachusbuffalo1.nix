@@ -105,8 +105,7 @@ in
           fd00::/8{44,64} # ULA address space as per RFC 4193
         ];
       }
-      protocol bgp AS4242423088 {
-        neighbor fe80::3088:194 % 'wg3088' as 4242423088;
+      template bgp dnpeers {
         local as 4242421888;
         graceful restart on;
         ipv4 {
@@ -118,18 +117,11 @@ in
           export where is_valid_network_v6();
         };
       }
-      protocol bgp AS4242423914 {
+      protocol bgp AS4242423088 from dnpeers {
+        neighbor fe80::3088:194 % 'wg3088' as 4242423088;
+      }
+      protocol bgp AS4242423914 from dnpeers {
         neighbor fe80::ade0 % 'wg3914' as 4242423914;
-        local as 4242421888;
-        graceful restart on;
-        ipv4 {
-          import where is_valid_network();
-          export where is_valid_network();
-        };
-        ipv6 {
-          import where is_valid_network_v6();
-          export where is_valid_network_v6();
-        };
       }
     '';
   };
