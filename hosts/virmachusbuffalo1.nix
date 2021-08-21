@@ -87,17 +87,35 @@ in
         randomize router id;
         interface "gravity";
       }
+      function is_valid_network() {
+        return net ~ [
+          172.20.0.0/14{21,29}, # dn42
+          172.20.0.0/24{28,32}, # dn42 Anycast
+          172.21.0.0/24{28,32}, # dn42 Anycast
+          172.22.0.0/24{28,32}, # dn42 Anycast
+          172.23.0.0/24{28,32}, # dn42 Anycast
+          172.31.0.0/16+,       # ChaosVPN
+          10.100.0.0/14+,       # ChaosVPN
+          10.127.0.0/16{16,32}, # neonetwork
+          10.0.0.0/8{15,24}     # Freifunk.net
+        ];
+      }
+      function is_valid_network_v6() {
+        return net ~ [
+          fd00::/8{44,64} # ULA address space as per RFC 4193
+        ];
+      }
       protocol bgp AS4242423088 {
         neighbor fe80::3088:194 % 'wg3088' as 4242423088;
         local as 4242421888;
         graceful restart on;
         ipv4 {
-            import where net ~ 10.0.0.0/8 || net ~ 172.20.0.0/14 || net ~ 172.31.0.0/16;
-            export where net ~ 10.0.0.0/8 || net ~ 172.20.0.0/14 || net ~ 172.31.0.0/16;
+          import where is_valid_network();
+          export where is_valid_network();
         };
         ipv6 {
-            import where net ~ fd00::/8;
-            export where net ~ fd00::/8;
+          import where is_valid_network_v6();
+          export where is_valid_network_v6();
         };
       }
       protocol bgp AS4242423914 {
@@ -105,12 +123,12 @@ in
         local as 4242421888;
         graceful restart on;
         ipv4 {
-            import where net ~ 10.0.0.0/8 || net ~ 172.20.0.0/14 || net ~ 172.31.0.0/16;
-            export where net ~ 10.0.0.0/8 || net ~ 172.20.0.0/14 || net ~ 172.31.0.0/16;
+          import where is_valid_network();
+          export where is_valid_network();
         };
         ipv6 {
-            import where net ~ fd00::/8;
-            export where net ~ fd00::/8;
+          import where is_valid_network_v6();
+          export where is_valid_network_v6();
         };
       }
     '';
