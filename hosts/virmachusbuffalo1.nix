@@ -1,4 +1,7 @@
-{ modulesPath, profiles, ... }:
+{ modulesPath, pkgs, profiles, self, ... }:
+let
+  wgPrivKey = (builtins.fromJSON (builtins.readFile "${self}/secrets/wireguard.json")).virmachusbuffalo1;
+in
 {
   imports = [
     profiles.mycore
@@ -89,4 +92,19 @@
     }
   '';
   services.nomad.extraSettingsPaths = [ "/etc/nomad-mutable.hcl" ];
+
+  networking.wireguard.interfaces = {
+    wg3088 = {
+      ips = [ "fe80::1888/64" ];
+      postSetup = "${pkgs.iproute2}/bin/ip addr add 172.22.68.0/32 peer 172.21.100.194/32 dev wg3088";
+      privateKey = wgPrivKey;
+      peers = [
+        {
+          endpoint = "nyc1-us.dn42.6700.cc:21888";
+          publicKey = "wAI2D+0GeBnFUqm3xZsfvVlfGQ5iDWI/BykEBbkc62c=";
+          allowedIPs = [ "0.0.0.0/0" "::/0" ];
+        }
+      ];
+    };
+  };
 }
