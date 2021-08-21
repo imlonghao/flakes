@@ -61,6 +61,20 @@ in
           export where net != ::/0;
         };
       }
+      protocol static {
+        route 172.22.68.0/27 blackhole;
+          ipv4 {
+            import all;
+            export all;
+          };
+      }
+      protocol static {
+        route fd21:5c0c:9b7e::/48 blackhole;
+        ipv6 {
+          import all;
+          export all;
+        };
+      }
       protocol babel gravity {
         ipv4 {
           import all;
@@ -78,12 +92,12 @@ in
         local as 4242421888;
         graceful restart on;
         ipv4 {
-            import all;
-            export none;
+            import net ~ 172.20.0.0/14;
+            export net ~ 172.20.0.0/14;
         };
         ipv6 {
-            import all;
-            export none;
+            import net ~ fd00::/8;
+            export net ~ fd00::/8;
         };
       }
     '';
