@@ -77,6 +77,10 @@ in
         neighbor fe80::3088:194 % 'wg3088' as 4242423088;
         local as 4242421888;
         graceful restart on;
+        ipv4 {
+            import all;
+            export none;
+        };
         ipv6 {
             import all;
             export none;
