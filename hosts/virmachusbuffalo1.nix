@@ -100,6 +100,19 @@ in
             export where net ~ fd00::/8;
         };
       }
+      protocol bgp AS4242423914 {
+        neighbor fe80::ade0 % 'wg3914' as 4242423914;
+        local as 4242421888;
+        graceful restart on;
+        ipv4 {
+            import where net ~ 172.20.0.0/14;
+            export where net ~ 172.20.0.0/14;
+        };
+        ipv6 {
+            import where net ~ fd00::/8;
+            export where net ~ fd00::/8;
+        };
+      }
     '';
   };
   services.gravity = {
@@ -131,6 +144,19 @@ in
         {
           endpoint = "nyc1-us.dn42.6700.cc:21888";
           publicKey = "wAI2D+0GeBnFUqm3xZsfvVlfGQ5iDWI/BykEBbkc62c=";
+          allowedIPs = [ "0.0.0.0/0" "::/0" ];
+        }
+      ];
+    };
+    wg3914 = {
+      ips = [ "fe80::1888/64" ];
+      postSetup = "${pkgs.iproute2}/bin/ip addr add 172.22.68.0/32 peer 172.20.53.98/32 dev wg3914";
+      privateKey = wgPrivKey;
+      allowedIPsAsRoutes = false;
+      peers = [
+        {
+          endpoint = "us2.g-load.eu:21888";
+          publicKey = "6Cylr9h1xFduAO+5nyXhFI1XJ0+Sw9jCpCDvcqErF1s=";
           allowedIPs = [ "0.0.0.0/0" "::/0" ];
         }
       ];
