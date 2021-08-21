@@ -144,7 +144,7 @@ in
         {
           endpoint = "nyc1-us.dn42.6700.cc:21888";
           publicKey = "wAI2D+0GeBnFUqm3xZsfvVlfGQ5iDWI/BykEBbkc62c=";
-          allowedIPs = [ "0.0.0.0/0" "::/0" ];
+          allowedIPs = [ "172.20.0.0/14" "fe80::/64" "fd00::/8" ];
         }
       ];
     };
@@ -157,7 +157,7 @@ in
         {
           endpoint = "us2.g-load.eu:21888";
           publicKey = "6Cylr9h1xFduAO+5nyXhFI1XJ0+Sw9jCpCDvcqErF1s=";
-          allowedIPs = [ "0.0.0.0/0" "::/0" ];
+          allowedIPs = [ "172.20.0.0/14" "::/0" "fd00::/8" ];
         }
       ];
     };
