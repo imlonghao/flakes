@@ -75,7 +75,7 @@ in
       }
       protocol bgp AS4242423088 {
         neighbor fe80::3088:194 % 'wg3088' as 4242423088;
-        local as 133846;
+        local as 4242421888;
         graceful restart on;
         ipv6 {
             import all;
