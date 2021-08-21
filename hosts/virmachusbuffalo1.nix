@@ -92,8 +92,8 @@ in
         local as 4242421888;
         graceful restart on;
         ipv4 {
-            import where net ~ 172.20.0.0/14;
-            export where net ~ 172.20.0.0/14;
+            import where net ~ 10.0.0.0/8 || net ~ 172.20.0.0/14 || net ~ 172.31.0.0/16;
+            export where net ~ 10.0.0.0/8 || net ~ 172.20.0.0/14 || net ~ 172.31.0.0/16;
         };
         ipv6 {
             import where net ~ fd00::/8;
@@ -105,8 +105,8 @@ in
         local as 4242421888;
         graceful restart on;
         ipv4 {
-            import where net ~ 172.20.0.0/14;
-            export where net ~ 172.20.0.0/14;
+            import where net ~ 10.0.0.0/8 || net ~ 172.20.0.0/14 || net ~ 172.31.0.0/16;
+            export where net ~ 10.0.0.0/8 || net ~ 172.20.0.0/14 || net ~ 172.31.0.0/16;
         };
         ipv6 {
             import where net ~ fd00::/8;
@@ -144,7 +144,7 @@ in
         {
           endpoint = "nyc1-us.dn42.6700.cc:21888";
           publicKey = "wAI2D+0GeBnFUqm3xZsfvVlfGQ5iDWI/BykEBbkc62c=";
-          allowedIPs = [ "172.20.0.0/14" "fe80::/64" "fd00::/8" ];
+          allowedIPs = [ "10.0.0.0/8" "172.20.0.0/14" "172.31.0.0/16" "::/0" "fd00::/8" ];
         }
       ];
     };
@@ -157,7 +157,7 @@ in
         {
           endpoint = "us2.g-load.eu:21888";
           publicKey = "6Cylr9h1xFduAO+5nyXhFI1XJ0+Sw9jCpCDvcqErF1s=";
-          allowedIPs = [ "172.20.0.0/14" "::/0" "fd00::/8" ];
+          allowedIPs = [ "10.0.0.0/8" "172.20.0.0/14" "172.31.0.0/16" "::/0" "fd00::/8" ];
         }
       ];
     };
