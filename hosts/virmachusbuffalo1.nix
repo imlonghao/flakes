@@ -98,6 +98,8 @@ in
       ips = [ "fe80::1888/64" ];
       postSetup = "${pkgs.iproute2}/bin/ip addr add 172.22.68.0/32 peer 172.21.100.194/32 dev wg3088";
       privateKey = wgPrivKey;
+      listenPort = 42050;
+      allowedIPsAsRoutes = false;
       peers = [
         {
           endpoint = "nyc1-us.dn42.6700.cc:21888";
