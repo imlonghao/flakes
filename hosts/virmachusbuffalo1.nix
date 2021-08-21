@@ -92,12 +92,12 @@ in
         local as 4242421888;
         graceful restart on;
         ipv4 {
-            import net ~ 172.20.0.0/14;
-            export net ~ 172.20.0.0/14;
+            import where net ~ 172.20.0.0/14;
+            export where net ~ 172.20.0.0/14;
         };
         ipv6 {
-            import net ~ fd00::/8;
-            export net ~ fd00::/8;
+            import where net ~ fd00::/8;
+            export where net ~ fd00::/8;
         };
       }
     '';
