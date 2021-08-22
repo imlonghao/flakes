@@ -120,6 +120,10 @@ in
       protocol bgp AS4242421080 from dnpeers {
         neighbor fe80::123 % 'wg1080' as 4242421080;
       }
+      protocol bgp AS4242422602 from dnpeers {
+        neighbor fd42:4242:2601:ac12::1 as 4242422602;
+        multihop;
+      }
       protocol bgp AS4242423088 from dnpeers {
         neighbor fe80::3088:194 % 'wg3088' as 4242423088;
       }
