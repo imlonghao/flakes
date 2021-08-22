@@ -14,6 +14,12 @@ in
 
   # Config
   networking.dhcpcd.allowInterfaces = [ "ens3" ];
+  networking.interfaces.lo.ipv6.addresses = [
+    {
+      address = "fd21:5c0c:9b7e:1::";
+      prefixLength = 64;
+    }
+  ];
 
   # hardware-configuration.nix
   boot.loader.grub.device = "/dev/vda";
@@ -58,7 +64,11 @@ in
         graceful restart on;
         ipv6 {
           import none;
-          export where net != ::/0;
+          export filter {
+            if net = ::/0 then reject;
+            if is_valid_network_v6() then krt_prefsrc = fd21:5c0c:9b7e:1::;
+            accept;
+          };
         };
       }
       protocol static {
@@ -69,7 +79,7 @@ in
           };
       }
       protocol static {
-        route fd21:5c0c:9b7e::/48 blackhole;
+        route fd21:5c0c:9b7e:1::/64 blackhole;
         ipv6 {
           import all;
           export all;
