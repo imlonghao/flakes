@@ -130,6 +130,9 @@ in
       protocol bgp AS4242421080 from dnpeers {
         neighbor fe80::123 % 'wg1080' as 4242421080;
       }
+      protocol bgp AS4242422547 from dnpeers {
+        neighbor fe80::2547 % 'wg2547' as 4242422547;
+      }
       protocol bgp AS4242423088 from dnpeers {
         neighbor fe80::3088:194 % 'wg3088' as 4242423088;
       }
@@ -194,6 +197,20 @@ in
         {
           endpoint = "dn42-us-nyc02.jlu5.com:21888";
           publicKey = "YrlNsVP9bbTqNuNyQ/MVFzulZKNW5vMaDMzHVFNXSSE=";
+          allowedIPs = [ "10.0.0.0/8" "172.20.0.0/14" "172.31.0.0/16" "::/0" "fd00::/8" ];
+        }
+      ];
+    };
+    wg2457 = {
+      ips = [ "fe80::1888/64" ];
+      postSetup = "${pkgs.iproute2}/bin/ip addr add 172.22.68.0/32 peer 172.22.76.190/32 dev wg2457";
+      privateKey = wgPrivKey;
+      listenPort = 22457;
+      allowedIPsAsRoutes = false;
+      peers = [
+        {
+          endpoint = "virmach-ny1g.lantian.pub:21888";
+          publicKey = "a+zL2tDWjwxBXd2bho2OjR/BEmRe2tJF9DHFmZIE+Rk=";
           allowedIPs = [ "10.0.0.0/8" "172.20.0.0/14" "172.31.0.0/16" "::/0" "fd00::/8" ];
         }
       ];
