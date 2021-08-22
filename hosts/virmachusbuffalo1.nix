@@ -130,15 +130,38 @@ in
       protocol bgp AS4242421080 from dnpeers {
         neighbor fe80::123 % 'wg1080' as 4242421080;
       }
-      protocol bgp AS4242422602 from dnpeers {
-        neighbor fd42:4242:2601:ac12::1 as 4242422602;
-        multihop;
-      }
       protocol bgp AS4242423088 from dnpeers {
         neighbor fe80::3088:194 % 'wg3088' as 4242423088;
       }
       protocol bgp AS4242423914 from dnpeers {
         neighbor fe80::ade0 % 'wg3914' as 4242423914;
+      }
+      protocol bgp ROUTE_COLLECTOR {
+        local as 4242421888;
+        neighbor fd42:4242:2601:ac12::1 as 4242422602;
+        multihop;
+        ipv4 {
+          add paths tx;
+          import none;
+          export filter {
+            if ( is_valid_network() && source ~ [ RTS_STATIC, RTS_BGP ] )
+            then {
+              accept;
+            }
+            reject;
+          };
+        };
+        ipv6 {
+          add paths tx;
+          import none;
+          export filter {
+            if ( is_valid_network_v6() && source ~ [ RTS_STATIC, RTS_BGP ] )
+            then {
+              accept;
+            }
+            reject;
+          };
+        };
       }
     '';
   };
