@@ -51,6 +51,24 @@ in
       protocol device {
         scan time 10;
       }
+      function is_valid_network() {
+        return net ~ [
+          172.20.0.0/14{21,29}, # dn42
+          172.20.0.0/24{28,32}, # dn42 Anycast
+          172.21.0.0/24{28,32}, # dn42 Anycast
+          172.22.0.0/24{28,32}, # dn42 Anycast
+          172.23.0.0/24{28,32}, # dn42 Anycast
+          172.31.0.0/16+,       # ChaosVPN
+          10.100.0.0/14+,       # ChaosVPN
+          10.127.0.0/16{16,32}, # neonetwork
+          10.0.0.0/8{15,24}     # Freifunk.net
+        ];
+      }
+      function is_valid_network_v6() {
+        return net ~ [
+          fd00::/8{44,64} # ULA address space as per RFC 4193
+        ];
+      }
       protocol kernel {
         scan time 10;
         graceful restart on;
@@ -96,24 +114,6 @@ in
         };
         randomize router id;
         interface "gravity";
-      }
-      function is_valid_network() {
-        return net ~ [
-          172.20.0.0/14{21,29}, # dn42
-          172.20.0.0/24{28,32}, # dn42 Anycast
-          172.21.0.0/24{28,32}, # dn42 Anycast
-          172.22.0.0/24{28,32}, # dn42 Anycast
-          172.23.0.0/24{28,32}, # dn42 Anycast
-          172.31.0.0/16+,       # ChaosVPN
-          10.100.0.0/14+,       # ChaosVPN
-          10.127.0.0/16{16,32}, # neonetwork
-          10.0.0.0/8{15,24}     # Freifunk.net
-        ];
-      }
-      function is_valid_network_v6() {
-        return net ~ [
-          fd00::/8{44,64} # ULA address space as per RFC 4193
-        ];
       }
       template bgp dnpeers {
         local as 4242421888;
