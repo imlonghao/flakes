@@ -34,7 +34,7 @@ in
   };
 
   config = {
-    systemd.services.pingfinder = mkIf cfg.client.enable {
+    systemd.services.pingfinder = mkIf cfg.enable {
       description = "dn42 peer finder client";
       after = [ "network-online.target" ];
       environment = {
@@ -57,7 +57,7 @@ in
       };
     };
 
-    systemd.timers.pingfinder = mkIf cfg.client.enable {
+    systemd.timers.pingfinder = mkIf cfg.enable {
       wantedBy = [ "timers.target" ];
       after = [ "network-online.target" ];
       description = "dn42 peer finder processing timer";
