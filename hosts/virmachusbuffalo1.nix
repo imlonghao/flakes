@@ -100,7 +100,7 @@ in
         };
       }
       protocol static {
-        route 172.22.68.0/32 blackhole;
+        route 172.22.68.0/28 blackhole;
         route 172.22.68.1/32 blackhole;
           ipv4 {
             import all;
@@ -117,7 +117,7 @@ in
       protocol babel gravity {
         ipv4 {
           import all;
-          export where net ~ 100.64.88.0/24;
+          export where net ~ 100.64.88.0/24 || net = 172.22.68.1/32;
         };
         ipv6 {
           import all;
