@@ -9,6 +9,7 @@ in
     profiles.users.root
     profiles.teleport
     profiles.nomad
+    profiles.pingfinder
     (modulesPath + "/profiles/qemu-guest.nix")
   ];
 
