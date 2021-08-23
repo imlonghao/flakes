@@ -23,4 +23,5 @@ jobs:
         name: imlonghao
         authToken: '${{ secrets.CACHIX_AUTH_TOKEN }}'
     - run: nix -Lv build ".#rait"
+    - run: nix -Lv build ".#pingfinder"
     - run: nix -Lv develop -c echo OK
