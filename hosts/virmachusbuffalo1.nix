@@ -14,6 +14,12 @@ in
 
   # Config
   networking.dhcpcd.allowInterfaces = [ "ens3" ];
+  networking.interfaces.lo.ipv4.addresses = [
+    {
+      address = "172.22.68.1";
+      prefixLength = 32;
+    }
+  ];
   networking.interfaces.lo.ipv6.addresses = [
     {
       address = "fd21:5c0c:9b7e:1::";
@@ -74,7 +80,11 @@ in
         graceful restart on;
         ipv4 {
           import none;
-          export all;
+          export filter {
+            if net = 0.0.0.0/0 then reject;
+            if is_valid_network() then krt_prefsrc = 172.22.68.1;
+            accept;
+          };
         };
       }
       protocol kernel {
@@ -90,7 +100,8 @@ in
         };
       }
       protocol static {
-        route 172.22.68.0/27 blackhole;
+        route 172.22.68.0/32 blackhole;
+        route 172.22.68.1/32 blackhole;
           ipv4 {
             import all;
             export all;
