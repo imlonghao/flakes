@@ -103,10 +103,10 @@ in
       protocol static {
         route 172.22.68.0/28 blackhole;
         route 172.22.68.1/32 blackhole;
-          ipv4 {
-            import all;
-            export all;
-          };
+        ipv4 {
+          import all;
+          export all;
+        };
       }
       protocol static {
         route fd21:5c0c:9b7e:1::/64 blackhole;
