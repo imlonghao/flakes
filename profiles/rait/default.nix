@@ -1,6 +1,7 @@
 { age, config, pkgs, self, ... }:
 
 {
+  environment.systemPackages = [ pkgs.rait ];
   age.secrets."rait.sh" = {
     file = "${self}/secrets/rait/rait.sh";
     mode = "0500";
