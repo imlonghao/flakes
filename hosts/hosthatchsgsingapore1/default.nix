@@ -1,5 +1,7 @@
-{ profiles, ... }:
-
+{ profiles, self, ... }:
+let
+  wgPrivKey = (builtins.fromJSON (builtins.readFile "${self}/secrets/wireguard.json")).hosthatchsgsingapore1;
+in
 {
   imports = [
     ./hardware.nix
@@ -129,6 +131,9 @@
           export where is_valid_network_v6();
         };
       }
+      protocol bgp AS4242421876 from dnpeers {
+        neighbor fe80::1876 % 'wg1876' as 4242421876;
+      }
       protocol bgp ROUTE_COLLECTOR {
         local as 4242421888;
         neighbor fd42:4242:2601:ac12::1 as 4242422602;
@@ -164,5 +169,22 @@
     addressV6 = "2602:feda:1bf:a:10::1/80";
     hostAddress = "100.64.88.62/30";
     hostAddressV6 = "2602:feda:1bf:a:10::2/80";
+  };
+
+  networking.wireguard.interfaces = {
+    wg1876 = {
+      ips = [ "fe80::1888/64" ];
+      postSetup = "${pkgs.iproute2}/bin/ip addr add 172.22.68.0/32 peer 172.22.66.57/32 dev wg1876";
+      privateKey = wgPrivKey;
+      listenPort = 21876;
+      allowedIPsAsRoutes = false;
+      peers = [
+        {
+          endpoint = "n304.dn42.ac.cn:21888";
+          publicKey = "DW2erV/Yv/mFTTeO/zE6JaD83KvxMEu8TkK/3uqryhM=";
+          allowedIPs = [ "10.0.0.0/8" "172.20.0.0/14" "172.31.0.0/16" "::/0" "fd00::/8" ];
+        }
+      ];
+    };
   };
 }
