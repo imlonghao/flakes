@@ -157,6 +157,10 @@
             hostname = "virmach-us-buffalo-1.ni.sb";
             sshUser = "root";
           };
+          hosthatchsgsingapore1 = {
+            hostname = "hosthatch-sg-singapore-1.ni.sb";
+            sshUser = "root";
+          };
         };
 
         defaultTemplate = self.templates.bud;
