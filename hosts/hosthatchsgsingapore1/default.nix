@@ -6,6 +6,7 @@
     profiles.mycore
     profiles.users.root
     profiles.teleport
+    profiles.rait
   ];
 
   boot.loader.grub.device = "/dev/vda";
