@@ -27,12 +27,12 @@
   environment.persistence."/persist" = {
     directories = [
       "/var/lib"
+      "/run/secrets"
     ];
     files = [
       "/etc/machine-id"
       "/etc/ssh/ssh_host_rsa_key"
       "/etc/ssh/ssh_host_ed25519_key"
-      "/run/secrets"
     ];
   };
 
