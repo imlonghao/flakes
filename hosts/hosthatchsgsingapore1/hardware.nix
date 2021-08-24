@@ -33,6 +33,7 @@ in
       device = "/dev/disk/by-uuid/44faab9b-aabd-40a2-a10d-02d7a4a90ca1";
       fsType = "btrfs";
       options = [ "subvol=@persist" ] ++ mountOptions;
+      neededForBoot = true;
     };
 
 }
