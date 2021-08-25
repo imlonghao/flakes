@@ -46,6 +46,19 @@ in
         }
       ];
     };
+    wg2237 = {
+      ips = [ "fe80::1888/64" ];
+      privateKey = wgPrivKey;
+      listenPort = 22237;
+      allowedIPsAsRoutes = false;
+      peers = [
+        {
+          endpoint = "sg-sin01.dn42.munsternet.eu:21888";
+          publicKey = "09m8ilgZ/9jQvVgsGwu2ceR8u6gKAsd+VxH8AzduOHk=";
+          allowedIPs = [ "10.0.0.0/8" "172.20.0.0/14" "172.31.0.0/16" "::/0" "fd00::/8" ];
+        }
+      ];
+    };
     wg3699 = {
       ips = [ "fe80::1888/64" ];
       postSetup = "${pkgs.iproute2}/bin/ip addr add 172.22.68.0/32 peer 172.22.155.7/32 dev wg3699";
