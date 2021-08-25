@@ -247,11 +247,11 @@ in
         }
       ];
     };
-    wg2457 = {
+    wg2547 = {
       ips = [ "fe80::1888/64" ];
-      postSetup = "${pkgs.iproute2}/bin/ip addr add 172.22.68.0/32 peer 172.22.76.190/32 dev wg2457";
+      postSetup = "${pkgs.iproute2}/bin/ip addr add 172.22.68.0/32 peer 172.22.76.190/32 dev wg2547";
       privateKey = wgPrivKey;
-      listenPort = 22457;
+      listenPort = 22547;
       allowedIPsAsRoutes = false;
       peers = [
         {
