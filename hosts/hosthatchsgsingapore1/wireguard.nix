@@ -59,6 +59,20 @@ in
         }
       ];
     };
+    wg2633 = {
+      ips = [ "fe80::1888/64" ];
+      postSetup = "${pkgs.iproute2}/bin/ip addr add 172.22.68.0/32 peer 172.23.250.34/32 dev wg2633";
+      privateKey = wgPrivKey;
+      listenPort = 22633;
+      allowedIPsAsRoutes = false;
+      peers = [
+        {
+          endpoint = "sin.eastbnd.com:21888";
+          publicKey = "m5IfciUmvMEfDkfFQf0jD3GH0F0ChMktOSiLMlJ29wc=";
+          allowedIPs = [ "10.0.0.0/8" "172.20.0.0/14" "172.31.0.0/16" "::/0" "fd00::/8" ];
+        }
+      ];
+    };
     wg3699 = {
       ips = [ "fe80::1888/64" ];
       postSetup = "${pkgs.iproute2}/bin/ip addr add 172.22.68.0/32 peer 172.22.155.7/32 dev wg3699";
