@@ -1,4 +1,7 @@
-{ ... }:
+{ pkgs, self, ... }:
+let
+  wgPrivKey = (builtins.fromJSON (builtins.readFile "${self}/secrets/wireguard.json")).hosthatchsgsingapore1;
+in
 {
   networking.wireguard.interfaces = {
     wg0604 = {
