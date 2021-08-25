@@ -1,8 +1,5 @@
 { config, self, ... }:
 
-let
-  cfg = (builtins.fromJSON (builtins.readFile "${self}/secrets/teleport.json"));
-in
 {
   networking.nameservers = [ "100.64.0.53" "1.1.1.1" "8.8.8.8" ];
   networking.interfaces.lo.ipv4.addresses = [
