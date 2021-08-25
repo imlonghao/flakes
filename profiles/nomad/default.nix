@@ -22,6 +22,7 @@
       client = {
         enabled = true;
         servers = [ "100.64.88.22" "100.64.88.42" "100.64.88.50" ];
+        host_network = [{ private = [{ interface = "gravity"; }]; }];
       };
     };
   };
