@@ -59,4 +59,13 @@
   '';
   services.nomad.extraSettingsPaths = [ "/etc/nomad-mutable.hcl" ];
 
+  # rait
+  services.gravity = {
+    enable = true;
+    address = "100.64.88.9/30";
+    addressV6 = "2602:feda:1bf:a:3::1/80";
+    hostAddress = "100.64.88.10/30";
+    hostAddressV6 = "2602:feda:1bf:a:3::2/80";
+  };
+
 }
