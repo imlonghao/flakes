@@ -52,6 +52,12 @@
   environment.etc."nomad-mutable.hcl".text = ''
     bind_addr = "103.167.150.135"
     client {
+      host_volume "n8n" {
+        path = "/opt/docker/n8n"
+      }
+      host_volume "n8n-mysql" {
+        path = "/opt/docker/n8n-docker"
+      }
     }
   '';
   services.nomad.extraSettingsPaths = [ "/etc/nomad-mutable.hcl" ];
