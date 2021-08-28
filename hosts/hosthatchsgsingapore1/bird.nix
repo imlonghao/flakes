@@ -85,6 +85,7 @@
         local as 4242421888;
         graceful restart on;
         ipv4 {
+          extended next hop;
           import where is_valid_network();
           export where is_valid_network();
         };
