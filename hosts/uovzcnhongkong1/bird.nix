@@ -94,6 +94,9 @@
           export where is_valid_network_v6();
         };
       }
+      protocol bgp AS4242422330 from dnpeers {
+        neighbor fe80::2330:5 % 'wg2330' as 4242422330;
+      }
       protocol bgp AS4242423088 from dnpeers {
         neighbor fe80::3088:192 % 'wg3088' as 4242423088;
       }
