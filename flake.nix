@@ -160,6 +160,10 @@
             hostname = "hosthatch-sg-singapore-1.ni.sb";
             sshUser = "root";
           };
+          uovzcnhongkong1 = {
+            hostname = "uovz-cn-hongkong-1.ni.sb";
+            sshUser = "root";
+          };
         };
 
         defaultTemplate = self.templates.bud;
