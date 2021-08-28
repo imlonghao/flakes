@@ -52,6 +52,9 @@
   environment.etc."nomad-mutable.hcl".text = ''
     bind_addr = "103.167.150.135"
     client {
+      meta = {
+        traefik = "1"
+      }
       host_volume "n8n" {
         path = "/persist/docker/n8n"
       }
