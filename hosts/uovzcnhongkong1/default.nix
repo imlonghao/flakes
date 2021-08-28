@@ -3,6 +3,7 @@
 {
   imports = [
     ./hardware.nix
+    ./bird.nix
     profiles.mycore
     profiles.users.root
     profiles.rait
