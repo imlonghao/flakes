@@ -4,6 +4,7 @@
   imports = [
     ./hardware.nix
     ./bird.nix
+    ./wireguard.nix
     profiles.mycore
     profiles.users.root
     profiles.rait
