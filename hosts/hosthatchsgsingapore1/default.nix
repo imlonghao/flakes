@@ -53,10 +53,10 @@
     bind_addr = "103.167.150.135"
     client {
       host_volume "n8n" {
-        path = "/opt/docker/n8n"
+        path = "/persist/docker/n8n"
       }
       host_volume "n8n-mysql" {
-        path = "/opt/docker/n8n-docker"
+        path = "/persist/docker/n8n-docker"
       }
     }
   '';
