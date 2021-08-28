@@ -58,6 +58,15 @@
       host_volume "n8n-mysql" {
         path = "/persist/docker/n8n-docker"
       }
+      host_volume "joplin" {
+        path = "/persist/docker/joplin"
+      }
+      host_volume "bitwarden" {
+        path = "/persist/docker/bitwarden"
+      }
+      host_volume "umami" {
+        path = "/persist/docker/umami"
+      }
     }
   '';
   services.nomad.extraSettingsPaths = [ "/etc/nomad-mutable.hcl" ];
