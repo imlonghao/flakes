@@ -93,6 +93,12 @@
           export where is_valid_network_v6();
         };
       }
+      protocol bgp AS4242423618 from dnpeers {
+        neighbor fe80::3618 % 'wg3618' as 4242423618;
+        ipv4 {
+          extended next hop;
+        }
+      }
       protocol bgp AS4242423914 from dnpeers {
         neighbor fe80::ade0 % 'wg3914' as 4242423914;
       }
