@@ -5,6 +5,7 @@
     ./hardware.nix
     profiles.mycore
     profiles.users.root
+    profiles.rait
   ];
 
   boot.loader.grub.device = "/dev/vda";
