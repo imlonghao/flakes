@@ -7,6 +7,7 @@
     profiles.users.root
     profiles.rait
     profiles.teleport
+    profiles.nomad
   ];
 
   boot.loader.grub.device = "/dev/vda";
@@ -46,5 +47,16 @@
       "/etc/ssh/ssh_host_ed25519_key"
     ];
   };
+
+  # Nomad
+  environment.etc."nomad-mutable.hcl".text = ''
+    bind_addr = "14.192.50.151"
+    client {
+      meta = {
+        iinomiko = "14.192.50.151"
+      }
+    }
+  '';
+  services.nomad.extraSettingsPaths = [ "/etc/nomad-mutable.hcl" ];
 
 }
