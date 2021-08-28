@@ -9,6 +9,7 @@
     profiles.rait
     profiles.teleport
     profiles.nomad
+    profiles.pingfinder
   ];
 
   boot.loader.grub.device = "/dev/vda";
