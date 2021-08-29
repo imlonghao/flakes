@@ -11,6 +11,7 @@
     profiles.rait
     profiles.pingfinder
     profiles.nomad
+    profiles.vault
   ];
 
   boot.loader.grub.device = "/dev/vda";
@@ -82,5 +83,8 @@
     }
   '';
   services.nomad.extraSettingsPaths = [ "/etc/nomad-mutable.hcl" ];
+
+  # Vault
+  services.vault.address = "100.64.88.62:8200";
 
 }
