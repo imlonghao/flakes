@@ -1,4 +1,4 @@
-{ profiles, ... }:
+{ profiles, self, ... }:
 let
   vaultToken = builtins.readFile "${self}/secrets/vault.token";
 in
