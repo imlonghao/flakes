@@ -10,6 +10,7 @@ in
     profiles.users.root
     profiles.rait
     profiles.teleport
+    profiles.pingfinder
   ];
 
   networking.dhcpcd.allowInterfaces = [ "ens19" ];
