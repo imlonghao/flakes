@@ -11,7 +11,8 @@ channels: final: prev: {
     nixpkgs-fmt
     qutebrowser
     signal-desktop
-    starship;
+    starship
+    nomad;
 
 
   haskellPackages = prev.haskellPackages.override
