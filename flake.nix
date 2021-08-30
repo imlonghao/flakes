@@ -7,36 +7,36 @@
 
   inputs =
     {
-      nixos.url = "github:nixos/nixpkgs/nixos-unstable-small";
-      stable.url = "github:nixos/nixpkgs/release-21.05";
+      nixos.url = "github:nixos/nixpkgs/release-21.05";
+      latest.url = "github:nixos/nixpkgs/nixos-unstable";
 
       digga.url = "github:divnix/digga";
-      digga.inputs.nixpkgs.follows = "stable";
-      digga.inputs.nixlib.follows = "stable";
+      digga.inputs.nixpkgs.follows = "nixos";
+      digga.inputs.nixlib.follows = "nixos";
       digga.inputs.home-manager.follows = "home";
 
       bud.url = "github:divnix/bud";
-      bud.inputs.nixpkgs.follows = "stable";
+      bud.inputs.nixpkgs.follows = "nixos";
       bud.inputs.devshell.follows = "digga/devshell";
 
       home.url = "github:nix-community/home-manager/release-21.05";
-      home.inputs.nixpkgs.follows = "stable";
+      home.inputs.nixpkgs.follows = "nixos";
 
       darwin.url = "github:LnL7/nix-darwin";
-      darwin.inputs.nixpkgs.follows = "nixos";
+      darwin.inputs.nixpkgs.follows = "latest";
 
       deploy.follows = "digga/deploy";
 
       agenix.url = "github:ryantm/agenix";
-      agenix.inputs.nixpkgs.follows = "nixos";
+      agenix.inputs.nixpkgs.follows = "latest";
 
       nvfetcher.url = "github:berberman/nvfetcher";
-      nvfetcher.inputs.nixpkgs.follows = "nixos";
+      nvfetcher.inputs.nixpkgs.follows = "latest";
       nvfetcher.inputs.flake-compat.follows = "digga/deploy/flake-compat";
       nvfetcher.inputs.flake-utils.follows = "digga/flake-utils-plus/flake-utils";
 
       naersk.url = "github:nmattia/naersk";
-      naersk.inputs.nixpkgs.follows = "nixos";
+      naersk.inputs.nixpkgs.follows = "latest";
 
       nixos-hardware.url = "github:nixos/nixos-hardware";
 
@@ -44,7 +44,7 @@
 
       # start ANTI CORRUPTION LAYER
       # remove after https://github.com/NixOS/nix/pull/4641
-      nixpkgs.follows = "stable";
+      nixpkgs.follows = "nixos";
       nixlib.follows = "digga/nixlib";
       blank.follows = "digga/blank";
       flake-utils-plus.follows = "digga/flake-utils-plus";
