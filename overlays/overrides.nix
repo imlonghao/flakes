@@ -4,14 +4,8 @@ channels: final: prev: {
 
   inherit (channels.latest)
     cachix
-    dhall
-    discord
-    element-desktop
     rage
     nixpkgs-fmt
-    qutebrowser
-    signal-desktop
-    starship
     nomad;
 
 
