@@ -57,6 +57,7 @@
       protocol static {
         route 172.22.68.0/28 blackhole;
         route 172.22.68.2/32 blackhole;
+        route 172.22.68.8/32 blackhole;
         ipv4 {
           import all;
           export all;
@@ -64,6 +65,7 @@
       }
       protocol static {
         route fd21:5c0c:9b7e::/64 blackhole;
+        route fd21:5c0c:9b7e::8/128 blackhole;
         route fd21:5c0c:9b7e:2::/64 blackhole;
         ipv6 {
           import all;
@@ -73,11 +75,11 @@
       protocol babel gravity {
         ipv4 {
           import all;
-          export where net ~ 100.64.88.0/24 || net = 172.22.68.2/32;
+          export where net ~ 100.64.88.0/24 || net = 172.22.68.2/32 || net = 172.22.68.8/32;
         };
         ipv6 {
           import all;
-          export where net ~ 2602:feda:1bf::/48;
+          export where net ~ 2602:feda:1bf::/48 || net = fd21:5c0c:9b7e::8/128;
         };
         randomize router id;
         interface "gravity";
