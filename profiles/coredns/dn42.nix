@@ -1,6 +1,6 @@
 { pkgs, ... }:
 let
-  zone = pkgs.writeText ''
+  zone = pkgs.writeText "zonefile" ''
     97.96/27.51.20.172.in-addr.arpa. 3600 IN SOA imlonghao.dn42. dn42.esd.cc. 2021090201 7200 1800 1209600 3600
     0.0/27.68.22.172.in-addr.arpa. 3600 PTR anycast.imlonghao.dn42.
     1.0/27.68.22.172.in-addr.arpa. 3600 PTR us1.imlonghao.dn42.
