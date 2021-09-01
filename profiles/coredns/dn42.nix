@@ -10,7 +10,7 @@
   services.coredns = {
     enable = true;
     config = ''
-      . {
+      172.22.68.0/27 {
         bind 172.22.68.8 fd21:5c0c:9b7e::8
         hosts {
           172.22.68.0 anycast.imlonghao.dn42
