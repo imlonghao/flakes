@@ -63,6 +63,7 @@
         };
       }
       protocol static {
+        route fd21:5c0c:9b7e::/64 blackhole;
         route fd21:5c0c:9b7e:2::/64 blackhole;
         ipv6 {
           import all;

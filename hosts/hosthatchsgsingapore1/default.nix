@@ -12,6 +12,7 @@
     profiles.pingfinder
     profiles.nomad
     profiles.vault
+    profiles.coredns.dn42
   ];
 
   boot.loader.grub.device = "/dev/vda";
