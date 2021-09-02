@@ -4,6 +4,20 @@ let
 in
 {
   networking.wireguard.interfaces = {
+    wg0197 = {
+      ips = [ "fe80::1888/64" ];
+      postSetup = "${pkgs.iproute2}/bin/ip addr add 172.22.68.0/32 peer 172.20.190.96/32 dev wg0197";
+      privateKey = wgPrivKey;
+      listenPort = 20197;
+      allowedIPsAsRoutes = false;
+      peers = [
+        {
+          endpoint = "himalia.dn42.n0emis.eu:21888";
+          publicKey = "ObF+xGC6DdddJer0IUw6nzC0RqzeKWwEiQU0ieowzhg=";
+          allowedIPs = [ "10.0.0.0/8" "172.20.0.0/14" "172.31.0.0/16" "fe80::/64" "fd00::/8" ];
+        }
+      ];
+    };
     wg1588 = {
       ips = [ "fe80::100/64" ];
       postSetup = "${pkgs.iproute2}/bin/ip addr add 172.22.68.0/32 peer 172.20.16.141/32 dev wg1588";
