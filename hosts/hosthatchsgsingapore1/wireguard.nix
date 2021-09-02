@@ -32,6 +32,20 @@ in
         }
       ];
     };
+    wg1588 = {
+      ips = [ "fe80::100/64" ];
+      postSetup = "${pkgs.iproute2}/bin/ip addr add 172.22.68.0/32 peer 172.20.16.142/32 dev wg1588";
+      privateKey = wgPrivKey;
+      listenPort = 21588;
+      allowedIPsAsRoutes = false;
+      peers = [
+        {
+          endpoint = "sg-sin01.dn42.tech9.io:59771";
+          publicKey = "4qLIJ9zpc/Xgvy+uo90rGso75cSrT2F5tBEv+6aqDkY=";
+          allowedIPs = [ "10.0.0.0/8" "172.20.0.0/14" "172.31.0.0/16" "fe80::/64" "fd00::/8" ];
+        }
+      ];
+    };
     wg1876 = {
       ips = [ "fe80::1888/64" ];
       postSetup = "${pkgs.iproute2}/bin/ip addr add 172.22.68.0/32 peer 172.22.66.57/32 dev wg1876";
