@@ -7,6 +7,7 @@ let
     2.0/27.68.22.172.in-addr.arpa. 3600 PTR sg1.imlonghao.dn42.
     3.0/27.68.22.172.in-addr.arpa. 3600 PTR hk1.imlonghao.dn42.
     4.0/27.68.22.172.in-addr.arpa. 3600 PTR de1.imlonghao.dn42.
+    5.0/27.68.22.172.in-addr.arpa. 3600 PTR us2.imlonghao.dn42.
     8.0/27.68.22.172.in-addr.arpa. 3600 PTR ns.imlonghao.dn42.
   '';
 in
