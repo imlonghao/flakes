@@ -94,6 +94,9 @@
           export where is_valid_network_v6();
         };
       }
+      protocol bgp AS4242422980 from dnpeers {
+        neighbor fe80::2980 % 'wg2980' as 4242422980;
+      }
       protocol bgp ROUTE_COLLECTOR {
         local as 4242421888;
         neighbor fd42:4242:2601:ac12::1 as 4242422602;
