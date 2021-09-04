@@ -33,7 +33,7 @@ in
       ];
     };
     wg2980 = {
-      ips = [ "fe80::1888/64" ];
+      ips = [ "fe80::1888:3/64" ];
       postSetup = "${pkgs.iproute2}/bin/ip addr add 172.22.68.3/32 peer 172.23.105.2/32 dev wg2980";
       privateKey = wgPrivKey;
       listenPort = 22980;
