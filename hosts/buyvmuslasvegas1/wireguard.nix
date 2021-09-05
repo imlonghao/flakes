@@ -4,6 +4,19 @@ let
 in
 {
   networking.wireguard.interfaces = {
+    wg1123 = {
+      ips = [ "fe80::1123/64" ];
+      privateKey = wgPrivKey;
+      listenPort = 21123;
+      allowedIPsAsRoutes = false;
+      peers = [
+        {
+          endpoint = "lax.ccp.ovh:21888";
+          publicKey = "Z6OKJSR1sxMBgUd1uXEe/UxoBsOvRgbTnexy7z/ryUI=";
+          allowedIPs = [ "10.0.0.0/8" "172.20.0.0/14" "172.31.0.0/16" "fe80::/64" "fd00::/8" ];
+        }
+      ];
+    };
     wg2980 = {
       ips = [ "fe80::1888:5/64" ];
       postSetup = "${pkgs.iproute2}/bin/ip addr add 172.22.68.5/32 peer 172.23.105.3/32 dev wg2980";
