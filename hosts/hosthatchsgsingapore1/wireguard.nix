@@ -60,6 +60,20 @@ in
         }
       ];
     };
+    wg2225 = {
+      ips = [ "fe80::1888/64" ];
+      postSetup = "${pkgs.iproute2}/bin/ip addr add 172.22.68.0/32 peer 172.20.12.197/32 dev wg2225";
+      privateKey = wgPrivKey;
+      listenPort = 22225;
+      allowedIPsAsRoutes = false;
+      peers = [
+        {
+          endpoint = "dn42-sg.maraun.de:21888";
+          publicKey = "rWTIK93+XJaP4sRvrk1gqXxAZgkz6y/axLC4mjuay1I=";
+          allowedIPs = [ "10.0.0.0/8" "172.20.0.0/14" "172.31.0.0/16" "fe80::/64" "fd00::/8" ];
+        }
+      ];
+    };
     wg2237 = {
       ips = [ "fe80::1888/64" ];
       privateKey = wgPrivKey;
