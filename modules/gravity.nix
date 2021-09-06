@@ -60,6 +60,7 @@ in
           "${iproute2}/bin/ip -n ${cfg.netns} addr add ${cfg.addressV6} dev host"
           "${iproute2}/bin/ip addr add ${cfg.hostAddress} dev ${cfg.link}"
           "${iproute2}/bin/ip addr add ${cfg.hostAddressV6} dev ${cfg.link}"
+          "${coreutils}/bin/rm -f /tmp/rait.old /tmp/rait.new"
         ];
         ExecStart = "${iproute2}/bin/ip netns exec ${cfg.netns} ${babeld}/bin/babeld -c ${writeText "babeld.conf" ''
           random-id true
@@ -72,7 +73,6 @@ in
         ExecStartPost = cfg.postStart;
         ExecStopPost = [
           "${iproute2}/bin/ip netns del ${cfg.netns}"
-          "${coreutils}/bin/rm -f /tmp/rait.old /tmp/rait.new"
         ];
       };
       wants = [ "network-online.target" ];
