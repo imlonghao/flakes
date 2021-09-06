@@ -70,7 +70,10 @@ in
           redistribute local deny
         ''}";
         ExecStartPost = cfg.postStart;
-        ExecStopPost = "${iproute2}/bin/ip netns del ${cfg.netns}";
+        ExecStopPost = [
+          "${iproute2}/bin/ip netns del ${cfg.netns}"
+          "${coreutils}/bin/rm -f /tmp/rait.old /tmp/rait.new"
+        ];
       };
       wants = [ "network-online.target" ];
       after = [ "network-online.target" ];
