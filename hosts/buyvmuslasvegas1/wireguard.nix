@@ -5,7 +5,7 @@ in
 {
   networking.wireguard.interfaces = {
     wg1123 = {
-      ips = [ "fe80::1123/64" ];
+      ips = [ "fe80::1888/64" ];
       privateKey = wgPrivKey;
       listenPort = 21123;
       allowedIPsAsRoutes = false;
