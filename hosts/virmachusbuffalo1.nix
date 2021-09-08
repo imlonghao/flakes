@@ -277,7 +277,7 @@ in
       peers = [
         {
           endpoint = "dn42-nyc4.jg-awsl.xyz:21888";
-          publicKey = "MPvJSiuwE2t9BUe/aRqu4MvHBJh/G20HKcH3d1aVDhQ=";
+          publicKey = "lamfAKIgcQbCumnRO1pZ8gcFaUxyg4cvm7erKFpb3D4=";
           allowedIPs = [ "10.0.0.0/8" "172.20.0.0/14" "172.31.0.0/16" "fe80::/64" "fd00::/8" ];
         }
       ];
