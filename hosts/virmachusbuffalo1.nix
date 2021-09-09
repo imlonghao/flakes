@@ -152,9 +152,6 @@ in
       protocol bgp AS4242421876 from dnpeers {
         neighbor fe80::1876 % 'wg1876' as 4242421876;
       }
-      protocol bgp AS4242422188 from dnpeers {
-        neighbor fe80::2188 % 'wg2188' as 4242422188;
-      }
       protocol bgp AS4242422547 from dnpeers {
         neighbor fe80::2547 % 'wg2547' as 4242422547;
       }
@@ -264,20 +261,6 @@ in
         {
           endpoint = "n202.dn42.ac.cn:21888";
           publicKey = "EJvoVa5DrJl1rnryF4GThX1Rf86lMBtu2sg8Huru9Gs=";
-          allowedIPs = [ "10.0.0.0/8" "172.20.0.0/14" "172.31.0.0/16" "fe80::/64" "fd00::/8" ];
-        }
-      ];
-    };
-    wg2188 = {
-      ips = [ "fe80::1888/64" ];
-      postSetup = "${pkgs.iproute2}/bin/ip addr add 172.22.68.0/32 peer 172.23.231.119/32 dev wg2188";
-      privateKey = wgPrivKey;
-      listenPort = 22188;
-      allowedIPsAsRoutes = false;
-      peers = [
-        {
-          endpoint = "dn42-nyc4.jg-awsl.xyz:21888";
-          publicKey = "MPvJSiuwE2t9BUe/aRqu4MvHBJh/G20HKcH3d1aVDhQ=";
           allowedIPs = [ "10.0.0.0/8" "172.20.0.0/14" "172.31.0.0/16" "fe80::/64" "fd00::/8" ];
         }
       ];
