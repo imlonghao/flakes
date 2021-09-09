@@ -41,7 +41,7 @@ in
       peers = [
         {
           endpoint = "dn42-fra4.jg-awsl.xyz:21888";
-          publicKey = "Uw4iR+4ZO1+oCe/zXkw9+5JhuLOYbuqZofSvqZc9mDE=";
+          publicKey = "WszQFqPLMdpLxq5qoM9Z/y/ilWV1M58zZQakzZZ01DM=";
           allowedIPs = [ "10.0.0.0/8" "172.20.0.0/14" "172.31.0.0/16" "fe80::/64" "fd00::/8" ];
         }
       ];
