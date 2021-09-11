@@ -87,7 +87,10 @@
         multihop 2;
         password "or2D7evY";
         ipv4 {
-          import all;
+          import filter {
+            gw = 199.19.224.1;
+            accept;
+          };
           export none;
         };
       }
