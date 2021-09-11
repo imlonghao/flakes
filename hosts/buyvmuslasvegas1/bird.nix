@@ -88,7 +88,7 @@
         ipv4 {
           import all;
           export none;
-        }
+        };
       }
       template bgp dnpeers {
         local as 4242421888;
