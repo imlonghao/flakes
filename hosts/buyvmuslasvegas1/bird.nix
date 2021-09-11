@@ -81,6 +81,15 @@
         randomize router id;
         interface "gravity";
       }
+      protocol bgp AS53667v4 {
+        neighbor 169.254.169.179 as 53667;
+        multihop 2;
+        password "or2D7evY";
+        ipv4 {
+          import all;
+          export none;
+        }
+      }
       template bgp dnpeers {
         local as 4242421888;
         graceful restart on;
