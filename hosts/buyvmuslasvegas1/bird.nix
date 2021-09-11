@@ -82,6 +82,7 @@
         interface "gravity";
       }
       protocol bgp AS53667v4 {
+        local as 133846;
         neighbor 169.254.169.179 as 53667;
         multihop 2;
         password "or2D7evY";
