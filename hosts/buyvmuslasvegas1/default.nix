@@ -23,6 +23,10 @@
           address = "172.22.68.5";
           prefixLength = 32;
         }
+        {
+          address = "44.31.42.0";
+          prefixLength = 32;
+        }
       ];
       lo.ipv6.addresses = [
         {
