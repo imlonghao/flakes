@@ -15,6 +15,7 @@
   boot.loader.grub.device = "/dev/vda";
   networking = {
     dhcpcd.allowInterfaces = [ "ens3" ];
+    defaultGateway6 = "2605:6400:20::1";
     nameservers = [ "8.8.8.8" "1.1.1.1" ];
     interfaces = {
       lo.ipv4.addresses = [
@@ -27,6 +28,12 @@
         {
           address = "fd21:5c0c:9b7e:5::";
           prefixLength = 64;
+        }
+      ];
+      ens3.ipv6.address = [
+        {
+          address = "2605:6400:20:803::";
+          prefixLength = 48;
         }
       ];
     };
