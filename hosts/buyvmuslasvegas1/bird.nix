@@ -99,7 +99,7 @@
               bgp_large_community.add((53667, 109, 3257));
               bgp_large_community.add((53667, 109, 6939));
               accept;
-            };
+            }
           };
         };
       }
