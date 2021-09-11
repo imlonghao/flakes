@@ -30,7 +30,7 @@
           prefixLength = 64;
         }
       ];
-      ens3.ipv6.address = [
+      ens3.ipv6.addresses = [
         {
           address = "2605:6400:20:803::";
           prefixLength = 48;
