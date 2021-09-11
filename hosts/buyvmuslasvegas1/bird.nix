@@ -96,7 +96,7 @@
             if net = 44.31.42.0/24 then {
               bgp_path.prepend(133846);
               bgp_large_community.add((53667, 101, 174));
-              bgp_large_community.add((53667, 109, 3257));
+              bgp_large_community.add((53667, 101, 3257));
               bgp_large_community.add((53667, 109, 6939));
               accept;
             }
