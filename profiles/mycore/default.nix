@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, ... }:
 {
   imports = [ ../cachix ];
 
@@ -20,6 +20,11 @@
     "net.ipv4.tcp_congestion_control" = "bbr";
     "net.ipv6.conf.all.forwarding" = 1;
   };
+
+  environment.systemPackages = [
+    pkgs.mtr
+    pkgs.tcpdump
+  ];
 
   i18n.supportedLocales = [ "en_US.UTF-8/UTF-8" ];
 
