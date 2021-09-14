@@ -172,6 +172,10 @@
             hostname = "buyvm-us-lasvegas-1.ni.sb";
             sshUser = "root";
           };
+          buyvmusmiami1 = {
+            hostname = "buyvm-us-miami-1.ni.sb";
+            sshUser = "root";
+          };
         };
 
         defaultTemplate = self.templates.bud;
