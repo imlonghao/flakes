@@ -152,6 +152,9 @@ in
       protocol bgp AS4242421876 from dnpeers {
         neighbor fe80::1876 % 'wg1876' as 4242421876;
       }
+      protocol bgp AS4242422464 from dnpeers {
+        neighbor fe80::2464 % 'wg2464' as 4242422464;
+      }
       protocol bgp AS4242422547 from dnpeers {
         neighbor fe80::2547 % 'wg2547' as 4242422547;
       }
@@ -261,6 +264,19 @@ in
         {
           endpoint = "n202.dn42.ac.cn:21888";
           publicKey = "EJvoVa5DrJl1rnryF4GThX1Rf86lMBtu2sg8Huru9Gs=";
+          allowedIPs = [ "10.0.0.0/8" "172.20.0.0/14" "172.31.0.0/16" "fe80::/64" "fd00::/8" ];
+        }
+      ];
+    };
+    wg2464 = {
+      ips = [ "fe80::1888/64" ];
+      privateKey = wgPrivKey;
+      listenPort = 22464;
+      allowedIPsAsRoutes = false;
+      peers = [
+        {
+          endpoint = "nyc.dneo.moeternet.com:21888";
+          publicKey = "MLVJrwrph6d0VqrAq8/rkhbkG+mrQNytqmwrNgk2qFs=";
           allowedIPs = [ "10.0.0.0/8" "172.20.0.0/14" "172.31.0.0/16" "fe80::/64" "fd00::/8" ];
         }
       ];
