@@ -3,12 +3,12 @@
 {
   imports = [
     ./hardware.nix
-    # ./bird.nix
+    ./bird.nix
     # ./wireguard.nix
     profiles.mycore
     profiles.users.root
-    # profiles.rait
-    # profiles.teleport
+    profiles.rait
+    profiles.teleport
     # profiles.pingfinder
   ];
 
@@ -53,6 +53,15 @@
       "/etc/ssh/ssh_host_rsa_key"
       "/etc/ssh/ssh_host_ed25519_key"
     ];
+  };
+
+  # rait
+  services.gravity = {
+    enable = true;
+    address = "100.64.88.69/30";
+    addressV6 = "2602:feda:1bf:a:12::1/80";
+    hostAddress = "100.64.88.70/30";
+    hostAddressV6 = "2602:feda:1bf:a:12::2/80";
   };
 
 }

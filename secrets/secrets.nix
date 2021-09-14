@@ -8,6 +8,7 @@ let
   uovzcnhongkong1 = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFLUpy8RTdbWL3SeKpladeChdgCZz2rIVrRgr2POqc+j";
   combahtondefrankfurt1 = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIulBmMYYwT+lcjH3oesB8RIrTgUVMTDtuFcpSMpsBFT";
   buyvmuslasvegas1 = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICnnJaYAhSql7Ecf0SvKJLrMiE6NFFc4OvJ457Xt3NnO";
+  buyvmusmiami1 = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBSOTtTAYSdlCTVNwjmE5DU6NVSPiyoPcN6Y+i6/4qFS";
 
   users = [ me deployer ];
   hosts = [
@@ -17,6 +18,7 @@ let
     uovzcnhongkong1
     combahtondefrankfurt1
     buyvmuslasvegas1
+    buyvmusmiami1
   ];
 
   allKeys = users ++ hosts;
@@ -29,4 +31,5 @@ in
   "rait/uovzcnhongkong1.conf".publicKeys = [ me uovzcnhongkong1 ];
   "rait/combahtondefrankfurt1.conf".publicKeys = [ me combahtondefrankfurt1 ];
   "rait/buyvmuslasvegas1.conf".publicKeys = [ me buyvmuslasvegas1 ];
+  "rait/buyvmusmiami1.conf".publicKeys = [ me buyvmusmiami1 ];
 }
