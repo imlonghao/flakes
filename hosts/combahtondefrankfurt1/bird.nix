@@ -97,6 +97,12 @@
       protocol bgp AS4242420197 from dnpeers {
         neighbor fe80::42:42:1 % 'wg0197' as 4242420197;
       }
+      protocol bgp AS4242420385v4 from dnpeers {
+        neighbor 172.23.32.36 as 4242420385;
+      }
+      protocol bgp AS4242420385v6 from dnpeers {
+        neighbor fe80::a52b:1888 % 'wg0385' as 4242420385;
+      }
       protocol bgp AS4242420588 from dnpeers {
         neighbor fe80::73:1 % 'wg0588' as 4242420588;
       }
