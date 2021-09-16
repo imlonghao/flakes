@@ -94,7 +94,7 @@
     enable = true;
     role = "server";
     disableAgent = true;
-    extraFlags = "--bind-addr=100.64.88.62";
+    extraFlags = "--bind-addr 100.64.88.62";
   };
 
 }
