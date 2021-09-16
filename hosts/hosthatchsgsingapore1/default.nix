@@ -1,4 +1,4 @@
-{ profiles, ... }:
+{ age, profiles, self, ... }:
 
 {
   imports = [
@@ -87,5 +87,14 @@
 
   # Vault
   services.vault.address = "100.64.88.62:8200";
+
+  # k3s
+  age.secrets."k3s.token".file = "${self}/secrets/k3s.token";
+  services.k3s = {
+    enable = true;
+    role = "server";
+    disableAgent = true;
+    tokenFile = age.secrets."k3s.token".path;
+  };
 
 }
