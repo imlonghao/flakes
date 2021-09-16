@@ -33,5 +33,9 @@ in
   "rait/buyvmuslasvegas1.conf".publicKeys = [ me buyvmuslasvegas1 ];
   "rait/buyvmusmiami1.conf".publicKeys = [ me buyvmusmiami1 ];
 
-  "k3s.token".publicKeys = [ me hosthatchsgsingapore1 ];
+  "k3s.token".publicKeys = [
+    me
+    hosthatchsgsingapore1
+    virmachusbuffalo1
+  ];
 }

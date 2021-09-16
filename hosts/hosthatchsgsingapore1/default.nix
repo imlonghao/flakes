@@ -88,7 +88,7 @@
   # Vault
   services.vault.address = "100.64.88.62:8200";
 
-  # k3s
+  # k3s server
   age.secrets."k3s.token".file = "${self}/secrets/k3s.token";
   services.k3s = {
     enable = true;
