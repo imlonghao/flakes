@@ -36,6 +36,6 @@ in
   "k3s.token".publicKeys = [
     me
     hosthatchsgsingapore1
-    virmachusbuffalo1
+    combahtondefrankfurt1
   ];
 }
