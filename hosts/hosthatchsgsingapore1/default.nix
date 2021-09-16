@@ -94,7 +94,6 @@
     enable = true;
     role = "server";
     disableAgent = true;
-    tokenFile = age.secrets."k3s.token".path;
   };
 
 }
