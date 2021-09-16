@@ -5,8 +5,8 @@
   services.k3s = {
     enable = true;
     role = "agent";
-    tokenFile = "/run/secrets/k3s.token;
-    serverAddr = " https://100.64.88.62:6443 ";
+    tokenFile = "/run/secrets/k3s.token";
+    serverAddr = "https://100.64.88.62:6443";
   };
 }
 
