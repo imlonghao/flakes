@@ -38,4 +38,13 @@ in
     hostAddressV6 = "2602:feda:1bf:a:6::2/80";
   };
 
+  # Consul server
+  services.consul = {
+    enable = true;
+    interface.bind = "gravity";
+    extraConfig = {
+      server = true;
+    };
+  };
+
 }
