@@ -101,6 +101,7 @@
   age.secrets."redis-password" = {
     file = "${self}/secrets/redis-password";
     owner = "redis";
+    group = "redis";
   };
   services.redis = {
     enable = true;
