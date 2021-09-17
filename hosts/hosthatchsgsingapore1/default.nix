@@ -98,7 +98,10 @@
   };
 
   # Redis
-  age.secrets."redis-password".file = "${self}/secrets/redis-password";
+  age.secrets."redis-password" = {
+    file = "${self}/secrets/redis-password";
+    owner = "redis";
+  };
   services.redis = {
     enable = true;
     bind = "100.64.88.62";
