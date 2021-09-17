@@ -97,4 +97,13 @@
     extraFlags = "--bind-addr 100.64.88.62";
   };
 
+  # Redis
+  age.secrets."redis-password".file = "${self}/secrets/redis-password";
+  services.redis = {
+    enable = true;
+    bind = "100.64.88.62";
+    appendOnly = true;
+    requirePassFile = "/run/secrets/redis-password";
+  };
+
 }
