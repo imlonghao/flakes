@@ -62,7 +62,6 @@
   services.k3s = {
     enable = true;
     role = "server";
-    extraFlags = "--bind-address 100.64.88.62";
   };
 
 }
