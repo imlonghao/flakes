@@ -10,8 +10,6 @@
     profiles.teleport
     profiles.rait
     profiles.pingfinder
-    profiles.nomad
-    profiles.vault
     profiles.coredns.dn42
   ];
 
@@ -58,35 +56,6 @@
     hostAddress = "100.64.88.62/30";
     hostAddressV6 = "2602:feda:1bf:a:10::2/80";
   };
-
-  # Nomad
-  environment.etc."nomad-mutable.hcl".text = ''
-    bind_addr = "103.167.150.135"
-    client {
-      meta = {
-        traefik = "1"
-      }
-      host_volume "n8n" {
-        path = "/persist/docker/n8n"
-      }
-      host_volume "n8n-mysql" {
-        path = "/persist/docker/n8n-docker"
-      }
-      host_volume "joplin" {
-        path = "/persist/docker/joplin"
-      }
-      host_volume "bitwarden" {
-        path = "/persist/docker/bitwarden"
-      }
-      host_volume "umami" {
-        path = "/persist/docker/umami"
-      }
-    }
-  '';
-  services.nomad.extraSettingsPaths = [ "/etc/nomad-mutable.hcl" ];
-
-  # Vault
-  services.vault.address = "100.64.88.62:8200";
 
   # k3s server
   age.secrets."k3s.token".file = "${self}/secrets/k3s.token";
