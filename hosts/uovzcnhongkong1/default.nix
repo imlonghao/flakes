@@ -18,7 +18,7 @@
     defaultGateway = "103.200.114.1";
     nameservers = [ "8.8.8.8" "1.1.1.1" ];
     interfaces = {
-      eth0.ipv4.addresses = [
+      ens3.ipv4.addresses = [
         {
           address = "103.200.114.26";
           prefixLength = 25;
