@@ -15,13 +15,13 @@
 
   boot.loader.grub.device = "/dev/vda";
   networking = {
-    defaultGateway = "14.192.50.254";
+    defaultGateway = "103.200.114.1";
     nameservers = [ "8.8.8.8" "1.1.1.1" ];
     interfaces = {
       eth0.ipv4.addresses = [
         {
-          address = "14.192.50.151";
-          prefixLength = 24;
+          address = "103.200.114.26";
+          prefixLength = 25;
         }
       ];
       lo.ipv4.addresses = [
@@ -53,10 +53,10 @@
 
   # Nomad
   environment.etc."nomad-mutable.hcl".text = ''
-    bind_addr = "14.192.50.151"
+    bind_addr = "103.200.114.26"
     client {
       meta = {
-        iinomiko = "14.192.50.151"
+        iinomiko = "103.200.114.26"
       }
     }
   '';
