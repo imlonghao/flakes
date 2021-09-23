@@ -41,6 +41,7 @@
     directories = [
       "/var/lib"
       "/run/secrets"
+      "/var/jfsCache"
     ];
     files = [
       "/etc/machine-id"
