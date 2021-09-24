@@ -8,7 +8,7 @@ in
     profiles.rait
     profiles.users.root
     profiles.teleport
-    profiles.nomad
+    profiles.k3s
     profiles.pingfinder
     (modulesPath + "/profiles/qemu-guest.nix")
   ];
@@ -200,16 +200,6 @@ in
     hostAddress = "100.64.88.26/30";
     hostAddressV6 = "2602:feda:1bf:a:7::2/80";
   };
-
-  environment.etc."nomad-mutable.hcl".text = ''
-    bind_addr = "23.95.222.131"
-    client {
-      meta = {
-        iinomiko = "23.95.222.131"
-      }
-    }
-  '';
-  services.nomad.extraSettingsPaths = [ "/etc/nomad-mutable.hcl" ];
 
   networking.wireguard.interfaces = {
     wg0247 = {
