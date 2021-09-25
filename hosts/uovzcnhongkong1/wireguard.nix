@@ -45,6 +45,20 @@ in
         }
       ];
     };
+    wg2717 = {
+      ips = [ "fe80::1888/64" ];
+      postSetup = "${pkgs.iproute2}/bin/ip addr add 172.22.68.0/32 peer 172.22.66.66/32 dev wg2717";
+      privateKey = wgPrivKey;
+      listenPort = 22717;
+      allowedIPsAsRoutes = false;
+      peers = [
+        {
+          endpoint = "ncu.tw.dn42.hujk.eu.org:23022";
+          publicKey = "ifN+KmnL5XLHG8nDi2nN9l26snGUP/1157p8mOSPE1c=";
+          allowedIPs = [ "10.0.0.0/8" "172.20.0.0/14" "172.31.0.0/16" "fe80::/64" "fd00::/8" ];
+        }
+      ];
+    };
     wg2980 = {
       ips = [ "fe80::1888:3/64" ];
       postSetup = "${pkgs.iproute2}/bin/ip addr add 172.22.68.3/32 peer 172.23.105.2/32 dev wg2980";
