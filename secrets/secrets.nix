@@ -38,6 +38,7 @@ in
     hosthatchsgsingapore1
     combahtondefrankfurt1
     virmachusbuffalo1
+    uovzcnhongkong1
   ];
   "redis-password".publicKeys = [ me hosthatchsgsingapore1 ];
 }

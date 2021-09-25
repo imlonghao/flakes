@@ -9,7 +9,7 @@
     profiles.users.root
     profiles.rait
     profiles.teleport
-    profiles.nomad
+    profiles.k3s
     profiles.pingfinder
   ];
 
@@ -50,17 +50,6 @@
       "/etc/ssh/ssh_host_ed25519_key"
     ];
   };
-
-  # Nomad
-  environment.etc."nomad-mutable.hcl".text = ''
-    bind_addr = "103.200.114.26"
-    client {
-      meta = {
-        iinomiko = "103.200.114.26"
-      }
-    }
-  '';
-  services.nomad.extraSettingsPaths = [ "/etc/nomad-mutable.hcl" ];
 
   # rait
   services.gravity = {
