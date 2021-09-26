@@ -10,6 +10,7 @@ in
     profiles.teleport
     profiles.k3s
     profiles.pingfinder
+    profiles.nodeexporter
     (modulesPath + "/profiles/qemu-guest.nix")
   ];
 
