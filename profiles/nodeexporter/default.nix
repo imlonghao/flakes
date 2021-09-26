@@ -7,8 +7,9 @@ in
     enable = true;
     listenAddress = ip;
     extraFlags = [
-      "--collector.netclass.ignored-devices=^(veth[a-z0-9]{8})$"
-      "--collector.netdev.device-exclude=^(veth[a-z0-9]{8})$"
+      "--collector.filesystem.ignored-mount-points=^/(dev|proc|sys|run|var/lib/docker/.+)($|/)"
+      "--collector.netclass.ignored-devices=^veth[a-z0-9]{8}$"
+      "--collector.netdev.device-exclude=^veth[a-z0-9]{8}$"
     ];
   };
 }
