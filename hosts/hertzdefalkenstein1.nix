@@ -5,7 +5,7 @@
     profiles.rait
     profiles.users.root
     profiles.teleport
-    profiles.nodeexporter
+    profiles.exporter.node
   ];
 
   # Config
