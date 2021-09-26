@@ -7,7 +7,7 @@ in
     enable = true;
     listenAddress = ip;
     extraFlags = [
-      "--collector.netdev.device-exclude=COLLECTOR.NETDEV.DEVICE-EXCLUDE=\"^veth\""
+      "--collector.netdev.device-exclude=COLLECTOR.NETDEV.DEVICE-EXCLUDE=^veth[a-z0-9]{8}$"
     ];
   };
 }
