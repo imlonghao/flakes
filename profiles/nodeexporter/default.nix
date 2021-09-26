@@ -1,4 +1,4 @@
-{ age, self, ... }:
+{ config, self, ... }:
 let
   ip = builtins.replaceStrings [ "/30" ] [ "" ] config.services.gravity.hostAddress;
 in
