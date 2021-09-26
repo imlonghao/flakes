@@ -11,6 +11,7 @@ in
     profiles.k3s
     profiles.pingfinder
     profiles.exporter.node
+    profiles.exporter.bird
     (modulesPath + "/profiles/qemu-guest.nix")
   ];
 
