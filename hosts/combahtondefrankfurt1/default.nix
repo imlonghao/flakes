@@ -13,6 +13,7 @@ in
     profiles.teleport
     profiles.pingfinder
     profiles.k3s
+    profiles.nodeexporter
   ];
 
   networking.dhcpcd.allowInterfaces = [ "ens19" ];

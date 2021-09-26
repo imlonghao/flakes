@@ -11,6 +11,7 @@
     profiles.teleport
     profiles.k3s
     profiles.pingfinder
+    profiles.nodeexporter
   ];
 
   boot.loader.grub.device = "/dev/vda";

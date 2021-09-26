@@ -11,6 +11,7 @@
     profiles.rait
     profiles.pingfinder
     profiles.coredns.dn42
+    profiles.nodeexporter
   ];
 
   boot.loader.grub.device = "/dev/vda";
