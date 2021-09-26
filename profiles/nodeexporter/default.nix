@@ -6,6 +6,9 @@ in
   services.prometheus.exporters.node = {
     enable = true;
     listenAddress = ip;
+    extraFlags = [
+      "--collector.netdev.device-exclude=COLLECTOR.NETDEV.DEVICE-EXCLUDE=\"^veth\""
+    ];
   };
 }
 
