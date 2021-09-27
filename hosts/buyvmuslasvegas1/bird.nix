@@ -4,6 +4,7 @@
     enable = true;
     config = ''
       router id 100.64.88.66;
+      timeformat protocol iso long;
       protocol direct {
         ipv4;
         ipv6;
