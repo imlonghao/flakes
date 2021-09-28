@@ -14,6 +14,7 @@ in
     profiles.pingfinder
     profiles.k3s
     profiles.exporter.node
+    profiles.exporter.bird
   ];
 
   networking.dhcpcd.allowInterfaces = [ "ens19" ];

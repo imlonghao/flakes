@@ -11,6 +11,7 @@
     profiles.teleport
     profiles.pingfinder
     profiles.exporter.node
+    profiles.exporter.bird
   ];
 
   boot.loader.grub.device = "/dev/vda";
