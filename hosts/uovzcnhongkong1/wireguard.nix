@@ -3,17 +3,6 @@ let
   wgPrivKey = (builtins.fromJSON (builtins.readFile "${self}/secrets/wireguard.json")).uovzcnhongkong1;
 in
 {
-  boot.kernel.sysctl = {
-    "net.ipv4.conf.wg1817.rp_filter" = 0;
-    "net.ipv4.conf.wg2464.rp_filter" = 0;
-    "net.ipv4.conf.wg2526.rp_filter" = 0;
-    "net.ipv4.conf.wg2717.rp_filter" = 0;
-    "net.ipv4.conf.wg2980.rp_filter" = 0;
-    "net.ipv4.conf.wg3618.rp_filter" = 0;
-    "net.ipv4.conf.wg3632.rp_filter" = 0;
-    "net.ipv4.conf.wg3704.rp_filter" = 0;
-    "net.ipv4.conf.wg3914.rp_filter" = 0;
-  };
   networking.wireguard.interfaces = {
     wg1817 = {
       ips = [ "fe80::1888/64" ];

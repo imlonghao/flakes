@@ -19,7 +19,6 @@
     "net.ipv4.ip_forward" = 1;
     "net.ipv4.tcp_congestion_control" = "bbr";
     "net.ipv6.conf.all.forwarding" = 1;
-    "net.ipv4.conf.default.rp_filter" = 0; 
   };
 
   environment.systemPackages = [
