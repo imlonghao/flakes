@@ -11,4 +11,5 @@
     enable = true;
     path = "/run/secrets/rait.sh";
   };
+  boot.kernel.sysctl."net.ipv4.conf.gravaty.rp_filter" = 0;
 }
