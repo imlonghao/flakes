@@ -11,7 +11,7 @@ in
     systemd.services.k3s-no-ctstate-invalid = {
       serviceConfig = {
         Type = "oneshot";
-        ExecStart = "${pkgs.iptables} -D KUBE-FORWARD -m conntrack --ctstate INVALID -j DROP || true";
+        ExecStart = "${pkgs.iptables}/bin/iptables -D KUBE-FORWARD -m conntrack --ctstate INVALID -j DROP || true";
       };
       wants = [ "network-online.target" ];
       after = [ "network-online.target" ];
