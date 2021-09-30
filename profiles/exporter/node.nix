@@ -12,5 +12,6 @@ in
       "--collector.netdev.device-exclude=^veth[a-z0-9]{8}$"
     ];
   };
+  systemd.services."prometheus-node-exporter".after = [ "gravity.service" ];
 }
 

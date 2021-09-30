@@ -7,4 +7,5 @@ in
     enable = true;
     listenAddress = ip;
   };
+  systemd.services."prometheus-bird-exporter".after = [ "gravity.service" ];
 }
