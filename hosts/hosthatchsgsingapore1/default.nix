@@ -66,5 +66,6 @@
     enable = true;
     role = "server";
   };
+  services.k3s-no-ctstate-invalid.enable = true;
 
 }
