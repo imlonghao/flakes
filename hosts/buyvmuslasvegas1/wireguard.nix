@@ -45,6 +45,19 @@ in
         }
       ];
     };
+    wg2032 = {
+      ips = [ "fe80::1888/64" ];
+      privateKey = wgPrivKey;
+      listenPort = 22032;
+      allowedIPsAsRoutes = false;
+      peers = [
+        {
+          endpoint = "nv1.us.lapinet27.com:21888";
+          publicKey = "KlvNQ7wBwoey0N8YpJYsYuHDrxjpIzHqCh9osAzcEyA=";
+          allowedIPs = [ "10.0.0.0/8" "172.20.0.0/14" "172.31.0.0/16" "fe80::/64" "fd00::/8" ];
+        }
+      ];
+    };
     wg2464 = {
       ips = [ "fe80::1888/64" ];
       privateKey = wgPrivKey;
