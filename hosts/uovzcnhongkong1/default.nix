@@ -17,6 +17,7 @@
 
   boot.loader.grub.device = "/dev/vda";
   networking = {
+    dhcpcd.enable = false;
     defaultGateway = "103.200.114.1";
     nameservers = [ "8.8.8.8" "1.1.1.1" ];
     interfaces = {
