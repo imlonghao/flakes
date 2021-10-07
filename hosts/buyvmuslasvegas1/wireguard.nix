@@ -71,6 +71,19 @@ in
         }
       ];
     };
+    wg2688 = {
+      ips = [ "fe80::1888/64" ];
+      privateKey = wgPrivKey;
+      listenPort = 22688;
+      allowedIPsAsRoutes = false;
+      peers = [
+        {
+          endpoint = "lv1-v4.us.dn42.miaotony.xyz:21888";
+          publicKey = "vfrrbtKAO5438daHrTD0SSS8V6yk78S/XW7DeFrYLXA=";
+          allowedIPs = [ "10.0.0.0/8" "172.20.0.0/14" "172.31.0.0/16" "fe80::/64" "fd00::/8" ];
+        }
+      ];
+    };
     wg2980 = {
       ips = [ "fe80::1888:5/64" ];
       postSetup = "${pkgs.iproute2}/bin/ip addr add 172.22.68.5/32 peer 172.23.105.3/32 dev wg2980";
