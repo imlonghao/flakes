@@ -19,17 +19,17 @@ in
     options = [ "defaults" "mode=755" ];
   };
   fileSystems."/boot" = {
-    device = "/dev/sda2";
+    device = "/dev/disk/by-uuid/3b1f68da-55ac-4651-95dc-69f15025ed51";
     fsType = "btrfs";
     options = [ "subvol=@boot" ] ++ mountOptions;
   };
   fileSystems."/nix" = {
-    device = "/dev/sda2";
+    device = "/dev/disk/by-uuid/3b1f68da-55ac-4651-95dc-69f15025ed51";
     fsType = "btrfs";
     options = [ "subvol=@nix" ] ++ mountOptions;
   };
   fileSystems."/persist" = {
-    device = "/dev/sda2";
+    device = "/dev/disk/by-uuid/3b1f68da-55ac-4651-95dc-69f15025ed51";
     fsType = "btrfs";
     options = [ "subvol=@persist" ] ++ mountOptions;
     neededForBoot = true;
