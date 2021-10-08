@@ -5,6 +5,8 @@
     ./hardware.nix
     profiles.mycore
     profiles.users.root
+    profiles.teleport
+    profiles.rait
   ];
 
   boot.loader.grub.device = "/dev/sda";
@@ -23,6 +25,15 @@
       "/etc/ssh/ssh_host_rsa_key"
       "/etc/ssh/ssh_host_ed25519_key"
     ];
+  };
+
+  # profiles.rait
+  services.gravity = {
+    enable = true;
+    address = "100.64.88.49/30";
+    addressV6 = "2602:feda:1bf:a:d::1/80";
+    hostAddress = "100.64.88.50/30";
+    hostAddressV6 = "2602:feda:1bf:a:d::2/80";
   };
 
 }

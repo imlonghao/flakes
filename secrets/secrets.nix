@@ -34,6 +34,7 @@ in
   "rait/combahtondefrankfurt1.conf".publicKeys = [ me combahtondefrankfurt1 ];
   "rait/buyvmuslasvegas1.conf".publicKeys = [ me buyvmuslasvegas1 ];
   "rait/buyvmusmiami1.conf".publicKeys = [ me buyvmusmiami1 ];
+  "rait/hetznerdefalkenstein1.conf".publicKeys = [ me hetznerdefalkenstein1 ];
 
   "k3s.token".publicKeys = [
     me
