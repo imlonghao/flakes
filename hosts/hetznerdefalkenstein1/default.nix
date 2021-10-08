@@ -2,12 +2,14 @@
 
 {
   imports = [
+    ./bird.nix
     ./hardware.nix
     profiles.mycore
     profiles.users.root
     profiles.teleport
     profiles.rait
     profiles.exporter.node
+    profiles.exporter.bird
   ];
 
   boot.loader.grub.device = "/dev/sda";
