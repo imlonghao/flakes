@@ -176,6 +176,10 @@
             hostname = "buyvm-us-miami-1.ni.sb";
             sshUser = "root";
           };
+          hetznerdefalkenstein1 = {
+            hostname = "hetzner-de-falkenstein-1.ni.sb";
+            sshUser = "root";
+          };
         };
 
         defaultTemplate = self.templates.bud;
