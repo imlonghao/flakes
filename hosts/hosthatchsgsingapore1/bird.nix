@@ -125,6 +125,9 @@
       protocol bgp AS4242422330 from dnpeers {
         neighbor fe80::2330:5 % 'wg2330' as 4242422330;
       }
+      protocol bgp AS4242422331 from dnpeers {
+        neighbor fe80::2331 % 'wg2331' as 4242422331;
+      }
       protocol bgp AS4242422633 from dnpeers {
         neighbor fe80::2633 % 'wg2633' as 4242422633;
       }
