@@ -7,6 +7,7 @@
     profiles.users.root
     profiles.teleport
     profiles.rait
+    profiles.exporter.node
   ];
 
   boot.loader.grub.device = "/dev/sda";
