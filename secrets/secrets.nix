@@ -9,6 +9,7 @@ let
   combahtondefrankfurt1 = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIulBmMYYwT+lcjH3oesB8RIrTgUVMTDtuFcpSMpsBFT";
   buyvmuslasvegas1 = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICnnJaYAhSql7Ecf0SvKJLrMiE6NFFc4OvJ457Xt3NnO";
   buyvmusmiami1 = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBSOTtTAYSdlCTVNwjmE5DU6NVSPiyoPcN6Y+i6/4qFS";
+  hetznerdefalkenstein1 = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINwgOiBA82/Bds81vdkJs8jw3eeaY4hSUc5oRbU6A98k";
 
   users = [ me deployer ];
   hosts = [
@@ -19,6 +20,7 @@ let
     combahtondefrankfurt1
     buyvmuslasvegas1
     buyvmusmiami1
+    hetznerdefalkenstein1
   ];
 
   allKeys = users ++ hosts;
