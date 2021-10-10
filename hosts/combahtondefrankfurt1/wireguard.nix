@@ -60,6 +60,19 @@ in
         }
       ];
     };
+    wg1862 = {
+      ips = [ "fe80::1888/64" ];
+      privateKey = wgPrivKey;
+      listenPort = 21862;
+      allowedIPsAsRoutes = false;
+      peers = [
+        {
+          endpoint = "ger1-de.alphvino.com:21888";
+          publicKey = "Utag1F2oPnA8Omw7yvBhGk3xDMIRdhwlA7eLtAvSEnE=";
+          allowedIPs = [ "10.0.0.0/8" "172.20.0.0/14" "172.31.0.0/16" "fe80::/64" "fd00::/8" ];
+        }
+      ];
+    };
     wg2980 = {
       ips = [ "fe80::1888:4/64" ];
       postSetup = "${pkgs.iproute2}/bin/ip addr add 172.22.68.4/32 peer 172.23.105.4/32 dev wg2980";
