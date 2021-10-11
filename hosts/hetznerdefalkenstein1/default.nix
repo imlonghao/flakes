@@ -23,6 +23,7 @@
       "/var/lib"
       "/run/secrets"
       "/root/.gnupg"
+      "/root/.ssh"
     ];
     files = [
       "/etc/machine-id"
