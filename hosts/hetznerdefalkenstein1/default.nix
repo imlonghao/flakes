@@ -22,6 +22,7 @@
     directories = [
       "/var/lib"
       "/run/secrets"
+      "/root/.gnupg"
     ];
     files = [
       "/etc/machine-id"
