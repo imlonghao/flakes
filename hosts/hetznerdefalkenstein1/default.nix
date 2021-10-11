@@ -41,4 +41,7 @@
     hostAddressV6 = "2602:feda:1bf:a:d::2/80";
   };
 
+  # GPG
+  programs.gnupg.agent.enable = true;
+
 }
