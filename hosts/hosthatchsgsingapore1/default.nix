@@ -71,6 +71,6 @@
   # fish alias
   programs.fish.shellAliases = {
     k = "k3s kubectl";
-  }
+  };
 
 }
