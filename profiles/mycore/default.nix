@@ -39,4 +39,6 @@
   time.timeZone = "Asia/Shanghai";
 
   users.mutableUsers = false;
+
+  programs.fish.enable = true;
 }
