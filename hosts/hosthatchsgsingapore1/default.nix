@@ -68,4 +68,9 @@
   };
   services.k3s-no-ctstate-invalid.enable = true;
 
+  # fish alias
+  programs.fish.shellAliases = {
+    k = "k3s kubectl";
+  }
+
 }
