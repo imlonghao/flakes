@@ -1,4 +1,4 @@
-{ profiles, ... }:
+{ pkgs, profiles, ... }:
 
 {
   imports = [
@@ -17,6 +17,11 @@
     dhcpcd.allowInterfaces = [ "enp1s0" ];
     nameservers = [ "8.8.8.8" "1.1.1.1" ];
   };
+
+  environment.systemPackages = with pkgs; [
+    git
+    git-crypt
+  ];
 
   environment.persistence."/persist" = {
     directories = [
