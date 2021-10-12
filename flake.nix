@@ -180,6 +180,10 @@
             hostname = "hetzner-de-falkenstein-1.ni.sb";
             sshUser = "root";
           };
+          nexusbytesuslosangeles1 = {
+            hostname = "nexusbytes-us-losangeles-1.ni.sb";
+            sshUser = "root";
+          };
         };
 
         defaultTemplate = self.templates.bud;

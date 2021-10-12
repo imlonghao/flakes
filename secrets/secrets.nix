@@ -10,6 +10,7 @@ let
   buyvmuslasvegas1 = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICnnJaYAhSql7Ecf0SvKJLrMiE6NFFc4OvJ457Xt3NnO";
   buyvmusmiami1 = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBSOTtTAYSdlCTVNwjmE5DU6NVSPiyoPcN6Y+i6/4qFS";
   hetznerdefalkenstein1 = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINwgOiBA82/Bds81vdkJs8jw3eeaY4hSUc5oRbU6A98k";
+  nexusbytesuslosangeles1 = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKTz5EVR6k/BP+JyVoVFYrd3Bnxmo+ATsrSKElPhblXx";
 
   users = [ me deployer ];
   hosts = [
@@ -21,6 +22,7 @@ let
     buyvmuslasvegas1
     buyvmusmiami1
     hetznerdefalkenstein1
+    nexusbytesuslosangeles1
   ];
 
   allKeys = users ++ hosts;
@@ -35,6 +37,7 @@ in
   "rait/buyvmuslasvegas1.conf".publicKeys = [ me buyvmuslasvegas1 ];
   "rait/buyvmusmiami1.conf".publicKeys = [ me buyvmusmiami1 ];
   "rait/hetznerdefalkenstein1.conf".publicKeys = [ me hetznerdefalkenstein1 ];
+  "rait/nexusbytesuslosangeles1.conf".publicKeys = [ me nexusbytesuslosangeles1 ];
 
   "k3s.token".publicKeys = [
     me
@@ -42,6 +45,7 @@ in
     combahtondefrankfurt1
     virmachusbuffalo1
     uovzcnhongkong1
+    nexusbytesuslosangeles1
   ];
   "redis-password".publicKeys = [ me hosthatchsgsingapore1 ];
 }
