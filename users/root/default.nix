@@ -9,6 +9,7 @@ bWWiZuNxq92HpR9ddIJ62w47ZdtCrikX6GQW9xJOdEtNFEKz+Y9HYOL8uXOv8w1tnM3RDgc5a145ENpm
 lnUteXuaejULw== openpgp:0x1E1A60D7"
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKv5fgCyrSdHw1z4Yvdi28fLs413vLFYk5sYyfC1YHJz imlonghao@imlonghao"
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGPiPq3zWmsO7dEJS/xR8+YW2eEFpPoR7ybtXwh0kC3S imlonghao@hetzner-fi-helsinki-1"
+      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJdjuyWpE3wwjLVXpF/Rs0JjSk9Q6QHhQlrjspFzFA7M root@hetznerdefalkenstein1"
     ];
     shell = pkgs.fish;
   };
