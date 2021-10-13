@@ -17,6 +17,15 @@
   networking = {
     dhcpcd.allowInterfaces = [ "ens3" ];
     nameservers = [ "8.8.8.8" "1.1.1.1" ];
+    defaultGateway6 = "2602:fed2:7106::1";
+    interfaces = {
+      ens3.ipv6.addresses = [
+        {
+          address = "2602:fed2:7106:271b::1";
+          prefixLength = 64;
+        }
+      ];
+    };
   };
 
   # profiles.rait
