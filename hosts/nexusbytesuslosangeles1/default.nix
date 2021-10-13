@@ -28,8 +28,8 @@
         ];
         routes = [
           {
-            "address": "2602:fed2:7106::1",
-            "prefixLength": 128
+            address = "2602:fed2:7106::1";
+            prefixLength = 128;
           }
         ];
       };
