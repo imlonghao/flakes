@@ -21,6 +21,7 @@
   };
 
   environment.systemPackages = with pkgs; [
+    dnsutils
     git
     git-crypt
   ];
