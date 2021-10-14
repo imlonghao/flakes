@@ -1,0 +1,59 @@
+{ profiles, ... }:
+
+{
+  # imports = [
+  #   ./hardware.nix
+  #   ./bird.nix
+  #   profiles.mycore
+  #   profiles.users.root
+  #   profiles.rait
+  #   profiles.teleport
+  #   profiles.k3s
+  #   profiles.exporter.node
+  #   profiles.exporter.bird
+  # ];
+  imports = [
+    ./hardware.nix
+    ./bird.nix
+    profiles.mycore
+    profiles.users.root
+  ];
+
+  boot.loader.grub.device = "/dev/vda";
+  networking = {
+    dhcpcd.enable = false;
+    defaultGateway = "103.205.9.1";
+    nameservers = [ "8.8.8.8" "1.1.1.1" ];
+    interfaces = {
+      ens3.ipv4.addresses = [
+        {
+          address = "103.205.9.90";
+          prefixLength = 24;
+        }
+      ];
+    };
+  };
+
+  environment.persistence."/persist" = {
+    directories = [
+      "/var/lib"
+      "/run/secrets"
+    ];
+    files = [
+      "/etc/machine-id"
+      "/etc/ssh/ssh_host_rsa_key"
+      "/etc/ssh/ssh_host_ed25519_key"
+      "/etc/rancher/node/password"
+    ];
+  };
+
+  # rait
+  # services.gravity = {
+  #   enable = true;
+  #   address = "100.64.88.5/30";
+  #   addressV6 = "2602:feda:1bf:a:2::1/80";
+  #   hostAddress = "100.64.88.6/30";
+  #   hostAddressV6 = "2602:feda:1bf:a:2::2/80";
+  # };
+
+}
