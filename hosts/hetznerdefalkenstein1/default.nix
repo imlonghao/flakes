@@ -10,6 +10,7 @@
     profiles.rait
     profiles.exporter.node
     profiles.exporter.bird
+    profiles.k3s
   ];
 
   nix.gc.dates = "monthly";
