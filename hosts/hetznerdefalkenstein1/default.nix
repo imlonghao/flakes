@@ -12,6 +12,8 @@
     profiles.exporter.bird
   ];
 
+  nix.gc.dates = "monthly";
+
   boot.loader.grub.device = "/dev/sda";
   networking = {
     dhcpcd.allowInterfaces = [ "enp1s0" ];
