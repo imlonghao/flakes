@@ -184,6 +184,10 @@
             hostname = "nexusbytes-us-losangeles-1.ni.sb";
             sshUser = "root";
           };
+          starrydnscnhongkong1 = {
+            hostname = "starrydns-cn-hongkong-1.ni.sb";
+            sshUser = "root";
+          };
         };
 
         defaultTemplate = self.templates.bud;

@@ -11,6 +11,7 @@ let
   buyvmusmiami1 = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBSOTtTAYSdlCTVNwjmE5DU6NVSPiyoPcN6Y+i6/4qFS";
   hetznerdefalkenstein1 = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINwgOiBA82/Bds81vdkJs8jw3eeaY4hSUc5oRbU6A98k";
   nexusbytesuslosangeles1 = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKTz5EVR6k/BP+JyVoVFYrd3Bnxmo+ATsrSKElPhblXx";
+  starrydnscnhongkong1 = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKTz5EVR6k/BP+JyVoVFYrd3Bnxmo+ATsrSKElPhblXx";
 
   users = [ me deployer ];
   hosts = [
@@ -23,6 +24,7 @@ let
     buyvmusmiami1
     hetznerdefalkenstein1
     nexusbytesuslosangeles1
+    starrydnscnhongkong1
   ];
 
   allKeys = users ++ hosts;
@@ -38,6 +40,7 @@ in
   "rait/buyvmusmiami1.conf".publicKeys = [ me buyvmusmiami1 ];
   "rait/hetznerdefalkenstein1.conf".publicKeys = [ me hetznerdefalkenstein1 ];
   "rait/nexusbytesuslosangeles1.conf".publicKeys = [ me nexusbytesuslosangeles1 ];
+  "rait/starrydnscnhongkong1.conf".publicKeys = [ me starrydnscnhongkong1 ];
 
   "k3s.token".publicKeys = [
     me
@@ -47,6 +50,7 @@ in
     uovzcnhongkong1
     nexusbytesuslosangeles1
     hetznerdefalkenstein1
+    starrydnscnhongkong1
   ];
   "redis-password".publicKeys = [ me hosthatchsgsingapore1 ];
 }
