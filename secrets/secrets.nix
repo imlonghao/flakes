@@ -11,7 +11,7 @@ let
   buyvmusmiami1 = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBSOTtTAYSdlCTVNwjmE5DU6NVSPiyoPcN6Y+i6/4qFS";
   hetznerdefalkenstein1 = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINwgOiBA82/Bds81vdkJs8jw3eeaY4hSUc5oRbU6A98k";
   nexusbytesuslosangeles1 = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKTz5EVR6k/BP+JyVoVFYrd3Bnxmo+ATsrSKElPhblXx";
-  starrydnscnhongkong1 = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKTz5EVR6k/BP+JyVoVFYrd3Bnxmo+ATsrSKElPhblXx";
+  starrydnscnhongkong1 = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOZmM7DOMHN4EAsviYmj0OYqqXEfciJZi5M6rnu2THVs";
 
   users = [ me deployer ];
   hosts = [
