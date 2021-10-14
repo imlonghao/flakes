@@ -46,6 +46,7 @@ in
     virmachusbuffalo1
     uovzcnhongkong1
     nexusbytesuslosangeles1
+    hetznerdefalkenstein1
   ];
   "redis-password".publicKeys = [ me hosthatchsgsingapore1 ];
 }
