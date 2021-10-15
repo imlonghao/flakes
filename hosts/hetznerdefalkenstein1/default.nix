@@ -19,7 +19,10 @@
   networking = {
     dhcpcd.allowInterfaces = [ "enp1s0" ];
     nameservers = [ "8.8.8.8" "1.1.1.1" ];
-    defaultGateway6 = "fe80::1";
+    defaultGateway6 = {
+      interfaces = "enp1s0";
+      address = "fe80::1";
+    };
     interfaces = {
       enp1s0.ipv6.addresses = [
         {
