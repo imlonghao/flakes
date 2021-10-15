@@ -19,6 +19,15 @@
   networking = {
     dhcpcd.allowInterfaces = [ "enp1s0" ];
     nameservers = [ "8.8.8.8" "1.1.1.1" ];
+    defaultGateway6 = "fe80::1";
+    interfaces = {
+      enp1s0.ipv6.addresses = [
+        {
+          address = "2a01:4f8:c17:c8e3::";
+          prefixLength = 64;
+        }
+      ];
+    };
   };
 
   environment.systemPackages = with pkgs; [
