@@ -57,4 +57,16 @@
     hostAddressV6 = "2602:feda:1bf:a:2::2/80";
   };
 
+  # Coredns IPv6 forwarder
+  services.coredns = {
+    enable = true;
+    config = ''
+      . {
+        bind 2403:ad80:98:c60::f6f4
+        forward . 127.0.0.1
+        cache 30
+      }
+    '';
+  };
+
 }
