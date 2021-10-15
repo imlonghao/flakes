@@ -66,4 +66,16 @@
   # GPG
   programs.gnupg.agent.enable = true;
 
+  # Coredns IPv6 forwarder
+  services.coredns = {
+    enable = true;
+    config = ''
+      . {
+        bind 2a01:4f8:c17:c8e3::
+        forward . 127.0.0.1
+        cache 30
+      }
+    '';
+  };
+
 }
