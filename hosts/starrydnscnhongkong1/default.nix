@@ -32,6 +32,12 @@
           prefixLength = 54;
         }
       ];
+      lo.ipv4.addresses = [
+        {
+          address = "44.31.42.0";
+          prefixLength = 32;
+        }
+      ];
     };
   };
 

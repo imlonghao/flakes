@@ -58,6 +58,7 @@
       protocol static {
         route 172.22.68.0/28 blackhole;
         route 172.22.68.3/32 blackhole;
+        route 44.31.42.0/24 blackhole;
         ipv4 {
           import all;
           export all;
@@ -65,6 +66,8 @@
       }
       protocol static {
         route fd21:5c0c:9b7e:3::/64 blackhole;
+        route 2602:feda:1bf::/48 blackhole;
+        route 2a09:b280:ff81::/48 blackhole;
         ipv6 {
           import all;
           export all;
@@ -94,6 +97,27 @@
           import where is_valid_network_v6();
           export where is_valid_network_v6();
         };
+      }
+      protocol bgp starrydns4 {
+        neighbor 103.205.9.1 as 134835;
+        source address 103.205.9.90;
+        local as 133846;
+        graceful restart on;
+        ipv4 {
+          import all;
+          export where net = 44.31.42.0/24;
+        };
+      }
+      protocol bgp starrydns6 {
+        neighbor 2403:ad80:98:c00::1 as 134835;
+        source address 2403:ad80:98:c60::f6f4;
+        local as 133846;
+        graceful restart on;
+        ipv6 {
+          import none;
+          export where net = 2602:feda:1bf::/48 || net = 2a09:b280:ff81::/48;
+        };
+        multihop;
       }
     '';
   };
