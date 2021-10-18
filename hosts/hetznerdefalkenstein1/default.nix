@@ -37,6 +37,11 @@
     dnsutils
     git
     git-crypt
+    gobuster
+    metasploit
+    nmap
+    openvpn
+    tmux
   ];
 
   environment.persistence."/persist" = {
