@@ -41,6 +41,7 @@
     metasploit
     nmap
     openvpn
+    socat
     tmux
   ];
 
