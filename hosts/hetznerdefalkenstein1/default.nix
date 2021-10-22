@@ -35,14 +35,17 @@
 
   environment.systemPackages = with pkgs; [
     dnsutils
+    file
     git
     git-crypt
     gobuster
     metasploit
     nmap
     openvpn
+    python3Packages.requests
     socat
     tmux
+    wget
   ];
 
   environment.persistence."/persist" = {
