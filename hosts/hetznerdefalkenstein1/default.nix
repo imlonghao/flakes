@@ -35,6 +35,7 @@
 
   environment.systemPackages = with pkgs; [
     dnsutils
+    docker-compose
     file
     git
     git-crypt
@@ -42,6 +43,7 @@
     metasploit
     nmap
     openvpn
+    python3
     python3Packages.requests
     socat
     tmux
@@ -86,5 +88,8 @@
       }
     '';
   };
+
+  # Docker
+  virtualisation.docker.enable = true;
 
 }
