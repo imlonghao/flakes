@@ -56,6 +56,7 @@
       "/run/secrets"
       "/root/.gnupg"
       "/root/.ssh"
+      "/var/jfsCache"
     ];
     files = [
       "/etc/machine-id"
