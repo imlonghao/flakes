@@ -111,5 +111,19 @@ in
         }
       ];
     };
+    wg3308 = {
+      ips = [ "fe80::1888/64" ];
+      postSetup = "${pkgs.iproute2}/bin/ip addr add 172.22.68.5/32 peer 172.23.99.65/32 dev wg3308";
+      privateKey = wgPrivKey;
+      listenPort = 23308;
+      allowedIPsAsRoutes = false;
+      peers = [
+        {
+          endpoint = "lax01.dn42.testnet.cyou:41888";
+          publicKey = "fxzL3/spstTHn0cxaAlVZHIfa1VQP06FKjJL9P/Zzgg=";
+          allowedIPs = [ "10.0.0.0/8" "172.20.0.0/14" "172.31.0.0/16" "fe80::/64" "fd00::/8" ];
+        }
+      ];
+    };
   };
 }
