@@ -184,6 +184,10 @@
             hostname = "starrydns-cn-hongkong-1.ni.sb";
             sshUser = "root";
           };
+          mailcow = {
+            hostname = "mail.esd.cc";
+            sshUser = "root";
+          };
         };
 
         defaultTemplate = self.templates.bud;
