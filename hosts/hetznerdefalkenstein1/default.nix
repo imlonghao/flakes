@@ -31,6 +31,18 @@
           prefixLength = 64;
         }
       ];
+      lo.ipv4.addresses = [
+        {
+          address = "172.22.68.4";
+          prefixLength = 32;
+        }
+      ];
+      lo.ipv6.addresses = [
+        {
+          address = "fd21:5c0c:9b7e:4::";
+          prefixLength = 64;
+        }
+      ];
     };
   };
 
