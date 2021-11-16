@@ -164,10 +164,6 @@
             hostname = "uovz-cn-hongkong-1.ni.sb";
             sshUser = "root";
           };
-          combahtondefrankfurt1 = {
-            hostname = "combahton-de-frankfurt-1.ni.sb";
-            sshUser = "root";
-          };
           buyvmuslasvegas1 = {
             hostname = "buyvm-us-lasvegas-1.ni.sb";
             sshUser = "root";
