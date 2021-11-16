@@ -12,6 +12,7 @@
     profiles.exporter.node
     profiles.exporter.bird
     profiles.k3s
+    profiles.pingfinder
   ];
 
   nix.gc.dates = "monthly";
