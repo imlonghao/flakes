@@ -4,6 +4,7 @@
   imports = [
     ./bird.nix
     ./hardware.nix
+    ./wireguard.nix
     profiles.mycore
     profiles.users.root
     profiles.teleport

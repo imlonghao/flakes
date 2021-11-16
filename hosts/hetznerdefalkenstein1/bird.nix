@@ -38,7 +38,7 @@
           import none;
           export filter {
             if net = 0.0.0.0/0 then reject;
-            if is_valid_network() then krt_prefsrc = 172.22.68.7;
+            if is_valid_network() then krt_prefsrc = 172.22.68.4;
             accept;
           };
         };
@@ -50,21 +50,21 @@
           import none;
           export filter {
             if net = ::/0 then reject;
-            if is_valid_network_v6() then krt_prefsrc = fd21:5c0c:9b7e:7::;
+            if is_valid_network_v6() then krt_prefsrc = fd21:5c0c:9b7e:4::;
             accept;
           };
         };
       }
       protocol static {
         route 172.22.68.0/28 blackhole;
-        route 172.22.68.7/32 blackhole;
+        route 172.22.68.4/32 blackhole;
         ipv4 {
           import all;
           export all;
         };
       }
       protocol static {
-        route fd21:5c0c:9b7e:7::/64 blackhole;
+        route fd21:5c0c:9b7e:4::/64 blackhole;
         ipv6 {
           import all;
           export all;
@@ -73,7 +73,7 @@
       protocol babel gravity {
         ipv4 {
           import all;
-          export where net ~ 100.64.88.0/24 || net = 172.22.68.7/32;
+          export where net ~ 100.64.88.0/24 || net = 172.22.68.4/32;
         };
         ipv6 {
           import all;
@@ -93,6 +93,60 @@
         ipv6 {
           import where is_valid_network_v6();
           export where is_valid_network_v6();
+        };
+      }
+      protocol bgp AS4242420197 from dnpeers {
+        neighbor fe80::42:42:1 % 'wg0197' as 4242420197;
+      }
+      protocol bgp AS4242420385v4 from dnpeers {
+        neighbor 172.23.32.36 as 4242420385;
+      }
+      protocol bgp AS4242420385v6 from dnpeers {
+        neighbor fe80::a52b:1888 % 'wg0385' as 4242420385;
+      }
+      protocol bgp AS4242420588 from dnpeers {
+        neighbor fe80::73:1 % 'wg0588' as 4242420588;
+      }
+      protocol bgp AS4242421588 from dnpeers {
+        neighbor fe80::1588 % 'wg1588' as 4242421588;
+      }
+      protocol bgp AS4242421862 from dnpeers {
+        neighbor fe80::1862 % 'wg1862' as 4242421862;
+      }
+      protocol bgp AS4242422980 from dnpeers {
+        neighbor fe80::2980 % 'wg2980' as 4242422980;
+      }
+      protocol bgp AS4242423088 from dnpeers {
+        neighbor fe80::3088:195 % 'wg3088' as 4242423088;
+      }
+      protocol bgp AS4242423914 from dnpeers {
+        neighbor fe80::ade0 % 'wg3914' as 4242423914;
+      }
+      protocol bgp ROUTE_COLLECTOR {
+        local as 4242421888;
+        neighbor fd42:4242:2601:ac12::1 as 4242422602;
+        multihop;
+        ipv4 {
+          add paths tx;
+          import none;
+          export filter {
+            if ( is_valid_network() && source ~ [ RTS_STATIC, RTS_BGP ] )
+            then {
+              accept;
+            }
+            reject;
+          };
+        };
+        ipv6 {
+          add paths tx;
+          import none;
+          export filter {
+            if ( is_valid_network_v6() && source ~ [ RTS_STATIC, RTS_BGP ] )
+            then {
+              accept;
+            }
+            reject;
+          };
         };
       }
     '';
