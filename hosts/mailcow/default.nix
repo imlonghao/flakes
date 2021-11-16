@@ -28,6 +28,7 @@
   environment.systemPackages = with pkgs; [
     docker-compose
     git
+    iptables
     openssl
   ];
 
