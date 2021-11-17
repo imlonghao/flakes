@@ -30,6 +30,7 @@
     git
     iptables
     openssl
+    wget
   ];
 
   environment.persistence."/persist" = {
