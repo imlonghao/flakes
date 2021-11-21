@@ -143,6 +143,9 @@ in
           export where is_valid_network_v6();
         };
       }
+      protocol bgp AS4201271111 from dnpeers {
+        neighbor fe80::aa:1111:33 % 'wg31111' as 4201271111;
+      }
       protocol bgp AS4242420247 from dnpeers {
         neighbor fe80::247 % 'wg0247' as 4242420247;
       }
@@ -202,6 +205,18 @@ in
   };
 
   networking.wireguard.interfaces = {
+    wg31111 = {
+      ips = [ "fe80::1888/64" ];
+      privateKey = wgPrivKey;
+      listenPort = 31111;
+      allowedIPsAsRoutes = false;
+      peers = [
+        {
+          publicKey = "2FSX+6N/PwfipN/jXMj++4mabFQj25MXDy51mnnz3AA=";
+          allowedIPs = [ "10.0.0.0/8" "172.20.0.0/14" "172.31.0.0/16" "fe80::/64" "fd00::/8" ];
+        }
+      ];
+    };
     wg0247 = {
       ips = [ "fe80::1888/64" ];
       postSetup = "${pkgs.iproute2}/bin/ip addr add 172.22.68.0/32 peer 172.23.250.81/32 dev wg0247";
