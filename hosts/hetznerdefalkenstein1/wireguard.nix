@@ -30,6 +30,20 @@ in
         }
       ];
     };
+    wg0345 = {
+      ips = [ "fe80::1888/64" ];
+      postSetup = "${pkgs.iproute2}/bin/ip addr add 172.22.68.0/32 peer 172.23.49.33/32 dev wg0345";
+      privateKey = wgPrivKey;
+      listenPort = 20345;
+      allowedIPsAsRoutes = false;
+      peers = [
+        {
+          endpoint = "gw1.fsn.dn42.herrtxbias.me:21888";
+          publicKey = "T0Ef2ojHaT1gJjn/Je8VeKiWx0k6MXSnlsYR6Vm7TQ0=";
+          allowedIPs = [ "10.0.0.0/8" "172.20.0.0/14" "172.31.0.0/16" "fe80::/64" "fd00::/8" ];
+        }
+      ];
+    };
     wg0385 = {
       ips = [ "fe80::1888/64" ];
       postSetup = "${pkgs.iproute2}/bin/ip addr add 172.22.68.0/32 peer 172.23.32.36/32 dev wg0385";
