@@ -72,6 +72,20 @@ in
         }
       ];
     };
+    wg1592 = {
+      ips = [ "fe80::1888/64" ];
+      postSetup = "${pkgs.iproute2}/bin/ip addr add 172.22.68.0/32 peer 172.21.99.191/32 dev wg1592";
+      privateKey = wgPrivKey;
+      listenPort = 21588;
+      allowedIPsAsRoutes = false;
+      peers = [
+        {
+          endpoint = "de01.dn42.ca.melusfer.us:41888";
+          publicKey = "7zViBU5dDWV3pxnIGX2ixQmXIgRwvmIW7qwmCgWctzc=";
+          allowedIPs = [ "10.0.0.0/8" "172.20.0.0/14" "172.31.0.0/16" "fe80::/64" "fd00::/8" ];
+        }
+      ];
+    };
     wg1862 = {
       ips = [ "fe80::1888/64" ];
       privateKey = wgPrivKey;
