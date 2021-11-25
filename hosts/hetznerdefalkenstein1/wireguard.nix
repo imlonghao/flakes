@@ -76,7 +76,7 @@ in
       ips = [ "fe80::1888/64" ];
       postSetup = "${pkgs.iproute2}/bin/ip addr add 172.22.68.0/32 peer 172.21.99.191/32 dev wg1592";
       privateKey = wgPrivKey;
-      listenPort = 21588;
+      listenPort = 21592;
       allowedIPsAsRoutes = false;
       peers = [
         {
