@@ -189,6 +189,10 @@
             sshUser = "root";
             sshOpts = [ "-p" "2222" ];
           };
+          misakauklondon1 = {
+            hostname = "misaka-uk-london-1.ni.sb";
+            sshUser = "root";
+          };
         };
 
         defaultTemplate = self.templates.bud;
