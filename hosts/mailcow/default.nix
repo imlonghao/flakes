@@ -49,4 +49,7 @@
   # Docker
   virtualisation.docker.enable = true;
 
+  # SSH Port
+  services.openssh.ports = [ 2222 ];
+
 }
