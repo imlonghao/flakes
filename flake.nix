@@ -187,6 +187,7 @@
           mailcow = {
             hostname = "mail.esd.cc";
             sshUser = "root";
+            sshOpts = [ "-p" "2222" ];
           };
         };
 
