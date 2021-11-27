@@ -73,4 +73,7 @@
     k = "k3s kubectl";
   };
 
+  # Docker
+  virtualisation.docker.enable = true;
+
 }

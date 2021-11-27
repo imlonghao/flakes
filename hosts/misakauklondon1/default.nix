@@ -47,4 +47,6 @@
     hostAddressV6 = "2602:feda:1bf:a:13::2/80";
   };
 
+  # Docker
+  virtualisation.docker.enable = true;
 }
