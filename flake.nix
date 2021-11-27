@@ -80,7 +80,6 @@
               nur.overlay
               agenix.overlay
               nvfetcher.overlay
-              deploy.overlay
               ./pkgs/default.nix
             ];
           };
