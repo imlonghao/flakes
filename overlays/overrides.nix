@@ -6,7 +6,9 @@ channels: final: prev: {
     cachix
     rage
     nixpkgs-fmt
-    nomad;
+    nomad
+    deploy-rs
+    ;
 
 
   haskellPackages = prev.haskellPackages.override
