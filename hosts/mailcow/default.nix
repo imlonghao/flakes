@@ -55,9 +55,9 @@
   # Start renovate @hourly
   services.cron = {
     enable = true;
-    systemCronJobs = ''
-      0 * * * * root ${pkgs.docker} start renovate
-    '';
+    systemCronJobs = [
+      "0 * * * * root ${pkgs.docker} start renovate"
+    ];
   };
 
 }
