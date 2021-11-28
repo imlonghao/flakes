@@ -56,7 +56,7 @@
   services.cron = {
     enable = true;
     systemCronJobs = [
-      "0 * * * * root ${pkgs.docker} start renovate"
+      "0 * * * * root ${pkgs.docker}/bin/docker start renovate"
     ];
   };
 
