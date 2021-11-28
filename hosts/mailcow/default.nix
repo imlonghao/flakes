@@ -52,4 +52,12 @@
   # SSH Port
   services.openssh.ports = [ 2222 ];
 
+  # Start renovate @hourly
+  services.cron = {
+    enable = true;
+    systemCronJobs = ''
+      0 * * * * root ${pkgs.docker} start renovate
+    '';
+  };
+
 }
