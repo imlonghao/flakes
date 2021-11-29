@@ -8,6 +8,7 @@ channels: final: prev: {
     nixpkgs-fmt
     nomad
     deploy-rs
+    teleport
     ;
 
 
