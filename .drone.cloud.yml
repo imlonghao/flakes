@@ -24,3 +24,10 @@ steps:
   - pacman -Sy --noconfirm sudo
   - INPUT_INSTALL_OPTIONS= INPUT_NIX_PATH= sh <(curl -L https://raw.githubusercontent.com/cachix/install-nix-action/76f99676004c1530baa4c77a5336baa12ec4dc99/lib/install-nix.sh)
   - nix-env -iA cachix -f https://cachix.org/api/v1/install
+  - nix -Lv build ".#rait"
+  - nix -Lv build ".#pingfinder"
+  - nix -Lv develop -c echo OK
+  - curl -o /tmp/push-paths.sh https://raw.githubusercontent.com/cachix/cachix-action/3db1a09d3a573d7b62801116405ad5aa0f59c904/dist/main/push-paths.sh
+  - curl -o /tmp/list-nix-store.sh https://raw.githubusercontent.com/cachix/cachix-action/3db1a09d3a573d7b62801116405ad5aa0f59c904/dist/main/push-paths.sh
+  - chmod +x /tmp/push-paths.sh /tmp/list-nix-store.sh
+  - /tmp/push-paths.sh cachix imlonghao
