@@ -22,10 +22,10 @@ steps:
   - useradd -md /home/$USER $USER
   - patched_glibc=glibc-linux4-2.33-4-x86_64.pkg.tar.zst && curl -LO "https://repo.archlinuxcn.org/x86_64/$patched_glibc" && bsdtar -C / -xvf "$patched_glibc"
   - pacman -Sy --noconfirm sudo git
-  - INPUT_INSTALL_OPTIONS= INPUT_NIX_PATH= sh <(curl -L https://raw.githubusercontent.com/cachix/install-nix-action/76f99676004c1530baa4c77a5336baa12ec4dc99/lib/install-nix.sh)
+  - INPUT_INSTALL_OPTIONS= INPUT_NIX_PATH= sh <(curl -L https://git.esd.cc/mirrors/install-nix-action/raw/commit/ea25556f17ea29b5259072fb3638214584088665/lib/install-nix.sh)
   - nix-env -iA cachix -f https://cachix.org/api/v1/install
-  - curl -o /tmp/push-paths.sh https://raw.githubusercontent.com/cachix/cachix-action/3db1a09d3a573d7b62801116405ad5aa0f59c904/dist/main/push-paths.sh
-  - curl -o /tmp/list-nix-store.sh https://raw.githubusercontent.com/cachix/cachix-action/3db1a09d3a573d7b62801116405ad5aa0f59c904/dist/main/push-paths.sh
+  - curl -o /tmp/push-paths.sh https://git.esd.cc/mirrors/cachix-action/raw/commit/3db1a09d3a573d7b62801116405ad5aa0f59c904/dist/main/push-paths.sh
+  - curl -o /tmp/list-nix-store.sh https://git.esd.cc/mirrors/cachix-action/raw/commit/3db1a09d3a573d7b62801116405ad5aa0f59c904/dist/main/list-nix-store.sh
   - chmod +x /tmp/push-paths.sh /tmp/list-nix-store.sh
   - /tmplist-nix-store.sh > /tmp/store-path-pre-build
   - nix -Lv build ".#rait"
