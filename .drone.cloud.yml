@@ -31,4 +31,4 @@ steps:
   - nix -Lv build ".#rait"
   - nix -Lv build ".#pingfinder"
   - nix -Lv develop -c echo OK
-  - /tmp/push-paths.sh cachix imlonghao
+  - /tmp/push-paths.sh cachix imlonghao ""
