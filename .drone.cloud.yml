@@ -27,7 +27,7 @@ steps:
   - curl -o /tmp/push-paths.sh https://git.esd.cc/mirrors/cachix-action/raw/commit/3db1a09d3a573d7b62801116405ad5aa0f59c904/dist/main/push-paths.sh
   - curl -o /tmp/list-nix-store.sh https://git.esd.cc/mirrors/cachix-action/raw/commit/3db1a09d3a573d7b62801116405ad5aa0f59c904/dist/main/list-nix-store.sh
   - chmod +x /tmp/push-paths.sh /tmp/list-nix-store.sh
-  - /tmplist-nix-store.sh > /tmp/store-path-pre-build
+  - /tmp/list-nix-store.sh > /tmp/store-path-pre-build
   - nix -Lv build ".#rait"
   - nix -Lv build ".#pingfinder"
   - nix -Lv develop -c echo OK
