@@ -20,5 +20,6 @@ steps:
       from_secret: CACHIX_AUTH_TOKEN
   commands:
   - useradd -md /home/$USER $USER
+  - pacman -Sy --noconfirm sudo
   - INPUT_INSTALL_OPTIONS= sh <(curl -L https://raw.githubusercontent.com/cachix/install-nix-action/76f99676004c1530baa4c77a5336baa12ec4dc99/lib/install-nix.sh)
   - nix-env -iA cachix -f https://cachix.org/api/v1/install
