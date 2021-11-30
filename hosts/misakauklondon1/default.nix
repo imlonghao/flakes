@@ -15,7 +15,6 @@
   boot.loader.grub.device = "/dev/vda";
   networking = {
     dhcpcd.allowInterfaces = [ "enp3s0" ];
-    nameservers = [ "8.8.8.8" "1.1.1.1" ];
     interfaces = {
       lo.ipv4.addresses = [
         {
