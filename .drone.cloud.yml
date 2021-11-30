@@ -32,3 +32,6 @@ steps:
   - nix -Lv build ".#pingfinder"
   - nix -Lv develop -c echo OK
   - /tmp/push-paths.sh cachix imlonghao ""
+  when:
+    branch:
+    - main
