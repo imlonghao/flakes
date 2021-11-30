@@ -1,0 +1,17 @@
+---
+kind: pipeline
+type: docker
+name: github-sync
+steps:
+- name: push commit
+  image: appleboy/drone-git-push
+  settings:
+    remote: git@github.com:imlonghao/flakes.git
+    remote_name: origin
+    branch: main
+    local_ref: main
+    ssh_key:
+      from_secret: SSH_PRI_KEY
+  when:
+    event:
+    - push
