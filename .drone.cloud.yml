@@ -20,7 +20,7 @@ steps:
       from_secret: CACHIX_AUTH_TOKEN
   commands:
   - useradd -md /home/$USER $USER
-  - apt update && apt install -y sudo git curl
+  - apt update && apt install -y sudo git curl xz-utils
   - curl -L https://git.esd.cc/mirrors/install-nix-action/raw/commit/ea25556f17ea29b5259072fb3638214584088665/lib/install-nix.sh | INPUT_INSTALL_OPTIONS= INPUT_NIX_PATH= bash
   - nix-env -iA cachix -f https://cachix.org/api/v1/install
   - curl -o /tmp/push-paths.sh https://git.esd.cc/mirrors/cachix-action/raw/commit/3db1a09d3a573d7b62801116405ad5aa0f59c904/dist/main/push-paths.sh
