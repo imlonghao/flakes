@@ -4,7 +4,7 @@ type: docker
 name: build
 steps:
 - name: build
-  image: archlinux
+  image: ubuntu
   environment:
     USER: builder
     INPUT_EXTRA_NIX_CONFIG: |
@@ -20,8 +20,7 @@ steps:
       from_secret: CACHIX_AUTH_TOKEN
   commands:
   - useradd -md /home/$USER $USER
-  - patched_glibc=glibc-linux4-2.33-4-x86_64.pkg.tar.zst && curl -LO "https://repo.archlinuxcn.org/x86_64/$patched_glibc" && bsdtar -C / -xvf "$patched_glibc"
-  - pacman -Sy --noconfirm sudo git
+  - apt update && apt install -y sudo git xz
   - INPUT_INSTALL_OPTIONS= INPUT_NIX_PATH= sh <(curl -L https://git.esd.cc/mirrors/install-nix-action/raw/commit/ea25556f17ea29b5259072fb3638214584088665/lib/install-nix.sh)
   - nix-env -iA cachix -f https://cachix.org/api/v1/install
   - curl -o /tmp/push-paths.sh https://git.esd.cc/mirrors/cachix-action/raw/commit/3db1a09d3a573d7b62801116405ad5aa0f59c904/dist/main/push-paths.sh
@@ -29,8 +28,8 @@ steps:
   - chmod +x /tmp/push-paths.sh /tmp/list-nix-store.sh
   - /tmp/list-nix-store.sh > /tmp/store-path-pre-build
   - nix -Lv build ".#rait"
+  - nix -Lv build ".#pingfinder"
   - nix -Lv develop -c echo OK
-  - nix -Lv develop -c 'nix -Lv build ".#pingfinder"'
   - /tmp/push-paths.sh cachix imlonghao ""
   when:
     branch:
