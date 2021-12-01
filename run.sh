@@ -2,6 +2,11 @@
 set -e
 set -x
 
+echo "123" > test
+[[ -x test ]] || echo 1
+chmod +x test
+[[ -x test ]] || echo 2
+
 env
 
 cat << EOF > /tmp/config_test
