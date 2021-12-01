@@ -2,6 +2,8 @@
 set -e
 set -x
 
+mount
+
 echo "123" > test
 bash -c "[[ -x test ]] || echo 1"
 chmod +x test
