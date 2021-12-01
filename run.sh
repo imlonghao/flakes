@@ -2,6 +2,8 @@
 set -e
 set -x
 
+env
+
 cat << EOF > /tmp/config_test
 experimental-features = nix-command flakes
 system-features = nixos-test benchmark big-parallel kvm recursive-nix
