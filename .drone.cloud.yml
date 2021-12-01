@@ -29,8 +29,8 @@ steps:
   - chmod +x /tmp/push-paths.sh /tmp/list-nix-store.sh
   - /tmp/list-nix-store.sh > /tmp/store-path-pre-build
   - nix -Lv build ".#rait"
-  - nix -Lv build ".#pingfinder"
   - nix -Lv develop -c echo OK
+  - nix -Lv develop -c 'nix -Lv build ".#pingfinder"'
   - /tmp/push-paths.sh cachix imlonghao ""
   when:
     branch:
