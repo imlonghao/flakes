@@ -3,13 +3,6 @@ kind: pipeline
 type: docker
 name: build
 steps:
-- name: test
-  image: ubuntu
-  commands:
-  - ./run.sh
-  when:
-    branch:
-    - main
 - name: build
   image: ubuntu
   environment:
@@ -40,4 +33,4 @@ steps:
   - /tmp/push-paths.sh cachix imlonghao ""
   when:
     branch:
-    - dummy
+    - main

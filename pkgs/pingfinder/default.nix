@@ -26,9 +26,7 @@ stdenv.mkDerivation rec {
 
   installPhase = ''
     runHook preInstall
-    install -Dm 0755 "${src}" "$out/bin/pingfinder"
-    [[ -f "$out/bin/pingfinder" ]] || echo "fail 1"
-    [[ -x "$out/bin/pingfinder" ]] || echo "fail 2"
+    install -Dm "${src}" "$out/bin/pingfinder"
     wrapProgram "$out/bin/pingfinder" --set PATH "${lib.makeBinPath [
       coreutils
       curl
