@@ -1,6 +1,9 @@
 { config, pkgs, self, ... }:
 {
-  sops.secrets.root.sopsFile = "${self}/secrets/shadow.yml";
+  sops.secrets.root = {
+    sopsFile = "${self}/secrets/shadow.yml";
+    neededForUsers = true;
+  };
   users.users.root = {
     passwordFile = config.sops.secrets.root.path;
     openssh.authorizedKeys.keys = [
