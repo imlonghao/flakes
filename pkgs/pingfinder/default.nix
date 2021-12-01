@@ -28,7 +28,7 @@ stdenv.mkDerivation rec {
     runHook preInstall
     install -Dm 0755 "${src}" "$out/bin/pingfinder"
     ls -al "$out/bin/"
-    pwd
+   [[ -f "$out/bin/pingfinder" && -x "$out/bin/pingfinder" ]] || echo "not an executable file"
     wrapProgram "$out/bin/pingfinder" --set PATH "${lib.makeBinPath [
       coreutils
       curl
