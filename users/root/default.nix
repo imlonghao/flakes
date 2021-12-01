@@ -1,7 +1,8 @@
-{ pkgs, self, ... }:
+{ config, pkgs, self, ... }:
 {
+  sops.secrets.root.sopsFile = "${self}/secrets/shadow.yml";
   users.users.root = {
-    hashedPassword = builtins.readFile "${self}/secrets/root";
+    passwordFile = config.sops.secrets.root.path;
     openssh.authorizedKeys.keys = [
       "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDOg2Z8LyT58mU6l8bP+yw2d1tvLqdhfVkDIdvQrbuDVAh3+z40hFMq3RB4XLjkrQEicgRMDha0Ns4rd31i1QpyT8JXzYlLfuRhP6BAmofVTPkV46HDBzXo+ImbYKIH1fuS3tsMJjahpyfULTYAdVK+1uNjySs60gPNt1xxVWDgtOhahLu0RZnVgrXS9yC3vfZo0
 bWWiZuNxq92HpR9ddIJ62w47ZdtCrikX6GQW9xJOdEtNFEKz+Y9HYOL8uXOv8w1tnM3RDgc5a145ENpmcZ4/CO9TW0LKFsKTfv3C84QkbhwKd9llT/WyZ3twCLWlqCA3kgosdLWd+VDIyZ0feTr1yGCh5A7HbujYWgCft00VisKMgis9CXKR1r2q5tv32atXeWjvwcvAf7bzJkSM83LDWLUKQV6/xvOkrWMXoUSk7IQD/J

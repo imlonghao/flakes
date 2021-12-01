@@ -32,6 +32,7 @@ in
 
   packages = with pkgs; [
     git-crypt
+    sops
   ];
 
   commands = with pkgs; [

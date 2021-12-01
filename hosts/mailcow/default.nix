@@ -1,4 +1,4 @@
-{ pkgs, profiles, ... }:
+{ pkgs, profiles, sops, ... }:
 
 {
   imports = [
@@ -44,6 +44,12 @@
       "/etc/ssh/ssh_host_ed25519_key"
       "/etc/docker/daemon.json"
     ];
+  };
+
+  sops.secrets = {
+    anillc-uin.sopsFile = ./secrets.yaml;
+    anillc-password.sopsFile = ./secrets.yaml;
+    anillc-device.sopsFile = ./secrets.yaml;
   };
 
   # Docker

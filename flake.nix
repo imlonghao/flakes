@@ -42,6 +42,9 @@
 
       impermanence.url = "github:nix-community/impermanence";
 
+      sops-nix.url = github:Mic92/sops-nix;
+      sops-nix.inputs.nixpkgs.follows = "nixpkgs";
+
       # start ANTI CORRUPTION LAYER
       # remove after https://github.com/NixOS/nix/pull/4641
       nixpkgs.follows = "nixos";
@@ -64,6 +67,7 @@
     , nvfetcher
     , deploy
     , impermanence
+    , sops-nix
     , ...
     } @ inputs:
     digga.lib.mkFlake
@@ -113,6 +117,7 @@
               agenix.nixosModules.age
               bud.nixosModules.bud
               impermanence.nixosModules.impermanence
+              sops-nix.nixosModules.sops
             ];
           };
 
