@@ -30,6 +30,7 @@ stdenv.mkDerivation rec {
     ls -al "$out/bin/"
     [[ -f "$out/bin/pingfinder" ]] || echo "fail 1"
     [[ -x "$out/bin/pingfinder" ]] || echo "fail 2"
+    env
     wrapProgram "$out/bin/pingfinder" --set PATH "${lib.makeBinPath [
       coreutils
       curl
