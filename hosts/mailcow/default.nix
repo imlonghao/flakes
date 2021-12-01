@@ -46,12 +46,6 @@
     ];
   };
 
-  sops.secrets = {
-    anillc-uin.sopsFile = ./secrets.yaml;
-    anillc-password.sopsFile = ./secrets.yaml;
-    anillc-device.sopsFile = ./secrets.yaml;
-  };
-
   # Docker
   virtualisation.docker.enable = true;
 
