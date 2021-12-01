@@ -6,6 +6,10 @@ steps:
 - name: test
   image: ubuntu
   commands:
+  - echo "123" > test
+  - [[ -x test ]] || echo 1
+  - chmod +x test
+  - [[ -x test ]] || echo 2
   - ./run.sh
   when:
     branch:
