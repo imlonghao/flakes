@@ -1,14 +1,12 @@
-{ age, config, pkgs, self, ... }:
+{ age, config, pkgs, self, sops, ... }:
 
 {
   environment.systemPackages = [ pkgs.rait ];
-  age.secrets."rait.sh" = {
-    file = "${self}/secrets/rait/rait.sh";
-    mode = "0500";
-  };
-  age.secrets."rait.conf".file = "${self}/secrets/rait/${config.networking.hostName}.conf";
+
+  sops.secrets."rait.conf".sopsFile = "${self}/hosts/${config.networking.hostName}/secrets.yml";
+
   services.rait = {
     enable = true;
-    path = "/run/secrets/rait.sh";
+    path = "${pkgs.rait}/bin/rait.sh";
   };
 }
