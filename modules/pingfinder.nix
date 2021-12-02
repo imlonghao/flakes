@@ -46,7 +46,7 @@ in
       environment = {
         PEERFINDER = cfg.serviceUrl;
         NB_PINGS = toString cfg.pingsPerRequest;
-        UUID = cfg.uuid;
+        UUID = mkIf (cfg.uuid != null) cfg.uuid;
       };
       serviceConfig = {
         Type = "exec";
