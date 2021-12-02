@@ -34,3 +34,15 @@ steps:
   when:
     branch:
     - main
+- name: sync to github
+  image: appleboy/drone-git-push
+  settings:
+    remote: git@github.com:imlonghao/flakes.git
+    remote_name: github
+    branch: main
+    local_ref: main
+    ssh_key:
+      from_secret: SSH_PRI_KEY
+  when:
+    branch:
+    - main
