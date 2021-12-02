@@ -33,6 +33,7 @@ in
   packages = with pkgs; [
     git-crypt
     sops
+    ssh-to-age
   ];
 
   commands = with pkgs; [
