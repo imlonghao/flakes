@@ -58,6 +58,19 @@ in
         }
       ];
     };
+    wg0499 = {
+      ips = [ "fe80::1888/64" ];
+      privateKey = wgPrivKey;
+      listenPort = 20499;
+      allowedIPsAsRoutes = false;
+      peers = [
+        {
+          endpoint = "138.201.54.47:41888";
+          publicKey = "p4yaGWSl2p2Pe3GxUQ3OQREoKPqiSK3svc8+aHnuYzs=";
+          allowedIPs = [ "10.0.0.0/8" "172.20.0.0/14" "172.31.0.0/16" "fe80::/64" "fd00::/8" ];
+        }
+      ];
+    };
     wg1588 = {
       ips = [ "fe80::100/64" ];
       postSetup = "${pkgs.iproute2}/bin/ip addr add 172.22.68.0/32 peer 172.20.16.141/32 dev wg1588";
