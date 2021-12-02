@@ -3,6 +3,18 @@ kind: pipeline
 type: docker
 name: build
 steps:
+- name: sync to github
+  image: appleboy/drone-git-push
+  settings:
+    remote: git@github.com:imlonghao/flakes.git
+    remote_name: github
+    branch: main
+    local_ref: main
+    ssh_key:
+      from_secret: GITHUB_DEPLOY_SSH_KEY
+  when:
+    branch:
+    - main
 - name: build
   image: ubuntu
   environment:
@@ -31,18 +43,6 @@ steps:
   - nix -Lv build ".#pingfinder"
   - nix -Lv develop -c echo OK
   - /tmp/push-paths.sh cachix imlonghao ""
-  when:
-    branch:
-    - main
-- name: sync to github
-  image: appleboy/drone-git-push
-  settings:
-    remote: git@github.com:imlonghao/flakes.git
-    remote_name: github
-    branch: main
-    local_ref: main
-    ssh_key:
-      from_secret: GITHUB_DEPLOY_SSH_KEY
   when:
     branch:
     - main
