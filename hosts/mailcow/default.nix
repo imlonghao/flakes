@@ -46,8 +46,8 @@
     ];
   };
 
-  sops.gnupg.sshKeyPaths = [];
-  sops.age.sshKeyPaths = [ "/etc/ssh/ssh_host_ed25519_key" ];
+  sops.gnupg.sshKeyPaths = [ ];
+  sops.age.sshKeyPaths = [ "/persist/etc/ssh/ssh_host_ed25519_key" ];
 
   # Docker
   virtualisation.docker.enable = true;
