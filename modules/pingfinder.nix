@@ -22,7 +22,8 @@ in
         description = ''
           The identifier of the machine in the peer finder service.
         '';
-        type = types.str;
+        type = with types; nullOr str;
+        default = null;
       };
 
       pingsPerRequest = mkOption {
