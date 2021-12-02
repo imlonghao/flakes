@@ -48,9 +48,9 @@ in
         NB_PINGS = toString cfg.pingsPerRequest;
         UUID = cfg.uuid;
       };
-      environmentFile = mkIf (cfg.environmentFile != null) [ cfg.environmentFile ];
       serviceConfig = {
         Type = "exec";
+        EnvironmentFile = mkIf (cfg.environmentFile != null) [ cfg.environmentFile ];
         ExecStart = ''${pkgs.pingfinder}/bin/pingfinder'';
         DynamicUser = true;
         NoNewPrivileges = true;
