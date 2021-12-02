@@ -1,16 +1,17 @@
 keys:
   - &me_yubikey 57957BAD5D038B07C28EF49A15B26377262268C1
-  - &vps_mailcow age109s77udrlvth6gac7achtzl9d5zursaja062s3z8d2k4q2yzh9ksj0x7kz
+  - &vps_mailcow age14h9xqddgcue0mxajxydwj0yq5vc9r452sds2dptnturvwf4reqtsnnk3md
 creation_rules:
   - path_regex: secrets/[^/]+\.yml$
+    pgp: 57957BAD5D038B07C28EF49A15B26377262268C1
     key_groups:
     - pgp:
       - *me_yubikey
-    - age:
+      age:
       - *vps_mailcow
   - path_regex: hosts/mailcow/[^/]+\.yml$
     key_groups:
     - pgp:
       - *me_yubikey
-    - age:
+      age:
       - *vps_mailcow
