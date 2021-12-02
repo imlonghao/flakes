@@ -30,6 +30,12 @@ in
         default = 5;
         type = types.ints.positive;
       };
+
+      environmentFile = mkOption {
+        type = with types; nullOr path;
+        default = null;
+        example = "/run/secrets/pingfinder.env";
+      };
     };
   };
 
@@ -42,6 +48,7 @@ in
         NB_PINGS = toString cfg.pingsPerRequest;
         UUID = cfg.uuid;
       };
+      environmentFile = mkIf (cfg.environmentFile != null) [ cfg.environmentFile ];
       serviceConfig = {
         Type = "exec";
         ExecStart = ''${pkgs.pingfinder}/bin/pingfinder'';

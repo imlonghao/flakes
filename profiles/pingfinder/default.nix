@@ -1,11 +1,9 @@
-{ config, self, ... }:
+{ config, self, sops, ... }:
 
-let
-  cfg = (builtins.fromJSON (builtins.readFile "${self}/secrets/pingfinder.json"));
-in
 {
+  sops.secrets.pingfinder.sopsFile = "${self}/hosts/${config.networking.hostName}/secrets.yml";
   services.pingfinder = {
     enable = true;
-    uuid = cfg."${config.networking.hostName}";
+    environmentFile = config.sops.secrets.pingfinder.path;
   };
 }
