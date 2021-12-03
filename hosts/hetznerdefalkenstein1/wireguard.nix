@@ -1,4 +1,4 @@
-{ pkgs, self, ... }:
+{ config, pkgs, self, ... }:
 let
   wgPrivKey = (builtins.fromJSON (builtins.readFile "${self}/secrets/wireguard.json")).hetznerdefalkenstein1;
 in
