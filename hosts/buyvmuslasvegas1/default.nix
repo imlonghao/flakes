@@ -48,7 +48,6 @@
   environment.persistence."/persist" = {
     directories = [
       "/var/lib"
-      "/run/secrets"
     ];
     files = [
       "/etc/machine-id"
