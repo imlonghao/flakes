@@ -2,6 +2,7 @@ keys:
   - &me_yubikey 57957BAD5D038B07C28EF49A15B26377262268C1
   - &vps_mailcow age14h9xqddgcue0mxajxydwj0yq5vc9r452sds2dptnturvwf4reqtsnnk3md
   - &vps_hetznerdefalkenstein1 age17mfxq9tatls5n326dh0dragrz2lxsx0ka2pvc55wjhztm38adypsfl99hy
+  - &vps_buyvmuslasvegas1 age1tn2crgjwffdhvn8k7h2yd7et7ze3pqcuzqm80v2pq9pglcdkwyys5fuqyk
 creation_rules:
   - path_regex: secrets/shadow.yml$
     pgp: 57957BAD5D038B07C28EF49A15B26377262268C1
@@ -30,3 +31,9 @@ creation_rules:
       - *me_yubikey
       age:
       - *vps_hetznerdefalkenstein1
+  - path_regex: hosts/buyvmuslasvegas1/secrets.yml$
+    key_groups:
+    - pgp:
+      - *me_yubikey
+      age:
+      - *vps_buyvmuslasvegas1
