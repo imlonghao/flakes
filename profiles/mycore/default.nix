@@ -37,6 +37,11 @@
   };
   services.chrony.enable = true;
 
+  sops.age.sshKeyPaths = [
+    "/etc/ssh/ssh_host_ed25519_key"
+    "/persist/etc/ssh/ssh_host_ed25519_key"
+  ];
+
   time.timeZone = "Asia/Shanghai";
 
   users.mutableUsers = false;
