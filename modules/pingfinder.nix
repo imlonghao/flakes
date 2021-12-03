@@ -48,6 +48,7 @@ in
         PEERFINDER = cfg.serviceUrl;
         NB_PINGS = toString cfg.pingsPerRequest;
         UUID = mkIf (cfg.uuid != null) cfg.uuid;
+        LOGFILE = "/dev/null";
       };
       serviceConfig = {
         Type = "exec";
