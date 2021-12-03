@@ -68,7 +68,6 @@
   environment.persistence."/persist" = {
     directories = [
       "/var/lib"
-      "/run/secrets"
       "/root/.gnupg"
       "/root/.ssh"
       "/var/jfsCache"
