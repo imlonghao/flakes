@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ config, pkgs, ... }:
 
 {
   sops.secrets.wireguard.sopsFile = ./secrets.yml;
