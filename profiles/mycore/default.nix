@@ -35,6 +35,7 @@
     enable = true;
     passwordAuthentication = false;
   };
+  services.chrony.enable = true;
 
   time.timeZone = "Asia/Shanghai";
 
