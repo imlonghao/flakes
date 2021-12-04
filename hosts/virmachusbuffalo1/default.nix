@@ -1,4 +1,4 @@
-{ modulesPath, pkgs, profiles, self, ... }:
+{ config, modulesPath, pkgs, profiles, self, ... }:
 let
   wgPrivKey = (builtins.fromJSON (builtins.readFile "${self}/secrets/wireguard.json")).virmachusbuffalo1;
 in
