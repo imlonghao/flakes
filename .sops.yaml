@@ -7,6 +7,7 @@ keys:
   - &vps_hosthatchsgsingapore1 age1m7e9lwfnu8x2eele4rmflhn8s8vhcf85s4lpt5x4jgd9kyu25s3s3jn3cg
   - &vps_misakauklondon1 age1qsrtlhdmp8sfgkwux0r6frtv9z5apc38ggtgwv6n47pznf43k3zsv0ms8w
   - &vps_nexusbytesuslosangeles1 age169f9w428zvwckcrldzvtgd96twugevm54fw8zxl2929ysxp3nadsujkgek
+  - &vps_starrydnscnhongkong1 age1w52xml8esykwg2hgvqn625q9fa0zfz3ynvcn5tugmsqau6jpcv0sezqzut
 creation_rules:
   - path_regex: secrets/shadow.yml$
     pgp: 57957BAD5D038B07C28EF49A15B26377262268C1
@@ -21,6 +22,7 @@ creation_rules:
       - *vps_hosthatchsgsingapore1
       - *vps_misakauklondon1
       - *vps_nexusbytesuslosangeles1
+      - *vps_starrydnscnhongkong1
   - path_regex: secrets/k3s.yml$
     pgp: 57957BAD5D038B07C28EF49A15B26377262268C1
     key_groups:
@@ -31,6 +33,7 @@ creation_rules:
       - *vps_hosthatchsgsingapore1
       - *vps_misakauklondon1
       - *vps_nexusbytesuslosangeles1
+      - *vps_starrydnscnhongkong1
   - path_regex: hosts/mailcow/secrets.yml$
     key_groups:
     - pgp:
@@ -73,3 +76,9 @@ creation_rules:
       - *me_yubikey
       age:
       - *vps_nexusbytesuslosangeles1
+  - path_regex: hosts/starrydnscnhongkong1/secrets.yml$
+    key_groups:
+    - pgp:
+      - *me_yubikey
+      age:
+      - *vps_starrydnscnhongkong1

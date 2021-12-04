@@ -44,7 +44,6 @@
   environment.persistence."/persist" = {
     directories = [
       "/var/lib"
-      "/run/secrets"
     ];
     files = [
       "/etc/machine-id"
@@ -53,6 +52,8 @@
       "/etc/rancher/node/password"
     ];
   };
+
+  services.teleport.teleport.auth_token = "fd64c74d419e690ab9d5cf99cf5b8b58";
 
   # rait
   services.gravity = {
