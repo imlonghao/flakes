@@ -1,7 +1,5 @@
 { config, modulesPath, pkgs, profiles, self, ... }:
-let
-  wgPrivKey = (builtins.fromJSON (builtins.readFile "${self}/secrets/wireguard.json")).virmachusbuffalo1;
-in
+
 {
   imports = [
     profiles.mycore
@@ -35,17 +33,6 @@ in
   boot.initrd.kernelModules = [ "nvme" ];
   fileSystems."/" = { device = "/dev/vda1"; fsType = "ext4"; };
   swapDevices = [{ device = "/dev/vda2"; }];
-
-  environment.persistence."/persist" = {
-    directories = [
-      "/var/lib"
-    ];
-    files = [
-      "/etc/machine-id"
-      "/etc/ssh/ssh_host_rsa_key"
-      "/etc/ssh/ssh_host_ed25519_key"
-    ];
-  };
 
   services.teleport.teleport.auth_token = "fd64c74d419e690ab9d5cf99cf5b8b58";
 
