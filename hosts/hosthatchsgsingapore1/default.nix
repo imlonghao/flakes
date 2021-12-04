@@ -42,7 +42,6 @@
   environment.persistence."/persist" = {
     directories = [
       "/var/lib"
-      "/run/secrets"
       "/var/jfsCache"
     ];
     files = [
@@ -51,6 +50,8 @@
       "/etc/ssh/ssh_host_ed25519_key"
     ];
   };
+
+  services.teleport.teleport.auth_token = "fd64c74d419e690ab9d5cf99cf5b8b58";
 
   services.gravity = {
     enable = true;
