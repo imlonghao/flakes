@@ -34,7 +34,7 @@
   fileSystems."/" = { device = "/dev/vda1"; fsType = "ext4"; };
   swapDevices = [{ device = "/dev/vda2"; }];
 
-  services.teleport.teleport.auth_token = "fd64c74d419e690ab9d5cf99cf5b8b58";
+  services.teleport.teleport.auth_token = "8658b42da9e1a5a235946ccb5a3262d0.";
 
   # Bird
   services.bird2 = {
