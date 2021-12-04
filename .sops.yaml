@@ -5,6 +5,7 @@ keys:
   - &vps_buyvmuslasvegas1 age1tn2crgjwffdhvn8k7h2yd7et7ze3pqcuzqm80v2pq9pglcdkwyys5fuqyk
   - &vps_buyvmusmiami1 age17udapsqm2lx6u6jkcugwlu2a90sv6uasfzap0vd2du5ecxrsn44q6e82pu
   - &vps_hosthatchsgsingapore1 age1m7e9lwfnu8x2eele4rmflhn8s8vhcf85s4lpt5x4jgd9kyu25s3s3jn3cg
+  - &vps_misakauklondon1 age1qsrtlhdmp8sfgkwux0r6frtv9z5apc38ggtgwv6n47pznf43k3zsv0ms8w
 creation_rules:
   - path_regex: secrets/shadow.yml$
     pgp: 57957BAD5D038B07C28EF49A15B26377262268C1
@@ -14,6 +15,10 @@ creation_rules:
       age:
       - *vps_mailcow
       - *vps_hetznerdefalkenstein1
+      - *vps_buyvmuslasvegas1
+      - *vps_buyvmusmiami1
+      - *vps_hosthatchsgsingapore1
+      - *vps_misakauklondon1
   - path_regex: secrets/k3s.yml$
     pgp: 57957BAD5D038B07C28EF49A15B26377262268C1
     key_groups:
@@ -22,6 +27,7 @@ creation_rules:
       age:
       - *vps_hetznerdefalkenstein1
       - *vps_hosthatchsgsingapore1
+      - *vps_misakauklondon1
   - path_regex: hosts/mailcow/secrets.yml$
     key_groups:
     - pgp:
@@ -52,3 +58,9 @@ creation_rules:
       - *me_yubikey
       age:
       - *vps_hosthatchsgsingapore1
+  - path_regex: hosts/misakauklondon1/secrets.yml$
+    key_groups:
+    - pgp:
+      - *me_yubikey
+      age:
+      - *vps_misakauklondon1
