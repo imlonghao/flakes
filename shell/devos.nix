@@ -37,7 +37,6 @@ in
 
   commands = with pkgs; [
     (devos nixUnstable)
-    (devos agenix)
     {
       category = "devos";
       name = pkgs.nvfetcher-bin.pname;
