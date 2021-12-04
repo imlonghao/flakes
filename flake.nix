@@ -27,9 +27,6 @@
 
       deploy.follows = "digga/deploy";
 
-      agenix.url = "github:ryantm/agenix";
-      agenix.inputs.nixpkgs.follows = "latest";
-
       nvfetcher.url = "github:berberman/nvfetcher";
       nvfetcher.inputs.nixpkgs.follows = "latest";
       nvfetcher.inputs.flake-compat.follows = "digga/deploy/flake-compat";
@@ -63,7 +60,6 @@
     , home
     , nixos-hardware
     , nur
-    , agenix
     , nvfetcher
     , deploy
     , impermanence
@@ -81,7 +77,6 @@
             imports = [ (digga.lib.importOverlays ./overlays) ];
             overlays = [
               nur.overlay
-              agenix.overlay
               nvfetcher.overlay
               ./pkgs/default.nix
             ];
@@ -114,7 +109,6 @@
               digga.nixosModules.bootstrapIso
               digga.nixosModules.nixConfig
               home.nixosModules.home-manager
-              agenix.nixosModules.age
               bud.nixosModules.bud
               impermanence.nixosModules.impermanence
               sops-nix.nixosModules.sops
