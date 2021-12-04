@@ -1,12 +1,11 @@
-{ pkgs, self, ... }:
-let
-  wgPrivKey = (builtins.fromJSON (builtins.readFile "${self}/secrets/wireguard.json")).uovzcnhongkong1;
-in
+{ config, pkgs, ... }:
+
 {
+  sops.secrets.wireguard.sopsFile = ./secrets.yml;
   networking.wireguard.interfaces = {
     wg31111 = {
       ips = [ "fe80::1888/64" ];
-      privateKey = wgPrivKey;
+      privateKeyFile = config.sops.secrets.wireguard.path;
       listenPort = 31111;
       allowedIPsAsRoutes = false;
       peers = [
@@ -19,7 +18,7 @@ in
     wg1817 = {
       ips = [ "fe80::1888/64" ];
       postSetup = "${pkgs.iproute2}/bin/ip addr add 172.22.68.0/32 peer 172.22.77.33/32 dev wg1817";
-      privateKey = wgPrivKey;
+      privateKeyFile = config.sops.secrets.wireguard.path;
       listenPort = 21817;
       allowedIPsAsRoutes = false;
       peers = [
@@ -32,7 +31,7 @@ in
     };
     wg2464 = {
       ips = [ "fe80::1888/64" ];
-      privateKey = wgPrivKey;
+      privateKeyFile = config.sops.secrets.wireguard.path;
       listenPort = 22464;
       allowedIPsAsRoutes = false;
       peers = [
@@ -46,7 +45,7 @@ in
     wg2526 = {
       ips = [ "fe80::1888/64" ];
       postSetup = "${pkgs.iproute2}/bin/ip addr add 172.22.68.0/32 peer 172.22.167.100/32 dev wg2526";
-      privateKey = wgPrivKey;
+      privateKeyFile = config.sops.secrets.wireguard.path;
       listenPort = 22526;
       allowedIPsAsRoutes = false;
       peers = [
@@ -60,7 +59,7 @@ in
     wg2717 = {
       ips = [ "fe80::1888/64" ];
       postSetup = "${pkgs.iproute2}/bin/ip addr add 172.22.68.0/32 peer 172.22.66.66/32 dev wg2717";
-      privateKey = wgPrivKey;
+      privateKeyFile = config.sops.secrets.wireguard.path;
       listenPort = 22717;
       allowedIPsAsRoutes = false;
       peers = [
@@ -74,7 +73,7 @@ in
     wg2980 = {
       ips = [ "fe80::1888:3/64" ];
       postSetup = "${pkgs.iproute2}/bin/ip addr add 172.22.68.3/32 peer 172.23.105.2/32 dev wg2980";
-      privateKey = wgPrivKey;
+      privateKeyFile = config.sops.secrets.wireguard.path;
       listenPort = 22980;
       allowedIPsAsRoutes = false;
       peers = [
@@ -89,7 +88,7 @@ in
     wg3618 = {
       ips = [ "fe80::1888/64" ];
       postSetup = "${pkgs.iproute2}/bin/ip addr add 172.22.68.0/32 peer 172.20.51.98/32 dev wg3618";
-      privateKey = wgPrivKey;
+      privateKeyFile = config.sops.secrets.wireguard.path;
       listenPort = 23618;
       allowedIPsAsRoutes = false;
       peers = [
@@ -103,7 +102,7 @@ in
     wg3632 = {
       ips = [ "fe80::1888/64" ];
       postSetup = "${pkgs.iproute2}/bin/ip addr add 172.22.68.0/32 peer 172.23.36.34/32 dev wg3632";
-      privateKey = wgPrivKey;
+      privateKeyFile = config.sops.secrets.wireguard.path;
       listenPort = 23632;
       allowedIPsAsRoutes = false;
       peers = [
@@ -116,7 +115,7 @@ in
     };
     wg3704 = {
       ips = [ "fe80::1888/64" ];
-      privateKey = wgPrivKey;
+      privateKeyFile = config.sops.secrets.wireguard.path;
       listenPort = 23704;
       allowedIPsAsRoutes = false;
       peers = [
@@ -129,7 +128,7 @@ in
     wg3914 = {
       ips = [ "fe80::1888/64" ];
       postSetup = "${pkgs.iproute2}/bin/ip addr add 172.22.68.0/32 peer 172.20.53.105/32 dev wg3914";
-      privateKey = wgPrivKey;
+      privateKeyFile = config.sops.secrets.wireguard.path;
       listenPort = 23914;
       allowedIPsAsRoutes = false;
       peers = [
