@@ -1,4 +1,4 @@
-{ age, profiles, self, ... }:
+{ profiles, ... }:
 
 {
   imports = [
@@ -62,7 +62,6 @@
   };
 
   # k3s server
-  age.secrets."k3s.token".file = "${self}/secrets/k3s.token";
   services.k3s = {
     enable = true;
     role = "server";
