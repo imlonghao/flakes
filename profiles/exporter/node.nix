@@ -1,6 +1,6 @@
 { config, self, ... }:
 let
-  ip = builtins.replaceStrings [ "/30" ] [ "" ] config.services.gravity.hostAddress;
+  ip = builtins.replaceStrings [ "/24" ] [ "" ] config.services.etherguard-edge.ipv4;
 in
 {
   services.prometheus.exporters.node = {
@@ -12,6 +12,6 @@ in
       "--collector.netdev.device-exclude=^veth[a-z0-9]{8}$"
     ];
   };
-  systemd.services."prometheus-node-exporter".after = [ "gravity.service" ];
+  systemd.services."prometheus-node-exporter".after = [ "etherguard-edge.service" ];
 }
 
