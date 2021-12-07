@@ -16,7 +16,7 @@ in
     systemd.services.etherguard-super = {
       serviceConfig = {
         Type = "simple";
-        ExecStart = ${pkgs.etherguard}/bin/EtherGuard - mode super - config ${cfg.path};
+        ExecStart = "${pkgs.etherguard}/bin/EtherGuard -mode super -config ${cfg.path}";
       };
       wants = [ "network-online.target" ];
       after = [ "network-online.target" ];

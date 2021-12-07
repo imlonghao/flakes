@@ -24,7 +24,7 @@ in
     systemd.services.etherguard-edge = {
       serviceConfig = {
         Type = "simple";
-        ExecStart = ${pkgs.etherguard}/bin/EtherGuard - mode edge - config ${cfg.path};
+        ExecStart = "${pkgs.etherguard}/bin/EtherGuard -mode edge -config ${cfg.path}";
         ExecStartPost = [
           "${iproute2}/bin/ip addr add ${cfg.ipv4} dev eg_net"
           "${iproute2}/bin/ip addr add ${cfg.ipv6} dev eg_net"
