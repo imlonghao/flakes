@@ -2,10 +2,10 @@
 {
   imports = [
     profiles.mycore
-    profiles.rait
     profiles.users.root
     profiles.teleport
     profiles.exporter.node
+    profiles.etherguard.edge
   ];
 
   # Config
@@ -101,13 +101,13 @@
       }
     '';
   };
-  services.gravity = {
-    enable = true;
-    address = "100.64.88.57/30";
-    addressV6 = "2602:feda:1bf:a:f::1/80";
-    hostAddress = "100.64.88.58/30";
-    hostAddressV6 = "2602:feda:1bf:a:f::2/80";
+
+  # EtherGuard
+  services.etherguard-edge = {
+    ipv4 = "100.64.88.58/24";
+    ipv6 = "2602:feda:1bf:deaf::4/64";
   };
+
   services.teleport.ssh_service.listen_addr = "0.0.0.0:13022";
 
   services.teleport.teleport.auth_token = "fd64c74d419e690ab9d5cf99cf5b8b58";
