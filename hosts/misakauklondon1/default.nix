@@ -6,7 +6,6 @@
     ./bird.nix
     profiles.mycore
     profiles.users.root
-    profiles.rait
     profiles.teleport
     profiles.exporter.node
     profiles.k3s
@@ -41,21 +40,12 @@
 
   services.teleport.teleport.auth_token = "fd64c74d419e690ab9d5cf99cf5b8b58";
 
-  # rait
-  services.gravity = {
-    enable = true;
-    address = "100.64.88.73/30";
-    addressV6 = "2602:feda:1bf:a:13::1/80";
-    hostAddress = "100.64.88.74/30";
-    hostAddressV6 = "2602:feda:1bf:a:13::2/80";
-  };
-
   # Docker
   virtualisation.docker.enable = true;
 
   # EtherGuard
   services.etherguard-edge = {
-    ipv4 = "100.64.89.1/25";
-    ipv6 = "2602:feda:1bf:b::1/64";
+    ipv4 = "100.64.88.74/24";
+    ipv6 = "2602:feda:1bf:deaf::1/64";
   };
 }
