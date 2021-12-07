@@ -41,6 +41,7 @@ steps:
   - /tmp/list-nix-store.sh > /tmp/store-path-pre-build
   - nix -Lv build ".#rait"
   - nix -Lv build ".#pingfinder"
+  - nix -Lv build ".#etherguard"
   - nix -Lv develop -c echo OK
   - /tmp/push-paths.sh cachix imlonghao ""
   when:

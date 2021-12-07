@@ -4,4 +4,5 @@ final: prev: {
   # then, call packages with `final.callPackage`
   rait = prev.callPackage ./rait { };
   pingfinder = prev.callPackage ./pingfinder { };
+  etherguard = prev.callPackage ./etherguard { };
 }
