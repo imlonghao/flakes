@@ -7,10 +7,10 @@
     profiles.mycore
     profiles.users.root
     profiles.teleport
-    profiles.rait
     profiles.k3s
     profiles.exporter.node
     profiles.exporter.bird
+    profiles.etherguard.edge
   ];
 
   boot.loader.grub.device = "/dev/vda";
@@ -38,13 +38,10 @@
 
   services.teleport.teleport.auth_token = "fd64c74d419e690ab9d5cf99cf5b8b58";
 
-  # profiles.rait
-  services.gravity = {
-    enable = true;
-    address = "100.64.88.33/30";
-    addressV6 = "2602:feda:1bf:a:9::1/80";
-    hostAddress = "100.64.88.34/30";
-    hostAddressV6 = "2602:feda:1bf:a:9::2/80";
+  # EtherGuard
+  services.etherguard-edge = {
+    ipv4 = "100.64.88.34/24";
+    ipv6 = "2602:feda:1bf:deaf::7/64";
   };
 
   # Coredns IPv6 forwarder

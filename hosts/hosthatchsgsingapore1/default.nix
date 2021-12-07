@@ -8,11 +8,11 @@
     profiles.mycore
     profiles.users.root
     profiles.teleport
-    profiles.rait
     profiles.pingfinder
     profiles.coredns.dn42
     profiles.exporter.node
     profiles.exporter.bird
+    profiles.etherguard.edge
   ];
 
   boot.loader.grub.device = "/dev/vda";
@@ -53,12 +53,10 @@
 
   services.teleport.teleport.auth_token = "fd64c74d419e690ab9d5cf99cf5b8b58";
 
-  services.gravity = {
-    enable = true;
-    address = "100.64.88.61/30";
-    addressV6 = "2602:feda:1bf:a:10::1/80";
-    hostAddress = "100.64.88.62/30";
-    hostAddressV6 = "2602:feda:1bf:a:10::2/80";
+  # EtherGuard
+  services.etherguard-edge = {
+    ipv4 = "100.64.88.62/24";
+    ipv6 = "2602:feda:1bf:deaf::6/64";
   };
 
   # k3s server

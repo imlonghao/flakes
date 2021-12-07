@@ -3,13 +3,13 @@
 {
   imports = [
     profiles.mycore
-    profiles.rait
     profiles.users.root
     profiles.teleport
     profiles.k3s
     profiles.pingfinder
     profiles.exporter.node
     profiles.exporter.bird
+    profiles.etherguard.edge
     (modulesPath + "/profiles/qemu-guest.nix")
   ];
 
@@ -185,12 +185,11 @@
       }
     '';
   };
-  services.gravity = {
-    enable = true;
-    address = "100.64.88.25/30";
-    addressV6 = "2602:feda:1bf:a:7::1/80";
-    hostAddress = "100.64.88.26/30";
-    hostAddressV6 = "2602:feda:1bf:a:7::2/80";
+
+  # EtherGuard
+  services.etherguard-edge = {
+    ipv4 = "100.64.88.26/24";
+    ipv6 = "2602:feda:1bf:deaf::10/64";
   };
 
   sops.secrets.wireguard.sopsFile = ./secrets.yml;

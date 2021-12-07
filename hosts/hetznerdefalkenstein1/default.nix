@@ -8,11 +8,11 @@
     profiles.mycore
     profiles.users.root
     profiles.teleport
-    profiles.rait
     profiles.exporter.node
     profiles.exporter.bird
     profiles.k3s
     profiles.pingfinder
+    profiles.etherguard.edge
   ];
 
   nix.gc.dates = "monthly";
@@ -82,13 +82,10 @@
 
   services.teleport.teleport.auth_token = "fd64c74d419e690ab9d5cf99cf5b8b58";
 
-  # profiles.rait
-  services.gravity = {
-    enable = true;
-    address = "100.64.88.49/30";
-    addressV6 = "2602:feda:1bf:a:d::1/80";
-    hostAddress = "100.64.88.50/30";
-    hostAddressV6 = "2602:feda:1bf:a:d::2/80";
+  # EtherGuard
+  services.etherguard-edge = {
+    ipv4 = "100.64.88.50/24";
+    ipv6 = "2602:feda:1bf:deaf::5/64";
   };
 
   # GPG
