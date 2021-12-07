@@ -26,6 +26,7 @@ in
         Type = "simple";
         ExecStart = "${pkgs.etherguard}/bin/EtherGuard-VPN -mode edge -config ${cfg.path}";
         ExecStartPost = [
+          "${pkgs.coreutils}/bin/sleep 10"
           "${pkgs.iproute2}/bin/ip addr add ${cfg.ipv4} dev eg_net"
           "${pkgs.iproute2}/bin/ip addr add ${cfg.ipv6} dev eg_net"
         ];
