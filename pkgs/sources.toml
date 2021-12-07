@@ -13,3 +13,7 @@ src.branch = "4via6"
 src.git = "https://github.com/imlonghao/babeld"
 fetch.github = "imlonghao/babeld"
 git.fetchSubmodules = true
+
+[etherguard]
+src.git = "https://github.com/KusakabeSi/EtherGuard-VPN"
+fetch.github = "KusakabeSi/EtherGuard-VPN"
