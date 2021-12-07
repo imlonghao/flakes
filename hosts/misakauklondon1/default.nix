@@ -10,6 +10,8 @@
     profiles.teleport
     profiles.exporter.node
     profiles.k3s
+    profiles.etherguard.super
+    profiles.etherguard.edge
   ];
 
   boot.loader.grub.device = "/dev/vda";
@@ -50,4 +52,10 @@
 
   # Docker
   virtualisation.docker.enable = true;
+
+  # EtherGuard
+  services.etherguard-edge = {
+    ipv4 = "100.64.89.1/25";
+    ipv6 = "2602:feda:1bf:b::1/64";
+  };
 }
