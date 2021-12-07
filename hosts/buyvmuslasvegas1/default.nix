@@ -7,11 +7,11 @@
     ./wireguard.nix
     profiles.mycore
     profiles.users.root
-    profiles.rait
     profiles.teleport
     profiles.pingfinder
     profiles.exporter.node
     profiles.exporter.bird
+    profiles.etherguard.edge
   ];
 
   boot.loader.grub.device = "/dev/vda";
@@ -58,13 +58,10 @@
 
   services.teleport.teleport.auth_token = "fd64c74d419e690ab9d5cf99cf5b8b58";
 
-  # rait
-  services.gravity = {
-    enable = true;
-    address = "100.64.88.65/30";
-    addressV6 = "2602:feda:1bf:a:11::1/80";
-    hostAddress = "100.64.88.66/30";
-    hostAddressV6 = "2602:feda:1bf:a:11::2/80";
+  # EtherGuard
+  services.etherguard-edge = {
+    ipv4 = "100.64.88.66/24";
+    ipv6 = "2602:feda:1bf:deaf::2/64";
   };
 
 }
