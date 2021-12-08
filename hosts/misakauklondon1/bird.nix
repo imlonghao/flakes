@@ -74,8 +74,8 @@
         rr client;
         direct;
         ipv4 {
-          import where is_valid_network() || net ~ [100.64.88.0/24, 172.22.68.0/{28,32}, 44.31.42.0/24];
-          export where is_valid_network() || net ~ [100.64.88.0/24, 172.22.68.0/{28,32}, 44.31.42.0/24];
+          import where is_valid_network() || net ~ [100.64.88.0/24, 172.22.68.0/28+, 44.31.42.0/24];
+          export where is_valid_network() || net ~ [100.64.88.0/24, 172.22.68.0/28+, 44.31.42.0/24];
         };
         ipv6 {
           import where is_valid_network_v6() || net ~ 2602:feda:1bf::/48;
