@@ -66,17 +66,20 @@
           export all;
         };
       }
-      protocol babel gravity {
+      protocol bgp RR {
+        local as 4242421888;
+        neighbor 100.64.88.0/24 as 133846;
+        interface eg_net;
+        passive on;
+        rr client;
         ipv4 {
-          import all;
-          export where net ~ 100.64.88.0/24;
+          import where is_valid_network() || net ~ [100.64.88.0/24, 172.22.68.0/28, 44.31.42.0/24];
+          export where is_valid_network() || net ~ [100.64.88.0/24, 172.22.68.0/28, 44.31.42.0/24];
         };
         ipv6 {
-          import all;
-          export where net ~ 2602:feda:1bf::/48;
+          import where is_valid_network_v6() || net ~ 2602:feda:1bf::/48;
+          export where is_valid_network_v6() || net ~ 2602:feda:1bf::/48;
         };
-        randomize router id;
-        interface "gravity";
       }
       template bgp dnpeers {
         local as 4242421888;
