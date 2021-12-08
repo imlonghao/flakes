@@ -69,7 +69,7 @@
       protocol bgp RR {
         local as 4242421888;
         neighbor range 100.64.88.0/24;
-        interface eg_net;
+        interface "eg_net";
         rr client;
         ipv4 {
           import where is_valid_network() || net ~ [100.64.88.0/24, 172.22.68.0/28, 44.31.42.0/24];
