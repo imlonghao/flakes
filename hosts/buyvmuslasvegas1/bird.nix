@@ -75,7 +75,7 @@
         local as 4242421888;
         neighbor internal;
         neighbor fe80::dcad:beff:feef:1;
-        interface eg_net;
+        interface "eg_net";
         ipv4 {
           import all;
           export all;
