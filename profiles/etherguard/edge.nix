@@ -1,7 +1,7 @@
 { age, config, pkgs, self, sops, ... }:
 
 {
-  sops.secrets."etherguard.edge".sopsFile = {
+  sops.secrets."etherguard.edge" = {
     sopsFile = "${self}/hosts/${config.networking.hostName}/secrets.yml";
     restartUnits = [ "etherguard-edge.service" ];
   };
