@@ -70,7 +70,6 @@
         local as 4242421888;
         neighbor range 100.64.88.0/24 as 133846;
         interface eg_net;
-        passive on;
         rr client;
         ipv4 {
           import where is_valid_network() || net ~ [100.64.88.0/24, 172.22.68.0/28, 44.31.42.0/24];
