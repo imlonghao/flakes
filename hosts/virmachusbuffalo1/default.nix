@@ -107,17 +107,20 @@
           export all;
         };
       }
-      protocol babel gravity {
+      protocol bgp RR {
+        local as 4242421888;
+        neighbor internal;
+        neighbor fe80::dcad:beff:feef:1;
+        interface "eg_net";
+        direct;
         ipv4 {
           import all;
-          export where net ~ 100.64.88.0/24 || net = 172.22.68.1/32;
+          export all;
         };
         ipv6 {
           import all;
-          export where net ~ 2602:feda:1bf::/48;
+          export all;
         };
-        randomize router id;
-        interface "gravity";
       }
       template bgp dnpeers {
         local as 4242421888;
