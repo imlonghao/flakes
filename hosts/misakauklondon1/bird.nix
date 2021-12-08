@@ -68,7 +68,7 @@
       }
       protocol bgp RR {
         local as 4242421888;
-        neighbor range 100.64.88.0/24 as 133846;
+        neighbor range 100.64.88.0/24;
         interface eg_net;
         rr client;
         ipv4 {
