@@ -14,13 +14,13 @@
   };
   etherguard = {
     pname = "etherguard";
-    version = "89f1548dd46eeef9d3bb5cfc3063eb4b2d87ca25";
+    version = "32b674d629109aad744384e5526ba82b6db2cb14";
     src = fetchFromGitHub ({
       owner = "KusakabeSi";
       repo = "EtherGuard-VPN";
-      rev = "89f1548dd46eeef9d3bb5cfc3063eb4b2d87ca25";
+      rev = "32b674d629109aad744384e5526ba82b6db2cb14";
       fetchSubmodules = false;
-      sha256 = "01dkfsxzdisd2wiln288c5kq7pjlkrzj5syq4i339bpbg0nb4x47";
+      sha256 = "063zywnksyb5nyblmy0yplwaih2v60snanx24dqzvpsf4bmssc6w";
     });
   };
   manix = {
