@@ -106,16 +106,44 @@
           };
         };
       }
+      roa4 table dn42_roa;
+      roa6 table dn42_roa_v6;
+      protocol rpki rpki_dn42{
+        roa4 { table dn42_roa; };
+        roa6 { table dn42_roa_v6; };
+        remote "103.167.150.135" port 8282;
+        retry keep 90;
+        refresh keep 900;
+        expire keep 172800;
+      }
       template bgp dnpeers {
         local as 4242421888;
         graceful restart on;
         ipv4 {
           extended next hop;
-          import where is_valid_network();
+          import filter {
+            if (roa_check(dn42_roa, net, bgp_path.last) != ROA_VALID) then {
+              print "[dn42] ROA check failed for ", net, " ASN ", bgp_path.last;
+              reject;
+            }
+            if !is_valid_network() then {
+              reject;
+            }
+            accept;
+          };
           export where is_valid_network();
         };
         ipv6 {
-          import where is_valid_network_v6();
+          import filter {
+            if (roa_check(dn42_roa_v6, net, bgp_path.last) != ROA_VALID) then {
+              print "[dn42] ROA check failed for ", net, " ASN ", bgp_path.last;
+              reject;
+            }
+            if !is_valid_network_v6() then {
+              reject;
+            }
+            accept;
+          };
           export where is_valid_network_v6();
         };
       }
