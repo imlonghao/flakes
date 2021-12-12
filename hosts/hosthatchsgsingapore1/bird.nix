@@ -88,8 +88,8 @@
           export all;
         };
       }
-      roa4 table dn42_roa;
-      roa6 table dn42_roa_v6;
+      roa4 table dn42_roa {};
+      roa6 table dn42_roa_v6 {};
       protocol rpki rpki_dn42{
         roa4 { table dn42_roa; };
         roa6 { table dn42_roa_v6; };
