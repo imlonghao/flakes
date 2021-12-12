@@ -88,8 +88,8 @@
           export all;
         };
       }
-      roa4 table dn42_roa {};
-      roa6 table dn42_roa_v6 {};
+      roa4 table dn42_roa;
+      roa6 table dn42_roa_v6;
       protocol rpki rpki_dn42{
         roa4 { table dn42_roa; };
         roa6 { table dn42_roa_v6; };
@@ -108,7 +108,7 @@
               print "[dn42] ROA check failed for ", net, " ASN ", bgp_path.last;
               reject;
             }
-            if !is_valid_network() {
+            if !is_valid_network() then {
               reject;
             }
             accept;
@@ -121,7 +121,7 @@
               print "[dn42] ROA check failed for ", net, " ASN ", bgp_path.last;
               reject;
             }
-            if !is_valid_network_v6() {
+            if !is_valid_network_v6() then {
               reject;
             }
             accept;
