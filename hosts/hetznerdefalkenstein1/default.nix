@@ -55,6 +55,7 @@
     git
     git-crypt
     gobuster
+    lego
     metasploit
     nmap
     openvpn
@@ -70,6 +71,7 @@
       "/var/lib"
       "/root/.gnupg"
       "/root/.ssh"
+      "/root/.lego"
       "/var/jfsCache"
     ];
     files = [
