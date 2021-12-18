@@ -110,5 +110,18 @@
         }
       ];
     };
+    wg3918 = {
+      ips = [ "fe80::1888/64" ];
+      privateKeyFile = config.sops.secrets.wireguard.path;
+      listenPort = 23918;
+      allowedIPsAsRoutes = false;
+      peers = [
+        {
+          endpoint = "v4.us-01.public.nodes.supernoc.net:21888";
+          publicKey = "XPPdCmXC7glm/gU3RvGjL+u5VeYbybDhym32aECN2Hg=";
+          allowedIPs = [ "10.0.0.0/8" "172.20.0.0/14" "172.31.0.0/16" "fe80::/64" "fd00::/8" ];
+        }
+      ];
+    };
   };
 }
