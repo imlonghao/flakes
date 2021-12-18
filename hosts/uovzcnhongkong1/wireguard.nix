@@ -15,6 +15,20 @@
         }
       ];
     };
+    wg1588 = {
+      ips = [ "fe80::1888/64" ];
+      postSetup = "${pkgs.iproute2}/bin/ip addr add 172.22.68.0/32 peer 172.20.16.145/32 dev wg1588";
+      privateKeyFile = config.sops.secrets.wireguard.path;
+      listenPort = 21588;
+      allowedIPsAsRoutes = false;
+      peers = [
+        {
+          endpoint = "jp-tyo01.dn42.tech9.io:54012";
+          publicKey = "unTYSat5YjkY+BY31Q9xLSfFhTUBvn3CiDCSZxbINVM=";
+          allowedIPs = [ "10.0.0.0/8" "172.20.0.0/14" "172.31.0.0/16" "fe80::/64" "fd00::/8" ];
+        }
+      ];
+    };
     wg1817 = {
       ips = [ "fe80::1888/64" ];
       postSetup = "${pkgs.iproute2}/bin/ip addr add 172.22.68.0/32 peer 172.22.77.33/32 dev wg1817";
