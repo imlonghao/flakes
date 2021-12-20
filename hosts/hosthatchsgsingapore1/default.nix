@@ -17,15 +17,15 @@
 
   boot.loader.grub.device = "/dev/vda";
   networking.dhcpcd.allowInterfaces = [ "ens3" ];
-  networking.defaultGateway6 = {
-    address = "2406:ef80:2::1";
-  };
-  networking.interfaces.ens3.ipv6.addresses = [
-    {
-      address = "2406:ef80:2:e::";
-      prefixLength = 48;
-    }
-  ];
+  # networking.defaultGateway6 = {
+  #   address = "2406:ef80:2::1";
+  # };
+  # networking.interfaces.ens3.ipv6.addresses = [
+  #   {
+  #     address = "2406:ef80:2:e::";
+  #     prefixLength = 48;
+  #   }
+  # ];
   networking.interfaces.lo.ipv4.addresses = [
     {
       address = "172.22.68.2";
