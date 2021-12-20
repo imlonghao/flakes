@@ -1,4 +1,4 @@
-{ pkgs, profiles, ... }:
+{ pkgs, profiles, sops, ... }:
 
 {
   imports = [
@@ -78,5 +78,15 @@
 
   # Docker
   virtualisation.docker.enable = true;
+
+  # rclone
+  sops.secrets.rclone.sopsFile = "./secrets.yml";
+  services.rclone-a = {
+    enable = true;
+    config = config.sops.secrets.rclone.path;
+    from = "meesdcc:/BilibiliLiveRecord";
+    to = "/persist/docker/jellyfin/media/bililive";
+    before = [ "k3s.service" ];
+  };
 
 }
