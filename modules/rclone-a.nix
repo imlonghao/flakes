@@ -28,7 +28,7 @@ in
     systemd.services.rclone-a = {
       serviceConfig = {
         Type = "simple";
-        ExecStart = "${pkgs.rclone}/bin/rclone mount ${cfg.from} ${cfg.to} --config ${cfg.config}";
+        ExecStart = "${pkgs.rclone}/bin/rclone cmount ${cfg.from} ${cfg.to} --config ${cfg.config}";
       };
       wants = [ "network-online.target" ];
       after = [ "network-online.target" ];
