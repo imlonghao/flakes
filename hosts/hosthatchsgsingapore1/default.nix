@@ -80,7 +80,7 @@
   virtualisation.docker.enable = true;
 
   # rclone
-  sops.secrets.rclone.sopsFile = "./secrets.yml";
+  sops.secrets.rclone.sopsFile = ./secrets.yml;
   services.rclone-a = {
     enable = true;
     config = config.sops.secrets.rclone.path;
