@@ -39,6 +39,11 @@
     }
   ];
 
+  environment.systemPackages = with pkgs; [
+    rclone
+    tmux
+  ];
+
   environment.persistence."/persist" = {
     directories = [
       "/var/lib"
