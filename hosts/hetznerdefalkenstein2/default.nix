@@ -4,6 +4,7 @@
   imports = [
     ./hardware.nix
     profiles.users.root
+    profiles.etherguard.edge
   ];
 
   nix.gc.dates = "monthly";
@@ -62,5 +63,11 @@
 
   # Docker
   virtualisation.docker.enable = true;
+
+  # EtherGuard
+  services.etherguard-edge = {
+    ipv4 = "100.64.88.12/24";
+    ipv6 = "2602:feda:1bf:deaf::12/64";
+  };
 
 }
