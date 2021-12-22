@@ -6,6 +6,9 @@
     profiles.mycore
     profiles.users.root
     profiles.etherguard.edge
+    profiles.teleport
+    profiles.exporter.node
+    profiles.exporter.bird
   ];
 
   nix.gc.dates = "monthly";
@@ -70,5 +73,8 @@
     ipv4 = "100.64.88.12/24";
     ipv6 = "2602:feda:1bf:deaf::12/64";
   };
+
+  # Teleport
+  services.teleport.teleport.auth_token = "916c928451057889ad5d403985713b30";
 
 }
