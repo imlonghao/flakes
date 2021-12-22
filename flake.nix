@@ -194,6 +194,10 @@
             hostname = "misaka-uk-london-1.ni.sb";
             sshUser = "root";
           };
+          hetznerdefalkenstein2 = {
+            hostname = "hetzner-de-falkenstein-2.ni.sb";
+            sshUser = "root";
+          };
         };
 
         defaultTemplate = self.templates.bud;
