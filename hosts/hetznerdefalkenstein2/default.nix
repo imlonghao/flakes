@@ -3,6 +3,7 @@
 {
   imports = [
     ./hardware.nix
+    profiles.mycore
     profiles.users.root
     profiles.etherguard.edge
   ];
