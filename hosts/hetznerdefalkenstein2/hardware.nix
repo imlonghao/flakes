@@ -27,7 +27,7 @@ in
   fileSystems."/pt" = {
     device = "/dev/sda2";
     fsType = "btrfs";
-    options = [ "subvol=@pt" "relatime" "compress=none" "space_cache=v2" ];
+    options = [ "subvol=@pt" "relatime" "compress=none" "compress-force=none" "space_cache=v2" ];
   };
   fileSystems."/persist" = {
     device = "/dev/sda2";
