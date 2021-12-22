@@ -11,6 +11,7 @@ keys:
   - &vps_uovzcnhongkong1 age1wm8t6ajej5e7n6svsfsq0gtv69y369gauvhhqspezt77m2h2ceysr9y6pk
   - &vps_hertzdefalkenstein1 age1qdn82sandycx45gprty2504q62qxmhtfc8ztrmfq7lpsy9lkspzs4xuwkx
   - &vps_virmachusbuffalo1 age1u3uszgtvyfy4gmsq4tk7hu06ag63rjzza9gvd9fky8kew03safnqwkkp48
+  - &vps_hetznerdefalkenstein2 age18g6r3csxxua0r59a5szzmzurr9l7l4tg3qkuxfrfqjrv9v3j359s2gsl8d
 creation_rules:
   - path_regex: secrets/shadow.yml$
     pgp: 57957BAD5D038B07C28EF49A15B26377262268C1
@@ -28,6 +29,7 @@ creation_rules:
       - *vps_starrydnscnhongkong1
       - *vps_uovzcnhongkong1
       - *vps_virmachusbuffalo1
+      - *vps_hetznerdefalkenstein2
   - path_regex: secrets/k3s.yml$
     pgp: 57957BAD5D038B07C28EF49A15B26377262268C1
     key_groups:
@@ -41,6 +43,7 @@ creation_rules:
       - *vps_starrydnscnhongkong1
       - *vps_uovzcnhongkong1
       - *vps_virmachusbuffalo1
+      - *vps_hetznerdefalkenstein2
   - path_regex: hosts/mailcow/secrets.yml$
     key_groups:
     - pgp:
@@ -107,3 +110,9 @@ creation_rules:
       - *me_yubikey
       age:
       - *vps_virmachusbuffalo1
+  - path_regex: hosts/hetznerdefalkenstein2/secrets.yml$
+    key_groups:
+    - pgp:
+      - *me_yubikey
+      age:
+      - *vps_hetznerdefalkenstein2
