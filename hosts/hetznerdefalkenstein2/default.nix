@@ -77,4 +77,13 @@
   # Teleport
   services.teleport.teleport.auth_token = "916c928451057889ad5d403985713b30";
 
+  # rclone
+  sops.secrets.rclone.sopsFile = ./secrets.yml;
+  services.rclone-a = {
+    enable = true;
+    config = config.sops.secrets.rclone.path;
+    from = "meesdcc:/BilibiliLiveRecord";
+    to = "/pt/bililive";
+  };
+
 }
