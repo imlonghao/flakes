@@ -84,6 +84,7 @@
     config = config.sops.secrets.rclone.path;
     from = "meesdcc:/BilibiliLiveRecord";
     to = "/pt/bililive";
+    cacheSize = "100G";
   };
 
 }
