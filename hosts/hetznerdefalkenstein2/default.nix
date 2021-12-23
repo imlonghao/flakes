@@ -89,4 +89,11 @@
     before = [ "k3s.service" ];
   };
 
+  # Deluge
+  services.deluge = {
+    enable = true;
+    web.enable = true;
+    openFilesLimit = 1048576;
+  };
+
 }
