@@ -9,6 +9,7 @@
     profiles.teleport
     profiles.exporter.node
     profiles.exporter.bird
+    profiles.k3s
   ];
 
   nix.gc.dates = "monthly";
@@ -85,6 +86,7 @@
     from = "meesdcc:/BilibiliLiveRecord";
     to = "/pt/bililive";
     cacheSize = "100G";
+    before = [ "k3s.service" ];
   };
 
 }
