@@ -83,9 +83,9 @@
   services.rclone-a = {
     enable = true;
     config = config.sops.secrets.rclone.path;
-    from = "meesdcc:/BilibiliLiveRecord";
-    to = "/pt/bililive";
-    cacheSize = "100G";
+    from = "meesdcc:/";
+    to = "/pt/meesdcc";
+    cacheSize = "300G";
     before = [ "k3s.service" ];
   };
 
