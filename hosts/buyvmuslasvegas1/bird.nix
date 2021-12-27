@@ -92,10 +92,7 @@
         multihop 2;
         password "or2D7evY";
         ipv4 {
-          import filter {
-            gw = 199.19.224.1;
-            accept;
-          };
+          import none;
           export filter {
             if net = 44.31.42.0/24 then {
               bgp_path.prepend(133846);
