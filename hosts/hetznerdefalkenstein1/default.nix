@@ -63,7 +63,6 @@
     python3Packages.requests
     socat
     tmux
-    wget
   ];
 
   environment.persistence."/persist" = {

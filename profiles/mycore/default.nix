@@ -28,6 +28,7 @@
   environment.systemPackages = [
     pkgs.mtr
     pkgs.tcpdump
+    pkgs.wget
   ];
 
   i18n.supportedLocales = [ "en_US.UTF-8/UTF-8" ];
