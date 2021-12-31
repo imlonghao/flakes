@@ -29,20 +29,6 @@
         }
       ];
     };
-    wg1080 = {
-      ips = [ "fe80::1888/64" ];
-      postSetup = "${pkgs.iproute2}/bin/ip addr add 172.22.68.0/32 peer 172.20.229.127/32 dev wg1080";
-      privateKeyFile = config.sops.secrets.wireguard.path;
-      listenPort = 21080;
-      allowedIPsAsRoutes = false;
-      peers = [
-        {
-          endpoint = "dn42-sg01.jlu5.com:21888";
-          publicKey = "eedTHubyl5caiHH50GkknQa8SQtAF8q7aqmL26w5qSs=";
-          allowedIPs = [ "10.0.0.0/8" "172.20.0.0/14" "172.31.0.0/16" "fe80::/64" "fd00::/8" ];
-        }
-      ];
-    };
     wg1588 = {
       ips = [ "fe80::100/64" ];
       postSetup = "${pkgs.iproute2}/bin/ip addr add 172.22.68.0/32 peer 172.20.16.142/32 dev wg1588";
