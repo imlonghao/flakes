@@ -43,6 +43,20 @@
         }
       ];
     };
+    wg2025 = {
+      ips = [ "fe80::1888/64" ];
+      postSetup = "${pkgs.iproute2}/bin/ip addr add 172.22.68.0/32 peer 172.20.222.33/32 dev wg2025";
+      privateKeyFile = config.sops.secrets.wireguard.path;
+      listenPort = 22025;
+      allowedIPsAsRoutes = false;
+      peers = [
+        {
+          endpoint = "hkg1.servers.altk.org:21818";
+          publicKey = "hIkTqemBb7E55I5JXDZ/5V9c/FLUI8BDUM1HHHcd63g=";
+          allowedIPs = [ "10.0.0.0/8" "172.20.0.0/14" "172.31.0.0/16" "fe80::/64" "fd00::/8" ];
+        }
+      ];
+    };
     wg2464 = {
       ips = [ "fe80::1888/64" ];
       privateKeyFile = config.sops.secrets.wireguard.path;
