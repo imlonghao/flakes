@@ -12,8 +12,8 @@ bWWiZuNxq92HpR9ddIJ62w47ZdtCrikX6GQW9xJOdEtNFEKz+Y9HYOL8uXOv8w1tnM3RDgc5a145ENpm
 /Cx+nEjLSziqulABd998s3Ie8ufARsl4uDYX1q9fjYGZyl34qtjLS8dYJtXMGcyKmYob9uStP4CXNgM80eDcMgv1Dc7n9Gs5iwPkhHuUWirEe5PTpisBSIbDBU/+mELJlNQ8Nb1XpHFpCKyNKnG4DRgZk6k1f/yetFaGIVccSqoz8yENTcMlegSuOZQEswBvWQiwMpCnwTDe9Wz3zXRbzeYyJPn/vYCIcVHbdxnJPtuVbH
 lnUteXuaejULw== openpgp:0x1E1A60D7"
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKv5fgCyrSdHw1z4Yvdi28fLs413vLFYk5sYyfC1YHJz imlonghao@imlonghao"
-      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGPiPq3zWmsO7dEJS/xR8+YW2eEFpPoR7ybtXwh0kC3S imlonghao@hetzner-fi-helsinki-1"
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJdjuyWpE3wwjLVXpF/Rs0JjSk9Q6QHhQlrjspFzFA7M root@hetznerdefalkenstein1"
+      "sk-ssh-ed25519@openssh.com AAAAGnNrLXNzaC1lZDI1NTE5QG9wZW5zc2guY29tAAAAIPssSSxz4ZxCS/Tp4TSC4/6P0FQ+bvXWsrl3FTB5denvAAAABHNzaDo= CanoKey"
     ];
     shell = pkgs.fish;
   };
