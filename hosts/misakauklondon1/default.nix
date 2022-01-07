@@ -8,7 +8,6 @@
     profiles.users.root
     profiles.teleport
     profiles.exporter.node
-    profiles.k3s
     profiles.etherguard.super
     profiles.etherguard.edge
   ];
@@ -34,7 +33,6 @@
       "/etc/machine-id"
       "/etc/ssh/ssh_host_rsa_key"
       "/etc/ssh/ssh_host_ed25519_key"
-      "/etc/rancher/node/password"
     ];
   };
 
