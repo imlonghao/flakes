@@ -38,6 +38,10 @@
     ];
   };
 
+  environment.systemPackages = with pkgs; [
+    docker-compose
+  ];
+
   services.teleport.teleport.auth_token = "fd64c74d419e690ab9d5cf99cf5b8b58";
 
   # Docker
