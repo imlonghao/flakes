@@ -38,7 +38,6 @@ creation_rules:
       age:
       - *vps_hetznerdefalkenstein1
       - *vps_hosthatchsgsingapore1
-      - *vps_misakauklondon1
       - *vps_nexusbytesuslosangeles1
       - *vps_starrydnscnhongkong1
       - *vps_uovzcnhongkong1
