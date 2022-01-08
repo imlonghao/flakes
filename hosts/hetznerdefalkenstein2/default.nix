@@ -57,6 +57,8 @@
     directories = [
       "/var/lib"
       "/var/jfsCache"
+      "/root/.ssh"
+      "/root/.lego"
     ];
     files = [
       "/etc/machine-id"
