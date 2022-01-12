@@ -1,7 +1,5 @@
 { config, pkgs, profiles, ... }:
-let
-  hostCertificate = pkgs.writeText "ssh_host_rsa_key-cert.pub" "ssh-ed25519-cert-v01@openssh.com AAAAIHNzaC1lZDI1NTE5LWNlcnQtdjAxQG9wZW5zc2guY29tAAAAIMuxuFzgbZ7XlC5Qj756ozb7Y4dx3HVSX86pQppLVBb6AAAAIBdPipWzQ9/RYt4p28d/H0e4U56zglZ4pdh4HiiifkjfAAAAAAAAAAAAAAACAAAAFWhldHpuZXJkZWZhbGtlbnN0ZWluMgAAAAAAAAAAAAAAAP//////////AAAAAAAAAAAAAAAAAAAAaAAAABNlY2RzYS1zaGEyLW5pc3RwMjU2AAAACG5pc3RwMjU2AAAAQQTuRtglhDg1ZegySmMt+nKOieitdmPjn7Ql1IoYRqbymyjTOf7yJjU8A8wMgiqynDPA2vtVkyCZyGTPapSxvGXWAAAAZAAAABNlY2RzYS1zaGEyLW5pc3RwMjU2AAAASQAAACEAvNw+jmsymLBE6pXZG0K2TuzubjPxforUWumfOYxYYg0AAAAgfRBtnN671GM2at5sux3goI1zK/+Dzmw3q9PWFKo/bmg=";
-in
+
 {
   imports = [
     ./bird.nix
@@ -118,8 +116,5 @@ in
     web.enable = true;
     openFilesLimit = 1048576;
   };
-
-  # OpenSSH
-  services.openssh.hostCertificate = hostCertificate;
 
 }
