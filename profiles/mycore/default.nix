@@ -1,7 +1,4 @@
 { pkgs, ... }:
-let
-  trustedUserCAKeys = pkgs.writeText "user_ca.pub" "ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBO5G2CWEODVl6DJKYy36co6J6K12Y+OftCXUihhGpvKbKNM5/vImNTwDzAyCKrKcM8Da+1WTIJnIZM9qlLG8ZdY=";
-in
 {
   imports = [ ../cachix ];
 
@@ -42,7 +39,6 @@ in
   services.openssh = {
     enable = true;
     passwordAuthentication = false;
-    trustedUserCAKeys = trustedUserCAKeys;
   };
   services.chrony.enable = true;
 
