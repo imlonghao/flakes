@@ -39,7 +39,7 @@ in
   networking.firewall.enable = false;
 
   services.earlyoom.enable = true;
-  services.myopenssh = {
+  services.openssh = {
     enable = true;
     passwordAuthentication = false;
     trustedUserCAKeys = trustedUserCAKeys;

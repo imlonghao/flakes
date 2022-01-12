@@ -21,14 +21,14 @@ let
     sshd -t -f $out -h mock-hostkey
   '';
 
-  cfg  = config.services.myopenssh;
+  cfg  = config.services.openssh;
   cfgc = config.programs.ssh;
 
   nssModulesPath = config.system.nssModules.path;
 
   userOptions = {
 
-    options.myopenssh.authorizedKeys = {
+    options.openssh.authorizedKeys = {
       keys = mkOption {
         type = types.listOf types.str;
         default = [];
@@ -87,7 +87,7 @@ in
 
   options = {
 
-    services.myopenssh = {
+    services.openssh = {
 
       enable = mkOption {
         type = types.bool;
