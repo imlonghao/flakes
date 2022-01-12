@@ -1,4 +1,7 @@
 { modulesPath, profiles, ... }:
+let
+  hostCertificate = pkgs.writeText "ssh_host_rsa_key-cert.pub" "ssh-ed25519-cert-v01@openssh.com AAAAIHNzaC1lZDI1NTE5LWNlcnQtdjAxQG9wZW5zc2guY29tAAAAIEwMyWpuHUOOaJoDwJwWHnMRxzee2bQCXn4or4l+wIpUAAAAIGxXK+vxVnjNTxZU+MzK7jiJJJ0lcq4uOz8Oe88KBiOyAAAAAAAAAAAAAAACAAAAE2hlcnR6ZGVmYWxrZW5zdGVpbjEAAAAAAAAAAAAAAAD//////////wAAAAAAAAAAAAAAAAAAAGgAAAATZWNkc2Etc2hhMi1uaXN0cDI1NgAAAAhuaXN0cDI1NgAAAEEE7kbYJYQ4NWXoMkpjLfpyjonorXZj45+0JdSKGEam8pso0zn+8iY1PAPMDIIqspwzwNr7VZMgmchkz2qUsbxl1gAAAGQAAAATZWNkc2Etc2hhMi1uaXN0cDI1NgAAAEkAAAAhAOpM3M2CS8lgwIlcT/7cGk9eq/zn+wU8e76Po+EaHG82AAAAIDWgfHaNCMS8Axk8LLeZOSfc6v9QThquxU/4+5FnlI71";
+in
 {
   imports = [
     profiles.mycore
@@ -111,4 +114,10 @@
   services.teleport.ssh_service.listen_addr = "0.0.0.0:13022";
 
   services.teleport.teleport.auth_token = "fd64c74d419e690ab9d5cf99cf5b8b58";
+
+  # OpenSSH
+  services.openssh.extraConfig = ''
+    HostCertificate = ${hostCertificate}
+  '';
+
 }
