@@ -2,7 +2,9 @@
 
 {
   imports = [
+    ./bird.nix
     ./hardware.nix
+    ./wireguard.nix
     profiles.mycore
     profiles.users.root
     profiles.etherguard.edge
@@ -10,6 +12,7 @@
     profiles.exporter.node
     profiles.exporter.bird
     profiles.k3s
+    profiles.pingfinder
   ];
 
   nix.gc.dates = "monthly";
@@ -40,18 +43,34 @@
       ];
       lo.ipv4.addresses = [
         {
-          address = "172.22.68.6";
+          address = "172.22.68.4";
           prefixLength = 32;
         }
       ];
       lo.ipv6.addresses = [
         {
-          address = "fd21:5c0c:9b7e:6::";
+          address = "fd21:5c0c:9b7e:4::";
           prefixLength = 64;
         }
       ];
     };
   };
+
+  environment.systemPackages = with pkgs; [
+    dnsutils
+    docker-compose
+    file
+    git
+    gobuster
+    lego
+    metasploit
+    nmap
+    openvpn
+    python3
+    python3Packages.requests
+    socat
+    tmux
+  ];
 
   environment.persistence."/persist" = {
     directories = [

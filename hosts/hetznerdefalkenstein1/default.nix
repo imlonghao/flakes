@@ -2,16 +2,10 @@
 
 {
   imports = [
-    ./bird.nix
     ./hardware.nix
-    ./wireguard.nix
     profiles.mycore
     profiles.users.root
     profiles.teleport
-    profiles.exporter.node
-    profiles.exporter.bird
-    profiles.k3s
-    profiles.pingfinder
     profiles.etherguard.edge
   ];
 
