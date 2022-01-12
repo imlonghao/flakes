@@ -120,6 +120,6 @@ in
   };
 
   # OpenSSH
-  services.openssh.hostCertificate = hostCertificate;
+  services.myopenssh.hostCertificate = hostCertificate;
 
 }
