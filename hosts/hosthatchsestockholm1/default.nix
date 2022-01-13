@@ -4,6 +4,7 @@ let
 in
 {
   imports = [
+    ./borg.nix
     ./hardware.nix
     profiles.mycore
     profiles.users.root
