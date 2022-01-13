@@ -35,4 +35,10 @@ in
     HostCertificate = ${hostCertificate}
   '';
 
+  # EtherGuard
+  services.etherguard-edge = {
+    ipv4 = "100.64.88.16/24";
+    ipv6 = "2602:feda:1bf:deaf::16/64";
+  };
+
 }
