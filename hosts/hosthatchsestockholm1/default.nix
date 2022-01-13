@@ -8,6 +8,7 @@ in
     profiles.mycore
     profiles.users.root
     profiles.teleport
+    profiles.etherguard.edge
   ];
 
   boot.loader.grub.device = "/dev/vda";
