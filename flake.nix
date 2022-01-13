@@ -159,44 +159,34 @@
           };
           hosthatchsgsingapore1 = {
             hostname = "hosthatch-sg-singapore-1.ni.sb";
-            sshUser = "root";
           };
           uovzcnhongkong1 = {
             hostname = "uovz-cn-hongkong-1.ni.sb";
-            sshUser = "root";
           };
           buyvmuslasvegas1 = {
             hostname = "buyvm-us-lasvegas-1.ni.sb";
-            sshUser = "root";
           };
           buyvmusmiami1 = {
             hostname = "buyvm-us-miami-1.ni.sb";
-            sshUser = "root";
           };
           hetznerdefalkenstein1 = {
             hostname = "hetzner-de-falkenstein-1.ni.sb";
-            sshUser = "root";
           };
           nexusbytesuslosangeles1 = {
             hostname = "nexusbytes-us-losangeles-1.ni.sb";
-            sshUser = "root";
           };
           starrydnscnhongkong1 = {
             hostname = "starrydns-cn-hongkong-1.ni.sb";
-            sshUser = "root";
           };
           mailcow = {
             hostname = "mail.esd.cc";
-            sshUser = "root";
             sshOpts = [ "-p" "2222" ];
           };
           misakauklondon1 = {
             hostname = "misaka-uk-london-1.ni.sb";
-            sshUser = "root";
           };
           hetznerdefalkenstein2 = {
             hostname = "hetzner-de-falkenstein-2.ni.sb";
-            sshUser = "root";
           };
         };
 
