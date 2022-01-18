@@ -58,4 +58,16 @@ in
     HostCertificate = ${hostCertificate}
   '';
 
+  # Coredns IPv6 forwarder
+  services.coredns = {
+    enable = true;
+    config = ''
+      . {
+        bind 2a0f:3b03:101:12:5054:ff:fe16:e83c
+        forward . 127.0.0.1
+        cache 30
+      }
+    '';
+  };
+
 }
