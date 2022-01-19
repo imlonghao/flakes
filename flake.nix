@@ -169,9 +169,6 @@
           buyvmusmiami1 = {
             hostname = "buyvm-us-miami-1.ni.sb";
           };
-          hetznerdefalkenstein1 = {
-            hostname = "hetzner-de-falkenstein-1.ni.sb";
-          };
           nexusbytesuslosangeles1 = {
             hostname = "nexusbytes-us-losangeles-1.ni.sb";
           };

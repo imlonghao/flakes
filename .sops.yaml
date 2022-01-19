@@ -1,7 +1,6 @@
 keys:
   - &me_canokey 86962971BE75940CBB19297D29B038B368839CB5
   - &vps_mailcow age14h9xqddgcue0mxajxydwj0yq5vc9r452sds2dptnturvwf4reqtsnnk3md
-  - &vps_hetznerdefalkenstein1 age17mfxq9tatls5n326dh0dragrz2lxsx0ka2pvc55wjhztm38adypsfl99hy
   - &vps_buyvmuslasvegas1 age1tn2crgjwffdhvn8k7h2yd7et7ze3pqcuzqm80v2pq9pglcdkwyys5fuqyk
   - &vps_buyvmusmiami1 age17udapsqm2lx6u6jkcugwlu2a90sv6uasfzap0vd2du5ecxrsn44q6e82pu
   - &vps_hosthatchsgsingapore1 age1m7e9lwfnu8x2eele4rmflhn8s8vhcf85s4lpt5x4jgd9kyu25s3s3jn3cg
@@ -20,7 +19,6 @@ creation_rules:
       - *me_canokey
       age:
       - *vps_mailcow
-      - *vps_hetznerdefalkenstein1
       - *vps_buyvmuslasvegas1
       - *vps_buyvmusmiami1
       - *vps_hosthatchsgsingapore1
@@ -36,7 +34,6 @@ creation_rules:
     - pgp:
       - *me_canokey
       age:
-      - *vps_hetznerdefalkenstein1
       - *vps_hosthatchsgsingapore1
       - *vps_nexusbytesuslosangeles1
       - *vps_starrydnscnhongkong1
@@ -49,12 +46,6 @@ creation_rules:
       - *me_canokey
       age:
       - *vps_mailcow
-  - path_regex: hosts/hetznerdefalkenstein1/secrets.yml$
-    key_groups:
-    - pgp:
-      - *me_canokey
-      age:
-      - *vps_hetznerdefalkenstein1
   - path_regex: hosts/buyvmuslasvegas1/secrets.yml$
     key_groups:
     - pgp:
