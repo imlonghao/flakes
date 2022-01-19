@@ -67,11 +67,13 @@ in
     lego
     metasploit
     nmap
+    openssl
     openvpn
     python3
     python3Packages.requests
     socat
     tmux
+    tree
   ];
 
   environment.persistence."/persist" = {
