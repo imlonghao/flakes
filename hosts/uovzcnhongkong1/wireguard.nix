@@ -30,7 +30,10 @@
     };
     wg1588 = {
       ips = [ "fe80::1888/64" ];
-      postSetup = "${pkgs.iproute2}/bin/ip addr add 172.22.68.0/32 peer 172.20.16.145/32 dev wg1588";
+      postSetup = p[
+        "${pkgs.iproute2}/bin/ip addr add 172.22.68.0/32 peer 172.20.16.145/32 dev wg1588"
+        "${pkgs.iproute2}/bin/ip route change 172.20.16.145 src 172.22.68.3 dev wg1588"
+      ];
       privateKeyFile = config.sops.secrets.wireguard.path;
       listenPort = 21588;
       allowedIPsAsRoutes = false;
@@ -44,7 +47,10 @@
     };
     wg1817 = {
       ips = [ "fe80::1888/64" ];
-      postSetup = "${pkgs.iproute2}/bin/ip addr add 172.22.68.0/32 peer 172.22.77.33/32 dev wg1817";
+      postSetup = [
+        "${pkgs.iproute2}/bin/ip addr add 172.22.68.0/32 peer 172.22.77.33/32 dev wg1817"
+        "${pkgs.iproute2}/bin/ip route change 172.22.77.33 src 172.22.68.3 dev wg1817"
+      ];
       privateKeyFile = config.sops.secrets.wireguard.path;
       listenPort = 21817;
       allowedIPsAsRoutes = false;
@@ -58,7 +64,10 @@
     };
     wg2025 = {
       ips = [ "fe80::1888/64" ];
-      postSetup = "${pkgs.iproute2}/bin/ip addr add 172.22.68.0/32 peer 172.20.222.33/32 dev wg2025";
+      postSetup = [
+        "${pkgs.iproute2}/bin/ip addr add 172.22.68.0/32 peer 172.20.222.33/32 dev wg2025"
+        "${pkgs.iproute2}/bin/ip route change 172.20.222.33 src 172.22.68.3 dev wg2025"
+      ];
       privateKeyFile = config.sops.secrets.wireguard.path;
       listenPort = 22025;
       allowedIPsAsRoutes = false;
@@ -85,7 +94,10 @@
     };
     wg2526 = {
       ips = [ "fe80::1888/64" ];
-      postSetup = "${pkgs.iproute2}/bin/ip addr add 172.22.68.0/32 peer 172.22.167.100/32 dev wg2526";
+      postSetup = [
+        "${pkgs.iproute2}/bin/ip addr add 172.22.68.0/32 peer 172.22.167.100/32 dev wg2526"
+        "${pkgs.iproute2}/bin/ip route change 172.22.167.100 src 172.22.68.3 dev wg2526"
+      ];
       privateKeyFile = config.sops.secrets.wireguard.path;
       listenPort = 22526;
       allowedIPsAsRoutes = false;
@@ -99,7 +111,10 @@
     };
     wg2717 = {
       ips = [ "fe80::1888/64" ];
-      postSetup = "${pkgs.iproute2}/bin/ip addr add 172.22.68.0/32 peer 172.22.66.66/32 dev wg2717";
+      postSetup = [
+        "${pkgs.iproute2}/bin/ip addr add 172.22.68.0/32 peer 172.22.66.66/32 dev wg2717"
+        "${pkgs.iproute2}/bin/ip route change 172.22.66.66 src 172.22.68.3 dev wg2717"
+      ];
       privateKeyFile = config.sops.secrets.wireguard.path;
       listenPort = 22717;
       allowedIPsAsRoutes = false;
@@ -128,7 +143,10 @@
     };
     wg3618 = {
       ips = [ "fe80::1888/64" ];
-      postSetup = "${pkgs.iproute2}/bin/ip addr add 172.22.68.0/32 peer 172.20.51.98/32 dev wg3618";
+      postSetup = [
+        "${pkgs.iproute2}/bin/ip addr add 172.22.68.0/32 peer 172.20.51.98/32 dev wg3618"
+        "${pkgs.iproute2}/bin/ip route change 172.20.51.98 src 172.22.68.3 dev wg3618"
+      ];
       privateKeyFile = config.sops.secrets.wireguard.path;
       listenPort = 23618;
       allowedIPsAsRoutes = false;
@@ -142,7 +160,10 @@
     };
     wg3632 = {
       ips = [ "fe80::1888/64" ];
-      postSetup = "${pkgs.iproute2}/bin/ip addr add 172.22.68.0/32 peer 172.23.36.34/32 dev wg3632";
+      postSetup = [
+        "${pkgs.iproute2}/bin/ip addr add 172.22.68.0/32 peer 172.23.36.34/32 dev wg3632"
+        "${pkgs.iproute2}/bin/ip route change 172.23.36.34 src 172.22.68.3 dev wg3632"
+      ];
       privateKeyFile = config.sops.secrets.wireguard.path;
       listenPort = 23632;
       allowedIPsAsRoutes = false;
@@ -168,7 +189,10 @@
     };
     wg3914 = {
       ips = [ "fe80::1888/64" ];
-      postSetup = "${pkgs.iproute2}/bin/ip addr add 172.22.68.0/32 peer 172.20.53.105/32 dev wg3914";
+      postSetup = [
+        "${pkgs.iproute2}/bin/ip addr add 172.22.68.0/32 peer 172.20.53.105/32 dev wg3914"
+        "${pkgs.iproute2}/bin/ip route change 172.20.53.105 src 172.22.68.3 dev wg3914"
+      ];
       privateKeyFile = config.sops.secrets.wireguard.path;
       listenPort = 23914;
       allowedIPsAsRoutes = false;
