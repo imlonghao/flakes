@@ -30,7 +30,7 @@
     };
     wg1588 = {
       ips = [ "fe80::1888/64" ];
-      postSetup = p[
+      postSetup = [
         "${pkgs.iproute2}/bin/ip addr add 172.22.68.0/32 peer 172.20.16.145/32 dev wg1588"
         "${pkgs.iproute2}/bin/ip route change 172.20.16.145 src 172.22.68.3 dev wg1588"
       ];
