@@ -88,4 +88,16 @@ in
     ipv6 = "2602:feda:1bf:deaf::15/64";
   };
 
+  # Coredns IPv6 forwarder
+  services.coredns = {
+    enable = true;
+    config = ''
+      . {
+        bind 100.64.88.15
+        forward . 172.20.0.53 172.23.0.53
+        cache 30
+      }
+    '';
+  };
+
 }
