@@ -4,9 +4,12 @@ let
 in
 {
   imports = [
+    ./bird.nix
     ./hardware.nix
     profiles.mycore
     profiles.users.root
+    profiles.exporter.node
+    profiles.etherguard.edge
   ];
 
   boot.loader.grub.device = "/dev/sda";
@@ -24,6 +27,20 @@ in
           prefixLength = 64;
         }
       ];
+      lo = {
+        ipv4.addresses = [
+          {
+            address = "172.22.68.6";
+            prefixLength = 32;
+          }
+        ];
+        ipv6.addresses = [
+          {
+            address = "fd21:5c0c:9b7e:6::";
+            prefixLength = 64;
+          }
+        ];
+      };
     };
   };
 
@@ -65,5 +82,11 @@ in
   services.openssh.extraConfig = ''
     HostCertificate = ${hostCertificate}
   '';
+
+  # EtherGuard
+  services.etherguard-edge = {
+    ipv4 = "100.64.88.15/24";
+    ipv6 = "2602:feda:1bf:deaf::15/64";
+  };
 
 }
