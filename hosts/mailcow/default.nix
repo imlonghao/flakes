@@ -92,7 +92,7 @@ in
   services.coredns = {
     enable = true;
     config = ''
-      . {
+      .:5353 {
         bind 100.64.88.15
         forward . 172.20.0.53 172.23.0.53
         cache 30
