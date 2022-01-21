@@ -145,7 +145,7 @@ in
   # fish alias
   programs.fish.shellAliases = {
     nttcom = "whois -h rr.ntt.net";
-    radb = "whois -h whois.radb.net"
+    radb = "whois -h whois.radb.net";
   };
 
 }
