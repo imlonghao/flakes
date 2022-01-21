@@ -74,6 +74,7 @@ in
     socat
     tmux
     tree
+    whois
   ];
 
   environment.persistence."/persist" = {
@@ -139,6 +140,12 @@ in
         cache 30
       }
     '';
+  };
+
+  # fish alias
+  programs.fish.shellAliases = {
+    nttcom = "whois -h rr.ntt.net";
+    radb = "whois -h whois.radb.net"
   };
 
 }
