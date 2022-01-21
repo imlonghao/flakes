@@ -92,7 +92,10 @@ in
   };
 
   # Docker
-  virtualisation.docker.enable = true;
+  virtualisation.docker = {
+    enable = true;
+    storageDriver = "overlay2";
+  };
 
   # EtherGuard
   services.etherguard-edge = {
