@@ -61,6 +61,7 @@ in
   environment.systemPackages = with pkgs; [
     dnsutils
     docker-compose
+    exploitdb
     file
     git
     gobuster
