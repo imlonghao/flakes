@@ -66,6 +66,7 @@ in
     gobuster
     lego
     metasploit
+    ncdu
     nmap
     openssl
     openvpn
