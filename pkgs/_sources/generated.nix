@@ -14,13 +14,13 @@
   };
   etherguard = {
     pname = "etherguard";
-    version = "6c665d194f597f1de03aad6a85a41ce652893026";
+    version = "76071f0d0d9e87a8b9fff6a542b600e4d811b95b";
     src = fetchFromGitHub ({
       owner = "KusakabeSi";
       repo = "EtherGuard-VPN";
-      rev = "6c665d194f597f1de03aad6a85a41ce652893026";
+      rev = "76071f0d0d9e87a8b9fff6a542b600e4d811b95b";
       fetchSubmodules = false;
-      sha256 = "11crfnpakchpka5fvldxfgszpfrvmbc4q8xjpk2sbsi8ffk2jgh1";
+      sha256 = "032mlirld8dqj31vkaqiracavcnn5shsmvl1gbfcrcdy6kjqcm3p";
     });
   };
   manix = {
@@ -36,14 +36,14 @@
   };
   rait = {
     pname = "rait";
-    version = "19076c4a9e52c75c5b5a259f3b47bc3ef703eeb4";
+    version = "b5a755c7f0fc4083fa44e7a40695e23dad155f4f";
     src = fetchgit {
       url = "https://gitlab.com/NickCao/RAIT";
-      rev = "19076c4a9e52c75c5b5a259f3b47bc3ef703eeb4";
+      rev = "b5a755c7f0fc4083fa44e7a40695e23dad155f4f";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "020gz8z4sn60kv9jasq682s8abmdlz841fwvf7zc86ksb79z4m99";
+      sha256 = "1jm17lw6nq9p2alhc471nxx9gm1n2s3av10kzwbhppff5icida9r";
     };
     vendorSha256 = "sha256-55Zu1g+pwTt6dU1QloxfFkG2dbnK5gg84WvRhz2ND3M=";
   };
