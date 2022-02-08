@@ -31,6 +31,13 @@ in
 
   services.teleport.teleport.auth_token = "d6ce0c999ac25cb04af6799ddfd61d51";
 
+  environment.systemPackages = with pkgs; [
+    docker-compose
+  ];
+
+  # Docker
+  virtualisation.docker.enable = true;
+
   # OpenSSH
   services.openssh.extraConfig = ''
     HostCertificate = ${hostCertificate}
