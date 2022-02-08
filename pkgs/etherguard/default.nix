@@ -3,7 +3,7 @@
 buildGoModule rec {
   inherit (sources.etherguard) pname version src;
 
-  vendorSha256 = "sha256-f3F2xxMvNJ37lxM4VaQwZIhU5g8b3ukCwdpgePhZHPM=";
+  vendorSha256 = "sha256-HdCujCp8xk1TPZkncUtUQiK07WVFP5O4OCIUrtEjlsI";
 
   ldflags = [ "-s" "-w" "-X=main.Version=v0.3.5-${version}" ];
 
