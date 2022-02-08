@@ -40,6 +40,13 @@ in
 
   services.teleport.teleport.auth_token = "fd64c74d419e690ab9d5cf99cf5b8b58";
 
+  environment.systemPackages = with pkgs; [
+    docker-compose
+  ];
+
+  # Docker
+  virtualisation.docker.enable = true;
+
   # EtherGuard
   services.etherguard-edge = {
     ipv4 = "100.64.88.34/24";
