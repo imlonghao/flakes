@@ -150,4 +150,10 @@ in
     radb = "whois -h whois.radb.net";
   };
 
+  # owncast
+  services.owncast = {
+    enable = true;
+    listen = "0.0.0.0";
+  };
+
 }
