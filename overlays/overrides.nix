@@ -9,6 +9,7 @@ channels: final: prev: {
     nomad
     deploy-rs
     teleport
+    owncast
     ;
 
 
