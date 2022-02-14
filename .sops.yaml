@@ -12,6 +12,7 @@ keys:
   - &vps_virmachusbuffalo1 age1u3uszgtvyfy4gmsq4tk7hu06ag63rjzza9gvd9fky8kew03safnqwkkp48
   - &vps_hetznerdefalkenstein2 age18g6r3csxxua0r59a5szzmzurr9l7l4tg3qkuxfrfqjrv9v3j359s2gsl8d
   - &vps_hosthatchsestockholm1 age1x7lktd64mjxar0hahhmz4pkp3gk74vcm46tfmyvet5e2x93usyksufjrtc
+  - &vps_oracledefrankfurt1 age1a8n7e54k57fsczpu0zxqadmyp3aal9prc9ez3l729r6d6aqjnvaqzng7ar
 creation_rules:
   - path_regex: secrets/shadow.yml$
     key_groups:
@@ -29,6 +30,7 @@ creation_rules:
       - *vps_virmachusbuffalo1
       - *vps_hetznerdefalkenstein2
       - *vps_hosthatchsestockholm1
+      - *vps_oracledefrankfurt1
   - path_regex: secrets/k3s.yml$
     key_groups:
     - pgp:
@@ -112,3 +114,9 @@ creation_rules:
       - *me_canokey
       age:
       - *vps_hosthatchsestockholm1
+  - path_regex: hosts/oracledefrankfurt1/secrets.yml$
+    key_groups:
+    - pgp:
+      - *me_canokey
+      age:
+      - *vps_oracledefrankfurt1

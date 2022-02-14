@@ -188,6 +188,9 @@
           hosthatchsestockholm1 = {
             hostname = "hosthatch-se-stockholm-1.ni.sb";
           };
+          oracledefrankfurt1 = {
+            hostname = "oracle-de-frankfurt-1.ni.sb";
+          };
         };
 
         defaultTemplate = self.templates.bud;
