@@ -4,6 +4,7 @@ let
 in
 {
   imports = [
+    ./hardware.nix
     profiles.mycore
     profiles.users.root
     profiles.teleport
@@ -12,17 +13,23 @@ in
   ];
 
   # Config
-  networking.dhcpcd.allowInterfaces = [ "enp0s3" ];
+  networking.dhcpcd.allowInterfaces = [ "eth0" ];
 
-  # hardware-configuration.nix
-  boot.loader.grub = {
-    efiSupport = true;
-    efiInstallAsRemovable = true;
-    device = "nodev";
+  # Boot
+  boot.loader.systemd-boot.enable = true;
+  boot.loader.efi.canTouchEfiVariables = true;
+
+  environment.persistence."/persist" = {
+    directories = [
+      "/var/lib"
+      "/root/.ssh"
+    ];
+    files = [
+      "/etc/machine-id"
+      "/etc/ssh/ssh_host_rsa_key"
+      "/etc/ssh/ssh_host_ed25519_key"
+    ];
   };
-  fileSystems."/boot" = { device = "/dev/disk/by-uuid/2DE5-B1AE"; fsType = "vfat"; };
-  boot.initrd.kernelModules = [ "nvme" ];
-  fileSystems."/" = { device = "/dev/sda1"; fsType = "ext4"; };
 
   # EtherGuard
   services.etherguard-edge = {
@@ -30,11 +37,16 @@ in
     ipv6 = "2602:feda:1bf:deaf::17/64";
   };
 
-  services.teleport.teleport.auth_token = "81a18913b6e184a45d145f5c14446c68";
+  services.teleport.teleport.auth_token = "9ed1a7da7e91f1272a4ae229147efd54";
 
   # OpenSSH
   services.openssh.extraConfig = ''
     HostCertificate = ${hostCertificate}
   '';
+  users.users.root = {
+    openssh.authorizedKeys.keys = [
+      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBdCe7gSyrsOvU3iVa1gOIyvKD3NDyU0kVzCFRifcTIa root@nixos"
+    ];
+  };
 
 }
