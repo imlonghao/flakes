@@ -118,6 +118,9 @@
           imports = [ (digga.lib.importHosts ./hosts) ];
           hosts = {
             /* set host specific properties here */
+            oracledefrankfurt1 = {
+              system = "aarch64-linux";
+            };
           };
           importables = rec {
             profiles = digga.lib.rakeLeaves ./profiles // {
