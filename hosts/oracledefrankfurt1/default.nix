@@ -31,6 +31,10 @@ in
     ];
   };
 
+  environment.systemPackages = with pkgs; [
+    docker-compose
+  ];
+
   # EtherGuard
   services.etherguard-edge = {
     ipv4 = "100.64.88.17/24";
@@ -48,5 +52,8 @@ in
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINwH+SQ2Zn0yAjNrsXSIZL7ViulHom4LixUAZQ5e+DoW root@nixos"
     ];
   };
+
+  # Docker
+  virtualisation.docker.enable = true;
 
 }
