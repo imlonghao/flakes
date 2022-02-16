@@ -105,9 +105,7 @@
         "fenix": "fenix",
         "flake-compat": "flake-compat",
         "nixpkgs": [
-          "deploy",
-          "fenix",
-          "nixpkgs"
+          "nixos"
         ],
         "utils": "utils"
       },

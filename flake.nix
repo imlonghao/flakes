@@ -27,10 +27,7 @@
       darwin.inputs.nixpkgs.follows = "nixos";
 
       deploy.url = "github:input-output-hk/deploy-rs";
-#      deploy.inputs.nixpkgs.follows = "nixos";
-
-      agenix.url = "github:ryantm/agenix";
-      agenix.inputs.nixpkgs.follows = "nixos";
+      deploy.inputs.nixpkgs.follows = "nixos";
 
       nvfetcher.url = "github:berberman/nvfetcher";
       nvfetcher.inputs.nixpkgs.follows = "nixos";
@@ -75,11 +72,7 @@
               ./pkgs/default.nix
             ];
           };
-          latest = {
-            overlays = [
-              deploy.overlay
-            ];
-          };
+          latest = { };
         };
 
         lib = import ./lib { lib = digga.lib // nixos.lib; };
