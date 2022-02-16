@@ -13,7 +13,7 @@ in
   ];
 
   # Config
-  networking.dhcpcd.allowInterfaces = [ "eth0" ];
+  networking.dhcpcd.allowInterfaces = [ "enp0s3" ];
 
   # Boot
   boot.loader.systemd-boot.enable = true;
