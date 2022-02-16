@@ -19,16 +19,16 @@ in
     options = [ "defaults" "mode=755" ];
   };
   fileSystems."/boot" = {
-    device = "/dev/disk/by-uuid/2DE5-B1AE";
+    device = "/dev/sda1";
     fsType = "vfat";
   };
   fileSystems."/nix" = {
-    device = "/dev/disk/by-uuid/3a0d39c7-08c6-4ff7-8185-5b33ef3920f2";
+    device = "/dev/sda2";
     fsType = "btrfs";
     options = [ "subvol=@nix" ] ++ mountOptions;
   };
   fileSystems."/persist" = {
-    device = "/dev/disk/by-uuid/3a0d39c7-08c6-4ff7-8185-5b33ef3920f2";
+    device = "/dev/sda2";
     fsType = "btrfs";
     options = [ "subvol=@persist" ] ++ mountOptions;
     neededForBoot = true;

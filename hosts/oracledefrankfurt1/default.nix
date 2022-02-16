@@ -37,7 +37,7 @@ in
     ipv6 = "2602:feda:1bf:deaf::17/64";
   };
 
-  services.teleport.teleport.auth_token = "9ed1a7da7e91f1272a4ae229147efd54";
+  services.teleport.teleport.auth_token = "4a754db4a4e652ab9089bd9a656d683e";
 
   # OpenSSH
   services.openssh.extraConfig = ''
@@ -45,7 +45,7 @@ in
   '';
   users.users.root = {
     openssh.authorizedKeys.keys = [
-      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBdCe7gSyrsOvU3iVa1gOIyvKD3NDyU0kVzCFRifcTIa root@nixos"
+      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINwH+SQ2Zn0yAjNrsXSIZL7ViulHom4LixUAZQ5e+DoW root@nixos"
     ];
   };
 
