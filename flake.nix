@@ -26,7 +26,7 @@
       darwin.url = "github:LnL7/nix-darwin";
       darwin.inputs.nixpkgs.follows = "nixos";
 
-      deploy.url = "github:input-output-hk/deploy-rs";
+      deploy.url = "github:serokell/deploy-rs";
       deploy.inputs.nixpkgs.follows = "nixos";
 
       nvfetcher.url = "github:berberman/nvfetcher";
