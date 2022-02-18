@@ -59,7 +59,7 @@ in
 
   # Garage
   sops.secrets.garage = {
-    sopsFile = "./secrets.yml";
+    sopsFile = ./secrets.yml;
     restartUnits = [ "garage.service" ];
   };
   services.garage = {
