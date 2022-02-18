@@ -24,7 +24,6 @@ in
           "RUST_BACKTRACE=1"
         ];
         StateDirectory = "garage";
-        DynamicUser = true;
         ProtectHome = true;
         NoNewPrivileges = true;
       };
