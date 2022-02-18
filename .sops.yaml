@@ -42,12 +42,6 @@ creation_rules:
       - *vps_uovzcnhongkong1
       - *vps_virmachusbuffalo1
       - *vps_hetznerdefalkenstein2
-  - path_regex: secrets/garage.txt$
-    key_groups:
-    - pgp:
-      - *me_canokey
-      age:
-      - *vps_oracledefrankfurt1
   - path_regex: hosts/mailcow/secrets.yml$
     key_groups:
     - pgp:

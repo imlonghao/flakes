@@ -59,13 +59,12 @@ in
 
   # Garage
   sops.secrets.garage = {
-    format = "binary";
-    sopsFile = "${self}/secrets/garage.txt";
+    sopsFile = "./secrets.yml";
+    restartUnits = [ "garage.service" ];
   };
   services.garage = {
     enable = true;
-    rpc_public_addr = "144.24.174.10:3901";
-    rpc_secret = config.sops.secrets.garage.path;
+    path = config.sops.secrets.garage.path;
   };
 
 }
