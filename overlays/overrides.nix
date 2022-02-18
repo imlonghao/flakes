@@ -10,6 +10,7 @@ channels: final: prev: {
     deploy-rs
     teleport
     owncast
+    garage
     ;
 
 
