@@ -2,7 +2,7 @@
 with lib;
 let
   cfg = config.services.garage;
-  prescript = pkgs.writeScriptBin "generate-config" ''
+  prescript = pkgs.writeScript "generate-config" ''
     #!/bin/sh
     cat << EOF > /etc/garage.toml
     metadata_dir = "/var/lib/private/garage/meta"
