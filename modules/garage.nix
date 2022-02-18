@@ -40,6 +40,9 @@ in
     };
   };
   config = mkIf cfg.enable {
+    environment.systemPackages = with pkgs; [
+      garage
+    ];
     systemd.services.garage = {
       serviceConfig = {
         Type = "simple";
