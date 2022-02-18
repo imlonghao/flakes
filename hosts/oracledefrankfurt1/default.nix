@@ -58,7 +58,10 @@ in
   virtualisation.docker.enable = true;
 
   # Garage
-  sops.secrets.garage.sopsFile = "${self}/secrets/garage.txt";
+  sops.secrets.garage = {
+    format = "binary";
+    sopsFile = "${self}/secrets/garage.txt";
+  };
   services.garage = {
     enable = true;
     rpc_public_addr = "144.24.174.10:3901";
