@@ -18,7 +18,7 @@ in
     systemd.services.garage = {
       serviceConfig = {
         Type = "simple";
-        ExecStart = "${pkgs.garage}/bin/garage server -c ${cfg.path}";
+        ExecStart = "${pkgs.garage}/bin/garage -c ${cfg.path} server";
         Environment = [
           "RUST_LOG=garage=info"
           "RUST_BACKTRACE=1"
