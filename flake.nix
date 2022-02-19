@@ -181,6 +181,9 @@
           oracledefrankfurt1 = {
             hostname = "oracle-de-frankfurt-1.ni.sb";
           };
+          terrahostnosandefjord1 = {
+            hostname = "terrahost-no-sandefjord-1.ni.sb";
+          };
         };
 
         defaultTemplate = self.templates.bud;

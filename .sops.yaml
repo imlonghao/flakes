@@ -13,6 +13,7 @@ keys:
   - &vps_hetznerdefalkenstein2 age18g6r3csxxua0r59a5szzmzurr9l7l4tg3qkuxfrfqjrv9v3j359s2gsl8d
   - &vps_hosthatchsestockholm1 age1x7lktd64mjxar0hahhmz4pkp3gk74vcm46tfmyvet5e2x93usyksufjrtc
   - &vps_oracledefrankfurt1 age1a8n7e54k57fsczpu0zxqadmyp3aal9prc9ez3l729r6d6aqjnvaqzng7ar
+  - &vps_terrahostnosandefjord1 age1zhq4z3srfk0m7njlcgem2av3mzylk89tcfq0t7fhxd0q6xq97ueqtj4dg4
 creation_rules:
   - path_regex: secrets/shadow.yml$
     key_groups:
@@ -120,3 +121,9 @@ creation_rules:
       - *me_canokey
       age:
       - *vps_oracledefrankfurt1
+  - path_regex: hosts/terrahostnosandefjord1/secrets.yml$
+    key_groups:
+    - pgp:
+      - *me_canokey
+      age:
+      - *vps_terrahostnosandefjord1
