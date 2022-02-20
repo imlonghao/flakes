@@ -77,6 +77,7 @@
         interface "eg_net";
         direct;
         ipv4 {
+          extended next hop;
           import all;
           export all;
         };
