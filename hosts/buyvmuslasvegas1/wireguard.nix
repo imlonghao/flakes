@@ -58,6 +58,20 @@
         }
       ];
     };
+    wg1586 = {
+      ips = [ "fe80::1888/64" ];
+      postSetup = "${pkgs.iproute2}/bin/ip addr add 172.22.68.0/32 peer 172.21.75.32/32 dev wg1586";
+      privateKeyFile = config.sops.secrets.wireguard.path;
+      listenPort = 21586;
+      allowedIPsAsRoutes = false;
+      peers = [
+        {
+          endpoint = "lv.dn42.serversc.com:21888";
+          publicKey = "9CO2NAA7vDqnkHP1ro4c0+zm6wEHmdaAF3JMShfTlkA=";
+          allowedIPs = [ "10.0.0.0/8" "172.20.0.0/14" "172.31.0.0/16" "fe80::/64" "fd00::/8" ];
+        }
+      ];
+    };
     wg1817 = {
       ips = [ "fe80::1888/64" ];
       privateKeyFile = config.sops.secrets.wireguard.path;
