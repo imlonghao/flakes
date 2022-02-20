@@ -78,10 +78,12 @@
         interface "eg_net";
         direct;
         ipv4 {
+          next hop self;
           import all;
           export all;
         };
         ipv6 {
+          next hop self;
           import all;
           export all;
         };
