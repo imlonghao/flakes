@@ -11,7 +11,7 @@ in
     profiles.users.root
     profiles.teleport
     profiles.pingfinder
-    profiles.coredns.dn42
+    # profiles.coredns.dn42
     profiles.exporter.node
     profiles.exporter.bird
     profiles.etherguard.edge
