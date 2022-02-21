@@ -103,9 +103,8 @@ in
       gsqlite3-database=/var/lib/pdns.db
       webserver-address=0.0.0.0
       webserver-allow-from=127.0.0.1,::1,100.64.88.0/24
-      webserver-hash-plaintext-credentials=yes
       api=yes
-      api-key=$scrypt$ln=10,p=1,r=8$BIOo26swwfunwM3KyCR9Rg==$f3PvrQ7u+k2dTpXeKpcqNbvOYxjnmHj0rn3fG6ILzzM=
+      api-key=$scrypt$ln=10,p=1,r=8$dF6FdiGAtPK0HVjJBelmYQ==$smRqXRrTqPj0LC+MrM+JEIWQLVoCJCIPEngvSiQB1IU=
     '';
   };
 
