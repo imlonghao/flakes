@@ -107,6 +107,9 @@ in
       api-key=123456
     '';
   };
-  services.mysql.enable = true;
+  services.mysql = {
+    enable = true;
+    package = pkgs.mariadb;
+  };
 
 }
