@@ -104,7 +104,7 @@ in
       webserver-address=0.0.0.0
       webserver-allow-from=127.0.0.1,::1,100.64.88.0/24
       api=yes
-      api-key=$scrypt$ln=10,p=1,r=8$dF6FdiGAtPK0HVjJBelmYQ==$smRqXRrTqPj0LC+MrM+JEIWQLVoCJCIPEngvSiQB1IU=
+      api-key=123456
     '';
   };
 
