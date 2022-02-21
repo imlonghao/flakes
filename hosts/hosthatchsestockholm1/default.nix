@@ -10,6 +10,7 @@ in
     profiles.users.root
     profiles.teleport
     profiles.etherguard.edge
+    profiles.exporter.node
   ];
 
   boot.loader.grub.device = "/dev/vda";
