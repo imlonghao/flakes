@@ -105,6 +105,7 @@ in
       webserver-allow-from=127.0.0.1,::1,100.64.88.0/24
       api=yes
       api-key=123456
+      default-soa-name=ns.imlonghao.dn42.
     '';
   };
   systemd.services.pdns.after = [ "etherguard-edge.service" ];
