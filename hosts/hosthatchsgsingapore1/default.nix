@@ -101,9 +101,9 @@ in
     extraConfig = ''
       launch=gsqlite3
       gsqlite3-database=/var/lib/pdns.db
+      webserver=yes
       webserver-address=0.0.0.0
-      api=yes
-      api-key=$scrypt$ln=10,p=1,r=8$BIOo26swwfunwM3KyCR9Rg==$f3PvrQ7u+k2dTpXeKpcqNbvOYxjnmHj0rn3fG6ILzzM=
+      webserver-key=$scrypt$ln=10,p=1,r=8$BIOo26swwfunwM3KyCR9Rg==$f3PvrQ7u+k2dTpXeKpcqNbvOYxjnmHj0rn3fG6ILzzM=
     '';
   };
 
