@@ -96,4 +96,12 @@ in
     HostCertificate = ${hostCertificate}
   '';
 
+  services.powerdns = {
+    enable = true;
+    extraConfig = ''
+      api=yes
+      api-key=$scrypt$ln=10,p=1,r=8$BIOo26swwfunwM3KyCR9Rg==$f3PvrQ7u+k2dTpXeKpcqNbvOYxjnmHj0rn3fG6ILzzM=
+    '';
+  };
+
 }
