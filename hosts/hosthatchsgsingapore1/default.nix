@@ -107,5 +107,6 @@ in
       api-key=123456
     '';
   };
+  systemd.services.pdns.serviceConfig.ProtectSystem = false;
 
 }
