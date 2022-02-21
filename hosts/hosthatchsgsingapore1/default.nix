@@ -99,14 +99,14 @@ in
   services.powerdns = {
     enable = true;
     extraConfig = ''
-      launch=gsqlite3
-      gsqlite3-database=/var/lib/pdns.db
+      launch=gmysql
+      gmysql-password=234567
       webserver-address=0.0.0.0
       webserver-allow-from=127.0.0.1,::1,100.64.88.0/24
       api=yes
       api-key=123456
     '';
   };
-  systemd.services.pdns.serviceConfig.ProtectSystem = false;
+  services.powerdns.mysql.enable = true;
 
 }
