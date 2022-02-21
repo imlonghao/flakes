@@ -101,12 +101,13 @@ in
     extraConfig = ''
       launch=gmysql
       gmysql-password=234567
-      webserver-address=0.0.0.0
+      webserver-address=100.64.88.64
       webserver-allow-from=127.0.0.1,::1,100.64.88.0/24
       api=yes
       api-key=123456
     '';
   };
+  systemd.services.pdns.after = [ "etherguard-edge.service" ];
   services.mysql = {
     enable = true;
     package = pkgs.mariadb;
