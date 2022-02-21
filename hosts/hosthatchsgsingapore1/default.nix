@@ -107,6 +107,6 @@ in
       api-key=123456
     '';
   };
-  services.powerdns.mysql.enable = true;
+  services.mysql.enable = true;
 
 }
