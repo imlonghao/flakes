@@ -99,6 +99,8 @@ in
   services.powerdns = {
     enable = true;
     extraConfig = ''
+      launch=gsqlite3
+      gsqlite3-database=/var/lib/pdns.db
       api=yes
       api-key=$scrypt$ln=10,p=1,r=8$BIOo26swwfunwM3KyCR9Rg==$f3PvrQ7u+k2dTpXeKpcqNbvOYxjnmHj0rn3fG6ILzzM=
     '';
