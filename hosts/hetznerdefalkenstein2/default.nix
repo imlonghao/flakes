@@ -73,6 +73,7 @@ in
     openvpn
     python3
     python3Packages.requests
+    ripgrep
     socat
     tmux
     tree
