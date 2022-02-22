@@ -32,14 +32,14 @@ in
     {
       address = "172.22.68.2";
       prefixLength = 32;
-    },
+    }
     { address = "172.22.68.8"; prefixLength = 32; }
   ];
   networking.interfaces.lo.ipv6.addresses = [
     {
       address = "fd21:5c0c:9b7e:2::";
       prefixLength = 64;
-    },
+    }
     { address = "fd21:5c0c:9b7e::8"; prefixLength = 128; }
   ];
 
