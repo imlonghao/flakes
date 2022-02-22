@@ -11,7 +11,6 @@ in
     profiles.teleport
     profiles.k3s
     profiles.exporter.node
-    profiles.exporter.bird
     profiles.etherguard.edge
   ];
 
