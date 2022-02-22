@@ -107,8 +107,8 @@ in
       webserver-address=100.64.88.62
       webserver-allow-from=127.0.0.1,::1,100.64.88.0/24
       api=yes
-      api-key=123456
-      default-soa-name=ns.imlonghao.dn42.
+      api-key=$scrypt$ln=10,p=1,r=8$xgVRGiRQT3XsFZOMo/WfSw==$VSWbInxkxV7Bu+SpHuCh3K99iS4PJY+LTRksHnRgKAM=
+      default-soa-content=ns.imlonghao.dn42. hostmaster.@ 0 7200 1800 1209600 3600
     '';
   };
   systemd.services.pdns.after = [ "etherguard-edge.service" ];
