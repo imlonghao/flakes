@@ -104,8 +104,8 @@ in
       local-address=172.22.68.8,fd21:5c0c:9b7e::8
       launch=gmysql
       gmysql-password=234567
-      webserver-address=100.64.88.62
-      webserver-allow-from=127.0.0.1,::1,100.64.88.0/24
+      webserver-address=0.0.0.0
+      webserver-allow-from=0.0.0.0/0
       api=yes
       api-key=$scrypt$ln=10,p=1,r=8$xgVRGiRQT3XsFZOMo/WfSw==$VSWbInxkxV7Bu+SpHuCh3K99iS4PJY+LTRksHnRgKAM=
       default-soa-content=ns.imlonghao.dn42. hostmaster.@ 0 7200 1800 1209600 3600
