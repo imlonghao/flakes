@@ -148,6 +148,19 @@ in
         }
       ];
     };
+    wg2189 = {
+      ips = [ "fe80::1888/64" ];
+      privateKeyFile = config.sops.secrets.wireguard.path;
+      listenPort = 22189;
+      allowedIPsAsRoutes = false;
+      peers = [
+        {
+          endpoint = "de-fra.dn42.kuu.moe:57353";
+          publicKey = "FHp0OR4UpAS8/Ra0FUNffTk18soUYCa6NcvZdOgxY0k=";
+          allowedIPs = [ "10.0.0.0/8" "172.20.0.0/14" "172.31.0.0/16" "fe80::/64" "fd00::/8" ];
+        }
+      ];
+    };
     wg2331 = {
       ips = [ "fe80::1888/64" ];
       privateKeyFile = config.sops.secrets.wireguard.path;
