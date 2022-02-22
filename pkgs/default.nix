@@ -5,4 +5,5 @@ final: prev: {
   rait = prev.callPackage ./rait { };
   pingfinder = prev.callPackage ./pingfinder { };
   etherguard = prev.callPackage ./etherguard { };
+  powerdns = prev.callPackage ./powerdns { };
 }
