@@ -100,4 +100,14 @@ in
     '';
   };
 
+  # Garage
+  sops.secrets.garage = {
+    sopsFile = ./secrets.yml;
+    restartUnits = [ "garage.service" ];
+  };
+  services.garage = {
+    enable = true;
+    path = config.sops.secrets.garage.path;
+  };
+
 }
