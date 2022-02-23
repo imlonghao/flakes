@@ -1,4 +1,4 @@
-{ pkgs, profiles, sops, ... }:
+{ config, pkgs, profiles, sops, ... }:
 let
   hostCertificate = pkgs.writeText "ssh_host_ed25519_key-cert.pub" "ssh-ed25519-cert-v01@openssh.com AAAAIHNzaC1lZDI1NTE5LWNlcnQtdjAxQG9wZW5zc2guY29tAAAAIGizviW/hZYYu1uiv86d+qRmHCAjONpPNNmZ8zNkG0BkAAAAIPOKFMdzyrkcCXX1PwzAQrh9Cd6DFox1ehvclBJroTOeAAAAAAAAAAAAAAACAAAAB21haWxjb3cAAAAAAAAAAAAAAAD//////////wAAAAAAAAAAAAAAAAAAAGgAAAATZWNkc2Etc2hhMi1uaXN0cDI1NgAAAAhuaXN0cDI1NgAAAEEE7kbYJYQ4NWXoMkpjLfpyjonorXZj45+0JdSKGEam8pso0zn+8iY1PAPMDIIqspwzwNr7VZMgmchkz2qUsbxl1gAAAGQAAAATZWNkc2Etc2hhMi1uaXN0cDI1NgAAAEkAAAAhAMU9ZnTsMrH2EbogpD0NX1kuDb61Q7wd1Z56OeiTaqbaAAAAIC9z0A4X5OyAtz1na/QoqagdXDdO/2E163L/Ve1DhqKr";
 in
