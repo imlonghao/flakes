@@ -28,6 +28,23 @@
         }
       ];
     };
+    wg0603 = {
+      ips = [ "fe80::1888/64" ];
+      postSetup = [
+        "${pkgs.iproute2}/bin/ip addr add 172.22.68.0/32 peer 172.23.7.65/32 dev wg0603"
+        "${pkgs.iproute2}/bin/ip route change 172.23.7.65 src 172.22.68.3 dev wg0603"
+      ];
+      privateKeyFile = config.sops.secrets.wireguard.path;
+      listenPort = 20603;
+      allowedIPsAsRoutes = false;
+      peers = [
+        {
+          endpoint = "hk02.nodes.mol.moe:21818";
+          publicKey = "wNNbJyoFBrlpq53p61Ur8V2RNfS3U7KADlK7he64qRk=";
+          allowedIPs = [ "10.0.0.0/8" "172.20.0.0/14" "172.31.0.0/16" "fe80::/64" "fd00::/8" ];
+        }
+      ];
+    };
     wg0831 = {
       ips = [ "fe80::1888/64" ];
       privateKeyFile = config.sops.secrets.wireguard.path;
