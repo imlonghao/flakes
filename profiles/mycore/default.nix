@@ -12,6 +12,7 @@ in
     useSandbox = true;
     allowedUsers = [ "@wheel" ];
     trustedUsers = [ "root" "@wheel" ];
+    package = pkgs.nix_2_4;
     extraOptions = ''
       experimental-features = nix-command flakes ca-derivations
     '';
