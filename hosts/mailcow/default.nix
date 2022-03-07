@@ -129,6 +129,7 @@ in
           to = [
             "garage"
           ];
+          cron = "0 * * * *";
           options = {
             backup = {
               exclude = [
@@ -144,6 +145,7 @@ in
           to = [
             "garage"
           ];
+          cron = "0 0 1 * *";
         };
       };
     };
