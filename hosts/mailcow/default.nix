@@ -10,6 +10,7 @@ in
     profiles.users.root
     profiles.exporter.node
     profiles.etherguard.edge
+    profiles.autorestic
   ];
 
   boot.loader.grub.device = "/dev/sda";
@@ -108,6 +109,36 @@ in
   services.garage = {
     enable = true;
     path = config.sops.secrets.garage.path;
+  };
+
+  # AutoRestic
+  services.autorestic = {
+    settings = {
+      version = 2;
+      backends = {
+        garage = {
+          type = "s3";
+          path = "http://127.0.0.1:3900/restic";
+        };
+      };
+      locations = {
+        mailcow = {
+          from = [
+            "/opt/mailcow-dockerized"
+          ];
+          to = [
+            "garage"
+          ];
+          options = {
+            backup = {
+              exclude-file = [
+                "querylog.json"
+              ];
+            };
+          };
+        };
+      };
+    };
   };
 
 }
