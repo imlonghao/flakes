@@ -131,11 +131,19 @@ in
           ];
           options = {
             backup = {
-              exclude-file = [
+              exclude = [
                 "querylog.json"
               ];
             };
           };
+        };
+        etc = {
+          from = [
+            "/persist/etc"
+          ];
+          to = [
+            "garage"
+          ];
         };
       };
     };
