@@ -17,7 +17,7 @@ in
     systemd.services.autorestic = {
       serviceConfig = {
         Type = "exec";
-        EnvironmentFile = "/run/secret/autorestic";
+        EnvironmentFile = "/run/secrets/autorestic";
         ExecStart = "${pkgs.autorestic}/bin/autorestic -c /etc/autorestic.yml --ci cron";
       };
       wants = [ "network-online.target" ];
