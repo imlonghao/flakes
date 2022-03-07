@@ -11,6 +11,7 @@ channels: final: prev: {
     teleport
     owncast
     garage
+    autorestic
     ;
 
 
