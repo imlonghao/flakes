@@ -2,7 +2,6 @@
 with lib;
 let
   cfg = config.services.autorestic;
-  environment.etc."autorestic.yml".text = builtins.toJSON cfg.settings;
 in
 {
   options.services.autorestic = {
@@ -14,6 +13,7 @@ in
     };
   };
   config = mkIf cfg.enable {
+    environment.etc."autorestic.yml".text = builtins.toJSON cfg.settings;
     systemd.services.autorestic = {
       serviceConfig = {
         Type = "exec";
