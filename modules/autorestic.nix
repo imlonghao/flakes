@@ -18,7 +18,7 @@ in
       serviceConfig = {
         Type = "exec";
         EnvironmentFile = "/run/secrets/autorestic";
-        ExecStart = "${pkgs.autorestic}/bin/autorestic -c /etc/autorestic.yml --ci cron";
+        ExecStart = "${pkgs.autorestic}/bin/autorestic -c /etc/autorestic.yml --restic-bin ${pkgs.restic}/bin/restic --ci cron";
       };
       wants = [ "network-online.target" ];
       after = [ "network-online.target" ];
