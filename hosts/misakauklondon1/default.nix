@@ -63,7 +63,6 @@ in
     enable = true;
     config = ''
       . {
-        bind 45.142.244.141 2a0f:3b03:101:12:5054:ff:fe16:e83c
         forward . 138.201.124.182
         cache 30
       }
