@@ -24,6 +24,7 @@ in
     systemd.services.etherguard-edge = {
       serviceConfig = {
         Type = "simple";
+        ExecStartPre = "${pkgs.bash}/bin/sh -c 'until ${pkgs.iputils}/bin/ping -c1 google.com; do sleep 1; done;'";
         ExecStart = "${pkgs.etherguard}/bin/EtherGuard-VPN -mode edge -config ${cfg.path}";
         ExecStartPost = [
           "${pkgs.coreutils}/bin/sleep 10"
