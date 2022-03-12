@@ -15,6 +15,7 @@ in
     profiles.exporter.bird
     profiles.k3s
     profiles.pingfinder
+    profiles.autorestic
   ];
 
   nix.gc.dates = "monthly";
@@ -92,6 +93,7 @@ in
       "/etc/ssh/ssh_host_rsa_key"
       "/etc/ssh/ssh_host_ed25519_key"
       "/etc/rancher/node/password"
+      "/etc/.autorestic.lock.yml"
     ];
   };
 
@@ -155,6 +157,52 @@ in
   services.owncast = {
     enable = true;
     listen = "0.0.0.0";
+  };
+
+  # AutoRestic
+  services.autorestic = {
+    settings = {
+      version = 2;
+      global = {
+        forget = {
+          keep-hourly = 24;
+          keep-daily = 7;
+          keep-weekly = 4;
+          keep-monthly = 6;
+        };
+      };
+      backends = {
+        garage = {
+          type = "s3";
+          path = "http://127.0.0.1:3900/restic";
+        };
+      };
+      locations = {
+        data = {
+          from = [
+            "/persist/docker/filebrowser"
+            "/persist/docker/jellyfin"
+            "/persist/docker/photoprism"
+            "/persist/docker/trilium"
+            "/persist/docker/vikunja/files"
+            "/persist/docker/timetagger"
+          ];
+          to = [
+            "garage"
+          ];
+          cron = "0 1 * * *";
+        };
+        etc = {
+          from = [
+            "/persist/etc"
+          ];
+          to = [
+            "garage"
+          ];
+          cron = "0 1 * * *";
+        };
+      };
+    };
   };
 
 }
