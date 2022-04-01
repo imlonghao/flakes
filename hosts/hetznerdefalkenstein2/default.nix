@@ -86,6 +86,7 @@ in
     directories = [
       "/var/lib"
       "/var/jfsCache"
+      "/root/.config/gcloud"
       "/root/.ssh"
       "/root/.lego"
     ];
