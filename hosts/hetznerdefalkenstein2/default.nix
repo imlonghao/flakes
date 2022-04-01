@@ -66,6 +66,7 @@ in
     file
     git
     gobuster
+    google-cloud-sdk
     lego
     metasploit
     ncdu
