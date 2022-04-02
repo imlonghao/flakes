@@ -12,6 +12,7 @@ channels: final: prev: {
     owncast
     garage
     autorestic
+    just
     ;
 
 

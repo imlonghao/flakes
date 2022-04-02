@@ -68,6 +68,7 @@ in
     gobuster
     google-cloud-sdk
     lego
+    just
     metasploit
     ncdu
     nmap
@@ -188,6 +189,7 @@ in
             "/persist/docker/trilium"
             "/persist/docker/vikunja/files"
             "/persist/docker/timetagger"
+            "/persist/root"
             "/jfs/checkssl"
             "/jfs/fava"
             "/jfs/pvc-bd601ea5-4e69-43a4-b2bc-ab73805cfbd8"
