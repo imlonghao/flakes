@@ -174,6 +174,19 @@ in
         }
       ];
     };
+    wg2615 = {
+      ips = [ "fe80::1888/64" ];
+      privateKeyFile = config.sops.secrets.wireguard.path;
+      listenPort = 22615;
+      allowedIPsAsRoutes = false;
+      peers = [
+        {
+          endpoint = "euhax6.dn42.oldtaoge.space:21888";
+          publicKey = "pyOy6M7MVqEOP+nAsSx/2iQobF9Nw+AoolZeCxF8nGc=";
+          allowedIPs = [ "10.0.0.0/8" "172.20.0.0/14" "172.31.0.0/16" "fe80::/64" "fd00::/8" ];
+        }
+      ];
+    };
     wg2717 = {
       ips = [ "fe80::1888/64" ];
       privateKeyFile = config.sops.secrets.wireguard.path;
