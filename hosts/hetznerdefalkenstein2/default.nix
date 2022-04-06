@@ -89,7 +89,6 @@ in
       "/var/jfsCache"
       "/root/.config/gcloud"
       "/root/.ssh"
-      "/root/.lego"
     ];
     files = [
       "/etc/machine-id"
@@ -189,6 +188,7 @@ in
             "/persist/docker/trilium"
             "/persist/docker/vikunja/files"
             "/persist/docker/timetagger"
+            "/persist/lego"
             "/persist/root"
             "/jfs/checkssl"
             "/jfs/fava"
