@@ -182,7 +182,7 @@ in
       peers = [
         {
           endpoint = "euhax6.dn42.oldtaoge.space:21888";
-          publicKey = "pyOy6M7MVqEOP+nAsSx/2iQobF9Nw+AoolZeCxF8nGc=";
+          publicKey = "RL4c63BimHwb6VNbo8k1IHDsIELp35pUF5kkzCz4LxA=";
           allowedIPs = [ "10.0.0.0/8" "172.20.0.0/14" "172.31.0.0/16" "fe80::/64" "fd00::/8" ];
         }
       ];
