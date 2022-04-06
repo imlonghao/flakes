@@ -53,6 +53,7 @@ in
     };
   };
   services.chrony.enable = true;
+  services.vnstat.enable = true;
 
   sops.gnupg.sshKeyPaths = [ ];
   sops.age.sshKeyPaths = [
