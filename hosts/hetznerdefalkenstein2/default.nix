@@ -76,6 +76,7 @@ in
     openvpn
     python3
     python3Packages.requests
+    q-dns
     ripgrep
     socat
     tmux
