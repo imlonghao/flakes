@@ -17,3 +17,7 @@ git.fetchSubmodules = true
 [etherguard]
 src.git = "https://github.com/KusakabeSi/EtherGuard-VPN"
 fetch.github = "KusakabeSi/EtherGuard-VPN"
+
+[q-dns]
+src.github = "natesales/q"
+fetch.github = "natesales/q"

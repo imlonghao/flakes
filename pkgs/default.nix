@@ -6,4 +6,5 @@ final: prev: {
   pingfinder = prev.callPackage ./pingfinder { };
   etherguard = prev.callPackage ./etherguard { };
   powerdns = prev.callPackage ./powerdns { };
+  q-dns = prev.callPackage ./q-dns { };
 }

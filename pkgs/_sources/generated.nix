@@ -34,6 +34,18 @@
       sha256 = "1b7xi8c2drbwzfz70czddc4j33s7g1alirv12dwl91hbqxifx8qs";
     });
   };
+  q-dns = {
+    pname = "q-dns";
+    version = "v0.5.8";
+    src = fetchFromGitHub ({
+      owner = "natesales";
+      repo = "q";
+      rev = "v0.5.8";
+      fetchSubmodules = false;
+      sha256 = "0anpnb6acbl1h9gli76iw9ylp5l36b7rsq9sqvh7var1f1fs0fsp";
+    });
+    vendorSha256 = "sha256-onggtOs2ri4VxCPDSehkfiAf6xMjKZHKh8qeNN4tf4A=";
+  };
   rait = {
     pname = "rait";
     version = "b5a755c7f0fc4083fa44e7a40695e23dad155f4f";
