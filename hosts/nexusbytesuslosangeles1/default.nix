@@ -69,4 +69,10 @@ in
     HostCertificate = ${hostCertificate}
   '';
 
+  environment.systemPackages = with pkgs; [
+    ffmpeg
+    rclone
+    tmux
+  ];
+
 }
