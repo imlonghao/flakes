@@ -41,6 +41,9 @@ in
 
   environment.systemPackages = with pkgs; [
     docker-compose
+    ffmpeg
+    rclone
+    tmux
   ];
 
   # Docker
@@ -68,11 +71,5 @@ in
   services.openssh.extraConfig = ''
     HostCertificate = ${hostCertificate}
   '';
-
-  environment.systemPackages = with pkgs; [
-    ffmpeg
-    rclone
-    tmux
-  ];
 
 }
