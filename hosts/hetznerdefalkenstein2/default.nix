@@ -183,6 +183,7 @@ in
             "/persist/docker/trilium"
             "/persist/docker/vikunja/files"
             "/persist/docker/timetagger"
+            "/persist/syncthing"
             "/persist/lego"
             "/persist/root"
             "/jfs/checkssl"
