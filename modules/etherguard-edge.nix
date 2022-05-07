@@ -31,6 +31,8 @@ in
           "${pkgs.iproute2}/bin/ip addr add ${cfg.ipv4} dev eg_net"
           "${pkgs.iproute2}/bin/ip addr add ${cfg.ipv6} dev eg_net"
         ];
+        Restart = "always";
+        RestartSec = 10;
       };
       wants = [ "network-online.target" ];
       after = [ "network-online.target" ];

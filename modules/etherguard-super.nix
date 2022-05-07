@@ -17,6 +17,8 @@ in
       serviceConfig = {
         Type = "simple";
         ExecStart = "${pkgs.etherguard}/bin/EtherGuard-VPN -mode super -config ${cfg.path}";
+        Restart = "always";
+        RestartSec = 10;
       };
       wants = [ "network-online.target" ];
       after = [ "network-online.target" ];
