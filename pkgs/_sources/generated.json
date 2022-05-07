@@ -1,0 +1,98 @@
+{
+    "babeld": {
+        "cargoLocks": null,
+        "pinned": false,
+        "name": "babeld",
+        "version": "44b3135897726d7155e54ac079ce2a7f911b0c44",
+        "passthru": null,
+        "src": {
+            "deepClone": false,
+            "leaveDotGit": false,
+            "owner": "imlonghao",
+            "fetchSubmodules": true,
+            "name": null,
+            "repo": "babeld",
+            "type": "github",
+            "sha256": "11wh3w4iilc7a3b2x98kb7ba2hhhy2k5za3h6c4yiwvsx0hca7ib",
+            "rev": "44b3135897726d7155e54ac079ce2a7f911b0c44"
+        },
+        "extract": null
+    },
+    "q-dns": {
+        "cargoLocks": null,
+        "pinned": false,
+        "name": "q-dns",
+        "version": "v0.6.0",
+        "passthru": null,
+        "src": {
+            "deepClone": false,
+            "leaveDotGit": false,
+            "owner": "natesales",
+            "fetchSubmodules": false,
+            "name": null,
+            "repo": "q",
+            "type": "github",
+            "sha256": "1qvpw21b7w3awa37vy14xvw4ai3nwrq0qd7gnpl4vx4nd9m5f970",
+            "rev": "v0.6.0"
+        },
+        "extract": null
+    },
+    "etherguard": {
+        "cargoLocks": null,
+        "pinned": false,
+        "name": "etherguard",
+        "version": "919d13baa3cbb0fcab9f849d7b174ec2e26b8d33",
+        "passthru": null,
+        "src": {
+            "deepClone": false,
+            "leaveDotGit": false,
+            "owner": "KusakabeSi",
+            "fetchSubmodules": false,
+            "name": null,
+            "repo": "EtherGuard-VPN",
+            "type": "github",
+            "sha256": "0aqhf4b6vzkc7qr33cpwfww8fwwvciay32g3sjk9x1v8mlg6p7sb",
+            "rev": "919d13baa3cbb0fcab9f849d7b174ec2e26b8d33"
+        },
+        "extract": null
+    },
+    "manix": {
+        "cargoLocks": null,
+        "pinned": false,
+        "name": "manix",
+        "version": "d08e7ca185445b929f097f8bfb1243a8ef3e10e4",
+        "passthru": null,
+        "src": {
+            "deepClone": false,
+            "leaveDotGit": false,
+            "owner": "mlvzk",
+            "fetchSubmodules": false,
+            "name": null,
+            "repo": "manix",
+            "type": "github",
+            "sha256": "1b7xi8c2drbwzfz70czddc4j33s7g1alirv12dwl91hbqxifx8qs",
+            "rev": "d08e7ca185445b929f097f8bfb1243a8ef3e10e4"
+        },
+        "extract": null
+    },
+    "rait": {
+        "cargoLocks": null,
+        "pinned": false,
+        "name": "rait",
+        "version": "e84e803641ec3a2dce5670275ea8d5497608f483",
+        "passthru": {
+            "vendorSha256": "sha256-55Zu1g+pwTt6dU1QloxfFkG2dbnK5gg84WvRhz2ND3M="
+        },
+        "src": {
+            "deepClone": false,
+            "url": "https://gitlab.com/NickCao/RAIT",
+            "leaveDotGit": false,
+            "fetchSubmodules": false,
+            "name": null,
+            "type": "git",
+            "sha256": "18fs50kr8nmkhhb58i8wzki5rnx6qny207g07a2836z8gac4z95x",
+            "rev": "e84e803641ec3a2dce5670275ea8d5497608f483"
+        },
+        "extract": null
+    }
+}

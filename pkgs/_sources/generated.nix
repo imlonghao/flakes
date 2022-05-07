@@ -14,13 +14,13 @@
   };
   etherguard = {
     pname = "etherguard";
-    version = "76071f0d0d9e87a8b9fff6a542b600e4d811b95b";
+    version = "919d13baa3cbb0fcab9f849d7b174ec2e26b8d33";
     src = fetchFromGitHub ({
       owner = "KusakabeSi";
       repo = "EtherGuard-VPN";
-      rev = "76071f0d0d9e87a8b9fff6a542b600e4d811b95b";
+      rev = "919d13baa3cbb0fcab9f849d7b174ec2e26b8d33";
       fetchSubmodules = false;
-      sha256 = "032mlirld8dqj31vkaqiracavcnn5shsmvl1gbfcrcdy6kjqcm3p";
+      sha256 = "0aqhf4b6vzkc7qr33cpwfww8fwwvciay32g3sjk9x1v8mlg6p7sb";
     });
   };
   manix = {
@@ -36,26 +36,25 @@
   };
   q-dns = {
     pname = "q-dns";
-    version = "v0.5.8";
+    version = "v0.6.0";
     src = fetchFromGitHub ({
       owner = "natesales";
       repo = "q";
-      rev = "v0.5.8";
+      rev = "v0.6.0";
       fetchSubmodules = false;
-      sha256 = "0anpnb6acbl1h9gli76iw9ylp5l36b7rsq9sqvh7var1f1fs0fsp";
+      sha256 = "1qvpw21b7w3awa37vy14xvw4ai3nwrq0qd7gnpl4vx4nd9m5f970";
     });
-    vendorSha256 = "sha256-onggtOs2ri4VxCPDSehkfiAf6xMjKZHKh8qeNN4tf4A=";
   };
   rait = {
     pname = "rait";
-    version = "b5a755c7f0fc4083fa44e7a40695e23dad155f4f";
+    version = "e84e803641ec3a2dce5670275ea8d5497608f483";
     src = fetchgit {
       url = "https://gitlab.com/NickCao/RAIT";
-      rev = "b5a755c7f0fc4083fa44e7a40695e23dad155f4f";
+      rev = "e84e803641ec3a2dce5670275ea8d5497608f483";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "1jm17lw6nq9p2alhc471nxx9gm1n2s3av10kzwbhppff5icida9r";
+      sha256 = "18fs50kr8nmkhhb58i8wzki5rnx6qny207g07a2836z8gac4z95x";
     };
     vendorSha256 = "sha256-55Zu1g+pwTt6dU1QloxfFkG2dbnK5gg84WvRhz2ND3M=";
   };
