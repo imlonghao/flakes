@@ -91,6 +91,7 @@ in
   };
 
   # Coredns IPv6 forwarder
+  systemd.services.coredns.after = [ "etherguard-edge.service" ];
   services.coredns = {
     enable = true;
     config = ''
