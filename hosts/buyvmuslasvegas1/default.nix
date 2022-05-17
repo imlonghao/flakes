@@ -71,4 +71,9 @@ in
     HostCertificate = ${hostCertificate}
   '';
 
+  networking.hosts = {
+    "240e:945:7:e::1" = [ "api.bilibili.com" ];
+    "240e:97d:2000:300::7" = [ "api.live.bilibili.com" ];
+  };
+
 }
