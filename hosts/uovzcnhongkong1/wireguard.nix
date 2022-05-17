@@ -28,6 +28,19 @@
         }
       ];
     };
+    wg0549 = {
+      ips = [ "fe80::1888/64" ];
+      privateKeyFile = config.sops.secrets.wireguard.path;
+      listenPort = 20549;
+      allowedIPsAsRoutes = false;
+      peers = [
+        {
+          endpoint = "hkg.hkg.dn42.bb-pgqm.com:21888";
+          publicKey = "jtE83RMoN49bs8TOetxrGdzqywz2BI+uT1qJrGI7GVU=";
+          allowedIPs = [ "10.0.0.0/8" "172.20.0.0/14" "172.31.0.0/16" "fe80::/64" "fd00::/8" ];
+        }
+      ];
+    };
     wg0603 = {
       ips = [ "fe80::1888/64" ];
       postSetup = [
