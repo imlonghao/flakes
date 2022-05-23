@@ -42,6 +42,8 @@ steps:
   - nix -Lv build ".#rait"
   - nix -Lv build ".#pingfinder"
   - nix -Lv build ".#etherguard"
+  - nix -Lv build ".#powerdns"
+  - nix -Lv build ".#q-dns"
   - nix -Lv develop -c echo OK
   - /tmp/push-paths.sh cachix imlonghao ""
   when:
