@@ -41,7 +41,7 @@
         "cargoLocks": null,
         "pinned": false,
         "name": "etherguard",
-        "version": "919d13baa3cbb0fcab9f849d7b174ec2e26b8d33",
+        "version": "1356780d7d37ad5c44d3d25d2137be6120b8bf87",
         "passthru": null,
         "src": {
             "deepClone": false,
@@ -51,8 +51,8 @@
             "name": null,
             "repo": "EtherGuard-VPN",
             "type": "github",
-            "sha256": "0aqhf4b6vzkc7qr33cpwfww8fwwvciay32g3sjk9x1v8mlg6p7sb",
-            "rev": "919d13baa3cbb0fcab9f849d7b174ec2e26b8d33"
+            "sha256": "048h0wfwxzdwpls79qclzar3d842662fij4sciv73vj2ymd430mh",
+            "rev": "1356780d7d37ad5c44d3d25d2137be6120b8bf87"
         },
         "extract": null
     },
@@ -81,7 +81,7 @@
         "name": "rait",
         "version": "e84e803641ec3a2dce5670275ea8d5497608f483",
         "passthru": {
-            "vendorSha256": "sha256-55Zu1g+pwTt6dU1QloxfFkG2dbnK5gg84WvRhz2ND3M="
+            "vendorSha256": "sha256-SyiXhWnsECnn3ObaUl/5coq7jk7dYd66WlNihMpoCrI="
         },
         "src": {
             "deepClone": false,
