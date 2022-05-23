@@ -63,6 +63,7 @@ in
     dnsutils
     docker-compose
     exploitdb
+    fd
     file
     git
     gobuster
