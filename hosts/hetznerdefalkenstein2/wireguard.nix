@@ -200,6 +200,19 @@ in
         }
       ];
     };
+    wg2923 = {
+      ips = [ "fe80::1888/64" ];
+      privateKeyFile = config.sops.secrets.wireguard.path;
+      listenPort = 22923;
+      allowedIPsAsRoutes = false;
+      peers = [
+        {
+          endpoint = "p2p-node.de:51888";
+          publicKey = "GD554w8JM8R2s0c/mR7sBbYy/zTP5GWWB+Zl1gx5GUk=";
+          allowedIPs = [ "10.0.0.0/8" "172.20.0.0/14" "172.31.0.0/16" "fe80::/64" "fd00::/8" ];
+        }
+      ];
+    };
     wg2980 = {
       ips = [ "fe80::1888:4/64" ];
       postSetup = "${pkgs.iproute2}/bin/ip addr add 172.22.68.4/32 peer 172.23.105.4/32 dev wg2980";
