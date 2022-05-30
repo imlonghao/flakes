@@ -75,8 +75,7 @@ in
     nmap
     openssl
     openvpn
-    python3
-    python3Packages.requests
+    (python3.withPackages(ps: with ps; [ requests ]))
     q-dns
     ripgrep
     socat
