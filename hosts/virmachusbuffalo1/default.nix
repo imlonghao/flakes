@@ -178,6 +178,9 @@ in
       protocol bgp AS4242420247 from dnpeers {
         neighbor fe80::247 % 'wg0247' as 4242420247;
       }
+      protocol bgp AS4242420262 from dnpeers {
+        neighbor fe80::1234 % 'wg0262' as 4242420262;
+      }
       protocol bgp AS4242421080 from dnpeers {
         neighbor fe80::123 % 'wg1080' as 4242421080;
       }
@@ -260,6 +263,23 @@ in
         {
           endpoint = "us1.dn42.as141776.net:41888";
           publicKey = "tRRiOqYhTsygV08ltrWtMkfJxCps1+HUyN4tb1J7Yn4=";
+          allowedIPs = [ "10.0.0.0/8" "172.20.0.0/14" "172.31.0.0/16" "fe80::/64" "fd00::/8" ];
+        }
+      ];
+    };
+    wg0262 = {
+      ips = [ "fe80::1888/64" ];
+      postSetup = [
+        "${pkgs.iproute2}/bin/ip addr add 172.22.68.0/32 peer 172.22.114.97/32 dev wg0262"
+        "${pkgs.iproute2}/bin/ip route change 172.22.114.97 src 172.22.68.1 dev wg0262"
+      ];
+      privateKeyFile = config.sops.secrets.wireguard.path;
+      listenPort = 20262;
+      allowedIPsAsRoutes = false;
+      peers = [
+        {
+          endpoint = "iad0.dn42.mtzfederico.com:21888";
+          publicKey = "GggTJ5B5ypZszhBU+E5DmKChwTnjzif1ZbX+yXP1mH8=";
           allowedIPs = [ "10.0.0.0/8" "172.20.0.0/14" "172.31.0.0/16" "fe80::/64" "fd00::/8" ];
         }
       ];
