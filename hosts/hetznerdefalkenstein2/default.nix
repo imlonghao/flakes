@@ -208,4 +208,9 @@ in
     };
   };
 
+  # ipfs
+  services.ipfs = {
+    enable = true;
+  };
+
 }
