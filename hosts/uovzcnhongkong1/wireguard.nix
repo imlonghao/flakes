@@ -234,7 +234,7 @@
       allowedIPsAsRoutes = false;
       peers = [
         {
-          endpoint = "achacha.link.melty.land:21824";
+          endpoint = "achacha.link.melty.land:21888";
           publicKey = "7t0RGOTU6KTNMp+dz1jmnsZDccXp8EQ6p9J6ZbgJkQQ=";
           allowedIPs = [ "10.0.0.0/8" "172.20.0.0/14" "172.31.0.0/16" "fe80::/64" "fd00::/8" ];
         }
