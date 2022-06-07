@@ -229,17 +229,13 @@
     };
     wg3632 = {
       ips = [ "fe80::1888/64" ];
-      postSetup = [
-        "${pkgs.iproute2}/bin/ip addr add 172.22.68.0/32 peer 172.23.36.34/32 dev wg3632"
-        "${pkgs.iproute2}/bin/ip route change 172.23.36.34 src 172.22.68.3 dev wg3632"
-      ];
       privateKeyFile = config.sops.secrets.wireguard.path;
       listenPort = 23632;
       allowedIPsAsRoutes = false;
       peers = [
         {
-          endpoint = "jp0.dn42.melty.land:51824";
-          publicKey = "uXeP5y2MP+XBcI7EU8LxqGS1r/Fu3vGIl3Q+r24J0UI=";
+          endpoint = "achacha.link.melty.land:21824";
+          publicKey = "7t0RGOTU6KTNMp+dz1jmnsZDccXp8EQ6p9J6ZbgJkQQ=";
           allowedIPs = [ "10.0.0.0/8" "172.20.0.0/14" "172.31.0.0/16" "fe80::/64" "fd00::/8" ];
         }
       ];
