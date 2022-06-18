@@ -77,6 +77,7 @@ in
     enable = true;
     systemCronJobs = [
       "0 * * * * root ${pkgs.docker}/bin/docker start renovate"
+      "33 3 * * * root ${pkgs.rclone}/bin/rclone sync garage:/databasebackup /persist/backup/databasebackup -P --config=/persist/rclone.conf"
     ];
   };
 
@@ -112,14 +113,6 @@ in
   services.garage = {
     enable = true;
     path = config.sops.secrets.garage.path;
-  };
-
-  # Databasebackup to local
-  services.cron = {
-    enable = true;
-    systemCronJobs = [
-      "33 3 * * * root ${pkgs.rclone}/bin/rclone sync garage:/databasebackup /persist/backup/databasebackup -P --config=/persist/rclone.conf"
-    ];
   };
 
   # AutoRestic
