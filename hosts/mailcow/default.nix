@@ -50,6 +50,7 @@ in
     git
     iptables
     openssl
+    rclone
   ];
 
   environment.persistence."/persist" = {
