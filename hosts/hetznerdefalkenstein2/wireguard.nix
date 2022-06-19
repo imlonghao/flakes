@@ -228,6 +228,19 @@ in
         }
       ];
     };
+    wg3044 = {
+      ips = [ "fe80::1888/64" ];
+      privateKeyFile = config.sops.secrets.wireguard.path;
+      listenPort = 23044;
+      allowedIPsAsRoutes = false;
+      peers = [
+        {
+          endpoint = "nl.dn42.ssssteve.one:21888";
+          publicKey = "ighiBJss6sW+CZpMAzks13WVDud3VWrouPBHWJu9kDg=";
+          allowedIPs = [ "10.0.0.0/8" "172.20.0.0/14" "172.31.0.0/16" "fe80::/64" "fd00::/8" ];
+        }
+      ];
+    };
     wg3088 = {
       ips = [ "fe80::1888/64" ];
       postSetup = [
