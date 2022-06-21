@@ -21,3 +21,7 @@ fetch.github = "KusakabeSi/EtherGuard-VPN"
 [q-dns]
 src.github = "natesales/q"
 fetch.github = "natesales/q"
+
+[deluge_exporter]
+src.git = "https://github.com/tobbez/deluge_exporter"
+fetch.github = "tobbez/deluge_exporter"

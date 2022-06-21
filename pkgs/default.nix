@@ -7,4 +7,5 @@ final: prev: {
   etherguard = prev.callPackage ./etherguard { };
   powerdns = prev.callPackage ./powerdns { };
   q-dns = prev.callPackage ./q-dns { };
+  deluge_exporter = prev.callPackage ./deluge_exporter { };
 }

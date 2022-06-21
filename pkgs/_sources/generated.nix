@@ -12,6 +12,17 @@
       sha256 = "11wh3w4iilc7a3b2x98kb7ba2hhhy2k5za3h6c4yiwvsx0hca7ib";
     });
   };
+  deluge_exporter = {
+    pname = "deluge_exporter";
+    version = "5ad17e99ef3d6006449b9ae9943615d0af8a1635";
+    src = fetchFromGitHub ({
+      owner = "tobbez";
+      repo = "deluge_exporter";
+      rev = "5ad17e99ef3d6006449b9ae9943615d0af8a1635";
+      fetchSubmodules = false;
+      sha256 = "0via5b137n99cbb56k1fv80pr73cf6p8qr8wsvs7i0bg20j2pi8m";
+    });
+  };
   etherguard = {
     pname = "etherguard";
     version = "1356780d7d37ad5c44d3d25d2137be6120b8bf87";
@@ -36,13 +47,13 @@
   };
   q-dns = {
     pname = "q-dns";
-    version = "v0.6.0";
+    version = "v0.8.0";
     src = fetchFromGitHub ({
       owner = "natesales";
       repo = "q";
-      rev = "v0.6.0";
+      rev = "v0.8.0";
       fetchSubmodules = false;
-      sha256 = "1qvpw21b7w3awa37vy14xvw4ai3nwrq0qd7gnpl4vx4nd9m5f970";
+      sha256 = "0l9bi90wvlkslgliipxc0vkadjgpvd1c6d2i9g83a5cpxi4pa7qn";
     });
   };
   rait = {
