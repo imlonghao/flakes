@@ -221,4 +221,7 @@ in
     ];
   };
 
+  # deluge_exporter
+  services.deluge_exporter.enable = true;
+
 }
