@@ -1,12 +1,14 @@
-{ sources, lib, stdenv, python3Packages }:
+{ sources, lib, stdenv, pkgs }:
 
 stdenv.mkDerivation rec {
   inherit (sources.deluge_exporter) pname version src;
 
-  propagatedBuildInputs = with python3Packages; [
-    deluge-client
-    loguru
-    prometheus-client
+  propagatedBuildInputs = [
+    (pkgs.python3.withPackages(ps: with ps; [ 
+      deluge-client
+      loguru
+      prometheus-client
+    ]))
   ];
 
   buildPhase = "true";
