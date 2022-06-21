@@ -16,7 +16,7 @@ stdenv.mkDerivation rec {
   installPhase = ''
     runHook preInstall
     install -Dm755 "${src}/deluge_exporter.py" "$out/bin/deluge_exporter"
-    install -Dm755 "${src}/libtorrent_metrics.json" "$out/bin/libtorrent_metrics.json"
+    install -Dm644 "${src}/libtorrent_metrics.json" "$out/bin/libtorrent_metrics.json"
     runHook postInstall
   '';
 

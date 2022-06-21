@@ -14,12 +14,13 @@ in
         ExecStart = "${pkgs.deluge_exporter}/bin/deluge_exporter";
         Environment = [
           "DELUGE_CONFIG_DIR=/var/lib/deluge/.config/deluge/"
+          "LISTEN_ADDRESS=100.64.88.12"
         ];
         User = "deluge";
         Group = "deluge";
       };
       wants = [ "network-online.target" ];
-      after = [ "network-online.target" ];
+      after = [ "network-online.target" "etherguard-edge.service" ];
       wantedBy = [ "multi-user.target" ];
     };
   };
