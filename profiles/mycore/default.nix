@@ -27,6 +27,7 @@ in
     "net.ipv4.conf.default.rp_filter" = 0;
     "net.ipv4.conf.all.accept_local" = 1;
     "net.ipv4.conf.default.accept_local" = 1;
+    "fs.file-max" = 2097152;
   };
 
   environment.systemPackages = [
