@@ -1,7 +1,7 @@
 { ... }:
 
 {
-  services.teleport = {
+  services.myteleport = {
     enable = true;
     teleport = {
       auth_servers = [

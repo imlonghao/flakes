@@ -38,7 +38,7 @@ in
     ipv6 = "2602:feda:1bf:deaf::18/64";
   };
 
-  services.teleport.teleport.auth_token = "48a0c36e8170da90fa81a352a032dc28";
+  services.myteleport.teleport.auth_token = "48a0c36e8170da90fa81a352a032dc28";
 
   # OpenSSH
   services.openssh.extraConfig = ''

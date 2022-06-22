@@ -3,7 +3,7 @@
 with lib;
 
 let
-  cfg = config.services.teleport;
+  cfg = config.services.myteleport;
   configfile = pkgs.writeText "teleport.json" (builtins.toJSON {
     teleport = {
       nodename = config.networking.hostName;
@@ -44,7 +44,7 @@ let
   });
 in
 {
-  options.services.teleport = {
+  options.services.myteleport = {
     enable = mkOption { type = types.bool; default = false; };
     teleport = {
       auth_token = mkOption { type = types.str; };

@@ -36,7 +36,7 @@ in
   fileSystems."/" = { device = "/dev/vda1"; fsType = "ext4"; };
   swapDevices = [{ device = "/dev/vda2"; }];
 
-  services.teleport.teleport.auth_token = "8658b42da9e1a5a235946ccb5a3262d0";
+  services.myteleport.teleport.auth_token = "8658b42da9e1a5a235946ccb5a3262d0";
 
   # OpenSSH
   services.openssh.extraConfig = ''

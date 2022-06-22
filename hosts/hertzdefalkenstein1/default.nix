@@ -111,9 +111,9 @@ in
     ipv6 = "2602:feda:1bf:deaf::4/64";
   };
 
-  services.teleport.ssh_service.listen_addr = "0.0.0.0:13022";
+  services.myteleport.ssh_service.listen_addr = "0.0.0.0:13022";
 
-  services.teleport.teleport.auth_token = "fd64c74d419e690ab9d5cf99cf5b8b58";
+  services.myteleport.teleport.auth_token = "fd64c74d419e690ab9d5cf99cf5b8b58";
 
   # OpenSSH
   services.openssh.extraConfig = ''

@@ -113,7 +113,7 @@ in
   };
 
   # Teleport
-  services.teleport.teleport.auth_token = "916c928451057889ad5d403985713b30";
+  services.myteleport.teleport.auth_token = "916c928451057889ad5d403985713b30";
 
   # rclone
   sops.secrets.rclone.sopsFile = ./secrets.yml;

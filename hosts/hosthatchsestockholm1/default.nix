@@ -30,7 +30,7 @@ in
     ];
   };
 
-  services.teleport.teleport.auth_token = "d6ce0c999ac25cb04af6799ddfd61d51";
+  services.myteleport.teleport.auth_token = "d6ce0c999ac25cb04af6799ddfd61d51";
 
   environment.systemPackages = with pkgs; [
     docker-compose
