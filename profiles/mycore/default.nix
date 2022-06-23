@@ -28,6 +28,7 @@ in
     "net.ipv4.conf.all.accept_local" = 1;
     "net.ipv4.conf.default.accept_local" = 1;
     "fs.file-max" = 2097152;
+    "fs.inotify.max_user_instances" = 512;
   };
 
   environment.systemPackages = [
@@ -66,4 +67,12 @@ in
   users.mutableUsers = false;
 
   programs.fish.enable = true;
+
+  security.pam.loginLimits = [{
+    domain = "*";
+    type = "soft";
+    item = "nofile";
+    value = "40960";
+  }];
+
 }
