@@ -12,11 +12,13 @@ in
     useSandbox = true;
     allowedUsers = [ "@wheel" ];
     trustedUsers = [ "root" "@wheel" ];
-    package = pkgs.nixVersions.nix_2_7;
+    package = pkgs.nixVersions.nix_2_9;
     extraOptions = ''
       experimental-features = nix-command flakes ca-derivations
     '';
   };
+
+  system.stateVersion = "22.05";
 
   boot.cleanTmpDir = true;
   boot.kernel.sysctl = {

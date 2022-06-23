@@ -36,7 +36,7 @@ in
   ];
 
   commands = with pkgs; [
-    (devos nixVersions.nix_2_7)
+    (devos nixVersions.nix_2_9)
     {
       category = "devos";
       name = pkgs.nvfetcher-bin.pname;
