@@ -13,6 +13,7 @@ channels: final: prev: {
     garage
     autorestic
     just
+    docker-compose
     ;
 
 
