@@ -185,6 +185,19 @@
         }
       ];
     };
+    wg3088 = {
+      ips = [ "fe80::1888/64" ];
+      privateKeyFile = config.sops.secrets.wireguard.path;
+      listenPort = 23088;
+      allowedIPsAsRoutes = false;
+      peers = [
+        {
+          endpoint = "lax1-us.dn42.6700.cc:30012";
+          publicKey = "QSAeFPotqFpF6fFe3CMrMjrpS5AL54AxWY2w1+Ot2Bo=";
+          allowedIPs = [ "10.0.0.0/8" "172.20.0.0/14" "172.31.0.0/16" "fe80::/64" "fd00::/8" ];
+        }
+      ];
+    };
     wg3308 = {
       ips = [ "fe80::1888/64" ];
       postSetup = "${pkgs.iproute2}/bin/ip addr add 172.22.68.5/32 peer 172.23.99.65/32 dev wg3308";
