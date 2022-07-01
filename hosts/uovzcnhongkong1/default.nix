@@ -63,6 +63,14 @@ in
     ipv4 = "100.64.88.10/24";
     ipv6 = "2602:feda:1bf:deaf::9/64";
   };
+  systemd.services.etherguard-edge.serviceConfig = {
+    ExecStartPost = [
+      "${pkgs.iptables}/bin/iptables -t nat -A POSTROUTING -s 100.64.88.19 -o ens3 -j SNAT --to-source 103.200.114.26"
+    ];
+    ExecStopPost = [
+      "${pkgs.iptables}/bin/iptables -t nat -D POSTROUTING -s 100.64.88.19 -o ens3 -j SNAT --to-source 103.200.114.26"
+    ];
+  };
 
   # OpenSSH
   services.openssh.extraConfig = ''
