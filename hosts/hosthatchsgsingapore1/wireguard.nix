@@ -75,23 +75,6 @@
         }
       ];
     };
-    wg1876 = {
-      ips = [ "fe80::1888/64" ];
-      postSetup = [
-        "${pkgs.iproute2}/bin/ip addr add 172.22.68.0/32 peer 172.22.66.57/32 dev wg1876"
-        "${pkgs.iproute2}/bin/ip route change 172.22.66.57 src 172.22.68.2 dev wg1876"
-      ];
-      privateKeyFile = config.sops.secrets.wireguard.path;
-      listenPort = 21876;
-      allowedIPsAsRoutes = false;
-      peers = [
-        {
-          endpoint = "n304.dn42.ac.cn:21888";
-          publicKey = "DW2erV/Yv/mFTTeO/zE6JaD83KvxMEu8TkK/3uqryhM=";
-          allowedIPs = [ "10.0.0.0/8" "172.20.0.0/14" "172.31.0.0/16" "fe80::/64" "fd00::/8" ];
-        }
-      ];
-    };
     wg2225 = {
       ips = [ "fe80::1888/64" ];
       postSetup = [
