@@ -167,6 +167,9 @@
       protocol bgp AS4242422633 from dnpeers {
         neighbor fe80::2633 % 'wg2633' as 4242422633;
       }
+      protocol bgp AS4242423088 from dnpeers {
+        neighbor fe80::3088:198 % 'wg3088' as 4242423088;
+      }
       protocol bgp ROUTE_COLLECTOR {
         local as 4242421888;
         neighbor fd42:4242:2601:ac12::1 as 4242422602;

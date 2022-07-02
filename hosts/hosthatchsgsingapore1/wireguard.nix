@@ -164,5 +164,18 @@
         }
       ];
     };
+    wg3088 = {
+      ips = [ "fe80::1888/64" ];
+      privateKeyFile = config.sops.secrets.wireguard.path;
+      listenPort = 23088;
+      allowedIPsAsRoutes = false;
+      peers = [
+        {
+          endpoint = "sin1-sg.dn42.6700.cc:30010";
+          publicKey = "rLuqS2ZQRk5ape3rHtBTXGbRbUP7lNYpufk3tt1P4z0=";
+          allowedIPs = [ "10.0.0.0/8" "172.20.0.0/14" "172.31.0.0/16" "fe80::/64" "fd00::/8" ];
+        }
+      ];
+    };
   };
 }
