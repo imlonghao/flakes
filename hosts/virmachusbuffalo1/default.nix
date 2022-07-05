@@ -183,9 +183,6 @@ in
       protocol bgp AS4242421080 from dnpeers {
         neighbor fe80::123 % 'wg1080' as 4242421080;
       }
-      protocol bgp AS4242421876 from dnpeers {
-        neighbor fe80::1876 % 'wg1876' as 4242421876;
-      }
       protocol bgp AS4242422464 from dnpeers {
         neighbor fe80::2464 % 'wg2464' as 4242422464;
       }
@@ -296,23 +293,6 @@ in
         {
           endpoint = "dn42-us-nyc02.jlu5.com:21888";
           publicKey = "YrlNsVP9bbTqNuNyQ/MVFzulZKNW5vMaDMzHVFNXSSE=";
-          allowedIPs = [ "10.0.0.0/8" "172.20.0.0/14" "172.31.0.0/16" "fe80::/64" "fd00::/8" ];
-        }
-      ];
-    };
-    wg1876 = {
-      ips = [ "fe80::1888/64" ];
-      postSetup = [
-        "${pkgs.iproute2}/bin/ip addr add 172.22.68.0/32 peer 172.22.66.53/32 dev wg1876"
-        "${pkgs.iproute2}/bin/ip route change 172.22.66.53 src 172.22.68.1 dev wg1876"
-      ];
-      privateKeyFile = config.sops.secrets.wireguard.path;
-      listenPort = 21876;
-      allowedIPsAsRoutes = false;
-      peers = [
-        {
-          endpoint = "n202.dn42.ac.cn:21888";
-          publicKey = "EJvoVa5DrJl1rnryF4GThX1Rf86lMBtu2sg8Huru9Gs=";
           allowedIPs = [ "10.0.0.0/8" "172.20.0.0/14" "172.31.0.0/16" "fe80::/64" "fd00::/8" ];
         }
       ];
