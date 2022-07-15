@@ -85,6 +85,19 @@ in
         }
       ];
     };
+    wg0864 = {
+      ips = [ "fe80::1888/64" ];
+      privateKeyFile = config.sops.secrets.wireguard.path;
+      listenPort = 20864;
+      allowedIPsAsRoutes = false;
+      peers = [
+        {
+          endpoint = "nue.dn42.christine.pp.ua:21888";
+          publicKey = "ypRGDCaVyoIJFPkRDbXm/wo8liNcbsY3PkiGBqZJzUI=";
+          allowedIPs = [ "10.0.0.0/8" "172.20.0.0/14" "172.31.0.0/16" "fe80::/64" "fd00::/8" ];
+        }
+      ];
+    };
     wg1078 = {
       ips = [ "fe80::1888/64" ];
       postSetup = [
