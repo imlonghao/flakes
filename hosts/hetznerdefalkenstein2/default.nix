@@ -60,16 +60,21 @@ in
   };
 
   environment.systemPackages = with pkgs; [
+    aria2
+    buildtorrent
     dnsutils
     docker-compose
+    dumptorrent
     exploitdb
     fd
+    ffmpeg
     file
     git
     gobuster
     google-cloud-sdk
     lego
     just
+    mediainfo
     metasploit
     ncdu
     nmap
