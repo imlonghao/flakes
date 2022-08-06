@@ -4,6 +4,8 @@ let
 in
 {
   imports = [
+    ./bird.nix
+    ./wireguard
     profiles.mycore
     profiles.users.root
     profiles.teleport
