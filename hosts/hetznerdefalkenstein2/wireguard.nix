@@ -4,6 +4,28 @@ let
 in
 {
   sops.secrets.wireguard.sopsFile = ./secrets.yml;
+  boot.kernel.sysctl = {
+    "net.ipv4.conf.wg31111.rp_filter" = 0;
+    "net.ipv4.conf.wg0197.rp_filter" = 0;
+    "net.ipv4.conf.wg0345.rp_filter" = 0;
+    "net.ipv4.conf.wg0385.rp_filter" = 0;
+    "net.ipv4.conf.wg0499.rp_filter" = 0;
+    "net.ipv4.conf.wg0864.rp_filter" = 0;
+    "net.ipv4.conf.wg1078.rp_filter" = 0;
+    "net.ipv4.conf.wg1588.rp_filter" = 0;
+    "net.ipv4.conf.wg1592.rp_filter" = 0;
+    "net.ipv4.conf.wg1817.rp_filter" = 0;
+    "net.ipv4.conf.wg2189.rp_filter" = 0;
+    "net.ipv4.conf.wg2331.rp_filter" = 0;
+    "net.ipv4.conf.wg2615.rp_filter" = 0;
+    "net.ipv4.conf.wg2717.rp_filter" = 0;
+    "net.ipv4.conf.wg2923.rp_filter" = 0;
+    "net.ipv4.conf.wg2980.rp_filter" = 0;
+    "net.ipv4.conf.wg3044.rp_filter" = 0;
+    "net.ipv4.conf.wg3088.rp_filter" = 0;
+    "net.ipv4.conf.wg3847.rp_filter" = 0;
+    "net.ipv4.conf.wg3914.rp_filter" = 0;
+  };
   networking.wireguard.interfaces = {
     wg31111 = {
       ips = [ "fe80::1888/64" ];
