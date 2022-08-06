@@ -7,6 +7,7 @@
     "net.ipv4.conf.wg0247.rp_filter" = 0;
     "net.ipv4.conf.wg0262.rp_filter" = 0;
     "net.ipv4.conf.wg1080.rp_filter" = 0;
+    "net.ipv4.conf.wg1816.rp_filter" = 0;
     "net.ipv4.conf.wg2464.rp_filter" = 0;
     "net.ipv4.conf.wg2547.rp_filter" = 0;
     "net.ipv4.conf.wg3088.rp_filter" = 0;
@@ -72,6 +73,19 @@
         {
           endpoint = "dn42-us-nyc02.jlu5.com:21888";
           publicKey = "YrlNsVP9bbTqNuNyQ/MVFzulZKNW5vMaDMzHVFNXSSE=";
+          allowedIPs = [ "10.0.0.0/8" "172.20.0.0/14" "172.31.0.0/16" "fe80::/64" "fd00::/8" ];
+        }
+      ];
+    };
+    wg1816 = {
+      ips = [ "fe80::1888/64" ];
+      privateKeyFile = config.sops.secrets.wireguard.path;
+      listenPort = 21816;
+      allowedIPsAsRoutes = false;
+      peers = [
+        {
+          endpoint = "us1.dn42.potat0.cc:21888";
+          publicKey = "LUwqKS6QrCPv510Pwt1eAIiHACYDsbMjrkrbGTJfviU=";
           allowedIPs = [ "10.0.0.0/8" "172.20.0.0/14" "172.31.0.0/16" "fe80::/64" "fd00::/8" ];
         }
       ];
