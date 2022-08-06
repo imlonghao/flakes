@@ -76,6 +76,7 @@ in
     just
     mediainfo
     metasploit
+    mosh
     ncdu
     nmap
     openssl
