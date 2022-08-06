@@ -13,7 +13,6 @@ in
     profiles.teleport
     profiles.exporter.node
     profiles.exporter.bird
-    profiles.k3s
     profiles.pingfinder
     profiles.autorestic
   ];
@@ -72,6 +71,7 @@ in
     git
     gobuster
     google-cloud-sdk
+    iptables
     lego
     just
     mediainfo
@@ -211,11 +211,6 @@ in
         };
       };
     };
-  };
-
-  # ipfs
-  services.ipfs = {
-    enable = true;
   };
 
   # Databasebackup to local

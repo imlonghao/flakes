@@ -68,13 +68,6 @@ in
     ipv6 = "2602:feda:1bf:deaf::6/64";
   };
 
-  # k3s server
-  services.k3s = {
-    enable = true;
-    role = "server";
-  };
-  services.k3s-no-ctstate-invalid.enable = true;
-
   # fish alias
   programs.fish.shellAliases = {
     k = "k3s kubectl";
