@@ -5,7 +5,7 @@ in
 {
   imports = [
     ./bird.nix
-    ./wireguard
+    ./wireguard.nix
     profiles.mycore
     profiles.users.root
     profiles.teleport
