@@ -71,6 +71,7 @@ in
     git
     gobuster
     google-cloud-sdk
+    httpie
     iptables
     lego
     just
