@@ -15,6 +15,7 @@ in
     profiles.exporter.bird
     profiles.pingfinder
     profiles.autorestic
+    profiles.docker
   ];
 
   nix.gc.dates = "monthly";
@@ -62,7 +63,6 @@ in
     aria2
     buildtorrent
     dnsutils
-    docker-compose
     dumptorrent
     exploitdb
     fd
@@ -108,7 +108,6 @@ in
 
   # Docker
   virtualisation.docker = {
-    enable = true;
     storageDriver = "overlay2";
   };
 
