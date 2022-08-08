@@ -15,6 +15,7 @@ in
     profiles.exporter.node
     profiles.exporter.bird
     profiles.etherguard.edge
+    profiles.docker
   ];
 
   boot.loader.grub.device = "/dev/vda";
@@ -72,9 +73,6 @@ in
   programs.fish.shellAliases = {
     k = "k3s kubectl";
   };
-
-  # Docker
-  virtualisation.docker.enable = true;
 
   # OpenSSH
   services.openssh.extraConfig = ''
