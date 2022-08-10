@@ -11,7 +11,6 @@ in
     profiles.users.root
     profiles.teleport
     profiles.pingfinder
-    # profiles.coredns.dn42
     profiles.exporter.node
     profiles.exporter.bird
     profiles.etherguard.edge
@@ -52,7 +51,6 @@ in
   environment.persistence."/persist" = {
     directories = [
       "/var/lib"
-      "/var/jfsCache"
     ];
     files = [
       "/etc/machine-id"
@@ -96,6 +94,39 @@ in
   services.mysql = {
     enable = true;
     package = pkgs.mariadb;
+  };
+
+  # AutoRestic
+  services.autorestic = {
+    settings = {
+      version = 2;
+      global = {
+        forget = {
+          keep-hourly = 24;
+          keep-daily = 7;
+          keep-weekly = 4;
+          keep-monthly = 6;
+        };
+      };
+      backends = {
+        garage = {
+          type = "s3";
+          path = "https://s3.esd.cc/restic";
+        };
+      };
+      locations = {
+        data = {
+          from = [
+            "/persist/docker"
+            "/persist/etc"
+          ];
+          to = [
+            "garage"
+          ];
+          cron = "0 1 * * *";
+        };
+      };
+    };
   };
 
 }
