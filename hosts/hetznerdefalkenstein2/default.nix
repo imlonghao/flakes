@@ -16,6 +16,7 @@ in
     profiles.pingfinder
     profiles.autorestic
     profiles.docker
+    profiles.bird-lg-go
   ];
 
   nix.gc.dates = "monthly";
@@ -82,7 +83,7 @@ in
     nmap
     openssl
     openvpn
-    (python3.withPackages(ps: with ps; [ requests ]))
+    (python3.withPackages (ps: with ps; [ requests ]))
     q-dns
     ripgrep
     socat
