@@ -16,6 +16,7 @@ in
     profiles.etherguard.edge
     profiles.docker
     profiles.autorestic
+    profiles.bird-lg-go
   ];
 
   boot.loader.grub.device = "/dev/vda";

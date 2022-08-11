@@ -14,6 +14,7 @@ in
     profiles.exporter.bird
     profiles.etherguard.edge
     (modulesPath + "/profiles/qemu-guest.nix")
+    profiles.bird-lg-go
   ];
 
   # Config
