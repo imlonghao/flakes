@@ -5,6 +5,6 @@ in
 {
   services.bird-lg-go = {
     enable = true;
-    listenAddress = "${ip}:8400";
+    listen = "${ip}:8400";
   };
 }
