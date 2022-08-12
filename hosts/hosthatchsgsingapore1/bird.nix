@@ -104,6 +104,7 @@
         local as 4242421888;
         graceful restart on;
         ipv4 {
+          import table;
           extended next hop;
           import filter {
             if (roa_check(dn42_roa, net, bgp_path.last) != ROA_VALID) then {
@@ -118,6 +119,7 @@
           export where is_valid_network();
         };
         ipv6 {
+          import table;
           import filter {
             if (roa_check(dn42_roa_v6, net, bgp_path.last) != ROA_VALID) then {
               print "[dn42] ROA check failed for ", net, " ASN ", bgp_path.last;
