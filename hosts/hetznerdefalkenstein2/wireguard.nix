@@ -12,6 +12,7 @@ in
     "net.ipv4.conf.wg0499.rp_filter" = 0;
     "net.ipv4.conf.wg0864.rp_filter" = 0;
     "net.ipv4.conf.wg1078.rp_filter" = 0;
+    "net.ipv4.conf.wg1513.rp_filter" = 0;
     "net.ipv4.conf.wg1588.rp_filter" = 0;
     "net.ipv4.conf.wg1592.rp_filter" = 0;
     "net.ipv4.conf.wg1817.rp_filter" = 0;
@@ -133,6 +134,19 @@ in
         {
           endpoint = "dn42.pgnhd.moe:3959";
           publicKey = "72yTeL6AEAmWKNYGc14mYSjYU9qElYLSMzxaNhSua08=";
+          allowedIPs = [ "10.0.0.0/8" "172.20.0.0/14" "172.31.0.0/16" "fe80::/64" "fd00::/8" ];
+        }
+      ];
+    };
+    wg1513 = {
+      ips = [ "fe80::1888/64" ];
+      privateKeyFile = config.sops.secrets.wireguard.path;
+      listenPort = 21513;
+      allowedIPsAsRoutes = false;
+      peers = [
+        {
+          endpoint = "ayumu-muc.de.nodes.dn42.xkww3n.cyou:21888";
+          publicKey = "PjS6RoBo4vcTPzQqpLeFkhkcvKSKJz6MeZfeGgGuYW8=";
           allowedIPs = [ "10.0.0.0/8" "172.20.0.0/14" "172.31.0.0/16" "fe80::/64" "fd00::/8" ];
         }
       ];
