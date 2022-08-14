@@ -32,8 +32,8 @@ in
     wg64719 = {
       ips = [ "fe80::1888/64" ];
       postSetup = [
-        "${pkgs.iproute2}/bin/ip addr add 172.22.68.0/32 peer 172.22.119.1/32 dev wg0197"
-        "${pkgs.iproute2}/bin/ip route change 172.22.119.1 src 172.22.68.4 dev wg0197"
+        "${pkgs.iproute2}/bin/ip addr add 172.22.68.0/32 peer 172.22.119.1/32 dev wg64719"
+        "${pkgs.iproute2}/bin/ip route change 172.22.119.1 src 172.22.68.4 dev wg64719"
       ];
       privateKeyFile = config.sops.secrets.wireguard.path;
       listenPort = 64719;
