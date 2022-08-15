@@ -26,6 +26,7 @@ in
     "net.ipv4.conf.wg3044.rp_filter" = 0;
     "net.ipv4.conf.wg3088.rp_filter" = 0;
     "net.ipv4.conf.wg3847.rp_filter" = 0;
+    "net.ipv4.conf.wg3868.rp_filter" = 0;
     "net.ipv4.conf.wg3914.rp_filter" = 0;
   };
   networking.wireguard.interfaces = {
@@ -334,6 +335,19 @@ in
         {
           endpoint = "de-flk-dn42.0011.de:21888";
           publicKey = "b8jJ2n2CyAm3iGvVl95Rc9yINXqHd16y4OkW40zV0FQ=";
+          allowedIPs = [ "10.0.0.0/8" "172.20.0.0/14" "172.31.0.0/16" "fe80::/64" "fd00::/8" ];
+        }
+      ];
+    };
+    wg3868 = {
+      ips = [ "fe80::1888/64" ];
+      privateKeyFile = config.sops.secrets.wireguard.path;
+      listenPort = 23868;
+      allowedIPsAsRoutes = false;
+      peers = [
+        {
+          endpoint = "fra1.dn42.cooo.cool:21888";
+          publicKey = "UFDPre74vbNAV+e2dvdeEWNqT4h8X8ryyIrNIGWWUzU=";
           allowedIPs = [ "10.0.0.0/8" "172.20.0.0/14" "172.31.0.0/16" "fe80::/64" "fd00::/8" ];
         }
       ];
