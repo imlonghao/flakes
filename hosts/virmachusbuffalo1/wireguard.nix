@@ -6,6 +6,7 @@
     "net.ipv4.conf.wg31111.rp_filter" = 0;
     "net.ipv4.conf.wg0247.rp_filter" = 0;
     "net.ipv4.conf.wg0262.rp_filter" = 0;
+    "net.ipv4.conf.wg0591.rp_filter" = 0;
     "net.ipv4.conf.wg1080.rp_filter" = 0;
     "net.ipv4.conf.wg1816.rp_filter" = 0;
     "net.ipv4.conf.wg2464.rp_filter" = 0;
@@ -56,6 +57,19 @@
         {
           endpoint = "iad0.dn42.mtzfederico.com:21888";
           publicKey = "GggTJ5B5ypZszhBU+E5DmKChwTnjzif1ZbX+yXP1mH8=";
+          allowedIPs = [ "10.0.0.0/8" "172.20.0.0/14" "172.31.0.0/16" "fe80::/64" "fd00::/8" ];
+        }
+      ];
+    };
+    wg0591 = {
+      ips = [ "fe80::1888/64" ];
+      privateKeyFile = config.sops.secrets.wireguard.path;
+      listenPort = 20591;
+      allowedIPsAsRoutes = false;
+      peers = [
+        {
+          endpoint = "rtr1.ord.nullplane.net:21888";
+          publicKey = "oKhq3iDYFkwuyG611qCgbo6UzRm3wEiSn2CwJQn4QRA=";
           allowedIPs = [ "10.0.0.0/8" "172.20.0.0/14" "172.31.0.0/16" "fe80::/64" "fd00::/8" ];
         }
       ];
