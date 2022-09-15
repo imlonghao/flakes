@@ -9,6 +9,7 @@
     "net.ipv4.conf.wg0603.rp_filter" = 0;
     "net.ipv4.conf.wg0831.rp_filter" = 0;
     "net.ipv4.conf.wg1588.rp_filter" = 0;
+    "net.ipv4.conf.wg1816.rp_filter" = 0;
     "net.ipv4.conf.wg1817.rp_filter" = 0;
     "net.ipv4.conf.wg2025.rp_filter" = 0;
     "net.ipv4.conf.wg2189.rp_filter" = 0;
@@ -107,6 +108,19 @@
         {
           endpoint = "jp-tyo01.dn42.tech9.io:54012";
           publicKey = "unTYSat5YjkY+BY31Q9xLSfFhTUBvn3CiDCSZxbINVM=";
+          allowedIPs = [ "10.0.0.0/8" "172.20.0.0/14" "172.31.0.0/16" "fe80::/64" "fd00::/8" ];
+        }
+      ];
+    };
+    wg1816 = {
+      ips = [ "fe80::1888/64" ];
+      privateKeyFile = config.sops.secrets.wireguard.path;
+      listenPort = 21816;
+      allowedIPsAsRoutes = false;
+      peers = [
+        {
+          endpoint = "jp1.dn42.potat0.cc:21818";
+          publicKey = "Tv1+HniELrS4Br2i7oQgwqBJFXQKculsW8r+UOqQXH0=";
           allowedIPs = [ "10.0.0.0/8" "172.20.0.0/14" "172.31.0.0/16" "fe80::/64" "fd00::/8" ];
         }
       ];
