@@ -119,7 +119,7 @@
       allowedIPsAsRoutes = false;
       peers = [
         {
-          endpoint = "jp1.dn42.potat0.cc:21818";
+          endpoint = "jp1.dn42.potat0.cc:21888";
           publicKey = "Tv1+HniELrS4Br2i7oQgwqBJFXQKculsW8r+UOqQXH0=";
           allowedIPs = [ "10.0.0.0/8" "172.20.0.0/14" "172.31.0.0/16" "fe80::/64" "fd00::/8" ];
         }
