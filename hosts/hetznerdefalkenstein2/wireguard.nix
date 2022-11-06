@@ -11,7 +11,6 @@ in
     "net.ipv4.conf.wg0385.rp_filter" = 0;
     "net.ipv4.conf.wg0499.rp_filter" = 0;
     "net.ipv4.conf.wg0864.rp_filter" = 0;
-    "net.ipv4.conf.wg1078.rp_filter" = 0;
     "net.ipv4.conf.wg1513.rp_filter" = 0;
     "net.ipv4.conf.wg1588.rp_filter" = 0;
     "net.ipv4.conf.wg1592.rp_filter" = 0;
@@ -118,23 +117,6 @@ in
         {
           endpoint = "nue.dn42.christine.pp.ua:21888";
           publicKey = "ypRGDCaVyoIJFPkRDbXm/wo8liNcbsY3PkiGBqZJzUI=";
-          allowedIPs = [ "10.0.0.0/8" "172.20.0.0/14" "172.31.0.0/16" "fe80::/64" "fd00::/8" ];
-        }
-      ];
-    };
-    wg1078 = {
-      ips = [ "fe80::1888/64" ];
-      postSetup = [
-        "${pkgs.iproute2}/bin/ip addr add 172.22.68.0/32 peer 172.23.86.32/32 dev wg1078"
-        "${pkgs.iproute2}/bin/ip route change 172.23.86.32 src 172.22.68.4 dev wg1078"
-      ];
-      privateKeyFile = config.sops.secrets.wireguard.path;
-      listenPort = 21078;
-      allowedIPsAsRoutes = false;
-      peers = [
-        {
-          endpoint = "dn42.pgnhd.moe:3959";
-          publicKey = "72yTeL6AEAmWKNYGc14mYSjYU9qElYLSMzxaNhSua08=";
           allowedIPs = [ "10.0.0.0/8" "172.20.0.0/14" "172.31.0.0/16" "fe80::/64" "fd00::/8" ];
         }
       ];
