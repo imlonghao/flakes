@@ -17,7 +17,6 @@ in
     "net.ipv4.conf.wg1817.rp_filter" = 0;
     "net.ipv4.conf.wg2189.rp_filter" = 0;
     "net.ipv4.conf.wg2331.rp_filter" = 0;
-    "net.ipv4.conf.wg2615.rp_filter" = 0;
     "net.ipv4.conf.wg2717.rp_filter" = 0;
     "net.ipv4.conf.wg2923.rp_filter" = 0;
     "net.ipv4.conf.wg2980.rp_filter" = 0;
@@ -202,19 +201,6 @@ in
         {
           endpoint = "lu208.dn42.williamgates.info:21888";
           publicKey = "c4AZZVNUzXCASWG96CKUpY+gQLdGwA1rbqkYCHXnW10=";
-          allowedIPs = [ "10.0.0.0/8" "172.20.0.0/14" "172.31.0.0/16" "fe80::/64" "fd00::/8" ];
-        }
-      ];
-    };
-    wg2615 = {
-      ips = [ "fe80::1888/64" ];
-      privateKeyFile = config.sops.secrets.wireguard.path;
-      listenPort = 22615;
-      allowedIPsAsRoutes = false;
-      peers = [
-        {
-          endpoint = "euhax6.dn42.oldtaoge.space:21888";
-          publicKey = "RL4c63BimHwb6VNbo8k1IHDsIELp35pUF5kkzCz4LxA=";
           allowedIPs = [ "10.0.0.0/8" "172.20.0.0/14" "172.31.0.0/16" "fe80::/64" "fd00::/8" ];
         }
       ];
