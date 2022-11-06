@@ -14,7 +14,7 @@ in
 
   # Network
   networking = {
-    nameservers = [ "168.119.101.249" "1.1.1.1" ];
+    nameservers = [ "8.8.8.8" "1.1.1.1" ];
     defaultGateway = {
       interface = "ens18";
       address = "185.243.216.1";
