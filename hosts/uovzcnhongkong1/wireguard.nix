@@ -243,7 +243,7 @@
       allowedIPsAsRoutes = false;
       peers = [
         {
-          endpoint = "gaylord-hkg.de:51888";
+          endpoint = "herzstein.mk16.de:51888";
           publicKey = "MCLjwWmqnsQ9DoXdaNRfnuz+PE4y1J20l3Ag2y4Qk3w=";
           allowedIPs = [ "10.0.0.0/8" "172.20.0.0/14" "172.31.0.0/16" "fe80::/64" "fd00::/8" ];
         }
