@@ -1,14 +1,13 @@
 { pkgs, ... }:
 
 {
-  # test user
-  users.users.gikzoncf = {
+  users.users.vpsjptokyo1 = {
     group = "nogroup";
-    home = "/persist/borg/gikzoncf";
+    home = "/persist/borg/vpsjptokyo1";
     createHome = true;
     isNormalUser = true;
     openssh.authorizedKeys.keys = [
-      ''command="${pkgs.borgbackup}/bin/borg serve --restrict-to-repository /persist/borg/gikzoncf/repo --append-only",restrict ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKv5fgCyrSdHw1z4Yvdi28fLs413vLFYk5sYyfC1YHJz''
+      ''command="${pkgs.borgbackup}/bin/borg serve --restrict-to-repository /persist/borg/vpsjptokyo1/repo --append-only",restrict ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMCayvEz2OVsmPx3UUHOTO4OvOJ9oqr19mUtaWSsQ7EH root@vpsjptokyo1''
     ];
   };
 }
