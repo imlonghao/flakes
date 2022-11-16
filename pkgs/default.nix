@@ -9,4 +9,5 @@ final: prev: {
   q-dns = prev.callPackage ./q-dns { };
   deluge_exporter = prev.callPackage ./deluge_exporter { };
   bird-lg-go = prev.callPackage ./bird-lg-go { };
+  tuic = prev.callPackage ./tuic { };
 }
