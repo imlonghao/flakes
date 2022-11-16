@@ -11,6 +11,7 @@ in
     profiles.teleport
     profiles.exporter.node
     profiles.etherguard.edge
+    profiles.tuic
   ];
 
   boot.loader.grub.device = "/dev/vda";
