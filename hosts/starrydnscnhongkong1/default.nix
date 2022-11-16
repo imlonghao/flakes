@@ -9,7 +9,6 @@ in
     profiles.mycore
     profiles.users.root
     profiles.teleport
-    profiles.k3s
     profiles.exporter.node
     profiles.etherguard.edge
   ];

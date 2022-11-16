@@ -10,7 +10,6 @@ in
     profiles.mycore
     profiles.users.root
     profiles.teleport
-    profiles.k3s
     profiles.pingfinder
     profiles.exporter.node
     profiles.exporter.bird
