@@ -10,7 +10,6 @@ in
     profiles.mycore
     profiles.users.root
     profiles.etherguard.edge
-    profiles.teleport
     profiles.exporter.node
     profiles.exporter.bird
     profiles.pingfinder
@@ -225,5 +224,10 @@ in
 
   # deluge_exporter
   services.deluge_exporter.enable = true;
+
+  # Corp SSH Public Key
+  users.users.root.openssh.authorizedKeys.keys = [
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOUNJVlqv8ZadxMk0XSlTpFmOHcxpbngu5GBZ9rSM77M Corp"
+  ];
 
 }
