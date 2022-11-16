@@ -46,6 +46,7 @@ steps:
   - nix -Lv develop -c nix -Lv build ".#powerdns"
   - nix -Lv develop -c nix -Lv build ".#q-dns"
   - nix -Lv develop -c nix -Lv build ".#rait"
+  - nix -Lv develop -c nix -Lv build ".#tuic"
   - /tmp/push-paths.sh cachix imlonghao ""
   when:
     branch:
