@@ -13,6 +13,7 @@
     "net.ipv4.conf.wg1817.rp_filter" = 0;
     "net.ipv4.conf.wg2025.rp_filter" = 0;
     "net.ipv4.conf.wg2189.rp_filter" = 0;
+    "net.ipv4.conf.wg2398.rp_filter" = 0;
     "net.ipv4.conf.wg2399.rp_filter" = 0;
     "net.ipv4.conf.wg2464.rp_filter" = 0;
     "net.ipv4.conf.wg2526.rp_filter" = 0;
@@ -168,6 +169,23 @@
         {
           endpoint = "jp-tyo.dn42.kuu.moe:47568";
           publicKey = "TNmCdvH0DuPX0xxS6DPHw/2v3ojLa5kXIT/Z4Tpx+GY=";
+          allowedIPs = [ "10.0.0.0/8" "172.20.0.0/14" "172.31.0.0/16" "fe80::/64" "fd00::/8" ];
+        }
+      ];
+    };
+    wg2398 = {
+      ips = [ "fe80::1888/64" ];
+      postSetup = [
+        "${pkgs.iproute2}/bin/ip addr add 172.22.68.0/32 peer 172.23.33.193/32 dev wg2398"
+        "${pkgs.iproute2}/bin/ip route change 172.23.33.193 src 172.22.68.3 dev wg2398"
+      ];
+      privateKeyFile = config.sops.secrets.wireguard.path;
+      listenPort = 22398;
+      allowedIPsAsRoutes = false;
+      peers = [
+        {
+          endpoint = "hk-hkg.nodes.yuzhen.network:21888";
+          publicKey = "YZHK/OEotkWSBrX3WZMrHUMQviLGzTfexsXz2R9clH4=";
           allowedIPs = [ "10.0.0.0/8" "172.20.0.0/14" "172.31.0.0/16" "fe80::/64" "fd00::/8" ];
         }
       ];
