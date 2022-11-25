@@ -8,7 +8,6 @@ in
     ./bird.nix
     profiles.mycore
     profiles.users.root
-    profiles.teleport
     profiles.exporter.node
     profiles.etherguard.edge
     profiles.tuic
@@ -53,8 +52,6 @@ in
       "/etc/rancher/node/password"
     ];
   };
-
-  services.myteleport.teleport.auth_token = "fd64c74d419e690ab9d5cf99cf5b8b58";
 
   # EtherGuard
   services.etherguard-edge = {

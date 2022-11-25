@@ -9,7 +9,6 @@ in
     # ./wireguard.nix
     profiles.mycore
     profiles.users.root
-    profiles.teleport
     # profiles.pingfinder
     profiles.exporter.node
     profiles.etherguard.edge
@@ -56,8 +55,6 @@ in
       "/etc/ssh/ssh_host_ed25519_key"
     ];
   };
-
-  services.myteleport.teleport.auth_token = "fd64c74d419e690ab9d5cf99cf5b8b58";
 
   # EtherGuard
   services.etherguard-edge = {

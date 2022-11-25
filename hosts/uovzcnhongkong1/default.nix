@@ -9,7 +9,6 @@ in
     ./wireguard.nix
     profiles.mycore
     profiles.users.root
-    profiles.teleport
     profiles.pingfinder
     profiles.exporter.node
     profiles.exporter.bird
@@ -55,8 +54,6 @@ in
       "/etc/rancher/node/password"
     ];
   };
-
-  services.myteleport.teleport.auth_token = "fd64c74d419e690ab9d5cf99cf5b8b58";
 
   # EtherGuard
   services.etherguard-edge = {

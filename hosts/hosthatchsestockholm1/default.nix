@@ -8,7 +8,6 @@ in
     ./hardware.nix
     profiles.mycore
     profiles.users.root
-    profiles.teleport
     profiles.etherguard.edge
     profiles.exporter.node
   ];
@@ -29,8 +28,6 @@ in
       "/etc/ssh/ssh_host_ed25519_key"
     ];
   };
-
-  services.myteleport.teleport.auth_token = "d6ce0c999ac25cb04af6799ddfd61d51";
 
   environment.systemPackages = with pkgs; [
     docker-compose

@@ -7,7 +7,6 @@ in
     ./hardware.nix
     profiles.mycore
     profiles.users.root
-    profiles.teleport
     profiles.exporter.node
     profiles.etherguard.edge
   ];
@@ -37,8 +36,6 @@ in
     ipv4 = "100.64.88.18/24";
     ipv6 = "2602:feda:1bf:deaf::18/64";
   };
-
-  services.myteleport.teleport.auth_token = "48a0c36e8170da90fa81a352a032dc28";
 
   # OpenSSH
   services.openssh.extraConfig = ''

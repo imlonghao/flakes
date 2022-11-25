@@ -118,9 +118,6 @@ in
     ipv6 = "2602:feda:1bf:deaf::12/64";
   };
 
-  # Teleport
-  services.myteleport.teleport.auth_token = "916c928451057889ad5d403985713b30";
-
   # rclone
   sops.secrets.rclone.sopsFile = ./secrets.yml;
   services.rclone-a = {

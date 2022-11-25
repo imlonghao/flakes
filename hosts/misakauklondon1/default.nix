@@ -8,7 +8,6 @@ in
     ./bird.nix
     profiles.mycore
     profiles.users.root
-    profiles.teleport
     profiles.exporter.node
     profiles.etherguard.super
     profiles.etherguard.edge
@@ -41,8 +40,6 @@ in
   environment.systemPackages = with pkgs; [
     docker-compose
   ];
-
-  services.myteleport.teleport.auth_token = "fd64c74d419e690ab9d5cf99cf5b8b58";
 
   # Docker
   virtualisation.docker.enable = true;
