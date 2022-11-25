@@ -52,7 +52,7 @@ in
     sopsFile = ./secrets.yml;
     restartUnits = [ "garage.service" ];
   };
-  services.garage = {
+  services.mygarage = {
     enable = true;
     path = config.sops.secrets.garage.path;
   };

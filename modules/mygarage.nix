@@ -1,10 +1,10 @@
 { config, pkgs, lib, ... }:
 with lib;
 let
-  cfg = config.services.garage;
+  cfg = config.services.mygarage;
 in
 {
-  options.services.garage = {
+  options.services.mygarage = {
     enable = mkEnableOption "Garage Data Store";
     path = mkOption {
       type = types.str;
