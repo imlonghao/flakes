@@ -10,7 +10,6 @@
     "net.ipv4.conf.wg0864.rp_filter" = 0;
     "net.ipv4.conf.wg0927.rp_filter" = 0;
     "net.ipv4.conf.wg1123.rp_filter" = 0;
-    "net.ipv4.conf.wg1586.rp_filter" = 0;
     "net.ipv4.conf.wg1817.rp_filter" = 0;
     "net.ipv4.conf.wg1877.rp_filter" = 0;
     "net.ipv4.conf.wg2032.rp_filter" = 0;
@@ -115,23 +114,6 @@
         {
           endpoint = "lax.ccp.ovh:21888";
           publicKey = "Z6OKJSR1sxMBgUd1uXEe/UxoBsOvRgbTnexy7z/ryUI=";
-          allowedIPs = [ "10.0.0.0/8" "172.20.0.0/14" "172.31.0.0/16" "fe80::/64" "fd00::/8" ];
-        }
-      ];
-    };
-    wg1586 = {
-      ips = [ "fe80::1888/64" ];
-      postSetup = [
-        "${pkgs.iproute2}/bin/ip addr add 172.22.68.0/32 peer 172.21.75.32/32 dev wg1586"
-        "${pkgs.iproute2}/bin/ip route change 172.21.75.32 src 172.22.68.5 dev wg1586"
-      ];
-      privateKeyFile = config.sops.secrets.wireguard.path;
-      listenPort = 21586;
-      allowedIPsAsRoutes = false;
-      peers = [
-        {
-          endpoint = "lv.dn42.serversc.com:21888";
-          publicKey = "9CO2NAA7vDqnkHP1ro4c0+zm6wEHmdaAF3JMShfTlkA=";
           allowedIPs = [ "10.0.0.0/8" "172.20.0.0/14" "172.31.0.0/16" "fe80::/64" "fd00::/8" ];
         }
       ];
