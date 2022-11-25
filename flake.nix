@@ -138,11 +138,6 @@
         homeConfigurations = digga.lib.mkHomeConfigurations self.nixosConfigurations;
 
         deploy.nodes = digga.lib.mkDeployNodes self.nixosConfigurations {
-          hertzdefalkenstein1 = {
-            hostname = "hertz-de-falkenstein-1.ni.sb";
-            sshUser = "root";
-            sshOpts = [ "-p" "22226" ];
-          };
           virmachusbuffalo1 = {
             hostname = "virmach-us-buffalo-1.ni.sb";
             sshUser = "root";
