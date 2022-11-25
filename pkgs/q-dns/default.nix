@@ -1,6 +1,6 @@
-{ sources, buildGo117Module, lib }:
+{ sources, buildGo119Module, lib }:
 
-buildGo117Module rec {
+buildGo119Module rec {
   inherit (sources.q-dns) pname version src;
 
   vendorSha256 = "sha256-jBPCZ2vnI6gnRdnKkWzrh8mYwxp3Xfvyd28ZveAYZdc=";
