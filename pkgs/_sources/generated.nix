@@ -71,7 +71,7 @@
       leaveDotGit = false;
       sha256 = "sha256-6Y0s5/HUmWrZA6QmV5wYjB1M0Ab/jHM3TSruRpMRwtA=";
     };
-    vendorSha256 = "sha256-SyiXhWnsECnn3ObaUl/5coq7jk7dYd66WlNihMpoCrI=";
+    vendorSha256 = "sha256-T/ufC4mEXRBKgsmIk8jSCQva5Td0rnFHx3UIVV+t08k";
     date = "2022-10-07";
   };
 }
