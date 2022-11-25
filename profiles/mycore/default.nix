@@ -6,18 +6,20 @@ in
   imports = [ ../cachix ];
 
   nix = {
-    autoOptimiseStore = true;
     gc.automatic = true;
     optimise.automatic = true;
-    useSandbox = true;
-    allowedUsers = [ "@wheel" ];
-    trustedUsers = [ "root" "@wheel" ];
     extraOptions = ''
       experimental-features = nix-command flakes ca-derivations
     '';
+    settings = {
+      auto-optimise-store = true;
+      sandbox = true;
+      allowed-users = [ "@wheel" ];
+      trusted-users = [ "root" "@wheel" ];
+    };
   };
 
-  system.stateVersion = "22.05";
+  system.stateVersion = "22.11";
 
   boot.cleanTmpDir = true;
   boot.kernel.sysctl = {
