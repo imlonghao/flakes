@@ -165,10 +165,6 @@
           starrydnscnhongkong1 = {
             hostname = "starrydns-cn-hongkong-1.ni.sb";
           };
-          mailcow = {
-            hostname = "mail.esd.cc";
-            sshOpts = [ "-p" "2222" ];
-          };
           misakauklondon1 = {
             hostname = "misaka-uk-london-1.ni.sb";
           };
