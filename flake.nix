@@ -175,6 +175,9 @@
           terrahostnosandefjord1 = {
             hostname = "terrahost-no-sandefjord-1.ni.sb";
           };
+          vpsdeduesseldorf1 = {
+            hostname = "vps-de-duesseldorf-1.ni.sb";
+          };
         };
 
         defaultTemplate = self.templates.bud;
