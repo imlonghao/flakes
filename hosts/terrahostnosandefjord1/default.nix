@@ -44,14 +44,4 @@ in
   # Docker
   virtualisation.docker.enable = true;
 
-  # Garage
-  sops.secrets.garage = {
-    sopsFile = ./secrets.yml;
-    restartUnits = [ "garage.service" ];
-  };
-  services.mygarage = {
-    enable = true;
-    path = config.sops.secrets.garage.path;
-  };
-
 }
