@@ -40,6 +40,7 @@ in
         ];
         ipv6.addresses = [
           { address="2a09:b280:ff80::"; prefixLength=48; }
+          { address="2602:feda:1bf::"; prefixLength=48; }
         ];
       };
     };
