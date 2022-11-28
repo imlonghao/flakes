@@ -85,7 +85,7 @@
 
       protocol bgp xtom {
         neighbor 2a03:d9c0:2000::5 as 3204;
-        password ffdsuu3xh1f1f;
+        password "ffdsuu3xh1f1f";
         local as 133846;
         graceful restart on;
         ipv6 {
