@@ -4,6 +4,7 @@ let
 in
 {
   imports = [
+    ./bird.nix
     ./hardware.nix
     profiles.mycore
     profiles.users.root
@@ -31,6 +32,14 @@ in
         ];
         ipv6.addresses = [
           { address="2a0c:b641:701::13:3846:1"; prefixLength=64; }
+        ];
+      };
+      lo = {
+        ipv4.addresses = [
+          { address="44.31.42.0"; prefixLength=32; }
+        ];
+        ipv6.addresses = [
+          { address="2a09:b280:ff80::"; prefixLength=48; }
         ];
       };
     };
