@@ -8,7 +8,6 @@
       protocol direct {
         ipv4;
         ipv6;
-        interface "gravity";
       }
       protocol device {
         scan time 10;

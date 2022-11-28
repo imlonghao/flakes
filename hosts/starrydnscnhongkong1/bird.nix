@@ -8,7 +8,6 @@
       protocol direct {
         ipv4;
         ipv6;
-        interface "gravity";
       }
       protocol device {
         scan time 10;
@@ -72,18 +71,6 @@
           import all;
           export all;
         };
-      }
-      protocol babel gravity {
-        ipv4 {
-          import all;
-          export where net ~ 100.64.88.0/24 || net = 172.22.68.3/32;
-        };
-        ipv6 {
-          import all;
-          export where net ~ 2602:feda:1bf::/48;
-        };
-        randomize router id;
-        interface "gravity";
       }
       template bgp dnpeers {
         local as 4242421888;
