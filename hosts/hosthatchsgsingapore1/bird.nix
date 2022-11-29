@@ -14,7 +14,8 @@ let
     '';
   };
   dn42Conf = import profiles.bird.dn42 { region = 51; country = 1702; ip = 2; };
-  {
+in
+{
   services.bird2 = {
     enable = true;
     config = ''
@@ -62,4 +63,4 @@ let
       }
     '';
   };
-  }
+}
