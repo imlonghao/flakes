@@ -9,6 +9,7 @@ in
     "net.ipv4.conf.wg31111.rp_filter" = 0;
     "net.ipv4.conf.wg0197.rp_filter" = 0;
     "net.ipv4.conf.wg0385.rp_filter" = 0;
+    "net.ipv4.conf.wg0458.rp_filter" = 0;
     "net.ipv4.conf.wg0499.rp_filter" = 0;
     "net.ipv4.conf.wg0864.rp_filter" = 0;
     "net.ipv4.conf.wg1513.rp_filter" = 0;
@@ -86,6 +87,19 @@ in
         {
           endpoint = "de01.dn42.fullser.net:21888";
           publicKey = "znU3rjoLbYM11PpPlW1BocQFcxuhBbTJM/djesBvEUs=";
+          allowedIPs = [ "10.0.0.0/8" "172.20.0.0/14" "172.31.0.0/16" "fe80::/64" "fd00::/8" ];
+        }
+      ];
+    };
+    wg0458 = {
+      ips = [ "fe80::1888/64" ];
+      privateKeyFile = config.sops.secrets.wireguard.path;
+      listenPort = 20458;
+      allowedIPsAsRoutes = false;
+      peers = [
+        {
+          endpoint = "eu-west1.nodes.huajinet.org:21888";
+          publicKey = "J/EptroniSBNvzHhk0lQReRoHwV/m9vQo2l2CY69pXA=";
           allowedIPs = [ "10.0.0.0/8" "172.20.0.0/14" "172.31.0.0/16" "fe80::/64" "fd00::/8" ];
         }
       ];
