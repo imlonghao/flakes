@@ -24,18 +24,19 @@ in
     interfaces = {
       enp6s18 = {
         ipv4.addresses = [
-          { address="185.222.217.139"; prefixLength=24; }
+          { address = "185.222.217.139"; prefixLength = 24; }
         ];
         ipv6.addresses = [
-          { address="2a11:3:101::105b"; prefixLength=48; }
+          { address = "2a11:3:101::105b"; prefixLength = 48; }
         ];
       };
       lo = {
         ipv4.addresses = [
-          { address="172.22.68.9"; prefixLength=32; }
+          { address = "172.22.68.0"; prefixLength = 32; }
+          { address = "172.22.68.9"; prefixLength = 32; }
         ];
         ipv6.addresses = [
-          { address="fd21:5c0c:9b7e:9::"; prefixLength=64; }
+          { address = "fd21:5c0c:9b7e:9::"; prefixLength = 64; }
         ];
       };
     };
