@@ -1,54 +1,22 @@
-{ profiles, ... }:
+{ config, profiles, ... }:
 let
-  generalConf = import profiles.bird.general;
-  dn42Conf = import profiles.bird.dn42;
+  generalConf = import profiles.bird.general {
+    config = config;
+    route4 = ''
+      route 44.31.42.0/24 blackhole;
+      route 172.22.68.0/28 blackhole;
+      route 172.22.68.5/32 blackhole;
+    '';
+    route6 = ''
+      route fd21:5c0c:9b7e:5::/64 blackhole;
+    '';
+  };
+  dn42Conf = import profiles.bird.dn42 { region = 44; country = 1840; ip = 5; };
 in
 {
   services.bird2 = {
     enable = true;
-    config = generalConf + dn42Conf + ''
-      define DN42_REGION = 44;
-      define DN42_COUNTRY = 1840;
-      protocol kernel {
-        scan time 10;
-        graceful restart on;
-        ipv4 {
-          import none;
-          export filter {
-            if net = 0.0.0.0/0 then reject;
-            if is_valid_network() then krt_prefsrc = 172.22.68.5;
-            accept;
-          };
-        };
-      }
-      protocol kernel {
-        scan time 10;
-        graceful restart on;
-        ipv6 {
-          import none;
-          export filter {
-            if net = ::/0 then reject;
-            if is_valid_network_v6() then krt_prefsrc = fd21:5c0c:9b7e:5::;
-            accept;
-          };
-        };
-      }
-      protocol static {
-        route 44.31.42.0/24 blackhole;
-        route 172.22.68.0/28 blackhole;
-        route 172.22.68.5/32 blackhole;
-        ipv4 {
-          import all;
-          export all;
-        };
-      }
-      protocol static {
-        route fd21:5c0c:9b7e:5::/64 blackhole;
-        ipv6 {
-          import all;
-          export all;
-        };
-      }
+    config = generalConf + dn42Conf + kernelConf + ''
       protocol bgp AS53667v4 {
         local as 133846;
         neighbor 169.254.169.179 as 53667;
