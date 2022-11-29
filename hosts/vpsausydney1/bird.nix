@@ -4,6 +4,8 @@
     enable = true;
     config = ''
       router id 100.64.88.22;
+      define DN42_REGION = 53;
+      define DN42_COUNTRY = 1036;
       timeformat protocol iso long;
       protocol direct {
         ipv4;
@@ -29,6 +31,13 @@
         return net ~ [
           fd00::/8{44,64} # ULA address space as per RFC 4193
         ];
+      }
+      function safe_lower_pref(int x) {
+        if (bgp_local_pref > x) then {
+          bgp_local_pref = bgp_local_pref - x;
+        } else {
+          bgp_local_pref = 0;
+        }
       }
       protocol kernel {
         scan time 10;
@@ -110,9 +119,20 @@
             if !is_valid_network() then {
               reject;
             }
+            if (64511, DN42_REGION) ~ bgp_community then safe_lower_pref(10);
+            if (64511, DN42_COUNTRY) ~ bgp_community then safe_lower_pref(10);
             accept;
           };
-          export where is_valid_network();
+          export filter {
+            if !is_valid_network() then {
+              reject;
+            }
+            if source = RTS_STATIC then {
+              bgp_community.add((64511, DN42_REGION));
+              bgp_community.add((64511, DN42_COUNTRY));
+            }
+            accept; 
+          };
         };
         ipv6 {
           import table;
@@ -124,9 +144,20 @@
             if !is_valid_network_v6() then {
               reject;
             }
+            if (64511, DN42_REGION) ~ bgp_community then safe_lower_pref(10);
+            if (64511, DN42_COUNTRY) ~ bgp_community then safe_lower_pref(10);
             accept;
           };
-          export where is_valid_network_v6();
+          export filter {
+            if !is_valid_network_v6() then {
+              reject;
+            }
+            if source = RTS_STATIC then {
+              bgp_community.add((64511, DN42_REGION));
+              bgp_community.add((64511, DN42_COUNTRY));
+            }
+            accept; 
+          };
         };
       }
       protocol bgp AS4242420458 from dnpeers {
