@@ -32,13 +32,6 @@
           fd00::/8{44,64} # ULA address space as per RFC 4193
         ];
       }
-      function safe_lower_pref(int x) {
-        if (bgp_local_pref > x) then {
-          bgp_local_pref = bgp_local_pref - x;
-        } else {
-          bgp_local_pref = 0;
-        }
-      }
       protocol kernel {
         scan time 10;
         graceful restart on;
@@ -119,8 +112,8 @@
             if !is_valid_network() then {
               reject;
             }
-            if (64511, DN42_REGION) ~ bgp_community then safe_lower_pref(10);
-            if (64511, DN42_COUNTRY) ~ bgp_community then safe_lower_pref(10);
+            if (64511, DN42_REGION) ~ bgp_community then bgp_local_pref = bgp_local_pref + 10;
+            if (64511, DN42_COUNTRY) ~ bgp_community then bgp_local_pref = bgp_local_pref + 10;
             accept;
           };
           export filter {
@@ -144,8 +137,8 @@
             if !is_valid_network_v6() then {
               reject;
             }
-            if (64511, DN42_REGION) ~ bgp_community then safe_lower_pref(10);
-            if (64511, DN42_COUNTRY) ~ bgp_community then safe_lower_pref(10);
+            if (64511, DN42_REGION) ~ bgp_community then bgp_local_pref = bgp_local_pref + 10;
+            if (64511, DN42_COUNTRY) ~ bgp_community then bgp_local_pref = bgp_local_pref + 10;
             accept;
           };
           export filter {
