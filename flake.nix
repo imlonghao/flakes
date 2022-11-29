@@ -178,6 +178,9 @@
           vpsdeduesseldorf1 = {
             hostname = "vps-de-duesseldorf-1.ni.sb";
           };
+          vpsausydney1 = {
+            hostname = "vps-au-sydney-1.ni.sb";
+          };
         };
 
         defaultTemplate = self.templates.bud;

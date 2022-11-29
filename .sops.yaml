@@ -15,6 +15,7 @@ keys:
   - &vps_oracledefrankfurt1 age1a8n7e54k57fsczpu0zxqadmyp3aal9prc9ez3l729r6d6aqjnvaqzng7ar
   - &vps_terrahostnosandefjord1 age1zhq4z3srfk0m7njlcgem2av3mzylk89tcfq0t7fhxd0q6xq97ueqtj4dg4
   - &vps_vpsdeduesseldorf1 age1yutf6j4sr5lwxnrmh8crp585r6q7dkhxyyt04gxaqyp7kf5565nsdksxdk
+  - &vps_vpsausydney1 age10hs4v4utyhykkgwdyagqng54apnf4qsjunjnlarwcg4l0ydm4f3qhz49sj
 creation_rules:
   - path_regex: secrets/shadow.yml$
     key_groups:
@@ -34,6 +35,7 @@ creation_rules:
       - *vps_hosthatchsestockholm1
       - *vps_oracledefrankfurt1
       - *vps_vpsdeduesseldorf1
+      - *vps_vpsausydney1
   - path_regex: secrets/k3s.yml$
     key_groups:
     - pgp:
@@ -135,3 +137,9 @@ creation_rules:
       - *me_canokey
       age:
       - *vps_vpsdeduesseldorf1
+  - path_regex: hosts/vpsausydney1/secrets.yml$
+    key_groups:
+    - pgp:
+      - *me_canokey
+      age:
+      - *vps_vpsausydney1
