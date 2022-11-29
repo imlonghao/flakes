@@ -12,6 +12,7 @@ in
     "net.ipv4.conf.wg0458.rp_filter" = 0;
     "net.ipv4.conf.wg0499.rp_filter" = 0;
     "net.ipv4.conf.wg0864.rp_filter" = 0;
+    "net.ipv4.conf.wg1080.rp_filter" = 0;
     "net.ipv4.conf.wg1513.rp_filter" = 0;
     "net.ipv4.conf.wg1588.rp_filter" = 0;
     "net.ipv4.conf.wg1592.rp_filter" = 0;
@@ -130,6 +131,19 @@ in
         {
           endpoint = "nue.dn42.christine.pp.ua:21888";
           publicKey = "ypRGDCaVyoIJFPkRDbXm/wo8liNcbsY3PkiGBqZJzUI=";
+          allowedIPs = [ "10.0.0.0/8" "172.20.0.0/14" "172.31.0.0/16" "fe80::/64" "fd00::/8" ];
+        }
+      ];
+    };
+    wg1080 = {
+      ips = [ "fe80::1888/64" ];
+      privateKeyFile = config.sops.secrets.wireguard.path;
+      listenPort = 21080;
+      allowedIPsAsRoutes = false;
+      peers = [
+        {
+          endpoint = "fra.peer.highdef.network:21888";
+          publicKey = "oiSSSOMYxiiM0eQP9p8klwEfNn34hkNNv4S289WUciU=";
           allowedIPs = [ "10.0.0.0/8" "172.20.0.0/14" "172.31.0.0/16" "fe80::/64" "fd00::/8" ];
         }
       ];
