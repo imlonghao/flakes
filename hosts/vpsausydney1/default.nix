@@ -9,8 +9,11 @@ in
     ./wireguard.nix
     profiles.mycore
     profiles.users.root
+    profiles.pingfinder
     profiles.exporter.node
+    profiles.exporter.bird
     profiles.etherguard.edge
+    profiles.bird-lg-go
   ];
 
   networking = {
