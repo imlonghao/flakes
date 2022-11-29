@@ -85,6 +85,7 @@
         if !is_valid_network() then {
           reject;
         }
+        if bgp_path.len = 1 then bgp_local_pref = bgp_local_pref + 10;
         if (64511, DN42_REGION) ~ bgp_community then bgp_local_pref = bgp_local_pref + 10;
         if (64511, DN42_COUNTRY) ~ bgp_community then bgp_local_pref = bgp_local_pref + 10;
         accept;
@@ -110,6 +111,7 @@
         if !is_valid_network_v6() then {
           reject;
         }
+        if bgp_path.len = 1 then bgp_local_pref = bgp_local_pref + 10;
         if (64511, DN42_REGION) ~ bgp_community then bgp_local_pref = bgp_local_pref + 10;
         if (64511, DN42_COUNTRY) ~ bgp_community then bgp_local_pref = bgp_local_pref + 10;
         accept;
