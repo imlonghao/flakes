@@ -5,6 +5,8 @@
     enable = true;
     config = ''
       router id 100.64.88.26;
+      define DN42_REGION = 42;
+      define DN42_COUNTRY = 1840;
       timeformat protocol iso long;
       protocol direct {
         ipv4;
@@ -111,9 +113,20 @@
             if !is_valid_network() then {
               reject;
             }
+            if (64511, DN42_REGION) ~ bgp_community then bgp_local_pref = bgp_local_pref + 10;
+            if (64511, DN42_COUNTRY) ~ bgp_community then bgp_local_pref = bgp_local_pref + 10;
             accept;
           };
-          export where is_valid_network();
+          export filter {
+            if !is_valid_network() then {
+              reject;
+            }
+            if source = RTS_STATIC then {
+              bgp_community.add((64511, DN42_REGION));
+              bgp_community.add((64511, DN42_COUNTRY));
+            }
+            accept; 
+          };
         };
         ipv6 {
           import table;
@@ -125,9 +138,20 @@
             if !is_valid_network_v6() then {
               reject;
             }
+            if (64511, DN42_REGION) ~ bgp_community then bgp_local_pref = bgp_local_pref + 10;
+            if (64511, DN42_COUNTRY) ~ bgp_community then bgp_local_pref = bgp_local_pref + 10;
             accept;
           };
-          export where is_valid_network_v6();
+          export filter {
+            if !is_valid_network_v6() then {
+              reject;
+            }
+            if source = RTS_STATIC then {
+              bgp_community.add((64511, DN42_REGION));
+              bgp_community.add((64511, DN42_COUNTRY));
+            }
+            accept; 
+          };
         };
       }
       protocol bgp AS4201271111 from dnpeers {
