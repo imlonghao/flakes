@@ -10,6 +10,7 @@
     "net.ipv4.conf.wg0826.rp_filter" = 0;
     "net.ipv4.conf.wg0864.rp_filter" = 0;
     "net.ipv4.conf.wg0927.rp_filter" = 0;
+    "net.ipv4.conf.wg1080.rp_filter" = 0;
     "net.ipv4.conf.wg1123.rp_filter" = 0;
     "net.ipv4.conf.wg1817.rp_filter" = 0;
     "net.ipv4.conf.wg1877.rp_filter" = 0;
@@ -115,6 +116,19 @@
         {
           endpoint = "lv1.dn42.liki.link:42424";
           publicKey = "CqA907Lo0J/qIPB5qRi5YcvPWK7VOG3fvjevVqKirFM=";
+          allowedIPs = [ "10.0.0.0/8" "172.20.0.0/14" "172.31.0.0/16" "fe80::/64" "fd00::/8" ];
+        }
+      ];
+    };
+    wg1080 = {
+      ips = [ "fe80::1888/64" ];
+      privateKeyFile = config.sops.secrets.wireguard.path;
+      listenPort = 21080;
+      allowedIPsAsRoutes = false;
+      peers = [
+        {
+          endpoint = "las.peer.highdef.network:42424";
+          publicKey = "oHxFupY7yiSRmRpWB2mfXzfXam5fGyxQ313TWszk0Es=";
           allowedIPs = [ "10.0.0.0/8" "172.20.0.0/14" "172.31.0.0/16" "fe80::/64" "fd00::/8" ];
         }
       ];
