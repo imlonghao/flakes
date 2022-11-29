@@ -16,7 +16,7 @@ in
 {
   services.bird2 = {
     enable = true;
-    config = generalConf + dn42Conf + kernelConf + ''
+    config = generalConf + dn42Conf + ''
       protocol bgp AS53667v4 {
         local as 133846;
         neighbor 169.254.169.179 as 53667;
