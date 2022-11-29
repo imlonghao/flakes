@@ -5,6 +5,7 @@
   boot.kernel.sysctl = {
     "net.ipv4.conf.wg31111.rp_filter" = 0;
     "net.ipv4.conf.wg0253.rp_filter" = 0;
+    "net.ipv4.conf.wg0458.rp_filter" = 0;
     "net.ipv4.conf.wg0604.rp_filter" = 0;
     "net.ipv4.conf.wg0831.rp_filter" = 0;
     "net.ipv4.conf.wg1588.rp_filter" = 0;
@@ -38,6 +39,19 @@
         {
           endpoint = "sg1.dn42.moe233.net:21888";
           publicKey = "beaS4l4XBT4eSZBLJcu/u6fbm0mRk0TfuSLkMp8jOkY=";
+          allowedIPs = [ "10.0.0.0/8" "172.20.0.0/14" "172.31.0.0/16" "fe80::/64" "fd00::/8" ];
+        }
+      ];
+    };
+    wg0458 = {
+      ips = [ "fe80::1888/64" ];
+      privateKeyFile = config.sops.secrets.wireguard.path;
+      listenPort = 20458;
+      allowedIPsAsRoutes = false;
+      peers = [
+        {
+          endpoint = "sg1.nodes.huajinet.org:21888";
+          publicKey = "uVQSqDCJZzbMND7rRmoOR3QpANgl2SbTlv28aw0kh3w=";
           allowedIPs = [ "10.0.0.0/8" "172.20.0.0/14" "172.31.0.0/16" "fe80::/64" "fd00::/8" ];
         }
       ];
