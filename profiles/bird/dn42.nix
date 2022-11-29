@@ -1,7 +1,7 @@
 { region, country, ip }:
 ''
-  define DN42_REGION = ${region};
-  define DN42_COUNTRY = ${country};
+  define DN42_REGION = ${toString region};
+  define DN42_COUNTRY = ${toString country};
   function is_valid_network() {
     return net ~ [
       172.20.0.0/14{21,29}, # dn42
@@ -27,7 +27,7 @@
       import none;
       export filter {
         if net = 0.0.0.0/0 then reject;
-        if is_valid_network() then krt_prefsrc = 172.22.68.${ip};
+        if is_valid_network() then krt_prefsrc = 172.22.68.${toString ip};
         accept;
       };
     };
@@ -39,7 +39,7 @@
       import none;
       export filter {
         if net = ::/0 then reject;
-        if is_valid_network_v6() then krt_prefsrc = fd21:5c0c:9b7e:${ip}::;
+        if is_valid_network_v6() then krt_prefsrc = fd21:5c0c:9b7e:${toString ip}::;
         accept;
       };
     };
