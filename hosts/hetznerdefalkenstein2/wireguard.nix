@@ -8,6 +8,7 @@ in
     "net.ipv4.conf.wg64719.rp_filter" = 0;
     "net.ipv4.conf.wg31111.rp_filter" = 0;
     "net.ipv4.conf.wg0197.rp_filter" = 0;
+    "net.ipv4.conf.wg0289.rp_filter" = 0;
     "net.ipv4.conf.wg0385.rp_filter" = 0;
     "net.ipv4.conf.wg0458.rp_filter" = 0;
     "net.ipv4.conf.wg0499.rp_filter" = 0;
@@ -72,6 +73,23 @@ in
         {
           endpoint = "himalia.dn42.n0emis.eu:21888";
           publicKey = "ObF+xGC6DdddJer0IUw6nzC0RqzeKWwEiQU0ieowzhg=";
+          allowedIPs = [ "10.0.0.0/8" "172.20.0.0/14" "172.31.0.0/16" "fe80::/64" "fd00::/8" ];
+        }
+      ];
+    };
+    wg0289 = {
+      ips = [ "fe80::1888/64" ];
+      postSetup = [
+        "${pkgs.iproute2}/bin/ip addr add 172.22.68.0/32 peer 172.21.101.105/32 dev wg0289"
+        "${pkgs.iproute2}/bin/ip route change 172.21.101.105 src 172.22.68.4 dev wg0289"
+      ];
+      privateKeyFile = config.sops.secrets.wireguard.path;
+      listenPort = 20289;
+      allowedIPsAsRoutes = false;
+      peers = [
+        {
+          endpoint = "5.255.110.150:21888";
+          publicKey = "Pugoi4bu56XBPKG9d8fVbcWHfgbf/eZZJU8IB2n/Ig0=";
           allowedIPs = [ "10.0.0.0/8" "172.20.0.0/14" "172.31.0.0/16" "fe80::/64" "fd00::/8" ];
         }
       ];
