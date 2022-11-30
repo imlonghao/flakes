@@ -3,6 +3,7 @@
 {
   sops.secrets.wireguard.sopsFile = ./secrets.yml;
   boot.kernel.sysctl = {
+    "net.ipv4.conf.wg64719.rp_filter" = 0;
     "net.ipv4.conf.wg31111.rp_filter" = 0;
     "net.ipv4.conf.wg0253.rp_filter" = 0;
     "net.ipv4.conf.wg0458.rp_filter" = 0;
@@ -26,6 +27,19 @@
     "net.ipv4.conf.wg3918.rp_filter" = 0;
   };
   networking.wireguard.interfaces = {
+    wg64719 = {
+      ips = [ "fe80::1888/64" ];
+      privateKeyFile = config.sops.secrets.wireguard.path;
+      listenPort = 64719;
+      allowedIPsAsRoutes = false;
+      peers = [
+        {
+          endpoint = "us-lax.dn42.lutoma.org:42560";
+          publicKey = "uspTFQKijQUTbxUgh2IzbNaCUZgtdgrn0kUtbPDd5gM=";
+          allowedIPs = [ "10.0.0.0/8" "172.20.0.0/14" "172.31.0.0/16" "fe80::/64" "fd00::/8" ];
+        }
+      ];
+    };
     wg31111 = {
       ips = [ "fe80::1888/64" ];
       privateKeyFile = config.sops.secrets.wireguard.path;
