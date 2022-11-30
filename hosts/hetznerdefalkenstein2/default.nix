@@ -62,6 +62,7 @@ in
   environment.systemPackages = with pkgs; [
     aria2
     buildtorrent
+    deploy-rs
     dnsutils
     dumptorrent
     exploitdb
