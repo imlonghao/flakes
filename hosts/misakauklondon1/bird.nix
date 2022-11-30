@@ -1,17 +1,17 @@
-{ ... }:
+{ config, profiles, ... }:
+let
+  generalConf = import profiles.bird.general {
+    config = config;
+    route4 = ''
+      route 44.31.42.0/24 blackhole;
+    '';
+    route6 = "";
+  };
+in
 {
   services.bird2 = {
     enable = true;
-    config = ''
-      router id 100.64.88.74;
-      timeformat protocol iso long;
-      protocol direct {
-        ipv4;
-        ipv6;
-      }
-      protocol device {
-        scan time 10;
-      }
+    config = generalConf + ''
       function is_valid_network() {
         return net ~ [
           172.20.0.0/14{21,29}, # dn42
@@ -52,19 +52,6 @@
           };
         };
       }
-      protocol static {
-        route 44.31.42.0/24 blackhole;
-        ipv4 {
-          import all;
-          export all;
-        };
-      }
-      protocol static {
-        ipv6 {
-          import all;
-          export all;
-        };
-      }
       protocol bgp RR {
         local as 4242421888;
         neighbor internal;
@@ -73,25 +60,20 @@
         rr client;
         direct;
         ipv4 {
-          import where is_valid_network() || net ~ [100.64.88.0/24, 172.22.68.0/28+, 44.31.42.0/24];
+          import filter {
+            if !(is_valid_network() || net ~ [100.64.88.0/24, 172.22.68.0/28+, 44.31.42.0/24]) then reject;
+            bgp_local_pref = 100;
+            accept;
+          };
           export where is_valid_network() || net ~ [100.64.88.0/24, 172.22.68.0/28+, 44.31.42.0/24];
         };
         ipv6 {
-          import where is_valid_network_v6() || net ~ 2602:feda:1bf::/48;
+          import filter {
+            if !(is_valid_network_v6() || net ~ 2602:feda:1bf::/48) then reject;
+            bgp_local_pref = 100;
+            accept;
+          };
           export where is_valid_network_v6() || net ~ 2602:feda:1bf::/48;
-        };
-      }
-      template bgp dnpeers {
-        local as 4242421888;
-        graceful restart on;
-        ipv4 {
-          extended next hop;
-          import where is_valid_network();
-          export where is_valid_network();
-        };
-        ipv6 {
-          import where is_valid_network_v6();
-          export where is_valid_network_v6();
         };
       }
     '';
