@@ -16,6 +16,9 @@ in
   services.bird2 = {
     enable = true;
     config = generalConf + dn42Conf + ''
+      protocol bgp AS64719 from dnpeers {
+        neighbor fe80::acab % 'wg64719' as 64719;
+      }
       protocol bgp AS4201271111 from dnpeers {
         neighbor fe80::aa:1111:33 % 'wg31111' as 4201271111;
       }
