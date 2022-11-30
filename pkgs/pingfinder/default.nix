@@ -17,7 +17,7 @@ let silentWhich = writeScriptBin "which" ''
 in
 stdenv.mkDerivation rec {
   pname = "pingfinder";
-  version = "r49-4a185c375c";
+  version = "r52-8fd1af682d";
 
   src = ./generic-linux-debian-redhat-busybox.sh;
   dontUnpack = true;
