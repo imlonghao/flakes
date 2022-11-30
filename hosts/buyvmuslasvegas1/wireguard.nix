@@ -17,6 +17,7 @@
     "net.ipv4.conf.wg1877.rp_filter" = 0;
     "net.ipv4.conf.wg2032.rp_filter" = 0;
     "net.ipv4.conf.wg2189.rp_filter" = 0;
+    "net.ipv4.conf.wg2458.rp_filter" = 0;
     "net.ipv4.conf.wg2464.rp_filter" = 0;
     "net.ipv4.conf.wg2688.rp_filter" = 0;
     "net.ipv4.conf.wg2980.rp_filter" = 0;
@@ -212,6 +213,19 @@
         {
           endpoint = "us-lax.dn42.kuu.moe:42216";
           publicKey = "DIw4TKAQelurK10Sh1qE6IiDKTqL1yciI5ItwBgcHFA=";
+          allowedIPs = [ "10.0.0.0/8" "172.20.0.0/14" "172.31.0.0/16" "fe80::/64" "fd00::/8" ];
+        }
+      ];
+    };
+    wg2458 = {
+      ips = [ "fe80::1888/64" ];
+      privateKeyFile = config.sops.secrets.wireguard.path;
+      listenPort = 22458;
+      allowedIPsAsRoutes = false;
+      peers = [
+        {
+          endpoint = "us-sjc-a.nodes.pigeonhole.eu.org:51888";
+          publicKey = "usSOnTQKWozKiB3CM65TY3hv64dxQLnIx9ywc0J9awY=";
           allowedIPs = [ "10.0.0.0/8" "172.20.0.0/14" "172.31.0.0/16" "fe80::/64" "fd00::/8" ];
         }
       ];
