@@ -57,7 +57,10 @@ in
       certAuthority = true;
     };
   };
-  services.chrony.enable = true;
+  services.chrony = {
+    enable = true;
+    extraConfig = "rtcsync";
+  };
   services.vnstat.enable = true;
 
   sops.gnupg.sshKeyPaths = [ ];
