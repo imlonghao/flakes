@@ -20,6 +20,7 @@
     "net.ipv4.conf.wg2458.rp_filter" = 0;
     "net.ipv4.conf.wg2464.rp_filter" = 0;
     "net.ipv4.conf.wg2688.rp_filter" = 0;
+    "net.ipv4.conf.wg2837.rp_filter" = 0;
     "net.ipv4.conf.wg2980.rp_filter" = 0;
     "net.ipv4.conf.wg3021.rp_filter" = 0;
     "net.ipv4.conf.wg3088.rp_filter" = 0;
@@ -252,6 +253,19 @@
         {
           endpoint = "lv1-v4.us.dn42.miaotony.xyz:21888";
           publicKey = "vfrrbtKAO5438daHrTD0SSS8V6yk78S/XW7DeFrYLXA=";
+          allowedIPs = [ "10.0.0.0/8" "172.20.0.0/14" "172.31.0.0/16" "fe80::/64" "fd00::/8" ];
+        }
+      ];
+    };
+    wg2837 = {
+      ips = [ "fe80::1888/64" ];
+      privateKeyFile = config.sops.secrets.wireguard.path;
+      listenPort = 22837;
+      allowedIPsAsRoutes = false;
+      peers = [
+        {
+          endpoint = "las1.eki.moe:21888";
+          publicKey = "mr3GOOMU9bLYS5OBuXhllsAD3c3+SGTuYNh2q+RswEQ=";
           allowedIPs = [ "10.0.0.0/8" "172.20.0.0/14" "172.31.0.0/16" "fe80::/64" "fd00::/8" ];
         }
       ];
