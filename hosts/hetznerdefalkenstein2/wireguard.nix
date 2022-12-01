@@ -9,6 +9,7 @@ in
     "net.ipv4.conf.wg31111.rp_filter" = 0;
     "net.ipv4.conf.wg0197.rp_filter" = 0;
     "net.ipv4.conf.wg0289.rp_filter" = 0;
+    "net.ipv4.conf.wg0361.rp_filter" = 0;
     "net.ipv4.conf.wg0385.rp_filter" = 0;
     "net.ipv4.conf.wg0458.rp_filter" = 0;
     "net.ipv4.conf.wg0499.rp_filter" = 0;
@@ -91,6 +92,19 @@ in
         {
           endpoint = "5.255.110.150:21888";
           publicKey = "Pugoi4bu56XBPKG9d8fVbcWHfgbf/eZZJU8IB2n/Ig0=";
+          allowedIPs = [ "10.0.0.0/8" "172.20.0.0/14" "172.31.0.0/16" "fe80::/64" "fd00::/8" ];
+        }
+      ];
+    };
+    wg0361 = {
+      ips = [ "fe80::1888/64" ];
+      privateKeyFile = config.sops.secrets.wireguard.path;
+      listenPort = 20361;
+      allowedIPsAsRoutes = false;
+      peers = [
+        {
+          endpoint = "nl-alk1.svr.xtexx.ml:10307";
+          publicKey = "yaLBtUxByJE3151yUDS5K2u7ejHM/aPJj2bzYqYZygI=";
           allowedIPs = [ "10.0.0.0/8" "172.20.0.0/14" "172.31.0.0/16" "fe80::/64" "fd00::/8" ];
         }
       ];
