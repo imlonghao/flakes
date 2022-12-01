@@ -22,6 +22,7 @@ in
     "net.ipv4.conf.wg2331.rp_filter" = 0;
     "net.ipv4.conf.wg2458.rp_filter" = 0;
     "net.ipv4.conf.wg2717.rp_filter" = 0;
+    "net.ipv4.conf.wg2837.rp_filter" = 0;
     "net.ipv4.conf.wg2923.rp_filter" = 0;
     "net.ipv4.conf.wg2980.rp_filter" = 0;
     "net.ipv4.conf.wg3044.rp_filter" = 0;
@@ -274,6 +275,19 @@ in
         {
           endpoint = "nl.vm.whojk.com:23024";
           publicKey = "cokP4jFBH0TlBD/m3sWCpc9nADLOhzM2+lcjAb3ynFc=";
+          allowedIPs = [ "10.0.0.0/8" "172.20.0.0/14" "172.31.0.0/16" "fe80::/64" "fd00::/8" ];
+        }
+      ];
+    };
+    wg2837 = {
+      ips = [ "fe80::1888/64" ];
+      privateKeyFile = config.sops.secrets.wireguard.path;
+      listenPort = 22837;
+      allowedIPsAsRoutes = false;
+      peers = [
+        {
+          endpoint = "lux1.eki.moe:21888";
+          publicKey = "rvzaIe2JwsZk3pgA59Xf0SNS1gB0GSgegvOoYcDVgGc=";
           allowedIPs = [ "10.0.0.0/8" "172.20.0.0/14" "172.31.0.0/16" "fe80::/64" "fd00::/8" ];
         }
       ];
