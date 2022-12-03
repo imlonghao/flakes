@@ -37,6 +37,10 @@ in
           address = "fd21:5c0c:9b7e:5::";
           prefixLength = 64;
         }
+        {
+          address = "2a09:b280:ff82::";
+          prefixLength = 48;
+        }
       ];
       ens3.ipv6.addresses = [
         {

@@ -8,6 +8,7 @@ let
       route 172.22.68.5/32 blackhole;
     '';
     route6 = ''
+      route 2a09:b280:ff82::/48 blackhole;
       route fd21:5c0c:9b7e:5::/64 blackhole;
     '';
   };
@@ -32,6 +33,16 @@ in
               accept;
             }
           };
+        };
+      }
+      protocol bgp AS53667v6 {
+        local as 133846;
+        neighbor 2605:6400:ffff::2 as 53667;
+        multihop 2;
+        password "or2D7evY";
+        ipv6 {
+          import none;
+          export where net = 2a09:b280:ff82::/48;
         };
       }
       protocol bgp AS64719 from dnpeers {
