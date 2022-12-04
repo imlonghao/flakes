@@ -52,6 +52,10 @@ in
       };
       serviceConfig = {
         Type = "exec";
+        Environment = [
+          "WARNLOCK=/tmp/pingfinder-warn.lock"
+          "LOCKFILE=/tmp/pingfinder-exec.lock"
+        ];
         EnvironmentFile = mkIf (cfg.environmentFile != null) [ cfg.environmentFile ];
         ExecStart = ''${pkgs.pingfinder}/bin/pingfinder'';
         DynamicUser = true;

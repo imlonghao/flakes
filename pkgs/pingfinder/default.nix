@@ -11,9 +11,10 @@
 , iputils
 , which
 }:
-let silentWhich = writeScriptBin "which" ''
-  exec "${which}/bin/which" "$@" 2>/dev/null
-'';
+let
+  silentWhich = writeScriptBin "which" ''
+    exec "${which}/bin/which" "$@" 2>/dev/null
+  '';
 in
 stdenv.mkDerivation rec {
   pname = "pingfinder";
@@ -33,6 +34,7 @@ stdenv.mkDerivation rec {
       gnugrep
       iputils
       silentWhich
+      util-linux
     ]}"
     runHook postInstall
   '';
