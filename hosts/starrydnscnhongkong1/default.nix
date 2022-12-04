@@ -38,6 +38,12 @@ in
           prefixLength = 32;
         }
       ];
+      lo.ipv6.addresses = [
+        {
+          address = "2a09:b280:ff81::";
+          prefixLength = 48;
+        }
+      ];
     };
   };
 
