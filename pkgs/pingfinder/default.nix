@@ -10,6 +10,7 @@
 , gnugrep
 , iputils
 , which
+, util-linux
 }:
 let
   silentWhich = writeScriptBin "which" ''
