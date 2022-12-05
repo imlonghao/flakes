@@ -51,6 +51,7 @@ in
 
   environment.persistence."/persist" = {
     directories = [
+      "/root/.ssh"
       "/var/lib"
     ];
     files = [
