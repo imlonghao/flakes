@@ -7,6 +7,7 @@ in
     ./hardware.nix
     ./bird.nix
     ./wireguard.nix
+    profiles.borgmatic
     profiles.mycore
     profiles.users.root
     profiles.pingfinder
@@ -124,4 +125,50 @@ in
     };
   };
 
+  # borgmatic
+  services.borgmatic.settings = {
+    location = {
+      repositories = [
+        "ssh://m0yiu24x@m0yiu24x.repo.borgbase.com/./repo"
+      ];
+      source_directories = [
+        "/persist/docker/baserow/backups"
+        "/persist/docker/bitwarden"
+        "/persist/docker/influxdb2"
+        "/persist/docker/joplin.tgz"
+        "/persist/docker/n8n/n8n.conf"
+        "/persist/docker/owntracks"
+        "/persist/docker/portainer"
+        "/persist/docker/rathole"
+        "/persist/docker/thelounge"
+        "/persist/docker/traefik"
+      ];
+    };
+    hooks = {
+      before_backup = [
+        "docker stop baserow-baserow-1"
+        "docker run --rm -v /persist/docker/baserow/:/baserow/data/ baserow/baserow:1.9.1 backend-cmd-with-db backup"
+      ];
+      after_backup = [
+        "docker start baserow-baserow-1"
+        "rm -rf /persist/docker/baserow/backups"
+      ];
+      mysql_databases = [
+        {
+          name = "n8n";
+          hostname = "127.0.0.1";
+          port = 13306;
+          username = "n8n";
+          password = "\${N8N_PASSWORD}";
+        }
+        {
+          name = "powerdns";
+          hostname = "127.0.0.1";
+          port = 3306;
+          username = "powerdns";
+          password = "234567";
+        }
+      ];
+    };
+  };
 }
