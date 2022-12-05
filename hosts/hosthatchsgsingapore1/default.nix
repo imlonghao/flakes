@@ -67,11 +67,6 @@ in
     ipv6 = "2602:feda:1bf:deaf::6/64";
   };
 
-  # fish alias
-  programs.fish.shellAliases = {
-    k = "k3s kubectl";
-  };
-
   # OpenSSH
   services.openssh.extraConfig = ''
     HostCertificate = ${hostCertificate}
