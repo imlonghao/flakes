@@ -52,6 +52,33 @@ in
           };
         };
       }
+      protocol bgp ROUTE_COLLECTOR {
+        local as 4242421888;
+        neighbor fd42:4242:2601:ac12::1 as 4242422602;
+        multihop;
+        ipv4 {
+          add paths tx;
+          import none;
+          export filter {
+            if ( is_valid_network() && source ~ [ RTS_STATIC, RTS_BGP ] )
+            then {
+              accept;
+            }
+            reject;
+          };
+        };
+        ipv6 {
+          add paths tx;
+          import none;
+          export filter {
+            if ( is_valid_network_v6() && source ~ [ RTS_STATIC, RTS_BGP ] )
+            then {
+              accept;
+            }
+            reject;
+          };
+        };
+      }
       protocol bgp RR {
         local as 4242421888;
         neighbor internal;
@@ -60,6 +87,7 @@ in
         rr client;
         direct;
         ipv4 {
+          add paths tx;
           import filter {
             if !(is_valid_network() || net ~ [100.64.88.0/24, 172.22.68.0/28+, 44.31.42.0/24]) then reject;
             bgp_local_pref = 100;
@@ -68,6 +96,7 @@ in
           export where is_valid_network() || net ~ [100.64.88.0/24, 172.22.68.0/28+, 44.31.42.0/24];
         };
         ipv6 {
+          add paths tx;
           import filter {
             if !(is_valid_network_v6() || net ~ 2602:feda:1bf::/48) then reject;
             bgp_local_pref = 100;
