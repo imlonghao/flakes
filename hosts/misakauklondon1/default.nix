@@ -6,6 +6,7 @@ in
   imports = [
     ./hardware.nix
     ./bird.nix
+    profiles.borgmatic
     profiles.mycore
     profiles.users.root
     profiles.exporter.node
@@ -65,6 +66,19 @@ in
         cache 30
       }
     '';
+  };
+
+  # borgmatic
+  services.borgmatic.settings = {
+    location = {
+      repositories = [
+        "ssh://sxvl8201@sxvl8201.repo.borgbase.com/./repo"
+        "ssh://zh2646@zh2646.rsync.net/./misakauklondon1"
+      ];
+      source_directories = [
+        "/persist/pomerium"
+      ];
+    };
   };
 
 }
