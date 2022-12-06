@@ -130,6 +130,7 @@ in
     location = {
       repositories = [
         "ssh://m0yiu24x@m0yiu24x.repo.borgbase.com/./repo"
+        "ssh://zh2646@zh2646.rsync.net/./hosthatchsgsingapore1"
       ];
       source_directories = [
         "/persist/docker/baserow/backups"
