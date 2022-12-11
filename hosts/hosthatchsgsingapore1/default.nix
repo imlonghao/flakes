@@ -138,7 +138,7 @@ in
         "/persist/docker/influxdb2"
         "/persist/docker/joplin.tgz"
         "/persist/docker/n8n/n8n.conf"
-        "/persist/docker/owntracks"
+        "/persist/docker/traccar/traccar.xml"
         "/persist/docker/portainer"
         "/persist/docker/rathole"
         "/persist/docker/thelounge"
@@ -168,6 +168,13 @@ in
           port = 3306;
           username = "powerdns";
           password = "234567";
+        }
+        {
+          name = "traccar";
+          hostname = "127.0.0.1";
+          port = 13307;
+          username = "traccar";
+          password = "\${TRACCAR_PASSWORD}";
         }
       ];
     };
