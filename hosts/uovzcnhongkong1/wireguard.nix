@@ -77,7 +77,7 @@
       allowedIPsAsRoutes = false;
       peers = [
         {
-          endpoint = "hk02.nodes.mol.moe:21818";
+          endpoint = "hk02.nodes.mol.sorasky.in:21818";
           publicKey = "wNNbJyoFBrlpq53p61Ur8V2RNfS3U7KADlK7he64qRk=";
           allowedIPs = [ "10.0.0.0/8" "172.20.0.0/14" "172.31.0.0/16" "fe80::/64" "fd00::/8" ];
         }
