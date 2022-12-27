@@ -181,6 +181,9 @@
           vpsausydney1 = {
             hostname = "vps-au-sydney-1.ni.sb";
           };
+          idcwikicnhongkong1 = {
+            hostname = "idcwiki-cn-hongkong-1.ni.sb";
+          };
         };
 
         defaultTemplate = self.templates.bud;

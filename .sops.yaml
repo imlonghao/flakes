@@ -16,6 +16,7 @@ keys:
   - &vps_terrahostnosandefjord1 age1zhq4z3srfk0m7njlcgem2av3mzylk89tcfq0t7fhxd0q6xq97ueqtj4dg4
   - &vps_vpsdeduesseldorf1 age1yutf6j4sr5lwxnrmh8crp585r6q7dkhxyyt04gxaqyp7kf5565nsdksxdk
   - &vps_vpsausydney1 age10hs4v4utyhykkgwdyagqng54apnf4qsjunjnlarwcg4l0ydm4f3qhz49sj
+  - &vps_idcwikicnhongkong1 age1va69x2r5gl790g8d9zd9q3qj5ynvalakvgz55ygrzhrrnc8kl3ys4fla94
 creation_rules:
   - path_regex: secrets/shadow.yml$
     key_groups:
@@ -36,6 +37,7 @@ creation_rules:
       - *vps_oracledefrankfurt1
       - *vps_vpsdeduesseldorf1
       - *vps_vpsausydney1
+      - *vps_idcwikicnhongkong1
   - path_regex: secrets/k3s.yml$
     key_groups:
     - pgp:
@@ -143,3 +145,9 @@ creation_rules:
       - *me_canokey
       age:
       - *vps_vpsausydney1
+  - path_regex: hosts/idcwikicnhongkong1/secrets.yml$
+    key_groups:
+    - pgp:
+      - *me_canokey
+      age:
+      - *vps_idcwikicnhongkong1
