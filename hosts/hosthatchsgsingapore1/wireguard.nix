@@ -9,6 +9,7 @@
     "net.ipv4.conf.wg0604.rp_filter" = 0;
     "net.ipv4.conf.wg0831.rp_filter" = 0;
     "net.ipv4.conf.wg1080.rp_filter" = 0;
+    "net.ipv4.conf.wg1255.rp_filter" = 0;
     "net.ipv4.conf.wg1588.rp_filter" = 0;
     "net.ipv4.conf.wg2225.rp_filter" = 0;
     "net.ipv4.conf.wg2237.rp_filter" = 0;
