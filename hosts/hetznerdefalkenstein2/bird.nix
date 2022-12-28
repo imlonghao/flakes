@@ -1,4 +1,4 @@
-{ config, profiles, ... }:
+{ config, lib, profiles, ... }:
 let
   generalConf = import profiles.bird.general {
     config = config;
@@ -10,30 +10,11 @@ let
       route fd21:5c0c:9b7e:4::/64 blackhole;
     '';
   };
-  dn42Conf = import profiles.bird.dn42 { region = 41; country = 1276; ip = 4; };
+  dn42Conf = import profiles.bird.dn42 { region = 41; country = 1276; ip = 4; config = config; lib = lib; };
 in
 {
   services.bird2 = {
     enable = true;
-    config = generalConf + dn42Conf + ''
-      protocol bgp AS64719 from dnpeers {
-        neighbor fe80::acab % 'wg64719' as 64719;
-      }
-      protocol bgp AS4242420197 from dnpeers {
-        neighbor fe80::42:42:1 % 'wg0197' as 4242420197;
-      }
-      protocol bgp AS4242420499 from dnpeers {
-        neighbor fe80::499:1 % 'wg0499' as 4242420499;
-      }
-      protocol bgp AS4242421592 from dnpeers {
-        neighbor fe80::1592 % 'wg1592' as 4242421592;
-      }
-      protocol bgp AS4242423088 from dnpeers {
-        neighbor fe80::3088:195 % 'wg3088' as 4242423088;
-      }
-      protocol bgp AS4242423914 from dnpeers {
-        neighbor fe80::ade0 % 'wg3914' as 4242423914;
-      }
-    '';
+    config = generalConf + dn42Conf;
   };
 }
