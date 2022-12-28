@@ -33,6 +33,11 @@ in
         type = types.str;
         description = "publickey";
       };
+      options.presharedkey = mkOption {
+        type = types.nullOr types.str;
+        description = "presharedkey";
+        default = null;
+      };
       options.asn = mkOption {
         type = types.int;
         description = "asn";
@@ -77,6 +82,7 @@ in
           {
             endpoint = x.endpoint;
             publicKey = x.publickey;
+            presharedKey = x.presharedkey;
             allowedIPs = [ "10.0.0.0/8" "172.20.0.0/14" "172.31.0.0/16" "fe80::/64" "fd00::/8" ];
           }
         ];

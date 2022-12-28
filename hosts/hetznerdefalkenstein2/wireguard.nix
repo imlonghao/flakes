@@ -12,7 +12,6 @@ in
     "net.ipv4.conf.wg0499.rp_filter" = 0;
     "net.ipv4.conf.wg1588.rp_filter" = 0;
     "net.ipv4.conf.wg1592.rp_filter" = 0;
-    "net.ipv4.conf.wg2980.rp_filter" = 0;
     "net.ipv4.conf.wg3088.rp_filter" = 0;
     "net.ipv4.conf.wg3914.rp_filter" = 0;
   };
@@ -132,21 +131,6 @@ in
         {
           endpoint = "de01.dn42.ca.melusfer.us:41888";
           publicKey = "7zViBU5dDWV3pxnIGX2ixQmXIgRwvmIW7qwmCgWctzc=";
-          allowedIPs = [ "10.0.0.0/8" "172.20.0.0/14" "172.31.0.0/16" "fe80::/64" "fd00::/8" ];
-        }
-      ];
-    };
-    wg2980 = {
-      ips = [ "fe80::1888:4/64" ];
-      postSetup = "${pkgs.iproute2}/bin/ip addr add 172.22.68.4/32 peer 172.23.105.4/32 dev wg2980";
-      privateKeyFile = config.sops.secrets.wireguard.path;
-      listenPort = 22980;
-      allowedIPsAsRoutes = false;
-      peers = [
-        {
-          endpoint = "fra1.de.dn42.yuuta.moe:21888";
-          publicKey = "GYEhSHmPD0pVX3xBKa7SAwnuCyMA2oOsaHBgFpPO4X4=";
-          presharedKey = "iHxtuu7sFtvR/nsOA2m3T4Lt3w8P4VzvLKHWAm23a1w=";
           allowedIPs = [ "10.0.0.0/8" "172.20.0.0/14" "172.31.0.0/16" "fe80::/64" "fd00::/8" ];
         }
       ];
