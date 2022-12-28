@@ -1,4 +1,4 @@
-{ config, profiles, ... }:
+{ config, lib, profiles, ... }:
 let
   generalConf = import profiles.bird.general {
     config = config;
