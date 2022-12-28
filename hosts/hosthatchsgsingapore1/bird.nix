@@ -18,22 +18,6 @@ in
 {
   services.bird2 = {
     enable = true;
-    config = generalConf + dn42Conf + ''
-      protocol bgp AS4242422237 from dnpeers {
-        neighbor fe80::42:2237 % 'wg2237' as 4242422237;
-      }
-      protocol bgp AS4242422331 from dnpeers {
-        neighbor fe80::2331 % 'wg2331' as 4242422331;
-      }
-      protocol bgp AS4242422633 from dnpeers {
-        neighbor fe80::2633 % 'wg2633' as 4242422633;
-      }
-      protocol bgp AS4242422717 from dnpeers {
-        neighbor fe80::2717 % 'wg2717' as 4242422717;
-      }
-      protocol bgp AS4242423088 from dnpeers {
-        neighbor fe80::3088:198 % 'wg3088' as 4242423088;
-      }
-    '';
+    config = generalConf + dn42Conf;
   };
 }

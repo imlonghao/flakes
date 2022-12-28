@@ -1,6 +1,7 @@
 { ... }:
 
 {
+  sops.secrets.wireguard.sopsFile = ./secrets.yml;
   dn42 = [
     { name = "wg31111"; listen = 31111; publickey = "7TIbiifNzh8HxLUM8cBvwmBo/kuaCAUCRahbBMoVA1Q="; asn = 4201271111; e6 = "fe80::aa:1111:11"; }
     { name = "wg0458"; listen = 20458; endpoint = "sg1.nodes.huajinet.org:21888"; publickey = "uVQSqDCJZzbMND7rRmoOR3QpANgl2SbTlv28aw0kh3w="; asn = 4242420458; e6 = "fe80::0458"; }
@@ -9,5 +10,10 @@
     { name = "wg1080"; listen = 21080; endpoint = "sgp.peer.highdef.network:21888"; publickey = "X3m9VMzZYN4Oe2QUb7DcnmVymwKSLbPUCB5ElD8igjo="; asn = 4242421080; e6 = "fe80::1080:39"; }
     { name = "wg1255"; listen = 21255; endpoint = "dn42-sg-sin4.acgcl.net:31888"; publickey = "dJ7poThkXSLU1BTG9ghTVHlDaKT0Snz3YmzfRdPLKQU="; asn = 4242421255; e6 = "fe80::1020"; }
     { name = "wg1588"; listen = 21588; endpoint = "sg-sin01.dn42.tech9.io:59771"; publickey = "4qLIJ9zpc/Xgvy+uo90rGso75cSrT2F5tBEv+6aqDkY="; asn = 4242421588; ipv6 = "fe80::100/64"; e4 = "172.20.16.142"; e6 = "fe80::1588"; l4 = "172.22.68.2"; }
+    { name = "wg2237"; listen = 22237; endpoint = "sg-sin01.dn42.munsternet.eu:21888"; publickey = "09m8ilgZ/9jQvVgsGwu2ceR8u6gKAsd+VxH8AzduOHk="; asn = 4242422237; e6 = "fe80::42:2237"; }
+    { name = "wg2331"; listen = 22331; endpoint = "103.83.156.22:21888"; publickey = "I5yRgHFY+qfkRwT6UpVBsUIiA5hmEOv1cU2licfrokw="; asn = 4242422331; e6 = "fe80::2331"; }
+    { name = "wg2633"; listen = 22633; endpoint = "sin.eastbnd.com:21888"; publickey = "m5IfciUmvMEfDkfFQf0jD3GH0F0ChMktOSiLMlJ29wc="; asn = 4242422633; e4 = "172.23.250.34"; e6 = "fe80::2633"; l4 = "172.22.68.2"; }
+    { name = "wg2717"; listen = 22717; endpoint = "sg.vm.whojk.com:24103"; publickey = "vCtn1DbfIiTgcMapuEGB/+/HnLeEPKPjxJbt/sjviTs="; asn = 4242422717; e6 = "fe80::2717"; }
+    { name = "wg3088"; listen = 23088; endpoint = "sin1-sg.dn42.6700.cc:30010"; publickey = "rLuqS2ZQRk5ape3rHtBTXGbRbUP7lNYpufk3tt1P4z0="; asn = 4242423088; e6 = "fe80::3088:198"; }
   ];
 }
