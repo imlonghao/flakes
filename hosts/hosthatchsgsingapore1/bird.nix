@@ -1,4 +1,4 @@
-{ config, profiles, ... }:
+{ config, lib, profiles, ... }:
 let
   generalConf = import profiles.bird.general {
     config = config;
@@ -13,7 +13,7 @@ let
       route fd21:5c0c:9b7e:2::/64 blackhole;
     '';
   };
-  dn42Conf = import profiles.bird.dn42 { region = 51; country = 1702; ip = 2; config = config; };
+  dn42Conf = import profiles.bird.dn42 { region = 51; country = 1702; ip = 2; config = config; lib = lib; };
 in
 {
   services.bird2 = {

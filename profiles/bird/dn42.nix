@@ -1,4 +1,4 @@
-{ region, country, ip, config }:
+{ region, country, ip, config, lib }:
 ''
   define DN42_REGION = ${toString region};
   define DN42_COUNTRY = ${toString country};
