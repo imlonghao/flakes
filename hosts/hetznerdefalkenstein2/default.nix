@@ -6,7 +6,7 @@ in
   imports = [
     ./bird.nix
     ./hardware.nix
-    ./wireguard.nix
+    ./dn42.nix
     profiles.mycore
     profiles.netdata
     profiles.users.root
