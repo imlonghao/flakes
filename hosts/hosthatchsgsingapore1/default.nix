@@ -7,7 +7,6 @@ in
     ./dn42.nix
     ./hardware.nix
     ./bird.nix
-    ./wireguard.nix
     profiles.borgmatic
     profiles.mycore
     profiles.netdata
