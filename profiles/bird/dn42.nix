@@ -1,4 +1,4 @@
-{ region, country, ip }:
+{ region, country, ip, config }:
 ''
   define DN42_REGION = ${toString region};
   define DN42_COUNTRY = ${toString country};
@@ -128,4 +128,9 @@
       };
     };
   }
+  ${concatStringsSep "\n" (flip map (config.dn42) (x: ''
+    protocol bgp AS${toString x.asn} from dnpeers {
+      neighbor ${x.e6} % '${x.name}' as ${toString x.asn};
+    }
+  ''))}
 ''

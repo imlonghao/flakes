@@ -27,6 +27,20 @@ in
         type = types.str;
         description = "publickey";
       };
+      options.asn = mkOption {
+        type = types.int;
+        description = "asn";
+      };
+      options.e4 = mkOption {
+        type = types.nullOr types.str;
+        description = "endpoint IPv4";
+        default = null;
+      };
+      options.e6 = mkOption {
+        type = types.nullOr types.str;
+        description = "endpoint IPv6";
+        default = null;
+      };
     }));
     description = "internal wireguard interfaces";
     default = [ ];
