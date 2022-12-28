@@ -20,8 +20,9 @@ in
         description = "port";
       };
       options.endpoint = mkOption {
-        type = types.str;
+        type = types.nullOr types.str;
         description = "endpoint";
+        default = null;
       };
       options.publickey = mkOption {
         type = types.str;
