@@ -4,6 +4,7 @@ let
 in
 {
   imports = [
+    ./dn42.nix
     ./hardware.nix
     ./bird.nix
     ./wireguard.nix
