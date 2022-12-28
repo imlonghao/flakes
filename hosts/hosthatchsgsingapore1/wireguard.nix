@@ -3,7 +3,6 @@
 {
   sops.secrets.wireguard.sopsFile = ./secrets.yml;
   boot.kernel.sysctl = {
-    "net.ipv4.conf.wg0831.rp_filter" = 0;
     "net.ipv4.conf.wg1080.rp_filter" = 0;
     "net.ipv4.conf.wg1255.rp_filter" = 0;
     "net.ipv4.conf.wg1588.rp_filter" = 0;
@@ -16,19 +15,6 @@
     "net.ipv4.conf.wg3088.rp_filter" = 0;
   };
   networking.wireguard.interfaces = {
-    wg0831 = {
-      ips = [ "fe80::1888/64" ];
-      privateKeyFile = config.sops.secrets.wireguard.path;
-      listenPort = 20831;
-      allowedIPsAsRoutes = false;
-      peers = [
-        {
-          endpoint = "sg.dn42.tms.im:21888";
-          publicKey = "KlZg3oOjQsaQ0dNkUgHCKyOqULw8+u+llo97X1w5mV4=";
-          allowedIPs = [ "10.0.0.0/8" "172.20.0.0/14" "172.31.0.0/16" "fe80::/64" "fd00::/8" ];
-        }
-      ];
-    };
     wg1080 = {
       ips = [ "fe80::1888/64" ];
       privateKeyFile = config.sops.secrets.wireguard.path;
