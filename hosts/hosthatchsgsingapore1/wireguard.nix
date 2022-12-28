@@ -4,7 +4,6 @@
   sops.secrets.wireguard.sopsFile = ./secrets.yml;
   boot.kernel.sysctl = {
     "net.ipv4.conf.wg2237.rp_filter" = 0;
-    "net.ipv4.conf.wg2330.rp_filter" = 0;
     "net.ipv4.conf.wg2331.rp_filter" = 0;
     "net.ipv4.conf.wg2633.rp_filter" = 0;
     "net.ipv4.conf.wg2717.rp_filter" = 0;
@@ -20,18 +19,6 @@
         {
           endpoint = "sg-sin01.dn42.munsternet.eu:21888";
           publicKey = "09m8ilgZ/9jQvVgsGwu2ceR8u6gKAsd+VxH8AzduOHk=";
-          allowedIPs = [ "10.0.0.0/8" "172.20.0.0/14" "172.31.0.0/16" "fe80::/64" "fd00::/8" ];
-        }
-      ];
-    };
-    wg2330 = {
-      ips = [ "fe80::1888/64" ];
-      privateKeyFile = config.sops.secrets.wireguard.path;
-      listenPort = 22330;
-      allowedIPsAsRoutes = false;
-      peers = [
-        {
-          publicKey = "LNpOdAZMc2RszmMB/JrvGoqLt8aE+p9JyYODKphzyyw=";
           allowedIPs = [ "10.0.0.0/8" "172.20.0.0/14" "172.31.0.0/16" "fe80::/64" "fd00::/8" ];
         }
       ];
