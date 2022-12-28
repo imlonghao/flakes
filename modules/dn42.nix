@@ -10,6 +10,11 @@ in
         type = types.str;
         description = "name";
       };
+      options.ipv4 = mkOption {
+        type = types.str;
+        description = "ipv4";
+        default = "172.22.68.0";
+      };
       options.ipv6 = mkOption {
         type = types.str;
         description = "ipv6";
@@ -42,6 +47,16 @@ in
         description = "endpoint IPv6";
         default = null;
       };
+      options.enh = mkOption {
+        type = types.bool;
+        description = "support extended next hop";
+        default = true;
+      };
+      options.l4 = mkOption {
+        type = types.nullOr types.str;
+        description = "local IPv4 address";
+        default = null;
+      };
     }));
     description = "internal wireguard interfaces";
     default = [ ];
@@ -51,6 +66,10 @@ in
     networking.wireguard.interfaces = listToAttrs (map
       (x: nameValuePair "${x.name}" {
         ips = [ x.ipv6 ];
+        postSetup = mkIf (x.e4 != null) [
+          "${pkgs.iproute2}/bin/ip addr add ${x.ipv4}/32 peer ${x.e4}/32 dev ${x.name}"
+          "${pkgs.iproute2}/bin/ip route change ${x.e4} src ${x.l4} dev ${x.name}"
+        ];
         privateKeyFile = config.sops.secrets.wireguard.path;
         listenPort = x.listen;
         allowedIPsAsRoutes = false;
