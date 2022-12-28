@@ -128,8 +128,8 @@
       };
     };
   }
-  ${concatStringsSep "\n" (flip map (config.dn42) (x: ''
-    protocol bgp AS${toString x.asn} from dnpeers {
+  ${builtins.concatStringsSep "\n" (lib.flip map (config.dn42) (x: ''
+    protocol bgp AS${builtins.toString x.asn} from dnpeers {
       neighbor ${x.e6} % '${x.name}' as ${toString x.asn};
     }
   ''))}
