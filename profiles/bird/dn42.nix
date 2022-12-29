@@ -128,9 +128,20 @@
       };
     };
   }
-  ${builtins.concatStringsSep "\n" (lib.flip map (config.dn42) (x: ''
-    protocol bgp AS${builtins.toString x.asn} from dnpeers {
-      neighbor ${x.e6} % '${x.name}' as ${toString x.asn};
-    }
-  ''))}
+  ${builtins.concatStringsSep "\n" (lib.flip map (config.dn42) (x:
+    if x.mpbgp then
+    ''
+      protocol bgp AS${builtins.toString x.asn} from dnpeers {
+        neighbor ${x.e6} % '${x.name}' as ${toString x.asn};
+      }
+    '' else
+    ''
+      protocol bgp AS${builtins.toString x.asn}v4 from dnpeers {
+        neighbor ${x.e4} as ${toString x.asn};
+      }
+      protocol bgp AS${builtins.toString x.asn}v6 from dnpeers {
+        neighbor ${x.e6} % '${x.name}' as ${toString x.asn};
+      }
+    ''
+    ))}
 ''

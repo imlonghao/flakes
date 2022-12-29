@@ -52,9 +52,9 @@ in
         description = "endpoint IPv6";
         default = null;
       };
-      options.enh = mkOption {
+      options.mpbgp = mkOption {
         type = types.bool;
-        description = "support extended next hop";
+        description = "support Multiprotocol BGP";
         default = true;
       };
       options.l4 = mkOption {
