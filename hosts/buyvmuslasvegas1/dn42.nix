@@ -181,17 +181,17 @@
       endpoint = "lax1-us.dn42.6700.cc:30012";
       publickey = "QSAeFPotqFpF6fFe3CMrMjrpS5AL54AxWY2w1+Ot2Bo=";
     }
-    {
-      name = "wg3308";
-      asn = 4242423308;
-      e6 = "fe80::3308:65";
-      ipv4 = "172.22.68.5";
-      e4 = "172.23.99.65";
-      l4 = "172.22.68.5";
-      listen = 23308;
-      endpoint = "lax01.dn42.testnet.cyou:41888";
-      publickey = "fxzL3/spstTHn0cxaAlVZHIfa1VQP06FKjJL9P/Zzgg=";
-    }
+    # {
+    #   name = "wg3308";
+    #   asn = 4242423308;
+    #   e6 = "fe80::3308:65";
+    #   ipv4 = "172.22.68.5";
+    #   e4 = "172.23.99.65";
+    #   l4 = "172.22.68.5";
+    #   listen = 23308;
+    #   endpoint = "lax01.dn42.testnet.cyou:41888";
+    #   publickey = "fxzL3/spstTHn0cxaAlVZHIfa1VQP06FKjJL9P/Zzgg=";
+    # }
     {
       name = "wg3868";
       listen = 23868;
