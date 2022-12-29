@@ -6,7 +6,7 @@ in
   imports = [
     ./hardware.nix
     ./bird.nix
-    ./wireguard.nix
+    ./dn42.nix
     profiles.mycore
     profiles.users.root
     profiles.pingfinder
