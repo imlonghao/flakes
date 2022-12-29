@@ -36,14 +36,14 @@
       endpoint = "us-west1.nodes.huajinet.org:21888";
       publickey = "Y13v0Xzf6zJQGtL2qJSwVyLNSxipYoGpq4y/5aU7omg=";
     }
-    {
-      name = "wg0549";
-      listen = 20549;
-      asn = 4242420549;
-      e6 = "fe80::549:8401:0:1";
-      endpoint = "las.usa.dn42.bb-pgqm.com:21888";
-      publickey = "SRokXOA/KtaiYlwQwpEiz6liGYzJY7CtMh9YIq3P3F0=";
-    }
+    # {
+    #   name = "wg0549";
+    #   listen = 20549;
+    #   asn = 4242420549;
+    #   e6 = "fe80::549:8401:0:1";
+    #   endpoint = "las.usa.dn42.bb-pgqm.com:21888";
+    #   publickey = "SRokXOA/KtaiYlwQwpEiz6liGYzJY7CtMh9YIq3P3F0=";
+    # }
     {
       name = "wg0826";
       e4 = "172.23.196.0";
