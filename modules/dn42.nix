@@ -21,8 +21,9 @@ in
         default = "fe80::1888/64";
       };
       options.listen = mkOption {
-        type = types.port;
+        type = types.nullOr types.port;
         description = "port";
+        default = null;
       };
       options.endpoint = mkOption {
         type = types.nullOr types.str;
