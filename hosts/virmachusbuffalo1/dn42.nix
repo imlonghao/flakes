@@ -41,14 +41,6 @@
       publickey = "GggTJ5B5ypZszhBU+E5DmKChwTnjzif1ZbX+yXP1mH8=";
     }
     {
-      name = "wg0591";
-      e6 = "fe80::0591";
-      asn = 4242420591;
-      listen = 20591;
-      endpoint = "rtr1.ord.nullplane.net:21888";
-      publickey = "oKhq3iDYFkwuyG611qCgbo6UzRm3wEiSn2CwJQn4QRA=";
-    }
-    {
       name = "wg1080";
       e6 = "fe80::1080:119";
       asn = 4242421080;
