@@ -33,6 +33,7 @@
       asn = 4242420603;
       e6 = "fe80::0603";
       listen = 20603;
+      mpbgp = false;
       endpoint = "hk02.nodes.mol.sorasky.in:21818";
       publickey = "wNNbJyoFBrlpq53p61Ur8V2RNfS3U7KADlK7he64qRk=";
     }
