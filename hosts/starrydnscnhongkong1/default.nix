@@ -50,12 +50,12 @@ in
   environment.persistence."/persist" = {
     directories = [
       "/var/lib"
+      "/root/.ssh"
     ];
     files = [
       "/etc/machine-id"
       "/etc/ssh/ssh_host_rsa_key"
       "/etc/ssh/ssh_host_ed25519_key"
-      "/etc/rancher/node/password"
     ];
   };
 
