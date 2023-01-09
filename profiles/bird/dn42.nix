@@ -74,8 +74,8 @@
   template bgp dnpeers {
     local as 4242421888;
     graceful restart on;
-    import keep filtered on;
     ipv4 {
+      import keep filtered on;
       import table;
       extended next hop;
       import filter {
@@ -103,6 +103,7 @@
       };
     };
     ipv6 {
+      import keep filtered on;
       import table;
       import filter {
         if (roa_check(dn42_roa_v6, net, bgp_path.last) != ROA_VALID) then {
