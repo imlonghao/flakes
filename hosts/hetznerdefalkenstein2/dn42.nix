@@ -24,6 +24,7 @@
     { name = "wg3044"; listen = 23044; endpoint = "nl.dn42.ssssteve.one:21888"; publickey = "ighiBJss6sW+CZpMAzks13WVDud3VWrouPBHWJu9kDg="; asn = 4242423044; e6 = "fe80::3044"; }
     { name = "wg3088"; listen = 23088; endpoint = "fra1-de.dn42.6700.cc:21888"; publickey = "TWQhJYK+ynNz7A4GMAQSHAyUUKTnAYrBfWTzzjzhAFs="; asn = 4242423088; e6 = "fe80::3088:195"; }
     { name = "wg3396"; listen = 23396; endpoint = "uk1.dn42.theresa.cafe:21888"; publickey = "zhDkw8DNmH5spOWh12790/zPA9NKblr2taIDPM5G/g4="; asn = 4242423396; e6 = "fe80::3396"; }
+    { name = "wg3814"; listen = 23814; endpoint = "193.77.181.233:51820"; publickey = "F+esDrnKGU1I9/vwvg2cx8hTLft9ui21uLZIBgDo81M="; asn = 4242423814; e4 = "172.20.43.65"; e6 = "fe80::17e7:ac0e:b9ca:194d"; l4 = "172.22.68.4"; mpbgp = false; }
     { name = "wg3847"; listen = 23847; endpoint = "de-flk-dn42.0011.de:21888"; publickey = "b8jJ2n2CyAm3iGvVl95Rc9yINXqHd16y4OkW40zV0FQ="; asn = 4242423847; e6 = "fe80::42:3847:42:1888"; }
     { name = "wg3868"; listen = 23868; endpoint = "fra1.dn42.cooo.cool:21888"; publickey = "UFDPre74vbNAV+e2dvdeEWNqT4h8X8ryyIrNIGWWUzU="; asn = 4242423868; e6 = "fe80::3868"; }
     { name = "wg3914"; listen = 23914; endpoint = "de2.g-load.eu:21888"; publickey = "B1xSG/XTJRLd+GrWDsB06BqnIq8Xud93YVh/LYYYtUY="; asn = 4242423914; e6 = "fe80::ade0"; }
