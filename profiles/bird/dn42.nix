@@ -74,6 +74,7 @@
   template bgp dnpeers {
     local as 4242421888;
     graceful restart on;
+    import keep filtered on;
     ipv4 {
       import table;
       extended next hop;
