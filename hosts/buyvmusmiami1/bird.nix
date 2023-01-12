@@ -64,7 +64,7 @@
         };
       }
       protocol static {
-        route fd21:5c0c:9b7e:6::/64 blackhole;
+        route 2602:fafd:f10::/48 blackhole;
         ipv6 {
           import all;
           export all;
@@ -84,6 +84,22 @@
             if net = 44.31.42.0/24 then {
               bgp_path.prepend(133846);
               bgp_path.prepend(133846);
+              accept;
+            }
+          };
+        };
+      }
+      protocol bgp AS53667v6 {
+        local as 133846;
+        neighbor 2605:6400:ffff::2 as 53667;
+        multihop 2;
+        password "r7OUFI1l";
+        ipv6 {
+          import filter {
+            accept;
+          };
+          export filter {
+            if net = 2602:fafd:f10::/48 then {
               accept;
             }
           };
