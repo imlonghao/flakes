@@ -40,6 +40,7 @@ in
         password "r7OUFI1l";
         ipv6 {
           import filter {
+            gw = 2605:6400:40::1;
             accept;
           };
           export filter {
