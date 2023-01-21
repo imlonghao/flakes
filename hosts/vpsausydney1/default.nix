@@ -66,4 +66,7 @@ in
     HostCertificate = ${hostCertificate}
   '';
 
+  # Route48
+  sops.secrets.route48.sopsFile = ./secrets.yml;
+
 }
