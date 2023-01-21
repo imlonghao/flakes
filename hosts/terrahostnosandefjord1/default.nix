@@ -4,6 +4,7 @@ let
 in
 {
   imports = [
+    ./bird.nix
     ./hardware.nix
     profiles.mycore
     profiles.users.root
@@ -18,11 +19,31 @@ in
       interface = "ens18";
       address = "185.243.216.1";
     };
+    defaultGateway6 = {
+      interface = "ens18";
+      address = "2a03:94e0:ffff:185:243:216::1";
+    };
     interfaces = {
       ens18.ipv4.addresses = [
         {
           address = "185.243.216.252";
           prefixLength = 24;
+        }
+      ];
+      ens18.ipv6.addresses = [
+        {
+          address = "2a03:94e0:ffff:185:243:216::252";
+          prefixLength = 118;
+        }
+      ];
+      lo.ipv6.addresses = [
+        {
+          address = "2602:feda:1bf::";
+          prefixLength = 128;
+        }
+        {
+          address = "2a09:b280:ff83::";
+          prefixLength = 128;
         }
       ];
     };
@@ -41,6 +62,7 @@ in
   services.openssh.extraConfig = ''
     HostCertificate = ${hostCertificate}
   '';
+
   # Docker
   virtualisation.docker.enable = true;
 
