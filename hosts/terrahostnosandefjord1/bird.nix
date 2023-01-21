@@ -2,6 +2,7 @@
 let
   generalConf = import profiles.bird.general {
     config = config;
+    route4 = "";
     route6 = ''
       route 2602:feda:1bf::/48 blackhole;
       route 2a09:b280:ff83::/48 blackhole;
