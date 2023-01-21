@@ -5,11 +5,15 @@ in
 {
   imports = [
     ./bird.nix
+    ./dn42.nix
     ./hardware.nix
     profiles.mycore
     profiles.users.root
+    profiles.pingfinder
     profiles.exporter.node
+    profiles.exporter.bird
     profiles.etherguard.edge
+    profiles.bird-lg-go
   ];
 
   # Network
@@ -36,7 +40,13 @@ in
           prefixLength = 118;
         }
       ];
+      lo.ipv4.addresses = [
+        { address = "172.22.68.0"; prefixLength = 32; }
+        { address = "172.22.68.6"; prefixLength = 32; }
+      ];
       lo.ipv6.addresses = [
+        { address = "fd21:5c0c:9b7e:6::"; prefixLength = 64; }
+
         {
           address = "2602:feda:1bf::";
           prefixLength = 128;
