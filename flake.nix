@@ -160,6 +160,9 @@
           starrydnscnhongkong1 = {
             hostname = "starrydns-cn-hongkong-1.ni.sb";
           };
+          misakadeberlin1 = {
+            hostname = "misaka-de-berlin-1.ni.sb";
+          };
           misakauklondon1 = {
             hostname = "misaka-uk-london-1.ni.sb";
           };
