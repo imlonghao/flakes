@@ -2,6 +2,7 @@
 with lib;
 let
   cfg = config.services.tuic;
+  caps = [ "CAP_NET_BIND_SERVICE" ];
 in
 {
   options.services.tuic = {
@@ -16,10 +17,22 @@ in
       serviceConfig = {
         Type = "simple";
         ExecStart = "${pkgs.tuic}/bin/tuic-server -c ${cfg.path}";
+        User = "tuic";
+        Group = "tuic";
+        CapabilityBoundingSet = caps;
+        AmbientCapabilities = caps;
       };
       wants = [ "network-online.target" ];
       after = [ "network-online.target" ];
       wantedBy = [ "multi-user.target" ];
+    };
+    users = {
+      users.tuic = {
+        description = "Delicately-TUICed high-performance proxy user";
+        group = "tuic";
+        isSystemUser = true;
+      };
+      groups.tuic = { };
     };
   };
 }
