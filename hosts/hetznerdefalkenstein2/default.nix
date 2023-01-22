@@ -217,8 +217,7 @@ in
   services.cron = {
     enable = true;
     systemCronJobs = [
-      "33 3 * * * root ${pkgs.rclone}/bin/rclone sync garage:/databasebackup /persist/backup/databasebackup -P --config=/persist/rclone.conf"
-      "0 1 * * * root ${pkgs.git}/bin/git --git-dir=/persist/pki/.git pull"
+      "0 1 * * * root ${pkgs.git}/bin/git -C /persist/pki pull"
       "5 12 * * * root bash -c 'cd /persist/archlinuxcn-pkgstats/ && bash cron.sh'"
     ];
   };
