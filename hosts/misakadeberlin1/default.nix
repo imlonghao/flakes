@@ -33,6 +33,8 @@ in
   environment.persistence."/persist" = {
     directories = [
       "/root/.ssh"
+      "/root/.edge-admin"
+      "/root/.edge-api"
       "/var/lib"
     ];
     files = [
