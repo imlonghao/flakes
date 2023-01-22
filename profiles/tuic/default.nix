@@ -1,7 +1,11 @@
 { config, pkgs, self, sops, ... }:
 
 {
-  sops.secrets."tuic".sopsFile = "${self}/hosts/${config.networking.hostName}/secrets.yml";
+  sops.secrets.tuic = {
+    sopsFile = "${self}/hosts/${config.networking.hostName}/secrets.yml";
+    owner = "tuic";
+    group = "tuic";
+  };
 
   services.tuic = {
     enable = true;
