@@ -173,6 +173,7 @@
       endpoint = "us1.dn42.ciplc.network:21888";
       publickey = "qgTT/xzJWZH9iAN+8JW7nWgzk2/i1elposz7G7bnczY=";
     }
+    { name = "wg3035"; listen = 23035; endpoint = "usw1.dn42.lare.cc:21888"; publickey = "Qd2XCotubH4QrQIdTZjYG4tFs57DqN7jawO9vGz+XWM="; asn = 4242423035; e6 = "fe80::3035:132"; }
     {
       name = "wg3088";
       listen = 23088;
