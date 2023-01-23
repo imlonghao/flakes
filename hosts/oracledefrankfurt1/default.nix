@@ -36,6 +36,7 @@ in
   };
 
   environment.systemPackages = with pkgs; [
+    deploy-rs
     docker-compose
     git
   ];
