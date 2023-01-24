@@ -184,6 +184,9 @@
           vpsausydney1 = {
             hostname = "vps-au-sydney-1.ni.sb";
           };
+          vpsussanjose1 = {
+            hostname = "vps-us-sanjose-1.ni.sb";
+          };
           idcwikicnhongkong1 = {
             hostname = "idcwiki-cn-hongkong-1.ni.sb";
           };
