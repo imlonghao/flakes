@@ -4,6 +4,7 @@ let
 in
 {
   imports = [
+    ./hardware.nix
     profiles.mycore
     profiles.users.root
   ];
