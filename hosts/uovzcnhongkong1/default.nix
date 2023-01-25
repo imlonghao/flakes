@@ -22,10 +22,10 @@ in
     defaultGateway = "103.200.115.254";
     nameservers = [ "8.8.8.8" "1.1.1.1" ];
     interfaces = {
-      ens3.ipv4.addresses = [
+      eth0.ipv4.addresses = [
         {
           address = "103.200.115.22";
-          prefixLength = 25;
+          prefixLength = 24;
         }
       ];
       lo.ipv4.addresses = [
@@ -60,10 +60,10 @@ in
   };
   systemd.services.etherguard-edge.serviceConfig = {
     ExecStartPost = [
-      "${pkgs.iptables}/bin/iptables -t nat -A POSTROUTING -s 100.64.88.19 -o ens3 -j SNAT --to-source 103.200.115.22"
+      "${pkgs.iptables}/bin/iptables -t nat -A POSTROUTING -s 100.64.88.19 -o eth0 -j SNAT --to-source 103.200.115.22"
     ];
     ExecStopPost = [
-      "${pkgs.iptables}/bin/iptables -t nat -D POSTROUTING -s 100.64.88.19 -o ens3 -j SNAT --to-source 103.200.115.22"
+      "${pkgs.iptables}/bin/iptables -t nat -D POSTROUTING -s 100.64.88.19 -o eth0 -j SNAT --to-source 103.200.115.22"
     ];
   };
 
