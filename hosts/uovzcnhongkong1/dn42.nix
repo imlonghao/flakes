@@ -112,6 +112,14 @@
       publickey = "A1HIKpYTO2vV8af3Fk/9wreY+W05f0HxlenN60CNnTY=";
     }
     {
+      name = "wg2458";
+      asn = 4242422458;
+      e6 = "fe80::2458";
+      listen = 22458;
+      endpoint = "cn-hkg-a.nodes.pigeonhole.eu.org:51888";
+      publickey = "9O4ABGmh+EXPnOynhW60aByE3qorcV7UsAC9n55g6CQ=";
+    }
+    {
       name = "wg2464";
       asn = 4242422464;
       e6 = "fe80::2464";
