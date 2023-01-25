@@ -19,6 +19,14 @@
       publickey = "OWiVoIAfPwrc8BvmxL5QUOZY4PFhYOovf5gXmnvsGAg=";
     }
     {
+      name = "wg0458";
+      asn = 4242420458;
+      e6 = "fe80::0458";
+      listen = 20458;
+      endpoint = "hk1.nodes.huajinet.org:21888";
+      publickey = "WmKjRCtf9ZlIDkSuEOrjk5B7YdRZNGhhlbfz2waDAgQ=";
+    }
+    {
       name = "wg0549";
       asn = 4242420549;
       e6 = "fe80::549:3441:0:1";
