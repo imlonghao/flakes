@@ -19,12 +19,12 @@ in
   boot.loader.grub.device = "/dev/vda";
   networking = {
     dhcpcd.enable = false;
-    defaultGateway = "103.200.114.1";
+    defaultGateway = "103.200.115.254";
     nameservers = [ "8.8.8.8" "1.1.1.1" ];
     interfaces = {
       ens3.ipv4.addresses = [
         {
-          address = "103.200.114.26";
+          address = "103.200.115.22";
           prefixLength = 25;
         }
       ];
@@ -49,9 +49,7 @@ in
     ];
     files = [
       "/etc/machine-id"
-      "/etc/ssh/ssh_host_rsa_key"
       "/etc/ssh/ssh_host_ed25519_key"
-      "/etc/rancher/node/password"
     ];
   };
 
@@ -62,10 +60,10 @@ in
   };
   systemd.services.etherguard-edge.serviceConfig = {
     ExecStartPost = [
-      "${pkgs.iptables}/bin/iptables -t nat -A POSTROUTING -s 100.64.88.19 -o ens3 -j SNAT --to-source 103.200.114.26"
+      "${pkgs.iptables}/bin/iptables -t nat -A POSTROUTING -s 100.64.88.19 -o ens3 -j SNAT --to-source 103.200.115.22"
     ];
     ExecStopPost = [
-      "${pkgs.iptables}/bin/iptables -t nat -D POSTROUTING -s 100.64.88.19 -o ens3 -j SNAT --to-source 103.200.114.26"
+      "${pkgs.iptables}/bin/iptables -t nat -D POSTROUTING -s 100.64.88.19 -o ens3 -j SNAT --to-source 103.200.115.22"
     ];
   };
 

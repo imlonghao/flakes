@@ -19,17 +19,17 @@ in
     options = [ "defaults" "mode=755" ];
   };
   fileSystems."/boot" = {
-    device = "/dev/vda2";
+    device = "/dev/vda1";
     fsType = "btrfs";
     options = [ "subvol=@boot" ] ++ mountOptions;
   };
   fileSystems."/nix" = {
-    device = "/dev/vda2";
+    device = "/dev/vda1";
     fsType = "btrfs";
     options = [ "subvol=@nix" ] ++ mountOptions;
   };
   fileSystems."/persist" = {
-    device = "/dev/vda2";
+    device = "/dev/vda1";
     fsType = "btrfs";
     options = [ "subvol=@persist" ] ++ mountOptions;
     neededForBoot = true;
