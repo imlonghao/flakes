@@ -21,30 +21,41 @@ in
   ];
 
   boot.loader.grub.device = "/dev/vda";
-  networking.dhcpcd.allowInterfaces = [ "ens3" ];
-  # networking.defaultGateway6 = {
-  #   address = "2406:ef80:2::1";
-  # };
-  # networking.interfaces.ens3.ipv6.addresses = [
-  #   {
-  #     address = "2406:ef80:2:e::";
-  #     prefixLength = 48;
-  #   }
-  # ];
-  networking.interfaces.lo.ipv4.addresses = [
-    {
-      address = "172.22.68.2";
-      prefixLength = 32;
-    }
-    { address = "172.22.68.8"; prefixLength = 32; }
-  ];
-  networking.interfaces.lo.ipv6.addresses = [
-    {
-      address = "fd21:5c0c:9b7e:2::";
-      prefixLength = 64;
-    }
-    { address = "fd21:5c0c:9b7e::8"; prefixLength = 128; }
-  ];
+  networking = {
+    dhcpcd.enable = false;
+    defaultGateway = {
+      interfaces = "ens3";
+      address = "103.167.150.1";
+    };
+    defaultGateway6 = {
+      interfaces = "ens3";
+      address = "fe80::1";
+    };
+    interfaces = {
+      ens3 = {
+        ipv4.addresses = [
+          { address = "103.167.150.135"; prefixLength = 24; }
+        ];
+        ipv6.addresses = [
+          { address = "2406:ef80:2:e::"; prefixLength = 64; }
+          {
+            address = "2406:ef80:2:e:114:514:1919:810";
+            prefixLength = 64;
+          }
+        ];
+      };
+      lo = {
+        ipv4.addresses = [
+          { address = "172.22.68.2"; prefixLength = 32; }
+          { address = "172.22.68.8"; prefixLength = 32; }
+        ];
+        ipv6.addresses = [
+          { address = "fd21:5c0c:9b7e:2::"; prefixLength = 64; }
+          { address = "fd21:5c0c:9b7e::8"; prefixLength = 128; }
+        ];
+      };
+    };
+  };
 
   environment.systemPackages = with pkgs; [
     rclone
