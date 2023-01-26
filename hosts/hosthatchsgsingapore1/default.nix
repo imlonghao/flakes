@@ -23,13 +23,14 @@ in
   boot.loader.grub.device = "/dev/vda";
   networking = {
     dhcpcd.enable = false;
+    nameservers = [ "8.8.8.8" "1.1.1.1" ];
     defaultGateway = {
       interface = "ens3";
       address = "103.167.150.1";
     };
     defaultGateway6 = {
       interface = "ens3";
-      address = "fe80::1";
+      address = "2406:ef80:2::1";
     };
     interfaces = {
       ens3 = {
