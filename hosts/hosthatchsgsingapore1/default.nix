@@ -24,11 +24,11 @@ in
   networking = {
     dhcpcd.enable = false;
     defaultGateway = {
-      interfaces = "ens3";
+      interface = "ens3";
       address = "103.167.150.1";
     };
     defaultGateway6 = {
-      interfaces = "ens3";
+      interface = "ens3";
       address = "fe80::1";
     };
     interfaces = {
