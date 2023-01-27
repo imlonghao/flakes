@@ -41,6 +41,14 @@
       publickey = "GggTJ5B5ypZszhBU+E5DmKChwTnjzif1ZbX+yXP1mH8=";
     }
     {
+      name = "wg0377";
+      listen = 20377;
+      endpoint = "us-mci1.zycname.eu.org:21888";
+      publickey = "oySCo62UQt5J52Wm36IcgVfyGSBYPLlhnRHk6T+CoBs=";
+      asn = 4242420377;
+      e6 = "fe80::0377";
+    }
+    {
       name = "wg1080";
       e6 = "fe80::1080:119";
       asn = 4242421080;

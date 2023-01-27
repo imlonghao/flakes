@@ -29,6 +29,14 @@
       publickey = "C3SneO68SmagisYQ3wi5tYI2R9g5xedKkB56Y7rtPUo=";
     }
     {
+      name = "wg0377";
+      listen = 20377;
+      endpoint = "us-lax1.zycname.eu.org:21888";
+      publickey = "qWFgfcWROVCagHgrA5qy6oEsxziSb4EbzmtWp4F5yjc=";
+      asn = 4242420377;
+      e6 = "fe80::0377";
+    }
+    {
       name = "wg0458";
       listen = 20458;
       asn = 4242420458;
