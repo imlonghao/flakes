@@ -22,7 +22,7 @@ in
     interfaces = {
       lo.ipv4.addresses = [
         {
-          address = "172.22.68.6";
+          address = "23.146.88.0";
           prefixLength = 32;
         }
         {
@@ -32,8 +32,8 @@ in
       ];
       lo.ipv6.addresses = [
         {
-          address = "fd21:5c0c:9b7e:6::";
-          prefixLength = 64;
+          address = "2602:fab0:10::";
+          prefixLength = 48;
         }
       ];
       ens3.ipv6.addresses = [

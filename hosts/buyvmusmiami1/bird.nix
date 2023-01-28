@@ -3,9 +3,11 @@ let
   generalConf = import profiles.bird.general {
     config = config;
     route4 = ''
+      route 23.146.88.0/24 blackhole;
       route 44.31.42.0/24 blackhole;
     '';
     route6 = ''
+      route 2602:fab0:10::/48 blackhole;
       route 2602:fafd:f10::/48 blackhole;
     '';
   };
@@ -30,6 +32,7 @@ in
               bgp_path.prepend(133846);
               accept;
             }
+            if net = 23.146.88.0/24 then accept;
           };
         };
       }
@@ -43,11 +46,7 @@ in
             gw = 2605:6400:40::1;
             accept;
           };
-          export filter {
-            if net = 2602:fafd:f10::/48 then {
-              accept;
-            }
-          };
+          export where net = 2602:fafd:f10::/48 || net = 2602:fab0:10::/48;
         };
       }
     '';
