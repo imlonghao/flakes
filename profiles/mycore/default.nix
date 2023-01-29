@@ -35,6 +35,7 @@ in
   };
 
   environment.systemPackages = [
+    pkgs.bottom
     pkgs.mtr
     pkgs.tcpdump
     pkgs.wget
