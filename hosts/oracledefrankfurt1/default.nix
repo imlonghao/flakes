@@ -4,6 +4,8 @@ let
   cronJob = pkgs.writeShellScript "cron.sh" ''
     # GoEdge
     /persist/edge-node/bin/edge-node start
+    # Networking
+    ip a s enp0s3 | grep -F "2603:c020:8012:a322::cd17" || dhcpcd -n
   '';
 in
 {
