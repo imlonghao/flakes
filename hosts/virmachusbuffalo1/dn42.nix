@@ -57,6 +57,14 @@
       publickey = "gbhhdvAIHVuv5e+tIG/m9T9fDaGoAGVgSUHq+rKTLyY=";
     }
     {
+      name = "wg1411";
+      e6 = "fe80::1411:2";
+      asn = 4242421411;
+      listen = 21411;
+      endpoint = "karx.xyz:21888";
+      publickey = "Ta5Dq6wr5OcY3m369cpnUbTzjFM2MSR631VRLM1Syyk=";
+    }
+    {
       name = "wg1816";
       e6 = "fe80::1816";
       asn = 4242421816;
