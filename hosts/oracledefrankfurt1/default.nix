@@ -70,4 +70,9 @@ in
     ];
   };
 
+  # Syncthing Relay
+  services.syncthing.relay = {
+    enable = true;
+    providedBy = "imlonghao";
+  };
 }
