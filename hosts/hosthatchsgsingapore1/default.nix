@@ -1,6 +1,10 @@
 { config, pkgs, profiles, sops, ... }:
 let
   hostCertificate = pkgs.writeText "ssh_host_ed25519_key-cert.pub" "ssh-ed25519-cert-v01@openssh.com AAAAIHNzaC1lZDI1NTE5LWNlcnQtdjAxQG9wZW5zc2guY29tAAAAINUBBpFCjltGQ4wILUgWGcq8j+1lfOmrNtAmvSD4BTjNAAAAIBID8nCh4rMu4rhADLBjHR4zUvNWKF7898FHzkrBKY3CAAAAAAAAAAAAAAACAAAAFWhvc3RoYXRjaHNnc2luZ2Fwb3JlMQAAAAAAAAAAAAAAAP//////////AAAAAAAAAAAAAAAAAAAAaAAAABNlY2RzYS1zaGEyLW5pc3RwMjU2AAAACG5pc3RwMjU2AAAAQQTuRtglhDg1ZegySmMt+nKOieitdmPjn7Ql1IoYRqbymyjTOf7yJjU8A8wMgiqynDPA2vtVkyCZyGTPapSxvGXWAAAAZAAAABNlY2RzYS1zaGEyLW5pc3RwMjU2AAAASQAAACBdEjzv5Cm6q0ithPhtehNlLOAcwVuclnnKeE2MI7qeNgAAACEAsNIW/oXN1w4V5TL8vvVvYgfDX6p4uZiPzvN5B2urIzg=";
+  cronJob = pkgs.writeShellScript "cron.sh" ''
+    # GoEdge
+    /persist/edge-node/bin/edge-node start
+  '';
 in
 {
   imports = [
@@ -191,5 +195,13 @@ in
         }
       ];
     };
+  };
+
+  # Crontab
+  services.cron = {
+    enable = true;
+    systemCronJobs = [
+      "* * * * * root ${cronJob} > /dev/null 2>&1"
+    ];
   };
 }
