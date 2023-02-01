@@ -87,7 +87,7 @@ in
         multihop;
         ipv6 {
           import all;
-          export where net.len <= 48 && net !~ [fd00::/8];
+          export where net.len <= 48 && !is_martian_v6() && source ~ [ RTS_STATIC, RTS_BGP ];
           add paths tx;
         };
       }
