@@ -85,10 +85,10 @@ in
         graceful restart on;
         source address 2a03:d9c0:2000::c2;
         multihop;
-        add paths tx;
         ipv6 {
           import all;
           export where net.len <= 48 && net !~ [fd00::/8];
+          add paths tx;
         };
       }
     '';
