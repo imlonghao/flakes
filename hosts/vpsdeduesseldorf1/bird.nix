@@ -79,6 +79,18 @@ in
           export where net = 2602:feda:1bf::/48 || net = 2a09:b280:ff80::/48;
         };
       }
+      protocol bgp bgptoolsv6 {
+        neighbor 2a0c:2f07:9459::b8 as 212232;
+        local as 133846;
+        graceful restart on;
+        source address 2a03:d9c0:2000::c2;
+        multihop;
+        add paths tx;
+        ipv6 {
+          import all;
+          export where net.len <= 48 && net !~ [fd00::/8];
+        };
+      }
     '';
   };
 }
