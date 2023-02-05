@@ -8,6 +8,7 @@ let
 in
 {
   imports = [
+    ./dn42.nix
     ./hardware.nix
     profiles.mycore
     profiles.users.root
@@ -25,6 +26,12 @@ in
       eth0 = {
         ipv4.addresses = [
           { address = "45.142.247.152"; prefixLength = 32; }
+        ];
+      };
+      lo = {
+        ipv6.addresses = [
+          { address = "2602:feda:1bf::"; prefixLength = 128; }
+          { address = "2a09:b280:ff84::"; prefixLength = 128; }
         ];
       };
     };
