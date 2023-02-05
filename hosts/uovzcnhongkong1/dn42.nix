@@ -186,12 +186,10 @@
     }
     {
       name = "wg3618";
-      l4 = "172.22.68.3";
-      e4 = "172.20.51.98";
       asn = 4242423618;
       e6 = "fe80::3618";
       listen = 23618;
-      endpoint = "15.dyn.neo.jerryxiao.cc:50096";
+      endpoint = "05.dyn.neo.jerryxiao.cc:50096";
       publickey = "XhFVaLvuWT95gfI5e95bV84pESKenAgL5ulq+Q0KoSI=";
     }
     {
