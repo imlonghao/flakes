@@ -21,11 +21,18 @@ in
       interface = "eth0";
       address = "100.100.0.0";
     };
+    defaultGateway6 = {
+      interface = "eth0";
+      address = "fe80::1";
+    };
     dhcpcd.enable = false;
     interfaces = {
       eth0 = {
         ipv4.addresses = [
           { address = "45.142.247.152"; prefixLength = 32; }
+        ];
+        ipv6.addresses = [
+          { address = "2a12:8d02:2100:2f3:5054:ff:fe34:d487"; prefixLength = 64; }
         ];
       };
       lo = {
