@@ -189,7 +189,7 @@
       asn = 4242423618;
       e6 = "fe80::3618";
       listen = 23618;
-      endpoint = "05.dyn.neo.jerryxiao.cc:50096";
+      endpoint = "05.dyn.neo.jerryxiao.cc:50107";
       publickey = "XhFVaLvuWT95gfI5e95bV84pESKenAgL5ulq+Q0KoSI=";
     }
     {
