@@ -18,12 +18,15 @@ in
   networking = {
     dhcpcd.allowInterfaces = [ "enp3s0" ];
     interfaces = {
-      lo.ipv4.addresses = [
-        {
-          address = "44.31.42.0";
-          prefixLength = 32;
-        }
-      ];
+      lo = {
+        ipv4.addresses = [
+          { address = "44.31.42.0"; prefixLength = 32; }
+        ];
+        ipv6.addresses = [
+          { address = "2602:feda:1bf::"; prefixLength = 128; }
+          { address = "2a09:b280:ff85::"; prefixLength = 128; }
+        ];
+      };
     };
   };
 

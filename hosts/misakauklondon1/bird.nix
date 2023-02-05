@@ -5,7 +5,10 @@ let
     route4 = ''
       route 44.31.42.0/24 blackhole;
     '';
-    route6 = "";
+    route6 = ''
+      route 2602:feda:1bf::/48 blackhole;
+      route 2a09:b280:ff85::/48 blackhole;
+    '';
   };
 in
 {
@@ -103,6 +106,16 @@ in
             accept;
           };
           export where is_valid_network_v6() || net ~ 2602:feda:1bf::/48;
+        };
+      }
+      protocol bgp AS57695 {
+        local as 133846;
+        neighbor 2a0b:4342:ffff:: as 57695;
+        multihop 2;
+        source address 2a0f:3b03:101:12:5054:ff:fe16:e83c;
+        ipv6 {
+          import none;
+          export where net ~ [2602:feda:1bf::/48, 2a09:b280:ff85::/48];
         };
       }
     '';
