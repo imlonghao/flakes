@@ -69,4 +69,10 @@ in
     enable = true;
     package = pkgs.mariadb;
   };
+
+  # EtherGuard
+  services.etherguard-edge = {
+    ipv4 = "100.64.88.23/24";
+    ipv6 = "2602:feda:1bf:deaf::23/64";
+  };
 }
