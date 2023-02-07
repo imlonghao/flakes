@@ -22,6 +22,7 @@ in
     interfaces = {
       lo.ipv4.addresses = [
         { address = "23.146.88.0"; prefixLength = 32; }
+        { address = "23.146.88.1"; prefixLength = 32; }
         { address = "44.31.42.0"; prefixLength = 32; }
       ];
       lo.ipv6.addresses = [
@@ -60,7 +61,7 @@ in
   services.tayga = {
     enable = true;
     ipv4 = {
-      address = "45.61.188.76";
+      address = "23.146.88.1";
       router.address = "100.110.0.1";
       pool = {
         address = "100.110.0.0";
