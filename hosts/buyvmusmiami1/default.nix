@@ -21,26 +21,15 @@ in
     nameservers = [ "8.8.8.8" "1.1.1.1" ];
     interfaces = {
       lo.ipv4.addresses = [
-        {
-          address = "23.146.88.0";
-          prefixLength = 32;
-        }
-        {
-          address = "44.31.42.0";
-          prefixLength = 32;
-        }
+        { address = "23.146.88.0"; prefixLength = 32; }
+        { address = "44.31.42.0"; prefixLength = 32; }
       ];
       lo.ipv6.addresses = [
-        {
-          address = "2602:fab0:10::";
-          prefixLength = 48;
-        }
+        { address = "2602:fab0:10::"; prefixLength = 128; }
+        { address = "2602:fab0:10:53::"; prefixLength = 128; }
       ];
       ens3.ipv6.addresses = [
-        {
-          address = "2605:6400:40:fdeb::";
-          prefixLength = 48;
-        }
+        { address = "2605:6400:40:fdeb::"; prefixLength = 48; }
       ];
     };
   };
@@ -66,5 +55,26 @@ in
   services.openssh.extraConfig = ''
     HostCertificate = ${hostCertificate}
   '';
+
+  # Tayga
+  services.tayga = {
+    enable = true;
+    ipv4 = {
+      address = "45.61.188.76";
+      router.address = "100.110.0.1";
+      pool = {
+        address = "100.110.0.0";
+        prefixLength = 16;
+      };
+    };
+    ipv6 = {
+      address = "2602:fab0:10::";
+      router.address = "2602:fab0:10:64::1";
+      pool = {
+        address = "2602:fab0:10:64::";
+        prefixLength = 96;
+      };
+    };
+  };
 
 }
