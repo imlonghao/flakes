@@ -9,4 +9,5 @@ final: prev: {
   deluge_exporter = prev.callPackage ./deluge_exporter { };
   bird-lg-go = prev.callPackage ./bird-lg-go { };
   tuic = prev.callPackage ./tuic { };
+  coredns-nat64-rdns = prev.callPackage ./coredns-nat64-rdns { };
 }
