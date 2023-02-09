@@ -71,6 +71,7 @@ in
     ffmpeg
     file
     git
+    gitui
     gobuster
     google-cloud-sdk
     httpie
