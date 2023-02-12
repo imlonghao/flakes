@@ -55,8 +55,8 @@ in
         area 0 {
           interface "eg_net" {
             type bcast;
-          }
-        }
+          };
+        };
       }
     '';
   };
