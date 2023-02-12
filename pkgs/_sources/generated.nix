@@ -74,4 +74,17 @@
     vendorSha256 = "sha256-T/ufC4mEXRBKgsmIk8jSCQva5Td0rnFHx3UIVV+t08k";
     date = "2022-10-07";
   };
+  wesher = {
+    pname = "wesher";
+    version = "fe2861c529968957fb553537cca93ed0ec5ceb39";
+    src = fetchFromGitHub ({
+      owner = "costela";
+      repo = "wesher";
+      rev = "fe2861c529968957fb553537cca93ed0ec5ceb39";
+      fetchSubmodules = false;
+      sha256 = "sha256-CoqbFobO09euN/WHTwMSHJx8Qnr9wNltRoPiZxo86ok=";
+    });
+    vendorSha256 = "sha256-rbJ2zwHuFJeGkaO0s8DR+yZUHfvuk/7kFaHOWPapfyA=";
+    date = "2023-01-02";
+  };
 }

@@ -119,5 +119,27 @@
             "url": "https://gitlab.com/NickCao/RAIT"
         },
         "version": "278188c8bae13165aa70b6a2fbbb99101fd6f4cd"
+    },
+    "wesher": {
+        "cargoLocks": null,
+        "date": "2023-01-02",
+        "extract": null,
+        "name": "wesher",
+        "passthru": {
+            "vendorSha256": "sha256-rbJ2zwHuFJeGkaO0s8DR+yZUHfvuk/7kFaHOWPapfyA="
+        },
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "costela",
+            "repo": "wesher",
+            "rev": "fe2861c529968957fb553537cca93ed0ec5ceb39",
+            "sha256": "sha256-CoqbFobO09euN/WHTwMSHJx8Qnr9wNltRoPiZxo86ok=",
+            "type": "github"
+        },
+        "version": "fe2861c529968957fb553537cca93ed0ec5ceb39"
     }
 }

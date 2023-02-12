@@ -25,3 +25,8 @@ fetch.github = "natesales/q"
 [deluge_exporter]
 src.git = "https://github.com/tobbez/deluge_exporter"
 fetch.github = "tobbez/deluge_exporter"
+
+[wesher]
+src.git = "https://github.com/costela/wesher"
+fetch.github = "costela/wesher"
+passthru = { vendorSha256 = "sha256-rbJ2zwHuFJeGkaO0s8DR+yZUHfvuk/7kFaHOWPapfyA="}
