@@ -23,7 +23,7 @@ in
 
   boot.loader.grub.device = "/dev/sda";
   networking = {
-    nameservers = [ "8.8.8.8" "1.1.1.1" ];
+    nameservers = [ "127.0.0.1" "8.8.8.8" "1.1.1.1" ];
     defaultGateway = {
       interface = "enp0s31f6";
       address = "138.201.124.129";
@@ -149,9 +149,16 @@ in
     enable = true;
     config = ''
       . {
-        bind 2a01:4f8:172:27e4::
-        forward . 127.0.0.1
-        cache 30
+        bind 127.0.0.1
+        forward . [2a09::]:53 [2a11::]:53 1.1.1.1:53 1.0.0.1:53 8.8.8.8:53 8.8.4.4:53
+      }
+      dn42 20.172.in-addr.arpa 21.172.in-addr.arpa 22.172.in-addr.arpa 23.172.in-addr.arpa 10.in-addr.arpa {
+        bind 127.0.0.1
+        forward . 172.20.0.53:53 172.23.0.53:53
+      }
+      d.f.ip6.arpa {
+        bind 127.0.0.1
+        forward . [fd42:d42:d42:54::1]:53 [fd42:d42:d42:53::1]:53
       }
     '';
   };
