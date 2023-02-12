@@ -47,6 +47,17 @@ in
           export where net = 2a09:b280:ff82::/48;
         };
       }
+      protocol ospf v3 {
+        ipv4 {
+          import all;
+          export none;
+        };
+        area 0 {
+          interface "eg_net" {
+            type bcast;
+          }
+        }
+      }
     '';
   };
 }

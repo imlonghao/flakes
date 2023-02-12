@@ -4,6 +4,8 @@ let
     config = config;
     route4 = ''
       route 23.146.88.0/24 blackhole;
+      route 23.146.88.1/32 blackhole;
+      route 23.146.88.248/29 blackhole;
       route 44.31.42.0/24 blackhole;
     '';
     route6 = ''
@@ -48,6 +50,17 @@ in
           };
           export where net = 2602:fafd:f10::/48 || net = 2602:fab0:10::/48;
         };
+      }
+      protocol ospf v3 {
+        ipv4 {
+          import all;
+          export where net ~ [23.146.88.1/32, 23.146.88.248/29];
+        };
+        area 0 {
+          interface "eg_net" {
+            type bcast;
+          }
+        }
       }
     '';
   };
