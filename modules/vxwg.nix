@@ -52,7 +52,7 @@ in
       ];
       postSetup = (forEach (catAttrs "id" (attrValues (filterAttrs (k: v: k != config.networking.hostName) cfg.peers)))
         (
-          x: "${pkgs.iproute2}/bin/bridge fdb append 00:00:00:00:00:00 dev vmesh dst 100.88.0.${x.id} via mesh"
+          x: "${pkgs.iproute2}/bin/bridge fdb append 00:00:00:00:00:00 dev vmesh dst 100.88.0.${toString x.id} via mesh"
         )) ++ [
         "${pkgs.iproute2}/bin/ip link set vmesh up"
       ];
@@ -64,7 +64,7 @@ in
         (x: {
           endpoint = "${x.endpoint}:${toString x.port}";
           publicKey = x.publicKey;
-          allowedIPs = [ "100.88.0.${x.id}/32" ];
+          allowedIPs = [ "100.88.0.${toString x.id}/32" ];
         })
         (attrValues
           (filterAttrs (k: v: k != config.networking.hostName) cfg.peers));
