@@ -23,7 +23,7 @@ in
 
   boot.loader.grub.device = "/dev/sda";
   networking = {
-    nameservers = [ "127.0.0.1" "8.8.8.8" "1.1.1.1" ];
+    nameservers = [ "127.0.0.1" "8.8.8.8" ];
     defaultGateway = {
       interface = "enp0s31f6";
       address = "138.201.124.129";
