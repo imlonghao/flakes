@@ -30,3 +30,8 @@ fetch.github = "tobbez/deluge_exporter"
 src.git = "https://github.com/costela/wesher"
 fetch.github = "costela/wesher"
 passthru = { vendorSha256 = "sha256-rbJ2zwHuFJeGkaO0s8DR+yZUHfvuk/7kFaHOWPapfyA="}
+
+[mybird]
+src.git = "https://github.com/tohojo/bird"
+src.branch = "babel-rtt-01"
+fetch.github = "tohojo/bird"

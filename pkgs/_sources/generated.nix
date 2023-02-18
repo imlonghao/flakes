@@ -49,6 +49,18 @@
     });
     date = "2021-04-20";
   };
+  mybird = {
+    pname = "mybird";
+    version = "b0b12f37388e59b4456119d3a90d4ff69622d698";
+    src = fetchFromGitHub ({
+      owner = "tohojo";
+      repo = "bird";
+      rev = "b0b12f37388e59b4456119d3a90d4ff69622d698";
+      fetchSubmodules = false;
+      sha256 = "sha256-9Ufu6gGDVMZHoxZdqc2khNBsrvBcS+18IIYIcsVsdsY=";
+    });
+    date = "2023-02-14";
+  };
   q-dns = {
     pname = "q-dns";
     version = "v0.8.4";

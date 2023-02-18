@@ -11,4 +11,5 @@ final: prev: {
   tuic = prev.callPackage ./tuic { };
   coredns-nat64-rdns = prev.callPackage ./coredns-nat64-rdns { };
   wesher = prev.callPackage ./wesher { };
+  mybird = prev.callPackage ./mybird { };
 }
