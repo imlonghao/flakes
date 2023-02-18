@@ -12,7 +12,7 @@ let
   };
 in
 {
-  services.bird2 = {
+  services.mybird2 = {
     enable = true;
     config = generalConf + ''
       function is_valid_network() {

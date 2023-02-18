@@ -13,7 +13,7 @@ let
   kernelConf = import profiles.bird.kernel;
 in
 {
-  services.bird2 = {
+  services.mybird2 = {
     enable = true;
     config = generalConf + kernelConf + ''
       protocol bgp xtom {
