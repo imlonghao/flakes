@@ -47,6 +47,19 @@ in
           export where net = 2a09:b280:ff82::/48;
         };
       }
+      protocol babel {
+        ipv4 {
+          import all;
+          export where source = RTS_BABEL;
+        };
+        ipv6 {
+          import all;
+          export where source = RTS_BABEL;
+        };
+        interface "vmesh" {
+          type tunnel;
+        };
+      }
     '';
   };
 }

@@ -72,17 +72,4 @@ in
       ff00::/8+
     ];
   }
-  protocol babel {
-    ipv4 {
-      import all;
-      export where source ~ [RTS_STATIC, RTS_BABEL];
-    };
-    ipv6 {
-      import all;
-      export where source ~ [RTS_STATIC, RTS_BABEL];
-    };
-    interface "vmesh" {
-      type tunnel;
-    };
-  }
 ''

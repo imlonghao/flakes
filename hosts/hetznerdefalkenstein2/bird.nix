@@ -15,6 +15,20 @@ in
 {
   services.mybird2 = {
     enable = true;
-    config = generalConf + dn42Conf;
+    config = generalConf + dn42Conf + ''
+      protocol babel {
+        ipv4 {
+          import all;
+          export where source = RTS_BABEL;
+        };
+        ipv6 {
+          import all;
+          export where source = RTS_BABEL;
+        };
+        interface "vmesh" {
+          type tunnel;
+        };
+      }
+    '';
   };
 }
