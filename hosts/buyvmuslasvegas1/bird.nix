@@ -17,7 +17,7 @@ let
   dn42Conf = import profiles.bird.dn42 { region = 44; country = 1840; ip = 5; config = config; lib = lib; };
 in
 {
-  services.bird2 = {
+  services.mybird2 = {
     enable = true;
     config = generalConf + dn42Conf + ''
       protocol bgp AS53667v4 {
@@ -47,15 +47,17 @@ in
           export where net = 2a09:b280:ff82::/48;
         };
       }
-      protocol ospf v3 {
+      protocol babel {
         ipv4 {
           import all;
-          export none;
+          export where source = RTS_BABEL;
         };
-        area 0 {
-          interface "vmesh" {
-            type bcast;
-          };
+        ipv6 {
+          import all;
+          export where source = RTS_BABEL;
+        };
+        interface "vmesh" {
+          type tunnel;
         };
       }
     '';

@@ -13,8 +13,22 @@ let
   dn42Conf = import profiles.bird.dn42 { region = 41; country = 1276; ip = 4; config = config; lib = lib; };
 in
 {
-  services.bird2 = {
+  services.mybird2 = {
     enable = true;
-    config = generalConf + dn42Conf;
+    config = generalConf + dn42Conf + ''
+      protocol babel {
+        ipv4 {
+          import all;
+          export where source = RTS_BABEL;
+        };
+        ipv6 {
+          import all;
+          export where source = RTS_BABEL;
+        };
+        interface "vmesh" {
+          type tunnel;
+        };
+      }
+    '';
   };
 }

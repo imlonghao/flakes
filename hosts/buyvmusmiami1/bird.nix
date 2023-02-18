@@ -15,7 +15,7 @@ let
   };
 in
 {
-  services.bird2 = {
+  services.mybird2 = {
     enable = true;
     config = generalConf + ''
       protocol bgp AS53667v4 {
@@ -51,15 +51,17 @@ in
           export where net = 2602:fafd:f10::/48 || net = 2602:fab0:10::/48;
         };
       }
-      protocol ospf v3 {
+      protocol babel {
         ipv4 {
           import all;
-          export where net ~ [23.146.88.1/32, 23.146.88.248/29];
+          export where net ~ [23.146.88.1/32, 23.146.88.248/29] || source = RTS_BABEL;
         };
-        area 0 {
-          interface "vmesh" {
-            type bcast;
-          };
+        ipv6 {
+          import all;
+          export where source = RTS_BABEL;
+        };
+        interface "vmesh" {
+          type tunnel;
         };
       }
     '';
