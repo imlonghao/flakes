@@ -3,7 +3,6 @@ with lib;
 let
   cfg = config.vxwg;
   cfgType = with types; submodule {
-    freeformType = settingsFormat.type;
     options = {
       publicKey = mkOption {
         type = str;
@@ -45,7 +44,7 @@ in
   };
   config = mkIf cfg.enable {
     networking.wireguard.interfaces.mesh = {
-      ips = cfg.peers."${config.networking.hostName}".ip + "/24";
+      ips = [ cfg.peers."${config.networking.hostName}".ip + "/24" ];
       listenPort = cfg.peers."${config.networking.hostName}".port;
       allowedIPsAsRoutes = false;
       privateKeyFile = config.sops.secrets.wireguard.path;
@@ -71,8 +70,8 @@ in
           publicKey = x.publicKey;
           allowedIPs = [ "${x.ip}/32" ];
         })
-        attrValues
-        (filterAttrs (k: v: k != config.networking.hostName) cfg.peers);
+        (attrValues
+          (filterAttrs (k: v: k != config.networking.hostName) cfg.peers));
     };
   };
 }
