@@ -57,7 +57,7 @@ in
           export where net ~ [23.146.88.1/32, 23.146.88.248/29];
         };
         area 0 {
-          interface "eg_net" {
+          interface "vmesh" {
             type bcast;
           };
         };

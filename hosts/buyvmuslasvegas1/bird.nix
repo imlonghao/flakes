@@ -53,7 +53,7 @@ in
           export none;
         };
         area 0 {
-          interface "eg_net" {
+          interface "vmesh" {
             type bcast;
           };
         };
