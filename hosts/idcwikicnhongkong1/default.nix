@@ -8,11 +8,13 @@ let
 in
 {
   imports = [
+    ./bird.nix
     ./hardware.nix
     profiles.mycore
     profiles.netdata
     profiles.users.root
     profiles.tuic
+    profiles.vxwg
   ];
 
   networking = {

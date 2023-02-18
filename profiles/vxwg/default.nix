@@ -33,6 +33,27 @@
         endpoint = "hosthatch-se-stockholm-1.ni.sb";
         port = 63004;
       };
+      hosthatchsgsingapore1 = {
+        publicKey = "vBcYFxMLwcsVScQ0LqkGDEIbbykskatmqWHlPGEUrE8=";
+        id = 5;
+        mac = "ce:b9:a1:c3:35:01";
+        endpoint = "hosthatch-sg-singapore-1.ni.sb";
+        port = 63005;
+      };
+      idcwikicnhongkong1 = {
+        publicKey = "ihk/eiv2YL49Ig03iPb718FNUpO9Bs3ZGXRMke+WqA0=";
+        id = 6;
+        mac = "02:ed:53:c4:a5:f4";
+        endpoint = "idcwiki-cn-hongkong-1.ni.sb";
+        port = 63006;
+      };
+      misakadeberlin1 = {
+        publicKey = "ber/iNS8hKD513kJ/sSTrYmpPZmELjVvyluZvaoCOTE=";
+        id = 7;
+        mac = "f2:3b:fb:38:0f:ac";
+        endpoint = "misaka-de-berlin-1.ni.sb";
+        port = 63007;
+      };
     };
   };
 }

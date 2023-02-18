@@ -22,6 +22,7 @@ in
     profiles.docker
     profiles.autorestic
     profiles.bird-lg-go
+    profiles.vxwg
   ];
 
   boot.loader.grub.device = "/dev/vda";
