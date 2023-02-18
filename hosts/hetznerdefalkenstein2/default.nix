@@ -17,6 +17,7 @@ in
     profiles.autorestic
     profiles.docker
     profiles.bird-lg-go
+    profiles.vxwg
   ];
 
   nix.gc.dates = "monthly";
@@ -237,5 +238,8 @@ in
   users.users.root.openssh.authorizedKeys.keys = [
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOUNJVlqv8ZadxMk0XSlTpFmOHcxpbngu5GBZ9rSM77M Corp"
   ];
+
+  # vxwg
+  vxwg.mac = "B1:13:F7:2F:96:81";
 
 }

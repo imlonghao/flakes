@@ -16,6 +16,12 @@
         endpoint = "buyvm-us-miami-1.ni.sb";
         port = 63002;
       };
+      hetznerdefalkenstein2 = {
+        publicKey = "k9F2akSTkbA/GiO59PNW/v0D65ioMYD4P1DqeKSL3FM=";
+        id = 3;
+        endpoint = "138.201.124.182";
+        port = 63003;
+      };
     };
   };
 }
