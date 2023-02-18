@@ -51,4 +51,7 @@ in
     ];
   };
 
+  # vxwg
+  services.etherguard-edge.ipv4 = "100.88.1.6/24";
+
 }
