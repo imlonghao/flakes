@@ -80,11 +80,6 @@ in
   };
 
   # vxwg
-  vxwg = {
-    ips = [
-      "100.88.1.1/24"
-    ];
-    mac = "AA:65:7B:AC:4A:52";
-  };
+  vxwg.mac = "AA:65:7B:AC:4A:52";
 
 }

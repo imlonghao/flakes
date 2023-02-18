@@ -8,9 +8,9 @@ let
         type = str;
         example = "yAnz5TF+lXXJte14tji3zlMNq+hd2rYUIgJBgB3fBmk=";
       };
-      ip = mkOption {
-        type = str;
-        example = "169.254.3.175";
+      id = mkOption {
+        type = types.int;
+        example = 1;
       };
       endpoint = mkOption {
         type = nullOr str;
@@ -22,17 +22,11 @@ let
       };
     };
   };
+  id = toString cfg.peers.${config.networking.hostName}.id;
 in
 {
   options.vxwg = {
     enable = mkEnableOption "VXLAN over WireGuard";
-    ips = mkOption {
-      type = with types; listOf str;
-      example = [
-        "172.20.10.244/24"
-        "2001:db8:42:0:ce39:2471:79bb:a152/64"
-      ];
-    };
     mac = mkOption {
       type = types.str;
       example = "26:71:79:bb:a1:52";
@@ -44,7 +38,7 @@ in
   };
   config = mkIf cfg.enable {
     networking.wireguard.interfaces.mesh = {
-      ips = [ "${cfg.peers.${config.networking.hostName}.ip}/24" ];
+      ips = [ "100.88.0.${id}/24" ];
       listenPort = cfg.peers."${config.networking.hostName}".port;
       allowedIPsAsRoutes = false;
       privateKeyFile = config.sops.secrets.wireguard.path;
@@ -53,10 +47,12 @@ in
         "${pkgs.iproute2}/bin/ip link add vmesh address ${cfg.mac} mtu 1500 type vxlan id 4652375 dstport 4789 ttl 1 noudpcsum || true"
         "${pkgs.ethtool}/bin/ethtool -K vmesh tx off rx off"
         "${pkgs.procps}/bin/sysctl -w net.ipv4.conf.vmesh.accept_redirects=0 net.ipv4.conf.vmesh.send_redirects=0 net.ipv6.conf.vmesh.accept_redirects=0"
-      ] ++ forEach cfg.ips (x: "${pkgs.iproute2}/bin/ip address add ${x} dev vmesh || true");
-      postSetup = (forEach (catAttrs "ip" (attrValues (filterAttrs (k: v: k != config.networking.hostName) cfg.peers)))
+        "${pkgs.iproute2}/bin/ip address add 100.88.1.${id}/24 dev vmesh || true"
+        "${pkgs.iproute2}/bin/ip address add 2602:feda:1bf:1919::${id}/64 dev vmesh || true"
+      ];
+      postSetup = (forEach (catAttrs "id" (attrValues (filterAttrs (k: v: k != config.networking.hostName) cfg.peers)))
         (
-          x: "${pkgs.iproute2}/bin/bridge fdb append 00:00:00:00:00:00 dev vmesh dst ${x} via mesh"
+          x: "${pkgs.iproute2}/bin/bridge fdb append 00:00:00:00:00:00 dev vmesh dst 100.64.88.${x} via mesh"
         )) ++ [
         "${pkgs.iproute2}/bin/ip link set vmesh up"
       ];
@@ -68,7 +64,7 @@ in
         (x: {
           endpoint = "${x.endpoint}:${toString x.port}";
           publicKey = x.publicKey;
-          allowedIPs = [ "${x.ip}/32" ];
+          allowedIPs = [ "100.64.88.${id}/32" ];
         })
         (attrValues
           (filterAttrs (k: v: k != config.networking.hostName) cfg.peers));

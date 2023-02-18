@@ -173,11 +173,6 @@ in
 
   # vxwg
   sops.secrets.wireguard.sopsFile = ./secrets.yml;
-  vxwg = {
-    ips = [
-      "100.88.1.2/24"
-    ];
-    mac = "C4:05:9C:B4:52:A2";
-  };
+  vxwg.mac = "C4:05:9C:B4:52:A2";
 
 }
