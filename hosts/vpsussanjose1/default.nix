@@ -4,7 +4,7 @@ let
 in
 {
   imports = [
-    ./dn42.nix
+    ./bird.nix
     ./hardware.nix
     profiles.mycore
     profiles.users.root
