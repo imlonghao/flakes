@@ -4,9 +4,11 @@ let
 in
 {
   imports = [
+    ./dn42.nix
     ./hardware.nix
     profiles.mycore
     profiles.users.root
+    profiles.vxwg
   ];
 
   networking = {
