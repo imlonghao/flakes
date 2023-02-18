@@ -13,6 +13,7 @@ in
     profiles.mycore
     profiles.users.root
     profiles.etherguard.edge
+    profiles.vxwg
   ];
 
   boot.loader.grub.device = "/dev/vda";
