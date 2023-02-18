@@ -13,33 +13,12 @@ let
       route 2602:fafd:f10::/48 blackhole;
     '';
   };
+  kernelConf = import profiles.bird.kernelConf { };
 in
 {
   services.mybird2 = {
     enable = true;
-    config = generalConf + ''
-      protocol kernel {
-        scan time 10;
-        graceful restart on;
-        ipv4 {
-          import none;
-          export filter {
-            if net = 0.0.0.0/0 then reject;
-            accept;
-          };
-        };
-      }
-      protocol kernel {
-        scan time 10;
-        graceful restart on;
-        ipv6 {
-          import none;
-          export filter {
-            if net = ::/0 then reject;
-            accept;
-          };
-        };
-      }
+    config = generalConf + kernelConf + ''
       protocol bgp AS53667v4 {
         local as 133846;
         neighbor 169.254.169.179 as 53667;
