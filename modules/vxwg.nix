@@ -48,7 +48,7 @@ in
         "${pkgs.iproute2}/bin/ip link add vmesh address ${mac} mtu 1500 type vxlan id 4652375 dstport 4789 ttl 1 noudpcsum || true"
         "${pkgs.ethtool}/bin/ethtool -K vmesh tx off rx off"
         "${pkgs.procps}/bin/sysctl -w net.ipv4.conf.vmesh.accept_redirects=0 net.ipv4.conf.vmesh.send_redirects=0 net.ipv6.conf.vmesh.accept_redirects=0"
-        "${pkgs.iproute2}/bin/ip address add 100.88.1.${id}/24 dev vmesh || true"
+        "${pkgs.iproute2}/bin/ip address add 100.88.1.${id}/32 dev vmesh || true"
         "${pkgs.iproute2}/bin/ip address add 2602:feda:1bf:1919::${id}/64 dev vmesh || true"
       ];
       postSetup = (forEach (catAttrs "id" (attrValues (filterAttrs (k: v: k != config.networking.hostName) cfg.peers)))

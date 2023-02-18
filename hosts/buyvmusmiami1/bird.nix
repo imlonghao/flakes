@@ -54,7 +54,7 @@ in
       protocol babel {
         ipv4 {
           import all;
-          export where net ~ [23.146.88.1/32, 23.146.88.248/29] || source = RTS_BABEL;
+          export where net ~ [100.88.1.0/24{24,32}, 23.146.88.0/24{24,32}] || source = RTS_BABEL;
         };
         ipv6 {
           import all;
