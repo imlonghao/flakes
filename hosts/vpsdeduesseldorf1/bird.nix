@@ -10,11 +10,12 @@ let
       route 2a09:b280:ff80::/48 blackhole;
     '';
   };
+  kernelConf = import profiles.bird.kernel;
 in
 {
   services.bird2 = {
     enable = true;
-    config = generalConf + ''
+    config = generalConf + kernelConf + ''
       protocol bgp xtom {
         neighbor 2a03:d9c0:2000::5 as 3204;
         password "ffdsuu3xh1f1f";
@@ -101,6 +102,19 @@ in
           import all;
           export where net.len <= 48 && !is_martian_v6() && source ~ [ RTS_STATIC, RTS_BGP ];
           add paths tx;
+        };
+      }
+      protocol babel {
+        ipv4 {
+          import all;
+          export where net ~ 100.88.1.0/24 || source = RTS_BABEL;
+        };
+        ipv6 {
+          import all;
+          export where source = RTS_BABEL;
+        };
+        interface "vmesh" {
+          type tunnel;
         };
       }
     '';

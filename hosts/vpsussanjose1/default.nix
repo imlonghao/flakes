@@ -31,4 +31,7 @@ in
     HostCertificate = ${hostCertificate}
   '';
 
+  # vxwg
+  services.etherguard-edge.ipv4 = "100.88.1.12/24";
+
 }

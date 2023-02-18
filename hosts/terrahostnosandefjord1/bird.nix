@@ -39,6 +39,19 @@ in
           export where net = 2602:feda:1bf::/48 || net = 2a09:b280:ff83::/48;
         };
       }
+      protocol babel {
+        ipv4 {
+          import all;
+          export where net ~ 100.88.1.0/24 || source = RTS_BABEL;
+        };
+        ipv6 {
+          import all;
+          export where source = RTS_BABEL;
+        };
+        interface "vmesh" {
+          type tunnel;
+        };
+      }
     '';
   };
 }

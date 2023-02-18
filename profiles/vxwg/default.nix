@@ -54,6 +54,41 @@
         endpoint = "misaka-de-berlin-1.ni.sb";
         port = 63007;
       };
+      terrahostnosandefjord1 = {
+        publicKey = "no/nuyBLlLr4VnohEz0gjK8t4SJoVK4/cEQB+DxNnEY=";
+        id = 8;
+        mac = "2e:46:f9:81:03:c1";
+        endpoint = "terrahost-no-sandefjord-1.ni.sb";
+        port = 63008;
+      };
+      virmachusbuffalo1 = {
+        publicKey = "uVIBY5keaBLtkT7oyD/W/TgEBiXerr/IPxtH+JO0amI=";
+        id = 9;
+        mac = "5e:2b:a8:52:43:01";
+        endpoint = "virmach-us-buffalo-1.ni.sb";
+        port = 63009;
+      };
+      vpsausydney1 = {
+        publicKey = "Syd/jYnhMvDrvp1POVCLuAlagWjV9X/A5DCbEBpdFBc=";
+        id = 10;
+        mac = "22:bd:fe:ff:08:fd";
+        endpoint = "vps-au-sydney-1.ni.sb";
+        port = 63010;
+      };
+      vpsdeduesseldorf1 = {
+        publicKey = "dus/IcAaF40Q5fih6987HxiaHerrWFyjTltnaZLuzV0=";
+        id = 11;
+        mac = "a6:9d:bc:cf:61:ad";
+        endpoint = "vps-de-duesseldorf-1.ni.sb";
+        port = 63011;
+      };
+      vpsussanjose1 = {
+        publicKey = "sjc/YXdn0deW7Rbtd4VJJjLApNHe4NWiYdWbtIla9yE=";
+        id = 12;
+        mac = "96:70:7b:a3:13:a4";
+        endpoint = "vps-us-sanjose-1.ni.sb";
+        port = 63012;
+      };
     };
   };
 }
