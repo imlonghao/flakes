@@ -240,6 +240,6 @@ in
   ];
 
   # vxwg
-  vxwg.mac = "B1:13:F7:2F:96:81";
+  vxwg.mac = "d2:2d:e1:90:39:f5";
 
 }

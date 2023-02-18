@@ -80,6 +80,6 @@ in
   };
 
   # vxwg
-  vxwg.mac = "AA:65:7B:AC:4A:52";
+  vxwg.mac = "c2:2e:1b:fc:26:c0";
 
 }
