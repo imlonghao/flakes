@@ -26,6 +26,13 @@
         endpoint = "138.201.124.182";
         port = 63003;
       };
+      hosthatchsestockholm1 = {
+        publicKey = "se/imkItSqQt9xR0nUT6e1wnw8YmTjKhgc9a9ZSoamg=";
+        id = 4;
+        mac = "ba:a8:ba:ec:b9:2b";
+        endpoint = "hosthatch-se-stockholm-1.ni.sb";
+        port = 63004;
+      };
     };
   };
 }
