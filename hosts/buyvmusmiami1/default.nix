@@ -28,6 +28,7 @@ in
     # profiles.pingfinder
     profiles.exporter.node
     profiles.etherguard.edge
+    profiles.vxwg
   ];
 
   boot.loader.grub.device = "/dev/vda";
@@ -168,6 +169,15 @@ in
         nat64-rdns nat64.mia1.133846.xyz.
       }
     '';
+  };
+
+  # vxwg
+  sops.secrets.wireguard.sopsFile = ./secrets.yml;
+  vxwg = {
+    ips = [
+      "100.88.1.2/24"
+    ];
+    mac = "C4:05:9C:B4:52:A2";
   };
 
 }

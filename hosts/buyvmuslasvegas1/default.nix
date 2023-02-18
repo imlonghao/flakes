@@ -14,6 +14,7 @@ in
     profiles.exporter.bird
     profiles.etherguard.edge
     profiles.bird-lg-go
+    profiles.vxwg
   ];
 
   boot.loader.grub.device = "/dev/vda";
@@ -76,6 +77,14 @@ in
   networking.hosts = {
     "240e:945:7:e::1" = [ "api.bilibili.com" ];
     "240e:97d:2000:300::7" = [ "api.live.bilibili.com" ];
+  };
+
+  # vxwg
+  vxwg = {
+    ips = [
+      "100.88.1.1/24"
+    ];
+    mac = "81:B6:95:A3:47:A1";
   };
 
 }
