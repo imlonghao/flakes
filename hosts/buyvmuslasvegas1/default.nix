@@ -79,7 +79,4 @@ in
     "240e:97d:2000:300::7" = [ "api.live.bilibili.com" ];
   };
 
-  # vxwg
-  vxwg.mac = "c2:2e:1b:fc:26:c0";
-
 }

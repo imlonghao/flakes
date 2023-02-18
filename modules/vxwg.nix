@@ -12,6 +12,10 @@ let
         type = types.int;
         example = 1;
       };
+      mac = mkOption {
+        type = types.str;
+        example = "26:71:79:bb:a1:52";
+      };
       endpoint = mkOption {
         type = nullOr str;
         example = "127.0.0.1";
@@ -23,14 +27,11 @@ let
     };
   };
   id = toString cfg.peers.${config.networking.hostName}.id;
+  mac = cfg.peers.${config.networking.hostName}.mac;
 in
 {
   options.vxwg = {
     enable = mkEnableOption "VXLAN over WireGuard";
-    mac = mkOption {
-      type = types.str;
-      example = "26:71:79:bb:a1:52";
-    };
     peers = mkOption {
       default = { };
       type = types.attrsOf cfgType;
@@ -44,7 +45,7 @@ in
       privateKeyFile = config.sops.secrets.wireguard.path;
       mtu = 1550;
       preSetup = [
-        "${pkgs.iproute2}/bin/ip link add vmesh address ${cfg.mac} mtu 1500 type vxlan id 4652375 dstport 4789 ttl 1 noudpcsum || true"
+        "${pkgs.iproute2}/bin/ip link add vmesh address ${mac} mtu 1500 type vxlan id 4652375 dstport 4789 ttl 1 noudpcsum || true"
         "${pkgs.ethtool}/bin/ethtool -K vmesh tx off rx off"
         "${pkgs.procps}/bin/sysctl -w net.ipv4.conf.vmesh.accept_redirects=0 net.ipv4.conf.vmesh.send_redirects=0 net.ipv6.conf.vmesh.accept_redirects=0"
         "${pkgs.iproute2}/bin/ip address add 100.88.1.${id}/24 dev vmesh || true"

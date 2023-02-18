@@ -239,7 +239,4 @@ in
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOUNJVlqv8ZadxMk0XSlTpFmOHcxpbngu5GBZ9rSM77M Corp"
   ];
 
-  # vxwg
-  vxwg.mac = "d2:2d:e1:90:39:f5";
-
 }

@@ -171,8 +171,4 @@ in
     '';
   };
 
-  # vxwg
-  sops.secrets.wireguard.sopsFile = ./secrets.yml;
-  vxwg.mac = "a6:bf:3f:4e:2c:74";
-
 }
