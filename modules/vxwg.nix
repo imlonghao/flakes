@@ -74,4 +74,5 @@ in
           (filterAttrs (k: v: k != config.networking.hostName) cfg.peers);
       };
     };
-  }
+  };
+}
