@@ -173,6 +173,6 @@ in
 
   # vxwg
   sops.secrets.wireguard.sopsFile = ./secrets.yml;
-  vxwg.mac = "C4:05:9C:B4:52:A2";
+  vxwg.mac = "C5:05:9C:B4:52:A2";
 
 }
