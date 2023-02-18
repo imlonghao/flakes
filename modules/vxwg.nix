@@ -44,25 +44,25 @@ in
   };
   config = mkIf cfg.enable {
     networking.wireguard.interfaces.mesh = {
-      ips = [ cfg.peers."${config.networking.hostName}".ip + "/24" ];
+      ips = [ "${cfg.peers.${config.networking.hostName}.ip}/24" ];
       listenPort = cfg.peers."${config.networking.hostName}".port;
       allowedIPsAsRoutes = false;
       privateKeyFile = config.sops.secrets.wireguard.path;
       mtu = 1550;
       preSetup = [
-        "${pkgs.iproute2}/bin/ip link add v%i address ${cfg.mac} mtu 1500 type vxlan id 4652375 dstport 4789 ttl 1 noudpcsum || true"
-        "${pkgs.ethtool}/bin/ethtool -K v%i tx off rx off"
-        "${pkgs.procps}/bin/sysctl -w net.ipv4.conf.v%i.accept_redirects=0 net.ipv4.conf.v%i.send_redirects=0 net.ipv6.conf.v%i.accept_redirects=0"
-      ] ++ forEach cfg.ips (x: "${pkgs.iproute2}/bin/ip address add ${x} dev v%i || true");
-      postSetup = forEach (catAttrs (attrValues (filterAttrs (k: v: k != config.networking.hostName) cfg.peers)))
+        "${pkgs.iproute2}/bin/ip link add vmesh address ${cfg.mac} mtu 1500 type vxlan id 4652375 dstport 4789 ttl 1 noudpcsum || true"
+        "${pkgs.ethtool}/bin/ethtool -K vmesh tx off rx off"
+        "${pkgs.procps}/bin/sysctl -w net.ipv4.conf.vmesh.accept_redirects=0 net.ipv4.conf.vmesh.send_redirects=0 net.ipv6.conf.vmesh.accept_redirects=0"
+      ] ++ forEach cfg.ips (x: "${pkgs.iproute2}/bin/ip address add ${x} dev vmesh || true");
+      postSetup = (forEach (catAttrs "ip" (attrValues (filterAttrs (k: v: k != config.networking.hostName) cfg.peers)))
         (
-          x: "${pkgs.iproute2}/bin/bridge fdb append 00:00:00:00:00:00 dev v%i dst ${x} via %i"
-        ) ++ [
-        "${pkgs.iproute2}/bin/ip link set v%i up"
+          x: "${pkgs.iproute2}/bin/bridge fdb append 00:00:00:00:00:00 dev vmesh dst ${x} via mesh"
+        )) ++ [
+        "${pkgs.iproute2}/bin/ip link set vmesh up"
       ];
       postShutdown = [
-        "${pkgs.iproute2}/bin/ip link set v%i down"
-        "${pkgs.iproute2}/bin/ip link delete v%i"
+        "${pkgs.iproute2}/bin/ip link set vmesh down"
+        "${pkgs.iproute2}/bin/ip link delete vmesh"
       ];
       peers = map
         (x: {
