@@ -75,11 +75,11 @@ in
   protocol babel {
     ipv4 {
       import all;
-      export where source ~ [RTS_DEVICE, RTS_STATIC, RTS_BABEL];
+      export where source ~ [RTS_STATIC, RTS_BABEL];
     };
     ipv6 {
       import all;
-      export where source ~ [RTS_DEVICE, RTS_STATIC, RTS_BABEL];
+      export where source ~ [RTS_STATIC, RTS_BABEL];
     };
     interface "vmesh" {
       type tunnel;
