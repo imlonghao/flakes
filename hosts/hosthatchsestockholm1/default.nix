@@ -4,6 +4,7 @@ let
 in
 {
   imports = [
+    ./bird.nix
     ./borg.nix
     ./hardware.nix
     profiles.mycore
