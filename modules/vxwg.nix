@@ -42,37 +42,37 @@ in
       default = { };
       type = types.attrsOf cfgType;
     };
-    config = mkIf cfg.enable {
-      networking.wireguard.interfaces.mesh = {
-        ips = cfg.peers."${config.networking.hostName}".ip + "/24";
-        listenPort = cfg.peers."${config.networking.hostName}".port;
-        allowedIPsAsRoutes = false;
-        privateKeyFile = config.sops.secrets.wireguard.path;
-        mtu = 1550;
-        preSetup = [
-          "${pkgs.iproute2}/bin/ip link add v%i address ${cfg.mac} mtu 1500 type vxlan id 4652375 dstport 4789 ttl 1 noudpcsum || true"
-          "${pkgs.ethtool}/bin/ethtool -K v%i tx off rx off"
-          "${pkgs.procps}/bin/sysctl -w net.ipv4.conf.v%i.accept_redirects=0 net.ipv4.conf.v%i.send_redirects=0 net.ipv6.conf.v%i.accept_redirects=0"
-        ] ++ forEach cfg.ips (x: "${pkgs.iproute2}/bin/ip address add ${x} dev v%i || true");
-        postSetup = forEach (catAttrs (attrValues (filterAttrs (k: v: k != config.networking.hostName) cfg.peers)))
-          (
-            x: "${pkgs.iproute2}/bin/bridge fdb append 00:00:00:00:00:00 dev v%i dst ${x} via %i"
-          ) ++ [
-          "${pkgs.iproute2}/bin/ip link set v%i up"
-        ];
-        postShutdown = [
-          "${pkgs.iproute2}/bin/ip link set v%i down"
-          "${pkgs.iproute2}/bin/ip link delete v%i"
-        ];
-        peers = map
-          (x: {
-            endpoint = "${x.endpoint}:${toString x.port}";
-            publicKey = x.publicKey;
-            allowedIPs = [ "${x.ip}/32" ];
-          })
-          attrValues
-          (filterAttrs (k: v: k != config.networking.hostName) cfg.peers);
-      };
+  };
+  config = mkIf cfg.enable {
+    networking.wireguard.interfaces.mesh = {
+      ips = cfg.peers."${config.networking.hostName}".ip + "/24";
+      listenPort = cfg.peers."${config.networking.hostName}".port;
+      allowedIPsAsRoutes = false;
+      privateKeyFile = config.sops.secrets.wireguard.path;
+      mtu = 1550;
+      preSetup = [
+        "${pkgs.iproute2}/bin/ip link add v%i address ${cfg.mac} mtu 1500 type vxlan id 4652375 dstport 4789 ttl 1 noudpcsum || true"
+        "${pkgs.ethtool}/bin/ethtool -K v%i tx off rx off"
+        "${pkgs.procps}/bin/sysctl -w net.ipv4.conf.v%i.accept_redirects=0 net.ipv4.conf.v%i.send_redirects=0 net.ipv6.conf.v%i.accept_redirects=0"
+      ] ++ forEach cfg.ips (x: "${pkgs.iproute2}/bin/ip address add ${x} dev v%i || true");
+      postSetup = forEach (catAttrs (attrValues (filterAttrs (k: v: k != config.networking.hostName) cfg.peers)))
+        (
+          x: "${pkgs.iproute2}/bin/bridge fdb append 00:00:00:00:00:00 dev v%i dst ${x} via %i"
+        ) ++ [
+        "${pkgs.iproute2}/bin/ip link set v%i up"
+      ];
+      postShutdown = [
+        "${pkgs.iproute2}/bin/ip link set v%i down"
+        "${pkgs.iproute2}/bin/ip link delete v%i"
+      ];
+      peers = map
+        (x: {
+          endpoint = "${x.endpoint}:${toString x.port}";
+          publicKey = x.publicKey;
+          allowedIPs = [ "${x.ip}/32" ];
+        })
+        attrValues
+        (filterAttrs (k: v: k != config.networking.hostName) cfg.peers);
     };
   };
 }
