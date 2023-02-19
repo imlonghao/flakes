@@ -25,6 +25,15 @@ in
           { address = "2604:a840:2::157"; prefixLength = 48; }
         ];
       };
+      lo = {
+        ipv4.addresses = [
+          { address = "23.146.88.2"; prefixLength = 32; }
+        ];
+        ipv6.addresses = [
+          { address = "2602:feda:1bf::"; prefixLength = 128; }
+          { address = "2602:fab0:11::"; prefixLength = 128; }
+        ];
+      };
     };
   };
 
