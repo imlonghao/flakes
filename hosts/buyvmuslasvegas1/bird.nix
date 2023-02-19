@@ -3,6 +3,7 @@ let
   generalConf = import profiles.bird.general {
     config = config;
     route4 = ''
+      route 23.146.88.0/24 blackhole;
       route 44.31.42.0/24 blackhole;
       route 172.22.68.0/28 blackhole;
       route 172.22.68.5/32 blackhole;
@@ -34,6 +35,7 @@ in
               bgp_large_community.add((53667, 109, 6939));
               accept;
             }
+            if net = 23.146.88.0/24 then accept;
           };
         };
       }
@@ -50,7 +52,7 @@ in
       protocol babel {
         ipv4 {
           import all;
-          export where net ~ 100.88.1.0/24 || source = RTS_BABEL;
+          export where net ~ [100.88.1.0/24{24,32}, 23.146.88.0/24{24,32}] || source = RTS_BABEL;
         };
         ipv6 {
           import all;
