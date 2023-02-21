@@ -15,27 +15,27 @@
   };
   deluge_exporter = {
     pname = "deluge_exporter";
-    version = "049c934bffccc873e98a91b67aad7603898c86e5";
+    version = "c8a31ede70133498b49b6ac4a1a63b57292e7b47";
     src = fetchFromGitHub ({
       owner = "tobbez";
       repo = "deluge_exporter";
-      rev = "049c934bffccc873e98a91b67aad7603898c86e5";
+      rev = "c8a31ede70133498b49b6ac4a1a63b57292e7b47";
       fetchSubmodules = false;
-      sha256 = "sha256-9U8Kjx71PR1WooVmRlCajaKvvYD3iXbsisz5Dvzumgk=";
+      sha256 = "sha256-Yz85DhN3g4YPP+aBX49jLCLDJfgUSAQJgowh0smVVgQ=";
     });
-    date = "2022-09-22";
+    date = "2023-01-24";
   };
   etherguard = {
     pname = "etherguard";
-    version = "1356780d7d37ad5c44d3d25d2137be6120b8bf87";
+    version = "ec63f38ba2bbc3b2c9ec82abffef3c798201458e";
     src = fetchFromGitHub ({
       owner = "KusakabeSi";
       repo = "EtherGuard-VPN";
-      rev = "1356780d7d37ad5c44d3d25d2137be6120b8bf87";
+      rev = "ec63f38ba2bbc3b2c9ec82abffef3c798201458e";
       fetchSubmodules = false;
-      sha256 = "sha256-sIJBWvVC7nF2ZJrI6IQxgqA2svqU4XQ0vbz9zh0HEBE=";
+      sha256 = "sha256-j2j4g96ooSbes5aj71HUawcblA/CtJ0dUUgXn5+RKZk=";
     });
-    date = "2022-05-19";
+    date = "2023-02-21";
   };
   manix = {
     pname = "manix";
@@ -63,13 +63,13 @@
   };
   q-dns = {
     pname = "q-dns";
-    version = "v0.8.4";
+    version = "v0.9.0";
     src = fetchFromGitHub ({
       owner = "natesales";
       repo = "q";
-      rev = "v0.8.4";
+      rev = "v0.9.0";
       fetchSubmodules = false;
-      sha256 = "sha256-M2TgDha+F4hY7f9sabzZEdsxdp8rdXDZB4ktmpDF5D8=";
+      sha256 = "sha256-WPVHMAau3+0jcIrRhRL5dy6h+J13LKj5GwQMJi7hGvo=";
     });
   };
   rait = {
@@ -83,7 +83,7 @@
       leaveDotGit = false;
       sha256 = "sha256-6Y0s5/HUmWrZA6QmV5wYjB1M0Ab/jHM3TSruRpMRwtA=";
     };
-    vendorSha256 = "sha256-T/ufC4mEXRBKgsmIk8jSCQva5Td0rnFHx3UIVV+t08k";
+    vendorSha256 = "sha256-SyiXhWnsECnn3ObaUl/5coq7jk7dYd66WlNihMpoCrI=";
     date = "2022-10-07";
   };
   wesher = {

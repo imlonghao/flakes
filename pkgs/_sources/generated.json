@@ -21,7 +21,7 @@
     },
     "deluge_exporter": {
         "cargoLocks": null,
-        "date": "2022-09-22",
+        "date": "2023-01-24",
         "extract": null,
         "name": "deluge_exporter",
         "passthru": null,
@@ -33,15 +33,15 @@
             "name": null,
             "owner": "tobbez",
             "repo": "deluge_exporter",
-            "rev": "049c934bffccc873e98a91b67aad7603898c86e5",
-            "sha256": "sha256-9U8Kjx71PR1WooVmRlCajaKvvYD3iXbsisz5Dvzumgk=",
+            "rev": "c8a31ede70133498b49b6ac4a1a63b57292e7b47",
+            "sha256": "sha256-Yz85DhN3g4YPP+aBX49jLCLDJfgUSAQJgowh0smVVgQ=",
             "type": "github"
         },
-        "version": "049c934bffccc873e98a91b67aad7603898c86e5"
+        "version": "c8a31ede70133498b49b6ac4a1a63b57292e7b47"
     },
     "etherguard": {
         "cargoLocks": null,
-        "date": "2022-05-19",
+        "date": "2023-02-21",
         "extract": null,
         "name": "etherguard",
         "passthru": null,
@@ -53,11 +53,11 @@
             "name": null,
             "owner": "KusakabeSi",
             "repo": "EtherGuard-VPN",
-            "rev": "1356780d7d37ad5c44d3d25d2137be6120b8bf87",
-            "sha256": "sha256-sIJBWvVC7nF2ZJrI6IQxgqA2svqU4XQ0vbz9zh0HEBE=",
+            "rev": "ec63f38ba2bbc3b2c9ec82abffef3c798201458e",
+            "sha256": "sha256-j2j4g96ooSbes5aj71HUawcblA/CtJ0dUUgXn5+RKZk=",
             "type": "github"
         },
-        "version": "1356780d7d37ad5c44d3d25d2137be6120b8bf87"
+        "version": "ec63f38ba2bbc3b2c9ec82abffef3c798201458e"
     },
     "manix": {
         "cargoLocks": null,
@@ -113,11 +113,11 @@
             "name": null,
             "owner": "natesales",
             "repo": "q",
-            "rev": "v0.8.4",
-            "sha256": "sha256-M2TgDha+F4hY7f9sabzZEdsxdp8rdXDZB4ktmpDF5D8=",
+            "rev": "v0.9.0",
+            "sha256": "sha256-WPVHMAau3+0jcIrRhRL5dy6h+J13LKj5GwQMJi7hGvo=",
             "type": "github"
         },
-        "version": "v0.8.4"
+        "version": "v0.9.0"
     },
     "rait": {
         "cargoLocks": null,
