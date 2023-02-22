@@ -6,7 +6,7 @@ fetch.github = "mlvzk/manix"
 [rait]
 src.git = "https://gitlab.com/NickCao/RAIT"
 fetch.git = "https://gitlab.com/NickCao/RAIT"
-passthru = { vendorSha256 = "sha256-SyiXhWnsECnn3ObaUl/5coq7jk7dYd66WlNihMpoCrI=" }
+passthru = { vendorSha256 = "sha256-T/ufC4mEXRBKgsmIk8jSCQva5Td0rnFHx3UIVV+t08k=" }
 
 [babeld]
 src.branch = "4via6"
