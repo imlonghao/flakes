@@ -1,4 +1,4 @@
-{ config, route4, route6 }:
+{ config, ospf4 ? "none", ospf6 ? "none", route4, route6 }:
 let
   ip = builtins.replaceStrings [ "/24" ] [ "" ] config.services.etherguard-edge.ipv4;
 in
@@ -71,5 +71,27 @@ in
       fec0::/10+,
       ff00::/8+
     ];
+  }
+  protocol ospf v3 intranet_v4 {
+    ipv4 {
+      import all;
+      export ${ospf4};
+    };
+    area 0 {
+      interface "eg_net" {
+        type bcast;
+      };
+    };
+  }
+  protocol ospf v3 intranet_v6 {
+    ipv6 {
+      import all;
+      export ${ospf6};
+    };
+    area 0 {
+      interface "eg_net" {
+        type bcast;
+      };
+    };
   }
 ''

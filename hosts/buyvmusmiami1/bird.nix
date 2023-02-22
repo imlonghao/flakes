@@ -2,6 +2,7 @@
 let
   generalConf = import profiles.bird.general {
     config = config;
+    ospf4 = "where net ~ 23.146.88.0/24";
     route4 = ''
       route 23.146.88.0/24 blackhole;
       route 23.146.88.1/32 blackhole;
@@ -50,19 +51,6 @@ in
             accept;
           };
           export where net = 2602:fafd:f10::/48 || net = 2602:fab0:10::/48;
-        };
-      }
-      protocol babel {
-        ipv4 {
-          import all;
-          export where net ~ [100.88.1.0/24{24,32}, 23.146.88.0/24{24,32}] || source = RTS_BABEL;
-        };
-        ipv6 {
-          import all;
-          export where source = RTS_BABEL;
-        };
-        interface "vmesh" {
-          type tunnel;
         };
       }
     '';
