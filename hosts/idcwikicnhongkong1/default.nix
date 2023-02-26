@@ -14,7 +14,7 @@ in
     profiles.netdata
     profiles.users.root
     profiles.tuic
-    profiles.vxwg
+    profiles.profiles.edge
   ];
 
   networking = {
@@ -51,7 +51,10 @@ in
     ];
   };
 
-  # vxwg
-  services.etherguard-edge.ipv4 = "100.88.1.6/24";
+  # EtherGuard
+  services.etherguard-edge = {
+    ipv4 = "100.64.88.4/24";
+    ipv6 = "2602:feda:1bf:deaf::4/64";
+  };
 
 }
