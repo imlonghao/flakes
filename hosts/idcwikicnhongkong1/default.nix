@@ -14,7 +14,7 @@ in
     profiles.netdata
     profiles.users.root
     profiles.tuic
-    profiles.profiles.edge
+    profiles.etherguard.edge
   ];
 
   networking = {
