@@ -39,6 +39,33 @@ in
     HostCertificate = ${hostCertificate}
   '';
 
+  environment.systemPackages = with pkgs; [
+    deploy-rs
+    dnsutils
+    exploitdb
+    ffmpeg
+    git
+    gitui
+    gobuster
+    iptables
+    lego
+    just
+    mediainfo
+    metasploit
+    mosh
+    ncdu
+    nmap
+    openssl
+    openvpn
+    (python3.withPackages (ps: with ps; [ requests ]))
+    q-dns
+    ripgrep
+    socat
+    tmux
+    tree
+    whois
+  ];
+
   environment.persistence."/persist" = {
     directories = [
       "/var/lib"
