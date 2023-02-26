@@ -8,7 +8,7 @@ in
     ./hardware.nix
     profiles.mycore
     profiles.users.root
-    profiles.vxwg
+    profiles.etherguard.edge
   ];
 
   networking = {
@@ -43,7 +43,10 @@ in
     HostCertificate = ${hostCertificate}
   '';
 
-  # vxwg
-  services.etherguard-edge.ipv4 = "100.88.1.12/24";
+  # EtherGuard
+  services.etherguard-edge = {
+    ipv4 = "100.64.88.25/24";
+    ipv6 = "2602:feda:1bf:deaf::25/64";
+  };
 
 }
