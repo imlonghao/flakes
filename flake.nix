@@ -138,8 +138,8 @@
         homeConfigurations = digga.lib.mkHomeConfigurations self.nixosConfigurations;
 
         deploy.nodes = digga.lib.mkDeployNodes self.nixosConfigurations {
-          virmachusbuffalo1 = {
-            hostname = "virmach-us-buffalo-1.ni.sb";
+          virmachustampa1 = {
+            hostname = "virmach-us-tampa-1.ni.sb";
             sshUser = "root";
           };
           hosthatchsgsingapore1 = {
