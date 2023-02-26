@@ -187,6 +187,9 @@
           idcwikicnhongkong1 = {
             hostname = "idcwiki-cn-hongkong-1.ni.sb";
           };
+          ovhfrgravelines1 = {
+            hostname = "ovh-fr-gravelines-1.ni.sb";
+          };
         };
 
         defaultTemplate = self.templates.bud;
