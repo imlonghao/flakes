@@ -1,4 +1,4 @@
-{ config, ospf4 ? "none", ospf6 ? "none", route4, route6 }:
+{ config, ospf4 ? "none", ospf6 ? "none", route4 ? "", route6 ? "" }:
 let
   ip = builtins.replaceStrings [ "/24" ] [ "" ] config.services.etherguard-edge.ipv4;
 in
