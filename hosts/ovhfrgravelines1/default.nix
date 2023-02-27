@@ -84,4 +84,9 @@ in
     ipv6 = "2602:feda:1bf:deaf::24/64";
   };
 
+  # Corp SSH Public Key
+  users.users.root.openssh.authorizedKeys.keys = [
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOUNJVlqv8ZadxMk0XSlTpFmOHcxpbngu5GBZ9rSM77M Corp"
+  ];
+
 }
