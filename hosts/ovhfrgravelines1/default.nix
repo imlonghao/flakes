@@ -9,6 +9,7 @@ in
     profiles.mycore
     profiles.users.root
     profiles.etherguard.edge
+    profiles.docker
   ];
 
   boot.loader.grub.device = "/dev/sda";
@@ -88,5 +89,25 @@ in
   users.users.root.openssh.authorizedKeys.keys = [
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOUNJVlqv8ZadxMk0XSlTpFmOHcxpbngu5GBZ9rSM77M Corp"
   ];
+
+  # fish alias
+  programs.fish.shellAliases = {
+    nttcom = "whois -h rr.ntt.net";
+    radb = "whois -h whois.radb.net";
+  };
+
+  # Docker
+  virtualisation.docker = {
+    storageDriver = "overlay2";
+  };
+
+  # CronJob
+  services.cron = {
+    enable = true;
+    systemCronJobs = [
+      "0 1 * * * root ${pkgs.git}/bin/git -C /persist/pki pull"
+#      "5 12 * * * root bash -c 'cd /persist/archlinuxcn-pkgstats/ && bash cron.sh'"
+    ];
+  };
 
 }
