@@ -41,7 +41,7 @@
     },
     "etherguard": {
         "cargoLocks": null,
-        "date": "2023-02-21",
+        "date": "2023-02-23",
         "extract": null,
         "name": "etherguard",
         "passthru": null,
@@ -53,11 +53,11 @@
             "name": null,
             "owner": "KusakabeSi",
             "repo": "EtherGuard-VPN",
-            "rev": "ec63f38ba2bbc3b2c9ec82abffef3c798201458e",
-            "sha256": "sha256-j2j4g96ooSbes5aj71HUawcblA/CtJ0dUUgXn5+RKZk=",
+            "rev": "7775441e24d68b191fd285d851e58713bead8bc5",
+            "sha256": "sha256-KOJAD0IUE7HIrCbCg4RuERiyaasz7o053sEL+ZurdVQ=",
             "type": "github"
         },
-        "version": "ec63f38ba2bbc3b2c9ec82abffef3c798201458e"
+        "version": "7775441e24d68b191fd285d851e58713bead8bc5"
     },
     "manix": {
         "cargoLocks": null,
