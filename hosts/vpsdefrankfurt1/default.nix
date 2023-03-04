@@ -14,6 +14,7 @@ in
   boot.kernelParams = [ "net.ifnames=0" ];
 
   networking = {
+    dhcpcd.enable = false;
     defaultGateway = "194.169.54.1";
     defaultGateway6 = "2a09:0:9::1";
     nameservers = [ "8.8.8.8" "1.1.1.1" ];
@@ -24,6 +25,11 @@ in
         ];
         ipv6.addresses = [
           { address = "2a09:0:9::12e"; prefixLength = 48; }
+        ];
+      };
+      eth1 = {
+        ipv6.addresses = [
+          { address = "2001:7f8:f2:e1:1996:32::1"; prefixLength = 64; }
         ];
       };
     };
