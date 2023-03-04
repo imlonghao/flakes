@@ -14,7 +14,7 @@ in
     enable = true;
     config = generalConf + kernelConf + ''
       template bgp tmpl_upstream {
-        local as 199362;
+        local as 199632;
         graceful restart on;
         ipv6 {
           import all;
