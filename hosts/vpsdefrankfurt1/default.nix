@@ -32,6 +32,12 @@ in
           { address = "2001:7f8:f2:e1::1996:32:1"; prefixLength = 64; }
         ];
       };
+      lo = {
+        ipv6.addresses = [
+          { address = "2602:fab0:20::"; prefixLength = 128; }
+          { address = "2602:fab0:22::"; prefixLength = 128; }
+        ];
+      };
     };
   };
 
