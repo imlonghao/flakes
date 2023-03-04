@@ -16,7 +16,7 @@ in
     enable = true;
     config = generalConf + kernelConf + ''
       # bgpq4 -S RPKI,AFRINIC,ARIN,APNIC,LACNIC,RIPE -6Ab -l AS134993 -R 48 APNIC::AS-ILEMONRAIN
-      define AS134993 = [
+      define 'APNIC::AS-ILEMONRAIN' = [
         2406:840:fd00::/43{43,48},
         2602:feda:d10::/44{44,48}
       ];
@@ -43,7 +43,7 @@ in
         local as 199632;
         graceful restart on;
         ipv6 {
-          import where net ~ AS134993;
+          import where net ~ 'APNIC::AS-ILEMONRAIN';
           export where net ~ [2602:fab0:20::/48, 2602:fab0:22::/48];
         };
       };
