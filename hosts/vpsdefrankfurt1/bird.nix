@@ -7,7 +7,9 @@ let
       route 2602:fab0:22::/48 blackhole;
     '';
   };
-  kernelConf = import profiles.bird.kernel;
+  kernelConf = import profiles.bird.kernel {
+    src6 = "2602:fab0:22::";
+  };
 in
 {
   services.mybird2 = {
