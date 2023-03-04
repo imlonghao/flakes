@@ -28,8 +28,8 @@ in
       };
       lo = {
         ipv6.addresses = [
-          { addresses = "2602:fab0:20::"; prefixLength = 128; }
-          { addresses = "2602:fab0:21::"; prefixLength = 128; }
+          { address = "2602:fab0:20::"; prefixLength = 128; }
+          { address = "2602:fab0:21::"; prefixLength = 128; }
         ];
       };
     };
