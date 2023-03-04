@@ -19,6 +19,7 @@ keys:
   - &vps_misakadeberlin1 age1dyk0dt4kzj59yxhj2dxwkxwecy6c9xh9k5p8722r94sg45fcvu8qmkf5m6
   - &vps_vpsussanjose1 age1mvq9x84yde6a9gaer77t84dekpe23wsnxrrjw286kj0gsu6y6ens70kzuk
   - &vps_ovhfrgravelines1 age173tunxse0c6s9ppmdnszsd6quxmm7zft7tvx8p6c5qvq3rqhgagqh5m5pt
+  - &vps_buyvmluroost1 age13pa3dsvdsygpxxlc2hannvxx4qh03280me3s7xdrmenuvf7mmcvsdckylx
 creation_rules:
   - path_regex: secrets/shadow.yml$
     key_groups:
@@ -41,6 +42,7 @@ creation_rules:
       - *vps_idcwikicnhongkong1
       - *vps_misakadeberlin1
       - *vps_ovhfrgravelines1
+      - *vps_buyvmluroost1
   - path_regex: secrets/k3s.yml$
     key_groups:
     - pgp:
@@ -172,3 +174,9 @@ creation_rules:
       - *me_canokey
       age:
       - *vps_ovhfrgravelines1
+  - path_regex: hosts/buyvmluroost1/secrets.yml$
+    key_groups:
+    - pgp:
+      - *me_canokey
+      age:
+      - *vps_buyvmluroost1

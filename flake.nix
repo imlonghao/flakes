@@ -190,6 +190,12 @@
           ovhfrgravelines1 = {
             hostname = "ovh-fr-gravelines-1.ni.sb";
           };
+          buyvmluroost1 = {
+            hostname = "buyvm-lu-roost-1.ni.sb";
+          };
+          vpsdefrankfurt1 = {
+            hostname = "vps-de-frankfurt-1.ni.sb";
+          };
         };
 
         defaultTemplate = self.templates.bud;
