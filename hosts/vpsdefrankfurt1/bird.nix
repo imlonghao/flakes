@@ -16,9 +16,9 @@ in
     enable = true;
     config = generalConf + kernelConf + ''
       # bgpq4 -S RPKI,AFRINIC,ARIN,APNIC,LACNIC,RIPE -6Ab -l AS134993 -R 48 APNIC::AS-ILEMONRAIN
-      AS134993 = [
-          2406:840:fd00::/43{43,48},
-          2602:feda:d10::/44{44,48}
+      define AS134993 = [
+        2406:840:fd00::/43{43,48},
+        2602:feda:d10::/44{44,48}
       ];
 
       template bgp tmpl_upstream {
