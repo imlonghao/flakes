@@ -29,7 +29,7 @@ in
       };
       eth1 = {
         ipv6.addresses = [
-          { address = "2001:7f8:f2:e1:1996:32::1"; prefixLength = 64; }
+          { address = "2001:7f8:f2:e1::1996:32:1"; prefixLength = 64; }
         ];
       };
     };
