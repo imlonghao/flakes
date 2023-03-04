@@ -6,6 +6,7 @@
       import none;
       export filter {
         if net = 0.0.0.0/0 then reject;
+        if source = RTS_DEVICE then reject;
         accept;
       };
     };
@@ -17,6 +18,7 @@
       import none;
       export filter {
         if net = ::/0 then reject;
+        if source = RTS_DEVICE then reject;
         accept;
       };
     };
