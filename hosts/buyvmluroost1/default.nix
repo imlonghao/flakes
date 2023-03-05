@@ -46,4 +46,10 @@ in
     HostCertificate = ${hostCertificate}
   '';
 
+  # rtorrent
+  services.rtorrent = {
+    enable = true;
+    downloadDir = "/persist/rtorrent";
+  };
+
 }
