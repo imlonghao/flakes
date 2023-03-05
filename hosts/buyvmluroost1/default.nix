@@ -56,7 +56,8 @@ in
   services.caddy = {
     enable = true;
     virtualHosts = {
-      "100.64.88.27:8001" = {
+      "http://100.64.88.27:8001" = {
+        listenAddresses = [ "100.64.88.27" ];
         extraConfig = ''
           root * /persist/rtorrent
           file_server
