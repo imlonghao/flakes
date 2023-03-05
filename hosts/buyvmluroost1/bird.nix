@@ -7,7 +7,7 @@ let
       route 2602:fab0:21::/48 blackhole;
     '';
   };
-  kernelConf = import profiles.bird.kernel;
+  kernelConf = import profiles.bird.kernel { };
 in
 {
   services.mybird2 = {

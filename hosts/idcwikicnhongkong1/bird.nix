@@ -3,7 +3,7 @@ let
   generalConf = import profiles.bird.general {
     config = config;
   };
-  kernelConf = import profiles.bird.kernel;
+  kernelConf = import profiles.bird.kernel { };
 in
 {
   services.mybird2 = {
