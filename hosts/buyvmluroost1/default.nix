@@ -54,6 +54,7 @@ in
 
   # Caddy
   services.caddy = {
+    enable = true;
     virtualHosts = {
       "100.64.88.27:8001" = {
         extraConfig = ''
