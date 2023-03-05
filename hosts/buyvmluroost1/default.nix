@@ -52,4 +52,16 @@ in
     downloadDir = "/persist/rtorrent";
   };
 
+  # Caddy
+  services.caddy = {
+    virtualHosts = {
+      "100.64.88.27:8001" = {
+        extraConfig = ''
+          root * /persist/rtorrent
+          file_server
+        '';
+      };
+    };
+  };
+
 }
