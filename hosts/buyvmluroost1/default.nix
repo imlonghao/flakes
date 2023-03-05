@@ -50,7 +50,9 @@ in
   services.rtorrent = {
     enable = true;
     downloadDir = "/persist/rtorrent";
-    dataPermissions = "0755";
+    configText = ''
+      system.umask.set = 0022
+    '';
   };
 
   # Caddy
@@ -61,7 +63,7 @@ in
         listenAddresses = [ "100.64.88.27" ];
         extraConfig = ''
           root * /persist/rtorrent
-          file_server
+          file_server browse
         '';
       };
     };
