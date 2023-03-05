@@ -50,6 +50,7 @@ in
   services.rtorrent = {
     enable = true;
     downloadDir = "/persist/rtorrent";
+    dataPermissions = "0755";
   };
 
   # Caddy
