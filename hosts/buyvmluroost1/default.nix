@@ -72,5 +72,6 @@ in
       };
     };
   };
+  systemd.services.caddy.after = [ "etherguard-edge.service" ];
 
 }
