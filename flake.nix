@@ -68,7 +68,7 @@
             imports = [ (digga.lib.importOverlays ./overlays) ];
             overlays = [
               nur.overlay
-              nvfetcher.overlay
+              nvfetcher.overlays.default
               ./pkgs/default.nix
             ];
           };
