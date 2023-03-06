@@ -16,7 +16,7 @@ let
   dn42Conf = import profiles.bird.dn42 { region = 41; country = 1578; ip = 6; config = config; lib = lib; };
 in
 {
-  services.mybird2 = {
+  services.bird2 = {
     enable = true;
     config = generalConf + dn42Conf + ''
       protocol bgp AS56655a {

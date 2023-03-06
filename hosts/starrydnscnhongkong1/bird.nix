@@ -12,7 +12,7 @@ let
   };
 in
 {
-  services.mybird2 = {
+  services.bird2 = {
     enable = true;
     config = generalConf + ''
       protocol bgp starrydns4 {

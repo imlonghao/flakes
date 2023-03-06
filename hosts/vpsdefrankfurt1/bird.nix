@@ -12,7 +12,7 @@ let
   };
 in
 {
-  services.mybird2 = {
+  services.bird2 = {
     enable = true;
     config = generalConf + kernelConf + ''
       # bgpq4 -S RPKI,AFRINIC,ARIN,APNIC,LACNIC,RIPE -6Ab -l AS134993 -R 48 APNIC::AS-ILEMONRAIN

@@ -13,7 +13,7 @@ let
   dn42Conf = import profiles.bird.dn42 { region = 41; country = 1276; ip = 4; config = config; lib = lib; };
 in
 {
-  services.mybird2 = {
+  services.bird2 = {
     enable = true;
     config = generalConf + dn42Conf;
   };
