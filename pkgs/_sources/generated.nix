@@ -51,15 +51,15 @@
   };
   mybird = {
     pname = "mybird";
-    version = "b0b12f37388e59b4456119d3a90d4ff69622d698";
+    version = "901f906ac470b318d6598c8b25156b0919f70b2a";
     src = fetchFromGitHub ({
       owner = "tohojo";
       repo = "bird";
-      rev = "b0b12f37388e59b4456119d3a90d4ff69622d698";
+      rev = "901f906ac470b318d6598c8b25156b0919f70b2a";
       fetchSubmodules = false;
-      sha256 = "sha256-9Ufu6gGDVMZHoxZdqc2khNBsrvBcS+18IIYIcsVsdsY=";
+      sha256 = "sha256-PhRmXPTD2cidDwWkKkpVrdGWNr5kEuCZz1B74VXX0BQ=";
     });
-    date = "2023-02-14";
+    date = "2023-02-26";
   };
   q-dns = {
     pname = "q-dns";
@@ -74,29 +74,29 @@
   };
   rait = {
     pname = "rait";
-    version = "278188c8bae13165aa70b6a2fbbb99101fd6f4cd";
+    version = "3191186a959888d4ab34e6440367b9c60508341b";
     src = fetchgit {
       url = "https://gitlab.com/NickCao/RAIT";
-      rev = "278188c8bae13165aa70b6a2fbbb99101fd6f4cd";
+      rev = "3191186a959888d4ab34e6440367b9c60508341b";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "sha256-6Y0s5/HUmWrZA6QmV5wYjB1M0Ab/jHM3TSruRpMRwtA=";
+      sha256 = "sha256-MgTskJ5Tp+3PvkZYsCmodRRJWidpzxszrgOo9PoaKhk=";
     };
-    vendorSha256 = "sha256-T/ufC4mEXRBKgsmIk8jSCQva5Td0rnFHx3UIVV+t08k=";
-    date = "2022-10-07";
+    vendorSha256 = "sha256-EHkwSSuKrtS0px/a1TUBt13gBNGY8tlpm4sbsoZ1UsY=";
+    date = "2023-03-05";
   };
   wesher = {
     pname = "wesher";
-    version = "fe2861c529968957fb553537cca93ed0ec5ceb39";
+    version = "de3e549dd67ad60744cee6bd9a799323ef127567";
     src = fetchFromGitHub ({
       owner = "costela";
       repo = "wesher";
-      rev = "fe2861c529968957fb553537cca93ed0ec5ceb39";
+      rev = "de3e549dd67ad60744cee6bd9a799323ef127567";
       fetchSubmodules = false;
-      sha256 = "sha256-CoqbFobO09euN/WHTwMSHJx8Qnr9wNltRoPiZxo86ok=";
+      sha256 = "sha256-jt5p6JX7ziRkfL6k0Omgarti8Oaj95LSOxIQkXIO66E=";
     });
-    vendorSha256 = "sha256-rbJ2zwHuFJeGkaO0s8DR+yZUHfvuk/7kFaHOWPapfyA=";
-    date = "2023-01-02";
+    vendorSha256 = "sha256-QoIwp475/+QDYY65TG4DaFH5wbM5eQGREuIJCbBLFy0=";
+    date = "2023-02-27";
   };
 }

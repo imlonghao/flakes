@@ -6,7 +6,7 @@ fetch.github = "mlvzk/manix"
 [rait]
 src.git = "https://gitlab.com/NickCao/RAIT"
 fetch.git = "https://gitlab.com/NickCao/RAIT"
-passthru = { vendorSha256 = "sha256-T/ufC4mEXRBKgsmIk8jSCQva5Td0rnFHx3UIVV+t08k=" }
+passthru = { vendorSha256 = "sha256-EHkwSSuKrtS0px/a1TUBt13gBNGY8tlpm4sbsoZ1UsY=" }
 
 [babeld]
 src.branch = "4via6"
@@ -29,7 +29,7 @@ fetch.github = "tobbez/deluge_exporter"
 [wesher]
 src.git = "https://github.com/costela/wesher"
 fetch.github = "costela/wesher"
-passthru = { vendorSha256 = "sha256-rbJ2zwHuFJeGkaO0s8DR+yZUHfvuk/7kFaHOWPapfyA="}
+passthru = { vendorSha256 = "sha256-QoIwp475/+QDYY65TG4DaFH5wbM5eQGREuIJCbBLFy0="}
 
 [mybird]
 src.git = "https://github.com/tohojo/bird"
