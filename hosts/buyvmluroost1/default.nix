@@ -54,6 +54,10 @@ in
       system.umask.set = 0022
     '';
   };
+  service.flood = {
+    enable = true;
+    listen = "100.64.88.27";
+  };
 
   # Caddy
   services.caddy = {
