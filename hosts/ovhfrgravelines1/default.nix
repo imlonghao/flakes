@@ -42,6 +42,7 @@ in
   '';
 
   environment.systemPackages = with pkgs; [
+    bgpq4
     deploy-rs
     dnsutils
     exploitdb
