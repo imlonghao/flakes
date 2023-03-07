@@ -49,7 +49,7 @@ in
   # rtorrent
   services.rtorrent = {
     enable = true;
-    downloadDir = "/persist/rtorrent";
+    downloadDir = "/rtorrent";
     configText = ''
       system.umask.set = 0022
     '';
@@ -66,7 +66,7 @@ in
       "http://100.64.88.27:8001" = {
         listenAddresses = [ "100.64.88.27" ];
         extraConfig = ''
-          root * /persist/rtorrent
+          root * /rtorrent
           file_server browse
         '';
       };
