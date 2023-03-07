@@ -37,6 +37,22 @@ in
         multihop 2;
         password "aku236991uha";
       };
+      protocol bgp AS6939 {
+        neighbor 2001:7f8:f2:e1::6939:1 as 6939;
+        local as 199632;
+        graceful restart on;
+        ipv6 {
+          import all;
+          export filter {
+            if net = 2602:fab0:20::/48 then {
+              bgp_path.prepend(199632);
+              accept;
+            }
+            if net = 2602:fab0:22::/48 then accept;
+            reject;
+          };
+        };
+      };
       protocol bgp AS134993 {
         neighbor 2001:7f8:f2:e1:0:1349:93:1 as 134993;
         description "iLemonrain Network";
