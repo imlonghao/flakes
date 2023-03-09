@@ -62,6 +62,7 @@ in
     openvpn
     (python3.withPackages (ps: with ps; [ requests ]))
     q-dns
+    rclone
     ripgrep
     socat
     tmux
