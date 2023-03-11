@@ -23,7 +23,6 @@ in
     profiles.etherguard.edge
     profiles.bird-lg-go
     profiles.tuic
-    profiles.vxwg
   ];
 
   networking = {

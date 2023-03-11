@@ -11,7 +11,6 @@ in
     profiles.users.root
     profiles.exporter.node
     profiles.etherguard.edge
-    profiles.vxwg
   ];
 
   networking = {

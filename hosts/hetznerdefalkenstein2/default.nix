@@ -17,7 +17,6 @@ in
     profiles.autorestic
     profiles.docker
     profiles.bird-lg-go
-    profiles.vxwg
   ];
 
   nix.gc.dates = "monthly";

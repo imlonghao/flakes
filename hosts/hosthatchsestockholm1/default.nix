@@ -12,7 +12,6 @@ in
     profiles.users.root
     profiles.etherguard.edge
     profiles.exporter.node
-    profiles.vxwg
   ];
 
   boot.loader.grub.device = "/dev/vda";
