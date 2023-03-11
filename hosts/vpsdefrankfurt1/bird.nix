@@ -64,6 +64,13 @@ in
           export where bgp_large_community ~ [(199632, 1, 1), (199632, 1, 5)];
         };
       }
+      template bgp tmpl_downstream {
+        local as 199632;
+        graceful restart on;
+        ipv6 {
+          export where net.len <= 48 && !is_martian_v6() && (199632, 1, *) ~ bgp_large_community;
+        };
+      }
 
       protocol bgp AS3204 from tmpl_upstream {
         neighbor 2a09:0:9::9 as 3204;
@@ -102,6 +109,15 @@ in
       };
       protocol bgp AS202409rs03 from tmpl_rs {
         neighbor 2001:7f8:f2:e1::be5a as 202409;
+      };
+      protocol bgp AS212232 from tmpl_downstream {
+        neighbor 2a0c:2f07:9459::b11 as 212232;
+        description "bgp.tools";
+        source address 2602:fab0:22::;
+        multihop;
+        ipv6 {
+          add paths tx;
+        };
       };
     '';
   };
