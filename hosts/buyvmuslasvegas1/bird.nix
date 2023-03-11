@@ -12,6 +12,7 @@ let
     route6 = ''
       route 2a09:b280:ff82::/48 blackhole;
       route fd21:5c0c:9b7e:5::/64 blackhole;
+      route fd21:5c0c:9b7e:4242::/64 blackhole;
 
       route 2a09:b280:ff82:a::/64 via 2602:feda:1bf:deaf::20;
     '';

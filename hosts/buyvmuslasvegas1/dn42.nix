@@ -115,7 +115,7 @@
       listen = 22032;
       asn = 4242422032;
       e6 = "fe80::2032";
-      endpoint = "nv1.us.lapinet27.com:21888";
+      endpoint = "las1.us.lapinet27.com:21888";
       publickey = "KlvNQ7wBwoey0N8YpJYsYuHDrxjpIzHqCh9osAzcEyA=";
     }
     {

@@ -14,7 +14,6 @@ in
     profiles.exporter.bird
     profiles.etherguard.edge
     profiles.bird-lg-go
-    profiles.vxwg
   ];
 
   boot.loader.grub.device = "/dev/vda";
