@@ -68,7 +68,7 @@ in
         local as 199632;
         graceful restart on;
         ipv6 {
-          export where net.len <= 48 && !is_martian_v6() && (199632, 1, *) ~ bgp_large_community;
+          export where net.len <= 48 && !is_martian_v6() && bgp_large_community ~ [(199632, 1, *)];
         };
       }
 
