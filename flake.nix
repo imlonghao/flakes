@@ -196,6 +196,9 @@
           vpsdefrankfurt1 = {
             hostname = "vps-de-frankfurt-1.ni.sb";
           };
+          wirecatussantaclara1 = {
+            hostname = "wirecat-us-santaclara-1.ni.sb";
+          };
         };
 
         defaultTemplate = self.templates.bud;
