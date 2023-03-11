@@ -61,6 +61,7 @@ in
         local as 199632;
         graceful restart on;
         ipv6 {
+          import none;
           export where bgp_large_community ~ [(199632, 1, 1), (199632, 1, 5)];
         };
       }
@@ -68,6 +69,7 @@ in
         local as 199632;
         graceful restart on;
         ipv6 {
+          import none;
           export where net.len <= 48 && !is_martian_v6() && bgp_large_community ~ [(199632, 1, *)];
         };
       }
