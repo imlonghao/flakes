@@ -8,6 +8,7 @@ in
     ./bird.nix
     profiles.mycore
     profiles.users.root
+    profiles.etherguard.edge
   ];
 
   boot.loader.grub.device = "/dev/vda";
