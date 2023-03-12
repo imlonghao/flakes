@@ -29,7 +29,13 @@ in
         password "LmBlV4bp";
         ipv6 {
           import none;
-          export where bgp_large_community ~ [(199632, 1, 1), (199632, 1, 5)];
+          export filter {
+            if net = 2602:fab0:20::/48 then {
+              bgp_large_community.add((53667, 101, 6939));
+              accept;
+            }
+            if bgp_large_community ~ [(199632, 1, 1), (199632, 1, 5)] then accept;
+          };
         };
       };
     '';

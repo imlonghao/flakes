@@ -85,6 +85,7 @@ in
           export filter {
             if net = 2602:fab0:20::/48 then {
               bgp_path.prepend(199632);
+              bgp_path.prepend(199632);
               accept;
             }
             if bgp_large_community ~ [(199632, 1, 1), (199632, 1, 5)] then accept;
