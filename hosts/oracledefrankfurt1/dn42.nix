@@ -3,7 +3,7 @@
 {
   sops.secrets.wireguard.sopsFile = ./secrets.yml;
   dn42 = [
-    { name = "wg64719"; listen = 64719; endpoint = "de-fra.dn42.lutoma.org:42758"; publickey = "pI9qB/y5L1iSOxFgam4uoBk2So+P52lAgYC3k8XS9zU="; asn = 64719; e4 = "172.22.119.1"; e6 = "fe80::acab"; l4 = "172.22.68.4"; }
+    { name = "wg64719"; listen = 64719; endpoint = "de-fra.dn42.lutoma.org:43039"; publickey = "pI9qB/y5L1iSOxFgam4uoBk2So+P52lAgYC3k8XS9zU="; asn = 64719; e4 = "172.22.119.1"; e6 = "fe80::acab"; l4 = "172.22.68.4"; }
     { name = "wg31111"; listen = 31111; publickey = "YnoqhBTjO0+2vj/1lXqzOmvKeCwZ4q3BJzNyxN/zQ00="; asn = 4201271111; e6 = "fe80::aa:1111:41"; }
     { name = "wg0197"; listen = 20197; endpoint = "himalia.dn42.n0emis.eu:21888"; publickey = "ObF+xGC6DdddJer0IUw6nzC0RqzeKWwEiQU0ieowzhg="; asn = 4242420197; e4 = "172.20.190.96"; e6 = "fe80::42:42:1"; l4 = "172.22.68.4"; }
     { name = "wg0361"; listen = 20361; endpoint = "nl-alk1.svr.xtexx.ml:10307"; publickey = "yaLBtUxByJE3151yUDS5K2u7ejHM/aPJj2bzYqYZygI="; asn = 4242420361; e6 = "fe80::0361"; }
