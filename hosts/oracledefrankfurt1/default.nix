@@ -10,6 +10,7 @@ let
 in
 {
   imports = [
+    ./bird.nix
     ./dn42.nix
     ./hardware.nix
     profiles.mycore
