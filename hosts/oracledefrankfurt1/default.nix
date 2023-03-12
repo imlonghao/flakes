@@ -23,9 +23,24 @@ in
 
   # Config
   networking = {
-    dhcpcd.allowInterfaces = [ "enp0s3" ];
     nameservers = [ "127.0.0.1" "8.8.8.8" ];
+    defaultGateway = {
+      interface = "enp0s3";
+      address = "10.0.0.1";
+    };
+    defaultGateway6 = {
+      interface = "enp0s3";
+      address = "fe80::200:17ff:fe48:71e6";
+    };
     interfaces = {
+      enp0s3 = {
+        ipv4.addresses = [
+          { address = "10.0.0.97"; prefixLength = 24; }
+        ];
+        ipv6.addresses = [
+          { address = "2603:c020:8012:a322::cd17"; prefixLength = 64; }
+        ];
+      };
       lo = {
         ipv4.addresses = [
           { address = "172.22.68.4"; prefixLength = 32; }
