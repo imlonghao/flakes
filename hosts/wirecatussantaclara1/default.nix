@@ -14,6 +14,14 @@ in
   boot.loader.grub.device = "/dev/vda";
   networking = {
     dhcpcd.allowInterfaces = [ "ens3" ];
+    interfaces = {
+      lo = {
+        ipv6.addresses = [
+          { address = "2602:fab0:20::"; prefixLength = 128; }
+          { address = "2602:fab0:23::"; prefixLength = 128; }
+        ];
+      };
+    };
   };
 
   environment.persistence."/persist" = {
