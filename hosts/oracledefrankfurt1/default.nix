@@ -10,16 +10,31 @@ let
 in
 {
   imports = [
+    ./dn42.nix
     ./hardware.nix
     profiles.mycore
     profiles.netdata
     profiles.users.root
     profiles.exporter.node
     profiles.etherguard.edge
+    profiles.pingfinder
+    profiles.bird-lg-go
   ];
 
   # Config
-  networking.dhcpcd.allowInterfaces = [ "enp0s3" ];
+  networking = {
+    dhcpcd.allowInterfaces = [ "enp0s3" ];
+    interfaces = {
+      lo = {
+        ipv4.addresses = [
+          { address = "172.22.68.4"; prefixLength = 32; }
+        ];
+        ipv6.addresses = [
+          { address = "fd21:5c0c:9b7e:4::"; prefixLength = 64; }
+        ];
+      };
+    };
+  };
 
   # Boot
   boot.loader.systemd-boot.enable = true;

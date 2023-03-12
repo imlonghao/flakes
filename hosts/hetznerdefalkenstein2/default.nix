@@ -6,17 +6,14 @@ in
   imports = [
     ./bird.nix
     ./hardware.nix
-    ./dn42.nix
     profiles.mycore
     profiles.netdata
     profiles.users.root
     profiles.etherguard.edge
     profiles.exporter.node
     profiles.exporter.bird
-    profiles.pingfinder
     profiles.autorestic
     profiles.docker
-    profiles.bird-lg-go
   ];
 
   nix.gc.dates = "monthly";
@@ -42,18 +39,6 @@ in
       enp0s31f6.ipv6.addresses = [
         {
           address = "2a01:4f8:172:27e4::";
-          prefixLength = 64;
-        }
-      ];
-      lo.ipv4.addresses = [
-        {
-          address = "172.22.68.4";
-          prefixLength = 32;
-        }
-      ];
-      lo.ipv6.addresses = [
-        {
-          address = "fd21:5c0c:9b7e:4::";
           prefixLength = 64;
         }
       ];
