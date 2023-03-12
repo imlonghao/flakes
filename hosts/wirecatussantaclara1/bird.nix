@@ -43,6 +43,9 @@ in
         neighbor 2602:fc52:30d::1 as 399888;
         multihop 1;
         source address 2602:fc52:10e:e384::2;
+        ipv6 {
+          import none;
+        };
       };
 
     '';
