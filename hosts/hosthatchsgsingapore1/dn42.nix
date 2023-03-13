@@ -15,6 +15,5 @@
     { name = "wg2331"; listen = 22331; endpoint = "103.83.156.22:21888"; publickey = "I5yRgHFY+qfkRwT6UpVBsUIiA5hmEOv1cU2licfrokw="; asn = 4242422331; e6 = "fe80::2331"; }
     { name = "wg2633"; listen = 22633; endpoint = "sin.eastbnd.com:21888"; publickey = "m5IfciUmvMEfDkfFQf0jD3GH0F0ChMktOSiLMlJ29wc="; asn = 4242422633; e4 = "172.23.250.34"; e6 = "fe80::2633"; l4 = "172.22.68.2"; }
     { name = "wg2717"; listen = 22717; endpoint = "sg.vm.whojk.com:24103"; publickey = "vCtn1DbfIiTgcMapuEGB/+/HnLeEPKPjxJbt/sjviTs="; asn = 4242422717; e6 = "fe80::2717"; }
-    { name = "wg3088"; listen = 23088; endpoint = "sin1-sg.dn42.6700.cc:30010"; publickey = "rLuqS2ZQRk5ape3rHtBTXGbRbUP7lNYpufk3tt1P4z0="; asn = 4242423088; e6 = "fe80::3088:198"; }
   ];
 }
