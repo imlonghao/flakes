@@ -25,10 +25,15 @@ in
         };
       }
 
-      # bgpq4 -S RPKI,AFRINIC,ARIN,APNIC,LACNIC,RIPE -6Ab -l AS134993 -R 48 APNIC::AS-ILEMONRAIN
+      # bgpq4 -S RPKI,AFRINIC,ARIN,APNIC,LACNIC,RIPE -6b -l "define 'APNIC::AS-ILEMONRAIN'" -R 48 APNIC::AS-ILEMONRAIN
       define 'APNIC::AS-ILEMONRAIN' = [
         2406:840:fd00::/43{43,48},
         2602:feda:d10::/44{44,48}
+      ];
+      # bgpq4 -S RPKI,AFRINIC,ARIN,APNIC,LACNIC,RIPE -6b -l "define 'RIPE::AS199656'" -R 48 AS199656
+      define 'RIPE::AS199656' = [
+        2a12:dd47:8ed0::/44{44,48},
+        2a12:dd47:f700::/40{40,48}
       ];
 
       template bgp tmpl_upstream {
@@ -101,6 +106,18 @@ in
             bgp_large_community.add((199632, 2, 1));
             bgp_large_community.add((199632, 3, 276));
             if net ~ 'APNIC::AS-ILEMONRAIN' then accept;
+          };
+        };
+      };
+      protocol bgp AS199656 from tmpl_peer {
+        neighbor 2001:7f8:f2:e1:1996:56:0:1 as 199656;
+        description "ZYC Network LLC";
+        ipv6 {
+          import filter {
+            bgp_large_community.add((199632, 1, 3));
+            bgp_large_community.add((199632, 2, 1));
+            bgp_large_community.add((199632, 3, 276));
+            if net ~ 'RIPE::AS199656' then accept;
           };
         };
       };
