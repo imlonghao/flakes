@@ -125,4 +125,10 @@ in
     '';
   };
 
+  # wtt
+  services.wtt = {
+    enable = true;
+    listen = "100.64.88.17";
+  };
+
 }

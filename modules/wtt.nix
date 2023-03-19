@@ -14,7 +14,7 @@ in
   config = mkIf cfg.enable {
     systemd.services.wtt = {
       serviceConfig = with pkgs;{
-        ExecStart = "${wtt}/bin/monitor --listen ${cfg.listen}";
+        ExecStart = "${wtt}/bin/monitor --listen ${cfg.listen}:2112";
         WorkingDirectory = "/tmp";
       };
       preStart = "${pkgs.wtt}/bin/generator";
