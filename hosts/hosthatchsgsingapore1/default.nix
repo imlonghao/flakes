@@ -20,7 +20,6 @@ in
     profiles.exporter.bird
     profiles.etherguard.edge
     profiles.docker
-    profiles.autorestic
     profiles.bird-lg-go
   ];
 
@@ -34,7 +33,7 @@ in
     };
     defaultGateway6 = {
       interface = "ens3";
-      address = "2406:ef80:2::1";
+      address = "fe80::1";
     };
     interfaces = {
       ens3 = {
@@ -42,7 +41,7 @@ in
           { address = "103.167.150.135"; prefixLength = 24; }
         ];
         ipv6.addresses = [
-          { address = "2406:ef80:2:e::"; prefixLength = 64; }
+          { address = "2406:ef80:2:e::1"; prefixLength = 64; }
           {
             address = "2406:ef80:2:e:114:514:1919:810";
             prefixLength = 64;
