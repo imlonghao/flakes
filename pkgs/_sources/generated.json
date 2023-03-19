@@ -161,5 +161,26 @@
             "type": "github"
         },
         "version": "de3e549dd67ad60744cee6bd9a799323ef127567"
+    },
+    "wtt": {
+        "cargoLocks": null,
+        "date": "2023-03-19",
+        "extract": null,
+        "name": "wtt",
+        "passthru": {
+            "vendorSha256": "sha256-9ZR+qTCz5b+7wEQDlmniQmfiHhcdt36tmLv/7VYzcLA="
+        },
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "rev": "30a23dd940cc4351d2f09dd6bbb5f1a51675d2bb",
+            "sha256": "sha256-2gbZ1eX6MV1PlrkifQObz030Qubxw9F6rS+CnjKTpok=",
+            "type": "git",
+            "url": "https://git.esd.cc/imlonghao/WatchTheTraffic"
+        },
+        "version": "30a23dd940cc4351d2f09dd6bbb5f1a51675d2bb"
     }
 }

@@ -99,4 +99,18 @@
     vendorSha256 = "sha256-QoIwp475/+QDYY65TG4DaFH5wbM5eQGREuIJCbBLFy0=";
     date = "2023-02-27";
   };
+  wtt = {
+    pname = "wtt";
+    version = "30a23dd940cc4351d2f09dd6bbb5f1a51675d2bb";
+    src = fetchgit {
+      url = "https://git.esd.cc/imlonghao/WatchTheTraffic";
+      rev = "30a23dd940cc4351d2f09dd6bbb5f1a51675d2bb";
+      fetchSubmodules = false;
+      deepClone = false;
+      leaveDotGit = false;
+      sha256 = "sha256-2gbZ1eX6MV1PlrkifQObz030Qubxw9F6rS+CnjKTpok=";
+    };
+    vendorSha256 = "sha256-9ZR+qTCz5b+7wEQDlmniQmfiHhcdt36tmLv/7VYzcLA=";
+    date = "2023-03-19";
+  };
 }

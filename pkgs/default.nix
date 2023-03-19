@@ -12,4 +12,5 @@ final: prev: {
   coredns-nat64-rdns = prev.callPackage ./coredns-nat64-rdns { };
   wesher = prev.callPackage ./wesher { };
   mybird = prev.callPackage ./mybird { };
+  wtt = prev.callPackage ./wtt { };
 }

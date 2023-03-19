@@ -35,3 +35,8 @@ passthru = { vendorSha256 = "sha256-QoIwp475/+QDYY65TG4DaFH5wbM5eQGREuIJCbBLFy0=
 src.git = "https://github.com/tohojo/bird"
 src.branch = "babel-rtt-01"
 fetch.github = "tohojo/bird"
+
+[wtt]
+src.git = "https://git.esd.cc/imlonghao/WatchTheTraffic"
+fetch.git = "https://git.esd.cc/imlonghao/WatchTheTraffic"
+passthru = { vendorSha256 = "sha256-9ZR+qTCz5b+7wEQDlmniQmfiHhcdt36tmLv/7VYzcLA=" }
