@@ -98,7 +98,7 @@ in
       webserver-address=0.0.0.0
       webserver-allow-from=0.0.0.0/0
       api=yes
-      api-key=$scrypt$ln=10,p=1,r=8$xgVRGiRQT3XsFZOMo/WfSw==$VSWbInxkxV7Bu+SpHuCh3K99iS4PJY+LTRksHnRgKAM=
+      api-key=$scrypt$ln=10,p=1,r=8$OjP/EwduSv/8CCwZA6j7oQ==$gALD1NXVNOg9braM68SZ/5W/SZZ8wDm8AUtbH3AlVe4=
       default-soa-content=ns.imlonghao.dn42. hostmaster.@ 0 7200 1800 1209600 3600
     '';
   };
