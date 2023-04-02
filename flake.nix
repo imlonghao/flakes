@@ -199,6 +199,9 @@
           wirecatussantaclara1 = {
             hostname = "wirecat-us-santaclara-1.ni.sb";
           };
+          twdscntaibei1 = {
+            hostname = "twds-cn-taibei-1.ni.sb";
+          };
         };
 
         defaultTemplate = self.templates.bud;
