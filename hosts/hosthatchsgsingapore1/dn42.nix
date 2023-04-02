@@ -10,6 +10,7 @@
     { name = "wg1080"; listen = 21080; endpoint = "sgp.peer.highdef.network:21888"; publickey = "X3m9VMzZYN4Oe2QUb7DcnmVymwKSLbPUCB5ElD8igjo="; asn = 4242421080; e6 = "fe80::1080:39"; }
     { name = "wg1255"; listen = 21255; endpoint = "dn42-sg-sin4.acgcl.net:31888"; publickey = "dJ7poThkXSLU1BTG9ghTVHlDaKT0Snz3YmzfRdPLKQU="; asn = 4242421255; e6 = "fe80::1020"; }
     { name = "wg1588"; listen = 21588; endpoint = "sg-sin01.dn42.tech9.io:59771"; publickey = "4qLIJ9zpc/Xgvy+uo90rGso75cSrT2F5tBEv+6aqDkY="; asn = 4242421588; ipv6 = "fe80::100/64"; e4 = "172.20.16.142"; e6 = "fe80::1588"; l4 = "172.22.68.2"; }
+    { name = "wg2225"; listen = 22225; endpoint = "dn42-sg.maraun.de:21888"; publickey = "rWTIK93+XJaP4sRvrk1gqXxAZgkz6y/axLC4mjuay1I="; asn = 4242422225; e6 = "fe80::2225"; }
     { name = "wg2237"; listen = 22237; endpoint = "sg-sin01.dn42.munsternet.eu:21888"; publickey = "09m8ilgZ/9jQvVgsGwu2ceR8u6gKAsd+VxH8AzduOHk="; asn = 4242422237; e6 = "fe80::42:2237"; }
     { name = "wg2271"; listen = 22271; endpoint = "185.212.61.190:21888"; publickey = "9RBImDH9X0NghJsVW6hAVQS1qaR+RXrsbVXisBAViHE="; asn = 4242422271; e6 = "fe80::2271"; }
     { name = "wg2331"; listen = 22331; endpoint = "103.83.156.22:21888"; publickey = "I5yRgHFY+qfkRwT6UpVBsUIiA5hmEOv1cU2licfrokw="; asn = 4242422331; e6 = "fe80::2331"; }
