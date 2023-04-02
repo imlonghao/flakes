@@ -23,12 +23,12 @@ in
           { address = "2602:fab0:24::"; prefixLength = 128; }
         ];
       };
-      enp18 = {
+      ens18 = {
         ipv4.addresses = [
           { address = "103.147.22.112"; prefixLength = 24; }
         ];
       };
-      enp19 = {
+      ens19 = {
         ipv6.addresses = [
           { address = "2a0f:5707:ffe3::89"; prefixLength = 64; }
         ];
