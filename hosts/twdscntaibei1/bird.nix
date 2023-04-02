@@ -68,6 +68,19 @@ in
         };
       }
 
+      protocol bgp AS6939 from tmpl_upstream {
+        neighbor 2a0f:5707:ffe3::30 as 6939;
+        ipv6 {
+          export filter {
+            if net = 2602:fab0:20::/48 then {
+              bgp_path.prepend(199632);
+              bgp_path.prepend(199632);
+              accept;
+            }
+            if bgp_large_community ~ [(199632, 1, 1), (199632, 1, 5)] then accept;
+          };
+        };
+      };
       protocol bgp AS38855rs01 from tmpl_rs {
         neighbor 2a0f:5707:ffe3::1 as 38855;
       };
