@@ -87,6 +87,15 @@ in
       protocol bgp AS38855rs02 from tmpl_rs {
         neighbor 2a0f:5707:ffe3::2 as 38855;
       };
+      protocol bgp AS212232 from tmpl_downstream {
+        neighbor 2a0c:2f07:9459::b14 as 212232;
+        description "bgp.tools";
+        source address 2602:fab0:24::;
+        multihop;
+        ipv6 {
+          add paths tx;
+        };
+      };
 
     '';
   };
