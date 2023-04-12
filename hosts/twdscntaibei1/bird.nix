@@ -46,7 +46,7 @@ in
         graceful restart on;
         ipv6 {
           import filter {
-            if bgp_path.first~[945, 54625, 61302] then reject;
+            if bgp_path.first~[945, 54625, 57481, 61302] then reject;
             bgp_large_community.add((199632, 1, 4));
             bgp_large_community.add((199632, 2, 4));
             bgp_large_community.add((199632, 3, 158));
