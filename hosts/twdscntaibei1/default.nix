@@ -1,4 +1,4 @@
-{ config, pkgs, profiles, self, ... }:
+{ config, pkgs, profiles, self, sops, ... }:
 let
   hostCertificate = pkgs.writeText "ssh_host_ed25519_key-cert.pub" "ssh-ed25519-cert-v01@openssh.com AAAAIHNzaC1lZDI1NTE5LWNlcnQtdjAxQG9wZW5zc2guY29tAAAAIAJ/IkOwFiHIVgc5HezpaI7Lenx4K6vyMd6Tm1zPiAgfAAAAIM5Olc8bKADYPDbK68y69bQG318sMB0Tko3dnebdF6YZAAAAAAAAAAAAAAACAAAADXR3ZHNjbnRhaWJlaTEAAAAAAAAAAAAAAAD//////////wAAAAAAAAAAAAAAAAAAAGgAAAATZWNkc2Etc2hhMi1uaXN0cDI1NgAAAAhuaXN0cDI1NgAAAEEE7kbYJYQ4NWXoMkpjLfpyjonorXZj45+0JdSKGEam8pso0zn+8iY1PAPMDIIqspwzwNr7VZMgmchkz2qUsbxl1gAAAGQAAAATZWNkc2Etc2hhMi1uaXN0cDI1NgAAAEkAAAAhANtk6engJ58g48aprha9O5S6P2kd1VlphnjtZA8OgtWjAAAAIGlb33r/PBfXFH/pUPAaqU2O/lAl0Lb0RIScuGLIDLKN";
 in
@@ -46,5 +46,24 @@ in
   services.openssh.extraConfig = ''
     HostCertificate = ${hostCertificate}
   '';
+
+  # OpenVPN
+  sops.secrets.rclone.sopsFile = ./secrets.yml;
+  services.openvpn = {
+    kskb-ix = {
+      config = ''
+        port 8250
+        dev kskb-ix
+        cipher aes-256-cbc
+        proto tcp-server
+        dev-type tap
+        keepalive 5 30
+        persist-tun
+        lladdr 02:00:00:19:96:32
+        ifconfig-ipv6 fe80::199:632 fe80::114:514
+        secret ${config.sops.secrets.kskb-ix.path}
+      '';
+    };
+  };
 
 }
