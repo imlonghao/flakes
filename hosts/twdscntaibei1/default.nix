@@ -49,7 +49,7 @@ in
 
   # OpenVPN
   sops.secrets.kskb-ix.sopsFile = ./secrets.yml;
-  services.openvpn = {
+  services.openvpn.servers = {
     kskb-ix = {
       config = ''
         port 8250
