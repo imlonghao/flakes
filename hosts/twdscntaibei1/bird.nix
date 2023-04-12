@@ -46,7 +46,7 @@ in
         graceful restart on;
         ipv6 {
           import filter {
-            if bgp_path.first~[945, 54625] then reject;
+            if bgp_path.first~[945, 54625, 61302] then reject;
             bgp_large_community.add((199632, 1, 4));
             bgp_large_community.add((199632, 2, 4));
             bgp_large_community.add((199632, 3, 158));
@@ -101,6 +101,10 @@ in
       };
       protocol bgp AS38855rs02 from tmpl_rs {
         neighbor 2a0f:5707:ffe3::2 as 38855;
+      };
+      protocol bgp AS199594 from tmpl_rs {
+        neighbor fe80::1980:1:1 % 'kskb-ix' as 199594;
+        source address fe80::199:632;
       };
       protocol bgp AS212232 from tmpl_downstream {
         neighbor 2a0c:2f07:9459::b14 as 212232;
