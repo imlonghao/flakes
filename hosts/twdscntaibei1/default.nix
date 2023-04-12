@@ -61,7 +61,7 @@ in
         persist-tun
         lladdr 02:00:00:19:96:32
         ifconfig-ipv6 fe80::199:632 fe80::114:514
-        secret ${config.sops.secrets.kskb-ix.path}
+        secret ${config.sops.secrets."kskb-ix".path}
       '';
     };
   };
