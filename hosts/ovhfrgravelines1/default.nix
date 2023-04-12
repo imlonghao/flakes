@@ -109,7 +109,7 @@ in
     enable = true;
     systemCronJobs = [
       "0 1 * * * root ${pkgs.git}/bin/git -C /persist/pki pull"
-#      "5 12 * * * root bash -c 'cd /persist/archlinuxcn-pkgstats/ && bash cron.sh'"
+      "5 12 * * * root bash -c 'cd /persist/archlinuxcn-pkgstats/ && bash cron.sh'"
     ];
   };
 
