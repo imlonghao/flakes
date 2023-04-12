@@ -2,6 +2,9 @@
 let
   generalConf = import profiles.bird.general {
     config = config;
+    route6 = ''
+      route 2602:fab0:24:ffff::/64 via 2602:feda:1bf:deaf::19;
+    '';
   };
   kernelConf = import profiles.bird.kernel {
     src6 = "2602:fab0:24::";
@@ -106,6 +109,14 @@ in
         multihop;
         ipv6 {
           add paths tx;
+        };
+      };
+
+      protocol bgp internaljp from tmpl_downstream {
+        neighbor 2602:feda:1bf:deaf::31 as 199632;
+        ipv6 {
+          import where net = 2602:fab0:24:eeee::/64;
+          next hop self;
         };
       };
 
