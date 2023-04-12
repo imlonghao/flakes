@@ -81,6 +81,17 @@ in
           };
         };
       };
+      protocol bgp AS13335 from tmpl_peer {
+        neighbor 2a0f:5707:ffe3::34 as 13335;
+        ipv6 {
+          import filter {
+            bgp_large_community.add((199632, 1, 3));
+            bgp_large_community.add((199632, 2, 4));
+            bgp_large_community.add((199632, 3, 158));
+            accept;
+          };
+        };
+      };
       protocol bgp AS38855rs01 from tmpl_rs {
         neighbor 2a0f:5707:ffe3::1 as 38855;
       };
