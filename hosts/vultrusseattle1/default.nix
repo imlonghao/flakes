@@ -9,6 +9,8 @@ in
     profiles.users.root
   ];
 
+  zramSwap.enable = true;
+
   networking = {
     interfaces = {
       lo = {
