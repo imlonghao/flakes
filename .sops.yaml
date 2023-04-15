@@ -23,6 +23,7 @@ keys:
   - &vps_vpsdefrankfurt1 age1x8zq7qr5prjktk6j6emu98vzl2rgcjq804kuwp34cfj6jgh2pf5q46gma2
   - &vps_wirecatussantaclara1 age1xccl6xa43q4v4gacen5942djrpd3ms7422ent0362u7dtpdd0c6sq7ccwf
   - &vps_twdscntaibei1 age17u6hxy0wv98kt03sezgtangyfv63ynk303x4t4shqsanzc2vxgxszdxfsh
+  - &vps_vultrusseattle1 age1hj7jtsghtle6gn72azh7j23u670wgu6y29aeh5scpfxvdn5h5ajs9924cs
 creation_rules:
   - path_regex: secrets/shadow.yml$
     key_groups:
@@ -49,6 +50,7 @@ creation_rules:
       - *vps_vpsdefrankfurt1
       - *vps_wirecatussantaclara1
       - *vps_twdscntaibei1
+      - *vps_vultrusseattle1
   - path_regex: secrets/k3s.yml$
     key_groups:
     - pgp:
@@ -204,3 +206,9 @@ creation_rules:
       - *me_canokey
       age:
       - *vps_twdscntaibei1
+  - path_regex: hosts/vultrusseattle1/secrets.yml$
+    key_groups:
+    - pgp:
+      - *me_canokey
+      age:
+      - *vps_vultrusseattle1
