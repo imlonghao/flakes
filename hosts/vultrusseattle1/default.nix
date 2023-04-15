@@ -7,6 +7,7 @@ in
     ./hardware.nix
     profiles.mycore
     profiles.users.root
+    profiles.etherguard.edge
   ];
 
   zramSwap.enable = true;
@@ -27,5 +28,11 @@ in
   services.openssh.extraConfig = ''
     HostCertificate = ${hostCertificate}
   '';
+
+  # EtherGuard
+  services.etherguard-edge = {
+    ipv4 = "100.64.88.32/24";
+    ipv6 = "2602:feda:1bf:deaf::32/64";
+  };
 
 }
