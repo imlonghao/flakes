@@ -202,6 +202,9 @@
           twdscntaibei1 = {
             hostname = "twds-cn-taibei-1.ni.sb";
           };
+          vultrusseattle1 = {
+            hostname = "vultr-us-seattle-1.ni.sb";
+          };
         };
 
         defaultTemplate = self.templates.bud;
