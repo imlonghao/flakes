@@ -142,6 +142,7 @@ in
   };
 
   # borgmatic
+  systemd.services.borgmatic.path = [ pkgs.mariadb ];
   services.borgmatic.settings = {
     location = {
       repositories = [
@@ -149,10 +150,8 @@ in
         "ssh://zh2646@zh2646.rsync.net/./hosthatchsgsingapore1"
       ];
       source_directories = [
-        "/persist/docker/baserow/backups"
         "/persist/docker/bitwarden"
         "/persist/docker/influxdb2"
-        "/persist/docker/joplin.tgz"
         "/persist/docker/n8n/n8n.conf"
         "/persist/docker/traccar/traccar.xml"
         "/persist/docker/portainer"
@@ -162,14 +161,6 @@ in
       ];
     };
     hooks = {
-      before_backup = [
-        "docker stop baserow-baserow-1"
-        "docker run --rm -v /persist/docker/baserow/:/baserow/data/ baserow/baserow:1.9.1 backend-cmd-with-db backup"
-      ];
-      after_backup = [
-        "docker start baserow-baserow-1"
-        "rm -rf /persist/docker/baserow/backups"
-      ];
       mysql_databases = [
         {
           name = "n8n";
