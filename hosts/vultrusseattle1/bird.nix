@@ -17,7 +17,7 @@ in
         ipv6 {
           import filter {
             if net = 2602:fab0:20::/48 then {
-              bgp_community.add((64601, 6939));
+              bgp_path.prepend(199632);
             }
             bgp_large_community.add((199632, 1, 1));
             bgp_large_community.add((199632, 2, 2));
