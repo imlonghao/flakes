@@ -91,6 +91,14 @@
       publickey = "a+zL2tDWjwxBXd2bho2OjR/BEmRe2tJF9DHFmZIE+Rk=";
     }
     {
+      name = "wg2825";
+      e6 = "fe80::1588:e";
+      asn = 4242422825;
+      listen = 22825;
+      endpoint = "evo.pve.ibeep.com:21888";
+      publickey = "CudK5JJnGdSOAcpnerxfbp7nGb+fGUknL5SDTdTwkxI=";
+    }
+    {
       name = "wg3088";
       l4 = "172.22.68.1";
       e4 = "172.21.100.194";
