@@ -151,14 +151,6 @@
       publickey = "vfrrbtKAO5438daHrTD0SSS8V6yk78S/XW7DeFrYLXA=";
     }
     {
-      name = "wg2837";
-      listen = 22837;
-      asn = 4242422837;
-      e6 = "fe80::2837";
-      endpoint = "las1.eki.moe:21888";
-      publickey = "mr3GOOMU9bLYS5OBuXhllsAD3c3+SGTuYNh2q+RswEQ=";
-    }
-    {
       name = "wg2980";
       ipv4 = "172.22.68.5";
       ipv6 = "fe80::1888:5/64";
