@@ -208,14 +208,6 @@
       publickey = "8xYXoU9lNuKyIMHQpB+RHxLER5xT0fIhWxp+F64Dqlc=";
     }
     {
-      name = "wg3868";
-      asn = 4242423868;
-      e6 = "fe80::3868";
-      listen = 23868;
-      endpoint = "hk2.dn42.cooo.cool:21888";
-      publickey = "vmYyNK+JvwVQfUJ7sXR3BeUEOw2KAi/+iiKlQ2YDkxc=";
-    }
-    {
       name = "wg3914";
       l4 = "172.22.68.3";
       e4 = "172.20.53.105";

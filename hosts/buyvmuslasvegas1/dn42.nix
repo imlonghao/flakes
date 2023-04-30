@@ -183,14 +183,6 @@
       publickey = "QSAeFPotqFpF6fFe3CMrMjrpS5AL54AxWY2w1+Ot2Bo=";
     }
     {
-      name = "wg3868";
-      listen = 23868;
-      asn = 4242423868;
-      e6 = "fe80::3868";
-      endpoint = "las1.dn42.cooo.cool:21888";
-      publickey = "yUEQyAhLNaHC0U8J2+TsLBI6mSvFQoGVRFtWr/xVvjc=";
-    }
-    {
       name = "wg3918";
       listen = 23918;
       asn = 4242423918;
