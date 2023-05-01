@@ -93,12 +93,12 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "8f57af95742b42066bd66bffe2a23b2d654663cf",
-            "sha256": "sha256-tDuzfK/jF0C6SIbFvkd00Se56YoGqo+Ah1quBloKi64=",
+            "rev": "20faed09d419a255c0900493b66fb769d7836d55",
+            "sha256": "sha256-vp5VW4PCbsnAN+X7iTej8lGpPSA1RZuLv69dgHzft88=",
             "type": "git",
             "url": "https://git.esd.cc/imlonghao/mtr.sb"
         },
-        "version": "8f57af95742b42066bd66bffe2a23b2d654663cf"
+        "version": "20faed09d419a255c0900493b66fb769d7836d55"
     },
     "mybird": {
         "cargoLocks": null,
