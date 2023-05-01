@@ -44,6 +44,7 @@ steps:
   - nix -Lv develop -c nix -Lv build ".#coredns-nat64-rdns"
   - nix -Lv develop -c nix -Lv build ".#deluge_exporter"
   - nix -Lv develop -c nix -Lv build ".#etherguard"
+  - nix -Lv develop -c nix -Lv build ".#mtrsb"
   - nix -Lv develop -c nix -Lv build ".#pingfinder"
   - nix -Lv develop -c nix -Lv build ".#q-dns"
   - nix -Lv develop -c nix -Lv build ".#rait"

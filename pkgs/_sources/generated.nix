@@ -49,6 +49,20 @@
     });
     date = "2021-04-20";
   };
+  mtrsb = {
+    pname = "mtrsb";
+    version = "6df61b234054e87fcadd6228aca9b81623363d68";
+    src = fetchgit {
+      url = "https://git.esd.cc/imlonghao/mtr.sb";
+      rev = "6df61b234054e87fcadd6228aca9b81623363d68";
+      fetchSubmodules = false;
+      deepClone = false;
+      leaveDotGit = false;
+      sha256 = "sha256-E3oeJ+0mbsE6focrmGcoStZlZc+CkXxhd3eZmSpmX6U=";
+    };
+    vendorSha256 = "sha256-7/qTGQ81xAJDeD7PcmHXobNSMDK2PnHNkYKsBsKu2fY=";
+    date = "2023-05-01";
+  };
   mybird = {
     pname = "mybird";
     version = "901f906ac470b318d6598c8b25156b0919f70b2a";

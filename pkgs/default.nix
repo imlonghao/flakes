@@ -13,4 +13,5 @@ final: prev: {
   wesher = prev.callPackage ./wesher { };
   mybird = prev.callPackage ./mybird { };
   wtt = prev.callPackage ./wtt { };
+  mtrsb = prev.callPackage ./mtrsb { };
 }
