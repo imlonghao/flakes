@@ -28,6 +28,7 @@ in
     # profiles.pingfinder
     profiles.exporter.node
     profiles.etherguard.edge
+    profiles.mtrsb
   ];
 
   boot.loader.grub.device = "/dev/vda";
