@@ -51,14 +51,14 @@
   };
   mtrsb = {
     pname = "mtrsb";
-    version = "20faed09d419a255c0900493b66fb769d7836d55";
+    version = "de3290f91cb319cb7dab4afb923e663a65e8f66a";
     src = fetchgit {
       url = "https://git.esd.cc/imlonghao/mtr.sb";
-      rev = "20faed09d419a255c0900493b66fb769d7836d55";
+      rev = "de3290f91cb319cb7dab4afb923e663a65e8f66a";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "sha256-vp5VW4PCbsnAN+X7iTej8lGpPSA1RZuLv69dgHzft88=";
+      sha256 = "sha256-kQ5e3F1lphY5u8TFQPwQDAF+NjjVbJkYYbhkvvedRu0=";
     };
     vendorSha256 = "sha256-7/qTGQ81xAJDeD7PcmHXobNSMDK2PnHNkYKsBsKu2fY=";
     date = "2023-05-01";
