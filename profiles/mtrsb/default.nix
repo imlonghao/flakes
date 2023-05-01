@@ -16,6 +16,7 @@ let
     0nu4yY/alEEPQgy616SLlak=
     -----END CERTIFICATE-----
   '';
+in
 {
   environment.etc."mtr.sb/worker.hcl".text = ''
     cert_path = "/persist/mtr.sb/${config.networking.hostName}.crt"
