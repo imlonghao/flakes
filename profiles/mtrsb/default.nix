@@ -21,7 +21,7 @@ in
   environment.etc."mtr.sb/worker.hcl".text = ''
     cert_path = "/persist/mtr.sb/${config.networking.hostName}.crt"
     key_path = "/persist/mtr.sb/${config.networking.hostName}.pem"
-    server_ca_path = ${ca}
+    server_ca_path = "${ca}"
   '';
   services.mtrsb = {
     enable = true;
