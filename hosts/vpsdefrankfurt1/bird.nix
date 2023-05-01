@@ -30,6 +30,32 @@ in
         2406:840:fd00::/43{43,48},
         2602:feda:d10::/44{44,48}
       ];
+      # bgpq4 -S RPKI,AFRINIC,ARIN,APNIC,LACNIC,RIPE -6b -l "define 'RIPE::AS51019:AS-ALL'" -R 48 AS51019:AS-ALL
+      define 'RIPE::AS51019:AS-ALL' = [
+        2001:67c:bdc::/48,
+        2602:fafd:f05::/48,
+        2602:fd50:1020::/44{44,48},
+        2602:fd50:10f4::/48,
+        2a05:1084::/32{32,48},
+        2a05:dfc1:b00f::/48,
+        2a05:dfc1:ff00::/40{40,48},
+        2a05:dfc5:fffd::/48,
+        2a06:1287:4900::/40{40,48},
+        2a06:a005:437::/48,
+        2a06:a005:1871::/48,
+        2a07:54c1:3300::/40{40,48},
+        2a07:54c2:1000::/36{36,48},
+        2a07:54c2:b00b::/48,
+        2a07:54c4:175a::/48,
+        2a07:54c4:175c::/48,
+        2a07:54c4:175d::/48,
+        2a07:54c4:175e::/48,
+        2a07:54c6::/32{32,48},
+        2a0a:6040:1300::/40{40,48},
+        2a0a:6040:3ffd::/48,
+        2a0a:6040:9f00::/40{40,48},
+        2a12:dd47:84fd::/48
+      ];
       # bgpq4 -S RPKI,AFRINIC,ARIN,APNIC,LACNIC,RIPE -6b -l "define 'RIPE::AS199656'" -R 48 AS199656
       define 'RIPE::AS199656' = [
         2a12:dd47:8ed0::/44{44,48},
@@ -94,6 +120,18 @@ in
               accept;
             }
             if bgp_large_community ~ [(199632, 1, 1), (199632, 1, 5)] then accept;
+          };
+        };
+      };
+      protocol bgp AS51019 from tmpl_peer {
+        neighbor 2001:7f8:f2:e1:0:5:1019:1 as 51019;
+        description "Kjartan Hrafnkelsson";
+        ipv6 {
+          import filter {
+            bgp_large_community.add((199632, 1, 3));
+            bgp_large_community.add((199632, 2, 1));
+            bgp_large_community.add((199632, 3, 276));
+            if net ~ 'RIPE::AS51019:AS-ALL' then accept;
           };
         };
       };
