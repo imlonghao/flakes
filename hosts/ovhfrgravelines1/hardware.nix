@@ -7,7 +7,7 @@ let
   ];
 in
 {
-  boot.initrd.availableKernelModules = [ "ehci_pci" "xhci_pci" "ahci" "sd_mod" ];
+  boot.initrd.availableKernelModules = [ "ehci_pci" "xhci_pci" "ahci" "sd_mod" "ip6_tables" ];
   boot.kernelModules = [ "kvm-intel" ];
 
   fileSystems."/" = {
