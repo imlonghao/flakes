@@ -11,6 +11,7 @@ in
     profiles.users.root
     profiles.exporter.node
     profiles.etherguard.edge
+    profiles.mtrsb
   ];
 
   networking = {
