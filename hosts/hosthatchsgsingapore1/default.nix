@@ -21,6 +21,7 @@ in
     profiles.etherguard.edge
     profiles.docker
     profiles.bird-lg-go
+    profiles.mtrsb
   ];
 
   boot.loader.grub.device = "/dev/vda";
