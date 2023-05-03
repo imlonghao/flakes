@@ -12,6 +12,7 @@ in
     profiles.users.root
     profiles.etherguard.edge
     profiles.exporter.node
+    profiles.mtrsb
   ];
 
   boot.loader.grub.device = "/dev/vda";
