@@ -151,6 +151,14 @@
       publickey = "vfrrbtKAO5438daHrTD0SSS8V6yk78S/XW7DeFrYLXA=";
     }
     {
+      name = "wg2705";
+      listen = 22705;
+      asn = 4242422705;
+      e6 = "fe80::4242:2705";
+      endpoint = "sea1.node.piggy.moe:21888";
+      publickey = "bs3UoHA1NcJzfXdBubSrHbfcwfAW1tTHTlhUyoQa9lU=";
+    }
+    {
       name = "wg2980";
       ipv4 = "172.22.68.5";
       ipv6 = "fe80::1888:5/64";
