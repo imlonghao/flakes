@@ -163,9 +163,6 @@
           misakauklondon1 = {
             hostname = "misaka-uk-london-1.ni.sb";
           };
-          hetznerdefalkenstein2 = {
-            hostname = "hetzner-de-falkenstein-2.ni.sb";
-          };
           hosthatchsestockholm1 = {
             hostname = "hosthatch-se-stockholm-1.ni.sb";
           };
