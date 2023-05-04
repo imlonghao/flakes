@@ -10,7 +10,9 @@ let
       route 2a09:b280:ff80::/48 blackhole;
     '';
   };
-  kernelConf = import profiles.bird.kernel { };
+  kernelConf = import profiles.bird.kernel {
+    src6 = "2a09:b280:ff80::";
+  };
 in
 {
   services.bird2 = {
