@@ -14,7 +14,10 @@ in
 
   boot.loader.grub.device = "/dev/vda";
   networking = {
-    dhcpcd.allowInterfaces = [ "ens3" ];
+    dhcpcd = {
+      allowInterfaces = [ "ens3" ];
+      extraConfig = "noipv4ll";
+    };
     interfaces = {
       lo = {
         ipv6.addresses = [
