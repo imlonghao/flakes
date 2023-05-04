@@ -29,7 +29,7 @@ in
             if net = 2602:feda:1bf::/48 || net = 2a09:b280:ff80::/48 then {
               bgp_large_community.add((202409, 0, 0));
               accept;
-            };
+            }
             reject;
           };
         };
