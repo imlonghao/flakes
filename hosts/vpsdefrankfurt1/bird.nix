@@ -109,6 +109,17 @@ in
         neighbor 2a09:0:9::9 as 3204;
         multihop 2;
         password "aku236991uha";
+        ipv6 {
+          export filter {
+            if net = 2602:fab0:20::/48 then {
+              bgp_path.prepend(199632);
+              bgp_path.prepend(199632);
+              accept;
+            }
+            bgp_large_community.add((202409, 0, 0));
+            if bgp_large_community ~ [(199632, 1, 1), (199632, 1, 5)] then accept;
+          };
+        };
       };
       protocol bgp AS6939 from tmpl_upstream {
         neighbor 2001:7f8:f2:e1::6939:1 as 6939;
@@ -160,12 +171,15 @@ in
         };
       };
       protocol bgp AS202409rs01 from tmpl_rs {
+        shutdown;
         neighbor 2001:7f8:f2:e1::babe:1 as 202409;
       };
       protocol bgp AS202409rs02 from tmpl_rs {
+        shutdown;
         neighbor 2001:7f8:f2:e1::dead:1 as 202409;
       };
       protocol bgp AS202409rs03 from tmpl_rs {
+        shutdown;
         neighbor 2001:7f8:f2:e1::be5a as 202409;
       };
       protocol bgp AS212232 from tmpl_downstream {

@@ -25,10 +25,17 @@ in
         graceful restart on;
         ipv6 {
           import none;
-          export where net = 2602:feda:1bf::/48 || net = 2a09:b280:ff80::/48;
+          export filter {
+            if net = 2602:feda:1bf::/48 || net = 2a09:b280:ff80::/48 then {
+              bgp_large_community.add((202409, 0, 0));
+              accept;
+            };
+            reject;
+          };
         };
       }
       protocol bgp rs01v4 {
+        shutdown;
         neighbor 185.1.155.254 as 202409;
         local as 133846;
         graceful restart on;
@@ -38,6 +45,7 @@ in
         };
       }
       protocol bgp rs01v6 {
+        shutdown;
         neighbor 2a0c:b641:701::a5:20:2409:1 as 202409;
         local as 133846;
         graceful restart on;
@@ -47,6 +55,7 @@ in
         };
       }
       protocol bgp rs02v4 {
+        shutdown;
         neighbor 185.1.155.253 as 202409;
         local as 133846;
         graceful restart on;
@@ -56,6 +65,7 @@ in
         };
       }
       protocol bgp rs02v6 {
+        shutdown;
         neighbor 2a0c:b641:701::a5:20:2409:2 as 202409;
         local as 133846;
         graceful restart on;
