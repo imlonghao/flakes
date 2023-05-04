@@ -171,15 +171,15 @@ in
         };
       };
       protocol bgp AS202409rs01 from tmpl_rs {
-        shutdown;
+        disabled on;
         neighbor 2001:7f8:f2:e1::babe:1 as 202409;
       };
       protocol bgp AS202409rs02 from tmpl_rs {
-        shutdown;
+        disabled on;
         neighbor 2001:7f8:f2:e1::dead:1 as 202409;
       };
       protocol bgp AS202409rs03 from tmpl_rs {
-        shutdown;
+        disabled on;
         neighbor 2001:7f8:f2:e1::be5a as 202409;
       };
       protocol bgp AS212232 from tmpl_downstream {
