@@ -111,12 +111,12 @@ in
         password "aku236991uha";
         ipv6 {
           export filter {
+            bgp_large_community.add((202409, 0, 0));
             if net = 2602:fab0:20::/48 then {
               bgp_path.prepend(199632);
               bgp_path.prepend(199632);
               accept;
             }
-            bgp_large_community.add((202409, 0, 0));
             if bgp_large_community ~ [(199632, 1, 1), (199632, 1, 5)] then accept;
           };
         };
