@@ -11,14 +11,6 @@
       publickey = "2JHMpwkKaAMuMBrmapx9zqgGDIZOX9HZw5V2c1l66R8=";
     }
     {
-      name = "wg0341";
-      asn = 4242420341;
-      e6 = "fe80::0341";
-      listen = 20341;
-      endpoint = "jackynashome.tpddns.cn:21888";
-      publickey = "OWiVoIAfPwrc8BvmxL5QUOZY4PFhYOovf5gXmnvsGAg=";
-    }
-    {
       name = "wg0458";
       asn = 4242420458;
       e6 = "fe80::0458";
