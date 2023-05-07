@@ -51,17 +51,17 @@
   };
   mtrsb = {
     pname = "mtrsb";
-    version = "36b94a6f70d4d3c29cc2b50c629fdc304049de7b";
+    version = "bf67adce5769bbe383ca1ee4014674b84c3c1f6a";
     src = fetchgit {
       url = "https://git.esd.cc/imlonghao/mtr.sb";
-      rev = "36b94a6f70d4d3c29cc2b50c629fdc304049de7b";
+      rev = "bf67adce5769bbe383ca1ee4014674b84c3c1f6a";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "sha256-b5MpMr9W75cp3cIsuNzRRPK+AsvbDis0XlGM168wyis=";
+      sha256 = "sha256-UW+H2HhIeozwAVP8t49AuZxe+RVvPiivvi6bHyMivjQ=";
     };
     vendorSha256 = "sha256-7/qTGQ81xAJDeD7PcmHXobNSMDK2PnHNkYKsBsKu2fY=";
-    date = "2023-05-02";
+    date = "2023-05-07";
   };
   mybird = {
     pname = "mybird";
