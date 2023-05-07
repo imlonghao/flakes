@@ -18,6 +18,7 @@ in
     profiles.etherguard.edge
     profiles.pingfinder
     profiles.bird-lg-go
+    profiles.mtrsb
   ];
 
   # Config
