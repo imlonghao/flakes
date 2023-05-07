@@ -19,6 +19,17 @@ in
   networking = {
     dhcpcd.allowInterfaces = [ "ens3" ];
     nameservers = [ "8.8.8.8" "1.1.1.1" ];
+    defaultGateway6 = {
+      interface = "ens3";
+      address = "fe80::1";
+    };
+    interfaces = {
+      ens3 = {
+        ipv6.addresses = [
+          { address = "2a00:1a28:1157:f7da::1919"; prefixLength = 64; }
+        ];
+      };
+    };
   };
 
   environment.persistence."/persist" = {
