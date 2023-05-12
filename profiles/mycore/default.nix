@@ -82,4 +82,23 @@ in
     value = "40960";
   }];
 
+  security.pki.certificates = [
+    ''
+      imlonghao Root CA
+      =========
+      -----BEGIN CERTIFICATE-----
+      MIIB0jCCAVigAwIBAgIIYrwQ5kKMldwwCgYIKoZIzj0EAwMwMDESMBAGA1UEChMJ
+      aW1sb25naGFvMRowGAYDVQQDExFpbWxvbmdoYW8gUm9vdCBDQTAeFw0yMzA0Mjgw
+      MDAwMDBaFw00ODA0MjcyMzU5NTlaMDAxEjAQBgNVBAoTCWltbG9uZ2hhbzEaMBgG
+      A1UEAxMRaW1sb25naGFvIFJvb3QgQ0EwdjAQBgcqhkjOPQIBBgUrgQQAIgNiAATW
+      MRUOUlhMCGrMxsCVLHnRxqqnV/jPXpfAxyLyAqub33j05pzM+n/nmxriyWLdYWpA
+      8LmYAZuW+NgSyGSY2MNkaodgad/AmEP8yKHKN0lCE1vnaI6rahr84LZeLxAhAduj
+      PzA9MA8GA1UdEwEB/wQFMAMBAf8wHQYDVR0OBBYEFA5n5ZGOEHiSBzZBQNxSPNNx
+      8xjeMAsGA1UdDwQEAwIBBjAKBggqhkjOPQQDAwNoADBlAjEA9e/c7DsX/y2QV0yp
+      YvyzR4pbqFKVlz6TvtmI1iBF5DZ/eewpep6XUYtnZHZ6iDB3AjBpe1teuAQUzOr+
+      sNAFvntNFUFAdc0qKX7voeDPEguMblmOJvyV2iiQQm4dQAgG5fA=
+      -----END CERTIFICATE-----
+    ''
+  ];
+
 }
