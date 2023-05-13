@@ -81,7 +81,7 @@
     },
     "mtrsb": {
         "cargoLocks": null,
-        "date": "2023-05-07",
+        "date": "2023-05-13",
         "extract": null,
         "name": "mtrsb",
         "passthru": {
@@ -93,12 +93,12 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "bf67adce5769bbe383ca1ee4014674b84c3c1f6a",
-            "sha256": "sha256-UW+H2HhIeozwAVP8t49AuZxe+RVvPiivvi6bHyMivjQ=",
+            "rev": "b9f2da29c33cada95fbef361ef98ccc232b9509c",
+            "sha256": "sha256-fEVpdq9B2pxtV0b5FrhCyZpH8+l/oLHmQ+qpTne2z10=",
             "type": "git",
             "url": "https://git.esd.cc/imlonghao/mtr.sb"
         },
-        "version": "bf67adce5769bbe383ca1ee4014674b84c3c1f6a"
+        "version": "b9f2da29c33cada95fbef361ef98ccc232b9509c"
     },
     "mybird": {
         "cargoLocks": null,

@@ -6,7 +6,7 @@ buildGoModule rec {
   ldflags = [ "-s" "-w" "-X main.Version=${version}" ];
   nativeBuildInputs = [ makeWrapper ];
   postInstall = ''
-    wrapProgram $out/bin/worker --suffix PATH : ${lib.makeBinPath [ pkgs.iputils pkgs.traceroute ]}
+    wrapProgram $out/bin/worker --suffix PATH : ${lib.makeBinPath [ pkgs.iputils pkgs.traceroute pkgs.mtr ]}
   '';
   meta = with lib; {
     description = "MTR.SB Worker";
