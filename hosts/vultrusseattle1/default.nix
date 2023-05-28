@@ -15,6 +15,15 @@ in
   zramSwap.enable = true;
 
   networking = {
+    nameservers = [ "8.8.8.8" "1.1.1.1" ];
+    defaultGateway = {
+      address = "137.220.42.1";
+      interface = "enp1s0";
+    };
+    defaultGateway6 = {
+      address = "fe80::fc00:4ff:fe57:26c3";
+      interface = "enp1s0";
+    };
     interfaces = {
       lo = {
         ipv6.addresses = [
@@ -22,7 +31,14 @@ in
           { address = "2602:fab0:25::"; prefixLength = 128; }
         ];
       };
-      enp1s0.useDHCP = true;
+      enp1s0 = {
+        ipv4.addresses = [
+          { address = "137.220.42.181"; prefixLength = 23; }
+        ];
+        ipv6.addresses = [
+          { address = "2001:19f0:8001:1eb:5400:4ff:fe57:26c3"; prefixLength = 64; }
+        ];
+      };
     };
   };
 
