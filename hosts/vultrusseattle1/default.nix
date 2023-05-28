@@ -9,6 +9,7 @@ in
     profiles.mycore
     profiles.users.root
     profiles.etherguard.edge
+    profiles.mtrsb
   ];
 
   zramSwap.enable = true;

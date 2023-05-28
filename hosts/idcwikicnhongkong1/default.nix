@@ -15,6 +15,7 @@ in
     profiles.users.root
     profiles.tuic
     profiles.etherguard.edge
+    profiles.mtrsb
   ];
 
   networking = {

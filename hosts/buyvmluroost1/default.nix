@@ -9,6 +9,7 @@ in
     profiles.mycore
     profiles.users.root
     profiles.etherguard.edge
+    profiles.mtrsb
   ];
 
   boot.kernelParams = [ "net.ifnames=0" ];
