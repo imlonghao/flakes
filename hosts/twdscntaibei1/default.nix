@@ -10,6 +10,7 @@ in
     profiles.users.root
     profiles.etherguard.edge
     profiles.mtrsb
+    profiles.netdata
   ];
 
   boot.loader.grub.device = "/dev/sda";
