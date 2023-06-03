@@ -3,9 +3,9 @@ let
   hostCertificate = pkgs.writeText "ssh_host_ed25519_key-cert.pub" "ssh-ed25519-cert-v01@openssh.com AAAAIHNzaC1lZDI1NTE5LWNlcnQtdjAxQG9wZW5zc2guY29tAAAAIB7S04bKMDxbXjfE04+EiHiyP5E6F7+v1EDygUGZGCYZAAAAIPj+1xs73sqX0ReBy336QHxcgCe9v9chEDKjswjGyDXWAAAAAAAAAAAAAAACAAAADHZwc2F1c3lkbmV5MQAAAAAAAAAAAAAAAP//////////AAAAAAAAAAAAAAAAAAAAaAAAABNlY2RzYS1zaGEyLW5pc3RwMjU2AAAACG5pc3RwMjU2AAAAQQTuRtglhDg1ZegySmMt+nKOieitdmPjn7Ql1IoYRqbymyjTOf7yJjU8A8wMgiqynDPA2vtVkyCZyGTPapSxvGXWAAAAZQAAABNlY2RzYS1zaGEyLW5pc3RwMjU2AAAASgAAACEAyB0Z36xiuKJo51w0RIekBxmXAyuNPt6WYTXqsddWSUwAAAAhALBlc+6usdyXE5jvSCb3J0Xk6MH/A02Lu8VpcKPSp3Af";
   cronJob = pkgs.writeShellScript "cron.sh" ''
     # Networking
-    #ip -6 rule | grep -F 2a06:a005:b60::/48 || ip -6 rule add from 2a06:a005:b60::/48 table 48
-    #ip -6 rule | grep -F "uidrange 993-993" || ip -6 rule add uidrange 993-993 table 48
-    #ip -6 route show table 48 | grep -F default || ip -6 route add default via 2a06:a004:101d::1 src 2a06:a005:b60:: table 48
+    ip -6 rule | grep -F 2602:fab0:26:1::/64 || ip -6 rule add from 2602:fab0:26:1::/64 table 48
+    ip -6 rule | grep -F "uidrange 993-993" || ip -6 rule add uidrange 993-993 table 48
+    ip -6 route show table 48 | grep -F default || ip -6 route add default via 2602:feda:1bf:deaf::33 src 2602:fab0:26:1:: table 48
     # GoEdge
     /persist/edge-node/bin/edge-node start
   '';
@@ -47,6 +47,7 @@ in
         ];
         ipv6.addresses = [
           { address = "fd21:5c0c:9b7e:9::"; prefixLength = 64; }
+          { address = "2602:fab0:26:1::"; prefixLength = 64; }
         ];
       };
     };
