@@ -31,16 +31,6 @@
       publickey = "tRRiOqYhTsygV08ltrWtMkfJxCps1+HUyN4tb1J7Yn4=";
     }
     {
-      name = "wg0262";
-      l4 = "172.22.68.1";
-      e4 = "172.22.114.97";
-      e6 = "fe80::1234";
-      asn = 4242420262;
-      listen = 20262;
-      endpoint = "iad0.dn42.mtzfederico.com:21888";
-      publickey = "GggTJ5B5ypZszhBU+E5DmKChwTnjzif1ZbX+yXP1mH8=";
-    }
-    {
       name = "wg0377";
       listen = 20377;
       endpoint = "us-mci1.zycname.eu.org:21888";
