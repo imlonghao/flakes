@@ -51,17 +51,17 @@
   };
   mtrsb = {
     pname = "mtrsb";
-    version = "dedd242631443c1d06ecf7ebebbc3b45dd3f35ac";
+    version = "99d07362255275de56d9b4d159dc5fe3cc15d28b";
     src = fetchgit {
       url = "https://git.esd.cc/imlonghao/mtr.sb";
-      rev = "dedd242631443c1d06ecf7ebebbc3b45dd3f35ac";
+      rev = "99d07362255275de56d9b4d159dc5fe3cc15d28b";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "sha256-ipaDgFgqX0kr9Lc9vi5XwsTEYwVcO3t8+NCoKtKBmFc=";
+      sha256 = "sha256-coAOA2mkcgxjOPVJd+X7cz94IbDgHL6tf6FHmGBJiwE=";
     };
     vendorSha256 = "sha256-UC+if91e2MyNYnZXYUumI3F4frHDScxuPEAg9RBVJW4=";
-    date = "2023-06-15";
+    date = "2023-06-18";
   };
   mybird = {
     pname = "mybird";
@@ -97,7 +97,7 @@
       leaveDotGit = false;
       sha256 = "sha256-6Y0s5/HUmWrZA6QmV5wYjB1M0Ab/jHM3TSruRpMRwtA=";
     };
-    vendorSha256 = "sha256-EHkwSSuKrtS0px/a1TUBt13gBNGY8tlpm4sbsoZ1UsY=";
+    vendorSha256 = "sha256-T/ufC4mEXRBKgsmIk8jSCQva5Td0rnFHx3UIVV+t08k=";
     date = "2022-10-07";
   };
   wesher = {

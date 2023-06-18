@@ -81,7 +81,7 @@
     },
     "mtrsb": {
         "cargoLocks": null,
-        "date": "2023-06-15",
+        "date": "2023-06-18",
         "extract": null,
         "name": "mtrsb",
         "passthru": {
@@ -93,12 +93,12 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "dedd242631443c1d06ecf7ebebbc3b45dd3f35ac",
-            "sha256": "sha256-ipaDgFgqX0kr9Lc9vi5XwsTEYwVcO3t8+NCoKtKBmFc=",
+            "rev": "99d07362255275de56d9b4d159dc5fe3cc15d28b",
+            "sha256": "sha256-coAOA2mkcgxjOPVJd+X7cz94IbDgHL6tf6FHmGBJiwE=",
             "type": "git",
             "url": "https://git.esd.cc/imlonghao/mtr.sb"
         },
-        "version": "dedd242631443c1d06ecf7ebebbc3b45dd3f35ac"
+        "version": "99d07362255275de56d9b4d159dc5fe3cc15d28b"
     },
     "mybird": {
         "cargoLocks": null,
@@ -146,7 +146,7 @@
         "extract": null,
         "name": "rait",
         "passthru": {
-            "vendorSha256": "sha256-EHkwSSuKrtS0px/a1TUBt13gBNGY8tlpm4sbsoZ1UsY="
+            "vendorSha256": "sha256-T/ufC4mEXRBKgsmIk8jSCQva5Td0rnFHx3UIVV+t08k="
         },
         "pinned": false,
         "src": {
