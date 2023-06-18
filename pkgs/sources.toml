@@ -44,4 +44,4 @@ passthru = { vendorSha256 = "sha256-9ZR+qTCz5b+7wEQDlmniQmfiHhcdt36tmLv/7VYzcLA=
 [mtrsb]
 src.git = "https://git.esd.cc/imlonghao/mtr.sb"
 fetch.git = "https://git.esd.cc/imlonghao/mtr.sb"
-passthru = { vendorSha256 = "sha256-P42z8oJCX6iku9xMUlckEdD5yqu5B1KprAhqm0jvgfg=" }
+passthru = { vendorSha256 = "sha256-UC+if91e2MyNYnZXYUumI3F4frHDScxuPEAg9RBVJW4=" }
