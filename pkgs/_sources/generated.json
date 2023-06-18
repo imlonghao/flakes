@@ -81,7 +81,7 @@
     },
     "mtrsb": {
         "cargoLocks": null,
-        "date": "2023-05-13",
+        "date": "2023-06-15",
         "extract": null,
         "name": "mtrsb",
         "passthru": {
@@ -93,12 +93,12 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "b9f2da29c33cada95fbef361ef98ccc232b9509c",
-            "sha256": "sha256-fEVpdq9B2pxtV0b5FrhCyZpH8+l/oLHmQ+qpTne2z10=",
+            "rev": "dedd242631443c1d06ecf7ebebbc3b45dd3f35ac",
+            "sha256": "sha256-ipaDgFgqX0kr9Lc9vi5XwsTEYwVcO3t8+NCoKtKBmFc=",
             "type": "git",
             "url": "https://git.esd.cc/imlonghao/mtr.sb"
         },
-        "version": "b9f2da29c33cada95fbef361ef98ccc232b9509c"
+        "version": "dedd242631443c1d06ecf7ebebbc3b45dd3f35ac"
     },
     "mybird": {
         "cargoLocks": null,
@@ -134,15 +134,15 @@
             "name": null,
             "owner": "natesales",
             "repo": "q",
-            "rev": "v0.9.0",
-            "sha256": "sha256-WPVHMAau3+0jcIrRhRL5dy6h+J13LKj5GwQMJi7hGvo=",
+            "rev": "v0.11.1",
+            "sha256": "sha256-kS3t4bAvxFoZBE5UMM5yJ0WbsN6MqkEYhkl8wiBJKQg=",
             "type": "github"
         },
-        "version": "v0.9.0"
+        "version": "v0.11.1"
     },
     "rait": {
         "cargoLocks": null,
-        "date": "2023-03-05",
+        "date": "2022-10-07",
         "extract": null,
         "name": "rait",
         "passthru": {
@@ -154,16 +154,16 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "3191186a959888d4ab34e6440367b9c60508341b",
-            "sha256": "sha256-MgTskJ5Tp+3PvkZYsCmodRRJWidpzxszrgOo9PoaKhk=",
+            "rev": "278188c8bae13165aa70b6a2fbbb99101fd6f4cd",
+            "sha256": "sha256-6Y0s5/HUmWrZA6QmV5wYjB1M0Ab/jHM3TSruRpMRwtA=",
             "type": "git",
             "url": "https://gitlab.com/NickCao/RAIT"
         },
-        "version": "3191186a959888d4ab34e6440367b9c60508341b"
+        "version": "278188c8bae13165aa70b6a2fbbb99101fd6f4cd"
     },
     "wesher": {
         "cargoLocks": null,
-        "date": "2023-02-27",
+        "date": "2023-06-11",
         "extract": null,
         "name": "wesher",
         "passthru": {
@@ -177,11 +177,11 @@
             "name": null,
             "owner": "costela",
             "repo": "wesher",
-            "rev": "de3e549dd67ad60744cee6bd9a799323ef127567",
-            "sha256": "sha256-jt5p6JX7ziRkfL6k0Omgarti8Oaj95LSOxIQkXIO66E=",
+            "rev": "a55789f3377f6f765971ded2529b08358797e69e",
+            "sha256": "sha256-JHgwxqu/kdlzHROLyRH21vDwcFwzRlQ6JwVAaBJj2Yo=",
             "type": "github"
         },
-        "version": "de3e549dd67ad60744cee6bd9a799323ef127567"
+        "version": "a55789f3377f6f765971ded2529b08358797e69e"
     },
     "wtt": {
         "cargoLocks": null,

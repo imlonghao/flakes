@@ -51,17 +51,17 @@
   };
   mtrsb = {
     pname = "mtrsb";
-    version = "b9f2da29c33cada95fbef361ef98ccc232b9509c";
+    version = "dedd242631443c1d06ecf7ebebbc3b45dd3f35ac";
     src = fetchgit {
       url = "https://git.esd.cc/imlonghao/mtr.sb";
-      rev = "b9f2da29c33cada95fbef361ef98ccc232b9509c";
+      rev = "dedd242631443c1d06ecf7ebebbc3b45dd3f35ac";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "sha256-fEVpdq9B2pxtV0b5FrhCyZpH8+l/oLHmQ+qpTne2z10=";
+      sha256 = "sha256-ipaDgFgqX0kr9Lc9vi5XwsTEYwVcO3t8+NCoKtKBmFc=";
     };
     vendorSha256 = "sha256-P42z8oJCX6iku9xMUlckEdD5yqu5B1KprAhqm0jvgfg=";
-    date = "2023-05-13";
+    date = "2023-06-15";
   };
   mybird = {
     pname = "mybird";
@@ -77,41 +77,41 @@
   };
   q-dns = {
     pname = "q-dns";
-    version = "v0.9.0";
+    version = "v0.11.1";
     src = fetchFromGitHub ({
       owner = "natesales";
       repo = "q";
-      rev = "v0.9.0";
+      rev = "v0.11.1";
       fetchSubmodules = false;
-      sha256 = "sha256-WPVHMAau3+0jcIrRhRL5dy6h+J13LKj5GwQMJi7hGvo=";
+      sha256 = "sha256-kS3t4bAvxFoZBE5UMM5yJ0WbsN6MqkEYhkl8wiBJKQg=";
     });
   };
   rait = {
     pname = "rait";
-    version = "3191186a959888d4ab34e6440367b9c60508341b";
+    version = "278188c8bae13165aa70b6a2fbbb99101fd6f4cd";
     src = fetchgit {
       url = "https://gitlab.com/NickCao/RAIT";
-      rev = "3191186a959888d4ab34e6440367b9c60508341b";
+      rev = "278188c8bae13165aa70b6a2fbbb99101fd6f4cd";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "sha256-MgTskJ5Tp+3PvkZYsCmodRRJWidpzxszrgOo9PoaKhk=";
+      sha256 = "sha256-6Y0s5/HUmWrZA6QmV5wYjB1M0Ab/jHM3TSruRpMRwtA=";
     };
     vendorSha256 = "sha256-EHkwSSuKrtS0px/a1TUBt13gBNGY8tlpm4sbsoZ1UsY=";
-    date = "2023-03-05";
+    date = "2022-10-07";
   };
   wesher = {
     pname = "wesher";
-    version = "de3e549dd67ad60744cee6bd9a799323ef127567";
+    version = "a55789f3377f6f765971ded2529b08358797e69e";
     src = fetchFromGitHub ({
       owner = "costela";
       repo = "wesher";
-      rev = "de3e549dd67ad60744cee6bd9a799323ef127567";
+      rev = "a55789f3377f6f765971ded2529b08358797e69e";
       fetchSubmodules = false;
-      sha256 = "sha256-jt5p6JX7ziRkfL6k0Omgarti8Oaj95LSOxIQkXIO66E=";
+      sha256 = "sha256-JHgwxqu/kdlzHROLyRH21vDwcFwzRlQ6JwVAaBJj2Yo=";
     });
     vendorSha256 = "sha256-QoIwp475/+QDYY65TG4DaFH5wbM5eQGREuIJCbBLFy0=";
-    date = "2023-02-27";
+    date = "2023-06-11";
   };
   wtt = {
     pname = "wtt";

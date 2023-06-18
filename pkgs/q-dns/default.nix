@@ -3,7 +3,7 @@
 buildGo119Module rec {
   inherit (sources.q-dns) pname version src;
 
-  vendorSha256 = "sha256-0Yd8y1SkxmfIFZuSheMGQnurlFv3sxkSDgGrQJLR3iU=";
+  vendorSha256 = "sha256-jjhDD0qZh4QHjFO14+FsRFxEywByHB2gIxy/w3QOWBk=";
 
   ldflags = [ "-s" "-w" "-X main.version=${version}" ];
 

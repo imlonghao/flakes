@@ -21,7 +21,7 @@ in
 
   system.stateVersion = "22.11";
 
-  boot.cleanTmpDir = true;
+  boot.tmp.cleanOnBoot = true;
   boot.kernel.sysctl = {
     "net.ipv4.tcp_congestion_control" = "bbr";
     "net.ipv4.conf.all.forwarding" = 1;
@@ -48,7 +48,7 @@ in
   services.earlyoom.enable = true;
   services.openssh = {
     enable = true;
-    passwordAuthentication = false;
+    settings.PasswordAuthentication = false;
     extraConfig = ''
       TrustedUserCAKeys = ${trustedUserCAKeys}
     '';
