@@ -190,13 +190,5 @@
       endpoint = "lax1-us.dn42.6700.cc:30012";
       publickey = "QSAeFPotqFpF6fFe3CMrMjrpS5AL54AxWY2w1+Ot2Bo=";
     }
-    {
-      name = "wg3918";
-      listen = 23918;
-      asn = 4242423918;
-      e6 = "fe80::3918";
-      endpoint = "v4.us-01.public.nodes.supernoc.net:21888";
-      publickey = "XPPdCmXC7glm/gU3RvGjL+u5VeYbybDhym32aECN2Hg=";
-    }
   ];
 }
