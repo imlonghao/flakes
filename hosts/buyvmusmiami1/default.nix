@@ -141,8 +141,6 @@ in
   };
   sops.secrets.vector = {
     sopsFile = "${self}/secrets/vector.yml";
-    owner = config.users.users.vector.name;
-    group = config.users.users.vector.group;
   };
   systemd.services.vector.serviceConfig.EnvironmentFile = config.sops.secrets.vector.path;
 
