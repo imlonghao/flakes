@@ -12,6 +12,7 @@ in
     profiles.etherguard.edge
     profiles.tuic
     profiles.mtrsb
+    profiles.netdata
   ];
 
   boot.loader.grub.device = "/dev/vda";
