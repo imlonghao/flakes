@@ -202,6 +202,9 @@
           vultrusseattle1 = {
             hostname = "vultr-us-seattle-1.ni.sb";
           };
+          virtuafrlille1 = {
+            hostname = "virtua-fr-lille-1.ni.sb";
+          };
         };
 
         defaultTemplate = self.templates.bud;
