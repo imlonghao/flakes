@@ -10,7 +10,6 @@ in
     profiles.users.root
     profiles.etherguard.edge
     profiles.docker
-    profiles.netdata
   ];
 
   boot.loader.grub.device = "/dev/sda";
@@ -58,6 +57,7 @@ in
     metasploit
     mosh
     ncdu
+    netdata
     nmap
     openssl
     openvpn
@@ -112,5 +112,24 @@ in
       "5 12 * * * root bash -c 'cd /persist/archlinuxcn-pkgstats/ && bash cron.sh'"
     ];
   };
+
+  # netdata
+  services.netdata = {
+    enable = true;
+    config = {
+      web = {
+        "bind to" = "100.64.88.24";
+      };
+    };
+    configDir = {
+      "stream.conf" =  pkgs.writeText "stream.conf" ''
+        [040ed080-a060-4a06-ace3-c49408623721]
+        enabled = yes
+        type = api
+        allow from = 100.64.88.*
+      '';
+    };
+  };
+  systemd.services.netdata.after = [ "etherguard-edge.service" ];
 
 }
