@@ -55,14 +55,6 @@
       publickey = "Ta5Dq6wr5OcY3m369cpnUbTzjFM2MSR631VRLM1Syyk=";
     }
     {
-      name = "wg1816";
-      e6 = "fe80::1816";
-      asn = 4242421816;
-      listen = 21816;
-      endpoint = "us1.dn42.potat0.cc:21888";
-      publickey = "LUwqKS6QrCPv510Pwt1eAIiHACYDsbMjrkrbGTJfviU=";
-    }
-    {
       name = "wg2464";
       e6 = "fe80::2464";
       asn = 4242422464;

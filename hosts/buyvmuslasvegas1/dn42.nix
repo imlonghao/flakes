@@ -94,6 +94,7 @@
       endpoint = "lax.ccp.ovh:21888";
       publickey = "Z6OKJSR1sxMBgUd1uXEe/UxoBsOvRgbTnexy7z/ryUI=";
     }
+    { name = "wg1816"; listen = 21816; endpoint = "us1.dn42.potat0.cc:21888"; publickey = "LUwqKS6QrCPv510Pwt1eAIiHACYDsbMjrkrbGTJfviU="; asn = 4242421816; e6 = "fe80::1816"; }
     {
       name = "wg1817";
       listen = 21817;
