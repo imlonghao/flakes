@@ -26,10 +26,7 @@ in
         multihop 2;
         password "r7OUFI1l";
         ipv4 {
-          import filter {
-            gw = 45.61.188.1;
-            accept;
-          };
+          import none;
           export filter {
             if net = 44.31.42.0/24 then {
               bgp_path.prepend(133846);
@@ -46,10 +43,7 @@ in
         multihop 2;
         password "r7OUFI1l";
         ipv6 {
-          import filter {
-            gw = 2605:6400:40::1;
-            accept;
-          };
+          import none;
           export where net = 2602:fafd:f10::/48 || net = 2602:fab0:10::/48;
         };
       }
