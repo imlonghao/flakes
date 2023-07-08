@@ -205,6 +205,9 @@
           virtuafrlille1 = {
             hostname = "virtua-fr-lille-1.ni.sb";
           };
+          f4uskansas1 = {
+            hostname = "f4-us-kansas-1.ni.sb";
+          };
         };
 
         defaultTemplate = self.templates.bud;

@@ -24,6 +24,7 @@ keys:
   - &vps_twdscntaibei1 age17u6hxy0wv98kt03sezgtangyfv63ynk303x4t4shqsanzc2vxgxszdxfsh
   - &vps_vultrusseattle1 age1hj7jtsghtle6gn72azh7j23u670wgu6y29aeh5scpfxvdn5h5ajs9924cs
   - &vps_virtuafrlille1 age194npt4zgv99kszaaf96kv5rx79uxzrjq8m9j8fv25je08exa75usuatap3
+  - &vps_f4uskansas1 age1hsukvd00p3k8mt9cmlau5fc4tjfrwhwhxx8la3h9lad5k5ga0e2qc8t7y8
 creation_rules:
   - path_regex: secrets/shadow.yml$
     key_groups:
@@ -51,6 +52,7 @@ creation_rules:
       - *vps_twdscntaibei1
       - *vps_vultrusseattle1
       - *vps_virtuafrlille1
+      - *vps_f4uskansas1
   - path_regex: secrets/k3s.yml$
     key_groups:
     - pgp:
@@ -210,3 +212,9 @@ creation_rules:
           - *me_canokey
         age:
           - *vps_virtuafrlille1
+  - path_regex: hosts/f4uskansas1/secrets.yml$
+    key_groups:
+      - pgp:
+          - *me_canokey
+        age:
+          - *vps_f4uskansas1
