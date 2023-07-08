@@ -146,7 +146,7 @@ in
             "/persist/docker/photoprism"
           ];
           repositories = [
-            "bln02xkt@bln02xkt.repo.borgbase.com:repo"
+            "ssh://bln02xkt@bln02xkt.repo.borgbase.com/./repo"
           ];
         };
         storage = {
@@ -165,7 +165,7 @@ in
             "/persist/docker/filebrowser"
           ];
           repositories = [
-            "v5zl57p2@v5zl57p2.repo.borgbase.com:repo"
+            "ssh://v5zl57p2@v5zl57p2.repo.borgbase.com/./repo"
           ];
         };
         storage = {
