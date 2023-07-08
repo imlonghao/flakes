@@ -138,6 +138,7 @@ in
   sops.secrets.borgmatic.sopsFile = ./secrets.yml;
   systemd.services.borgmatic.serviceConfig.EnvironmentFile = "/run/secrets/borgmatic";
   services.borgmatic.configurations = {
+    enable = true;
     photoprism = {
       location = {
         source_directories = [
