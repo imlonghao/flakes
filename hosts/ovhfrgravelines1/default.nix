@@ -135,7 +135,7 @@ in
   systemd.services.netdata.after = [ "etherguard-edge.service" ];
   
   # Borgmatic
-  sops.secrets.borgmatic.sopsFile = "${self}/hosts/${config.networking.hostName}/secrets.yml";
+  sops.secrets.borgmatic.sopsFile = "./secrets.yml";
   systemd.services.borgmatic.serviceConfig.EnvironmentFile = "/run/secrets/borgmatic";
   services.borgmatic.configurations = {
     photoprism = {
