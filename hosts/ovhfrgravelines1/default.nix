@@ -10,6 +10,7 @@ in
     profiles.users.root
     profiles.etherguard.edge
     profiles.docker
+    profiles.borgmatic
   ];
 
   boot.loader.grub.device = "/dev/sda";
@@ -131,5 +132,31 @@ in
     };
   };
   systemd.services.netdata.after = [ "etherguard-edge.service" ];
+  
+  # Borgmatic
+  services.borgmatic.configurations = {
+    photoprism = {
+      location = {
+        source_directories = [
+          "/persist/docker/photoprism"
+        ];
+        repositories = [
+          "bln02xkt@bln02xkt.repo.borgbase.com:repo"
+        ];
+      };
+      storage.encryption_passcommand = "echo $PHOTOPRISM_BORG_PASSPHRASE";
+    };
+    filebrowser = {
+      location = {
+        source_directories = [
+          "/persist/docker/filebrowser"
+        ];
+        repositories = [
+          "v5zl57p2@v5zl57p2.repo.borgbase.com:repo"
+        ];
+      };
+      storage.encryption_passcommand = "echo $FILEBROWSER_BORG_PASSPHRASE";
+    };
+  };
 
 }
