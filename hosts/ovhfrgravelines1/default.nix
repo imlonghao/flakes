@@ -137,44 +137,46 @@ in
   # Borgmatic
   sops.secrets.borgmatic.sopsFile = ./secrets.yml;
   systemd.services.borgmatic.serviceConfig.EnvironmentFile = "/run/secrets/borgmatic";
-  services.borgmatic.configurations = {
+  services.borgmatic = {
     enable = true;
-    photoprism = {
-      location = {
-        source_directories = [
-          "/persist/docker/photoprism"
-        ];
-        repositories = [
-          "bln02xkt@bln02xkt.repo.borgbase.com:repo"
-        ];
+    configurations = {
+      photoprism = {
+        location = {
+          source_directories = [
+            "/persist/docker/photoprism"
+          ];
+          repositories = [
+            "bln02xkt@bln02xkt.repo.borgbase.com:repo"
+          ];
+        };
+        storage = {
+          encryption_passphrase = "\${PHOTOPRISM_BORG_PASSPHRASE}";
+          compression = "zstd";
+        };
+        retention = {
+          keep_daily = 7;
+          keep_weekly = 4;
+          keep_monthly = 6;
+        };
       };
-      storage = {
-        encryption_passphrase = "\${PHOTOPRISM_BORG_PASSPHRASE}";
-        compression = "zstd";
-      };
-      retention = {
-        keep_daily = 7;
-        keep_weekly = 4;
-        keep_monthly = 6;
-      };
-    };
-    filebrowser = {
-      location = {
-        source_directories = [
-          "/persist/docker/filebrowser"
-        ];
-        repositories = [
-          "v5zl57p2@v5zl57p2.repo.borgbase.com:repo"
-        ];
-      };
-      storage = {
-        encryption_passphrase = "\${FILEBROWSER_BORG_PASSPHRASE}";
-        compression = "zstd";
-      };
-      retention = {
-        keep_daily = 7;
-        keep_weekly = 4;
-        keep_monthly = 6;
+      filebrowser = {
+        location = {
+          source_directories = [
+            "/persist/docker/filebrowser"
+          ];
+          repositories = [
+            "v5zl57p2@v5zl57p2.repo.borgbase.com:repo"
+          ];
+        };
+        storage = {
+          encryption_passphrase = "\${FILEBROWSER_BORG_PASSPHRASE}";
+          compression = "zstd";
+        };
+        retention = {
+          keep_daily = 7;
+          keep_weekly = 4;
+          keep_monthly = 6;
+        };
       };
     };
   };
