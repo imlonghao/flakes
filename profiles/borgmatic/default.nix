@@ -5,7 +5,6 @@
 
   sops.secrets.borgmatic.sopsFile = "${self}/hosts/${config.networking.hostName}/secrets.yml";
   systemd.services.borgmatic.serviceConfig.EnvironmentFile = "/run/secrets/borgmatic";
-  systemd.timers.borgmatic.wantedBy =  [ "timers.target" ];
 
   services.borgmatic = {
     enable = true;
