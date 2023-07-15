@@ -77,5 +77,9 @@ in
       allow ::/0
     '';
   };
+  services.chrony_exporter = {
+    enable = true;
+    listen = "[2602:fab0:27::123]:9000";
+  };
 
 }
