@@ -51,17 +51,17 @@
   };
   mtrsb = {
     pname = "mtrsb";
-    version = "99d07362255275de56d9b4d159dc5fe3cc15d28b";
+    version = "adb018d24c62c3e093cf26ab51d1e67f5e01436f";
     src = fetchgit {
       url = "https://git.esd.cc/imlonghao/mtr.sb";
-      rev = "99d07362255275de56d9b4d159dc5fe3cc15d28b";
+      rev = "adb018d24c62c3e093cf26ab51d1e67f5e01436f";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "sha256-coAOA2mkcgxjOPVJd+X7cz94IbDgHL6tf6FHmGBJiwE=";
+      sha256 = "sha256-lhGqnTCXvfnhMzbPDVbiA+TxAOeqvdITrU6Cr/HGn8c=";
     };
     vendorSha256 = "sha256-UC+if91e2MyNYnZXYUumI3F4frHDScxuPEAg9RBVJW4=";
-    date = "2023-06-18";
+    date = "2023-07-14";
   };
   mybird = {
     pname = "mybird";
@@ -77,13 +77,13 @@
   };
   q-dns = {
     pname = "q-dns";
-    version = "v0.11.1";
+    version = "v0.11.4";
     src = fetchFromGitHub {
       owner = "natesales";
       repo = "q";
-      rev = "v0.11.1";
+      rev = "v0.11.4";
       fetchSubmodules = false;
-      sha256 = "sha256-kS3t4bAvxFoZBE5UMM5yJ0WbsN6MqkEYhkl8wiBJKQg=";
+      sha256 = "sha256-zoIHpj1i0X5SCVhcT3bl5xxsDcvD2trEVhlIC5YnIZo=";
     };
   };
   rait = {
@@ -102,16 +102,16 @@
   };
   wesher = {
     pname = "wesher";
-    version = "a55789f3377f6f765971ded2529b08358797e69e";
+    version = "c681651656af222561ab35c2a17b321503a28616";
     src = fetchFromGitHub {
       owner = "costela";
       repo = "wesher";
-      rev = "a55789f3377f6f765971ded2529b08358797e69e";
+      rev = "c681651656af222561ab35c2a17b321503a28616";
       fetchSubmodules = false;
-      sha256 = "sha256-JHgwxqu/kdlzHROLyRH21vDwcFwzRlQ6JwVAaBJj2Yo=";
+      sha256 = "sha256-mI/DisH4F2+0nYfzJjspQlnfrAqswH4vVuW1m/sw23c=";
     };
     vendorSha256 = "sha256-QoIwp475/+QDYY65TG4DaFH5wbM5eQGREuIJCbBLFy0=";
-    date = "2023-06-11";
+    date = "2023-06-26";
   };
   wtt = {
     pname = "wtt";
