@@ -4,6 +4,7 @@ channels: final: prev: {
 
   inherit (channels.latest)
     bgpq4
+    borgmatic
     cachix
     rage
     nixpkgs-fmt
