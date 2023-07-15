@@ -19,6 +19,25 @@
         },
         "version": "44b3135897726d7155e54ac079ce2a7f911b0c44"
     },
+    "chrony_exporter": {
+        "cargoLocks": null,
+        "date": "2023-07-15",
+        "extract": null,
+        "name": "chrony_exporter",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "rev": "796d32a9a4f686a15e61c58217962a2ec931db5b",
+            "sha256": "sha256-fi7Ikp1TRuZ+0svh8jTngFBKoIBUMOKuwNdT9KvZi6o=",
+            "type": "git",
+            "url": "https://git.esd.cc/imlonghao/prometheus-chrony-exporter"
+        },
+        "version": "796d32a9a4f686a15e61c58217962a2ec931db5b"
+    },
     "deluge_exporter": {
         "cargoLocks": null,
         "date": "2023-01-24",

@@ -13,6 +13,19 @@
     };
     date = "2021-06-08";
   };
+  chrony_exporter = {
+    pname = "chrony_exporter";
+    version = "796d32a9a4f686a15e61c58217962a2ec931db5b";
+    src = fetchgit {
+      url = "https://git.esd.cc/imlonghao/prometheus-chrony-exporter";
+      rev = "796d32a9a4f686a15e61c58217962a2ec931db5b";
+      fetchSubmodules = false;
+      deepClone = false;
+      leaveDotGit = false;
+      sha256 = "sha256-fi7Ikp1TRuZ+0svh8jTngFBKoIBUMOKuwNdT9KvZi6o=";
+    };
+    date = "2023-07-15";
+  };
   deluge_exporter = {
     pname = "deluge_exporter";
     version = "c8a31ede70133498b49b6ac4a1a63b57292e7b47";

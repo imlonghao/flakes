@@ -14,4 +14,5 @@ final: prev: {
   mybird = prev.callPackage ./mybird { };
   wtt = prev.callPackage ./wtt { };
   mtrsb = prev.callPackage ./mtrsb { };
+  chrony_exporter = prev.callPackage ./chrony_exporter { };
 }
