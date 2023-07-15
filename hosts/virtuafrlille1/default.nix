@@ -10,6 +10,7 @@ in
     profiles.users.root
     profiles.etherguard.edge
     profiles.mtrsb
+    profiles.netdata
   ];
 
   networking = {
@@ -48,4 +49,16 @@ in
     HostCertificate = ${hostCertificate}
   '';
 
+  # netdata
+  services.netdata = {
+    enable = true;
+    config = {
+      global = {
+        "memory mode" = "none";
+      };
+      health = {
+        "enabled " = "no";
+      };
+    };
+  };
 }
