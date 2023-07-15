@@ -23,6 +23,7 @@ in
         ipv6.addresses = [
           { address = "2602:fab0:20::"; prefixLength = 128; }
           { address = "2602:fab0:28::"; prefixLength = 128; }
+          { address = "2602:fab0:28::123"; prefixLength = 128; }
         ];
       };
       ens18 = {
@@ -46,5 +47,20 @@ in
   services.openssh.extraConfig = ''
     HostCertificate = ${hostCertificate}
   '';
+
+  # chrony
+  services.chrony = {
+    servers = [
+      "ntp.netviscom.com"
+      "time-clock.borgnet.us"
+      "time-b.intt.org"
+      "clock.sjc.he.net"
+      "clock.fmt.he.net"
+    ];
+    extraConfig = ''
+      bindaddress 2602:fab0:28::123
+      allow ::/0
+    '';
+  };
 
 }
