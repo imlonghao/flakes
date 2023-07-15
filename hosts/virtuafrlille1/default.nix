@@ -25,6 +25,7 @@ in
         ipv6.addresses = [
           { address = "2602:fab0:20::"; prefixLength = 128; }
           { address = "2602:fab0:27::"; prefixLength = 128; }
+          { address = "2602:fab0:27::123"; prefixLength = 128; }
         ];
       };
       ens18 = {
@@ -61,4 +62,20 @@ in
       };
     };
   };
+
+  # chrony
+  services.chrony = {
+    servers = [
+      "ntp.kuro-home.net"
+      "time.spdwpl.net"
+      "chronos.asda.gr"
+      "time.niewels.de"
+      "clock.fmt.he.net"
+    ];
+    extraConfig = ''
+      bindaddress 2602:fab0:27::123
+      allow ::/0
+    '';
+  };
+
 }
