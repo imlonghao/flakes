@@ -11,6 +11,7 @@ channels: final: prev: {
     nomad
     deploy-rs
     teleport
+    tuic
     owncast
     garage
     autorestic
