@@ -5,6 +5,7 @@ let
     # Networking
     ip -6 rule | grep -F 2602:fab0:26:1::/64 || ip -6 rule add from 2602:fab0:26:1::/64 table 48
     ip -6 rule | grep -F "uidrange 993-993" || ip -6 rule add uidrange 993-993 table 48
+    ip -6 rule | grep -F 2a11:3:101::105b || ip -6 rule add from 2a11:3:101::105b lookup main
     ip -6 route show table 48 | grep -F default || ip -6 route add default via 2602:feda:1bf:deaf::33 src 2602:fab0:26:1:: table 48
     # GoEdge
     /persist/edge-node/bin/edge-node start
