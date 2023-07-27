@@ -38,6 +38,13 @@ in
     };
   };
 
+  zramSwap.enable = true;
+
+  environment.systemPackages = with pkgs; [
+    rclone
+    tmux
+  ];
+
   # EtherGuard
   services.etherguard-edge = {
     ipv4 = "100.64.88.30/24";
