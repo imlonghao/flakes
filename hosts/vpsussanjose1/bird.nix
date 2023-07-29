@@ -24,7 +24,7 @@ in
         password "shdyjr#!x0a";
         ipv4 {
           import none;
-          export where net = 23.146.88.0/24;
+          export none;
         };
       }
       protocol bgp AS3204v6 {
