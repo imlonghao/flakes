@@ -21,6 +21,8 @@ in
         Group = "tuic";
         CapabilityBoundingSet = caps;
         AmbientCapabilities = caps;
+        Restart = "always";
+        RuntimeMaxSec = "1d";
       };
       wants = [ "network-online.target" ];
       after = [ "network-online.target" ];
