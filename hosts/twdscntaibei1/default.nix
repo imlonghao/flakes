@@ -75,4 +75,17 @@ in
     };
   };
 
+  # netdata
+  services.netdata = {
+    enable = true;
+    config = {
+      global = {
+        "memory mode" = "none";
+      };
+      health = {
+        "enabled " = "no";
+      };
+    };
+  };
+
 }
