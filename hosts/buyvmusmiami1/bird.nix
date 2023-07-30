@@ -39,7 +39,7 @@ in
         };
       }
       protocol bgp AS53667v4 {
-        local as 133846;
+        local as 199632;
         neighbor 169.254.169.179 as 53667;
         multihop 2;
         password "r7OUFI1l";
@@ -49,7 +49,7 @@ in
         };
       }
       protocol bgp AS53667v6 {
-        local as 133846;
+        local as 199632;
         neighbor 2605:6400:ffff::2 as 53667;
         multihop 2;
         password "r7OUFI1l";
