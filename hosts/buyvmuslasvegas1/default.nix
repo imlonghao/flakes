@@ -40,11 +40,11 @@ in
       lo.ipv6.addresses = [
         {
           address = "fd21:5c0c:9b7e:5::";
-          prefixLength = 64;
+          prefixLength = 128;
         }
         {
           address = "2602:fab0:29::";
-          prefixLength = 48;
+          prefixLength = 128;
         }
       ];
       ens3.ipv6.addresses = [
