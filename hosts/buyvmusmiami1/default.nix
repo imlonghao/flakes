@@ -14,8 +14,8 @@ let
 
     iptables -t nat -C POSTROUTING -o ens3 -s 100.110.0.0/16 -j SNAT --to-source 23.146.88.248-23.146.88.255 || iptables -t nat -A POSTROUTING -o ens3 -s 100.110.0.0/16 -j SNAT --to-source 23.146.88.248-23.146.88.255
 
-    ip6tables -C FORWARD -d 2602:fab0:10:64::/96 -j LOG --log-prefix "nat64: " || ip6tables -A FORWARD -d 2602:fab0:10:64::/96 -j LOG --log-prefix "nat64: "
-    ip6tables -C FORWARD -d 2602:fab0:10:64::/96 -p tcp -m multiport --dports 25,110,143,465,587,993,995,2525 -j REJECT --reject-with icmp6-adm-prohibited || ip6tables -A FORWARD -d 2602:fab0:10:64::/96 -p tcp -m multiport --dports 25,110,143,465,587,993,995,2525 -j REJECT --reject-with icmp6-adm-prohibited
+    ip6tables -C FORWARD -d 2602:fab0:2a:64::/96 -j LOG --log-prefix "nat64: " || ip6tables -A FORWARD -d 2602:fab0:2a:64::/96 -j LOG --log-prefix "nat64: "
+    ip6tables -C FORWARD -d 2602:fab0:2a:64::/96 -p tcp -m multiport --dports 25,110,143,465,587,993,995,2525 -j REJECT --reject-with icmp6-adm-prohibited || ip6tables -A FORWARD -d 2602:fab0:2a:64::/96 -p tcp -m multiport --dports 25,110,143,465,587,993,995,2525 -j REJECT --reject-with icmp6-adm-prohibited
   '';
 in
 {
@@ -41,11 +41,11 @@ in
       lo.ipv4.addresses = [
         { address = "23.146.88.0"; prefixLength = 32; }
         { address = "23.146.88.1"; prefixLength = 32; }
-        { address = "44.31.42.0"; prefixLength = 32; }
       ];
       lo.ipv6.addresses = [
-        { address = "2602:fab0:10::"; prefixLength = 128; }
-        { address = "2602:fab0:10:53::"; prefixLength = 128; }
+        { address = "2602:fab0:20::"; prefixLength = 128; }
+        { address = "2602:fab0:2a::"; prefixLength = 128; }
+        { address = "2602:fab0:2a:53::"; prefixLength = 128; }
       ];
       ens3.ipv4.addresses = [
         { address = "45.61.188.76"; prefixLength = 24; }
@@ -93,10 +93,10 @@ in
       };
     };
     ipv6 = {
-      address = "2602:fab0:10::";
-      router.address = "2602:fab0:10:64::1";
+      address = "2602:fab0:2a::";
+      router.address = "2602:fab0:2a:64::1";
       pool = {
-        address = "2602:fab0:10:64::";
+        address = "2602:fab0:2a:64::";
         prefixLength = 96;
       };
     };
@@ -162,12 +162,12 @@ in
     package = pkgs.coredns-nat64-rdns;
     config = ''
       . {
-        bind 2602:fab0:10:53::
+        bind 2602:fab0:2a:53::
         forward . [2a09::]:53 [2a11::]:53
-        dns64 2602:fab0:10:64::/96
+        dns64 2602:fab0:2a:64::/96
       }
-      2602:fab0:10:64::/96 {
-        bind 2602:fab0:10:53::
+      2602:fab0:2a:64::/96 {
+        bind 2602:fab0:2a:53::
         nat64-rdns nat64.mia1.133846.xyz.
       }
     '';
