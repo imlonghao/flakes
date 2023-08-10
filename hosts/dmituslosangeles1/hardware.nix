@@ -4,5 +4,5 @@
   boot.loader.grub.device = "/dev/vda";
   boot.initrd.availableKernelModules = [ "ata_piix" "uhci_hcd" "xen_blkfront" "vmw_pvscsi" ];
   boot.initrd.kernelModules = [ "nvme" ];
-  fileSystems."/" = { device = "/dev/vda2"; fsType = "btrfs"; };
+  fileSystems."/" = { device = "/dev/vda2"; fsType = "btrfs"; neededForBoot = true; };
 }
