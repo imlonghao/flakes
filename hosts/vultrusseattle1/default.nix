@@ -12,8 +12,6 @@ in
     profiles.mtrsb
   ];
 
-  zramSwap.enable = true;
-
   networking = {
     nameservers = [ "8.8.8.8" "1.1.1.1" ];
     defaultGateway = {

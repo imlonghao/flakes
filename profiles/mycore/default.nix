@@ -32,6 +32,11 @@ in
     "net.ipv4.conf.default.accept_local" = 1;
     "fs.file-max" = 2097152;
     "fs.inotify.max_user_instances" = 512;
+    # zram
+    "vm.swappiness" = 180;
+    "vm.watermark_boost_factor" = 0;
+    "vm.watermark_scale_factor" = 125;
+    "vm.page-cluster" = 0;
   };
 
   environment.systemPackages = [
@@ -100,5 +105,10 @@ in
       -----END CERTIFICATE-----
     ''
   ];
+
+  zramSwap = {
+    enable = true;
+    priority = 100;
+  };
 
 }

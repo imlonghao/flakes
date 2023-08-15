@@ -38,8 +38,6 @@ in
     };
   };
 
-  zramSwap.enable = true;
-
   environment.systemPackages = with pkgs; [
     rclone
     tmux
