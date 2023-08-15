@@ -23,6 +23,7 @@ in
         AmbientCapabilities = caps;
         Restart = "always";
         RuntimeMaxSec = "1d";
+        LimitNOFILE = 10240;
       };
       wants = [ "network-online.target" ];
       after = [ "network-online.target" ];
