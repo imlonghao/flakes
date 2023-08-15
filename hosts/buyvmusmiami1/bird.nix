@@ -57,6 +57,8 @@ in
           import none;
           export filter {
             if net = 2602:fab0:20::/48 then {
+              bgp_community.add((174, 140));
+              bgp_large_community.add((53667, 102, 174));
               bgp_large_community.add((53667, 101, 6939));
             }
             if bgp_large_community ~ [(199632, 1, 1), (199632, 1, 5)] then accept;
