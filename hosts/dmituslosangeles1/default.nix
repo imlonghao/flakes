@@ -48,4 +48,6 @@ in
     ];
   };
 
+  services.juicity.enable = true;
+
 }
