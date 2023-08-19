@@ -10,8 +10,11 @@ in
   config = mkIf cfg.enable {
     environment.systemPackages = [ pkgs.juicity ];
     systemd.packages = [ pkgs.juicity ];
-    systemd.services.juicity-server.environment = {
-      QUIC_GO_ENABLE_GSO = true;
+    systemd.services.juicity-server = {
+      wantedBy = [ "multi-user.target" ];
+      environment = {
+        QUIC_GO_ENABLE_GSO = "true";
+      };
     };
   };
 }
