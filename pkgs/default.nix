@@ -14,4 +14,5 @@ final: prev: {
   wtt = prev.callPackage ./wtt { };
   mtrsb = prev.callPackage ./mtrsb { };
   chrony_exporter = prev.callPackage ./chrony_exporter { };
+  juicity = prev.callPackage ./juicity { };
 }
