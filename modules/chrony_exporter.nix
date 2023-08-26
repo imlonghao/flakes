@@ -18,6 +18,8 @@ in
         ExecStart = "${pkgs.chrony_exporter}/bin/prometheus-chrony-exporter -listen ${cfg.listen}";
         User = config.users.users.chrony.name;
         Group = config.users.users.chrony.group;
+        Restart = "always";
+        RestartSec = 10;
       };
       wants = [ "network-online.target" ];
       after = [ "network-online.target" ];
