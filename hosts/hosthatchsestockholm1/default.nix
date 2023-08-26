@@ -26,7 +26,7 @@ in
     interfaces = {
       ens3 = {
         ipv6.addresses = [
-          { address = "2a00:1a28:1157:f7da::1919"; prefixLength = 64; }
+          { address = "2a0e:dc0:2:cf29::1919"; prefixLength = 64; }
         ];
       };
     };
