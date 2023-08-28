@@ -50,6 +50,10 @@ in
           address = "2602:fab0:29::";
           prefixLength = 128;
         }
+        {
+          address = "2602:fab0:29::123";
+          prefixLength = 128;
+        }
       ];
       ens3.ipv6.addresses = [
         {
@@ -82,6 +86,24 @@ in
     HostCertificate = ${hostCertificate}
   '';
 
+  # chrony
+  services.chrony = {
+    servers = [
+      "ntp.netviscom.com"
+      "time-clock.borgnet.us"
+      "time-b.intt.org"
+      "clock.sjc.he.net"
+      "clock.fmt.he.net"
+    ];
+    extraConfig = ''
+      bindaddress 2602:fab0:29::123
+      allow ::/0
+    '';
   };
+  services.chrony_exporter = {
+    enable = true;
+    listen = "[2602:fab0:29::123]:9000";
+  };
+	
 
 }
