@@ -2,11 +2,6 @@
 let
   generalConf = import profiles.bird.general {
     config = config;
-    ospf4 = "where net ~ 23.146.88.0/24";
-    route4 = ''
-      route 23.146.88.0/24 blackhole;
-      route 23.146.88.2/32 blackhole;
-    '';
     route6 = ''
       route 2602:feda:1bf::/48 blackhole;
       route 2602:fab0:11::/48 blackhole;
