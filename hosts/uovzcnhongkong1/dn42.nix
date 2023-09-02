@@ -27,15 +27,12 @@
       publickey = "jtE83RMoN49bs8TOetxrGdzqywz2BI+uT1qJrGI7GVU=";
     }
     {
-      name = "wg0603";
-      l4 = "172.22.68.3";
-      e4 = "172.23.7.65";
-      asn = 4242420603;
-      e6 = "fe80::0603";
-      listen = 20603;
-      mpbgp = false;
-      endpoint = "hk02.nodes.mol.sorasky.in:21818";
-      publickey = "wNNbJyoFBrlpq53p61Ur8V2RNfS3U7KADlK7he64qRk=";
+      name = "wg0803";
+      asn = 4242420803;
+      e6 = "fe80::0803";
+      listen = 20803;
+      endpoint = "hk.billchen.bid:21888";
+      publickey = "+TkKvF5J4fd8KX0I9hCBTS7666GEEHlRUinQdIgEJSU=";
     }
     {
       name = "wg0831";
@@ -126,16 +123,6 @@
       listen = 22464;
       endpoint = "aper.dneo.moeternet.com:21888";
       publickey = "Yhn4+izxfHjrX2rTNzPCdjRKGzMrew6RE+dXQnpWwig=";
-    }
-    {
-      name = "wg2526";
-      l4 = "172.22.68.3";
-      e4 = "172.22.167.100";
-      asn = 4242422526;
-      e6 = "fe80::2526";
-      listen = 22526;
-      endpoint = "hk.awsl.ee:51818";
-      publickey = "FDW5S+3nNS883Q5mKVwym0dwEYKF+nuQ1rPZ+sWVqgc=";
     }
     {
       name = "wg2717";
