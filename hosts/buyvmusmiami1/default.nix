@@ -168,7 +168,7 @@ in
       }
       2602:fab0:2a:64::/96 {
         bind 2602:fab0:2a:53::
-        nat64-rdns nat64.mia1.133846.xyz.
+        nat64-rdns nat64.mia1.decimallc.com.
       }
     '';
   };
