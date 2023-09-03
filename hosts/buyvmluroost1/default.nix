@@ -51,32 +51,7 @@ in
     HostCertificate = ${hostCertificate}
   '';
 
-  # rtorrent
-  services.rtorrent = {
-    enable = true;
-    downloadDir = "/rtorrent";
-    configText = ''
-      system.umask.set = 0022
-    '';
-  };
-  services.flood = {
-    enable = true;
-    listen = "100.64.88.27";
-  };
-
-  # Caddy
-  services.caddy = {
-    enable = true;
-    virtualHosts = {
-      "http://100.64.88.27:8001" = {
-        listenAddresses = [ "100.64.88.27" ];
-        extraConfig = ''
-          root * /rtorrent
-          file_server browse
-        '';
-      };
-    };
-  };
-  systemd.services.caddy.after = [ "etherguard-edge.service" ];
+  # Docker
+  virtualisation.docker.enable = true;
 
 }
