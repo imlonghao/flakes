@@ -16,6 +16,7 @@ in
   boot.kernelParams = [ "net.ifnames=0" ];
 
   networking = {
+    dhcpcd.enable = false;
     defaultGateway = "107.189.8.1";
     defaultGateway6 = "2605:6400:30::1";
     nameservers = [ "8.8.8.8" "1.1.1.1" ];
