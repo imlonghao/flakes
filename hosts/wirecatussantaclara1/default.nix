@@ -14,11 +14,18 @@ in
 
   boot.loader.grub.device = "/dev/vda";
   networking = {
-    dhcpcd = {
-      allowInterfaces = [ "ens3" ];
-      extraConfig = "noipv4ll";
+    dhcpcd.enable = false;
+    nameservers = [ "2602:fab0:2a:53::" ];
+    defaultGateway6 = {
+      address = "fe80::1";
+      interface = "ens3";
     };
     interfaces = {
+      ens3 = {
+        ipv6.addresses = [
+          { address = "2602:fc52:10e:e384::2"; prefixLength = 128; }
+        ];
+      };
       lo = {
         ipv6.addresses = [
           { address = "2602:fab0:20::"; prefixLength = 128; }
