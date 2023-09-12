@@ -16,6 +16,7 @@ let
 
     iptables -t nat -C POSTROUTING -o ens3 -s 100.110.0.0/16 -j SNAT --to-source 23.146.88.248-23.146.88.255 || iptables -t nat -A POSTROUTING -o ens3 -s 100.110.0.0/16 -j SNAT --to-source 23.146.88.248-23.146.88.255
 
+    ip6tables -C FORWARD -d 2602:fab0:2a:64::/96 -m state --state ESTABLISHED -j ACCEPT || ip6tables -A FORWARD -d 2602:fab0:2a:64::/96 -m state --state ESTABLISHED -j ACCEPT
     ip6tables -C FORWARD -d 2602:fab0:2a:64::/96 -j LOG --log-prefix "nat64: " || ip6tables -A FORWARD -d 2602:fab0:2a:64::/96 -j LOG --log-prefix "nat64: "
     ip6tables -C FORWARD -d 2602:fab0:2a:64::/96 -p tcp -m multiport --dports 25,110,143,465,587,993,995,2525 -j REJECT --reject-with icmp6-adm-prohibited || ip6tables -A FORWARD -d 2602:fab0:2a:64::/96 -p tcp -m multiport --dports 25,110,143,465,587,993,995,2525 -j REJECT --reject-with icmp6-adm-prohibited
   '';
