@@ -54,6 +54,7 @@ in
           address = "2602:fab0:29::123";
           prefixLength = 128;
         }
+        { address = "2602:fab0:29:53::"; prefixLength = 128; }
       ];
       ens3.ipv6.addresses = [
         {
@@ -105,5 +106,16 @@ in
     listen = "[2602:fab0:29::123]:9000";
   };
 	
+  # NAT64
+  nat64 = {
+    enable = true;
+    gateway = "199.19.224.1";
+    interface = "ens3";
+    nat_start = "23.146.88.240";
+    nat_end = "23.146.88.247";
+    prefix = "2602:fab0:29:";
+    address = "23.146.88.3";
+    location = "las1";
+  };
 
 }

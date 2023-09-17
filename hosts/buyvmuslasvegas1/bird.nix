@@ -6,6 +6,8 @@ let
     route4 = ''
       route 172.22.68.0/28 blackhole;
       route 172.22.68.5/32 blackhole;
+
+      route 23.146.88.248/29 blackhole;
     '';
     route6 = ''
       route fd21:5c0c:9b7e:5::/64 blackhole;
@@ -52,7 +54,7 @@ in
         password "or2D7evY";
         ipv4 {
           import none;
-          export where bgp_large_community ~ [(199632, 1, 1), (199632, 1, 5)];
+          export where bgp_large_community ~ [(199632, 1, 1), (199632, 1, 5)] || net = 23.146.88.240/29;
         };
       }
       protocol bgp AS53667v6 {
