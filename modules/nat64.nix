@@ -1,4 +1,4 @@
-{ config, pkgs, lib, ... }:
+{ config, pkgs, lib, self, ... }:
 with lib;
 let
   cfg = config.nat64;
