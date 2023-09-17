@@ -45,7 +45,7 @@ in
         password "r7OUFI1l";
         ipv4 {
           import none;
-          export where bgp_large_community ~ [(199632, 1, 1), (199632, 1, 5)];
+          export where bgp_large_community ~ [(199632, 1, 1), (199632, 1, 5)] || net = 23.146.88.248/29;
         };
       }
       protocol bgp AS53667v6 {
