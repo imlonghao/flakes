@@ -15,11 +15,11 @@ let
     iptables -C FORWARD -s 100.110.0.0/16 -p tcp --tcp-flags SYN,RST SYN -j TCPMSS --set-mss 1200 || iptables -A FORWARD -s 100.110.0.0/16 -p tcp --tcp-flags SYN,RST SYN -j TCPMSS --set-mss 1200
     iptables -C FORWARD -d 100.110.0.0/16 -p tcp --tcp-flags SYN,RST SYN -j TCPMSS --set-mss 1200 || iptables -A FORWARD -d 100.110.0.0/16 -p tcp --tcp-flags SYN,RST SYN -j TCPMSS --set-mss 1200
 
-    iptables -t nat -C POSTROUTING -o ${cfg.interface} -s 100.110.0.0/16 -j SNAT --to-source ${cfg.prefix_start}-${cfg.prefix_end} || iptables -t nat -A POSTROUTING -o ${cfg.interface} -s 100.110.0.0/16 -j SNAT --to-source ${cfg.prefix_start}-${cfg.prefix_end}
+    iptables -t nat -C POSTROUTING -o ${cfg.interface} -s 100.110.0.0/16 -j SNAT --to-source ${cfg.nat_start}-${cfg.nat_end} || iptables -t nat -A POSTROUTING -o ${cfg.interface} -s 100.110.0.0/16 -j SNAT --to-source ${cfg.nat_start}-${cfg.nat_end}
 
-    ip6tables -C FORWARD -d ${cfg.prefix_v6}64::/96 -m state --state ESTABLISHED -j ACCEPT || ip6tables -A FORWARD -d ${cfg.prefix_v6}64::/96 -m state --state ESTABLISHED -j ACCEPT
-    ip6tables -C FORWARD -d ${cfg.prefix_v6}64::/96 -j LOG --log-prefix "nat64: " || ip6tables -A FORWARD -d ${cfg.prefix_v6}64::/96 -j LOG --log-prefix "nat64: "
-    ip6tables -C FORWARD -d ${cfg.prefix_v6}64::/96 -p tcp -m multiport --dports 25,110,143,465,587,993,995,2525 -j REJECT --reject-with icmp6-adm-prohibited || ip6tables -A FORWARD -d ${cfg.prefix_v6}64::/96 -p tcp -m multiport --dports 25,110,143,465,587,993,995,2525 -j REJECT --reject-with icmp6-adm-prohibited
+    ip6tables -C FORWARD -d ${cfg.prefix}64::/96 -m state --state ESTABLISHED -j ACCEPT || ip6tables -A FORWARD -d ${cfg.prefix}64::/96 -m state --state ESTABLISHED -j ACCEPT
+    ip6tables -C FORWARD -d ${cfg.prefix}64::/96 -j LOG --log-prefix "nat64: " || ip6tables -A FORWARD -d ${cfg.prefix}64::/96 -j LOG --log-prefix "nat64: "
+    ip6tables -C FORWARD -d ${cfg.prefix}64::/96 -p tcp -m multiport --dports 25,110,143,465,587,993,995,2525 -j REJECT --reject-with icmp6-adm-prohibited || ip6tables -A FORWARD -d ${cfg.prefix}64::/96 -p tcp -m multiport --dports 25,110,143,465,587,993,995,2525 -j REJECT --reject-with icmp6-adm-prohibited
   '';
 in
 {
@@ -33,15 +33,15 @@ in
       type = types.str;
       description = "IPv4 gateway interface";
     };
-    prefix_start = mkOption {
+    nat_start = mkOption {
       type = types.str;
       description = "NAT IPv4 start";
     };
-    prefix_end = mkOption {
+    nat_end = mkOption {
       type = types.str;
       description = "NAT IPv4 end";
     };
-    prefix_v6 = mkOption {
+    prefix = mkOption {
       type = types.str;
       description = "IPv6 Prefix";
       example = "2602:fab0:2a:";
@@ -69,10 +69,10 @@ in
         };
       };
       ipv6 = {
-        address = "${cfg.prefix_v6}:";
-        router.address = "${cfg.prefix_v6}64::1";
+        address = "${cfg.prefix}:";
+        router.address = "${cfg.prefix}64::1";
         pool = {
-          address = "${cfg.prefix_v6}64::";
+          address = "${cfg.prefix}64::";
           prefixLength = 96;
         };
       };
@@ -136,12 +136,12 @@ in
       package = pkgs.coredns-nat64-rdns;
       config = ''
         . {
-          bind ${cfg.prefix_v6}53::
+          bind ${cfg.prefix}53::
           forward . [2a09::]:53 [2a11::]:53
-          dns64 ${cfg.prefix_v6}64::/96
+          dns64 ${cfg.prefix}64::/96
         }
-        ${cfg.prefix_v6}64::/96 {
-          bind ${cfg.prefix_v6}53::
+        ${cfg.prefix}64::/96 {
+          bind ${cfg.prefix}53::
           nat64-rdns nat64.${cfg.location}.decimallc.com.
         }
       '';
