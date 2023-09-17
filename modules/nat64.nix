@@ -54,7 +54,7 @@ in
       type = types.str;
       description = "Location";
       example = "mia1";
-    }
+    };
   };
   config = mkIf cfg.enable {
     # Tayga
