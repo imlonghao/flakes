@@ -135,6 +135,9 @@ in
       ];
     };
     # CoreDNS
+    networking.interfaces.lo.ipv6.addresses = [
+      { address = "${cfg.prefix}53::"; prefixLength = 128; }
+    ];
     services.coredns = {
       enable = true;
       package = pkgs.coredns-nat64-rdns;

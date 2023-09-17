@@ -54,7 +54,6 @@ in
           address = "2602:fab0:29::123";
           prefixLength = 128;
         }
-        { address = "2602:fab0:29:53::"; prefixLength = 128; }
       ];
       ens3.ipv6.addresses = [
         {

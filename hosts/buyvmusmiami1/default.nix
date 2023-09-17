@@ -29,7 +29,6 @@ in
       lo.ipv6.addresses = [
         { address = "2602:fab0:20::"; prefixLength = 128; }
         { address = "2602:fab0:2a::"; prefixLength = 128; }
-        { address = "2602:fab0:2a:53::"; prefixLength = 128; }
       ];
       ens3.ipv4.addresses = [
         { address = "45.61.188.76"; prefixLength = 24; }
