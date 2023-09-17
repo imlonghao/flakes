@@ -37,6 +37,14 @@
       e6 = "fe80::0377";
     }
     {
+      name = "wg0398";
+      listen = 20398;
+      endpoint = "lax.dn42.akihi.me:21888";
+      publickey = "oAPy0U2qVuSR8PyPLmVLEgWLBKrOq4kcLNLAOVZL10M=";
+      asn = 4242420398;
+      e6 = "fe80::426f";
+    }
+    {
       name = "wg0458";
       listen = 20458;
       asn = 4242420458;
