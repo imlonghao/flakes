@@ -7,7 +7,7 @@ let
       route 172.22.68.0/28 blackhole;
       route 172.22.68.5/32 blackhole;
 
-      route 23.146.88.248/29 blackhole;
+      route 23.146.88.240/29 blackhole;
     '';
     route6 = ''
       route fd21:5c0c:9b7e:5::/64 blackhole;

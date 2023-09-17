@@ -15,7 +15,7 @@ in
   boot.loader.grub.device = "/dev/vda";
   networking = {
     dhcpcd.enable = false;
-    nameservers = [ "2602:fab0:2a:53::" ];
+    nameservers = [ "2602:fab0:29:53::" ];
     defaultGateway6 = {
       address = "fe80::1";
       interface = "ens3";
