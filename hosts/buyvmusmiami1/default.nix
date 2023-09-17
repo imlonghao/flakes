@@ -12,7 +12,8 @@ let
     iptables -C FORWARD -o ens3 -d 169.254.0.0/16 -j REJECT || iptables -A FORWARD -o ens3 -d 169.254.0.0/16 -j REJECT
     iptables -C FORWARD -o ens3 -d 100.64.0.0/10 -j REJECT || iptables -A FORWARD -o ens3 -d 100.64.0.0/10 -j REJECT
 
-    iptables -C FORWARD -s 100.110.0.0/16 -p tcp --tcp-flags SYN,RST SYN -j TCPMSS --set-mss 1364 || iptables -A FORWARD -s 100.110.0.0/16 -p tcp --tcp-flags SYN,RST SYN -j TCPMSS --set-mss 1364
+    iptables -C FORWARD -s 100.110.0.0/16 -p tcp --tcp-flags SYN,RST SYN -j TCPMSS --set-mss 1200 || iptables -A FORWARD -s 100.110.0.0/16 -p tcp --tcp-flags SYN,RST SYN -j TCPMSS --set-mss 1200
+    iptables -C FORWARD -d 100.110.0.0/16 -p tcp --tcp-flags SYN,RST SYN -j TCPMSS --set-mss 1200 || iptables -A FORWARD -d 100.110.0.0/16 -p tcp --tcp-flags SYN,RST SYN -j TCPMSS --set-mss 1200
 
     iptables -t nat -C POSTROUTING -o ens3 -s 100.110.0.0/16 -j SNAT --to-source 23.146.88.248-23.146.88.255 || iptables -t nat -A POSTROUTING -o ens3 -s 100.110.0.0/16 -j SNAT --to-source 23.146.88.248-23.146.88.255
 
