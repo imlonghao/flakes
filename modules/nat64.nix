@@ -57,6 +57,10 @@ in
     };
   };
   config = mkIf cfg.enable {
+    # iptables
+    environment.systemPackages = with pkgs; [
+      iptables
+    ];
     # Tayga
     services.tayga = {
       enable = true;
