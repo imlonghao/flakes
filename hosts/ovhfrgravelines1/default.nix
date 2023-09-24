@@ -1,6 +1,10 @@
 { pkgs, profiles, sops, ... }:
 let
   hostCertificate = pkgs.writeText "ssh_host_ed25519_key-cert.pub" "ssh-ed25519-cert-v01@openssh.com AAAAIHNzaC1lZDI1NTE5LWNlcnQtdjAxQG9wZW5zc2guY29tAAAAIDr86PxrJ+sO4HFCG5bLVqOLADQDeT/H8iZdmxkVfVbGAAAAIDgpJ4WTwRe6op9Qf8q1ObINJxyEl5U7maKWgMX27/QvAAAAAAAAAAAAAAACAAAAEG92aGZyZ3JhdmVsaW5lczEAAAAAAAAAAAAAAAD//////////wAAAAAAAAAAAAAAAAAAAGgAAAATZWNkc2Etc2hhMi1uaXN0cDI1NgAAAAhuaXN0cDI1NgAAAEEE7kbYJYQ4NWXoMkpjLfpyjonorXZj45+0JdSKGEam8pso0zn+8iY1PAPMDIIqspwzwNr7VZMgmchkz2qUsbxl1gAAAGMAAAATZWNkc2Etc2hhMi1uaXN0cDI1NgAAAEgAAAAgTdft+ANDOJA0Qb0UifxYfYn+mdiYTKi7iXUklqkQO6kAAAAgd0wrspRMsVGSY/fNriW1lfldG+qFBXFeOdYGGL/OPUQ=";
+  cronJob = pkgs.writeShellScript "199632.sh" ''
+    ip rule | grep -F 23.146.88.2 || ip rule add from 23.146.88.2/32 table 199632
+    ip route show table 199632 | grep -F default || ip route add default via 100.64.88.27 table 199632
+  '';
 in
 {
   imports = [
@@ -70,6 +74,7 @@ in
     socat
     tmux
     tree
+    virt-manager
     whois
   ];
 
@@ -77,6 +82,7 @@ in
     directories = [
       "/var/lib"
       "/root/.ssh"
+      "/root/.local"
     ];
     files = [
       "/etc/machine-id"
@@ -112,6 +118,7 @@ in
     systemCronJobs = [
       "0 1 * * * root ${pkgs.git}/bin/git -C /persist/pki pull"
       "5 12 * * * root bash -c 'cd /persist/archlinuxcn-pkgstats/ && bash cron.sh'"
+      "* * * * * root ${cronJob} > /dev/null 2>&1"
     ];
   };
 
@@ -180,5 +187,9 @@ in
       };
     };
   };
+
+  # KVM
+  boot.extraModprobeConfig = "options kvm_intel nested=1";
+  virtualisation.libvirtd.enable = true;
 
 }
