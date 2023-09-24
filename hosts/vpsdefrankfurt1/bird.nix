@@ -78,6 +78,15 @@ in
       template bgp tmpl_rs {
         local as 199632;
         graceful restart on;
+        ipv4 {
+          import filter {
+            bgp_large_community.add((199632, 1, 4));
+            bgp_large_community.add((199632, 2, 1));
+            bgp_large_community.add((199632, 3, 276));
+            accept;
+          };
+          export where bgp_large_community ~ [(199632, 1, 1), (199632, 1, 5)];
+        };
         ipv6 {
           import filter {
             bgp_large_community.add((199632, 1, 4));
@@ -170,16 +179,22 @@ in
           };
         };
       };
-      protocol bgp AS202409rs01 from tmpl_rs {
-        disabled on;
+      protocol bgp AS202409rs01v4 from tmpl_rs {
+        neighbor 185.1.166.100 as 202409;
+      };
+      protocol bgp AS202409rs01v6 from tmpl_rs {
         neighbor 2001:7f8:f2:e1::babe:1 as 202409;
       };
-      protocol bgp AS202409rs02 from tmpl_rs {
-        disabled on;
+      protocol bgp AS202409rs02v4 from tmpl_rs {
+        neighbor 185.1.166.200 as 202409;
+      };
+      protocol bgp AS202409rs02v6 from tmpl_rs {
         neighbor 2001:7f8:f2:e1::dead:1 as 202409;
       };
-      protocol bgp AS202409rs03 from tmpl_rs {
-        disabled on;
+      protocol bgp AS202409rs03v4 from tmpl_rs {
+        neighbor 185.1.166.254 as 202409;
+      };
+      protocol bgp AS202409rs03v6 from tmpl_rs {
         neighbor 2001:7f8:f2:e1::be5a as 202409;
       };
       protocol bgp AS212232 from tmpl_downstream {

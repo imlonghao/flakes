@@ -29,6 +29,9 @@ in
         ];
       };
       eth1 = {
+        ipv4.addresses = [
+          { address = "185.1.167.230"; prefixLength = 23; }
+        ];
         ipv6.addresses = [
           { address = "2001:7f8:f2:e1::1996:32:1"; prefixLength = 64; }
         ];
