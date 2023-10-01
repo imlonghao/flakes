@@ -23,6 +23,7 @@ in
 
   # Config
   networking = {
+    dhcpcd.enable = false;
     nameservers = [ "127.0.0.1" "8.8.8.8" ];
     defaultGateway = {
       interface = "enp0s3";
