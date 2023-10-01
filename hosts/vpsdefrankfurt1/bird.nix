@@ -2,6 +2,7 @@
 let
   generalConf = import profiles.bird.general {
     config = config;
+    ospf4 = "where net ~ 23.146.88.0/24";
   };
   kernelConf = import profiles.bird.kernel {
     src6 = "2602:fab0:22::";
@@ -12,6 +13,19 @@ in
     enable = true;
     config = generalConf + kernelConf + ''
       protocol static {
+        route 23.146.88.0/24 blackhole;
+        ipv4 {
+          import filter {
+            bgp_large_community.add((199632, 1, 1));
+            bgp_large_community.add((199632, 2, 1));
+            bgp_large_community.add((199632, 3, 276));
+            bgp_large_community.add((199632, 4, 28));
+            accept;
+          };
+          export all;
+        };
+      }
+      protocol static {
         route 2602:fab0:20::/48 blackhole;
         route 2602:fab0:22::/48 blackhole;
         ipv6 {
@@ -19,6 +33,7 @@ in
             bgp_large_community.add((199632, 1, 1));
             bgp_large_community.add((199632, 2, 1));
             bgp_large_community.add((199632, 3, 276));
+            bgp_large_community.add((199632, 4, 28));
             accept;
           };
           export all;

@@ -12,6 +12,18 @@ in
     enable = true;
     config = generalConf + kernelConf + ''
       protocol static {
+        route 23.146.88.0/24 blackhole;
+        ipv4 {
+          import filter {
+            bgp_large_community.add((199632, 1, 1));
+            bgp_large_community.add((199632, 2, 1));
+            bgp_large_community.add((199632, 3, 250));
+            accept;
+          };
+          export all;
+        };
+      }
+      protocol static {
         route 2602:fab0:20::/48 blackhole;
         route 2602:fab0:27::/48 blackhole;
         ipv6 {
@@ -39,7 +51,25 @@ in
         };
       }
 
-      protocol bgp AS64661 from tmpl_upstream {
+
+      protocol bgp AS64661v4 from tmpl_upstream {
+        neighbor 188.214.24.166 as 64661;
+        multihop 2;
+        password "LTDSjU4jvMNe";
+        source address 185.154.155.64;
+        ipv4 {
+          import none;
+          export filter {
+            if net = 23.146.88.0/24 then {
+              bgp_community.add((35661,7001));
+              bgp_community.add((35661,7024));
+              bgp_large_community.add((6695,901,137409));
+            }
+            if bgp_large_community ~ [(199632, 1, 1), (199632, 1, 5)] then accept;
+          };
+        };
+      };
+      protocol bgp AS64661v6 from tmpl_upstream {
         neighbor 2a07:8dc1::be:1 as 64661;
         multihop 2;
         password "LTDSjU4jvMNe";
@@ -49,7 +79,6 @@ in
           export filter {
             if net = 2602:fab0:20::/48 then {
               bgp_path.prepend(199632);
-              accept;
             }
             if bgp_large_community ~ [(199632, 1, 1), (199632, 1, 5)] then accept;
           };

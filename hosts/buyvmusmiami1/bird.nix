@@ -20,6 +20,7 @@ in
             bgp_large_community.add((199632, 1, 1));
             bgp_large_community.add((199632, 2, 2));
             bgp_large_community.add((199632, 3, 840));
+            bgp_large_community.add((199632, 4, 3));
             accept;
           };
           export all;
@@ -33,6 +34,7 @@ in
             bgp_large_community.add((199632, 1, 1));
             bgp_large_community.add((199632, 2, 2));
             bgp_large_community.add((199632, 3, 840));
+            bgp_large_community.add((199632, 4, 3));
             accept;
           };
           export all;
@@ -45,7 +47,13 @@ in
         password "r7OUFI1l";
         ipv4 {
           import none;
-          export where bgp_large_community ~ [(199632, 1, 1), (199632, 1, 5)] || net = 23.146.88.248/29;
+          export filter {
+            if net = 23.146.88.0/24 then {
+              bgp_large_community.add((53667, 101, 174));
+            }
+            if bgp_large_community ~ [(199632, 1, 1), (199632, 1, 5)] then accept;
+            if net = 23.146.88.248/29 then accept;
+          };
         };
       }
       protocol bgp AS53667v6 {

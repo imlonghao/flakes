@@ -54,7 +54,13 @@ in
         password "or2D7evY";
         ipv4 {
           import none;
-          export where bgp_large_community ~ [(199632, 1, 1), (199632, 1, 5)] || net = 23.146.88.240/29;
+          export filter {
+            if net = 23.146.88.0/24 then {
+              bgp_large_community.add((53667, 101, 174));
+            }
+            if bgp_large_community ~ [(199632, 1, 1), (199632, 1, 5)] then accept;
+            if net = 23.146.88.240/29 then accept;
+          };
         };
       }
       protocol bgp AS53667v6 {
