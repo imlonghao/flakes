@@ -63,7 +63,7 @@ in
             if net = 23.146.88.0/24 then {
               bgp_community.add((35661,7001));
               bgp_community.add((35661,7024));
-              bgp_large_community.add((6695,901,137409));
+              bgp_large_community.add((6695,902,137409));
             }
             if bgp_large_community ~ [(199632, 1, 1), (199632, 1, 5)] then accept;
           };
