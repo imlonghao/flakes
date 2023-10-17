@@ -1,4 +1,4 @@
-{ pkgs, profiles, sops, ... }:
+{ inputs, pkgs, profiles, sops, ... }:
 let
   hostCertificate = pkgs.writeText "ssh_host_ed25519_key-cert.pub" "ssh-ed25519-cert-v01@openssh.com AAAAIHNzaC1lZDI1NTE5LWNlcnQtdjAxQG9wZW5zc2guY29tAAAAIDr86PxrJ+sO4HFCG5bLVqOLADQDeT/H8iZdmxkVfVbGAAAAIDgpJ4WTwRe6op9Qf8q1ObINJxyEl5U7maKWgMX27/QvAAAAAAAAAAAAAAACAAAAEG92aGZyZ3JhdmVsaW5lczEAAAAAAAAAAAAAAAD//////////wAAAAAAAAAAAAAAAAAAAGgAAAATZWNkc2Etc2hhMi1uaXN0cDI1NgAAAAhuaXN0cDI1NgAAAEEE7kbYJYQ4NWXoMkpjLfpyjonorXZj45+0JdSKGEam8pso0zn+8iY1PAPMDIIqspwzwNr7VZMgmchkz2qUsbxl1gAAAGMAAAATZWNkc2Etc2hhMi1uaXN0cDI1NgAAAEgAAAAgTdft+ANDOJA0Qb0UifxYfYn+mdiYTKi7iXUklqkQO6kAAAAgd0wrspRMsVGSY/fNriW1lfldG+qFBXFeOdYGGL/OPUQ=";
   cronJob = pkgs.writeShellScript "199632.sh" ''
@@ -7,6 +7,8 @@ let
   '';
 in
 {
+  disabledModules = [ "services/backup/borgmatic.nix" ];
+
   imports = [
     ./bird.nix
     ./hardware.nix
@@ -14,6 +16,7 @@ in
     profiles.users.root
     profiles.etherguard.edge
     profiles.docker
+    "${inputs.latest}/nixos/modules/services/backup/borgmatic.nix"
   ];
 
   boot.loader.grub.device = "/dev/sda";
@@ -148,42 +151,30 @@ in
     enable = true;
     configurations = {
       photoprism = {
-        location = {
-          source_directories = [
-            "/persist/docker/photoprism"
-          ];
-          repositories = [
-            "ssh://bln02xkt@bln02xkt.repo.borgbase.com/./repo"
-          ];
-        };
-        storage = {
-          encryption_passphrase = "\${PHOTOPRISM_BORG_PASSPHRASE}";
-          compression = "zstd";
-        };
-        retention = {
-          keep_daily = 7;
-          keep_weekly = 4;
-          keep_monthly = 6;
-        };
+        source_directories = [
+          "/persist/docker/photoprism"
+        ];
+        repositories = [
+          { path="ssh://bln02xkt@bln02xkt.repo.borgbase.com/./repo"; label="borgbase"; }
+        ];
+        encryption_passphrase = "\${PHOTOPRISM_BORG_PASSPHRASE}";
+        compression = "zstd";
+        keep_daily = 7;
+        keep_weekly = 4;
+        keep_monthly = 6;
       };
       filebrowser = {
-        location = {
-          source_directories = [
-            "/persist/docker/filebrowser"
-          ];
-          repositories = [
-            "ssh://v5zl57p2@v5zl57p2.repo.borgbase.com/./repo"
-          ];
-        };
-        storage = {
-          encryption_passphrase = "\${FILEBROWSER_BORG_PASSPHRASE}";
-          compression = "zstd";
-        };
-        retention = {
-          keep_daily = 7;
-          keep_weekly = 4;
-          keep_monthly = 6;
-        };
+        source_directories = [
+          "/persist/docker/filebrowser"
+        ];
+        repositories = [
+          { path="ssh://v5zl57p2@v5zl57p2.repo.borgbase.com/./repo"; label="borgbase"; }
+        ];
+        encryption_passphrase = "\${FILEBROWSER_BORG_PASSPHRASE}";
+        compression = "zstd";
+        keep_daily = 7;
+        keep_weekly = 4;
+        keep_monthly = 6;
       };
     };
   };
