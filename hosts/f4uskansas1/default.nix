@@ -22,6 +22,7 @@ in
       lo = {
         ipv4.addresses = [
           { address = "23.146.88.0"; prefixLength = 32; }
+          { address = "23.146.88.4"; prefixLength = 32; }
         ];
         ipv6.addresses = [
           { address = "2602:fab0:20::"; prefixLength = 128; }
