@@ -1,6 +1,9 @@
-{ config, pkgs, self, sops, ... }:
+{ config, inputs, pkgs, self, sops, ... }:
 
 {
+  disabledModules = [ "services/backup/borgmatic.nix" ];
+  imports = [ "${inputs.latest}/nixos/modules/services/backup/borgmatic.nix" ];
+
   environment.systemPackages = [ pkgs.borgbackup pkgs.borgmatic ];
 
   sops.secrets.borgmatic.sopsFile = "${self}/hosts/${config.networking.hostName}/secrets.yml";
@@ -9,15 +12,11 @@
   services.borgmatic = {
     enable = true;
     settings = {
-      storage = {
-        encryption_passphrase = "\${PASSPHRASE}";
-        compression = "zstd";
-      };
-      retention = {
-        keep_daily = 7;
-        keep_weekly = 4;
-        keep_monthly = 6;
-      };
+      encryption_passphrase = "\${PASSPHRASE}";
+      compression = "zstd";
+      keep_daily = 7;
+      keep_weekly = 4;
+      keep_monthly = 6;
     };
   };
 }
