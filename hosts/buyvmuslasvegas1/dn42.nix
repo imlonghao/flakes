@@ -20,6 +20,7 @@
       listen = 31111;
       publickey = "ffcWCDuBP3YdufFzOaiW2QeZLFG/GXg4QfbWTZ6LVz8=";
     }
+    { name = "wg0207"; listen = 20207; endpoint = "router.lax1.routedbits.com:51888"; publickey = "s4uGYMeLV30vO/Z3+c1qrg/YA1eIMRVFYUsZEGD1hH8="; asn = 4242420207; e6 = "fe80::0207"; }
     {
       name = "wg0253";
       asn = 4242420253;
