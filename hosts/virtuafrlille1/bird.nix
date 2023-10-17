@@ -2,6 +2,7 @@
 let
   generalConf = import profiles.bird.general {
     config = config;
+    ospf4 = "where net ~ 23.146.88.0/24";
   };
   kernelConf = import profiles.bird.kernel {
     src6 = "2602:fab0:27::";
