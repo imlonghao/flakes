@@ -16,7 +16,7 @@ in
     profiles.users.root
     profiles.etherguard.edge
     profiles.docker
-    "${inputs.latest}/nixos/modules/services/backup/borgmatic.nix"
+#    "${inputs.latest}/nixos/modules/services/backup/borgmatic.nix"
   ];
 
   boot.loader.grub.device = "/dev/sda";

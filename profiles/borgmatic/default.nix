@@ -2,7 +2,7 @@
 
 {
   disabledModules = [ "services/backup/borgmatic.nix" ];
-  imports = [ "${inputs.latest}/nixos/modules/services/backup/borgmatic.nix" ];
+#  imports = [ "${inputs.latest}/nixos/modules/services/backup/borgmatic.nix" ];
 
   environment.systemPackages = [ pkgs.borgbackup pkgs.borgmatic ];
 
