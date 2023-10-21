@@ -145,47 +145,43 @@ in
   # borgmatic
   systemd.services.borgmatic.path = [ pkgs.mariadb ];
   services.borgmatic.settings = {
-    location = {
-      repositories = [
-        "ssh://m0yiu24x@m0yiu24x.repo.borgbase.com/./repo"
-        "ssh://zh2646@zh2646.rsync.net/./hosthatchsgsingapore1"
-      ];
-      source_directories = [
-        "/persist/docker/bitwarden"
-        "/persist/docker/influxdb2"
-        "/persist/docker/n8n/n8n.conf"
-        "/persist/docker/traccar/traccar.xml"
-        "/persist/docker/portainer"
-        "/persist/docker/rathole"
-        "/persist/docker/thelounge"
-        "/persist/docker/traefik"
-      ];
-    };
-    hooks = {
-      mysql_databases = [
-        {
-          name = "n8n";
-          hostname = "127.0.0.1";
-          port = 13306;
-          username = "n8n";
-          password = "\${N8N_PASSWORD}";
-        }
-        {
-          name = "powerdns";
-          hostname = "127.0.0.1";
-          port = 3306;
-          username = "powerdns";
-          password = "234567";
-        }
-        {
-          name = "traccar";
-          hostname = "127.0.0.1";
-          port = 13307;
-          username = "traccar";
-          password = "\${TRACCAR_PASSWORD}";
-        }
-      ];
-    };
+    repositories = [
+      { path = "ssh://m0yiu24x@m0yiu24x.repo.borgbase.com/./repo"; label = "borgbase"; }
+      { path = "ssh://zh2646@zh2646.rsync.net/./hosthatchsgsingapore1"; label = "rsync"; }
+    ];
+    source_directories = [
+      "/persist/docker/bitwarden"
+      "/persist/docker/influxdb2"
+      "/persist/docker/n8n/n8n.conf"
+      "/persist/docker/traccar/traccar.xml"
+      "/persist/docker/portainer"
+      "/persist/docker/rathole"
+      "/persist/docker/thelounge"
+      "/persist/docker/traefik"
+    ];
+    mysql_databases = [
+      {
+        name = "n8n";
+        hostname = "127.0.0.1";
+        port = 13306;
+        username = "n8n";
+        password = "\${N8N_PASSWORD}";
+      }
+      {
+        name = "powerdns";
+        hostname = "127.0.0.1";
+        port = 3306;
+        username = "powerdns";
+        password = "234567";
+      }
+      {
+        name = "traccar";
+        hostname = "127.0.0.1";
+        port = 13307;
+        username = "traccar";
+        password = "\${TRACCAR_PASSWORD}";
+      }
+    ];
   };
 
   # Crontab
