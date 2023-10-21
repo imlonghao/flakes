@@ -16,26 +16,14 @@
       digga.inputs.home-manager.follows = "home";
       digga.inputs.deploy.follows = "deploy";
 
-      bud.url = "github:divnix/bud";
-      bud.inputs.nixpkgs.follows = "nixos";
-      bud.inputs.devshell.follows = "digga/devshell";
-
       home.url = "github:nix-community/home-manager/release-23.05";
       home.inputs.nixpkgs.follows = "nixos";
-
-      darwin.url = "github:LnL7/nix-darwin";
-      darwin.inputs.nixpkgs.follows = "nixos";
 
       deploy.url = "github:serokell/deploy-rs";
       deploy.inputs.nixpkgs.follows = "nixos";
 
       nvfetcher.url = "github:berberman/nvfetcher";
       nvfetcher.inputs.nixpkgs.follows = "nixos";
-
-      naersk.url = "github:nmattia/naersk";
-      naersk.inputs.nixpkgs.follows = "nixos";
-
-      nixos-hardware.url = "github:nixos/nixos-hardware";
 
       impermanence.url = "github:nix-community/impermanence";
 
@@ -46,10 +34,8 @@
   outputs =
     { self
     , digga
-    , bud
     , nixos
     , home
-    , nixos-hardware
     , nur
     , nvfetcher
     , deploy
@@ -96,7 +82,6 @@
               digga.nixosModules.bootstrapIso
               digga.nixosModules.nixConfig
               home.nixosModules.home-manager
-              bud.nixosModules.bud
               impermanence.nixosModules.impermanence
               sops-nix.nixosModules.sops
             ];
@@ -212,15 +197,6 @@
             hostname = "dmit-us-losangeles-1.ni.sb";
           };
         };
-
-        defaultTemplate = self.templates.bud;
-        templates.bud.path = ./.;
-        templates.bud.description = "bud template";
-
       }
-    //
-    {
-      budModules = { devos = import ./bud; };
-    }
   ;
 }
