@@ -17,7 +17,10 @@ in
         ipv4 {
           import filter {
             bgp_community.add((1299, 150));
-            bgp_large_community.add((33108, 0, 0));
+
+            bgp_community.add((21738, 349));
+            bgp_community.add((21738, 359));
+            bgp_community.add((21738, 369));
 
             bgp_large_community.add((199632, 1, 1));
             bgp_large_community.add((199632, 2, 2));
