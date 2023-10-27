@@ -88,6 +88,7 @@
       endpoint = "jp-tyo.dn42.kuu.moe:47568";
       publickey = "TNmCdvH0DuPX0xxS6DPHw/2v3ojLa5kXIT/Z4Tpx+GY=";
     }
+    { name = "wg2279"; listen = 22279; endpoint = "hkg-pop.moohric.com:21888"; publickey = "Ok3AoQIX0k/sxlOvGOJA1I+ELlAtiW9cSRTcf+i1Ikc="; asn = 4242422279; e4 = "172.23.77.200"; e6 = "fe80::abcd:200"; l4 = "172.22.68.0"; }
     {
       name = "wg2398";
       l4 = "172.22.68.3";
