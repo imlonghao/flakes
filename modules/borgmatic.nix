@@ -58,6 +58,8 @@ let
   cfgfile = settingsFormat.generate "config.yaml" cfg.settings;
 in
 {
+  disabledModules = [ "services/backup/borgmatic.nix" ];
+
   options.services.borgmatic = {
     enable = mkEnableOption (mdDoc "borgmatic");
 
