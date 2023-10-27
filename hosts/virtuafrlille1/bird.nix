@@ -37,6 +37,14 @@ in
           export all;
         };
       }
+      protocol static {
+        ipv4;
+        route 0.0.0.0/0 blackhole;
+      }
+      protocol static {
+        ipv6;
+        route ::/0 blackhole;
+      }
 
       template bgp tmpl_upstream {
         local as 199632;
@@ -83,6 +91,22 @@ in
             }
             if bgp_large_community ~ [(199632, 1, 1), (199632, 1, 5)] then accept;
           };
+        };
+      };
+
+      protocol bgp internalovh {
+        local as 199632;
+        graceful restart on;
+        neighbor 2602:feda:1bf:deaf::24 as 199632;
+        ipv4 {
+          import none;
+          export where net = 0.0.0.0/0;
+          next hop self;
+        };
+        ipv6 {
+          import where net = 2602:fab0:27:1::/64;
+          export where net = ::/0;
+          next hop self;
         };
       };
 
