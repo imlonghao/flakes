@@ -14,17 +14,11 @@ in
   }
   protocol static {
     ${route4}
-    ipv4 {
-      import all;
-      export all;
-    };
+    ipv4;
   }
   protocol static {
     ${route6}
-    ipv6 {
-      import all;
-      export all;
-    };
+    ipv6;
   }
   function is_martian_v4() {
     return net ~ [
