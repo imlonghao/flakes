@@ -9,7 +9,7 @@ in
     profiles.users.root
     profiles.etherguard.edge
     profiles.netdata
-    profiles.tuic
+    profiles.hysteria
   ];
 
   networking = {
@@ -50,5 +50,14 @@ in
 
   sops.secrets.juicity.sopsFile = ./secrets.yml;
   services.juicity.enable = true;
+
+  systemd.services.hysteria.serviceConfig = {
+    ExecStartPost = [
+      "${pkgs.iptables}/bin/iptables -t nat -A PREROUTING -i eth0 -p udp --dport 10000:20000 -j DNAT --to-source :443"
+    ];
+    ExecStopPost = [
+      "${pkgs.iptables}/bin/iptables -t nat -D PREROUTING -i eth0 -p udp --dport 10000:20000 -j DNAT --to-source :443"
+    ];
+  };
 
 }
