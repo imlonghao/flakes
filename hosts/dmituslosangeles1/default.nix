@@ -1,9 +1,6 @@
 { config, pkgs, profiles, self, ... }:
 let
   hostCertificate = pkgs.writeText "ssh_host_ed25519_key-cert.pub" "ssh-ed25519-cert-v01@openssh.com AAAAIHNzaC1lZDI1NTE5LWNlcnQtdjAxQG9wZW5zc2guY29tAAAAIJkcn7CZRV0AJS5OVOS4djzADm2NGnkhVqfcYylNI3HcAAAAIEDKHKwROvzT+PfWnMvG59cTVzMOvdI0rAGXYg7fYSEwAAAAAAAAAAAAAAACAAAAEWRtaXR1c2xvc2FuZ2VsZXMxAAAAAAAAAAAAAAAA//////////8AAAAAAAAAAAAAAAAAAABoAAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBO5G2CWEODVl6DJKYy36co6J6K12Y+OftCXUihhGpvKbKNM5/vImNTwDzAyCKrKcM8Da+1WTIJnIZM9qlLG8ZdYAAABkAAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAABJAAAAIQC8NR3rzbl4mAm13UWv3H5VYacfyE2qaMnmMsaDXAZZPwAAACAEfC/bDSLHCnvhw25KcUN32Rfz9ZwtQ+Zrayz/ffyn2Q==";
-  cronJob = pkgs.writeShellScript "cron.sh" ''
-    ${pkgs.iptables}/bin/iptables -t nat -C PREROUTING -i eth0 -p udp --dport 10000:20000 -j DNAT --to-destination :443 || ${pkgs.iptables}/bin/iptables -t nat -A PREROUTING -i eth0 -p udp --dport 10000:20000 -j DNAT --to-destination :443
-  '';
 in
 {
   imports = [
@@ -12,7 +9,7 @@ in
     profiles.users.root
     profiles.etherguard.edge
     profiles.netdata
-    profiles.hysteria
+    profiles.tuic
   ];
 
   networking = {
@@ -48,7 +45,6 @@ in
     enable = true;
     systemCronJobs = [
       "0 1 * * * root ${pkgs.git}/bin/git -C /persist/pki pull"
-      "* * * * * root ${cronJob}"
     ];
   };
 
