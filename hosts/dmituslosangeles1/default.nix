@@ -53,10 +53,10 @@ in
 
   systemd.services.hysteria.serviceConfig = {
     ExecStartPost = [
-      "${pkgs.iptables}/bin/iptables -t nat -A PREROUTING -i eth0 -p udp --dport 10000:20000 -j DNAT --to-source :443"
+      "${pkgs.iptables}/bin/iptables -t nat -A PREROUTING -i eth0 -p udp --dport 10000:20000 -j DNAT --to-destination :443"
     ];
     ExecStopPost = [
-      "${pkgs.iptables}/bin/iptables -t nat -D PREROUTING -i eth0 -p udp --dport 10000:20000 -j DNAT --to-source :443"
+      "${pkgs.iptables}/bin/iptables -t nat -D PREROUTING -i eth0 -p udp --dport 10000:20000 -j DNAT --to-destination :443"
     ];
   };
 
