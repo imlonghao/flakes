@@ -9,7 +9,7 @@
 
   services.hysteria = {
     enable = true;
-    path = config.sops.secrets."hysteria".path;
+    path = config.sops.secrets."hysteria.yaml".path;
   };
 }
 
