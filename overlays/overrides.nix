@@ -17,6 +17,7 @@ channels: final: prev: {
     autorestic
     just
     netdata
+    hysteria
     ;
 
 
