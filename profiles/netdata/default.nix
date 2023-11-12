@@ -10,6 +10,9 @@
       web = {
         mode = "none";
       };
+      logs = {
+        "severity level" = "error";
+      };
     };
     configDir = {
       "stream.conf" =  pkgs.writeText "stream.conf" ''
