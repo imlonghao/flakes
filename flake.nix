@@ -196,6 +196,9 @@
           dmituslosangeles1 = {
             hostname = "dmit-us-losangeles-1.ni.sb";
           };
+          serverfactorynleygelshoven1 = {
+            hostname = "serverfactory-nl-eygelshoven-1.ni.sb";
+          };
         };
       }
   ;
