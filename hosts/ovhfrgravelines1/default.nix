@@ -7,7 +7,10 @@ let
   '';
 in
 {
-  disabledModules = [ "services/backup/borgmatic.nix" ];
+  disabledModules = [
+    "services/backup/borgmatic.nix"
+    "services/monitoring/netdata.nix"
+  ];
 
   imports = [
     ./bird.nix
@@ -17,6 +20,7 @@ in
     profiles.etherguard.edge
     profiles.docker
 #    "${inputs.latest}/nixos/modules/services/backup/borgmatic.nix"
+    "${inputs.latest}/nixos/modules/services/monitoring/netdata.nix"
   ];
 
   boot.loader.grub.device = "/dev/sda";
@@ -136,6 +140,9 @@ in
     config = {
       web = {
         "bind to" = "100.64.88.24";
+      };
+      logs = {
+        "severity level" = "error";
       };
     };
     configDir = {
