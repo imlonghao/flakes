@@ -88,6 +88,25 @@ in
         };
       };
 
+      protocol bgp AS25759v4 from tmpl_upstream {
+        neighbor 23.150.40.88 as 25759;
+        source address 23.150.40.72;
+      };
+      protocol bgp AS25759v6 from tmpl_upstream {
+        neighbor 2602:2b7:40:64::88 as 25759;
+        source address 2602:02b7:40:64::72;
+        ipv6 {
+          import none;
+          export filter {
+            if net = 2602:fab0:20::/48 then {
+              bgp_path.prepend(199632);
+              accept;
+            }
+            if bgp_large_community ~ [(199632, 1, 1), (199632, 1, 5)] then accept;
+          };
+        };
+      };
+
     '';
   };
 }
