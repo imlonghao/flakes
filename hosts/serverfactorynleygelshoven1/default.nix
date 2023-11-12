@@ -13,7 +13,7 @@ in
   ];
 
   networking = {
-    nameservers = [ "2609::" "2a11::" ];
+    nameservers = [ "2a09::" "2a11::" ];
     dhcpcd.enable = false;
     defaultGateway = "31.41.249.1";
     defaultGateway6 = "2a07:e042::1";
