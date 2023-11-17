@@ -8,6 +8,7 @@ let
 in
 {
   imports = [
+    ./dn42.nix
     ./bird.nix
     ./hardware.nix
     profiles.mycore
@@ -16,6 +17,8 @@ in
     profiles.tuic
     profiles.etherguard.edge
     profiles.mtrsb
+    profiles.bird-lg-go
+    profiles.pingfinder
   ];
 
   networking = {
@@ -27,6 +30,15 @@ in
     };
     dhcpcd.enable = false;
     interfaces = {
+      lo = {
+        ipv4.addresses = [
+          { address = "172.22.68.0"; prefixLength = 32; }
+          { address = "172.22.68.3"; prefixLength = 32; }
+        ];
+        ipv6.addresses = [
+          { address = "fd21:5c0c:9b7e:3::"; prefixLength = 64; }
+        ];
+      };
       eth0 = {
         ipv4.addresses = [
           { address = "178.253.52.63"; prefixLength = 24; }
