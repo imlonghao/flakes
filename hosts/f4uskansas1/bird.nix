@@ -18,6 +18,7 @@ in
           import filter {
             bgp_community.add((1299, 150));
 
+            bgp_community.add((21738, 211));
             bgp_community.add((21738, 349));
             bgp_community.add((21738, 359));
             bgp_community.add((21738, 369));

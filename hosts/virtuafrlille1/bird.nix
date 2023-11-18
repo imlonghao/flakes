@@ -27,6 +27,7 @@ in
       protocol static {
         route 2602:fab0:20::/48 blackhole;
         route 2602:fab0:27::/48 blackhole;
+        route 2602:fab0:30::/44 blackhole;
         ipv6 {
           import filter {
             bgp_large_community.add((199632, 1, 1));
@@ -70,7 +71,7 @@ in
           import none;
           export filter {
             if net = 23.146.88.0/24 then {
-              bgp_community.add((35661,7001));
+              bgp_community.add((35661,7002));
               bgp_community.add((35661,7024));
               bgp_large_community.add((6695,902,137409));
             }
@@ -104,7 +105,7 @@ in
           next hop self;
         };
         ipv6 {
-          import where net = 2602:fab0:27:1::/64;
+          import where net = 2602:fab0:31:1::/64;
           export where net = ::/0;
           next hop self;
         };

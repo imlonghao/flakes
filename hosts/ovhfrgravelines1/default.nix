@@ -3,7 +3,7 @@ let
   hostCertificate = pkgs.writeText "ssh_host_ed25519_key-cert.pub" "ssh-ed25519-cert-v01@openssh.com AAAAIHNzaC1lZDI1NTE5LWNlcnQtdjAxQG9wZW5zc2guY29tAAAAIDr86PxrJ+sO4HFCG5bLVqOLADQDeT/H8iZdmxkVfVbGAAAAIDgpJ4WTwRe6op9Qf8q1ObINJxyEl5U7maKWgMX27/QvAAAAAAAAAAAAAAACAAAAEG92aGZyZ3JhdmVsaW5lczEAAAAAAAAAAAAAAAD//////////wAAAAAAAAAAAAAAAAAAAGgAAAATZWNkc2Etc2hhMi1uaXN0cDI1NgAAAAhuaXN0cDI1NgAAAEEE7kbYJYQ4NWXoMkpjLfpyjonorXZj45+0JdSKGEam8pso0zn+8iY1PAPMDIIqspwzwNr7VZMgmchkz2qUsbxl1gAAAGMAAAATZWNkc2Etc2hhMi1uaXN0cDI1NgAAAEgAAAAgTdft+ANDOJA0Qb0UifxYfYn+mdiYTKi7iXUklqkQO6kAAAAgd0wrspRMsVGSY/fNriW1lfldG+qFBXFeOdYGGL/OPUQ=";
   cronJob = pkgs.writeShellScript "199632.sh" ''
     ip rule | grep -F 23.146.88.0 || ip rule add from 23.146.88.0/24 table 199632
-    ip -6 rule | grep -F 2602:fab0:27:1::/64 || ip -6 rule add from 2602:fab0:27:1::/64 table 199632
+    ip -6 rule | grep -F 2602:fab0:31::/48 || ip -6 rule add from 2602:fab0:31::/48 table 199632
   '';
 in
 {

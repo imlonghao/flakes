@@ -19,6 +19,10 @@ in
     defaultGateway6 = "2a07:e042::1";
     interfaces = {
       lo = {
+        ipv4.addresses = [
+          { address = "23.146.88.0"; prefixLength = 32; }
+          { address = "23.146.88.7"; prefixLength = 32; }
+        ];
         ipv6.addresses = [
           { address = "2602:fab0:20::"; prefixLength = 128; }
           { address = "2602:fab0:30::"; prefixLength = 128; }

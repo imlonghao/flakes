@@ -49,7 +49,7 @@ in
           import none;
           export filter {
             if net = 23.146.88.0/24 then {
-              bgp_large_community.add((53667, 101, 174));
+              bgp_large_community.add((53667, 102, 174));
             }
             if bgp_large_community ~ [(199632, 1, 1), (199632, 1, 5)] then accept;
             if net = 23.146.88.248/29 then accept;
