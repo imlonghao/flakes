@@ -24,6 +24,9 @@ in
     };
     interfaces = {
       lo = {
+        ipv4.addresses = [
+          { address = "23.146.88.0"; prefixLength = 32; }
+        ];
         ipv6.addresses = [
           { address = "2602:fab0:20::"; prefixLength = 128; }
           { address = "2602:fab0:25::"; prefixLength = 128; }

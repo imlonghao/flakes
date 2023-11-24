@@ -18,6 +18,8 @@ in
         route 23.146.88.0/24 blackhole;
         ipv4 {
           import filter {
+            bgp_path.prepend(199632);
+            bgp_community.add((65009, 174));
             bgp_large_community.add((199632, 1, 1));
             bgp_large_community.add((199632, 2, 1));
             bgp_large_community.add((199632, 3, 528));
