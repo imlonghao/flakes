@@ -61,6 +61,7 @@ in
     bgpq4
     borgbackup
     borgmatic
+    croc
     deploy-rs
     dnsutils
     exploitdb
