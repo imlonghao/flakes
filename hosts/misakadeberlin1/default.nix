@@ -60,6 +60,10 @@ in
     ];
   };
 
+  environment.systemPackages = with pkgs; [
+    docker-compose
+  ];
+
   # OpenSSH
   services.openssh.extraConfig = ''
     HostCertificate = ${hostCertificate}
@@ -83,5 +87,11 @@ in
   services.etherguard-edge = {
     ipv4 = "100.64.88.23/24";
     ipv6 = "2602:feda:1bf:deaf::23/64";
+  };
+
+  # Docker
+  virtualisation.docker.enable = true;
+  virtualisation.docker.daemon.settings = {
+    userland-proxy = false;
   };
 }
