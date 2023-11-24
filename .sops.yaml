@@ -27,6 +27,7 @@ keys:
   - &vps_f4uskansas1 age1hsukvd00p3k8mt9cmlau5fc4tjfrwhwhxx8la3h9lad5k5ga0e2qc8t7y8
   - &vps_dmituslosangeles1 age1mxrjyaswxznnvfa8m6hv0eewge6nvedst5nl9wml4ehww9kgjvqsqugpsz
   - &vps_serverfactorynleygelshoven1 age1ds6c4dvtksgzmrsv7xpgn397xjjvs03zhta3vc9ta3uhygauz9dsdq0az6
+  - &vps_subledkcopenhagen1 age168cdfs92qtd9mqwej3p38h8539jaly8p62ml2pla8nqwsvlfrsfs7aa0jh
 creation_rules:
   - path_regex: secrets/shadow.yml$
     key_groups:
@@ -57,6 +58,7 @@ creation_rules:
       - *vps_f4uskansas1
       - *vps_dmituslosangeles1
       - *vps_serverfactorynleygelshoven1
+      - *vps_subledkcopenhagen1
   - path_regex: secrets/k3s.yml$
     key_groups:
     - pgp:
@@ -234,3 +236,9 @@ creation_rules:
           - *me_canokey
         age:
           - *vps_serverfactorynleygelshoven1
+  - path_regex: hosts/subledkcopenhagen1/secrets.yml$
+    key_groups:
+      - pgp:
+          - *me_canokey
+        age:
+          - *vps_subledkcopenhagen1

@@ -199,6 +199,9 @@
           serverfactorynleygelshoven1 = {
             hostname = "serverfactory-nl-eygelshoven-1.ni.sb";
           };
+          subledkcopenhagen1 = {
+            hostname = "suble-dk-copenhagen-1.ni.sb";
+          };
         };
       }
   ;
