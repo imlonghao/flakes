@@ -40,7 +40,7 @@ in
           { address = "10.200.10.2"; prefixLength = 24; }
         ];
         ipv6.addresses = [
-          { address = "fd00:B990:19:96:32::1"; prefixLength = 64; }
+          { address = "fd00:19:96:32::1"; prefixLength = 64; }
         ];
       };
       eth2 = {

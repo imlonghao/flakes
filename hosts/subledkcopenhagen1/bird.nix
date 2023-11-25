@@ -97,7 +97,7 @@ in
         password "iIu4fxPEpwpRK4sG";
       };
       protocol bgp AS199545v6 from tmpl_upstream {
-        neighbor fd00:B990:19:96:32::a as 199545;
+        neighbor fd00:19:96:32::a as 199545;
         password "iIu4fxPEpwpRK4sG";
       };
 
