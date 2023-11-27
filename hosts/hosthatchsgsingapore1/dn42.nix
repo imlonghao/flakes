@@ -12,6 +12,7 @@
     { name = "wg1588"; listen = 21588; endpoint = "sg-sin01.dn42.tech9.io:59771"; publickey = "4qLIJ9zpc/Xgvy+uo90rGso75cSrT2F5tBEv+6aqDkY="; asn = 4242421588; ipv6 = "fe80::100/64"; e4 = "172.20.16.142"; e6 = "fe80::1588"; l4 = "172.22.68.2"; }
     { name = "wg2225"; listen = 22225; endpoint = "dn42-sg.maraun.de:21888"; publickey = "rWTIK93+XJaP4sRvrk1gqXxAZgkz6y/axLC4mjuay1I="; asn = 4242422225; e6 = "fe80::2225"; }
     { name = "wg2237"; listen = 22237; endpoint = "sg-sin01.dn42.munsternet.eu:21888"; publickey = "09m8ilgZ/9jQvVgsGwu2ceR8u6gKAsd+VxH8AzduOHk="; asn = 4242422237; e6 = "fe80::42:2237"; }
+    { name = "wg2246"; listen = 22246; endpoint = "sin05.dn42.ventilaar.net:31888"; publickey = "+VyvdteLe/IRArhjFhqszJdKVDMkJWrbbINEaL7WGyc="; asn = 4242422246; e6 = "fe80::2246"; }
     { name = "wg2271"; listen = 22271; endpoint = "185.212.61.190:21888"; publickey = "9RBImDH9X0NghJsVW6hAVQS1qaR+RXrsbVXisBAViHE="; asn = 4242422271; e6 = "fe80::2271"; }
     { name = "wg2279"; listen = 22279; endpoint = "sgp-pop.moohric.com:21888"; publickey = "0jV4YeNGuFTuhjK1zcuQmUEzDhExHRI4J5FkEOazZW0="; asn = 4242422279; e4 = "172.23.77.202"; e6 = "fe80::abcd:202"; l4 = "172.22.68.0"; }
     { name = "wg2331"; listen = 22331; endpoint = "103.83.156.22:21888"; publickey = "I5yRgHFY+qfkRwT6UpVBsUIiA5hmEOv1cU2licfrokw="; asn = 4242422331; e6 = "fe80::2331"; }
