@@ -53,6 +53,7 @@
       endpoint = "us-west1.nodes.huajinet.org:21888";
       publickey = "Y13v0Xzf6zJQGtL2qJSwVyLNSxipYoGpq4y/5aU7omg=";
     }
+    { name = "wg0585"; listen = 20585; endpoint = "de1.dn42.atolm.net:21888"; publickey = "r5u1s5OY8ISJqv7oc1ZCA7RXMrJ/UOMgFdFVZ7qaPi4="; asn = 4242420585; e6 = "fe80::585"; }
     {
       name = "wg0826";
       e4 = "172.23.196.0";
