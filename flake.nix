@@ -202,6 +202,9 @@
           subledkcopenhagen1 = {
             hostname = "suble-dk-copenhagen-1.ni.sb";
           };
+          xentainusdallas1 = {
+            hostname = "xentain-us-dallas-1.ni.sb"
+          };
         };
       }
   ;
