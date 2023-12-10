@@ -1,7 +1,7 @@
 { sources, buildGoModule, lib, pkgs, makeWrapper }:
 
 buildGoModule rec {
-  inherit (sources.mtrsb) pname version src vendorSha256;
+  inherit (sources.mtrsb) pname version src vendorHash;
   subPackages = [ "cmd/worker" ];
   ldflags = [ "-s" "-w" "-X main.Version=${version}" ];
   nativeBuildInputs = [ makeWrapper ];

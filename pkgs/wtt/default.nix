@@ -1,7 +1,7 @@
 { sources, buildGoModule, lib, pkgs }:
 
 buildGoModule rec {
-  inherit (sources.wtt) pname version src vendorSha256;
+  inherit (sources.wtt) pname version src vendorHash;
   buildInputs = [ pkgs.libpcap ];
   meta = with lib; {
     description = "traffic monitor";

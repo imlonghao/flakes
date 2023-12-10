@@ -104,7 +104,7 @@
         "extract": null,
         "name": "mtrsb",
         "passthru": {
-            "vendorSha256": "sha256-3yq89cSPJ/OxLPK2J2R33xn0ItLYkrs05hSh9uVXMA8="
+            "vendorHash": "sha256-3yq89cSPJ/OxLPK2J2R33xn0ItLYkrs05hSh9uVXMA8="
         },
         "pinned": false,
         "src": {
@@ -165,7 +165,7 @@
         "extract": null,
         "name": "rait",
         "passthru": {
-            "vendorSha256": "sha256-T/ufC4mEXRBKgsmIk8jSCQva5Td0rnFHx3UIVV+t08k="
+            "vendorHash": "sha256-T/ufC4mEXRBKgsmIk8jSCQva5Td0rnFHx3UIVV+t08k="
         },
         "pinned": false,
         "src": {
@@ -186,7 +186,7 @@
         "extract": null,
         "name": "wesher",
         "passthru": {
-            "vendorSha256": "sha256-QoIwp475/+QDYY65TG4DaFH5wbM5eQGREuIJCbBLFy0="
+            "vendorHash": "sha256-QoIwp475/+QDYY65TG4DaFH5wbM5eQGREuIJCbBLFy0="
         },
         "pinned": false,
         "src": {
@@ -208,7 +208,7 @@
         "extract": null,
         "name": "wtt",
         "passthru": {
-            "vendorSha256": "sha256-9ZR+qTCz5b+7wEQDlmniQmfiHhcdt36tmLv/7VYzcLA="
+            "vendorHash": "sha256-9ZR+qTCz5b+7wEQDlmniQmfiHhcdt36tmLv/7VYzcLA="
         },
         "pinned": false,
         "src": {

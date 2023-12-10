@@ -6,7 +6,7 @@ fetch.github = "mlvzk/manix"
 [rait]
 src.git = "https://gitlab.com/NickCao/RAIT"
 fetch.git = "https://gitlab.com/NickCao/RAIT"
-passthru = { vendorSha256 = "sha256-T/ufC4mEXRBKgsmIk8jSCQva5Td0rnFHx3UIVV+t08k=" }
+passthru = { vendorHash = "sha256-T/ufC4mEXRBKgsmIk8jSCQva5Td0rnFHx3UIVV+t08k=" }
 
 [babeld]
 src.branch = "4via6"
@@ -29,7 +29,7 @@ fetch.github = "tobbez/deluge_exporter"
 [wesher]
 src.git = "https://github.com/costela/wesher"
 fetch.github = "costela/wesher"
-passthru = { vendorSha256 = "sha256-QoIwp475/+QDYY65TG4DaFH5wbM5eQGREuIJCbBLFy0="}
+passthru = { vendorHash = "sha256-QoIwp475/+QDYY65TG4DaFH5wbM5eQGREuIJCbBLFy0="}
 
 [mybird]
 src.git = "https://github.com/tohojo/bird"
@@ -39,12 +39,12 @@ fetch.github = "tohojo/bird"
 [wtt]
 src.git = "https://git.esd.cc/imlonghao/WatchTheTraffic"
 fetch.git = "https://git.esd.cc/imlonghao/WatchTheTraffic"
-passthru = { vendorSha256 = "sha256-9ZR+qTCz5b+7wEQDlmniQmfiHhcdt36tmLv/7VYzcLA=" }
+passthru = { vendorHash = "sha256-9ZR+qTCz5b+7wEQDlmniQmfiHhcdt36tmLv/7VYzcLA=" }
 
 [mtrsb]
 src.git = "https://git.esd.cc/imlonghao/mtr.sb"
 fetch.git = "https://git.esd.cc/imlonghao/mtr.sb"
-passthru = { vendorSha256 = "sha256-3yq89cSPJ/OxLPK2J2R33xn0ItLYkrs05hSh9uVXMA8=" }
+passthru = { vendorHash = "sha256-3yq89cSPJ/OxLPK2J2R33xn0ItLYkrs05hSh9uVXMA8=" }
 
 [chrony_exporter]
 src.git = "https://git.esd.cc/imlonghao/prometheus-chrony-exporter"

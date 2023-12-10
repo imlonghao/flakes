@@ -73,7 +73,7 @@
       leaveDotGit = false;
       sha256 = "sha256-lhGqnTCXvfnhMzbPDVbiA+TxAOeqvdITrU6Cr/HGn8c=";
     };
-    vendorSha256 = "sha256-3yq89cSPJ/OxLPK2J2R33xn0ItLYkrs05hSh9uVXMA8=";
+    vendorHash = "sha256-3yq89cSPJ/OxLPK2J2R33xn0ItLYkrs05hSh9uVXMA8=";
     date = "2023-07-14";
   };
   mybird = {
@@ -110,7 +110,7 @@
       leaveDotGit = false;
       sha256 = "sha256-6Y0s5/HUmWrZA6QmV5wYjB1M0Ab/jHM3TSruRpMRwtA=";
     };
-    vendorSha256 = "sha256-T/ufC4mEXRBKgsmIk8jSCQva5Td0rnFHx3UIVV+t08k=";
+    vendorHash = "sha256-T/ufC4mEXRBKgsmIk8jSCQva5Td0rnFHx3UIVV+t08k=";
     date = "2022-10-07";
   };
   wesher = {
@@ -123,7 +123,7 @@
       fetchSubmodules = false;
       sha256 = "sha256-mI/DisH4F2+0nYfzJjspQlnfrAqswH4vVuW1m/sw23c=";
     };
-    vendorSha256 = "sha256-QoIwp475/+QDYY65TG4DaFH5wbM5eQGREuIJCbBLFy0=";
+    vendorHash = "sha256-QoIwp475/+QDYY65TG4DaFH5wbM5eQGREuIJCbBLFy0=";
     date = "2023-06-26";
   };
   wtt = {
@@ -137,7 +137,7 @@
       leaveDotGit = false;
       sha256 = "sha256-2gbZ1eX6MV1PlrkifQObz030Qubxw9F6rS+CnjKTpok=";
     };
-    vendorSha256 = "sha256-9ZR+qTCz5b+7wEQDlmniQmfiHhcdt36tmLv/7VYzcLA=";
+    vendorHash = "sha256-9ZR+qTCz5b+7wEQDlmniQmfiHhcdt36tmLv/7VYzcLA=";
     date = "2023-03-19";
   };
 }
