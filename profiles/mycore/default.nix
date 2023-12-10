@@ -73,7 +73,6 @@ in
   };
   services.chrony = {
     enable = true;
-    extraConfig = "rtcsync";
   };
   services.vnstat.enable = true;
 
