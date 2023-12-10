@@ -1,9 +1,6 @@
 { pkgs, ... }:
 let
-  trustedUserCAKeys = pkgs.writeText "user_ca.pub" '''
-    ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBO5G2CWEODVl6DJKYy36co6J6K12Y+OftCXUihhGpvKbKNM5/vImNTwDzAyCKrKcM8Da+1WTIJnIZM9qlLG8ZdY=
-    ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBCRbFsPcCoFmDEXeflbVOboRpFKG69mOS8gtrohxWuewuc8bUgUFpgPDedbN77eKHdEDnnGec8Q9Yco5LpUu6eY=
-  '';
+  trustedUserCAKeys = pkgs.writeText "user_ca.pub" "ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBCRbFsPcCoFmDEXeflbVOboRpFKG69mOS8gtrohxWuewuc8bUgUFpgPDedbN77eKHdEDnnGec8Q9Yco5LpUu6eY=";
 in
 {
   imports = [ ../cachix ];
@@ -58,7 +55,7 @@ in
     enable = true;
     settings.PasswordAuthentication = false;
     extraConfig = ''
-      TrustedUserCAKeys = ${trustedUserCAKeys}
+      TrustedUserCAKeys ${trustedUserCAKeys}
     '';
     knownHosts.ca = {
       publicKey = "ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBO5G2CWEODVl6DJKYy36co6J6K12Y+OftCXUihhGpvKbKNM5/vImNTwDzAyCKrKcM8Da+1WTIJnIZM9qlLG8ZdY=";
