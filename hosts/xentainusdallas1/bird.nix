@@ -18,6 +18,8 @@ in
         route 23.146.88.0/24 blackhole;
         ipv4 {
           import filter {
+            bgp_path.prepend(199632);
+            bgp_path.prepend(199632);
             bgp_large_community.add((199632, 1, 1));
             bgp_large_community.add((199632, 2, 2));
             bgp_large_community.add((199632, 3, 840));
@@ -76,6 +78,14 @@ in
         neighbor 2602:fa11:40::1 as 15353;
         password "8wqY5P6H";
         multihop 2;
+        ipv6 {
+          export filter {
+            if net = 2602:fab0:20::/48 then {
+              bgp_path.prepend(199632);
+            }
+            if bgp_large_community ~ [(199632, 1, 1), (199632, 1, 5)] then accept;
+          };
+        };
       };
 
     '';
