@@ -3,7 +3,7 @@ let
   generalConf = import profiles.bird.general {
     config = config;
     ospf4 = "where net ~ 23.146.88.0/24";
-    ospf6 = "where net = 2602:fab0:40::/48";
+    ospf6 = "where net = 2602:fab0:40::/48 || net = 2602:fab0:41::/48";
   };
   kernelConf = import profiles.bird.kernel {
     src4 = "23.26.226.82";
@@ -33,6 +33,7 @@ in
         route 2602:fab0:20::/48 blackhole;
         route 2602:fab0:40::/44 blackhole;
         route 2602:fab0:40::/48 blackhole;
+        route 2602:fab0:41::/48 via 2602:feda:1bf:deaf::39;
         ipv6 {
           import filter {
             bgp_large_community.add((199632, 1, 1));
