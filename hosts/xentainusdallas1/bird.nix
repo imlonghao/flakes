@@ -49,23 +49,11 @@ in
         local as 199632;
         graceful restart on;
         ipv4 {
-          import filter {
-            bgp_large_community.add((199632, 1, 2));
-            bgp_large_community.add((199632, 2, 2));
-            bgp_large_community.add((199632, 3, 840));
-            bgp_large_community.add((199632, 4, 40));
-            accept;
-          };
+          import none;
           export where bgp_large_community ~ [(199632, 1, 1), (199632, 1, 5)];
         };
         ipv6 {
-          import filter {
-            bgp_large_community.add((199632, 1, 2));
-            bgp_large_community.add((199632, 2, 2));
-            bgp_large_community.add((199632, 3, 840));
-            bgp_large_community.add((199632, 4, 40));
-            accept;
-          };
+          import none;
           export where bgp_large_community ~ [(199632, 1, 1), (199632, 1, 5)];
         };
       }
