@@ -55,6 +55,7 @@ in
   # OpenSSH
   services.openssh.extraConfig = ''
     HostCertificate = ${hostCertificate}
+    HostCertificate = /persist/ssh/step-cert.pub
   '';
 
   environment.systemPackages = with pkgs; [
