@@ -6,6 +6,7 @@ let
     ospf6 = "where net = 2602:fab0:32::/48";
   };
   kernelConf = import profiles.bird.kernel {
+    src4 = "89.23.86.39";
     src6 = "2602:fab0:32::";
   };
 in
@@ -40,6 +41,16 @@ in
           };
           export all;
         };
+      }
+
+      protocol static {
+        ipv4;
+        route 0.0.0.0/1 via 10.200.10.1;
+        route 128.0.0.0/1 via 10.200.10.1;
+      }
+      protocol static {
+        ipv6;
+        route 2000::/3 via fd00:19:96:32::a;
       }
 
       template bgp tmpl_upstream {
@@ -103,6 +114,22 @@ in
 
       protocol bgp NorthIX from tmpl_rs {
         neighbor 2001:67c:bec:c7::111 as 199545;
+      };
+
+      protocol bgp internalovh {
+        local as 199632;
+        graceful restart on;
+        neighbor 2602:feda:1bf:deaf::24 as 199632;
+        ipv4 {
+          import none;
+          export where net = 0.0.0.0/0;
+          next hop self;
+        };
+        ipv6 {
+          import where net = 2602:fab0:31:1::/64;
+          export where net = ::/0;
+          next hop self;
+        };
       };
 
     '';
