@@ -22,7 +22,7 @@ in
     };
   };
 
-  system.stateVersion = "22.11";
+  system.stateVersion = "23.11";
 
   boot.tmp.cleanOnBoot = true;
   boot.kernel.sysctl = {
