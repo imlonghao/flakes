@@ -15,6 +15,7 @@
       digga.inputs.nixlib.follows = "nixos";
       digga.inputs.home-manager.follows = "home";
       digga.inputs.deploy.follows = "deploy";
+      digga.inputs.flake-utils-plus.follows = "flake-utils-plus";
 
       home.url = "github:nix-community/home-manager/release-23.11";
       home.inputs.nixpkgs.follows = "nixos";
@@ -29,6 +30,8 @@
 
       sops-nix.url = github:Mic92/sops-nix;
       sops-nix.inputs.nixpkgs.follows = "nixos";
+
+      flake-utils-plus.url = "github:gytis-ivaskevicius/flake-utils-plus";
     };
 
   outputs =
