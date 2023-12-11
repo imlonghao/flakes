@@ -63,7 +63,7 @@ in
       certAuthority = true;
     };
     knownHosts.step-ca = {
-      publicKey = "ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBCRbFsPcCoFmDEXeflbVOboRpFKG69mOS8gtrohxWuewuc8bUgUFpgPDedbN77eKHdEDnnGec8Q9Yco5LpUu6eY=";
+      publicKey = "ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBH0r5oq3zgEQkOWsN0q8Y9Q451cT0PVp3rTJw14B4QuHLmULYfAfjXUa/ve3EtIFetGefyiDUJa2r60Cd5gBOM4=";
       hostNames = [ "*" ];
       certAuthority = true;
     };
