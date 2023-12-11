@@ -1,7 +1,4 @@
 { config, pkgs, profiles, self, ... }:
-let
-  hostCertificate = pkgs.writeText "ssh_host_ed25519_key-cert.pub" "ssh-ed25519-cert-v01@openssh.com AAAAIHNzaC1lZDI1NTE5LWNlcnQtdjAxQG9wZW5zc2guY29tAAAAIARixcTHznN/ZmM0VhhztMv7e6hJYAn3/wSN2p2nu/1xAAAAIMZOVGdZosYmH/UC7TLarpEi077Ij7Vac5KvOqXvhlUfAAAAAAAAAAAAAAACAAAAEHhlbnRhaW51c2RhbGxhczEAAAAAAAAAAAAAAAD//////////wAAAAAAAAAAAAAAAAAAAGgAAAATZWNkc2Etc2hhMi1uaXN0cDI1NgAAAAhuaXN0cDI1NgAAAEEE7kbYJYQ4NWXoMkpjLfpyjonorXZj45+0JdSKGEam8pso0zn+8iY1PAPMDIIqspwzwNr7VZMgmchkz2qUsbxl1gAAAGMAAAATZWNkc2Etc2hhMi1uaXN0cDI1NgAAAEgAAAAgD0QwnApYdl6aQGpKUrmizu3/UFwjIS1Ytj4/7QstnrUAAAAgQXfJ6sV7jeUaAh5Pf8F/U+1rD1uosGdYi/+rODXRL5Q=";
-in
 {
   imports = [
     ./bird.nix
@@ -10,6 +7,7 @@ in
     profiles.users.root
     profiles.etherguard.edge
     profiles.netdata
+    profiles.rsshc
   ];
 
   networking = {
@@ -46,10 +44,5 @@ in
     ipv4 = "100.64.88.40/24";
     ipv6 = "2602:feda:1bf:deaf::40/64";
   };
-
-  # OpenSSH
-  services.openssh.extraConfig = ''
-    HostCertificate = ${hostCertificate}
-  '';
 
 }

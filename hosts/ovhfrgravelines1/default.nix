@@ -18,6 +18,7 @@ in
     profiles.users.root
     profiles.etherguard.edge
     profiles.docker
+    profiles.rsshc
 #    "${inputs.latest}/nixos/modules/services/backup/borgmatic.nix"
     "${inputs.latest}/nixos/modules/services/monitoring/netdata.nix"
   ];
@@ -51,11 +52,6 @@ in
     };
   };
 
-  # OpenSSH
-  services.openssh.extraConfig = ''
-    HostCertificate /persist/etc/ssh/step-cert.pub
-  '';
-
   environment.systemPackages = with pkgs; [
     bgpq4
     borgbackup
@@ -84,6 +80,7 @@ in
     rclone
     ripgrep
     socat
+    step-cli
     tmux
     tree
     virt-manager
