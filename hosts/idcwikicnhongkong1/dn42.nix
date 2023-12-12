@@ -88,7 +88,6 @@
       endpoint = "jp-tyo.dn42.kuu.moe:47568";
       publickey = "TNmCdvH0DuPX0xxS6DPHw/2v3ojLa5kXIT/Z4Tpx+GY=";
     }
-    { name = "wg2279"; listen = 22279; endpoint = "hkg-pop.moohric.com:21888"; publickey = "Ok3AoQIX0k/sxlOvGOJA1I+ELlAtiW9cSRTcf+i1Ikc="; asn = 4242422279; e4 = "172.23.77.200"; e6 = "fe80::abcd:200"; l4 = "172.22.68.0"; }
     {
       name = "wg2398";
       l4 = "172.22.68.3";
@@ -156,6 +155,7 @@
       publickey = "nQ/5+M6MGsGJPWLQtEKBm8d1IzKZZZvIsOeTywhsH3Q=";
       presharedkey = "4MLgxuLpGDo/KWf01lLJnlg6etT+xDz+OpoqvVjmHEc=";
     }
+    { name = "wg3088"; listen = 23088; endpoint = "hk1-hk.dn42.6700.cc:21888"; publickey = "rBTH+JyZB0X/DkwHByrCjCojxBKr/kEOm1dTAFGHR1w="; asn = 4242423088; ipv6 = "fe80::abcd/64"; e6 = "fe80::3088:192"; }
     {
       name = "wg3299";
       asn = 4242423299;
