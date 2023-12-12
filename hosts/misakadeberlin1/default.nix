@@ -1,6 +1,5 @@
 { pkgs, profiles, ... }:
 let
-  hostCertificate = pkgs.writeText "ssh_host_ed25519_key-cert.pub" "ssh-ed25519-cert-v01@openssh.com AAAAIHNzaC1lZDI1NTE5LWNlcnQtdjAxQG9wZW5zc2guY29tAAAAIOXt5Ky4HgllBx6lN2qr+0zYXeMYt5+e8SnwUlSYUYQfAAAAIF3/kKhE8t/be9VMk7RJgd9/anolFA/bksy+Hs8Kc6/rAAAAAAAAAAAAAAACAAAAD21pc2FrYWRlYmVybGluMQAAAAAAAAAAAAAAAP//////////AAAAAAAAAAAAAAAAAAAAaAAAABNlY2RzYS1zaGEyLW5pc3RwMjU2AAAACG5pc3RwMjU2AAAAQQTuRtglhDg1ZegySmMt+nKOieitdmPjn7Ql1IoYRqbymyjTOf7yJjU8A8wMgiqynDPA2vtVkyCZyGTPapSxvGXWAAAAYwAAABNlY2RzYS1zaGEyLW5pc3RwMjU2AAAASAAAACADA7ypUvCpnibnSRdLL9H/fYcxMqQMz3alEVyoamOqbwAAACAPu2XuPY7bMhWmlr1PhQ6DgS7wF1XDxFlJRTIBE4iq8w==";
   cronJob = pkgs.writeShellScript "cron.sh" ''
     # GoEdge
     /persist/edge-admin/bin/edge-admin start
@@ -14,6 +13,7 @@ in
     profiles.users.root
     profiles.etherguard.edge
     profiles.mtrsb
+    profiles.rsshc
   ];
 
   boot.loader.grub.device = "/dev/vda";
@@ -63,11 +63,6 @@ in
   environment.systemPackages = with pkgs; [
     docker-compose
   ];
-
-  # OpenSSH
-  services.openssh.extraConfig = ''
-    HostCertificate = ${hostCertificate}
-  '';
 
   # Crontab
   services.cron = {

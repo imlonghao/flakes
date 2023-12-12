@@ -1,7 +1,4 @@
-{ config, pkgs, profiles, self, ... }:
-let
-  hostCertificate = pkgs.writeText "ssh_host_ed25519_key-cert.pub" "ssh-ed25519-cert-v01@openssh.com AAAAIHNzaC1lZDI1NTE5LWNlcnQtdjAxQG9wZW5zc2guY29tAAAAIIZOj/6u0CQVBU6+HNw2RBWbb5W8HvjtR1MYZVwqteNnAAAAIIz2WhGVkd8EOU6fFSQMfoTdIn0bIDWkZVZOGvLBVdoZAAAAAAAAAAAAAAACAAAAC2Y0dXNrYW5zYXMxAAAAAAAAAAAAAAAA//////////8AAAAAAAAAAAAAAAAAAABoAAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBO5G2CWEODVl6DJKYy36co6J6K12Y+OftCXUihhGpvKbKNM5/vImNTwDzAyCKrKcM8Da+1WTIJnIZM9qlLG8ZdYAAABkAAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAABJAAAAIQD/HlG/sQUiTI7YO6Ja+7bTDn7tl8irnTkE6wDAkv3QtwAAACBfiBBI0OB8f9XBpopvydp2iHmVRy9kBUis1E3lfre7Hg==";
-in
+{ config, pkgs, profiles, ... }:
 {
   imports = [
     ./hardware.nix
@@ -11,6 +8,7 @@ in
     profiles.etherguard.edge
     profiles.mtrsb
     profiles.netdata
+    profiles.rsshc
   ];
 
   networking = {
@@ -46,11 +44,6 @@ in
     ipv4 = "100.64.88.35/24";
     ipv6 = "2602:feda:1bf:deaf::35/64";
   };
-
-  # OpenSSH
-  services.openssh.extraConfig = ''
-    HostCertificate = ${hostCertificate}
-  '';
 
   # chrony
   services.chrony = {

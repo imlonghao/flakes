@@ -1,6 +1,5 @@
 { pkgs, profiles, ... }:
 let
-  hostCertificate = pkgs.writeText "ssh_host_ed25519_key-cert.pub" "ssh-ed25519-cert-v01@openssh.com AAAAIHNzaC1lZDI1NTE5LWNlcnQtdjAxQG9wZW5zc2guY29tAAAAIFES/8d8ljwk6rj7j/kR5MJIHBnCXm3/jm6MQx2/Wn0YAAAAIDY1j0nEaXQ1i0FgVL8B5ZGWWNKWV5YoUIfpPEK9qUmvAAAAAAAAAAAAAAACAAAAEmlkY3dpa2ljbmhvbmdrb25nMQAAAAAAAAAAAAAAAP//////////AAAAAAAAAAAAAAAAAAAAaAAAABNlY2RzYS1zaGEyLW5pc3RwMjU2AAAACG5pc3RwMjU2AAAAQQTuRtglhDg1ZegySmMt+nKOieitdmPjn7Ql1IoYRqbymyjTOf7yJjU8A8wMgiqynDPA2vtVkyCZyGTPapSxvGXWAAAAYwAAABNlY2RzYS1zaGEyLW5pc3RwMjU2AAAASAAAACAL1Jl9tRsF8+Lm99C9x9XBGM/CuIqxKgGrYByKc+pcUAAAACB24ERHoY1YeaJgi2APAiRrGTZ0EsP1j7zAxpnyPb8ZdA==";
   cronJob = pkgs.writeShellScript "cron.sh" ''
     # GoEdge
     /persist/edge-node/bin/edge-node start
@@ -19,6 +18,7 @@ in
     profiles.mtrsb
     profiles.bird-lg-go
     profiles.pingfinder
+    profiles.rsshc
   ];
 
   networking = {
@@ -49,11 +49,6 @@ in
       };
     };
   };
-
-  # OpenSSH
-  services.openssh.extraConfig = ''
-    HostCertificate = ${hostCertificate}
-  '';
 
   # Crontab
   services.cron = {

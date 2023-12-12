@@ -12,4 +12,5 @@ fi
 
 ssh-keyscan "$target" | grep ed25519 | awk '{printf "%s %s", $2, $3}' > "$MYTMPDIR/ssh_host_ed25519_key.pub"
 step ssh certificate --host --sign "$target" "$MYTMPDIR/ssh_host_ed25519_key.pub"
+cat "$MYTMPDIR/ssh_host_ed25519_key-cert.pub"
 scp "$MYTMPDIR/ssh_host_ed25519_key-cert.pub" "$target":/persist/etc/ssh/step-cert.pub
