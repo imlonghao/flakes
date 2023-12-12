@@ -15,7 +15,6 @@
     { name = "wg2237"; listen = 22237; endpoint = "sg-sin01.dn42.munsternet.eu:21888"; publickey = "09m8ilgZ/9jQvVgsGwu2ceR8u6gKAsd+VxH8AzduOHk="; asn = 4242422237; e6 = "fe80::42:2237"; }
     { name = "wg2246"; listen = 22246; endpoint = "sin05.dn42.ventilaar.net:31888"; publickey = "+VyvdteLe/IRArhjFhqszJdKVDMkJWrbbINEaL7WGyc="; asn = 4242422246; e6 = "fe80::2246"; }
     { name = "wg2271"; listen = 22271; endpoint = "185.212.61.190:21888"; publickey = "9RBImDH9X0NghJsVW6hAVQS1qaR+RXrsbVXisBAViHE="; asn = 4242422271; e6 = "fe80::2271"; }
-    { name = "wg2279"; listen = 22279; endpoint = "sgp-pop.moohric.com:21888"; publickey = "0jV4YeNGuFTuhjK1zcuQmUEzDhExHRI4J5FkEOazZW0="; asn = 4242422279; e4 = "172.23.77.202"; e6 = "fe80::abcd:202"; l4 = "172.22.68.0"; }
     { name = "wg2331"; listen = 22331; endpoint = "103.83.156.22:21888"; publickey = "I5yRgHFY+qfkRwT6UpVBsUIiA5hmEOv1cU2licfrokw="; asn = 4242422331; e6 = "fe80::2331"; }
     { name = "wg2503"; listen = 22503; endpoint = "sg.dn42.sam1314.com:21888"; publickey = "64JddgLTLWrbxZu8/b/d7Nq8vPZJrKK9+1fMJbX78HE="; asn = 4242422503; e4 = "172.23.161.64"; e6 = "fe80::2503"; l4 = "172.22.68.0"; mpbgp = false; }
     { name = "wg2633"; listen = 22633; endpoint = "sin.eastbnd.com:21888"; publickey = "m5IfciUmvMEfDkfFQf0jD3GH0F0ChMktOSiLMlJ29wc="; asn = 4242422633; e4 = "172.23.250.34"; e6 = "fe80::2633"; l4 = "172.22.68.2"; }
