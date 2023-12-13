@@ -133,9 +133,6 @@
           hosthatchsgsingapore1 = {
             hostname = "hosthatch-sg-singapore-1.ni.sb";
           };
-          uovzcnhongkong1 = {
-            hostname = "uovz-cn-hongkong-1.ni.sb";
-          };
           buyvmuslasvegas1 = {
             hostname = "buyvm-us-lasvegas-1.ni.sb";
           };

@@ -6,7 +6,6 @@ keys:
   - &vps_hosthatchsgsingapore1 age1m7e9lwfnu8x2eele4rmflhn8s8vhcf85s4lpt5x4jgd9kyu25s3s3jn3cg
   - &vps_misakauklondon1 age1qsrtlhdmp8sfgkwux0r6frtv9z5apc38ggtgwv6n47pznf43k3zsv0ms8w
   - &vps_starrydnscnhongkong1 age1w52xml8esykwg2hgvqn625q9fa0zfz3ynvcn5tugmsqau6jpcv0sezqzut
-  - &vps_uovzcnhongkong1 age1wm8t6ajej5e7n6svsfsq0gtv69y369gauvhhqspezt77m2h2ceysr9y6pk
   - &vps_hertzdefalkenstein1 age1qdn82sandycx45gprty2504q62qxmhtfc8ztrmfq7lpsy9lkspzs4xuwkx
   - &vps_virmachustampa1 age1u3uszgtvyfy4gmsq4tk7hu06ag63rjzza9gvd9fky8kew03safnqwkkp48
   - &vps_hosthatchsestockholm1 age1x7lktd64mjxar0hahhmz4pkp3gk74vcm46tfmyvet5e2x93usyksufjrtc
@@ -41,7 +40,6 @@ creation_rules:
       - *vps_hosthatchsgsingapore1
       - *vps_misakauklondon1
       - *vps_starrydnscnhongkong1
-      - *vps_uovzcnhongkong1
       - *vps_virmachustampa1
       - *vps_hosthatchsestockholm1
       - *vps_oracledefrankfurt1
@@ -68,7 +66,6 @@ creation_rules:
       age:
       - *vps_hosthatchsgsingapore1
       - *vps_starrydnscnhongkong1
-      - *vps_uovzcnhongkong1
       - *vps_virmachustampa1
   - path_regex: secrets/vector.yml$
     key_groups:
@@ -112,12 +109,6 @@ creation_rules:
       - *me_canokey
       age:
       - *vps_starrydnscnhongkong1
-  - path_regex: hosts/uovzcnhongkong1/secrets.yml$
-    key_groups:
-    - pgp:
-      - *me_canokey
-      age:
-      - *vps_uovzcnhongkong1
   - path_regex: hosts/hertzdefalkenstein1/secrets.yml$
     key_groups:
     - pgp:
