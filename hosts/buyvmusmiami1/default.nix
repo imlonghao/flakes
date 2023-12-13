@@ -1,7 +1,4 @@
-{ config, pkgs, profiles, self, ... }:
-let
-  hostCertificate = pkgs.writeText "ssh_host_ed25519_key-cert.pub" "ssh-ed25519-cert-v01@openssh.com AAAAIHNzaC1lZDI1NTE5LWNlcnQtdjAxQG9wZW5zc2guY29tAAAAIHZyYey1LCcKRsYerHf9w2B1irnK2jNaXn2b74J3H8mqAAAAIBSOTtTAYSdlCTVNwjmE5DU6NVSPiyoPcN6Y+i6/4qFSAAAAAAAAAAAAAAACAAAADWJ1eXZtdXNtaWFtaTEAAAAAAAAAAAAAAAD//////////wAAAAAAAAAAAAAAAAAAAGgAAAATZWNkc2Etc2hhMi1uaXN0cDI1NgAAAAhuaXN0cDI1NgAAAEEE7kbYJYQ4NWXoMkpjLfpyjonorXZj45+0JdSKGEam8pso0zn+8iY1PAPMDIIqspwzwNr7VZMgmchkz2qUsbxl1gAAAGUAAAATZWNkc2Etc2hhMi1uaXN0cDI1NgAAAEoAAAAhAIS5SJ2iqDirsAHpOdVc4R1unc8s5Hjp/qkI1UzS1TRaAAAAIQD6un0t6ejrn9ztVoOwf8ou6i/woUnAChietrc12ScGyQ==";
-in
+{ config, pkgs, profiles, ... }:
 {
   imports = [
     ./hardware.nix
@@ -13,6 +10,7 @@ in
     profiles.exporter.node
     profiles.etherguard.edge
     profiles.mtrsb
+    profiles.rsshc
   ];
 
   boot.loader.grub.device = "/dev/vda";
@@ -55,11 +53,6 @@ in
     ipv4 = "100.64.88.70/24";
     ipv6 = "2602:feda:1bf:deaf::3/64";
   };
-
-  # OpenSSH
-  services.openssh.extraConfig = ''
-    HostCertificate = ${hostCertificate}
-  '';
 
   # NAT64
   nat64 = {

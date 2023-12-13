@@ -1,7 +1,4 @@
 { pkgs, profiles, ... }:
-let
-  hostCertificate = pkgs.writeText "ssh_host_ed25519_key-cert.pub" "ssh-ed25519-cert-v01@openssh.com AAAAIHNzaC1lZDI1NTE5LWNlcnQtdjAxQG9wZW5zc2guY29tAAAAILO36UxjMudDcAgQ1V/TEm2rMb7fxuhOg2T6ulm/vva2AAAAICnnJaYAhSql7Ecf0SvKJLrMiE6NFFc4OvJ457Xt3NnOAAAAAAAAAAAAAAACAAAAEGJ1eXZtdXNsYXN2ZWdhczEAAAAAAAAAAAAAAAD//////////wAAAAAAAAAAAAAAAAAAAGgAAAATZWNkc2Etc2hhMi1uaXN0cDI1NgAAAAhuaXN0cDI1NgAAAEEE7kbYJYQ4NWXoMkpjLfpyjonorXZj45+0JdSKGEam8pso0zn+8iY1PAPMDIIqspwzwNr7VZMgmchkz2qUsbxl1gAAAGUAAAATZWNkc2Etc2hhMi1uaXN0cDI1NgAAAEoAAAAhAJHjZArrKt+jB7tg0k0Q6fIArDEbTi+lGB4ZreQYvITvAAAAIQCT9NUeldc/Xu65twVJd3VRmtDcSopVPGNC02fuV3SgNA==";
-in
 {
   imports = [
     ./hardware.nix
@@ -15,6 +12,7 @@ in
     profiles.etherguard.edge
     profiles.bird-lg-go
     profiles.mtrsb
+    profiles.rsshc
   ];
 
   boot.loader.grub.device = "/dev/vda";
@@ -80,11 +78,6 @@ in
     ipv4 = "100.64.88.66/24";
     ipv6 = "2602:feda:1bf:deaf::2/64";
   };
-
-  # OpenSSH
-  services.openssh.extraConfig = ''
-    HostCertificate = ${hostCertificate}
-  '';
 
   # chrony
   services.chrony = {
