@@ -1,7 +1,4 @@
-{ config, pkgs, profiles, self, ... }:
-let
-  hostCertificate = pkgs.writeText "ssh_host_ed25519_key-cert.pub" "ssh-ed25519-cert-v01@openssh.com AAAAIHNzaC1lZDI1NTE5LWNlcnQtdjAxQG9wZW5zc2guY29tAAAAINxBkg8aE0DMS4ivYJ79mqBlQiPklHBKiJH2h8UuyVKAAAAAIFPmR7SJekBC4dtndppnnobWvXqjKLVYTqtfLW2YKN55AAAAAAAAAAAAAAACAAAAD3Zwc2RlZnJhbmtmdXJ0MQAAAAAAAAAAAAAAAP//////////AAAAAAAAAAAAAAAAAAAAaAAAABNlY2RzYS1zaGEyLW5pc3RwMjU2AAAACG5pc3RwMjU2AAAAQQTuRtglhDg1ZegySmMt+nKOieitdmPjn7Ql1IoYRqbymyjTOf7yJjU8A8wMgiqynDPA2vtVkyCZyGTPapSxvGXWAAAAZAAAABNlY2RzYS1zaGEyLW5pc3RwMjU2AAAASQAAACAYZ+H6MnIxlatIqP8xjSzySVF4apFpWgLC7lzHqXuGBgAAACEApzjM3EqLi9KuEVIO3/hY+GdPCR10xrJu+HPCXNjKiX8=";
-in
+{ config, pkgs, profiles, ... }:
 {
   imports = [
     ./hardware.nix
@@ -10,6 +7,7 @@ in
     profiles.users.root
     profiles.etherguard.edge
     profiles.mtrsb
+    profiles.rsshc
   ];
 
   boot.kernelParams = [ "net.ifnames=0" ];
@@ -53,10 +51,5 @@ in
     ipv4 = "100.64.88.28/24";
     ipv6 = "2602:feda:1bf:deaf::28/64";
   };
-
-  # OpenSSH
-  services.openssh.extraConfig = ''
-    HostCertificate = ${hostCertificate}
-  '';
 
 }

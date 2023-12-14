@@ -1,6 +1,5 @@
 { pkgs, profiles, ... }:
 let
-  hostCertificate = pkgs.writeText "ssh_host_ed25519_key-cert.pub" "ssh-ed25519-cert-v01@openssh.com AAAAIHNzaC1lZDI1NTE5LWNlcnQtdjAxQG9wZW5zc2guY29tAAAAINlOFTukyWFrgNHPdj1QQX1BypH8xF2njCrfgnMhC8oOAAAAIL7X+FLYX1M6gfSxUlZL91SHYTbFcExJSPbREgV8ZbplAAAAAAAAAAAAAAACAAAADXZwc3Vzc2Fuam9zZTEAAAAAAAAAAAAAAAD//////////wAAAAAAAAAAAAAAAAAAAGgAAAATZWNkc2Etc2hhMi1uaXN0cDI1NgAAAAhuaXN0cDI1NgAAAEEE7kbYJYQ4NWXoMkpjLfpyjonorXZj45+0JdSKGEam8pso0zn+8iY1PAPMDIIqspwzwNr7VZMgmchkz2qUsbxl1gAAAGQAAAATZWNkc2Etc2hhMi1uaXN0cDI1NgAAAEkAAAAhAL0OzIbJq53sxb7w+NpbWSrnchjxLfe5+wqURHUmoJfVAAAAIAYlMT5cr7tuLxo6010pv+zdgxzPRjcbvxccnIh1Ua3Y";
   cronJob = pkgs.writeShellScript "cron.sh" ''
     # Networking
     ip -6 rule | grep -F 2602:fab0:11::/48 || ip -6 rule add from 2602:fab0:11::/48 table 2602
@@ -15,6 +14,7 @@ in
     profiles.users.root
     profiles.etherguard.edge
     profiles.mtrsb
+    profiles.rsshc
   ];
 
   networking = {
@@ -39,11 +39,6 @@ in
       };
     };
   };
-
-  # OpenSSH
-  services.openssh.extraConfig = ''
-    HostCertificate = ${hostCertificate}
-  '';
 
   # EtherGuard
   services.etherguard-edge = {

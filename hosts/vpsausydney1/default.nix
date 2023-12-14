@@ -1,6 +1,5 @@
 { config, pkgs, profiles, ... }:
 let
-  hostCertificate = pkgs.writeText "ssh_host_ed25519_key-cert.pub" "ssh-ed25519-cert-v01@openssh.com AAAAIHNzaC1lZDI1NTE5LWNlcnQtdjAxQG9wZW5zc2guY29tAAAAIB7S04bKMDxbXjfE04+EiHiyP5E6F7+v1EDygUGZGCYZAAAAIPj+1xs73sqX0ReBy336QHxcgCe9v9chEDKjswjGyDXWAAAAAAAAAAAAAAACAAAADHZwc2F1c3lkbmV5MQAAAAAAAAAAAAAAAP//////////AAAAAAAAAAAAAAAAAAAAaAAAABNlY2RzYS1zaGEyLW5pc3RwMjU2AAAACG5pc3RwMjU2AAAAQQTuRtglhDg1ZegySmMt+nKOieitdmPjn7Ql1IoYRqbymyjTOf7yJjU8A8wMgiqynDPA2vtVkyCZyGTPapSxvGXWAAAAZQAAABNlY2RzYS1zaGEyLW5pc3RwMjU2AAAASgAAACEAyB0Z36xiuKJo51w0RIekBxmXAyuNPt6WYTXqsddWSUwAAAAhALBlc+6usdyXE5jvSCb3J0Xk6MH/A02Lu8VpcKPSp3Af";
   cronJob = pkgs.writeShellScript "cron.sh" ''
     # Networking
     ip -6 rule | grep -F 2602:fab0:26:1::/64 || ip -6 rule add from 2602:fab0:26:1::/64 table 48
@@ -25,6 +24,7 @@ in
     profiles.bird-lg-go
     profiles.tuic
     profiles.mtrsb
+    profiles.rsshc
   ];
 
   networking = {
@@ -59,11 +59,6 @@ in
     ipv4 = "100.64.88.22/24";
     ipv6 = "2602:feda:1bf:deaf::22/64";
   };
-
-  # OpenSSH
-  services.openssh.extraConfig = ''
-    HostCertificate = ${hostCertificate}
-  '';
 
   # Crontab
   services.cron = {
