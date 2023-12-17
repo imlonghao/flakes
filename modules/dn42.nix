@@ -63,6 +63,11 @@ in
         description = "local IPv4 address";
         default = null;
       };
+      options.mtu = mkOption {
+        type = types.nullOr types.int;
+        description = "mtu";
+        default = null;
+      };
     }));
     description = "internal wireguard interfaces";
     default = [ ];
@@ -72,6 +77,7 @@ in
     networking.wireguard.interfaces = listToAttrs (map
       (x: nameValuePair "${x.name}" {
         ips = [ x.ipv6 ];
+        mtu = mkIf (x.mtu != null) x.mtu;
         postSetup = mkIf (x.e4 != null) [
           "${pkgs.iproute2}/bin/ip addr add ${x.ipv4}/32 peer ${x.e4}/32 dev ${x.name}"
           "${pkgs.iproute2}/bin/ip route change ${x.e4} src ${x.l4} dev ${x.name}"
