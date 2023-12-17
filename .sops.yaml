@@ -28,6 +28,7 @@ keys:
   - &vps_serverfactorynleygelshoven1 age1ds6c4dvtksgzmrsv7xpgn397xjjvs03zhta3vc9ta3uhygauz9dsdq0az6
   - &vps_subledkcopenhagen1 age168cdfs92qtd9mqwej3p38h8539jaly8p62ml2pla8nqwsvlfrsfs7aa0jh
   - &vps_xentainusdallas1 age15tfsen4ekuh9s4l3v0rjstnc7uaeplmwuqehnd0grh5sz70h944sr32xal
+  - &vps_breezehostusdallas1 age1shcwxwjp6sysq2frdxq4zjzwwza9hzjlpv82yy8jl3g0dq9hv43qfd0lx2
 creation_rules:
   - path_regex: secrets/shadow.yml$
     key_groups:
@@ -59,6 +60,7 @@ creation_rules:
       - *vps_serverfactorynleygelshoven1
       - *vps_subledkcopenhagen1
       - *vps_xentainusdallas1
+      - *vps_breezehostusdallas1
   - path_regex: secrets/k3s.yml$
     key_groups:
     - pgp:
@@ -241,3 +243,9 @@ creation_rules:
           - *me_canokey
         age:
           - *vps_xentainusdallas1
+  - path_regex: hosts/breezehostusdallas1/secrets.yml$
+    key_groups:
+      - pgp:
+          - *me_canokey
+        age:
+          - *vps_breezehostusdallas1

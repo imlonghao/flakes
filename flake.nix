@@ -205,6 +205,9 @@
           xentainusdallas1 = {
             hostname = "xentain-us-dallas-1.ni.sb";
           };
+          breezehostusdallas1 = {
+            hostname = "pve1.ni.sb:10222";
+          };
         };
       }
   ;
