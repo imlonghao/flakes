@@ -206,7 +206,7 @@
             hostname = "xentain-us-dallas-1.ni.sb";
           };
           breezehostusdallas1 = {
-            hostname = "pve1.ni.sb";
+            hostname = "breezehost-us-dallas-1";
             sshOpts = [ "-p" "10222" ];
           };
         };
