@@ -45,7 +45,10 @@ in
           export all;
         };
       }
-
+      protocol static {
+        route 2602:fa11:40::1/128 via "ens3";
+        ipv6;
+      }
       template bgp tmpl_upstream {
         local as 199632;
         graceful restart on;
@@ -83,12 +86,13 @@ in
       };
 
       protocol bgp internalpve1 {
-        neighbor 2602:feda:1bf:deaf::40 as 199632;
+        neighbor 2602:feda:1bf:deaf::39 as 199632;
         local as 199632;
         graceful restart on;
         ipv6 {
           import none;
           export where bgp_large_community ~ [(199632, 3, 840)];
+          next hop self;
         };
       };
 
