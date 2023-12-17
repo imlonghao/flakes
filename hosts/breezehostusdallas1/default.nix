@@ -2,6 +2,7 @@
   imports = [
     ./bird.nix
     ./dn42.nix
+    ./hardware.nix
     profiles.mycore
     profiles.users.root
     profiles.pingfinder
