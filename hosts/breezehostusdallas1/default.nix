@@ -30,7 +30,6 @@
         }];
       };
       ens18 = {
-        mtu = 1476;
         ipv4.addresses = [{
           address = "100.66.0.4";
           prefixLength = 24;
