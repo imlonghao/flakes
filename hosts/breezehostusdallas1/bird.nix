@@ -15,6 +15,10 @@ in
 {
   services.bird2 = {
     enable = true;
-    config = generalConf + dn42Conf;
+    config = generalConf + dn42Conf + ''
+      protocol bgp AS4201270000 from dnpeers {
+        neighbor 2602:fab0:41::42:0127:0000 as 4201270000;
+      }
+    '';
   };
 }
