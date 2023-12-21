@@ -19,6 +19,9 @@ in
       protocol bgp AS4201270000 from dnpeers {
         neighbor 2602:fab0:41::42:0127:0000 as 4201270000;
       }
+      protocol bgp AS4242423751 from dnpeers {
+        neighbor fe80::42:4242:3751 % 'ens18' as 4242423751;
+      }
     '';
   };
 }
