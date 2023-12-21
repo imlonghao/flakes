@@ -3,7 +3,7 @@ let
   generalConf = import profiles.bird.general {
     config = config;
     route4 = ''
-      route 172.22.68.0/28 blackhole;
+      route 172.22.68.0/27 blackhole;
       route 172.22.68.4/32 blackhole;
     '';
     route6 = ''

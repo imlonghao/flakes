@@ -92,11 +92,11 @@ in
         ipv4 {
           add paths tx;
           import filter {
-            if !(is_valid_network() || net ~ [100.64.88.0/24, 172.22.68.0/28+, 44.31.42.0/24]) then reject;
+            if !(is_valid_network() || net ~ [100.64.88.0/24, 172.22.68.0/27+, 44.31.42.0/24]) then reject;
             bgp_local_pref = 100;
             accept;
           };
-          export where is_valid_network() || net ~ [100.64.88.0/24, 172.22.68.0/28+, 44.31.42.0/24];
+          export where is_valid_network() || net ~ [100.64.88.0/24, 172.22.68.0/27+, 44.31.42.0/24];
         };
         ipv6 {
           add paths tx;
