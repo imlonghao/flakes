@@ -34,10 +34,16 @@
           address = "100.66.0.4";
           prefixLength = 24;
         }];
-        ipv6.addresses = [{
-          address = "2602:fab0:41::42:4242:1888";
-          prefixLength = 64;
-        }];
+        ipv6.addresses = [
+          {
+            address = "2602:fab0:41::42:4242:1888";
+            prefixLength = 64;
+          }
+          {
+            address = "fe80::42:4242:1888";
+            prefixLength = 64;
+          }
+        ];
       };
     };
   };
@@ -47,5 +53,7 @@
     ipv4 = "100.64.88.41/24";
     ipv6 = "2602:feda:1bf:deaf::41/64";
   };
+
+  services.qemuGuest.enable = true;
 
 }
