@@ -2,6 +2,12 @@
 ''
   define DN42_REGION = ${toString region};
   define DN42_COUNTRY = ${toString country};
+  function is_self_net() {
+    return net ~ 172.22.68.0/27;
+  }
+  function is_self_net_v6() {
+    return net ~ fd21:5c0c:9b7e::/48;
+  }
   function is_valid_network() {
     return net ~ [
       172.20.0.0/14{21,29}, # dn42
@@ -53,12 +59,30 @@
     ipv4 {
       next hop self;
       import all;
-      export all;
+      export filter {
+        if !is_valid_network() then {
+          reject;
+        }
+        if is_self_net() && (source = RTS_DEVICE || source = RTS_STATIC) then {
+          bgp_community.add((64511, DN42_REGION));
+          bgp_community.add((64511, DN42_COUNTRY));
+        }
+        accept;
+      };
     };
     ipv6 {
       next hop self;
       import all;
-      export all;
+      export filter {
+        if !is_valid_network_v6() then {
+          reject;
+        }
+        if is_self_net_v6() && (source = RTS_DEVICE || source = RTS_STATIC) then {
+          bgp_community.add((64511, DN42_REGION));
+          bgp_community.add((64511, DN42_COUNTRY));
+        }
+        accept;
+      };
     };
   }
   roa4 table dn42_roa;
@@ -95,7 +119,7 @@
         if !is_valid_network() then {
           reject;
         }
-        if source = RTS_STATIC then {
+        if is_self_net() && (source = RTS_DEVICE || source = RTS_STATIC) then {
           bgp_community.add((64511, DN42_REGION));
           bgp_community.add((64511, DN42_COUNTRY));
         }
@@ -122,7 +146,7 @@
         if !is_valid_network_v6() then {
           reject;
         }
-        if source = RTS_STATIC then {
+        if is_self_net_v6() && (source = RTS_DEVICE || source = RTS_STATIC) then {
           bgp_community.add((64511, DN42_REGION));
           bgp_community.add((64511, DN42_COUNTRY));
         }
