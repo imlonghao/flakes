@@ -44,4 +44,6 @@
   sops.secrets.juicity.sopsFile = ./secrets.yml;
   services.juicity.enable = true;
 
+  services.qemuGuest.enable = true;
+
 }
