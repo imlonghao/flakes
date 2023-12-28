@@ -15,6 +15,7 @@ in
     profiles.etherguard.edge
     profiles.mtrsb
     profiles.rsshc
+    profiles.qemuGuest
   ];
 
   networking = {
