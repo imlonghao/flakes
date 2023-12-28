@@ -8,6 +8,7 @@
     profiles.etherguard.edge
     profiles.netdata
     profiles.rsshc
+    profiles.qemuGuest
   ];
 
   networking = {
