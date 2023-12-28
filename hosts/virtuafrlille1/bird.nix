@@ -62,9 +62,9 @@ in
       }
 
 
-      protocol bgp AS64661v4 from tmpl_upstream {
-        neighbor 188.214.24.166 as 64661;
-        multihop 2;
+      protocol bgp AS64661v4rs1 from tmpl_upstream {
+        neighbor 172.16.1.121 as 35661;
+        multihop 3;
         password "LTDSjU4jvMNe";
         source address 185.154.155.64;
         ipv4 {
@@ -79,9 +79,41 @@ in
           };
         };
       };
-      protocol bgp AS64661v6 from tmpl_upstream {
-        neighbor 2a07:8dc1::be:1 as 64661;
-        multihop 2;
+      protocol bgp AS64661v6rs1 from tmpl_upstream {
+        neighbor 2a0d:e680:1::b:1 as 35661;
+        multihop 3;
+        password "LTDSjU4jvMNe";
+        source address 2a07:8dc1:20:149::1;
+        ipv6 {
+          import none;
+          export filter {
+            if net = 2602:fab0:20::/48 then {
+              bgp_path.prepend(199632);
+            }
+            if bgp_large_community ~ [(199632, 1, 1), (199632, 1, 5)] then accept;
+          };
+        };
+      };
+      protocol bgp AS64661v4rs2 from tmpl_upstream {
+        neighbor 172.16.1.122 as 35661;
+        multihop 3;
+        password "LTDSjU4jvMNe";
+        source address 185.154.155.64;
+        ipv4 {
+          import none;
+          export filter {
+            if net = 23.146.88.0/24 then {
+              bgp_community.add((35661,7002));
+              bgp_community.add((35661,7024));
+              bgp_large_community.add((6695,902,137409));
+            }
+            if bgp_large_community ~ [(199632, 1, 1), (199632, 1, 5)] then accept;
+          };
+        };
+      };
+      protocol bgp AS64661v6rs2 from tmpl_upstream {
+        neighbor 2a0d:e680:1::b:2 as 35661;
+        multihop 3;
         password "LTDSjU4jvMNe";
         source address 2a07:8dc1:20:149::1;
         ipv6 {
