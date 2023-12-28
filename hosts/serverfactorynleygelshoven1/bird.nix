@@ -71,11 +71,11 @@ in
       }
 
       protocol bgp AS206075v4 from tmpl_upstream {
-        neighbor 31.41.249.1 as 206075;
+        neighbor 192.168.112.2 as 206075;
         password "3mVCWwijLn";
       };
       protocol bgp AS206075v6 from tmpl_upstream {
-        neighbor 2a07:e042::1 as 206075;
+        neighbor fd74:e849:e9bc:ee83::14 as 206075;
         password "8siTp5qsLE";
       };
 

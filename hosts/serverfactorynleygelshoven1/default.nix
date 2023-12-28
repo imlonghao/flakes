@@ -29,9 +29,11 @@
       eth0 = {
         ipv4.addresses = [
           { address = "31.41.249.39"; prefixLength = 24; }
+          { address = "192.168.112.3"; prefixLength = 31; }
         ];
         ipv6.addresses = [
           { address = "2a07:e042:1:47::1"; prefixLength = 32; }
+          { address = "fd74:e849:e9bc:ee83::15"; prefixLength = 127; }
         ];
       };
     };
