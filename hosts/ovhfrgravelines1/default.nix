@@ -134,6 +134,7 @@ in
   # netdata
   services.netdata = {
     enable = true;
+    package = pkgs.netdataCloud;
     config = {
       web = {
         "bind to" = "100.64.88.24";
