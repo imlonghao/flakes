@@ -64,6 +64,7 @@
       endpoint = "v4.la.dn42.dgy.xyz:21888";
       publickey = "IXjFALJFTr24HAhXKDsCnTRXmlc3kJHJiR4Nr44l5Uw=";
     }
+    { name = "wg0839"; listen = 20839; endpoint = "us1.dn42.letcode.shop:21888"; publickey = "nUYHVi/fEbAD/dbrsaTZx1AtPc3RaIhzpzITeNzaf1I="; asn = 4242420839; e6 = "fe80::38ad"; }
     {
       name = "wg0864";
       listen = 20864;
