@@ -30,9 +30,9 @@ in
         };
       }
       protocol static {
-        route 2602:fab0:20::/48 blackhole;
-        route 2602:fab0:30::/44 blackhole;
-        route 2602:fab0:30::/48 blackhole;
+        route 2602:fab0:20::/48 via fd74:e849:e9bc:ee83::15;
+        route 2602:fab0:30::/44 via fd74:e849:e9bc:ee83::15;
+        route 2602:fab0:30::/48 via fd74:e849:e9bc:ee83::15;
         ipv6 {
           import filter {
             bgp_large_community.add((199632, 1, 1));
