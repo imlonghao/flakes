@@ -60,7 +60,7 @@
       next hop self;
       import all;
       export filter {
-        if !is_valid_network() then {
+        if !is_valid_network() && !is_self_net() then {
           reject;
         }
         if is_self_net() && (source = RTS_DEVICE || source = RTS_STATIC) then {
@@ -74,7 +74,7 @@
       next hop self;
       import all;
       export filter {
-        if !is_valid_network_v6() then {
+        if !is_valid_network_v6() && !is_self_net_v6() then {
           reject;
         }
         if is_self_net_v6() && (source = RTS_DEVICE || source = RTS_STATIC) then {
