@@ -74,14 +74,6 @@
       publickey = "mOQs7kIucUmSDXqRHvwfUxLAFkUDg9ssH5Gqn+6oj0s=";
     }
     {
-      name = "wg0927";
-      listen = 20927;
-      asn = 4242420927;
-      e6 = "fe80::927";
-      endpoint = "lv1.dn42.liki.link:42424";
-      publickey = "CqA907Lo0J/qIPB5qRi5YcvPWK7VOG3fvjevVqKirFM=";
-    }
-    {
       name = "wg1080";
       listen = 21080;
       asn = 4242421080;
