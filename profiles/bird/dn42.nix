@@ -50,6 +50,26 @@
       };
     };
   }
+  filter dn42_filter_v4 {
+    if is_valid_network() && source ~ [RTS_STATIC, RTS_BGP] then {
+      if is_self_net() && source = RTS_STATIC then {
+        bgp_community.add((64511, DN42_REGION));
+        bgp_community.add((64511, DN42_COUNTRY));
+      }
+      accept;
+    }
+    reject;
+  }
+  filter dn42_filter_v6 {
+    if is_valid_network_v6() && source ~ [RTS_STATIC, RTS_BGP] then {
+      if is_self_net_v6() && source = RTS_STATIC then {
+        bgp_community.add((64511, DN42_REGION));
+        bgp_community.add((64511, DN42_COUNTRY));
+      }
+      accept;
+    }
+    reject;
+  }
   protocol bgp RR {
     local as 4242421888;
     neighbor internal;
@@ -59,30 +79,12 @@
     ipv4 {
       next hop self;
       import all;
-      export filter {
-        if !is_valid_network() && !is_self_net() then {
-          reject;
-        }
-        if is_self_net() && (source = RTS_DEVICE || source = RTS_STATIC) then {
-          bgp_community.add((64511, DN42_REGION));
-          bgp_community.add((64511, DN42_COUNTRY));
-        }
-        accept;
-      };
+      export filter dn42_filter_v4;
     };
     ipv6 {
       next hop self;
       import all;
-      export filter {
-        if !is_valid_network_v6() && !is_self_net_v6() then {
-          reject;
-        }
-        if is_self_net_v6() && (source = RTS_DEVICE || source = RTS_STATIC) then {
-          bgp_community.add((64511, DN42_REGION));
-          bgp_community.add((64511, DN42_COUNTRY));
-        }
-        accept;
-      };
+      export filter dn42_filter_v6;
     };
   }
   roa4 table dn42_roa;
@@ -115,16 +117,7 @@
         if (64511, DN42_COUNTRY) ~ bgp_community then bgp_local_pref = bgp_local_pref + 10;
         accept;
       };
-      export filter {
-        if !is_valid_network() then {
-          reject;
-        }
-        if is_self_net() && (source = RTS_DEVICE || source = RTS_STATIC) then {
-          bgp_community.add((64511, DN42_REGION));
-          bgp_community.add((64511, DN42_COUNTRY));
-        }
-        accept;
-      };
+      export filter dn42_filter_v4;
     };
     ipv6 {
       import keep filtered on;
@@ -142,16 +135,7 @@
         if (64511, DN42_COUNTRY) ~ bgp_community then bgp_local_pref = bgp_local_pref + 10;
         accept;
       };
-      export filter {
-        if !is_valid_network_v6() then {
-          reject;
-        }
-        if is_self_net_v6() && (source = RTS_DEVICE || source = RTS_STATIC) then {
-          bgp_community.add((64511, DN42_REGION));
-          bgp_community.add((64511, DN42_COUNTRY));
-        }
-        accept;
-      };
+      export filter dn42_filter_v6;
     };
   }
   ${builtins.concatStringsSep "\n" (lib.flip map (config.dn42) (x:
