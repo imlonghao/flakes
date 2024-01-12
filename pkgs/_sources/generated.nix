@@ -73,7 +73,7 @@
       leaveDotGit = false;
       sha256 = "sha256-7eR6+/MA9bvpL1/YOop3mAHrwf3aStcVpcD3ftMdKcY=";
     };
-    vendorHash = "sha256-3yq89cSPJ/OxLPK2J2R33xn0ItLYkrs05hSh9uVXMA8=";
+    vendorHash = "sha256-nM2aCJollBdadvzBJm1VTE5QzLL2kg6YdKVE03En9Io=";
     date = "2023-12-16";
   };
   mybird = {

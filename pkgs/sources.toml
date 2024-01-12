@@ -44,7 +44,7 @@ passthru = { vendorHash = "sha256-9ZR+qTCz5b+7wEQDlmniQmfiHhcdt36tmLv/7VYzcLA=" 
 [mtrsb]
 src.git = "https://git.esd.cc/imlonghao/mtr.sb"
 fetch.git = "https://git.esd.cc/imlonghao/mtr.sb"
-passthru = { vendorHash = "sha256-3yq89cSPJ/OxLPK2J2R33xn0ItLYkrs05hSh9uVXMA8=" }
+passthru = { vendorHash = "sha256-nM2aCJollBdadvzBJm1VTE5QzLL2kg6YdKVE03En9Io=" }
 
 [chrony_exporter]
 src.git = "https://git.esd.cc/imlonghao/prometheus-chrony-exporter"
