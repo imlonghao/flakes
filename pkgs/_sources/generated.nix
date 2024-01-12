@@ -28,27 +28,27 @@
   };
   deluge_exporter = {
     pname = "deluge_exporter";
-    version = "c8a31ede70133498b49b6ac4a1a63b57292e7b47";
+    version = "47feca92f13f210a093a879fd88871ab4329dacd";
     src = fetchFromGitHub {
       owner = "tobbez";
       repo = "deluge_exporter";
-      rev = "c8a31ede70133498b49b6ac4a1a63b57292e7b47";
+      rev = "47feca92f13f210a093a879fd88871ab4329dacd";
       fetchSubmodules = false;
-      sha256 = "sha256-Yz85DhN3g4YPP+aBX49jLCLDJfgUSAQJgowh0smVVgQ=";
+      sha256 = "sha256-FCi1dimd5MW+eFPBn/D1WoXVCRwn9LK0HzHfsv3I0Uo=";
     };
-    date = "2023-01-24";
+    date = "2023-10-21";
   };
   etherguard = {
     pname = "etherguard";
-    version = "2897388568b68bb8d8de329eecce6e64dc361e8e";
+    version = "f622f2a15b91fc54286f3d1f95d59adebab1a4f7";
     src = fetchFromGitHub {
       owner = "KusakabeSi";
       repo = "EtherGuard-VPN";
-      rev = "2897388568b68bb8d8de329eecce6e64dc361e8e";
+      rev = "f622f2a15b91fc54286f3d1f95d59adebab1a4f7";
       fetchSubmodules = false;
-      sha256 = "sha256-0EQL/0xbzovShRbUeOHyWEiGH5bi2SDiwhEe/k5g8tI=";
+      sha256 = "sha256-67ocXHf+AN3nyPt4636ZJHGRqWSjkpTiDvU5243urBw=";
     };
-    date = "2023-09-05";
+    date = "2024-01-12";
   };
   manix = {
     pname = "manix";
@@ -64,17 +64,17 @@
   };
   mtrsb = {
     pname = "mtrsb";
-    version = "adb018d24c62c3e093cf26ab51d1e67f5e01436f";
+    version = "cf6df5660779c9727a8a17cbed286a5971bed2d3";
     src = fetchgit {
       url = "https://git.esd.cc/imlonghao/mtr.sb";
-      rev = "adb018d24c62c3e093cf26ab51d1e67f5e01436f";
+      rev = "cf6df5660779c9727a8a17cbed286a5971bed2d3";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "sha256-lhGqnTCXvfnhMzbPDVbiA+TxAOeqvdITrU6Cr/HGn8c=";
+      sha256 = "sha256-7eR6+/MA9bvpL1/YOop3mAHrwf3aStcVpcD3ftMdKcY=";
     };
     vendorHash = "sha256-3yq89cSPJ/OxLPK2J2R33xn0ItLYkrs05hSh9uVXMA8=";
-    date = "2023-07-14";
+    date = "2023-12-16";
   };
   mybird = {
     pname = "mybird";
@@ -90,13 +90,13 @@
   };
   q-dns = {
     pname = "q-dns";
-    version = "v0.11.4";
+    version = "v0.19.1";
     src = fetchFromGitHub {
       owner = "natesales";
       repo = "q";
-      rev = "v0.11.4";
+      rev = "v0.19.1";
       fetchSubmodules = false;
-      sha256 = "sha256-zoIHpj1i0X5SCVhcT3bl5xxsDcvD2trEVhlIC5YnIZo=";
+      sha256 = "sha256-PNCpETT39z2As05XVUrCBlIzTi/ml/1AwmYVFGDJvGA=";
     };
   };
   rait = {
@@ -115,16 +115,16 @@
   };
   wesher = {
     pname = "wesher";
-    version = "c681651656af222561ab35c2a17b321503a28616";
+    version = "17d92b16af06de5ee6014d1e58dcc6fb71260878";
     src = fetchFromGitHub {
       owner = "costela";
       repo = "wesher";
-      rev = "c681651656af222561ab35c2a17b321503a28616";
+      rev = "17d92b16af06de5ee6014d1e58dcc6fb71260878";
       fetchSubmodules = false;
-      sha256 = "sha256-mI/DisH4F2+0nYfzJjspQlnfrAqswH4vVuW1m/sw23c=";
+      sha256 = "sha256-wzWPhS59YcCdcRFMF0j95pX1xgkGFBl8ChthZyYTgEA=";
     };
     vendorHash = "sha256-QoIwp475/+QDYY65TG4DaFH5wbM5eQGREuIJCbBLFy0=";
-    date = "2023-06-26";
+    date = "2023-12-20";
   };
   wtt = {
     pname = "wtt";
