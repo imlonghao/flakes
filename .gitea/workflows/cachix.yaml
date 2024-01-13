@@ -31,5 +31,4 @@ jobs:
           nix -Lv develop -c nix -Lv build ".#juicity"
           nix -Lv develop -c nix -Lv build ".#mtrsb"
           nix -Lv develop -c nix -Lv build ".#pingfinder"
-          nix -Lv develop -c nix -Lv build ".#q-dns"
           nix -Lv develop -c nix -Lv build ".#rait"
