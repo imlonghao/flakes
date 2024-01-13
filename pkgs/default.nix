@@ -5,7 +5,6 @@ final: prev: {
   rait = prev.callPackage ./rait { };
   pingfinder = prev.callPackage ./pingfinder { };
   etherguard = prev.callPackage ./etherguard { };
-  q-dns = prev.callPackage ./q-dns { };
   deluge_exporter = prev.callPackage ./deluge_exporter { };
   bird-lg-go = prev.callPackage ./bird-lg-go { };
   coredns-nat64-rdns = prev.callPackage ./coredns-nat64-rdns { };

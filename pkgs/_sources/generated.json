@@ -139,26 +139,6 @@
         },
         "version": "901f906ac470b318d6598c8b25156b0919f70b2a"
     },
-    "q-dns": {
-        "cargoLocks": null,
-        "date": null,
-        "extract": null,
-        "name": "q-dns",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "deepClone": false,
-            "fetchSubmodules": false,
-            "leaveDotGit": false,
-            "name": null,
-            "owner": "natesales",
-            "repo": "q",
-            "rev": "v0.19.1",
-            "sha256": "sha256-PNCpETT39z2As05XVUrCBlIzTi/ml/1AwmYVFGDJvGA=",
-            "type": "github"
-        },
-        "version": "v0.19.1"
-    },
     "rait": {
         "cargoLocks": null,
         "date": "2022-10-07",

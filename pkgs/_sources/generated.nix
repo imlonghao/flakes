@@ -88,17 +88,6 @@
     };
     date = "2023-02-26";
   };
-  q-dns = {
-    pname = "q-dns";
-    version = "v0.19.1";
-    src = fetchFromGitHub {
-      owner = "natesales";
-      repo = "q";
-      rev = "v0.19.1";
-      fetchSubmodules = false;
-      sha256 = "sha256-PNCpETT39z2As05XVUrCBlIzTi/ml/1AwmYVFGDJvGA=";
-    };
-  };
   rait = {
     pname = "rait";
     version = "278188c8bae13165aa70b6a2fbbb99101fd6f4cd";

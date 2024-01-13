@@ -76,7 +76,7 @@ in
     openssl
     openvpn
     (python3.withPackages (ps: with ps; [ requests ]))
-    q-dns
+    q
     rclone
     ripgrep
     socat
