@@ -79,12 +79,32 @@
     ipv4 {
       next hop self;
       import all;
-      export filter dn42_filter_v4;
+      export filter {
+        if is_self_net() && source ~ [RTS_STATIC, RTS_DEVICE] then {
+          bgp_community.add((64511, DN42_REGION));
+          bgp_community.add((64511, DN42_COUNTRY));
+          accept;
+        }
+        if is_valid_network() && source ~ [RTS_STATIC, RTS_BGP] then {
+          accept;
+        }
+        reject;
+      };
     };
     ipv6 {
       next hop self;
       import all;
-      export filter dn42_filter_v6;
+      export filter {
+        if is_self_net_v6() && source ~ [RTS_STATIC, RTS_DEVICE] then {
+          bgp_community.add((64511, DN42_REGION));
+          bgp_community.add((64511, DN42_COUNTRY));
+          accept;
+        }
+        if is_valid_network_v6() && source ~ [RTS_STATIC, RTS_BGP] then {
+          accept;
+        }
+        reject;
+      };
     };
   }
   roa4 table dn42_roa;
