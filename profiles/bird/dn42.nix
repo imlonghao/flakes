@@ -135,6 +135,8 @@
         if bgp_path.len = 1 then bgp_local_pref = bgp_local_pref + 10;
         if (64511, DN42_REGION) ~ bgp_community then bgp_local_pref = bgp_local_pref + 10;
         if (64511, DN42_COUNTRY) ~ bgp_community then bgp_local_pref = bgp_local_pref + 10;
+        bgp_large_community.add((4242421888, 100, DN42_REGION));
+        bgp_large_community.add((4242421888, 101, DN42_COUNTRY));
         accept;
       };
       export filter dn42_filter_v4;
@@ -153,6 +155,8 @@
         if bgp_path.len = 1 then bgp_local_pref = bgp_local_pref + 10;
         if (64511, DN42_REGION) ~ bgp_community then bgp_local_pref = bgp_local_pref + 10;
         if (64511, DN42_COUNTRY) ~ bgp_community then bgp_local_pref = bgp_local_pref + 10;
+        bgp_large_community.add((4242421888, 100, DN42_REGION));
+        bgp_large_community.add((4242421888, 101, DN42_COUNTRY));
         accept;
       };
       export filter dn42_filter_v6;
