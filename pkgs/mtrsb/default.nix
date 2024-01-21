@@ -1,4 +1,4 @@
-{ sources, buildGoModule, lib, pkgs, makeWrapper }:
+{ fetchgit, buildGoModule, lib, pkgs, makeWrapper }:
 
 buildGoModule rec {
   pname = "mtrsb";

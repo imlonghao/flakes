@@ -1,4 +1,4 @@
-{ sources, buildGoModule, fetchFromGitLab, lib }:
+{ fetchgit, buildGoModule, fetchFromGitLab, lib }:
 
 buildGoModule rec {
   pname = "rait";

@@ -1,4 +1,4 @@
-{ sources, buildGoModule, lib, pkgs }:
+{ fetchgit, buildGoModule, lib, pkgs }:
 
 buildGoModule rec {
   pname = "wtt";
