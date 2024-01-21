@@ -1,4 +1,4 @@
-{ sources, buildGoModule, lib }:
+{ fetchFromGitHub, buildGoModule, lib }:
 
 buildGoModule rec {
   pname = "etherguard";

@@ -1,4 +1,4 @@
-{ sources, lib, stdenv, pkgs }:
+{ fetchFromGitHub, lib, stdenv, pkgs }:
 
 stdenv.mkDerivation rec {
   pname = "deluge_exporter";
