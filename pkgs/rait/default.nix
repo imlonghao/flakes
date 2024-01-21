@@ -1,7 +1,17 @@
 { sources, buildGoModule, fetchFromGitLab, lib }:
 
 buildGoModule rec {
-  inherit (sources.rait) pname version src vendorHash;
+  pname = "rait";
+  version = "278188c8bae13165aa70b6a2fbbb99101fd6f4cd";
+  src = fetchgit {
+    url = "https://gitlab.com/NickCao/RAIT";
+    rev = "278188c8bae13165aa70b6a2fbbb99101fd6f4cd";
+    fetchSubmodules = false;
+    deepClone = false;
+    leaveDotGit = false;
+    sha256 = "sha256-6Y0s5/HUmWrZA6QmV5wYjB1M0Ab/jHM3TSruRpMRwtA=";
+  };
+  vendorHash = "sha256-T/ufC4mEXRBKgsmIk8jSCQva5Td0rnFHx3UIVV+t08k=";
 
   subPackages = [ "cmd/rait" ];
 

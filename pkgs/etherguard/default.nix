@@ -1,7 +1,15 @@
 { sources, buildGoModule, lib }:
 
 buildGoModule rec {
-  inherit (sources.etherguard) pname version src;
+  pname = "etherguard";
+  version = "f622f2a15b91fc54286f3d1f95d59adebab1a4f7";
+  src = fetchFromGitHub {
+    owner = "KusakabeSi";
+    repo = "EtherGuard-VPN";
+    rev = "f622f2a15b91fc54286f3d1f95d59adebab1a4f7";
+    fetchSubmodules = false;
+    sha256 = "sha256-67ocXHf+AN3nyPt4636ZJHGRqWSjkpTiDvU5243urBw=";
+  };
 
   vendorHash = "sha256-9+zpQ/AhprMMfC4Om64GfQLgms6eluTOB6DdnSTNOlk=";
 

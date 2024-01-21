@@ -23,9 +23,6 @@
       deploy.url = "github:serokell/deploy-rs";
       deploy.inputs.nixpkgs.follows = "nixos";
 
-      nvfetcher.url = "github:berberman/nvfetcher";
-      nvfetcher.inputs.nixpkgs.follows = "nixos";
-
       impermanence.url = "github:nix-community/impermanence";
 
       sops-nix.url = github:Mic92/sops-nix;
@@ -40,7 +37,6 @@
     , nixos
     , home
     , nur
-    , nvfetcher
     , deploy
     , impermanence
     , sops-nix
@@ -57,7 +53,6 @@
             imports = [ (digga.lib.importOverlays ./overlays) ];
             overlays = [
               nur.overlay
-              nvfetcher.overlays.default
               ./pkgs/default.nix
             ];
           };

@@ -72,6 +72,7 @@ in
     mosh
     ncdu
     netdata
+    nix-update
     nmap
     openssl
     openvpn

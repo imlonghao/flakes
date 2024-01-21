@@ -9,7 +9,6 @@ final: prev: {
   bird-lg-go = prev.callPackage ./bird-lg-go { };
   coredns-nat64-rdns = prev.callPackage ./coredns-nat64-rdns { };
   wesher = prev.callPackage ./wesher { };
-  mybird = prev.callPackage ./mybird { };
   wtt = prev.callPackage ./wtt { };
   mtrsb = prev.callPackage ./mtrsb { };
   chrony_exporter = prev.callPackage ./chrony_exporter { };

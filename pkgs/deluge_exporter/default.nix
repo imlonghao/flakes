@@ -1,7 +1,15 @@
 { sources, lib, stdenv, pkgs }:
 
 stdenv.mkDerivation rec {
-  inherit (sources.deluge_exporter) pname version src;
+  pname = "deluge_exporter";
+  version = "47feca92f13f210a093a879fd88871ab4329dacd";
+  src = fetchFromGitHub {
+    owner = "tobbez";
+    repo = "deluge_exporter";
+    rev = "47feca92f13f210a093a879fd88871ab4329dacd";
+    fetchSubmodules = false;
+    sha256 = "sha256-FCi1dimd5MW+eFPBn/D1WoXVCRwn9LK0HzHfsv3I0Uo=";
+  };
 
   propagatedBuildInputs = [
     (pkgs.python3.withPackages(ps: with ps; [ 
