@@ -111,7 +111,7 @@
           ];
           congestion_control = "bbr";
           tls = {
-            enabled = "true";
+            enabled = true;
             server_name = {
               _secret = "/persist/tuic.sni";
             };
