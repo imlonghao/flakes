@@ -90,4 +90,37 @@
   sops.secrets.juicity.sopsFile = ./secrets.yml;
   services.juicity.enable = true;
 
+  services.sing-box = {
+    enable = true;
+    settings = {
+      inbounds = [
+        {
+          type = "tuic";
+          listen = "::";
+          listen_port = 443;
+          users = [
+            {
+              name = "dummy";
+              uuid = {
+                _secret = "/persist/tuic.uuid";
+              };
+              password = {
+                _secret = "/persist/tuic.password";
+              };
+            }
+          ];
+          congestion_control = "bbr";
+          tls = {
+            enabled = "true";
+            server_name = {
+              _secret = "/persist/tuic.sni";
+            };
+            certificate_path = "/persist/pki/.lego/certificates/esd.cc.crt";
+            key_path = "/persist/pki/.lego/certificates/esd.cc.key";
+          };
+        }
+      ];
+    };
+  };
+
 }
