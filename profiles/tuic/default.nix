@@ -1,4 +1,4 @@
-{ self, sops }:
+{ config, self, sops }:
 {
   sops.secrets.tuic-uuid.sopsFile = "${self}/secrets/tuic.yml";
   sops.secrets.tuic-password.sopsFile = "${self}/secrets/tuic.yml";
