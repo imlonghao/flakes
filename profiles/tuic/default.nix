@@ -1,15 +1,42 @@
-{ config, pkgs, self, sops, ... }:
-
+{ self, sops }:
 {
-  sops.secrets.tuic = {
-    sopsFile = "${self}/hosts/${config.networking.hostName}/secrets.yml";
-    owner = "tuic";
-    group = "tuic";
-  };
-
-  services.tuic = {
+  sops.secrets.tuic-uuid.sopsFile = "${self}/secrets/tuic.yml";
+  sops.secrets.tuic-password.sopsFile = "${self}/secrets/tuic.yml";
+  sops.secrets.tuic-sni.sopsFile = "${self}/secrets/tuic.yml";
+  services.sing-box = {
     enable = true;
-    path = config.sops.secrets."tuic".path;
+    settings = {
+      inbounds = [
+        {
+          type = "tuic";
+          listen = "::";
+          listen_port = 443;
+          users = [
+            {
+              uuid = {
+                _secret = config.sops.secrets.tuic-uuid.path;
+              };
+              password = {
+                _secret = config.sops.secrets.tuic-password.path;
+              };
+            }
+          ];
+          congestion_control = "bbr";
+          tls = {
+            enabled = true;
+            server_name = {
+              _secret = config.sops.secrets.tuic-sni.path;
+            };
+            certificate_path = "/persist/pki/.lego/certificates/esd.cc.crt";
+            key_path = "/persist/pki/.lego/certificates/esd.cc.key";
+          };
+        }
+      ];
+      outbounds = [
+        {
+          type = "direct";
+        }
+      ];
+    };
   };
 }
-

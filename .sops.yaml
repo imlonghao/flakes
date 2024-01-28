@@ -75,6 +75,13 @@ creation_rules:
       - *me_canokey
       age:
       - *vps_buyvmusmiami1
+  - path_regex: secrets/tuic.yml$
+    key_groups:
+    - pgp:
+      - *me_canokey
+      age:
+      - *vps_twdscntaibei1
+      - *vps_dmituslosangeles1
   - path_regex: hosts/mailcow/secrets.yml$
     key_groups:
     - pgp:
