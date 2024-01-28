@@ -120,6 +120,11 @@
           };
         }
       ];
+      outbounds = [
+        {
+          type = "direct";
+        }
+      ];
     };
   };
 
