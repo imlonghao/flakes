@@ -19,6 +19,7 @@ channels: final: prev: {
     netdata
     netdataCloud
     hysteria
+    sing-box
     ;
 
 
