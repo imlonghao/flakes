@@ -81,16 +81,6 @@
       publickey = "TNmCdvH0DuPX0xxS6DPHw/2v3ojLa5kXIT/Z4Tpx+GY=";
     }
     {
-      name = "wg2398";
-      l4 = "172.22.68.3";
-      e4 = "172.23.33.193";
-      asn = 4242422398;
-      e6 = "fe80::2399:1";
-      listen = 22398;
-      endpoint = "hk-hkg.nodes.yuzhen.network:21888";
-      publickey = "YZHK/OEotkWSBrX3WZMrHUMQviLGzTfexsXz2R9clH4=";
-    }
-    {
       name = "wg2399";
       l4 = "172.22.68.3";
       e4 = "172.20.222.128";
