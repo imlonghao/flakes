@@ -53,14 +53,6 @@
       publickey = "unTYSat5YjkY+BY31Q9xLSfFhTUBvn3CiDCSZxbINVM=";
     }
     {
-      name = "wg1816";
-      asn = 4242421816;
-      e6 = "fe80::1816";
-      listen = 21816;
-      endpoint = "jp1.dn42.potat0.cc:21888";
-      publickey = "Tv1+HniELrS4Br2i7oQgwqBJFXQKculsW8r+UOqQXH0=";
-    }
-    {
       name = "wg1817";
       l4 = "172.22.68.3";
       e4 = "172.22.77.33";
