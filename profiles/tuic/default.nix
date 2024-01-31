@@ -8,6 +8,31 @@
     settings = {
       inbounds = [
         {
+          type = "shadowtls";
+          listen = "::";
+          listen_port = 4443;
+          version = 3;
+          users = [
+            {
+              name = "toor";
+              password = {
+                _secret = config.sops.secrets.tuic-password.path;
+              };
+            }
+          ];
+          handshake = {
+            server = "i0.hdslb.com";
+            server_port = 443;
+          };
+          strict_mode = true;
+          detour = "s5-in";
+        }
+        {
+          type = "socks";
+          tag = "s5-in";
+          lisiten = "127.0.0.1";
+        }
+        {
           type = "tuic";
           listen = "::";
           listen_port = 443;
