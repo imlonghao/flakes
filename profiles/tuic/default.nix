@@ -30,7 +30,7 @@
         {
           type = "socks";
           tag = "s5-in";
-          lisiten = "127.0.0.1";
+          listen = "127.0.0.1";
         }
         {
           type = "tuic";
