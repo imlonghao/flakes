@@ -35,6 +35,9 @@
         ];
       };
     };
+    hosts = {
+      "132.147.114.72" = [ "i0.hdslb.com" ];
+    };
   };
 
   environment.systemPackages = with pkgs; [
@@ -110,13 +113,17 @@
         ${pkgs.iproute2}/bin/ip -n singbox -6 addr add 2602:fab0:24:c0ff::2/64 dev veth-sb-ns
         ${pkgs.iproute2}/bin/ip -n singbox ro add default via 100.64.101.1
         ${pkgs.iproute2}/bin/ip -n singbox -6 ro add default via 2602:fab0:24:c0ff::1
+        ${pkgs.iproute2}/bin/ip -n singbox link set lo up
+        ${pkgs.iproute2}/bin/ip -n singbox addr add 127.0.0.1/8 dev lo
         ${pkgs.iptables}/bin/iptables -t nat -A PREROUTING -d 103.147.22.112 -p udp --dport 443 -j DNAT --to-destination 100.64.101.2:443
+        ${pkgs.iptables}/bin/iptables -t nat -A PREROUTING -d 103.147.22.112 -p tcp --dport 4443 -j DNAT --to-destination 100.64.101.2:4443
         ${pkgs.iptables}/bin/iptables -t nat -A POSTROUTING -s 100.64.101.2 -j MASQUERADE
       '';
       ExecStop = pkgs.writeScript "netns-down" ''
         #!${pkgs.bash}/bin/bash
         ${pkgs.iproute2}/bin/ip netns del singbox
         ${pkgs.iptables}/bin/iptables -t nat -D PREROUTING -d 103.147.22.112 -p udp --dport 443 -j DNAT --to-destination 100.64.101.2:443
+        ${pkgs.iptables}/bin/iptables -t nat -D PREROUTING -d 103.147.22.112 -p tcp --dport 4443 -j DNAT --to-destination 100.64.101.2:4443
         ${pkgs.iptables}/bin/iptables -t nat -D POSTROUTING -s 100.64.101.2 -j MASQUERADE
       '';
       PrivateMounts = false;
