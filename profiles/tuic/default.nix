@@ -24,7 +24,6 @@
             server = "i0.hdslb.com";
             server_port = 443;
           };
-          strict_mode = true;
           detour = "s5-in";
         }
         {
