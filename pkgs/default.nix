@@ -1,13 +1,11 @@
 final: prev: {
-  rait = prev.callPackage ./rait { };
-  pingfinder = prev.callPackage ./pingfinder { };
-  etherguard = prev.callPackage ./etherguard { };
-  deluge_exporter = prev.callPackage ./deluge_exporter { };
   bird-lg-go = prev.callPackage ./bird-lg-go { };
-  coredns-nat64-rdns = prev.callPackage ./coredns-nat64-rdns { };
-  wesher = prev.callPackage ./wesher { };
-  wtt = prev.callPackage ./wtt { };
-  mtrsb = prev.callPackage ./mtrsb { };
   chrony_exporter = prev.callPackage ./chrony_exporter { };
+  coredns-nat64-rdns = prev.callPackage ./coredns-nat64-rdns { };
+  deluge_exporter = prev.callPackage ./deluge_exporter { };
+  etherguard = prev.callPackage ./etherguard { };
   juicity = prev.callPackage ./juicity { };
+  mtrsb = prev.callPackage ./mtrsb { };
+  pingfinder = prev.callPackage ./pingfinder { };
+  wtt = prev.callPackage ./wtt { };
 }
