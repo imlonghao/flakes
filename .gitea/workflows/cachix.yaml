@@ -24,6 +24,7 @@ jobs:
           authToken: '${{ secrets.CACHIX_AUTH_TOKEN }}'
       - name: Build cache
         run: |
+          cat /etc/nix/nix.conf
           nix -Lv develop -c nix -Lv build ".#bird-lg-go"
           nix -Lv develop -c nix -Lv build ".#chrony_exporter"
           nix -Lv develop -c nix -Lv build ".#coredns-nat64-rdns"
