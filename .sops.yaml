@@ -85,6 +85,7 @@ creation_rules:
       - *vps_starrydnscnhongkong1
       - *vps_vpsausydney1
       - *vps_idcwikicnhongkong1
+      - *vps_misakadeberlin1
   - path_regex: hosts/mailcow/secrets.yml$
     key_groups:
     - pgp:
