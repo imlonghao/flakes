@@ -22,6 +22,7 @@ in
     profiles.bird-lg-go
     profiles.mtrsb
     profiles.rsshc
+    profiles.tuic
   ];
 
   boot.loader.grub.device = "/dev/vda";
