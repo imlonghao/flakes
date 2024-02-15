@@ -5,6 +5,7 @@
   dn42 = [
     { name = "wg64719"; listen = 64719; endpoint = "de-fra.dn42.lutoma.org:43039"; publickey = "pI9qB/y5L1iSOxFgam4uoBk2So+P52lAgYC3k8XS9zU="; asn = 64719; e4 = "172.22.119.1"; e6 = "fe80::acab"; l4 = "172.22.68.4"; }
     { name = "wg31111"; listen = 31111; publickey = "YnoqhBTjO0+2vj/1lXqzOmvKeCwZ4q3BJzNyxN/zQ00="; asn = 4201271111; e6 = "fe80::aa:1111:41"; }
+    { name = "wg0129"; listen = 20129; endpoint = "de-fra.inferior.network:21888"; publickey = "u7Pes8qR8m+/4kc4sNTYani90M2MEbaxRsnXKujqik4="; asn = 4242420129; e6 = "fe80::129:93a8"; }
     { name = "wg0197"; listen = 20197; endpoint = "himalia.dn42.n0emis.eu:21888"; publickey = "ObF+xGC6DdddJer0IUw6nzC0RqzeKWwEiQU0ieowzhg="; asn = 4242420197; e4 = "172.20.190.96"; e6 = "fe80::42:42:1"; l4 = "172.22.68.4"; }
     { name = "wg0207"; listen = 20207; endpoint = "router.fra1.routedbits.com:51888"; publickey = "FIk95vqIJxf2ZH750lsV1EybfeC9+V8Bnhn8YWPy/l8="; asn = 4242420207; e6 = "fe80::0207"; }
     { name = "wg0377"; listen = 20377; endpoint = "de-fra1.zycname.eu.org:21888"; publickey = "ML5JataTUgcW7NYCbouYqZ8DJ+KGX2ugoSIWxM2lLRw="; asn = 4242420377; e6 = "fe80::0377"; }
