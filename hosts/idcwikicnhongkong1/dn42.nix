@@ -52,6 +52,7 @@
       endpoint = "jp-tyo01.dn42.tech9.io:54012";
       publickey = "unTYSat5YjkY+BY31Q9xLSfFhTUBvn3CiDCSZxbINVM=";
     }
+    { name = "wg1772"; listen = 21772; endpoint = "154.12.177.103:41888"; publickey = "MwKtHYi3qWDRlpZuF6MNTHZuathA96J89GeF7INPvmw="; asn = 4242421772; e6 = "fe80::1772"; }
     {
       name = "wg1817";
       l4 = "172.22.68.3";
