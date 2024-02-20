@@ -17,6 +17,7 @@
     { name = "wg1080"; listen = 21080; endpoint = "fra.peer.highdef.network:21888"; publickey = "oiSSSOMYxiiM0eQP9p8klwEfNn34hkNNv4S289WUciU="; asn = 4242421080; e6 = "fe80::117"; }
     { name = "wg1411"; listen = 21411; endpoint = "famfo.xyz:51888"; publickey = "mC1XpNNItKM/zl+RkhYOSFJODnkkE55gAPZQtrnNyDU="; asn = 4242421411; e6 = "fe80::1411:1"; }
     { name = "wg1592"; listen = 21592; endpoint = "de01.dn42.ca.melusfer.us:41888"; publickey = "7zViBU5dDWV3pxnIGX2ixQmXIgRwvmIW7qwmCgWctzc="; asn = 4242421592; e4 = "172.21.99.191"; e6 = "fe80::1592"; l4 = "172.22.68.4"; }
+    { name = "wg1604"; listen = 21604; endpoint = "uk1.vm.libecho.top:21888"; publickey = "9U407vEN9S4jZ+MEEFYnYtMpb6H6VyQVMgJIK6oDUVo="; asn = 4242421604; e6 = "fe80::1604"; }
     { name = "wg1817"; listen = 21817; publickey = "Sxn9qXnzu3gSBQFZ0vCh5t5blUJYgD+iHlCCG2hexg4="; asn = 4242421817; e6 = "fe80::42:1817:a"; }
     { name = "wg2189"; listen = 22189; endpoint = "de-fra.dn42.kuu.moe:57353"; publickey = "FHp0OR4UpAS8/Ra0FUNffTk18soUYCa6NcvZdOgxY0k="; asn = 4242422189; e6 = "fe80::2189:e9"; }
     { name = "wg2331"; listen = 22331; endpoint = "lu208.dn42.williamgates.info:21888"; publickey = "c4AZZVNUzXCASWG96CKUpY+gQLdGwA1rbqkYCHXnW10="; asn = 4242422331; e6 = "fe80::2331"; }
