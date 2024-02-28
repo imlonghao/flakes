@@ -70,6 +70,10 @@ in
   };
   services.chrony = {
     enable = true;
+    extraConfig = ''
+      rtcsync
+    '';
+    enableRTCTrimming = false;
   };
   services.vnstat.enable = true;
 
