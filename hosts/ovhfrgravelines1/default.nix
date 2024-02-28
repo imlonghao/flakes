@@ -143,6 +143,9 @@ in
       logs = {
         "severity level" = "error";
       };
+      health = {
+        "enabled alarms" = "!30min_ram_swapped_out *";
+      };
     };
     configDir = {
       "stream.conf" =  pkgs.writeText "stream.conf" ''
