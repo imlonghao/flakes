@@ -35,4 +35,9 @@ in
     neededForBoot = true;
   };
 
+  fileSystems."/mnt" = {
+    device = "vdc";
+    fsType = "virtiofs";
+  };
+
 }

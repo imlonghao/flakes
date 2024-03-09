@@ -14,12 +14,19 @@
   networking = {
     dhcpcd.enable = false;
     nameservers = [ "2602:fab0:29:53::" ];
+    defaultGateway = {
+      address = "169.254.0.1";
+      interface = "ens4";
+    };
     defaultGateway6 = {
       address = "fe80::1";
-      interface = "ens3";
+      interface = "ens4";
     };
     interfaces = {
-      ens3 = {
+      ens4 = {
+        ipv4.addresses = [
+          { address = "45.45.224.73"; prefixLength = 24; }
+        ];
         ipv6.addresses = [
           { address = "2602:fc52:10e:e384::2"; prefixLength = 128; }
         ];
