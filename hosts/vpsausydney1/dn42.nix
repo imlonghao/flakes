@@ -3,6 +3,7 @@
 {
   sops.secrets.wireguard.sopsFile = ./secrets.yml;
   dn42 = [
+    { name = "wg0002"; listen = 20002; endpoint = "syd1.dn42.michaeldale.com.au:21888"; publickey = "Jcm1aWOwNR806xj6bjiyrfyTp6Sto8etYBsdQ2OnAGQ="; asn = 4242420002; e6 = "fe80::e7db"; }
     { name = "wg0207"; listen = 20207; endpoint = "router.syd1.routedbits.com:51888"; publickey = "wgCrE2lSvrfctVSngdHo6iAT/RRK7gNldJcFIFKi/Go="; asn = 4242420207; e6 = "fe80::0207"; }
     { name = "wg0458"; listen = 20458; endpoint = "au-east1.nodes.huajinet.org:21888"; publickey = "LeNGkX12n1Dcq8eNE1HhvpnFxrPlzgWlNncFlHdi5DY="; asn = 4242420458; e6 = "fe80::0458"; }
     { name = "wg0459"; listen = 20459; endpoint = "au1.fakemsp.cloud:21888"; publickey = "L/6MJt5U0sMMV6YqfQUdb1AUKg4G8Tvza3nEPMiR53s="; asn = 4242420459; e6 = "fe80::8523:45ff:fe20:8b5"; }
