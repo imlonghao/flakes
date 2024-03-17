@@ -25,7 +25,7 @@
     interfaces = {
       ens4 = {
         ipv4.addresses = [
-          { address = "45.45.224.73"; prefixLength = 24; }
+          { address = "45.45.224.73"; prefixLength = 32; }
         ];
         ipv6.addresses = [
           { address = "2602:fc52:10e:e384::2"; prefixLength = 128; }
