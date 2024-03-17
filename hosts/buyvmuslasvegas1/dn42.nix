@@ -89,6 +89,7 @@
       publickey = "Z6OKJSR1sxMBgUd1uXEe/UxoBsOvRgbTnexy7z/ryUI=";
     }
     { name = "wg1350"; listen = 21350; endpoint = "sea.jvav.tech:21888"; publickey = "VCYdDHIKBDfHe+drn2CG6pw56HBzDeoRt6wAx6GUg0Y="; asn = 4242421350; e6 = "fe80::1350"; }
+    { name = "wg1580"; listen = 21580; endpoint = "sfo.dn42.noreinx.me:21888"; publickey = "uUKad5JFD+Zfx/sApOcqJVrrsRS25en9ac6Tri/cZQk="; asn = 4242421580; e6 = "fe80::1580:1"; }
     { name = "wg1816"; listen = 21816; endpoint = "us1.dn42.potat0.cc:21888"; publickey = "LUwqKS6QrCPv510Pwt1eAIiHACYDsbMjrkrbGTJfviU="; asn = 4242421816; e6 = "fe80::1816"; }
     {
       name = "wg1817";
