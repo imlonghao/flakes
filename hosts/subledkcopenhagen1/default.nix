@@ -11,9 +11,9 @@
   ];
 
   networking = {
-    nameservers = [ "2a09::" "2a11::" ];
+    nameservers = [ "1.1.1.1" "2a09::" "2a11::" ];
     dhcpcd.enable = false;
-    defaultGateway = "89.23.86.1";
+    defaultGateway = "192.121.118.1";
     defaultGateway6 = "2001:67c:bec:a::1";
     interfaces = {
       lo = {
@@ -27,7 +27,7 @@
       };
       eth0 = {
         ipv4.addresses = [
-          { address = "89.23.86.39"; prefixLength = 24; }
+          { address = "192.121.118.39"; prefixLength = 24; }
         ];
         ipv6.addresses = [
           { address = "2001:67c:bec:a:a04c:ffff:fe90:8b81"; prefixLength = 64; }
