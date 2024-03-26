@@ -12,8 +12,8 @@ let
     iptables -C FORWARD -o ${cfg.interface} -d 169.254.0.0/16 -j REJECT || iptables -A FORWARD -o ${cfg.interface} -d 169.254.0.0/16 -j REJECT
     iptables -C FORWARD -o ${cfg.interface} -d 100.64.0.0/10 -j REJECT || iptables -A FORWARD -o ${cfg.interface} -d 100.64.0.0/10 -j REJECT
 
-    iptables -C FORWARD -s 100.110.0.0/16 -p tcp --tcp-flags SYN,RST SYN -j TCPMSS --set-mss 1200 || iptables -A FORWARD -s 100.110.0.0/16 -p tcp --tcp-flags SYN,RST SYN -j TCPMSS --set-mss 1200
-    iptables -C FORWARD -d 100.110.0.0/16 -p tcp --tcp-flags SYN,RST SYN -j TCPMSS --set-mss 1200 || iptables -A FORWARD -d 100.110.0.0/16 -p tcp --tcp-flags SYN,RST SYN -j TCPMSS --set-mss 1200
+    iptables -C FORWARD -s 100.110.0.0/16 -p tcp --tcp-flags SYN,RST SYN -j TCPMSS --set-mss 1300 || iptables -A FORWARD -s 100.110.0.0/16 -p tcp --tcp-flags SYN,RST SYN -j TCPMSS --set-mss 1300
+    iptables -C FORWARD -d 100.110.0.0/16 -p tcp --tcp-flags SYN,RST SYN -j TCPMSS --set-mss 1300 || iptables -A FORWARD -d 100.110.0.0/16 -p tcp --tcp-flags SYN,RST SYN -j TCPMSS --set-mss 1300
 
     iptables -t nat -C POSTROUTING -o ${cfg.interface} -s 100.110.0.0/16 -j SNAT --to-source ${cfg.nat_start}-${cfg.nat_end} || iptables -t nat -A POSTROUTING -o ${cfg.interface} -s 100.110.0.0/16 -j SNAT --to-source ${cfg.nat_start}-${cfg.nat_end}
 
