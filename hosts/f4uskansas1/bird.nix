@@ -68,6 +68,28 @@ in
           export where bgp_large_community ~ [(199632, 1, 1), (199632, 1, 5)];
         };
       }
+      template bgp tmpl_ixrs {
+        local as 199632;
+        graceful restart on;
+        ipv4 {
+          import filter {
+            bgp_large_community.add((199632, 1, 4));
+            bgp_large_community.add((199632, 2, 2));
+            bgp_large_community.add((199632, 3, 840));
+            accept;
+          };
+          export where bgp_large_community ~ [(199632, 1, 1), (199632, 1, 5)];
+        };
+        ipv6 {
+          import filter {
+            bgp_large_community.add((199632, 1, 4));
+            bgp_large_community.add((199632, 2, 2));
+            bgp_large_community.add((199632, 3, 840));
+            accept;
+          };
+          export where bgp_large_community ~ [(199632, 1, 1), (199632, 1, 5)];
+        };
+      }
 
       protocol bgp AS21738v4 from tmpl_upstream {
         neighbor 23.150.40.66 as 21738;
@@ -105,6 +127,19 @@ in
             if bgp_large_community ~ [(199632, 1, 1), (199632, 1, 5)] then accept;
           };
         };
+      };
+
+      protocol bgp F4IX_1_v4 from tmpl_ixrs {
+        neighbor 149.112.75.1 as 36090;
+      };
+      protocol bgp F4IX_2_v4 from tmpl_ixrs {
+        neighbor 149.112.75.2 as 36090;
+      };
+      protocol bgp F4IX_1_v6 from tmpl_ixrs {
+        neighbor 2602:fa3d:f4:1::1 as 36090;
+      };
+      protocol bgp F4IX_2_v6 from tmpl_ixrs {
+        neighbor 2602:fa3d:f4:1::2 as 36090;
       };
 
     '';

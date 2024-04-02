@@ -36,6 +36,14 @@
           { address = "2602:02b7:40:64::72"; prefixLength = 64; }
         ];
       };
+      ens19 = {
+        ipv4.addresses = [
+          { address = "149.112.75.29"; prefixLength = 24; }
+        ];
+        ipv6.addresses = [
+          { address = "2602:fa3d:f4:1::29"; prefixLength = 64; }
+        ];
+      };
     };
   };
 
