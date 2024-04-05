@@ -1,4 +1,10 @@
 { config, pkgs, profiles, self, ... }:
+let
+  cronJob = pkgs.writeShellScript "199632.sh" ''
+    ip rule | grep -F 23.146.88.0 || ip rule add from 23.146.88.0/24 table 199632
+    ip -6 rule | grep -F 2602:fab0:32::/48 || ip -6 rule add from 2602:fab0:32::/48 table 199632
+  '';
+in
 {
   imports = [
     ./bird.nix
@@ -53,6 +59,14 @@
   services.etherguard-edge = {
     ipv4 = "100.64.88.38/24";
     ipv6 = "2602:feda:1bf:deaf::38/64";
+  };
+
+  # CronJob
+  services.cron = {
+    enable = true;
+    systemCronJobs = [
+      "* * * * * root ${cronJob} > /dev/null 2>&1"
+    ];
   };
 
 }

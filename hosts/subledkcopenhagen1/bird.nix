@@ -14,9 +14,30 @@ in
   services.bird2 = {
     enable = true;
     config = generalConf + kernelConf + ''
+      ipv4 table as199632v4;
+      ipv6 table as199632v6;
+      protocol kernel kern199632v4 {
+        ipv4 {
+          table as199632v4;
+          export all;
+        };
+        kernel table 199632;
+      }
+      protocol kernel kern199632v6 {
+        ipv6 {
+          table as199632v6;
+          export filter {
+            krt_prefsrc = 2602:fab0:32::;
+            accept;
+          };
+        };
+        kernel table 199632;
+      }
+
       protocol static {
         route 23.146.88.0/24 blackhole;
         ipv4 {
+          table as199632v4;
           import filter {
             bgp_large_community.add((199632, 1, 1));
             bgp_large_community.add((199632, 2, 1));
@@ -32,6 +53,7 @@ in
         route 2602:fab0:30::/44 blackhole;
         route 2602:fab0:32::/48 blackhole;
         ipv6 {
+          table as199632v6;
           import filter {
             bgp_large_community.add((199632, 1, 1));
             bgp_large_community.add((199632, 2, 1));
@@ -57,6 +79,7 @@ in
         local as 199632;
         graceful restart on;
         ipv4 {
+          table as199632v4;
           import filter {
             bgp_large_community.add((199632, 1, 2));
             bgp_large_community.add((199632, 2, 1));
@@ -67,6 +90,7 @@ in
           export where bgp_large_community ~ [(199632, 1, 1), (199632, 1, 5)];
         };
         ipv6 {
+          table as199632v6;
           import filter {
             bgp_large_community.add((199632, 1, 2));
             bgp_large_community.add((199632, 2, 1));
@@ -82,6 +106,7 @@ in
         local as 199632;
         graceful restart on;
         ipv4 {
+          table as199632v4;
           import filter {
             bgp_large_community.add((199632, 1, 4));
             bgp_large_community.add((199632, 2, 1));
@@ -92,6 +117,7 @@ in
           export where bgp_large_community ~ [(199632, 1, 1), (199632, 1, 5)];
         };
         ipv6 {
+          table as199632v6;
           import filter {
             bgp_large_community.add((199632, 1, 4));
             bgp_large_community.add((199632, 2, 1));
