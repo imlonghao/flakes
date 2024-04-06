@@ -59,7 +59,7 @@
       asn = 4242421816;
       e6 = "fe80::1816";
       listen = 21816;
-      endpoint = "jp1.dn42.potat0.cc:21888";
+      endpoint = "hk1.dn42.potat0.cc:21888";
       publickey = "Tv1+HniELrS4Br2i7oQgwqBJFXQKculsW8r+UOqQXH0=";
     }
     {
