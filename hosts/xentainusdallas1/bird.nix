@@ -47,6 +47,7 @@ in
       }
       protocol static {
         route 2602:fa11:40::1/128 via "ens3";
+        route 2602:fa11:40::6/128 via "ens3";
         ipv6;
       }
       template bgp tmpl_upstream {
