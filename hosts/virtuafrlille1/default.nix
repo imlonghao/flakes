@@ -9,6 +9,7 @@
     profiles.mtrsb
     profiles.netdata
     profiles.rsshc
+    profiles.exporter.node
   ];
 
   networking = {
