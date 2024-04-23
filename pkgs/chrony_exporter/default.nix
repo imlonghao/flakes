@@ -2,14 +2,14 @@
 
 buildGoModule rec {
   pname = "chrony_exporter";
-  version = "796d32a9a4f686a15e61c58217962a2ec931db5b";
+  version = "1.0.1";
   src = fetchgit {
     url = "https://git.esd.cc/imlonghao/prometheus-chrony-exporter";
-    rev = "796d32a9a4f686a15e61c58217962a2ec931db5b";
+    rev = "1.0.1";
     fetchSubmodules = false;
     deepClone = false;
     leaveDotGit = false;
-    sha256 = "sha256-fi7Ikp1TRuZ+0svh8jTngFBKoIBUMOKuwNdT9KvZi6o=";
+    sha256 = "sha256-5/HO2JhmXtQ6AtHIWsJ8J6JW/rFp6DaLxRXdOVbJQx0=";
   };
   vendorHash = "sha256-WF9KDpm98dVVLcoE/b0y3aac/pTvSqoYmSF+OOpsB5o=";
   nativeBuildInputs = [ makeWrapper ];
