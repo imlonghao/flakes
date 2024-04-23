@@ -21,8 +21,8 @@ in
         Restart = "always";
         RestartSec = 10;
       };
-      wants = [ "network-online.target" ];
-      after = [ "network-online.target" ];
+      wants = [ "network-online.target" "chronyd.service" ];
+      after = [ "network-online.target" "chronyd.service" ];
       wantedBy = [ "multi-user.target" ];
     };
   };
