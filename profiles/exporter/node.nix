@@ -7,9 +7,9 @@ in
     enable = true;
     listenAddress = ip;
     extraFlags = [
-      "--collector.filesystem.ignored-mount-points=^/(dev|proc|sys|run|var/lib/docker/.+|var/lib/kubelet/.+|root/\.ssh)($|/)"
-      "--collector.netclass.ignored-devices=^veth[a-z0-9]{8}$"
-      "--collector.netdev.device-exclude=^veth[a-z0-9]{8}$"
+      "--collector.filesystem.ignored-mount-points=^/(dev|proc|sys|run|var/lib/docker/.+|var/lib/kubelet/.+|root/.+)($|/)"
+      "--collector.netclass.ignored-devices=^(docker[0-9]|vboxnet[0-9]|br-.+|veth.+)$"
+      "--collector.netdev.device-exclude=^(docker[0-9]|vboxnet[0-9]|br-.+|veth.+)$"
     ];
   };
   systemd.services."prometheus-node-exporter".after = [ "etherguard-edge.service" ];
