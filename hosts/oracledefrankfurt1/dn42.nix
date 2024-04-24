@@ -8,7 +8,6 @@
     { name = "wg0129"; listen = 20129; endpoint = "de-fra.inferior.network:21888"; publickey = "u7Pes8qR8m+/4kc4sNTYani90M2MEbaxRsnXKujqik4="; asn = 4242420129; e6 = "fe80::129:93a8"; }
     { name = "wg0197"; listen = 20197; endpoint = "himalia.dn42.n0emis.eu:21888"; publickey = "ObF+xGC6DdddJer0IUw6nzC0RqzeKWwEiQU0ieowzhg="; asn = 4242420197; e4 = "172.20.190.96"; e6 = "fe80::42:42:1"; l4 = "172.22.68.4"; }
     { name = "wg0207"; listen = 20207; endpoint = "router.fra1.routedbits.com:51888"; publickey = "FIk95vqIJxf2ZH750lsV1EybfeC9+V8Bnhn8YWPy/l8="; asn = 4242420207; e6 = "fe80::0207"; }
-    { name = "wg0377"; listen = 20377; endpoint = "de-fra1.zycname.eu.org:21888"; publickey = "ML5JataTUgcW7NYCbouYqZ8DJ+KGX2ugoSIWxM2lLRw="; asn = 4242420377; e6 = "fe80::0377"; }
     { name = "wg0458"; listen = 20458; endpoint = "eu-west1.nodes.huajinet.org:21888"; publickey = "J/EptroniSBNvzHhk0lQReRoHwV/m9vQo2l2CY69pXA="; asn = 4242420458; e6 = "fe80::0458"; }
     { name = "wg0499"; listen = 20499; endpoint = "138.201.54.47:41888"; publickey = "p4yaGWSl2p2Pe3GxUQ3OQREoKPqiSK3svc8+aHnuYzs="; asn = 4242420499; e4 = "172.23.33.65"; e6 = "fe80::499:1"; l4 = "172.22.68.4"; }
     { name = "wg0577"; listen = 20577; publickey = "SPfVzZHC6U+8oAJ0rd0foq0PH9xRYKGRVHLosV1WbXc="; asn = 4242420577; e6 = "fe80::577:1"; }

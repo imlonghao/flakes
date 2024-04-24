@@ -7,9 +7,9 @@
     profiles.users.root
     profiles.etherguard.edge
     profiles.mtrsb
-    profiles.netdata
     profiles.rsshc
     profiles.tuic
+    profiles.exporter.node
   ];
 
   boot.loader.grub.device = "/dev/sda";
@@ -67,19 +67,6 @@
         ifconfig-ipv6 fe80::199:632 fe80::114:514
         secret ${config.sops.secrets.kskb-ix.path}
       '';
-    };
-  };
-
-  # netdata
-  services.netdata = {
-    enable = true;
-    config = {
-      global = {
-        "memory mode" = "none";
-      };
-      health = {
-        "enabled " = "no";
-      };
     };
   };
 
