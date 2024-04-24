@@ -13,13 +13,6 @@
       endpoint = "us-nyc.dn42.lutoma.org:42591";
       publickey = "ClSMc4CO3PARJ4gRgcee4DDTAxa8tEeDxFDtBDb0bCk=";
     }
-    {
-      name = "wg31111";
-      e6 = "fe80::aa:1111:33";
-      asn = 4201271111;
-      listen = 31111;
-      publickey = "2FSX+6N/PwfipN/jXMj++4mabFQj25MXDy51mnnz3AA=";
-    }
     { name = "wg0207"; listen = 20207; endpoint = "router.mia1.routedbits.com:51888"; publickey = "7v+CFwv6ptPDWWBtLoSJBq8+jC+jTD8QbRtt6NCYegw="; asn = 4242420207; e6 = "fe80::0207"; }
     {
       name = "wg0247";
@@ -30,14 +23,6 @@
       listen = 20247;
       endpoint = "us1.dn42.as141776.net:41888";
       publickey = "tRRiOqYhTsygV08ltrWtMkfJxCps1+HUyN4tb1J7Yn4=";
-    }
-    {
-      name = "wg0377";
-      listen = 20377;
-      endpoint = "us-mci1.zycname.eu.org:21888";
-      publickey = "oySCo62UQt5J52Wm36IcgVfyGSBYPLlhnRHk6T+CoBs=";
-      asn = 4242420377;
-      e6 = "fe80::0377";
     }
     {
       name = "wg1080";
