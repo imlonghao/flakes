@@ -19,6 +19,7 @@ in
     profiles.etherguard.edge
     profiles.docker
     profiles.rsshc
+    profiles.exporter.node
 #    "${inputs.latest}/nixos/modules/services/backup/borgmatic.nix"
     "${inputs.latest}/nixos/modules/services/monitoring/netdata.nix"
   ];
