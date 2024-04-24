@@ -8,6 +8,7 @@
     profiles.netdata
     profiles.tuic
     profiles.rsshc
+    profiles.exporter.node
   ];
 
   networking = {
