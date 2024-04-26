@@ -173,13 +173,6 @@
       publickey = "7t0RGOTU6KTNMp+dz1jmnsZDccXp8EQ6p9J6ZbgJkQQ=";
     }
     {
-      name = "wg3704";
-      asn = 4242423704;
-      e6 = "fe80::3704";
-      listen = 23704;
-      publickey = "8xYXoU9lNuKyIMHQpB+RHxLER5xT0fIhWxp+F64Dqlc=";
-    }
-    {
       name = "wg3914";
       l4 = "172.22.68.3";
       e4 = "172.20.53.105";
