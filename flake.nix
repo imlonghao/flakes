@@ -201,6 +201,9 @@
             hostname = "breezehost-us-dallas-1.ni.sb";
             sshOpts = [ "-p" "10222" ];
           };
+          vpsjptokyo1 = {
+            hostname = "vps-jp-tokyo-1.ni.sb";
+          };
         };
       }
   ;
