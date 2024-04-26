@@ -7,6 +7,7 @@
     profiles.exporter.node
     profiles.etherguard.edge
     profiles.rsshc
+    profiles.tuic
   ];
 
   networking = {
