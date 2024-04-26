@@ -16,6 +16,7 @@ in
     profiles.mtrsb
     profiles.rsshc
     profiles.qemuGuest
+    profiles.exporter.node
   ];
 
   networking = {

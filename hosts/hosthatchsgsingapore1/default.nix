@@ -12,7 +12,6 @@ in
     ./bird.nix
     profiles.borgmatic
     profiles.mycore
-    profiles.netdata
     profiles.users.root
     profiles.pingfinder
     profiles.exporter.node

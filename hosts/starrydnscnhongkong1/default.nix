@@ -9,7 +9,6 @@
     profiles.etherguard.edge
     profiles.tuic
     profiles.mtrsb
-    profiles.netdata
     profiles.rsshc
   ];
 

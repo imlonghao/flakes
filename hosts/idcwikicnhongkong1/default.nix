@@ -11,7 +11,7 @@ in
     ./bird.nix
     ./hardware.nix
     profiles.mycore
-    profiles.netdata
+    profiles.exporter.node
     profiles.users.root
     profiles.tuic
     profiles.etherguard.edge

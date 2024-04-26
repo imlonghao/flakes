@@ -5,7 +5,6 @@
     ./borg.nix
     ./hardware.nix
     profiles.mycore
-    profiles.netdata
     profiles.users.root
     profiles.etherguard.edge
     profiles.exporter.node

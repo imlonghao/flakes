@@ -8,6 +8,7 @@
     profiles.etherguard.edge
     profiles.mtrsb
     profiles.rsshc
+    profiles.exporter.node
   ];
 
   boot.kernelParams = [ "net.ifnames=0" ];

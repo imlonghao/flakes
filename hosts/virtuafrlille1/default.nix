@@ -7,7 +7,6 @@
     profiles.users.root
     profiles.etherguard.edge
     profiles.mtrsb
-    profiles.netdata
     profiles.rsshc
     profiles.exporter.node
   ];
@@ -46,19 +45,6 @@
   services.etherguard-edge = {
     ipv4 = "100.64.88.34/24";
     ipv6 = "2602:feda:1bf:deaf::34/64";
-  };
-
-  # netdata
-  services.netdata = {
-    enable = true;
-    config = {
-      global = {
-        "memory mode" = "none";
-      };
-      health = {
-        "enabled " = "no";
-      };
-    };
   };
 
   # chrony

@@ -8,7 +8,6 @@ in
 {
   disabledModules = [
     "services/backup/borgmatic.nix"
-    "services/monitoring/netdata.nix"
   ];
 
   imports = [
@@ -21,7 +20,6 @@ in
     profiles.rsshc
     profiles.exporter.node
 #    "${inputs.latest}/nixos/modules/services/backup/borgmatic.nix"
-    "${inputs.latest}/nixos/modules/services/monitoring/netdata.nix"
   ];
 
   boot.loader.grub.device = "/dev/sda";
@@ -72,7 +70,6 @@ in
     metasploit
     mosh
     ncdu
-    netdata
     nix-update
     nmap
     openssl
@@ -133,32 +130,6 @@ in
     ];
   };
 
-  # netdata
-  services.netdata = {
-    enable = true;
-    package = pkgs.netdataCloud;
-    config = {
-      web = {
-        "bind to" = "100.64.88.24";
-      };
-      logs = {
-        "severity level" = "error";
-      };
-      health = {
-        "enabled alarms" = "!30min_ram_swapped_out *";
-      };
-    };
-    configDir = {
-      "stream.conf" =  pkgs.writeText "stream.conf" ''
-        [040ed080-a060-4a06-ace3-c49408623721]
-        enabled = yes
-        type = api
-        allow from = 100.64.88.*
-      '';
-    };
-  };
-  systemd.services.netdata.after = [ "etherguard-edge.service" ];
-  
   # Borgmatic
   sops.secrets.borgmatic.sopsFile = ./secrets.yml;
   systemd.services.borgmatic.serviceConfig.EnvironmentFile = "/run/secrets/borgmatic";

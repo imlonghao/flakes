@@ -7,7 +7,7 @@
     profiles.users.root
     profiles.etherguard.edge
     profiles.mtrsb
-    profiles.netdata
+    profiles.exporter.node
     profiles.rsshc
   ];
 

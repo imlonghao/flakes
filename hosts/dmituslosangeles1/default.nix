@@ -5,7 +5,6 @@
     profiles.mycore
     profiles.users.root
     profiles.etherguard.edge
-    profiles.netdata
     profiles.tuic
     profiles.rsshc
     profiles.exporter.node

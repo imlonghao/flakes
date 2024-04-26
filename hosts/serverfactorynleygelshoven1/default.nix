@@ -6,7 +6,7 @@
     profiles.mycore
     profiles.users.root
     profiles.etherguard.edge
-    profiles.netdata
+    profiles.exporter.node
     profiles.rsshc
     profiles.qemuGuest
   ];

@@ -4,7 +4,6 @@
     ./bird.nix
     ./hardware.nix
     profiles.mycore
-    profiles.netdata
     profiles.users.root
     profiles.exporter.node
     profiles.etherguard.edge
