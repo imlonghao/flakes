@@ -16,7 +16,7 @@
     defaultGateway6 = "2a12:a301:2::1";
     dhcpcd.enable = false;
     interfaces = {
-      enp6s18 = {
+      eth0 = {
         ipv4.addresses = [
           { address = "193.32.149.99"; prefixLength = 22; }
         ];
