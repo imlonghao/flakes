@@ -20,6 +20,7 @@ in
     profiles.pingfinder
     profiles.exporter.node
     profiles.exporter.bird
+    profiles.exporter.blackbox
     profiles.etherguard.edge
     profiles.bird-lg-go
     profiles.tuic
