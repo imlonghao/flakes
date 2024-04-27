@@ -1,4 +1,4 @@
-{ config, pksg, ... }:
+{ config, pkgs, ... }:
 let
   ip = builtins.replaceStrings [ "/24" ] [ "" ] config.services.etherguard-edge.ipv4;
   # https://github.com/prometheus/blackbox_exporter/blob/master/CONFIGURATION.md
