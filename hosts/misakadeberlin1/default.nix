@@ -16,6 +16,7 @@ in
     profiles.rsshc
     profiles.tuic
     profiles.exporter.node
+    profiles.exporter.blackbox
   ];
 
   boot.loader.grub.device = "/dev/vda";
