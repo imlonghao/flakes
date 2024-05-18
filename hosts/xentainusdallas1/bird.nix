@@ -58,12 +58,7 @@ in
           export where bgp_large_community ~ [(199632, 1, 1), (199632, 1, 5)];
         };
         ipv6 {
-          import filter {
-            bgp_large_community.add((199632, 1, 3));
-            bgp_large_community.add((199632, 2, 2));
-            bgp_large_community.add((199632, 3, 840));
-            accept;
-          };
+          import none;
           export where bgp_large_community ~ [(199632, 1, 1), (199632, 1, 5)];
         };
       }
