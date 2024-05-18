@@ -18,6 +18,7 @@ in
     profiles.bird-lg-go
     profiles.mtrsb
     profiles.rsshc
+    profiles.borgmatic
   ];
 
   # Config
@@ -128,6 +129,20 @@ in
   services.wtt = {
     enable = true;
     listen = "100.64.88.17";
+  };
+
+  # borgmatic
+  services.borgmatic.settings = {
+    location = {
+      repositories = [
+        "ssh://wx86wp48@wx86wp48.repo.borgbase.com/./repo"
+        "ssh://zh2646@zh2646.rsync.net/./oracledefrankfurt1"
+      ];
+      source_directories = [
+        "/persist/docker"
+        "/persist/heatmap"
+      ];
+    };
   };
 
 }
