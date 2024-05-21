@@ -9,6 +9,7 @@
     profiles.exporter.node
     profiles.rsshc
     profiles.qemuGuest
+    profiles.docker
   ];
 
   networking = {
