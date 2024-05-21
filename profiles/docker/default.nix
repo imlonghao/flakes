@@ -1,7 +1,7 @@
-{ ... }:
+{ pkgs, ... }:
 
 {
-
+  environment.systemPackages = [ pkgs.netdata ];
   virtualisation.docker = {
     enable = true;
     daemon.settings = {
@@ -13,5 +13,4 @@
       ];
     };
   };
-
 }
