@@ -104,4 +104,16 @@ in
     };
   };
 
+  # Postgresql
+  services.postgresql = {
+    enable = true;
+    ensureDatabases = [ "kong" ];
+    ensureUsers = [
+      {
+        name = "kong";
+        ensureDBOwnership = true;
+      }
+    ];
+  };
+
 }
