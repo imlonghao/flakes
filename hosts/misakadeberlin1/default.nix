@@ -104,13 +104,4 @@ in
     };
   };
 
-  # etcd
-  services.etcd = {
-    enable = true;
-    listenClientUrls = [
-      "http://100.64.88.23:2379"
-    ];
-  };
-  systemd.services."etcd".after = [ "etherguard-edge.service" ];
-
 }
