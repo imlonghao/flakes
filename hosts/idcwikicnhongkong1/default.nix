@@ -1,10 +1,4 @@
 { pkgs, profiles, ... }:
-let
-  cronJob = pkgs.writeShellScript "cron.sh" ''
-    # GoEdge
-    /persist/edge-node/bin/edge-node start
-  '';
-in
 {
   imports = [
     ./dn42.nix
@@ -55,7 +49,6 @@ in
   services.cron = {
     enable = true;
     systemCronJobs = [
-      "* * * * * root ${cronJob} > /dev/null 2>&1"
       "0 1 * * * root ${pkgs.git}/bin/git -C /persist/pki pull"
     ];
   };

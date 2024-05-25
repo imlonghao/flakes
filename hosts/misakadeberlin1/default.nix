@@ -1,10 +1,4 @@
 { pkgs, profiles, ... }:
-let
-  cronJob = pkgs.writeShellScript "cron.sh" ''
-    # GoEdge
-    /persist/edge-admin/bin/edge-admin start
-  '';
-in
 {
   imports = [
     ./bird.nix
@@ -52,8 +46,6 @@ in
   environment.persistence."/persist" = {
     directories = [
       "/root/.ssh"
-      "/root/.edge-admin"
-      "/root/.edge-api"
       "/var/lib"
     ];
     files = [
@@ -71,7 +63,6 @@ in
   services.cron = {
     enable = true;
     systemCronJobs = [
-      "* * * * * root ${cronJob} > /dev/null 2>&1"
       "0 1 * * * root ${pkgs.git}/bin/git -C /persist/pki pull"
     ];
   };

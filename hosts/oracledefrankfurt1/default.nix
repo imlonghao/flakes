@@ -1,10 +1,4 @@
 { config, modulesPath, pkgs, profiles, self, ... }:
-let
-  cronJob = pkgs.writeShellScript "cron.sh" ''
-    # GoEdge
-    /persist/edge-node/bin/edge-node start
-  '';
-in
 {
   imports = [
     ./bird.nix
@@ -95,7 +89,6 @@ in
   services.cron = {
     enable = true;
     systemCronJobs = [
-      "* * * * * root ${cronJob} > /dev/null 2>&1"
       "0 * * * * root ${pkgs.fping}/bin/fping -i 1 -r 1 -a -q -g 172.20.0.0/14 > /persist/heatmap/`date +\\%Y\\%m\\%d\\%H`.log"
     ];
   };
