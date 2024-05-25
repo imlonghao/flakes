@@ -6,5 +6,8 @@
   };
   users.users.kong = {
     hashedPasswordFile = config.sops.secrets.kong.path;
+    isNormalUser = true;
+    group = "kong";
   };
+  users.groups.kong = {};
 }
