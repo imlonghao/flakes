@@ -107,6 +107,7 @@ in
   # Postgresql
   services.postgresql = {
     enable = true;
+    enableTCPIP = true;
     ensureDatabases = [ "kong" ];
     ensureUsers = [
       {
