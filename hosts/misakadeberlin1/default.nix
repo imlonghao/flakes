@@ -110,7 +110,7 @@ in
     enable = true;
     enableTCPIP = true;
     authentication = ''
-      host kong kong 0.0.0.0/0 scram-sha-256
+      host kong kong 0.0.0.0/0 pam
     '';
     ensureDatabases = [ "kong" ];
     ensureUsers = [
