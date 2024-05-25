@@ -11,7 +11,6 @@ in
     ./hardware.nix
     profiles.mycore
     profiles.users.root
-    profiles.users.kong
     profiles.etherguard.edge
     profiles.mtrsb
     profiles.rsshc
