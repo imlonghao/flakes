@@ -16,7 +16,10 @@
   networking = {
     dhcpcd.enable = false;
     defaultGateway = "103.205.9.1";
-    defaultGateway6 = "2403:ad80:98:c00::1";
+    defaultGateway6 = {
+      address = "2403:ad80:98:c00::1";
+      interface = "ens3";
+    };
     nameservers = [ "8.8.8.8" "1.1.1.1" ];
     interfaces = {
       ens3.ipv4.addresses = [
@@ -28,7 +31,7 @@
       ens3.ipv6.addresses = [
         {
           address = "2403:ad80:98:c60::f6f4";
-          prefixLength = 54;
+          prefixLength = 64;
         }
       ];
       lo.ipv4.addresses = [
