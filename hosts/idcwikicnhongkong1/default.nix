@@ -19,6 +19,7 @@ in
     profiles.bird-lg-go
     profiles.pingfinder
     profiles.rsshc
+    profiles.docker
   ];
 
   networking = {

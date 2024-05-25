@@ -26,6 +26,7 @@ in
     profiles.tuic
     profiles.mtrsb
     profiles.rsshc
+    profiles.docker
   ];
 
   networking = {
