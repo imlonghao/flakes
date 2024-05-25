@@ -71,6 +71,7 @@ in
     mosh
     ncdu
     nix-update
+    nixfmt
     nmap
     openssl
     openvpn
