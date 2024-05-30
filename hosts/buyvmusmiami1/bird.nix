@@ -17,10 +17,10 @@ in
         route 23.146.88.0/24 blackhole;
         ipv4 {
           import filter {
-            bgp_large_community.add((199632, 1, 1));
-            bgp_large_community.add((199632, 2, 2));
-            bgp_large_community.add((199632, 3, 840));
-            bgp_large_community.add((199632, 4, 3));
+            bgp_large_community.add((30114, 1, 1));
+            bgp_large_community.add((30114, 2, 2));
+            bgp_large_community.add((30114, 3, 840));
+            bgp_large_community.add((30114, 4, 3));
             accept;
           };
           export all;
@@ -31,17 +31,17 @@ in
         route 2602:fab0:2a::/48 blackhole;
         ipv6 {
           import filter {
-            bgp_large_community.add((199632, 1, 1));
-            bgp_large_community.add((199632, 2, 2));
-            bgp_large_community.add((199632, 3, 840));
-            bgp_large_community.add((199632, 4, 3));
+            bgp_large_community.add((30114, 1, 1));
+            bgp_large_community.add((30114, 2, 2));
+            bgp_large_community.add((30114, 3, 840));
+            bgp_large_community.add((30114, 4, 3));
             accept;
           };
           export all;
         };
       }
       protocol bgp AS53667v4 {
-        local as 199632;
+        local as 30114;
         neighbor 169.254.169.179 as 53667;
         multihop 2;
         password "r7OUFI1l";
@@ -51,13 +51,13 @@ in
             if net = 23.146.88.0/24 then {
               bgp_large_community.add((53667, 102, 174));
             }
-            if bgp_large_community ~ [(199632, 1, 1), (199632, 1, 5)] then accept;
+            if bgp_large_community ~ [(30114, 1, 1), (30114, 1, 5)] then accept;
             if net = 23.146.88.248/29 then accept;
           };
         };
       }
       protocol bgp AS53667v6 {
-        local as 199632;
+        local as 30114;
         neighbor 2605:6400:ffff::2 as 53667;
         multihop 2;
         password "r7OUFI1l";
@@ -69,7 +69,7 @@ in
               bgp_large_community.add((53667, 102, 174));
               bgp_large_community.add((53667, 101, 6939));
             }
-            if bgp_large_community ~ [(199632, 1, 1), (199632, 1, 5)] then accept;
+            if bgp_large_community ~ [(30114, 1, 1), (30114, 1, 5)] then accept;
           };
         };
       }
