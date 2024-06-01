@@ -2,14 +2,14 @@
 
 buildGoModule rec {
   pname = "mtrsb";
-  version = "cf6df5660779c9727a8a17cbed286a5971bed2d3";
+  version = "v1.1.2";
   src = fetchgit {
     url = "https://git.esd.cc/imlonghao/mtr.sb";
-    rev = "cf6df5660779c9727a8a17cbed286a5971bed2d3";
+    rev = "v1.1.2";
     fetchSubmodules = false;
     deepClone = false;
     leaveDotGit = false;
-    sha256 = "sha256-7eR6+/MA9bvpL1/YOop3mAHrwf3aStcVpcD3ftMdKcY=";
+    sha256 = "sha256-tB0fWQIpZzme/4hywG3VvgRFRBRdbzPEExiH2gSdlrA=";
   };
   vendorHash = "sha256-nM2aCJollBdadvzBJm1VTE5QzLL2kg6YdKVE03En9Io=";
   subPackages = [ "cmd/worker" ];
