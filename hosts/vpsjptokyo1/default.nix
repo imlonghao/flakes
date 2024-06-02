@@ -9,6 +9,7 @@
     profiles.etherguard.edge
     profiles.rsshc
     profiles.tuic
+    profiles.mtrsb
   ];
 
   networking = {
