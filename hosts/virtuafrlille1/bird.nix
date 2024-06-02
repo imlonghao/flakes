@@ -16,9 +16,9 @@ in
         route 23.146.88.0/24 blackhole;
         ipv4 {
           import filter {
-            bgp_large_community.add((199632, 1, 1));
-            bgp_large_community.add((199632, 2, 1));
-            bgp_large_community.add((199632, 3, 250));
+            bgp_large_community.add((30114, 1, 1));
+            bgp_large_community.add((30114, 2, 1));
+            bgp_large_community.add((30114, 3, 250));
             accept;
           };
           export all;
@@ -30,9 +30,9 @@ in
         route 2602:fab0:30::/44 blackhole;
         ipv6 {
           import filter {
-            bgp_large_community.add((199632, 1, 1));
-            bgp_large_community.add((199632, 2, 1));
-            bgp_large_community.add((199632, 3, 250));
+            bgp_large_community.add((30114, 1, 1));
+            bgp_large_community.add((30114, 2, 1));
+            bgp_large_community.add((30114, 3, 250));
             accept;
           };
           export all;
@@ -48,16 +48,16 @@ in
       }
 
       template bgp tmpl_upstream {
-        local as 199632;
+        local as 30114;
         graceful restart on;
         ipv6 {
           import filter {
-            bgp_large_community.add((199632, 1, 2));
-            bgp_large_community.add((199632, 2, 1));
-            bgp_large_community.add((199632, 3, 250));
+            bgp_large_community.add((30114, 1, 2));
+            bgp_large_community.add((30114, 2, 1));
+            bgp_large_community.add((30114, 3, 250));
             accept;
           };
-          export where bgp_large_community ~ [(199632, 1, 1), (199632, 1, 5)];
+          export where bgp_large_community ~ [(30114, 1, 1), (30114, 1, 5)];
         };
       }
 
@@ -75,7 +75,7 @@ in
               bgp_community.add((35661,7024));
               bgp_large_community.add((6695,902,137409));
             }
-            if bgp_large_community ~ [(199632, 1, 1), (199632, 1, 5)] then accept;
+            if bgp_large_community ~ [(30114, 1, 1), (30114, 1, 5)] then accept;
           };
         };
       };
@@ -88,9 +88,9 @@ in
           import none;
           export filter {
             if net = 2602:fab0:20::/48 then {
-              bgp_path.prepend(199632);
+              bgp_path.prepend(30114);
             }
-            if bgp_large_community ~ [(199632, 1, 1), (199632, 1, 5)] then accept;
+            if bgp_large_community ~ [(30114, 1, 1), (30114, 1, 5)] then accept;
           };
         };
       };
@@ -107,7 +107,7 @@ in
               bgp_community.add((35661,7024));
               bgp_large_community.add((6695,902,137409));
             }
-            if bgp_large_community ~ [(199632, 1, 1), (199632, 1, 5)] then accept;
+            if bgp_large_community ~ [(30114, 1, 1), (30114, 1, 5)] then accept;
           };
         };
       };
@@ -120,17 +120,17 @@ in
           import none;
           export filter {
             if net = 2602:fab0:20::/48 then {
-              bgp_path.prepend(199632);
+              bgp_path.prepend(30114);
             }
-            if bgp_large_community ~ [(199632, 1, 1), (199632, 1, 5)] then accept;
+            if bgp_large_community ~ [(30114, 1, 1), (30114, 1, 5)] then accept;
           };
         };
       };
 
       protocol bgp internalovh {
-        local as 199632;
+        local as 30114;
         graceful restart on;
-        neighbor 2602:feda:1bf:deaf::24 as 199632;
+        neighbor 2602:feda:1bf:deaf::24 as 30114;
         ipv4 {
           import none;
           export where net = 0.0.0.0/0;

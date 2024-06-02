@@ -58,23 +58,8 @@ in
         export all;
       }
       protocol bgp internalvirtua {
-        neighbor 2602:feda:1bf:deaf::34 as 199632;
-        local as 199632;
-        graceful restart on;
-        ipv4 {
-          table as199632v4;
-          import all;
-          export none;
-        };
-        ipv6 {
-          table as199632v6;
-          import all;
-          export where net = 2602:fab0:31:1::/64;
-        };
-      };
-      protocol bgp internalsuble {
-        neighbor 2602:feda:1bf:deaf::38 as 199632;
-        local as 199632;
+        neighbor 2602:feda:1bf:deaf::34 as 30114;
+        local as 30114;
         graceful restart on;
         ipv4 {
           table as199632v4;
