@@ -36,7 +36,7 @@ in
   ];
 
   commands = with pkgs; [
-    (devos nixVersions.nix_2_11)
+    (devos nixVersions.nix_2_22)
     (linter nixpkgs-fmt)
     (linter editorconfig-checker)
     # (docs python3Packages.grip) too many deps
