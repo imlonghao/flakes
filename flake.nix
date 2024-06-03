@@ -7,7 +7,7 @@
 
   inputs =
     {
-      nixos.url = "github:nixos/nixpkgs/release-23.11";
+      nixos.url = "github:nixos/nixpkgs/release-24.05";
       latest.url = "github:nixos/nixpkgs/nixos-unstable";
 
       digga.url = "github:divnix/digga";
@@ -17,7 +17,7 @@
       digga.inputs.deploy.follows = "deploy";
       digga.inputs.flake-utils-plus.follows = "flake-utils-plus";
 
-      home.url = "github:nix-community/home-manager/release-23.11";
+      home.url = "github:nix-community/home-manager/release-24.05";
       home.inputs.nixpkgs.follows = "nixos";
 
       deploy.url = "github:serokell/deploy-rs";
