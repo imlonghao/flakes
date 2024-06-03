@@ -16,10 +16,10 @@ in
         route 23.146.88.0/24 blackhole;
         ipv4 {
           import filter {
-            bgp_large_community.add((199632, 1, 1));
-            bgp_large_community.add((199632, 2, 1));
-            bgp_large_community.add((199632, 3, 276));
-            bgp_large_community.add((199632, 4, 28));
+            bgp_large_community.add((30114, 1, 1));
+            bgp_large_community.add((30114, 2, 1));
+            bgp_large_community.add((30114, 3, 276));
+            bgp_large_community.add((30114, 4, 28));
             accept;
           };
           export all;
@@ -30,10 +30,10 @@ in
         route 2602:fab0:22::/48 blackhole;
         ipv6 {
           import filter {
-            bgp_large_community.add((199632, 1, 1));
-            bgp_large_community.add((199632, 2, 1));
-            bgp_large_community.add((199632, 3, 276));
-            bgp_large_community.add((199632, 4, 28));
+            bgp_large_community.add((30114, 1, 1));
+            bgp_large_community.add((30114, 2, 1));
+            bgp_large_community.add((30114, 3, 276));
+            bgp_large_community.add((30114, 4, 28));
             accept;
           };
           export all;
@@ -78,54 +78,54 @@ in
       ];
 
       template bgp tmpl_upstream {
-        local as 199632;
+        local as 30114;
         graceful restart on;
         ipv6 {
           import filter {
-            bgp_large_community.add((199632, 1, 2));
-            bgp_large_community.add((199632, 2, 1));
-            bgp_large_community.add((199632, 3, 276));
+            bgp_large_community.add((30114, 1, 2));
+            bgp_large_community.add((30114, 2, 1));
+            bgp_large_community.add((30114, 3, 276));
             accept;
           };
-          export where bgp_large_community ~ [(199632, 1, 1), (199632, 1, 5)];
+          export where bgp_large_community ~ [(30114, 1, 1), (30114, 1, 5)];
         };
       }
       template bgp tmpl_rs {
-        local as 199632;
+        local as 30114;
         graceful restart on;
         ipv4 {
           import filter {
-            bgp_large_community.add((199632, 1, 4));
-            bgp_large_community.add((199632, 2, 1));
-            bgp_large_community.add((199632, 3, 276));
+            bgp_large_community.add((30114, 1, 4));
+            bgp_large_community.add((30114, 2, 1));
+            bgp_large_community.add((30114, 3, 276));
             accept;
           };
-          export where bgp_large_community ~ [(199632, 1, 1), (199632, 1, 5)];
+          export where bgp_large_community ~ [(30114, 1, 1), (30114, 1, 5)];
         };
         ipv6 {
           import filter {
-            bgp_large_community.add((199632, 1, 4));
-            bgp_large_community.add((199632, 2, 1));
-            bgp_large_community.add((199632, 3, 276));
+            bgp_large_community.add((30114, 1, 4));
+            bgp_large_community.add((30114, 2, 1));
+            bgp_large_community.add((30114, 3, 276));
             accept;
           };
-          export where bgp_large_community ~ [(199632, 1, 1), (199632, 1, 5)];
+          export where bgp_large_community ~ [(30114, 1, 1), (30114, 1, 5)];
         };
       }
       template bgp tmpl_peer {
-        local as 199632;
+        local as 30114;
         graceful restart on;
         ipv6 {
           import none;
-          export where bgp_large_community ~ [(199632, 1, 1), (199632, 1, 5)];
+          export where bgp_large_community ~ [(30114, 1, 1), (30114, 1, 5)];
         };
       }
       template bgp tmpl_downstream {
-        local as 199632;
+        local as 30114;
         graceful restart on;
         ipv6 {
           import none;
-          export where net.len <= 48 && !is_martian_v6() && bgp_large_community ~ [(199632, 1, *)];
+          export where net.len <= 48 && !is_martian_v6() && bgp_large_community ~ [(30114, 1, *)];
         };
       }
 
@@ -137,11 +137,11 @@ in
           export filter {
             bgp_large_community.add((202409, 0, 0));
             if net = 2602:fab0:20::/48 then {
-              bgp_path.prepend(199632);
-              bgp_path.prepend(199632);
+              bgp_path.prepend(30114);
+              bgp_path.prepend(30114);
               accept;
             }
-            if bgp_large_community ~ [(199632, 1, 1), (199632, 1, 5)] then accept;
+            if bgp_large_community ~ [(30114, 1, 1), (30114, 1, 5)] then accept;
           };
         };
       };
@@ -150,11 +150,11 @@ in
         ipv6 {
           export filter {
             if net = 2602:fab0:20::/48 then {
-              bgp_path.prepend(199632);
-              bgp_path.prepend(199632);
+              bgp_path.prepend(30114);
+              bgp_path.prepend(30114);
               accept;
             }
-            if bgp_large_community ~ [(199632, 1, 1), (199632, 1, 5)] then accept;
+            if bgp_large_community ~ [(30114, 1, 1), (30114, 1, 5)] then accept;
           };
         };
       };
@@ -163,9 +163,9 @@ in
         description "Kjartan Hrafnkelsson";
         ipv6 {
           import filter {
-            bgp_large_community.add((199632, 1, 3));
-            bgp_large_community.add((199632, 2, 1));
-            bgp_large_community.add((199632, 3, 276));
+            bgp_large_community.add((30114, 1, 3));
+            bgp_large_community.add((30114, 2, 1));
+            bgp_large_community.add((30114, 3, 276));
             if net ~ 'RIPE::AS51019:AS-ALL' then accept;
           };
         };
@@ -175,9 +175,9 @@ in
         description "iLemonrain Network";
         ipv6 {
           import filter {
-            bgp_large_community.add((199632, 1, 3));
-            bgp_large_community.add((199632, 2, 1));
-            bgp_large_community.add((199632, 3, 276));
+            bgp_large_community.add((30114, 1, 3));
+            bgp_large_community.add((30114, 2, 1));
+            bgp_large_community.add((30114, 3, 276));
             if net ~ 'APNIC::AS-ILEMONRAIN' then accept;
           };
         };
@@ -187,9 +187,9 @@ in
         description "ZYC Network LLC";
         ipv6 {
           import filter {
-            bgp_large_community.add((199632, 1, 3));
-            bgp_large_community.add((199632, 2, 1));
-            bgp_large_community.add((199632, 3, 276));
+            bgp_large_community.add((30114, 1, 3));
+            bgp_large_community.add((30114, 2, 1));
+            bgp_large_community.add((30114, 3, 276));
             if net ~ 'RIPE::AS199656' then accept;
           };
         };

@@ -21,10 +21,10 @@ in
             bgp_community.add((21738, 359));
             bgp_community.add((21738, 369));
 
-            bgp_large_community.add((199632, 1, 1));
-            bgp_large_community.add((199632, 2, 2));
-            bgp_large_community.add((199632, 3, 840));
-            bgp_large_community.add((199632, 4, 35));
+            bgp_large_community.add((30114, 1, 1));
+            bgp_large_community.add((30114, 2, 2));
+            bgp_large_community.add((30114, 3, 840));
+            bgp_large_community.add((30114, 4, 35));
             accept;
           };
           export all;
@@ -36,10 +36,10 @@ in
         route 2602:fab0:40::/44 blackhole;
         ipv6 {
           import filter {
-            bgp_large_community.add((199632, 1, 1));
-            bgp_large_community.add((199632, 2, 2));
-            bgp_large_community.add((199632, 3, 840));
-            bgp_large_community.add((199632, 4, 35));
+            bgp_large_community.add((30114, 1, 1));
+            bgp_large_community.add((30114, 2, 2));
+            bgp_large_community.add((30114, 3, 840));
+            bgp_large_community.add((30114, 4, 35));
             accept;
           };
           export all;
@@ -47,47 +47,47 @@ in
       }
 
       template bgp tmpl_upstream {
-        local as 199632;
+        local as 30114;
         graceful restart on;
         ipv4 {
           import filter {
-            bgp_large_community.add((199632, 1, 2));
-            bgp_large_community.add((199632, 2, 2));
-            bgp_large_community.add((199632, 3, 840));
+            bgp_large_community.add((30114, 1, 2));
+            bgp_large_community.add((30114, 2, 2));
+            bgp_large_community.add((30114, 3, 840));
             accept;
           };
-          export where bgp_large_community ~ [(199632, 1, 1), (199632, 1, 5)];
+          export where bgp_large_community ~ [(30114, 1, 1), (30114, 1, 5)];
         };
         ipv6 {
           import filter {
-            bgp_large_community.add((199632, 1, 2));
-            bgp_large_community.add((199632, 2, 2));
-            bgp_large_community.add((199632, 3, 840));
+            bgp_large_community.add((30114, 1, 2));
+            bgp_large_community.add((30114, 2, 2));
+            bgp_large_community.add((30114, 3, 840));
             accept;
           };
-          export where bgp_large_community ~ [(199632, 1, 1), (199632, 1, 5)];
+          export where bgp_large_community ~ [(30114, 1, 1), (30114, 1, 5)];
         };
       }
       template bgp tmpl_ixrs {
-        local as 199632;
+        local as 30114;
         graceful restart on;
         ipv4 {
           import filter {
-            bgp_large_community.add((199632, 1, 4));
-            bgp_large_community.add((199632, 2, 2));
-            bgp_large_community.add((199632, 3, 840));
+            bgp_large_community.add((30114, 1, 4));
+            bgp_large_community.add((30114, 2, 2));
+            bgp_large_community.add((30114, 3, 840));
             accept;
           };
-          export where bgp_large_community ~ [(199632, 1, 1), (199632, 1, 5)];
+          export where bgp_large_community ~ [(30114, 1, 1), (30114, 1, 5)];
         };
         ipv6 {
           import filter {
-            bgp_large_community.add((199632, 1, 4));
-            bgp_large_community.add((199632, 2, 2));
-            bgp_large_community.add((199632, 3, 840));
+            bgp_large_community.add((30114, 1, 4));
+            bgp_large_community.add((30114, 2, 2));
+            bgp_large_community.add((30114, 3, 840));
             accept;
           };
-          export where bgp_large_community ~ [(199632, 1, 1), (199632, 1, 5)];
+          export where bgp_large_community ~ [(30114, 1, 1), (30114, 1, 5)];
         };
       }
 
@@ -102,10 +102,10 @@ in
           import none;
           export filter {
             if net = 2602:fab0:20::/48 then {
-              bgp_path.prepend(199632);
+              bgp_path.prepend(30114);
               accept;
             }
-            if bgp_large_community ~ [(199632, 1, 1), (199632, 1, 5)] then accept;
+            if bgp_large_community ~ [(30114, 1, 1), (30114, 1, 5)] then accept;
           };
         };
       };
@@ -121,10 +121,10 @@ in
           import none;
           export filter {
             if net = 2602:fab0:20::/48 then {
-              bgp_path.prepend(199632);
+              bgp_path.prepend(30114);
               accept;
             }
-            if bgp_large_community ~ [(199632, 1, 1), (199632, 1, 5)] then accept;
+            if bgp_large_community ~ [(30114, 1, 1), (30114, 1, 5)] then accept;
           };
         };
       };

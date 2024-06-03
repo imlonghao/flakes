@@ -18,12 +18,12 @@ in
         route 23.146.88.0/24 blackhole;
         ipv4 {
           import filter {
-            bgp_path.prepend(199632);
-            bgp_path.prepend(199632);
-            bgp_large_community.add((199632, 1, 1));
-            bgp_large_community.add((199632, 2, 2));
-            bgp_large_community.add((199632, 3, 840));
-            bgp_large_community.add((199632, 4, 40));
+            bgp_path.prepend(30114);
+            bgp_path.prepend(30114);
+            bgp_large_community.add((30114, 1, 1));
+            bgp_large_community.add((30114, 2, 2));
+            bgp_large_community.add((30114, 3, 840));
+            bgp_large_community.add((30114, 4, 40));
             accept;
           };
           export all;
@@ -36,10 +36,10 @@ in
         route 2602:fab0:41::/48 via 2602:feda:1bf:deaf::39;
         ipv6 {
           import filter {
-            bgp_large_community.add((199632, 1, 1));
-            bgp_large_community.add((199632, 2, 2));
-            bgp_large_community.add((199632, 3, 840));
-            bgp_large_community.add((199632, 4, 40));
+            bgp_large_community.add((30114, 1, 1));
+            bgp_large_community.add((30114, 2, 2));
+            bgp_large_community.add((30114, 3, 840));
+            bgp_large_community.add((30114, 4, 40));
             accept;
           };
           export all;
@@ -51,15 +51,15 @@ in
         ipv6;
       }
       template bgp tmpl_upstream {
-        local as 199632;
+        local as 30114;
         graceful restart on;
         ipv4 {
           import none;
-          export where bgp_large_community ~ [(199632, 1, 1), (199632, 1, 5)];
+          export where bgp_large_community ~ [(30114, 1, 1), (30114, 1, 5)];
         };
         ipv6 {
           import none;
-          export where bgp_large_community ~ [(199632, 1, 1), (199632, 1, 5)];
+          export where bgp_large_community ~ [(30114, 1, 1), (30114, 1, 5)];
         };
       }
 
@@ -71,24 +71,24 @@ in
         neighbor 2602:fa11:40::1 as 15353;
         source address 2602:fa11:40:1015::a;
         password "8wqY5P6H";
-        multihop 2;
+        multihop 20;
         ipv6 {
           export filter {
             if net = 2602:fab0:20::/48 then {
-              bgp_path.prepend(199632);
+              bgp_path.prepend(30114);
             }
-            if bgp_large_community ~ [(199632, 1, 1), (199632, 1, 5)] then accept;
+            if bgp_large_community ~ [(30114, 1, 1), (30114, 1, 5)] then accept;
           };
         };
       };
 
       protocol bgp internalpve1 {
-        neighbor 2602:feda:1bf:deaf::39 as 199632;
-        local as 199632;
+        neighbor 2602:feda:1bf:deaf::39 as 30114;
+        local as 30114;
         graceful restart on;
         ipv6 {
           import none;
-          export where bgp_large_community ~ [(199632, 3, 840)];
+          export where bgp_large_community ~ [(30114, 3, 840)];
           next hop self;
         };
       };
