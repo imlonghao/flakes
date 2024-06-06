@@ -63,8 +63,8 @@
         dev-type tap
         keepalive 5 30
         persist-tun
-        lladdr 02:00:00:19:96:32
-        ifconfig-ipv6 fe80::199:632 fe80::114:514
+        lladdr 02:00:00:03:01:14
+        ifconfig-ipv6 fe80::30:114 fe80::114:514
         secret ${config.sops.secrets.kskb-ix.path}
       '';
     };
