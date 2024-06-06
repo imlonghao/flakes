@@ -115,8 +115,8 @@ in
           nr = {
             type = "new_relic";
             inputs = [ "filter" ];
-            account_id = "\${NEW_RELIC_ACCOUNT_ID}";
-            license_key = "\${NEW_RELIC_LICENSE_KEY}";
+            account_id = "\${NEW_RELIC_ACCOUNT_ID-default}";
+            license_key = "\${NEW_RELIC_LICENSE_KEY-default}";
             api = "logs";
           };
         };
