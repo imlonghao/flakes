@@ -80,6 +80,15 @@ in
       template bgp tmpl_upstream {
         local as 30114;
         graceful restart on;
+        ipv4 {
+          import filter {
+            bgp_large_community.add((30114, 1, 2));
+            bgp_large_community.add((30114, 2, 1));
+            bgp_large_community.add((30114, 3, 276));
+            accept;
+          };
+          export where bgp_large_community ~ [(30114, 1, 1), (30114, 1, 5)];
+        };
         ipv6 {
           import filter {
             bgp_large_community.add((30114, 1, 2));
@@ -115,6 +124,10 @@ in
       template bgp tmpl_peer {
         local as 30114;
         graceful restart on;
+        ipv4 {
+          import none;
+          export where bgp_large_community ~ [(30114, 1, 1), (30114, 1, 5)];
+        };
         ipv6 {
           import none;
           export where bgp_large_community ~ [(30114, 1, 1), (30114, 1, 5)];
@@ -145,7 +158,18 @@ in
           };
         };
       };
-      protocol bgp AS6939 from tmpl_upstream {
+      protocol bgp AS6939v4 from tmpl_upstream {
+        neighbor 185.1.167.69 as 6939;
+        ipv4 {
+          import filter {
+            bgp_large_community.add((30114, 1, 3));
+            bgp_large_community.add((30114, 2, 1));
+            bgp_large_community.add((30114, 3, 276));
+            accept;
+          };
+        };
+      };
+      protocol bgp AS6939v6 from tmpl_upstream {
         neighbor 2001:7f8:f2:e1::6939:1 as 6939;
         ipv6 {
           export filter {

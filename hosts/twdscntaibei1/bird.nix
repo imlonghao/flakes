@@ -19,9 +19,9 @@ in
         route 2602:fab0:24::/48 blackhole;
         ipv6 {
           import filter {
-            bgp_large_community.add((199632, 1, 1));
-            bgp_large_community.add((199632, 2, 4));
-            bgp_large_community.add((199632, 3, 158));
+            bgp_large_community.add((30114, 1, 1));
+            bgp_large_community.add((30114, 2, 4));
+            bgp_large_community.add((30114, 3, 158));
             accept;
           };
           export all;
@@ -29,46 +29,46 @@ in
       }
 
       template bgp tmpl_upstream {
-        local as 199632;
+        local as 30114;
         graceful restart on;
         ipv6 {
           import filter {
-            bgp_large_community.add((199632, 1, 2));
-            bgp_large_community.add((199632, 2, 4));
-            bgp_large_community.add((199632, 3, 158));
+            bgp_large_community.add((30114, 1, 2));
+            bgp_large_community.add((30114, 2, 4));
+            bgp_large_community.add((30114, 3, 158));
             accept;
           };
-          export where bgp_large_community ~ [(199632, 1, 1), (199632, 1, 5)];
+          export where bgp_large_community ~ [(30114, 1, 1), (30114, 1, 5)];
         };
       }
       template bgp tmpl_rs {
-        local as 199632;
+        local as 30114;
         graceful restart on;
         ipv6 {
           import filter {
             if bgp_path.first~[945, 54625, 57481, 61302] then reject;
-            bgp_large_community.add((199632, 1, 4));
-            bgp_large_community.add((199632, 2, 4));
-            bgp_large_community.add((199632, 3, 158));
+            bgp_large_community.add((30114, 1, 4));
+            bgp_large_community.add((30114, 2, 4));
+            bgp_large_community.add((30114, 3, 158));
             accept;
           };
-          export where bgp_large_community ~ [(199632, 1, 1), (199632, 1, 5)];
+          export where bgp_large_community ~ [(30114, 1, 1), (30114, 1, 5)];
         };
       }
       template bgp tmpl_peer {
-        local as 199632;
+        local as 30114;
         graceful restart on;
         ipv6 {
           import none;
-          export where bgp_large_community ~ [(199632, 1, 1), (199632, 1, 5)];
+          export where bgp_large_community ~ [(30114, 1, 1), (30114, 1, 5)];
         };
       }
       template bgp tmpl_downstream {
-        local as 199632;
+        local as 30114;
         graceful restart on;
         ipv6 {
           import none;
-          export where net.len <= 48 && !is_martian_v6() && bgp_large_community ~ [(199632, 1, *)];
+          export where net.len <= 48 && !is_martian_v6() && bgp_large_community ~ [(30114, 1, *)];
         };
       }
 
@@ -77,11 +77,11 @@ in
         ipv6 {
           export filter {
             if net = 2602:fab0:20::/48 then {
-              bgp_path.prepend(199632);
-              bgp_path.prepend(199632);
+              bgp_path.prepend(30114);
+              bgp_path.prepend(30114);
               accept;
             }
-            if bgp_large_community ~ [(199632, 1, 1), (199632, 1, 5)] then accept;
+            if bgp_large_community ~ [(30114, 1, 1), (30114, 1, 5)] then accept;
           };
         };
       };
@@ -89,9 +89,9 @@ in
         neighbor 2a0f:5707:ffe3::34 as 13335;
         ipv6 {
           import filter {
-            bgp_large_community.add((199632, 1, 3));
-            bgp_large_community.add((199632, 2, 4));
-            bgp_large_community.add((199632, 3, 158));
+            bgp_large_community.add((30114, 1, 3));
+            bgp_large_community.add((30114, 2, 4));
+            bgp_large_community.add((30114, 3, 158));
             accept;
           };
         };
@@ -105,23 +105,6 @@ in
       protocol bgp AS199594 from tmpl_rs {
         neighbor fe80::1980:1:1 % 'kskb-ix' as 199594;
         source address fe80::199:632;
-      };
-      protocol bgp AS212232 from tmpl_downstream {
-        neighbor 2a0c:2f07:9459::b14 as 212232;
-        description "bgp.tools";
-        source address 2602:fab0:24::;
-        multihop;
-        ipv6 {
-          add paths tx;
-        };
-      };
-
-      protocol bgp internaljp from tmpl_downstream {
-        neighbor 2602:feda:1bf:deaf::31 as 199632;
-        ipv6 {
-          import where net = 2602:fab0:24:eeee::/64;
-          next hop self;
-        };
       };
 
     '';
