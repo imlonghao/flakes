@@ -26,8 +26,9 @@ in
         };
       }
       protocol bgp starrydns6 {
-        neighbor 2403:ad80:98:c00::1 as 134835;
+        neighbor 2403:ad80:98:fffa::253 as 134835;
         source address 2403:ad80:98:c60::f6f4;
+        multihop 2;
         local as 133846;
         graceful restart on;
         ipv6 {
