@@ -16,9 +16,14 @@ let
       route 2602:fab0:29:a::/64 via 2602:feda:1bf:deaf::20;
     '';
   };
-  dn42Conf = import profiles.bird.dn42 { region = 44; country = 1840; ip = 5; config = config; lib = lib; };
-in
-{
+  dn42Conf = import profiles.bird.dn42 {
+    region = 44;
+    country = 1840;
+    ip = 5;
+    config = config;
+    lib = lib;
+  };
+in {
   services.bird2 = {
     enable = true;
     config = generalConf + dn42Conf + ''

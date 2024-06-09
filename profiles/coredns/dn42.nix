@@ -10,14 +10,15 @@ let
     5.0/27.68.22.172.in-addr.arpa. 3600 PTR us2.imlonghao.dn42.
     8.0/27.68.22.172.in-addr.arpa. 3600 PTR ns.imlonghao.dn42.
   '';
-in
-{
-  networking.interfaces.lo.ipv4.addresses = [
-    { address = "172.22.68.8"; prefixLength = 32; }
-  ];
-  networking.interfaces.lo.ipv6.addresses = [
-    { address = "fd21:5c0c:9b7e::8"; prefixLength = 128; }
-  ];
+in {
+  networking.interfaces.lo.ipv4.addresses = [{
+    address = "172.22.68.8";
+    prefixLength = 32;
+  }];
+  networking.interfaces.lo.ipv6.addresses = [{
+    address = "fd21:5c0c:9b7e::8";
+    prefixLength = 128;
+  }];
   services.coredns = {
     enable = true;
     config = ''

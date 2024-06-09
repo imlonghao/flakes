@@ -1,21 +1,17 @@
-{ inputs, pkgs, ... }:
-{
+{ inputs, pkgs, ... }: {
   disabledModules = [ "services/monitoring/netdata.nix" ];
-  imports = [ "${inputs.latest}/nixos/modules/services/monitoring/netdata.nix" ];
+  imports =
+    [ "${inputs.latest}/nixos/modules/services/monitoring/netdata.nix" ];
 
   environment.systemPackages = [ pkgs.netdata ];
   services.netdata = {
     enable = true;
     config = {
-      web = {
-        mode = "none";
-      };
-      logs = {
-        "severity level" = "error";
-      };
+      web = { mode = "none"; };
+      logs = { "severity level" = "error"; };
     };
     configDir = {
-      "stream.conf" =  pkgs.writeText "stream.conf" ''
+      "stream.conf" = pkgs.writeText "stream.conf" ''
         [stream]
         enabled = yes
         destination = 100.64.88.24

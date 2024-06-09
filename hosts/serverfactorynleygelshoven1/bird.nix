@@ -9,8 +9,7 @@ let
     #    src4 = "23.146.88.7";
     src6 = "2602:fab0:30::";
   };
-in
-{
+in {
   services.bird2 = {
     enable = true;
     config = generalConf + kernelConf + ''

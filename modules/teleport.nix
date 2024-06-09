@@ -24,28 +24,21 @@ let
     ssh_service = {
       enabled = "yes";
       listen_addr = cfg.ssh_service.listen_addr;
-      commands = [
-        {
-          name = "arch";
-          command = [
-            "${pkgs.coreutils}/bin/uname"
-            "-r"
-          ];
-          period = "1h0m0s";
-        }
-      ];
+      commands = [{
+        name = "arch";
+        command = [ "${pkgs.coreutils}/bin/uname" "-r" ];
+        period = "1h0m0s";
+      }];
     };
-    auth_service = {
-      enabled = "no";
-    };
-    proxy_service = {
-      enabled = "no";
-    };
+    auth_service = { enabled = "no"; };
+    proxy_service = { enabled = "no"; };
   });
-in
-{
+in {
   options.services.myteleport = {
-    enable = mkOption { type = types.bool; default = false; };
+    enable = mkOption {
+      type = types.bool;
+      default = false;
+    };
     teleport = {
       auth_token = mkOption { type = types.str; };
       auth_servers = mkOption { type = types.listOf types.str; };

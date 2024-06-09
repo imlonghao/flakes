@@ -1,5 +1,4 @@
-{ config, modulesPath, pkgs, profiles, self, ... }:
-{
+{ config, modulesPath, pkgs, profiles, self, ... }: {
   imports = [
     ./bird.nix
     ./dn42.nix
@@ -29,20 +28,24 @@
     };
     interfaces = {
       enp0s3 = {
-        ipv4.addresses = [
-          { address = "10.0.0.97"; prefixLength = 24; }
-        ];
-        ipv6.addresses = [
-          { address = "2603:c020:8012:a322::cd17"; prefixLength = 64; }
-        ];
+        ipv4.addresses = [{
+          address = "10.0.0.97";
+          prefixLength = 24;
+        }];
+        ipv6.addresses = [{
+          address = "2603:c020:8012:a322::cd17";
+          prefixLength = 64;
+        }];
       };
       lo = {
-        ipv4.addresses = [
-          { address = "172.22.68.4"; prefixLength = 32; }
-        ];
-        ipv6.addresses = [
-          { address = "fd21:5c0c:9b7e:4::"; prefixLength = 64; }
-        ];
+        ipv4.addresses = [{
+          address = "172.22.68.4";
+          prefixLength = 32;
+        }];
+        ipv6.addresses = [{
+          address = "fd21:5c0c:9b7e:4::";
+          prefixLength = 64;
+        }];
       };
     };
   };
@@ -52,10 +55,7 @@
   boot.loader.efi.canTouchEfiVariables = true;
 
   environment.persistence."/persist" = {
-    directories = [
-      "/var/lib"
-      "/root/.ssh"
-    ];
+    directories = [ "/var/lib" "/root/.ssh" ];
     files = [
       "/etc/machine-id"
       "/etc/ssh/ssh_host_rsa_key"
@@ -63,11 +63,7 @@
     ];
   };
 
-  environment.systemPackages = with pkgs; [
-    deploy-rs
-    docker-compose
-    git
-  ];
+  environment.systemPackages = with pkgs; [ deploy-rs docker-compose git ];
 
   # EtherGuard
   services.etherguard-edge = {
@@ -131,10 +127,7 @@
         "ssh://wx86wp48@wx86wp48.repo.borgbase.com/./repo"
         "ssh://zh2646@zh2646.rsync.net/./oracledefrankfurt1"
       ];
-      source_directories = [
-        "/persist/docker"
-        "/persist/heatmap"
-      ];
+      source_directories = [ "/persist/docker" "/persist/heatmap" ];
     };
   };
 

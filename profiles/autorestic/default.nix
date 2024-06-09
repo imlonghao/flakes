@@ -3,9 +3,8 @@
 {
   environment.systemPackages = [ pkgs.restic pkgs.autorestic ];
 
-  sops.secrets."autorestic".sopsFile = "${self}/hosts/${config.networking.hostName}/secrets.yml";
+  sops.secrets."autorestic".sopsFile =
+    "${self}/hosts/${config.networking.hostName}/secrets.yml";
 
-  services.autorestic = {
-    enable = true;
-  };
+  services.autorestic = { enable = true; };
 }

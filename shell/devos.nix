@@ -8,8 +8,7 @@ let
   docs = pkgWithCategory "docs";
   devos = pkgWithCategory "devos";
 
-in
-{
+in {
   _file = toString ./.;
 
   imports = [ "${extraModulesPath}/git/hooks.nix" ];
@@ -30,23 +29,19 @@ in
     unset _PATH
   '');
 
-  packages = with pkgs; [
-    sops
-    ssh-to-age
-  ];
+  packages = with pkgs; [ sops ssh-to-age ];
 
-  commands = with pkgs; [
-    (devos nixVersions.nix_2_22)
-    (linter nixpkgs-fmt)
-    (linter editorconfig-checker)
-    # (docs python3Packages.grip) too many deps
-    (docs mdbook)
-    (devos inputs.deploy.packages.${pkgs.system}.deploy-rs)
-  ]
+  commands = with pkgs;
+    [
+      (devos nixVersions.nix_2_22)
+      (linter nixpkgs-fmt)
+      (linter editorconfig-checker)
+      # (docs python3Packages.grip) too many deps
+      (docs mdbook)
+      (devos inputs.deploy.packages.${pkgs.system}.deploy-rs)
+    ]
 
-  ++ lib.optional
-    (system != "i686-linux")
-    (devos cachix)
+    ++ lib.optional (system != "i686-linux") (devos cachix)
 
   ;
 }

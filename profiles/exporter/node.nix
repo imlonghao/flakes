@@ -1,8 +1,8 @@
 { config, self, ... }:
 let
-  ip = builtins.replaceStrings [ "/24" ] [ "" ] config.services.etherguard-edge.ipv4;
-in
-{
+  ip = builtins.replaceStrings [ "/24" ] [ "" ]
+    config.services.etherguard-edge.ipv4;
+in {
   services.prometheus.exporters.node = {
     enable = true;
     listenAddress = ip;
@@ -12,6 +12,7 @@ in
       "--collector.netdev.device-exclude=^(docker[0-9]|vboxnet[0-9]|br-.+|veth.+)$"
     ];
   };
-  systemd.services."prometheus-node-exporter".after = [ "etherguard-edge.service" ];
+  systemd.services."prometheus-node-exporter".after =
+    [ "etherguard-edge.service" ];
 }
 

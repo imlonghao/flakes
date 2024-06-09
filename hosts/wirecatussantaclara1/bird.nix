@@ -1,13 +1,8 @@
 { config, lib, profiles, ... }:
 let
-  generalConf = import profiles.bird.general {
-    config = config;
-  };
-  kernelConf = import profiles.bird.kernel {
-    src6 = "2602:fab0:23::";
-  };
-in
-{
+  generalConf = import profiles.bird.general { config = config; };
+  kernelConf = import profiles.bird.kernel { src6 = "2602:fab0:23::"; };
+in {
   services.bird2 = {
     enable = true;
     config = generalConf + kernelConf + ''

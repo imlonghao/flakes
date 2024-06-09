@@ -1,5 +1,4 @@
-{ pkgs, profiles, ... }:
-{
+{ pkgs, profiles, ... }: {
   imports = [
     ./hardware.nix
     ./bird.nix
@@ -53,19 +52,15 @@
           prefixLength = 128;
         }
       ];
-      ens3.ipv6.addresses = [
-        {
-          address = "2605:6400:20:803::";
-          prefixLength = 48;
-        }
-      ];
+      ens3.ipv6.addresses = [{
+        address = "2605:6400:20:803::";
+        prefixLength = 48;
+      }];
     };
   };
 
   environment.persistence."/persist" = {
-    directories = [
-      "/var/lib"
-    ];
+    directories = [ "/var/lib" ];
     files = [
       "/etc/machine-id"
       "/etc/ssh/ssh_host_rsa_key"
@@ -97,7 +92,7 @@
     enable = true;
     listen = "[2602:fab0:29::123]:9000";
   };
-	
+
   # NAT64
   nat64 = {
     enable = true;

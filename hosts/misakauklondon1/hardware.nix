@@ -1,18 +1,10 @@
 { modulesPath, ... }:
-let
-  mountOptions = [
-    "relatime"
-    "compress-force=zstd"
-    "space_cache=v2"
-  ];
-in
-{
-  imports =
-    [
-      (modulesPath + "/profiles/qemu-guest.nix")
-    ];
+let mountOptions = [ "relatime" "compress-force=zstd" "space_cache=v2" ];
+in {
+  imports = [ (modulesPath + "/profiles/qemu-guest.nix") ];
 
-  boot.initrd.availableKernelModules = [ "ahci" "sym53c8xx" "xhci_pci" "virtio_pci" "sr_mod" "virtio_blk" ];
+  boot.initrd.availableKernelModules =
+    [ "ahci" "sym53c8xx" "xhci_pci" "virtio_pci" "sr_mod" "virtio_blk" ];
   boot.kernelModules = [ "kvm-intel" ];
 
   fileSystems."/" = {

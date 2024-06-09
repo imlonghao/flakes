@@ -1,5 +1,4 @@
-{ lib, pkgs, profiles, ... }:
-{
+{ lib, pkgs, profiles, ... }: {
   imports = [
     ./hardware.nix
     ./bird.nix
@@ -22,38 +21,27 @@
     };
     nameservers = [ "8.8.8.8" "1.1.1.1" ];
     interfaces = {
-      ens3.ipv4.addresses = [
-        {
-          address = "103.205.9.90";
-          prefixLength = 24;
-        }
-      ];
-      ens3.ipv6.addresses = [
-        {
-          address = "2403:ad80:98:c60::f6f4";
-          prefixLength = 64;
-        }
-      ];
-      lo.ipv4.addresses = [
-        {
-          address = "44.31.42.0";
-          prefixLength = 32;
-        }
-      ];
-      lo.ipv6.addresses = [
-        {
-          address = "2a09:b280:ff81::";
-          prefixLength = 48;
-        }
-      ];
+      ens3.ipv4.addresses = [{
+        address = "103.205.9.90";
+        prefixLength = 24;
+      }];
+      ens3.ipv6.addresses = [{
+        address = "2403:ad80:98:c60::f6f4";
+        prefixLength = 64;
+      }];
+      lo.ipv4.addresses = [{
+        address = "44.31.42.0";
+        prefixLength = 32;
+      }];
+      lo.ipv6.addresses = [{
+        address = "2a09:b280:ff81::";
+        prefixLength = 48;
+      }];
     };
   };
 
   environment.persistence."/persist" = {
-    directories = [
-      "/var/lib"
-      "/root/.ssh"
-    ];
+    directories = [ "/var/lib" "/root/.ssh" ];
     files = [
       "/etc/machine-id"
       "/etc/ssh/ssh_host_rsa_key"
@@ -82,9 +70,8 @@
   # Crontab
   services.cron = {
     enable = true;
-    systemCronJobs = [
-      "0 1 * * * root ${pkgs.git}/bin/git -C /persist/pki pull"
-    ];
+    systemCronJobs =
+      [ "0 1 * * * root ${pkgs.git}/bin/git -C /persist/pki pull" ];
   };
 
   zramSwap.enable = lib.mkForce false;

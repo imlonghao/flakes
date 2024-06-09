@@ -1,5 +1,4 @@
-{ config, pkgs, profiles, ... }:
-{
+{ config, pkgs, profiles, ... }: {
   imports = [
     ./hardware.nix
     ./bird.nix
@@ -21,22 +20,39 @@
     interfaces = {
       lo = {
         ipv4.addresses = [
-          { address = "23.146.88.0"; prefixLength = 32; }
-          { address = "23.146.88.5"; prefixLength = 32; }
+          {
+            address = "23.146.88.0";
+            prefixLength = 32;
+          }
+          {
+            address = "23.146.88.5";
+            prefixLength = 32;
+          }
         ];
         ipv6.addresses = [
-          { address = "2602:fab0:20::"; prefixLength = 128; }
-          { address = "2602:fab0:27::"; prefixLength = 128; }
-          { address = "2602:fab0:27::123"; prefixLength = 128; }
+          {
+            address = "2602:fab0:20::";
+            prefixLength = 128;
+          }
+          {
+            address = "2602:fab0:27::";
+            prefixLength = 128;
+          }
+          {
+            address = "2602:fab0:27::123";
+            prefixLength = 128;
+          }
         ];
       };
       ens18 = {
-        ipv4.addresses = [
-          { address = "185.154.155.64"; prefixLength = 23; }
-        ];
-        ipv6.addresses = [
-          { address = "2a07:8dc1:20:149::1"; prefixLength = 64; }
-        ];
+        ipv4.addresses = [{
+          address = "185.154.155.64";
+          prefixLength = 23;
+        }];
+        ipv6.addresses = [{
+          address = "2a07:8dc1:20:149::1";
+          prefixLength = 64;
+        }];
       };
     };
   };

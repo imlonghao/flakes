@@ -1,7 +1,4 @@
-{ lib
-, fetchFromGitHub
-, buildGoModule
-}:
+{ lib, fetchFromGitHub, buildGoModule }:
 buildGoModule rec {
   pname = "juicity";
   version = "0.1.3";
@@ -17,13 +14,9 @@ buildGoModule rec {
 
   proxyVendor = true;
 
-  ldflags = [
-    "-X=github.com/juicity/juicity/config.Version=${version}"
-  ];
+  ldflags = [ "-X=github.com/juicity/juicity/config.Version=${version}" ];
 
-  subPackages = [
-    "cmd/server"
-  ];
+  subPackages = [ "cmd/server" ];
 
   postInstall = ''
     mv $out/bin/server $out/bin/juicity-server

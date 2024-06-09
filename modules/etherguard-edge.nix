@@ -1,9 +1,7 @@
 { config, pkgs, lib, ... }:
 with lib;
-let
-  cfg = config.services.etherguard-edge;
-in
-{
+let cfg = config.services.etherguard-edge;
+in {
   options.services.etherguard-edge = {
     enable = mkEnableOption "EtherGuard (edge node)";
     path = mkOption {
@@ -24,8 +22,10 @@ in
     systemd.services.etherguard-edge = {
       serviceConfig = {
         Type = "simple";
-        ExecStartPre = "${pkgs.bash}/bin/sh -c 'until (${pkgs.iputils}/bin/ping -4 -c1 google.com || ${pkgs.iputils}/bin/ping -6 -c1 google.com); do sleep 1; done;'";
-        ExecStart = "${pkgs.etherguard}/bin/EtherGuard-VPN -mode edge -config ${cfg.path}";
+        ExecStartPre =
+          "${pkgs.bash}/bin/sh -c 'until (${pkgs.iputils}/bin/ping -4 -c1 google.com || ${pkgs.iputils}/bin/ping -6 -c1 google.com); do sleep 1; done;'";
+        ExecStart =
+          "${pkgs.etherguard}/bin/EtherGuard-VPN -mode edge -config ${cfg.path}";
         ExecStartPost = [
           "${pkgs.coreutils}/bin/sleep 5"
           "${pkgs.iproute2}/bin/ip addr add ${cfg.ipv4} dev eg_net"

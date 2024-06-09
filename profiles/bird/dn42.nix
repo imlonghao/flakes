@@ -1,5 +1,4 @@
-{ region, country, ip, config, lib }:
-''
+{ region, country, ip, config, lib }: ''
   define DN42_REGION = ${toString region};
   define DN42_COUNTRY = ${toString country};
   function is_self_net() {
@@ -45,7 +44,9 @@
       import none;
       export filter {
         if net = ::/0 then reject;
-        if is_valid_network_v6() then krt_prefsrc = fd21:5c0c:9b7e:${toString ip}::;
+        if is_valid_network_v6() then krt_prefsrc = fd21:5c0c:9b7e:${
+          toString ip
+        }::;
         accept;
       };
     };
@@ -163,19 +164,16 @@
     };
   }
   ${builtins.concatStringsSep "\n" (lib.flip map (config.dn42) (x:
-    if x.mpbgp then
-    ''
+    if x.mpbgp then ''
       protocol bgp AS${builtins.toString x.asn} from dnpeers {
         neighbor ${x.e6} % '${x.name}' as ${toString x.asn};
       }
-    '' else
-    ''
+    '' else ''
       protocol bgp AS${builtins.toString x.asn}v4 from dnpeers {
         neighbor ${x.e4} as ${toString x.asn};
       }
       protocol bgp AS${builtins.toString x.asn}v6 from dnpeers {
         neighbor ${x.e6} % '${x.name}' as ${toString x.asn};
       }
-    ''
-    ))}
+    ''))}
 ''

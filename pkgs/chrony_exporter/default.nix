@@ -14,7 +14,9 @@ buildGoModule rec {
   vendorHash = "sha256-WF9KDpm98dVVLcoE/b0y3aac/pTvSqoYmSF+OOpsB5o=";
   nativeBuildInputs = [ makeWrapper ];
   postInstall = ''
-    wrapProgram $out/bin/prometheus-chrony-exporter --suffix PATH : ${lib.makeBinPath [ pkgs.chrony ]}
+    wrapProgram $out/bin/prometheus-chrony-exporter --suffix PATH : ${
+      lib.makeBinPath [ pkgs.chrony ]
+    }
   '';
   meta = with lib; {
     description = "Prometheus Chrony Exporter";

@@ -1,5 +1,4 @@
-{ config, pkgs, profiles, ... }:
-{
+{ config, pkgs, profiles, ... }: {
   imports = [
     ./hardware.nix
     profiles.mycore
@@ -20,12 +19,14 @@
     };
     interfaces = {
       eth0 = {
-        ipv4.addresses = [
-          { address = "154.17.16.135"; prefixLength = 24; }
-        ];
-        ipv6.addresses = [
-          { address = "2605:52c0:2:4ad::1"; prefixLength = 64; }
-        ];
+        ipv4.addresses = [{
+          address = "154.17.16.135";
+          prefixLength = 24;
+        }];
+        ipv6.addresses = [{
+          address = "2605:52c0:2:4ad::1";
+          prefixLength = 64;
+        }];
       };
     };
   };
@@ -39,9 +40,8 @@
   # Crontab
   services.cron = {
     enable = true;
-    systemCronJobs = [
-      "0 1 * * * root ${pkgs.git}/bin/git -C /persist/pki pull"
-    ];
+    systemCronJobs =
+      [ "0 1 * * * root ${pkgs.git}/bin/git -C /persist/pki pull" ];
   };
 
   sops.secrets.juicity.sopsFile = ./secrets.yml;

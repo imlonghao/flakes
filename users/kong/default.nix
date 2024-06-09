@@ -1,5 +1,4 @@
-{ config, self, ... }:
-{
+{ config, self, ... }: {
   sops.secrets.kong = {
     sopsFile = "${self}/secrets/shadow.yml";
     neededForUsers = true;
@@ -9,5 +8,5 @@
     isNormalUser = true;
     group = "kong";
   };
-  users.groups.kong = {};
+  users.groups.kong = { };
 }

@@ -12,11 +12,8 @@ let
       route 2602:fab0:31::/48 blackhole;
     '';
   };
-  kernelConf = import profiles.bird.kernel {
-    src6 = "2602:fab0:31:1::";
-  };
-in
-{
+  kernelConf = import profiles.bird.kernel { src6 = "2602:fab0:31:1::"; };
+in {
   services.bird2 = {
     enable = true;
     config = generalConf + kernelConf + profiles.bird.blackbgp ''

@@ -1,16 +1,7 @@
 { modulesPath, ... }:
-let
-  mountOptions = [
-    "relatime"
-    "compress-force=zstd"
-    "space_cache=v2"
-  ];
-in
-{
-  imports =
-    [
-      (modulesPath + "/profiles/qemu-guest.nix")
-    ];
+let mountOptions = [ "relatime" "compress-force=zstd" "space_cache=v2" ];
+in {
+  imports = [ (modulesPath + "/profiles/qemu-guest.nix") ];
 
   boot.initrd.availableKernelModules = [ "xhci_pci" "virtio_pci" "usbhid" ];
 

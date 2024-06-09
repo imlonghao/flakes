@@ -1,5 +1,4 @@
-{ pkgs, profiles, sops, ... }:
-{
+{ pkgs, profiles, sops, ... }: {
   imports = [
     ./bird.nix
     ./borg.nix
@@ -22,17 +21,16 @@
     };
     interfaces = {
       ens3 = {
-        ipv6.addresses = [
-          { address = "2a0e:dc0:2:cf29::1919"; prefixLength = 64; }
-        ];
+        ipv6.addresses = [{
+          address = "2a0e:dc0:2:cf29::1919";
+          prefixLength = 64;
+        }];
       };
     };
   };
 
   environment.persistence."/persist" = {
-    directories = [
-      "/var/lib"
-    ];
+    directories = [ "/var/lib" ];
     files = [
       "/etc/machine-id"
       "/etc/ssh/ssh_host_rsa_key"
@@ -40,9 +38,7 @@
     ];
   };
 
-  environment.systemPackages = with pkgs; [
-    docker-compose
-  ];
+  environment.systemPackages = with pkgs; [ docker-compose ];
 
   # Docker
   virtualisation.docker.enable = true;

@@ -3,10 +3,10 @@ with lib;
 let
   cfg = config.services.tuic;
   caps = [ "CAP_NET_BIND_SERVICE" ];
-in
-{
+in {
   options.services.tuic = {
-    enable = mkEnableOption "Delicately-TUICed high-performance proxy built on top of the QUIC protocol";
+    enable = mkEnableOption
+      "Delicately-TUICed high-performance proxy built on top of the QUIC protocol";
     path = mkOption {
       type = types.str;
       description = "path to the config file";

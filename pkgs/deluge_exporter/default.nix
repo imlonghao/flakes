@@ -12,11 +12,8 @@ stdenv.mkDerivation rec {
   };
 
   propagatedBuildInputs = [
-    (pkgs.python3.withPackages(ps: with ps; [ 
-      deluge-client
-      loguru
-      prometheus-client
-    ]))
+    (pkgs.python3.withPackages
+      (ps: with ps; [ deluge-client loguru prometheus-client ]))
   ];
 
   buildPhase = "true";

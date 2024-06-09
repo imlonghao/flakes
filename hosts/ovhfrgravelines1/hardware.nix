@@ -1,13 +1,8 @@
 { ... }:
-let
-  mountOptions = [
-    "relatime"
-    "compress-force=zstd"
-    "space_cache=v2"
-  ];
-in
-{
-  boot.initrd.availableKernelModules = [ "ehci_pci" "xhci_pci" "ahci" "sd_mod" "ip6_tables" ];
+let mountOptions = [ "relatime" "compress-force=zstd" "space_cache=v2" ];
+in {
+  boot.initrd.availableKernelModules =
+    [ "ehci_pci" "xhci_pci" "ahci" "sd_mod" "ip6_tables" ];
   boot.kernelModules = [ "kvm-intel" ];
 
   fileSystems."/" = {

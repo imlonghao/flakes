@@ -1,9 +1,7 @@
 { config, pkgs, lib, ... }:
 with lib;
-let
-  cfg = config.services.rclone-a;
-in
-{
+let cfg = config.services.rclone-a;
+in {
   options.services.rclone-a = {
     enable = mkEnableOption "Rclone Mount (a)";
     config = mkOption {

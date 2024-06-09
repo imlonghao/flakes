@@ -1,5 +1,4 @@
-{ config, pkgs, profiles, sops, ... }:
-{
+{ config, pkgs, profiles, sops, ... }: {
   imports = [
     ./dn42.nix
     ./hardware.nix
@@ -32,11 +31,15 @@
     };
     interfaces = {
       ens3 = {
-        ipv4.addresses = [
-          { address = "103.167.150.135"; prefixLength = 24; }
-        ];
+        ipv4.addresses = [{
+          address = "103.167.150.135";
+          prefixLength = 24;
+        }];
         ipv6.addresses = [
-          { address = "2406:ef80:2:e::1"; prefixLength = 64; }
+          {
+            address = "2406:ef80:2:e::1";
+            prefixLength = 64;
+          }
           {
             address = "2406:ef80:2:e:114:514:1919:810";
             prefixLength = 64;
@@ -45,27 +48,33 @@
       };
       lo = {
         ipv4.addresses = [
-          { address = "172.22.68.2"; prefixLength = 32; }
-          { address = "172.22.68.8"; prefixLength = 32; }
+          {
+            address = "172.22.68.2";
+            prefixLength = 32;
+          }
+          {
+            address = "172.22.68.8";
+            prefixLength = 32;
+          }
         ];
         ipv6.addresses = [
-          { address = "fd21:5c0c:9b7e:2::"; prefixLength = 64; }
-          { address = "fd21:5c0c:9b7e::8"; prefixLength = 128; }
+          {
+            address = "fd21:5c0c:9b7e:2::";
+            prefixLength = 64;
+          }
+          {
+            address = "fd21:5c0c:9b7e::8";
+            prefixLength = 128;
+          }
         ];
       };
     };
   };
 
-  environment.systemPackages = with pkgs; [
-    rclone
-    tmux
-  ];
+  environment.systemPackages = with pkgs; [ rclone tmux ];
 
   environment.persistence."/persist" = {
-    directories = [
-      "/root/.ssh"
-      "/var/lib"
-    ];
+    directories = [ "/root/.ssh" "/var/lib" ];
     files = [
       "/etc/machine-id"
       "/etc/ssh/ssh_host_rsa_key"
@@ -118,13 +127,8 @@
       };
       locations = {
         data = {
-          from = [
-            "/persist/docker"
-            "/persist/etc"
-          ];
-          to = [
-            "garage"
-          ];
+          from = [ "/persist/docker" "/persist/etc" ];
+          to = [ "garage" ];
           cron = "0 1 * * *";
         };
       };
@@ -135,8 +139,14 @@
   systemd.services.borgmatic.path = [ pkgs.mariadb ];
   services.borgmatic.settings = {
     repositories = [
-      { path = "ssh://m0yiu24x@m0yiu24x.repo.borgbase.com/./repo"; label = "borgbase"; }
-      { path = "ssh://zh2646@zh2646.rsync.net/./hosthatchsgsingapore1"; label = "rsync"; }
+      {
+        path = "ssh://m0yiu24x@m0yiu24x.repo.borgbase.com/./repo";
+        label = "borgbase";
+      }
+      {
+        path = "ssh://zh2646@zh2646.rsync.net/./hosthatchsgsingapore1";
+        label = "rsync";
+      }
     ];
     source_directories = [
       "/persist/docker/bitwarden"
@@ -176,8 +186,7 @@
   # Crontab
   services.cron = {
     enable = true;
-    systemCronJobs = [
-      "0 1 * * * root ${pkgs.git}/bin/git -C /persist/pki pull"
-    ];
+    systemCronJobs =
+      [ "0 1 * * * root ${pkgs.git}/bin/git -C /persist/pki pull" ];
   };
 }

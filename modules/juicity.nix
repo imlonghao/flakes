@@ -1,9 +1,7 @@
 { config, pkgs, lib, ... }:
 with lib;
-let
-  cfg = config.services.juicity;
-in
-{
+let cfg = config.services.juicity;
+in {
   options.services.juicity = {
     enable = mkEnableOption "a quic-based proxy protocol implementation";
   };
@@ -12,9 +10,7 @@ in
     systemd.packages = [ pkgs.juicity ];
     systemd.services.juicity-server = {
       wantedBy = [ "multi-user.target" ];
-      environment = {
-        QUIC_GO_ENABLE_GSO = "true";
-      };
+      environment = { QUIC_GO_ENABLE_GSO = "true"; };
     };
   };
 }

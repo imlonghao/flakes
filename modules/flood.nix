@@ -1,9 +1,7 @@
 { config, pkgs, lib, ... }:
 with lib;
-let
-  cfg = config.services.flood;
-in
-{
+let cfg = config.services.flood;
+in {
   options.services.flood = {
     enable = mkEnableOption "A beautiful web UI for various torrent clients.";
     listen = mkOption {
@@ -13,8 +11,9 @@ in
   };
   config = mkIf cfg.enable {
     systemd.services.flood = {
-      serviceConfig = with pkgs;{
-        ExecStart = "${flood}/bin/flood --auth=none --rtsocket /run/rtorrent/rpc.sock -h ${cfg.listen}";
+      serviceConfig = with pkgs; {
+        ExecStart =
+          "${flood}/bin/flood --auth=none --rtsocket /run/rtorrent/rpc.sock -h ${cfg.listen}";
         User = "rtorrent";
         Group = "rtorrent";
       };

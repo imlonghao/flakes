@@ -1,9 +1,7 @@
 { config, pkgs, lib, ... }:
 with lib;
-let
-  cfg = config.services.mygarage;
-in
-{
+let cfg = config.services.mygarage;
+in {
   options.services.mygarage = {
     enable = mkEnableOption "Garage Data Store";
     path = mkOption {
@@ -12,17 +10,12 @@ in
     };
   };
   config = mkIf cfg.enable {
-    environment.systemPackages = with pkgs; [
-      garage
-    ];
+    environment.systemPackages = with pkgs; [ garage ];
     systemd.services.garage = {
       serviceConfig = {
         Type = "simple";
         ExecStart = "${pkgs.garage}/bin/garage -c ${cfg.path} server";
-        Environment = [
-          "RUST_LOG=garage=info"
-          "RUST_BACKTRACE=1"
-        ];
+        Environment = [ "RUST_LOG=garage=info" "RUST_BACKTRACE=1" ];
         StateDirectory = "garage";
         ProtectHome = true;
         NoNewPrivileges = true;

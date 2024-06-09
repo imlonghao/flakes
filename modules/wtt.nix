@@ -1,9 +1,7 @@
 { config, pkgs, lib, ... }:
 with lib;
-let
-  cfg = config.services.wtt;
-in
-{
+let cfg = config.services.wtt;
+in {
   options.services.wtt = {
     enable = mkEnableOption "WatchTheTraffic";
     listen = mkOption {
@@ -13,7 +11,7 @@ in
   };
   config = mkIf cfg.enable {
     systemd.services.wtt = {
-      serviceConfig = with pkgs;{
+      serviceConfig = with pkgs; {
         ExecStart = "${wtt}/bin/monitor --listen ${cfg.listen}:2112";
         WorkingDirectory = "/tmp";
       };

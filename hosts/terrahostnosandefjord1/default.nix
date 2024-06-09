@@ -1,5 +1,4 @@
-{ config, modulesPath, pkgs, profiles, ... }:
-{
+{ config, modulesPath, pkgs, profiles, ... }: {
   imports = [
     ./bird.nix
     ./dn42.nix
@@ -27,24 +26,29 @@
       address = "2a03:94e0:ffff:185:243:216::1";
     };
     interfaces = {
-      ens18.ipv4.addresses = [
-        {
-          address = "185.243.216.252";
-          prefixLength = 24;
-        }
-      ];
-      ens18.ipv6.addresses = [
-        {
-          address = "2a03:94e0:ffff:185:243:216::252";
-          prefixLength = 118;
-        }
-      ];
+      ens18.ipv4.addresses = [{
+        address = "185.243.216.252";
+        prefixLength = 24;
+      }];
+      ens18.ipv6.addresses = [{
+        address = "2a03:94e0:ffff:185:243:216::252";
+        prefixLength = 118;
+      }];
       lo.ipv4.addresses = [
-        { address = "172.22.68.0"; prefixLength = 32; }
-        { address = "172.22.68.6"; prefixLength = 32; }
+        {
+          address = "172.22.68.0";
+          prefixLength = 32;
+        }
+        {
+          address = "172.22.68.6";
+          prefixLength = 32;
+        }
       ];
       lo.ipv6.addresses = [
-        { address = "fd21:5c0c:9b7e:6::"; prefixLength = 64; }
+        {
+          address = "fd21:5c0c:9b7e:6::";
+          prefixLength = 64;
+        }
 
         {
           address = "2602:feda:1bf::";

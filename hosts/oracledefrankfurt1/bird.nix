@@ -10,9 +10,14 @@ let
       route fd21:5c0c:9b7e:4::/64 blackhole;
     '';
   };
-  dn42Conf = import profiles.bird.dn42 { region = 41; country = 1276; ip = 4; config = config; lib = lib; };
-in
-{
+  dn42Conf = import profiles.bird.dn42 {
+    region = 41;
+    country = 1276;
+    ip = 4;
+    config = config;
+    lib = lib;
+  };
+in {
   services.bird2 = {
     enable = true;
     config = generalConf + dn42Conf;

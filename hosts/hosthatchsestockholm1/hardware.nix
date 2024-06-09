@@ -1,18 +1,10 @@
 { config, lib, modulesPath, ... }:
-let
-  mountOptions = [
-    "relatime"
-    "compress-force=zstd"
-    "space_cache=v2"
-  ];
-in
-{
-  imports =
-    [
-      (modulesPath + "/profiles/qemu-guest.nix")
-    ];
+let mountOptions = [ "relatime" "compress-force=zstd" "space_cache=v2" ];
+in {
+  imports = [ (modulesPath + "/profiles/qemu-guest.nix") ];
 
-  boot.initrd.availableKernelModules = [ "ata_piix" "uhci_hcd" "virtio_pci" "sr_mod" "virtio_blk" ];
+  boot.initrd.availableKernelModules =
+    [ "ata_piix" "uhci_hcd" "virtio_pci" "sr_mod" "virtio_blk" ];
   boot.kernelModules = [ "kvm-amd" ];
 
   fileSystems."/" = {
@@ -36,6 +28,7 @@ in
     neededForBoot = true;
   };
 
-  hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
+  hardware.cpu.amd.updateMicrocode =
+    lib.mkDefault config.hardware.enableRedistributableFirmware;
 
 }

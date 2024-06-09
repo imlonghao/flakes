@@ -13,8 +13,7 @@ let
     gv7EeZ4CIHFAg1O33OZ40uyet9XoSSLH44OCUmByJ5OItY4kJyml
     -----END CERTIFICATE-----
   '';
-in
-{
+in {
   services.openssh.extraConfig = ''
     HostCertificate /persist/etc/ssh/step-cert.pub
   '';

@@ -3,8 +3,7 @@ with lib;
 let
   cfg = config.services.hysteria;
   caps = [ "CAP_NET_BIND_SERVICE" ];
-in
-{
+in {
   options.services.hysteria = {
     enable = mkEnableOption "Hysteria Server Service";
     path = mkOption {
@@ -16,7 +15,8 @@ in
     systemd.services.hysteria = {
       serviceConfig = {
         Type = "simple";
-        ExecStart = "${pkgs.hysteria}/bin/hysteria server -c ${cfg.path} --disable-update-check";
+        ExecStart =
+          "${pkgs.hysteria}/bin/hysteria server -c ${cfg.path} --disable-update-check";
         User = "hysteria";
         Group = "hysteria";
         CapabilityBoundingSet = caps;
@@ -32,7 +32,7 @@ in
         group = "hysteria";
         isSystemUser = true;
       };
-      groups.hysteria = {};
+      groups.hysteria = { };
     };
   };
 }

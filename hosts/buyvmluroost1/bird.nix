@@ -5,8 +5,7 @@ let
     ospf4 = "where net ~ 23.146.88.0/24";
   };
   kernelConf = import profiles.bird.kernel { };
-in
-{
+in {
   services.bird2 = {
     enable = true;
     config = generalConf + kernelConf + ''

@@ -1,5 +1,4 @@
-{ config, pkgs, profiles, sops, ... }:
-{
+{ config, pkgs, profiles, sops, ... }: {
   imports = [
     ./hardware.nix
     ./bird.nix
@@ -20,30 +19,33 @@
     interfaces = {
       lo = {
         ipv6.addresses = [
-          { address = "2602:fab0:20::"; prefixLength = 128; }
-          { address = "2602:fab0:24::"; prefixLength = 128; }
+          {
+            address = "2602:fab0:20::";
+            prefixLength = 128;
+          }
+          {
+            address = "2602:fab0:24::";
+            prefixLength = 128;
+          }
         ];
       };
       ens18 = {
-        ipv4.addresses = [
-          { address = "103.147.22.112"; prefixLength = 24; }
-        ];
+        ipv4.addresses = [{
+          address = "103.147.22.112";
+          prefixLength = 24;
+        }];
       };
       ens19 = {
-        ipv6.addresses = [
-          { address = "2a0f:5707:ffe3::89"; prefixLength = 64; }
-        ];
+        ipv6.addresses = [{
+          address = "2a0f:5707:ffe3::89";
+          prefixLength = 64;
+        }];
       };
     };
-    hosts = {
-      "132.147.114.72" = [ "i0.hdslb.com" ];
-    };
+    hosts = { "132.147.114.72" = [ "i0.hdslb.com" ]; };
   };
 
-  environment.systemPackages = with pkgs; [
-    rclone
-    tmux
-  ];
+  environment.systemPackages = with pkgs; [ rclone tmux ];
 
   # EtherGuard
   services.etherguard-edge = {
@@ -73,9 +75,8 @@
   # Crontab
   services.cron = {
     enable = true;
-    systemCronJobs = [
-      "0 1 * * * root ${pkgs.git}/bin/git -C /persist/pki pull"
-    ];
+    systemCronJobs =
+      [ "0 1 * * * root ${pkgs.git}/bin/git -C /persist/pki pull" ];
   };
 
   sops.secrets.juicity.sopsFile = ./secrets.yml;

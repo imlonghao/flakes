@@ -13,7 +13,14 @@
       endpoint = "us-nyc.dn42.lutoma.org:42591";
       publickey = "ClSMc4CO3PARJ4gRgcee4DDTAxa8tEeDxFDtBDb0bCk=";
     }
-    { name = "wg0207"; listen = 20207; endpoint = "router.mia1.routedbits.com:51888"; publickey = "7v+CFwv6ptPDWWBtLoSJBq8+jC+jTD8QbRtt6NCYegw="; asn = 4242420207; e6 = "fe80::0207"; }
+    {
+      name = "wg0207";
+      listen = 20207;
+      endpoint = "router.mia1.routedbits.com:51888";
+      publickey = "7v+CFwv6ptPDWWBtLoSJBq8+jC+jTD8QbRtt6NCYegw=";
+      asn = 4242420207;
+      e6 = "fe80::0207";
+    }
     {
       name = "wg0247";
       l4 = "172.22.68.1";

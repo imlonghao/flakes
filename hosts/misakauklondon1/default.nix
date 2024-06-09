@@ -1,5 +1,4 @@
-{ pkgs, profiles, ... }:
-{
+{ pkgs, profiles, ... }: {
   imports = [
     ./hardware.nix
     ./bird.nix
@@ -27,30 +26,36 @@
     dhcpcd.enable = false;
     interfaces = {
       enp3s0 = {
-        ipv4.addresses = [
-          { address = "45.142.244.141"; prefixLength = 32; }
-        ];
-        ipv6.addresses = [
-          { address = "2a0f:3b03:101:12:5054:ff:fe16:e83c"; prefixLength = 64; }
-        ];
+        ipv4.addresses = [{
+          address = "45.142.244.141";
+          prefixLength = 32;
+        }];
+        ipv6.addresses = [{
+          address = "2a0f:3b03:101:12:5054:ff:fe16:e83c";
+          prefixLength = 64;
+        }];
       };
       lo = {
-        ipv4.addresses = [
-          { address = "44.31.42.0"; prefixLength = 32; }
-        ];
+        ipv4.addresses = [{
+          address = "44.31.42.0";
+          prefixLength = 32;
+        }];
         ipv6.addresses = [
-          { address = "2602:feda:1bf::"; prefixLength = 128; }
-          { address = "2a09:b280:ff85::"; prefixLength = 128; }
+          {
+            address = "2602:feda:1bf::";
+            prefixLength = 128;
+          }
+          {
+            address = "2a09:b280:ff85::";
+            prefixLength = 128;
+          }
         ];
       };
     };
   };
 
   environment.persistence."/persist" = {
-    directories = [
-      "/root/.ssh"
-      "/var/lib"
-    ];
+    directories = [ "/root/.ssh" "/var/lib" ];
     files = [
       "/etc/machine-id"
       "/etc/ssh/ssh_host_rsa_key"
@@ -58,9 +63,7 @@
     ];
   };
 
-  environment.systemPackages = with pkgs; [
-    docker-compose
-  ];
+  environment.systemPackages = with pkgs; [ docker-compose ];
 
   # Docker
   virtualisation.docker.enable = true;
@@ -89,17 +92,14 @@
         "ssh://sxvl8201@sxvl8201.repo.borgbase.com/./repo"
         "ssh://zh2646@zh2646.rsync.net/./misakauklondon1"
       ];
-      source_directories = [
-        "/persist/pomerium"
-      ];
+      source_directories = [ "/persist/pomerium" ];
     };
   };
 
   services.cron = {
     enable = true;
-    systemCronJobs = [
-      "0 1 * * * root ${pkgs.git}/bin/git -C /persist/pki pull"
-    ];
+    systemCronJobs =
+      [ "0 1 * * * root ${pkgs.git}/bin/git -C /persist/pki pull" ];
   };
 
 }

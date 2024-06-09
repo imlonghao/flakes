@@ -6,8 +6,7 @@ let
   inherit (lib) mkEnableOption mkIf mkOption types;
 
   cfg = config.services.pingfinder;
-in
-{
+in {
   options = {
     services.pingfinder = {
       enable = mkEnableOption "dn42 peer finder client script";
@@ -56,8 +55,9 @@ in
           "WARNLOCK=/tmp/pingfinder-warn.lock"
           "LOCKFILE=/tmp/pingfinder-exec.lock"
         ];
-        EnvironmentFile = mkIf (cfg.environmentFile != null) [ cfg.environmentFile ];
-        ExecStart = ''${pkgs.pingfinder}/bin/pingfinder'';
+        EnvironmentFile =
+          mkIf (cfg.environmentFile != null) [ cfg.environmentFile ];
+        ExecStart = "${pkgs.pingfinder}/bin/pingfinder";
         DynamicUser = true;
         NoNewPrivileges = true;
         ProtectSystem = "strict";

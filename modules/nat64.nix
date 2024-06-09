@@ -21,8 +21,7 @@ let
     ip6tables -C FORWARD -d ${cfg.prefix}64::/96 -j LOG --log-prefix "nat64: " || ip6tables -A FORWARD -d ${cfg.prefix}64::/96 -j LOG --log-prefix "nat64: "
     ip6tables -C FORWARD -d ${cfg.prefix}64::/96 -p tcp -m multiport --dports 25,110,143,465,587,993,995,2525 -j REJECT --reject-with icmp6-adm-prohibited || ip6tables -A FORWARD -d ${cfg.prefix}64::/96 -p tcp -m multiport --dports 25,110,143,465,587,993,995,2525 -j REJECT --reject-with icmp6-adm-prohibited
   '';
-in
-{
+in {
   options.nat64 = {
     enable = mkEnableOption "NAT64 server";
     gateway = mkOption {
@@ -58,9 +57,7 @@ in
   };
   config = mkIf cfg.enable {
     # iptables
-    environment.systemPackages = with pkgs; [
-      iptables
-    ];
+    environment.systemPackages = with pkgs; [ iptables ];
     # Tayga
     services.tayga = {
       enable = true;
@@ -89,9 +86,7 @@ in
         sources = {
           kernel = {
             type = "journald";
-            include_matches = {
-              "_TRANSPORT" = [ "kernel" ];
-            };
+            include_matches = { "_TRANSPORT" = [ "kernel" ]; };
           };
         };
         transforms = {
@@ -123,21 +118,19 @@ in
       };
     };
     # Secrets
-    sops.secrets.vector = {
-      sopsFile = "${self}/secrets/vector.yml";
-    };
-    systemd.services.vector.serviceConfig.EnvironmentFile = config.sops.secrets.vector.path;
+    sops.secrets.vector = { sopsFile = "${self}/secrets/vector.yml"; };
+    systemd.services.vector.serviceConfig.EnvironmentFile =
+      config.sops.secrets.vector.path;
     # Crontab
     services.cron = {
       enable = true;
-      systemCronJobs = [
-        "* * * * * root ${cronJob} > /dev/null 2>&1"
-      ];
+      systemCronJobs = [ "* * * * * root ${cronJob} > /dev/null 2>&1" ];
     };
     # CoreDNS
-    networking.interfaces.lo.ipv6.addresses = [
-      { address = "${cfg.prefix}53::"; prefixLength = 128; }
-    ];
+    networking.interfaces.lo.ipv6.addresses = [{
+      address = "${cfg.prefix}53::";
+      prefixLength = 128;
+    }];
     services.coredns = {
       enable = true;
       package = pkgs.coredns-nat64-rdns;

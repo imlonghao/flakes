@@ -1,9 +1,7 @@
 { config, pkgs, lib, ... }:
 with lib;
-let
-  cfg = config.services.bird-lg-go;
-in
-{
+let cfg = config.services.bird-lg-go;
+in {
   options.services.bird-lg-go = {
     enable = mkEnableOption "bird looking glass";
     listen = mkOption {
@@ -13,9 +11,10 @@ in
   };
   config = mkIf cfg.enable {
     systemd.services.bird-lg-go = {
-      serviceConfig = with pkgs;{
+      serviceConfig = with pkgs; {
         ExecStartPre = "${coreutils}/bin/sleep 10";
-        ExecStart = "${bird-lg-go}/bin/proxy --listen ${cfg.listen} --bird /run/bird/bird.ctl --traceroute_bin ${traceroute}/bin/traceroute";
+        ExecStart =
+          "${bird-lg-go}/bin/proxy --listen ${cfg.listen} --bird /run/bird/bird.ctl --traceroute_bin ${traceroute}/bin/traceroute";
         Restart = "on-failure";
         RestartSec = 10;
       };

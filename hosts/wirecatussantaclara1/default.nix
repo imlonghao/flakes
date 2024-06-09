@@ -1,5 +1,4 @@
-{ config, pkgs, profiles, ... }:
-{
+{ config, pkgs, profiles, ... }: {
   imports = [
     ./hardware.nix
     ./bird.nix
@@ -25,30 +24,33 @@
     };
     interfaces = {
       ens4 = {
-        ipv4.addresses = [
-          { address = "45.45.224.73"; prefixLength = 32; }
-        ];
-        ipv6.addresses = [
-          { address = "2602:fc52:10e:e384::2"; prefixLength = 128; }
-        ];
+        ipv4.addresses = [{
+          address = "45.45.224.73";
+          prefixLength = 32;
+        }];
+        ipv6.addresses = [{
+          address = "2602:fc52:10e:e384::2";
+          prefixLength = 128;
+        }];
       };
       lo = {
         ipv6.addresses = [
-          { address = "2602:fab0:20::"; prefixLength = 128; }
-          { address = "2602:fab0:23::"; prefixLength = 128; }
+          {
+            address = "2602:fab0:20::";
+            prefixLength = 128;
+          }
+          {
+            address = "2602:fab0:23::";
+            prefixLength = 128;
+          }
         ];
       };
     };
   };
 
   environment.persistence."/persist" = {
-    directories = [
-      "/var/lib"
-    ];
-    files = [
-      "/etc/machine-id"
-      "/etc/ssh/ssh_host_ed25519_key"
-    ];
+    directories = [ "/var/lib" ];
+    files = [ "/etc/machine-id" "/etc/ssh/ssh_host_ed25519_key" ];
   };
 
   # EtherGuard

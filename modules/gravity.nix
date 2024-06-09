@@ -1,9 +1,7 @@
 { config, pkgs, lib, ... }:
 with lib;
-let
-  cfg = config.services.gravity;
-in
-{
+let cfg = config.services.gravity;
+in {
   options.services.gravity = {
     enable = mkEnableOption "gravity overlay network";
     address = mkOption {
@@ -50,10 +48,12 @@ in
   };
   config = mkIf cfg.enable {
     systemd.services.gravity = {
-      serviceConfig = with pkgs;{
+      serviceConfig = with pkgs; {
         ExecStartPre = [
           "${iproute2}/bin/ip netns add ${cfg.netns}"
-          "${iproute2}/bin/ip link add ${cfg.link} address 00:00:00:00:00:02 group ${toString cfg.group} type veth peer host address 00:00:00:00:00:01 netns ${cfg.netns}"
+          "${iproute2}/bin/ip link add ${cfg.link} address 00:00:00:00:00:02 group ${
+            toString cfg.group
+          } type veth peer host address 00:00:00:00:00:01 netns ${cfg.netns}"
           "${iproute2}/bin/ip link set ${cfg.link} up"
           "${iproute2}/bin/ip -n ${cfg.netns} link set host up"
           "${iproute2}/bin/ip -n ${cfg.netns} addr add ${cfg.address} dev host"
@@ -62,18 +62,19 @@ in
           "${iproute2}/bin/ip addr add ${cfg.hostAddressV6} dev ${cfg.link}"
           "${coreutils}/bin/rm -f /tmp/rait.old"
         ];
-        ExecStart = "${iproute2}/bin/ip netns exec ${cfg.netns} ${babeld}/bin/babeld -c ${writeText "babeld.conf" ''
-          random-id true
-          local-path-readwrite ${cfg.socket}
-          state-file ""
-          pid-file ""
-          interface placeholder
-          redistribute local deny
-        ''}";
+        ExecStart =
+          "${iproute2}/bin/ip netns exec ${cfg.netns} ${babeld}/bin/babeld -c ${
+            writeText "babeld.conf" ''
+              random-id true
+              local-path-readwrite ${cfg.socket}
+              state-file ""
+              pid-file ""
+              interface placeholder
+              redistribute local deny
+            ''
+          }";
         ExecStartPost = cfg.postStart;
-        ExecStopPost = [
-          "${iproute2}/bin/ip netns del ${cfg.netns}"
-        ];
+        ExecStopPost = [ "${iproute2}/bin/ip netns del ${cfg.netns}" ];
       };
       wants = [ "network-online.target" ];
       after = [ "network-online.target" ];

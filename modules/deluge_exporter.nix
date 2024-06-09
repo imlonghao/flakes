@@ -1,9 +1,7 @@
 { config, pkgs, lib, ... }:
 with lib;
-let
-  cfg = config.services.deluge_exporter;
-in
-{
+let cfg = config.services.deluge_exporter;
+in {
   options.services.deluge_exporter = {
     enable = mkEnableOption "deluge_exporter";
   };

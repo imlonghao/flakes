@@ -1,9 +1,7 @@
 { config, pkgs, lib, ... }:
 with lib;
-let
-  cfg = config.dn42;
-in
-{
+let cfg = config.dn42;
+in {
   options.dn42 = mkOption {
     type = types.listOf (types.submodule ({
       options.name = mkOption {
@@ -73,9 +71,10 @@ in
     default = [ ];
   };
   config = {
-    boot.kernel.sysctl = listToAttrs (map (x: nameValuePair "net.ipv4.conf.${x.name}.rp_filter" 0) cfg);
-    networking.wireguard.interfaces = listToAttrs (map
-      (x: nameValuePair "${x.name}" {
+    boot.kernel.sysctl = listToAttrs
+      (map (x: nameValuePair "net.ipv4.conf.${x.name}.rp_filter" 0) cfg);
+    networking.wireguard.interfaces = listToAttrs (map (x:
+      nameValuePair "${x.name}" {
         ips = [ x.ipv6 ];
         mtu = mkIf (x.mtu != null) x.mtu;
         postSetup = mkIf (x.e4 != null) [
@@ -85,15 +84,18 @@ in
         privateKeyFile = config.sops.secrets.wireguard.path;
         listenPort = x.listen;
         allowedIPsAsRoutes = false;
-        peers = [
-          {
-            endpoint = x.endpoint;
-            publicKey = x.publickey;
-            presharedKey = x.presharedkey;
-            allowedIPs = [ "10.0.0.0/8" "172.20.0.0/14" "172.31.0.0/16" "fe80::/64" "fd00::/8" ];
-          }
-        ];
-      })
-      cfg);
+        peers = [{
+          endpoint = x.endpoint;
+          publicKey = x.publickey;
+          presharedKey = x.presharedkey;
+          allowedIPs = [
+            "10.0.0.0/8"
+            "172.20.0.0/14"
+            "172.31.0.0/16"
+            "fe80::/64"
+            "fd00::/8"
+          ];
+        }];
+      }) cfg);
   };
 }

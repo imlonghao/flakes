@@ -4,11 +4,8 @@ let
     ip rule | grep -F 23.146.88.0 || ip rule add from 23.146.88.0/24 table 199632
     ip -6 rule | grep -F 2602:fab0:31::/48 || ip -6 rule add from 2602:fab0:31::/48 table 199632
   '';
-in
-{
-  disabledModules = [
-    "services/backup/borgmatic.nix"
-  ];
+in {
+  disabledModules = [ "services/backup/borgmatic.nix" ];
 
   imports = [
     ./bird.nix
@@ -19,7 +16,7 @@ in
     profiles.docker
     profiles.rsshc
     profiles.exporter.node
-#    "${inputs.latest}/nixos/modules/services/backup/borgmatic.nix"
+    #    "${inputs.latest}/nixos/modules/services/backup/borgmatic.nix"
   ];
 
   boot.loader.grub.device = "/dev/sda";
@@ -36,17 +33,20 @@ in
     dhcpcd.enable = false;
     interfaces = {
       lo = {
-        ipv4.addresses = [
-          { address = "23.146.88.6"; prefixLength = 32; }
-        ];
+        ipv4.addresses = [{
+          address = "23.146.88.6";
+          prefixLength = 32;
+        }];
       };
       eth0 = {
-        ipv4.addresses = [
-          { address = "37.187.76.11"; prefixLength = 24; }
-        ];
-        ipv6.addresses = [
-          { address = "2001:41d0:a:2c0b::1"; prefixLength = 128; }
-        ];
+        ipv4.addresses = [{
+          address = "37.187.76.11";
+          prefixLength = 24;
+        }];
+        ipv6.addresses = [{
+          address = "2001:41d0:a:2c0b::1";
+          prefixLength = 128;
+        }];
       };
     };
   };
@@ -88,15 +88,8 @@ in
   ];
 
   environment.persistence."/persist" = {
-    directories = [
-      "/var/lib"
-      "/root/.ssh"
-      "/root/.local"
-    ];
-    files = [
-      "/etc/machine-id"
-      "/etc/ssh/ssh_host_ed25519_key"
-    ];
+    directories = [ "/var/lib" "/root/.ssh" "/root/.local" ];
+    files = [ "/etc/machine-id" "/etc/ssh/ssh_host_ed25519_key" ];
   };
 
   # EtherGuard
@@ -117,9 +110,7 @@ in
   };
 
   # Docker
-  virtualisation.docker = {
-    storageDriver = "overlay2";
-  };
+  virtualisation.docker = { storageDriver = "overlay2"; };
 
   # CronJob
   services.cron = {
@@ -133,17 +124,17 @@ in
 
   # Borgmatic
   sops.secrets.borgmatic.sopsFile = ./secrets.yml;
-  systemd.services.borgmatic.serviceConfig.EnvironmentFile = "/run/secrets/borgmatic";
+  systemd.services.borgmatic.serviceConfig.EnvironmentFile =
+    "/run/secrets/borgmatic";
   services.borgmatic = {
     enable = true;
     configurations = {
       photoprism = {
-        source_directories = [
-          "/persist/docker/photoprism"
-        ];
-        repositories = [
-          { path="ssh://bln02xkt@bln02xkt.repo.borgbase.com/./repo"; label="borgbase"; }
-        ];
+        source_directories = [ "/persist/docker/photoprism" ];
+        repositories = [{
+          path = "ssh://bln02xkt@bln02xkt.repo.borgbase.com/./repo";
+          label = "borgbase";
+        }];
         encryption_passphrase = "\${PHOTOPRISM_BORG_PASSPHRASE}";
         compression = "zstd";
         keep_daily = 7;
@@ -151,12 +142,11 @@ in
         keep_monthly = 6;
       };
       filebrowser = {
-        source_directories = [
-          "/persist/docker/filebrowser"
-        ];
-        repositories = [
-          { path="ssh://v5zl57p2@v5zl57p2.repo.borgbase.com/./repo"; label="borgbase"; }
-        ];
+        source_directories = [ "/persist/docker/filebrowser" ];
+        repositories = [{
+          path = "ssh://v5zl57p2@v5zl57p2.repo.borgbase.com/./repo";
+          label = "borgbase";
+        }];
         encryption_passphrase = "\${FILEBROWSER_BORG_PASSPHRASE}";
         compression = "zstd";
         keep_daily = 7;

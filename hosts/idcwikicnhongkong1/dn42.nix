@@ -52,8 +52,22 @@
       endpoint = "jp-tyo01.dn42.tech9.io:54012";
       publickey = "unTYSat5YjkY+BY31Q9xLSfFhTUBvn3CiDCSZxbINVM=";
     }
-    { name = "wg1604"; listen = 21604; endpoint = "hk1.vm.libecho.top:21888"; publickey = "hQgRGnAP4xBHym+R/jf7ScjGbBDz5RXi5gF6CF7RiWg="; asn = 4242421604; e6 = "fe80::1604"; }
-    { name = "wg1772"; listen = 21772; endpoint = "154.12.177.103:41888"; publickey = "MwKtHYi3qWDRlpZuF6MNTHZuathA96J89GeF7INPvmw="; asn = 4242421772; e6 = "fe80::1772"; }
+    {
+      name = "wg1604";
+      listen = 21604;
+      endpoint = "hk1.vm.libecho.top:21888";
+      publickey = "hQgRGnAP4xBHym+R/jf7ScjGbBDz5RXi5gF6CF7RiWg=";
+      asn = 4242421604;
+      e6 = "fe80::1604";
+    }
+    {
+      name = "wg1772";
+      listen = 21772;
+      endpoint = "154.12.177.103:41888";
+      publickey = "MwKtHYi3qWDRlpZuF6MNTHZuathA96J89GeF7INPvmw=";
+      asn = 4242421772;
+      e6 = "fe80::1772";
+    }
     {
       name = "wg1816";
       asn = 4242421816;
@@ -147,7 +161,15 @@
       publickey = "nQ/5+M6MGsGJPWLQtEKBm8d1IzKZZZvIsOeTywhsH3Q=";
       presharedkey = "4MLgxuLpGDo/KWf01lLJnlg6etT+xDz+OpoqvVjmHEc=";
     }
-    { name = "wg3088"; listen = 23088; endpoint = "hk1-hk.dn42.6700.cc:21888"; publickey = "rBTH+JyZB0X/DkwHByrCjCojxBKr/kEOm1dTAFGHR1w="; asn = 4242423088; ipv6 = "fe80::abcd/64"; e6 = "fe80::3088:192"; }
+    {
+      name = "wg3088";
+      listen = 23088;
+      endpoint = "hk1-hk.dn42.6700.cc:21888";
+      publickey = "rBTH+JyZB0X/DkwHByrCjCojxBKr/kEOm1dTAFGHR1w=";
+      asn = 4242423088;
+      ipv6 = "fe80::abcd/64";
+      e6 = "fe80::3088:192";
+    }
     {
       name = "wg3299";
       asn = 4242423299;
