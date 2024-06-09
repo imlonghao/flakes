@@ -16,9 +16,9 @@ in
         route 2602:fab0:23::/48 blackhole;
         ipv6 {
           import filter {
-            bgp_large_community.add((199632, 1, 1));
-            bgp_large_community.add((199632, 2, 2));
-            bgp_large_community.add((199632, 3, 840));
+            bgp_large_community.add((30114, 1, 1));
+            bgp_large_community.add((30114, 2, 2));
+            bgp_large_community.add((30114, 3, 840));
             accept;
           };
           export all;
@@ -26,16 +26,16 @@ in
       }
 
       template bgp tmpl_upstream {
-        local as 199632;
+        local as 30114;
         graceful restart on;
         ipv6 {
           import filter {
-            bgp_large_community.add((199632, 1, 2));
-            bgp_large_community.add((199632, 2, 2));
-            bgp_large_community.add((199632, 3, 840));
+            bgp_large_community.add((30114, 1, 2));
+            bgp_large_community.add((30114, 2, 2));
+            bgp_large_community.add((30114, 3, 840));
             accept;
           };
-          export where bgp_large_community ~ [(199632, 1, 1), (199632, 1, 5)];
+          export where bgp_large_community ~ [(30114, 1, 1), (30114, 1, 5)];
         };
       }
 

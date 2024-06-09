@@ -104,7 +104,7 @@ in
       };
       protocol bgp AS199594 from tmpl_rs {
         neighbor fe80::1980:1:1 % 'kskb-ix' as 199594;
-        source address fe80::199:632;
+        source address fe80::30:114;
       };
 
     '';
