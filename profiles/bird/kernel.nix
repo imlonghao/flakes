@@ -12,6 +12,7 @@ in
       export filter {
         if net = 0.0.0.0/0 then reject;
         if source = RTS_DEVICE then reject;
+        if bgp_next_hop = 198.51.100.1 then metric 999;
         ${ssrc4}
         accept;
       };
@@ -25,6 +26,7 @@ in
       export filter {
         if net = ::/0 then reject;
         if source = RTS_DEVICE then reject;
+        if bgp_next_hop = 100::1 then metric 999;
         ${ssrc6}
         accept;
       };
