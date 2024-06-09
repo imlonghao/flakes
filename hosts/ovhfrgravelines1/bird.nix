@@ -19,7 +19,7 @@ in
 {
   services.bird2 = {
     enable = true;
-    config = generalConf + kernelConf + ''
+    config = generalConf + kernelConf + profiles.bird.blackbgp ''
       ipv4 table as199632v4;
       ipv6 table as199632v6;
       protocol static {
