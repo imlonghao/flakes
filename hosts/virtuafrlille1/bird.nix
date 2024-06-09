@@ -8,7 +8,7 @@ let
 in {
   services.bird2 = {
     enable = true;
-    config = generalConf + kernelConf + ''
+    config = generalConf + kernelConf + import profiles.bird.blackbgp { } + ''
       protocol static {
         route 23.146.88.0/24 blackhole;
         ipv4 {
