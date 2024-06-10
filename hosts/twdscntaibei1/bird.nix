@@ -6,7 +6,7 @@ let
       route 2602:fab0:24:ffff::/64 via 2602:feda:1bf:deaf::19;
     '';
   };
-  kernelConf = import profiles.bird.kernel { src6 = "2602:fab0:24::"; };
+  kernelConf = import profiles.bird.kernel { src6 = "2602:fab0:24::1"; };
 in {
   services.bird2 = {
     enable = true;
