@@ -20,6 +20,6 @@ let
 in {
   services.bird2 = {
     enable = true;
-    config = generalConf + dn42Conf;
+    config = generalConf + dn42Conf + import profiles.bird.blackbgp { };
   };
 }

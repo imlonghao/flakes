@@ -10,7 +10,7 @@ let
 in {
   services.bird2 = {
     enable = true;
-    config = generalConf + kernelConf + ''
+    config = generalConf + kernelConf + import profiles.bird.blackbgp { } + ''
       protocol static {
         route 2602:fab0:20::/48 blackhole;
         route 2602:fab0:24::/48 blackhole;
