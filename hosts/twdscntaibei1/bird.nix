@@ -93,6 +93,28 @@ in {
           };
         };
       };
+      protocol bgp AS32934s1 from tmpl_peer {
+        neighbor 2a0f:5707:ffe3::137 as 32934;
+        ipv6 {
+          import filter {
+            bgp_large_community.add((30114, 1, 3));
+            bgp_large_community.add((30114, 2, 4));
+            bgp_large_community.add((30114, 3, 158));
+            accept;
+          };
+        };
+      };
+      protocol bgp AS32934s2 from tmpl_peer {
+        neighbor 2a0f:5707:ffe3::138 as 32934;
+        ipv6 {
+          import filter {
+            bgp_large_community.add((30114, 1, 3));
+            bgp_large_community.add((30114, 2, 4));
+            bgp_large_community.add((30114, 3, 158));
+            accept;
+          };
+        };
+      };
       protocol bgp AS38855rs01 from tmpl_rs {
         neighbor 2a0f:5707:ffe3::1 as 38855;
       };
