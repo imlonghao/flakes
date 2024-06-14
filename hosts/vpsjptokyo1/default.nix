@@ -14,7 +14,7 @@
   networking = {
     nameservers = [ "1.1.1.1" "8.8.8.8" ];
     defaultGateway = "193.32.148.1";
-    defaultGateway6 = "2a12:a301:2::1";
+    defaultGateway6 = "2a12:a301:2013::1";
     dhcpcd.enable = false;
     interfaces = {
       eth0 = {
@@ -23,7 +23,7 @@
           prefixLength = 22;
         }];
         ipv6.addresses = [{
-          address = "2a12:a301:2::13be";
+          address = "2a12:a301:2013::109a";
           prefixLength = 48;
         }];
       };
@@ -42,5 +42,10 @@
     systemCronJobs =
       [ "0 1 * * * root ${pkgs.git}/bin/git -C /persist/pki pull" ];
   };
+
+  environment.systemPackages = with pkgs; [
+    wgcf
+    wireguard-tools
+  ];
 
 }
