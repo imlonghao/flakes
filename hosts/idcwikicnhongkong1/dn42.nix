@@ -99,10 +99,10 @@
     {
       name = "wg2189";
       asn = 4242422189;
-      e6 = "fe80::2189:ee";
+      e6 = "fe80::2189:120";
       listen = 22189;
-      endpoint = "jp-tyo.dn42.kuu.moe:47568";
-      publickey = "TNmCdvH0DuPX0xxS6DPHw/2v3ojLa5kXIT/Z4Tpx+GY=";
+      endpoint = "hk-hkg.dn42.kuu.moe:44383";
+      publickey = "OlUDuWkUI9pKNsNo7Vjf/GKKVSBslh9kmqjbeYA4+34=";
     }
     {
       name = "wg2399";
