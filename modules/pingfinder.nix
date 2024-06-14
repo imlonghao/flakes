@@ -43,6 +43,7 @@ in {
     systemd.services.pingfinder = mkIf cfg.enable {
       description = "dn42 peer finder client";
       after = [ "network-online.target" ];
+      wants = [ "network-online.target" ];
       environment = {
         PEERFINDER = cfg.serviceUrl;
         NB_PINGS = toString cfg.pingsPerRequest;
@@ -73,6 +74,7 @@ in {
     systemd.timers.pingfinder = mkIf cfg.enable {
       wantedBy = [ "timers.target" ];
       after = [ "network-online.target" ];
+      wants = [ "network-online.target" ];
       description = "dn42 peer finder processing timer";
       timerConfig = {
         OnBootSec = "5min";
