@@ -3,6 +3,7 @@ let
   generalConf = import profiles.bird.general {
     config = config;
     ospf4 = "where net ~ 23.146.88.0/24";
+    ospf6 = "where net = 2602:fab0:41::/48";
     route4 = ''
       route 23.146.88.248/29 blackhole;
     '';
@@ -28,6 +29,7 @@ in {
       protocol static {
         route 2602:fab0:20::/48 blackhole;
         route 2602:fab0:2a::/48 blackhole;
+        route 2602:fab0:40::/44 blackhole;
         ipv6 {
           import filter {
             bgp_large_community.add((30114, 1, 1));
@@ -38,6 +40,10 @@ in {
           };
           export all;
         };
+      }
+      protocol static {
+        ipv6;
+        route ::/0 blackhole;
       }
       protocol bgp AS53667v4 {
         local as 30114;
@@ -72,6 +78,18 @@ in {
           };
         };
       }
+
+      protocol bgp internalpve1 {
+        neighbor 2602:feda:1bf:deaf::39 as 30114;
+        local as 30114;
+        graceful restart on;
+        ipv6 {
+          import all;
+          export where net=::/0;
+          next hop self;
+        };
+      };
+
     '';
   };
 }

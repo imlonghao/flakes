@@ -32,7 +32,6 @@ in {
         route 2602:fab0:20::/48 blackhole;
         route 2602:fab0:40::/44 blackhole;
         route 2602:fab0:40::/48 blackhole;
-        route 2602:fab0:41::/48 via 2602:feda:1bf:deaf::39;
         ipv6 {
           import filter {
             bgp_large_community.add((30114, 1, 1));
@@ -45,9 +44,10 @@ in {
         };
       }
       protocol static {
+        ipv6;
+        route ::/0 blackhole;
         route 2602:fa11:40::1/128 via "ens3";
         route 2602:fa11:40::6/128 via "ens3";
-        ipv6;
       }
       template bgp tmpl_upstream {
         local as 30114;
@@ -86,8 +86,8 @@ in {
         local as 30114;
         graceful restart on;
         ipv6 {
-          import none;
-          export where bgp_large_community ~ [(30114, 3, 840)];
+          import all;
+          export where net=::/0;
           next hop self;
         };
       };
