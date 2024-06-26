@@ -42,7 +42,6 @@
         }];
       };
     };
-    hosts = { "132.147.114.72" = [ "i0.hdslb.com" ]; };
   };
 
   environment.systemPackages = with pkgs; [ rclone tmux ];
