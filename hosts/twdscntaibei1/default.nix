@@ -104,6 +104,7 @@
         ${pkgs.iproute2}/bin/ip -n singbox addr add 127.0.0.1/8 dev lo
         ${pkgs.iptables}/bin/iptables -t nat -A PREROUTING -d 103.147.22.112 -p udp --dport 443 -j DNAT --to-destination 100.64.101.2:443
         ${pkgs.iptables}/bin/iptables -t nat -A PREROUTING -d 103.147.22.112 -p tcp --dport 4443 -j DNAT --to-destination 100.64.101.2:4443
+        ${pkgs.iptables}/bin/iptables -t nat -A PREROUTING -d 100.64.88.30 -p udp --dport 443 -j DNAT --to-destination 100.64.101.2:443
         ${pkgs.iptables}/bin/iptables -t nat -A POSTROUTING -s 100.64.101.2 -j MASQUERADE
       '';
       ExecStop = pkgs.writeScript "netns-down" ''
@@ -111,6 +112,7 @@
         ${pkgs.iproute2}/bin/ip netns del singbox
         ${pkgs.iptables}/bin/iptables -t nat -D PREROUTING -d 103.147.22.112 -p udp --dport 443 -j DNAT --to-destination 100.64.101.2:443
         ${pkgs.iptables}/bin/iptables -t nat -D PREROUTING -d 103.147.22.112 -p tcp --dport 4443 -j DNAT --to-destination 100.64.101.2:4443
+        ${pkgs.iptables}/bin/iptables -t nat -D PREROUTING -d 100.64.88.30 -p udp --dport 443 -j DNAT --to-destination 100.64.101.2:443
         ${pkgs.iptables}/bin/iptables -t nat -D POSTROUTING -s 100.64.101.2 -j MASQUERADE
       '';
       PrivateMounts = false;
