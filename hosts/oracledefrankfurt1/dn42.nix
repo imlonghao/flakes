@@ -209,8 +209,11 @@
       endpoint = "95.130.6.48:51820";
       publickey = "lCegAi9aFb06Wt1jlzmDfXjQkPhV7PvqhneWeS7ETVs=";
       asn = 4242423177;
-      e6 = "fe80::6c17:89a4:3e9f:e43e";
+      l4 = "172.22.68.0";
+      e4 = "172.23.118.97";
+      e6 = "fd21:5c0c:9b7e:4:3177::2";
       presharedkey = "uoYHaMxujgsFhdXkzlgf1AVAXYCw7v4h4q+IrZmqxkU=";
+      ipv6 = "fd21:5c0c:9b7e:4:3177::1/80";
     }
     {
       name = "wg3396";
