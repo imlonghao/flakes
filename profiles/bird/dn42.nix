@@ -121,6 +121,8 @@
   template bgp dnpeers {
     local as 4242421888;
     graceful restart on;
+    long lived graceful restart on;
+    prefer older on;
     ipv4 {
       import keep filtered on;
       import table;
