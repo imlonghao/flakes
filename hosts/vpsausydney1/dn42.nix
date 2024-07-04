@@ -59,15 +59,5 @@
       asn = 4242422633;
       e6 = "fe80::2633";
     }
-    {
-      name = "wg3035";
-      listen = 23035;
-      endpoint = "nz01.dn42.lare.cc:21888";
-      publickey = "OhpIfAMN/YsQrl/gMPDr8OwFkVXvREpmrfjPv3U5/Fg=";
-      asn = 4242423035;
-      e6 = "fe80::3035:134";
-      e4 = "172.22.125.134";
-      l4 = "172.22.68.9";
-    }
   ];
 }
