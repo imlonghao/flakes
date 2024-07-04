@@ -7,6 +7,7 @@
     profiles.tuic
     profiles.rsshc
     profiles.exporter.node
+    profiles.docker
   ];
 
   networking = {
