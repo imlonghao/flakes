@@ -104,6 +104,14 @@
       e6 = "fe80::1580:1";
     }
     {
+      name = "wg1716";
+      e6 = "fe80::1716:1888";
+      asn = 4242421716;
+      listen = 21716;
+      endpoint = "1888.dn42.nngnn.com:21888";
+      publickey = "9wjlepdAM+yr/G3VoI2bc6ogDUiPcE4UsUzadJn0jnA=";
+    }
+    {
       name = "wg1816";
       listen = 21816;
       endpoint = "us1.dn42.potat0.cc:21888";
