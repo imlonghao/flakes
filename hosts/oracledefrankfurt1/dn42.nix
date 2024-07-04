@@ -47,6 +47,14 @@
       e6 = "fe80::0207";
     }
     {
+      name = "wg0392";
+      listen = 20392;
+      endpoint = "hackclub.app:21888";
+      publickey = "BOI9J1hyFwlbjatNi9NUUMVnRXSOwBpb0f+Cgwl4p28=";
+      asn = 4242420392;
+      e6 = "fe80::392";
+    }
+    {
       name = "wg0458";
       listen = 20458;
       endpoint = "eu-west1.nodes.huajinet.org:21888";
