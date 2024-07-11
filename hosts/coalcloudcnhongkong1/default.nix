@@ -8,6 +8,7 @@
     profiles.rsshc
     profiles.tuic
     profiles.mtrsb
+    profiles.docker
   ];
 
   networking = {
