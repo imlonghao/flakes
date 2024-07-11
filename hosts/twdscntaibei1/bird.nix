@@ -27,6 +27,7 @@ in {
 
       template bgp tmpl_upstream {
         local as 30114;
+        local role customer;
         graceful restart on;
         ipv6 {
           import filter {
@@ -40,6 +41,7 @@ in {
       }
       template bgp tmpl_rs {
         local as 30114;
+        local role rs_client;
         graceful restart on;
         ipv6 {
           import filter {
@@ -54,6 +56,7 @@ in {
       }
       template bgp tmpl_peer {
         local as 30114;
+        local role peer;
         graceful restart on;
         ipv6 {
           import none;
@@ -62,6 +65,7 @@ in {
       }
       template bgp tmpl_downstream {
         local as 30114;
+        local role provider;
         graceful restart on;
         ipv6 {
           import none;
