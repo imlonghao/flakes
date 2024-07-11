@@ -36,6 +36,14 @@
       e6 = "fe80::8523:45ff:fe20:8b5";
     }
     {
+      name = "wg0566";
+      listen = 20566;
+      endpoint = "dn22.syd.surgebytes.com:31888";
+      publickey = "m8HdhB90mg8NcBgWGeplQBpc5BgPLVk80OZWZyOXqVk=";
+      asn = 4242420566;
+      e6 = "fe80::566:22";
+    }
+    {
       name = "wg1080";
       listen = 21080;
       endpoint = "syd.peer.highdef.network:21888";
