@@ -68,6 +68,7 @@ in {
     iptables
     lego
     just
+    mcfly
     mediainfo
     metasploit
     mosh
@@ -161,5 +162,9 @@ in {
   # KVM
   boot.extraModprobeConfig = "options kvm_intel nested=1";
   virtualisation.libvirtd.enable = true;
+
+  programs.fish.shellInit = ''
+    ${pkgs.mcfly}/bin/mcfly init fish | source
+  '';
 
 }
