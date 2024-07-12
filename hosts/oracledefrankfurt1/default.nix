@@ -120,13 +120,17 @@
 
   # borgmatic
   services.borgmatic.settings = {
-    location = {
-      repositories = [
-        "ssh://wx86wp48@wx86wp48.repo.borgbase.com/./repo"
-        "ssh://zh2646@zh2646.rsync.net/./oracledefrankfurt1"
-      ];
-      source_directories = [ "/persist/docker" "/persist/heatmap" ];
-    };
+    repositories = [
+      {
+        label = "borgbase";
+        path = "ssh://wx86wp48@wx86wp48.repo.borgbase.com/./repo";
+      }
+      {
+        label = "rsync";
+        path = "ssh://zh2646@zh2646.rsync.net/./oracledefrankfurt1";
+      }
+    ];
+    source_directories = [ "/persist/docker" "/persist/heatmap" ];
   };
 
 }
