@@ -12,6 +12,7 @@
     profiles.mtrsb
     profiles.rsshc
     profiles.borgmatic
+    profiles.docker
   ];
 
   # Config
@@ -63,7 +64,7 @@
     ];
   };
 
-  environment.systemPackages = with pkgs; [ deploy-rs docker-compose git ];
+  environment.systemPackages = with pkgs; [ deploy-rs git ];
 
   # EtherGuard
   services.etherguard-edge = {
@@ -77,9 +78,6 @@
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINwH+SQ2Zn0yAjNrsXSIZL7ViulHom4LixUAZQ5e+DoW root@nixos"
     ];
   };
-
-  # Docker
-  virtualisation.docker.enable = true;
 
   # Crontab
   services.cron = {
