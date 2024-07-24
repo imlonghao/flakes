@@ -67,5 +67,14 @@
       asn = 4242422633;
       e6 = "fe80::2633";
     }
+    {
+      name = "wg3290";
+      listen = 23290;
+      endpoint = "119.224.65.18:21888";
+      publickey = "P2Kjb9ddKc04VZszk3Y/TCRTHtwiyYVOAxAX7CH7eTs=";
+      presharedkey = "qiS3TbealSY3WhRZmF90XFRJqtYhF17kN+7Sa3qRQUM=";
+      asn = 4242423290;
+      e6 = "fe80::3290";
+    }
   ];
 }
