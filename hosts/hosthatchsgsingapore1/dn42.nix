@@ -121,17 +121,6 @@
       mpbgp = false;
     }
     {
-      name = "wg2503";
-      listen = 22503;
-      endpoint = "sg.dn42.sam1314.com:21888";
-      publickey = "64JddgLTLWrbxZu8/b/d7Nq8vPZJrKK9+1fMJbX78HE=";
-      asn = 4242422503;
-      e4 = "172.23.161.64";
-      e6 = "fe80::2503";
-      l4 = "172.22.68.0";
-      mpbgp = false;
-    }
-    {
       name = "wg2633";
       listen = 22633;
       endpoint = "sin.eastbnd.com:21888";
