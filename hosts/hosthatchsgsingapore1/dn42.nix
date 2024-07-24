@@ -27,6 +27,14 @@
       e6 = "fe80::0458";
     }
     {
+      name = "wg0566";
+      listen = 20566;
+      endpoint = "dn18.sin.surgebytes.com:31888";
+      publickey = "9xIkI9iCuJUpapOeVYxsDP/Wl/A93biWKow8qMD5mHY=";
+      asn = 4242420566;
+      e6 = "fe80::0566:18";
+    }
+    {
       name = "wg0585";
       listen = 20585;
       endpoint = "sg1.dn42.atolm.net:21888";
