@@ -73,6 +73,7 @@ in {
   config = {
     boot.kernel.sysctl = listToAttrs
       (map (x: nameValuePair "net.ipv4.conf.${x.name}.rp_filter" 0) cfg);
+    environment.systemPackages = [ pkgs.dn42debug ];
     networking.wireguard.interfaces = listToAttrs (map (x:
       nameValuePair "${x.name}" {
         ips = [ x.ipv6 ];
