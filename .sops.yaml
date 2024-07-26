@@ -33,190 +33,190 @@ keys:
 creation_rules:
   - path_regex: secrets/shadow.yml$
     key_groups:
-    - pgp:
-      - *me_canokey
-      age:
-      - *vps_mailcow
-      - *vps_buyvmuslasvegas1
-      - *vps_buyvmusmiami1
-      - *vps_hosthatchsgsingapore1
-      - *vps_misakauklondon1
-      - *vps_starrydnscnhongkong1
-      - *vps_virmachustampa1
-      - *vps_hosthatchsestockholm1
-      - *vps_oracledefrankfurt1
-      - *vps_vpsdeduesseldorf1
-      - *vps_vpsausydney1
-      - *vps_idcwikicnhongkong1
-      - *vps_misakadeberlin1
-      - *vps_ovhfrgravelines1
-      - *vps_buyvmluroost1
-      - *vps_vpsdefrankfurt1
-      - *vps_wirecatussantaclara1
-      - *vps_twdscntaibei1
-      - *vps_virtuafrlille1
-      - *vps_f4uskansas1
-      - *vps_dmituslosangeles1
-      - *vps_serverfactorynleygelshoven1
-      - *vps_subledkcopenhagen1
-      - *vps_xentainusdallas1
-      - *vps_breezehostusdallas1
-      - *vps_vpsjptokyo1
-      - *vps_coalcloudcnhongkong1
+      - pgp:
+          - *me_canokey
+        age:
+          - *vps_mailcow
+          - *vps_buyvmuslasvegas1
+          - *vps_buyvmusmiami1
+          - *vps_hosthatchsgsingapore1
+          - *vps_misakauklondon1
+          - *vps_starrydnscnhongkong1
+          - *vps_virmachustampa1
+          - *vps_hosthatchsestockholm1
+          - *vps_oracledefrankfurt1
+          - *vps_vpsdeduesseldorf1
+          - *vps_vpsausydney1
+          - *vps_idcwikicnhongkong1
+          - *vps_misakadeberlin1
+          - *vps_ovhfrgravelines1
+          - *vps_buyvmluroost1
+          - *vps_vpsdefrankfurt1
+          - *vps_wirecatussantaclara1
+          - *vps_twdscntaibei1
+          - *vps_virtuafrlille1
+          - *vps_f4uskansas1
+          - *vps_dmituslosangeles1
+          - *vps_serverfactorynleygelshoven1
+          - *vps_subledkcopenhagen1
+          - *vps_xentainusdallas1
+          - *vps_breezehostusdallas1
+          - *vps_vpsjptokyo1
+          - *vps_coalcloudcnhongkong1
   - path_regex: secrets/k3s.yml$
     key_groups:
-    - pgp:
-      - *me_canokey
-      age:
-      - *vps_hosthatchsgsingapore1
-      - *vps_starrydnscnhongkong1
-      - *vps_virmachustampa1
+      - pgp:
+          - *me_canokey
+        age:
+          - *vps_hosthatchsgsingapore1
+          - *vps_starrydnscnhongkong1
+          - *vps_virmachustampa1
   - path_regex: secrets/vector.yml$
     key_groups:
-    - pgp:
-      - *me_canokey
-      age:
-      - *vps_buyvmusmiami1
+      - pgp:
+          - *me_canokey
+        age:
+          - *vps_buyvmusmiami1
   - path_regex: secrets/tuic.yml$
     key_groups:
-    - pgp:
-      - *me_canokey
-      age:
-      - *vps_twdscntaibei1
-      - *vps_dmituslosangeles1
-      - *vps_starrydnscnhongkong1
-      - *vps_vpsausydney1
-      - *vps_idcwikicnhongkong1
-      - *vps_misakadeberlin1
-      - *vps_hosthatchsgsingapore1
-      - *vps_vpsjptokyo1
-      - *vps_coalcloudcnhongkong1
+      - pgp:
+          - *me_canokey
+        age:
+          - *vps_twdscntaibei1
+          - *vps_dmituslosangeles1
+          - *vps_starrydnscnhongkong1
+          - *vps_vpsausydney1
+          - *vps_idcwikicnhongkong1
+          - *vps_misakadeberlin1
+          - *vps_hosthatchsgsingapore1
+          - *vps_vpsjptokyo1
+          - *vps_coalcloudcnhongkong1
   - path_regex: hosts/mailcow/secrets.yml$
     key_groups:
-    - pgp:
-      - *me_canokey
-      age:
-      - *vps_mailcow
+      - pgp:
+          - *me_canokey
+        age:
+          - *vps_mailcow
   - path_regex: hosts/buyvmuslasvegas1/secrets.yml$
     key_groups:
-    - pgp:
-      - *me_canokey
-      age:
-      - *vps_buyvmuslasvegas1
+      - pgp:
+          - *me_canokey
+        age:
+          - *vps_buyvmuslasvegas1
   - path_regex: hosts/buyvmusmiami1/secrets.yml$
     key_groups:
-    - pgp:
-      - *me_canokey
-      age:
-      - *vps_buyvmusmiami1
+      - pgp:
+          - *me_canokey
+        age:
+          - *vps_buyvmusmiami1
   - path_regex: hosts/hosthatchsgsingapore1/secrets.yml$
     key_groups:
-    - pgp:
-      - *me_canokey
-      age:
-      - *vps_hosthatchsgsingapore1
+      - pgp:
+          - *me_canokey
+        age:
+          - *vps_hosthatchsgsingapore1
   - path_regex: hosts/misakauklondon1/secrets.yml$
     key_groups:
-    - pgp:
-      - *me_canokey
-      age:
-      - *vps_misakauklondon1
+      - pgp:
+          - *me_canokey
+        age:
+          - *vps_misakauklondon1
   - path_regex: hosts/starrydnscnhongkong1/secrets.yml$
     key_groups:
-    - pgp:
-      - *me_canokey
-      age:
-      - *vps_starrydnscnhongkong1
+      - pgp:
+          - *me_canokey
+        age:
+          - *vps_starrydnscnhongkong1
   - path_regex: hosts/hertzdefalkenstein1/secrets.yml$
     key_groups:
-    - pgp:
-      - *me_canokey
-      age:
-      - *vps_hertzdefalkenstein1
+      - pgp:
+          - *me_canokey
+        age:
+          - *vps_hertzdefalkenstein1
   - path_regex: hosts/virmachustampa1/secrets.yml$
     key_groups:
-    - pgp:
-      - *me_canokey
-      age:
-      - *vps_virmachustampa1
+      - pgp:
+          - *me_canokey
+        age:
+          - *vps_virmachustampa1
   - path_regex: hosts/hosthatchsestockholm1/secrets.yml$
     key_groups:
-    - pgp:
-      - *me_canokey
-      age:
-      - *vps_hosthatchsestockholm1
+      - pgp:
+          - *me_canokey
+        age:
+          - *vps_hosthatchsestockholm1
   - path_regex: hosts/oracledefrankfurt1/secrets.yml$
     key_groups:
-    - pgp:
-      - *me_canokey
-      age:
-      - *vps_oracledefrankfurt1
+      - pgp:
+          - *me_canokey
+        age:
+          - *vps_oracledefrankfurt1
   - path_regex: hosts/terrahostnosandefjord1/secrets.yml$
     key_groups:
-    - pgp:
-      - *me_canokey
-      age:
-      - *vps_terrahostnosandefjord1
+      - pgp:
+          - *me_canokey
+        age:
+          - *vps_terrahostnosandefjord1
   - path_regex: hosts/vpsdeduesseldorf1/secrets.yml$
     key_groups:
-    - pgp:
-      - *me_canokey
-      age:
-      - *vps_vpsdeduesseldorf1
+      - pgp:
+          - *me_canokey
+        age:
+          - *vps_vpsdeduesseldorf1
   - path_regex: hosts/vpsausydney1/secrets.yml$
     key_groups:
-    - pgp:
-      - *me_canokey
-      age:
-      - *vps_vpsausydney1
+      - pgp:
+          - *me_canokey
+        age:
+          - *vps_vpsausydney1
   - path_regex: hosts/idcwikicnhongkong1/secrets.yml$
     key_groups:
-    - pgp:
-      - *me_canokey
-      age:
-      - *vps_idcwikicnhongkong1
+      - pgp:
+          - *me_canokey
+        age:
+          - *vps_idcwikicnhongkong1
   - path_regex: hosts/misakadeberlin1/secrets.yml$
     key_groups:
-    - pgp:
-      - *me_canokey
-      age:
-      - *vps_misakadeberlin1
+      - pgp:
+          - *me_canokey
+        age:
+          - *vps_misakadeberlin1
   - path_regex: hosts/vpsussanjose1/secrets.yml$
     key_groups:
-    - pgp:
-      - *me_canokey
-      age:
-      - *vps_vpsussanjose1
+      - pgp:
+          - *me_canokey
+        age:
+          - *vps_vpsussanjose1
   - path_regex: hosts/ovhfrgravelines1/secrets.yml$
     key_groups:
-    - pgp:
-      - *me_canokey
-      age:
-      - *vps_ovhfrgravelines1
+      - pgp:
+          - *me_canokey
+        age:
+          - *vps_ovhfrgravelines1
   - path_regex: hosts/buyvmluroost1/secrets.yml$
     key_groups:
-    - pgp:
-      - *me_canokey
-      age:
-      - *vps_buyvmluroost1
+      - pgp:
+          - *me_canokey
+        age:
+          - *vps_buyvmluroost1
   - path_regex: hosts/vpsdefrankfurt1/secrets.yml$
     key_groups:
-    - pgp:
-      - *me_canokey
-      age:
-      - *vps_vpsdefrankfurt1
+      - pgp:
+          - *me_canokey
+        age:
+          - *vps_vpsdefrankfurt1
   - path_regex: hosts/wirecatussantaclara1/secrets.yml$
     key_groups:
-    - pgp:
-      - *me_canokey
-      age:
-      - *vps_wirecatussantaclara1
+      - pgp:
+          - *me_canokey
+        age:
+          - *vps_wirecatussantaclara1
   - path_regex: hosts/twdscntaibei1/secrets.yml$
     key_groups:
-    - pgp:
-      - *me_canokey
-      age:
-      - *vps_twdscntaibei1
+      - pgp:
+          - *me_canokey
+        age:
+          - *vps_twdscntaibei1
   - path_regex: hosts/virtuafrlille1/secrets.yml$
     key_groups:
       - pgp:
