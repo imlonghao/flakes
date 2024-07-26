@@ -13,7 +13,6 @@ let
       route fd21:5c0c:9b7e:1::/64 blackhole;
     '';
   };
-  kernelConf = import profiles.bird.kernel { };
   dn42Conf = import profiles.bird.dn42 {
     region = 42;
     country = 1840;
@@ -24,7 +23,7 @@ let
 in {
   services.bird2 = {
     enable = true;
-    config = generalConf + kernelConf + dn42Conf + ''
+    config = generalConf + dn42Conf + ''
       protocol static {
         route 23.146.88.0/24 blackhole;
         ipv4 {
