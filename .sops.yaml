@@ -61,13 +61,6 @@ creation_rules:
           - *vps_breezehostusdallas1
           - *vps_vpsjptokyo1
           - *vps_coalcloudcnhongkong1
-  - path_regex: secrets/k3s.yml$
-    key_groups:
-      - pgp:
-          - *me_canokey
-        age:
-          - *vps_hosthatchsgsingapore1
-          - *vps_starrydnscnhongkong1
   - path_regex: secrets/vector.yml$
     key_groups:
       - pgp:
