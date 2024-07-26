@@ -2,6 +2,7 @@
   imports = [
     ./hardware.nix
     ./bird.nix
+    ./dn42.nix
     # ./wireguard.nix
     profiles.mycore
     profiles.users.root
