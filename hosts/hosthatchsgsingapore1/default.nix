@@ -158,14 +158,7 @@
       "/persist/docker/thelounge"
       "/persist/docker/traefik"
     ];
-    mysql_databases = [
-      {
-        name = "n8n";
-        hostname = "127.0.0.1";
-        port = 13306;
-        username = "n8n";
-        password = "\${N8N_PASSWORD}";
-      }
+    mariadb_databases = [
       {
         name = "powerdns";
         hostname = "127.0.0.1";
