@@ -32,6 +32,14 @@
       publickey = "tRRiOqYhTsygV08ltrWtMkfJxCps1+HUyN4tb1J7Yn4=";
     }
     {
+      name = "wg0358";
+      e6 = "fe80::358";
+      asn = 4242420358;
+      listen = 20358;
+      endpoint = "nj.us.dn42.kemonos.net:21888";
+      publickey = "hfurIssgtoOzzZM01AVfCM9vo+MxNCCLf15k7NbVxHM=";
+    }
+    {
       name = "wg1080";
       e6 = "fe80::1080:119";
       asn = 4242421080;
