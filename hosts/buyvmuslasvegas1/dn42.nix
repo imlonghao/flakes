@@ -30,6 +30,14 @@
       publickey = "C3SneO68SmagisYQ3wi5tYI2R9g5xedKkB56Y7rtPUo=";
     }
     {
+      name = "wg0358";
+      e6 = "fe80::358";
+      asn = 4242420358;
+      listen = 20358;
+      endpoint = "sjc.us.dn42.kemonos.net:21888";
+      publickey = "7HzHyeA2M7yo/zVmc+e0zG+I7j2SnIx+7ZpXOca93mg=";
+    }
+    {
       name = "wg0398";
       listen = 20398;
       endpoint = "lax.dn42.akihi.me:21888";
