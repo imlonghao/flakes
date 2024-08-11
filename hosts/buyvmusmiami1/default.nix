@@ -11,6 +11,7 @@
     profiles.etherguard.edge
     profiles.mtrsb
     profiles.rsshc
+    profiles.bird-lg-go
   ];
 
   boot.loader.grub.device = "/dev/vda";
