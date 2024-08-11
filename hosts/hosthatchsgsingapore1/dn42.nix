@@ -51,6 +51,16 @@
       e6 = "fe80::0604";
     }
     {
+      name = "wg0709";
+      listen = 20709;
+      endpoint = "66.42.49.172:21888";
+      publickey = "knb1wEUmfNFi3XvYyXSsshiQ8xbLAgmGw2SO+EG8iDc=";
+      asn = 4242420709;
+      e4 = "172.21.80.129";
+      e6 = "fe80::0709";
+      l4 = "172.22.68.2";
+    }
+    {
       name = "wg0831";
       listen = 20831;
       endpoint = "sg.dn42.tms.im:21888";
