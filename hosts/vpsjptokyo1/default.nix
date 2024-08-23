@@ -43,9 +43,6 @@
       [ "0 1 * * * root ${pkgs.git}/bin/git -C /persist/pki pull" ];
   };
 
-  environment.systemPackages = with pkgs; [
-    wgcf
-    wireguard-tools
-  ];
+  environment.systemPackages = with pkgs; [ wgcf wireguard-tools ];
 
 }
