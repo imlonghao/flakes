@@ -8,12 +8,13 @@
     profiles.mtrsb
     profiles.rsshc
     profiles.exporter.node
+    profiles.docker
   ];
 
   boot.loader.grub.device = "/dev/vda";
   networking = {
     dhcpcd.enable = false;
-    nameservers = [ "2602:fab0:29:53::" ];
+    nameservers = [ "1.1.1.1" "8.8.8.8" ];
     defaultGateway = {
       address = "169.254.0.1";
       interface = "ens4";
@@ -41,6 +42,10 @@
           }
           {
             address = "2602:fab0:23::";
+            prefixLength = 128;
+          }
+          {
+            address = "2602:fab0:23::25";
             prefixLength = 128;
           }
         ];
