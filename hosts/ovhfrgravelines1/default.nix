@@ -86,6 +86,7 @@ in {
     step-cli
     tmux
     tree
+    uv
     virt-manager
     whois
   ];
