@@ -11,6 +11,7 @@
     profiles.etherguard.edge
     profiles.bird-lg-go
     profiles.rsshc
+    profiles.docker
   ];
 
   networking = {
