@@ -9,6 +9,7 @@
     profiles.rsshc
     profiles.exporter.node
     profiles.docker
+    profiles.borgmatic
   ];
 
   boot.loader.grub.device = "/dev/vda";
@@ -62,6 +63,29 @@
   services.etherguard-edge = {
     ipv4 = "100.64.88.29/24";
     ipv6 = "2602:feda:1bf:deaf::29/64";
+  };
+
+  # Borgmatic
+  systemd.services.borgmatic.path = [ pkgs.mariadb ];
+  services.borgmatic.settings = {
+    repositories = [
+      {
+        path = "ssh://alb8ug6d@alb8ug6d.repo.borgbase.com/./repo";
+        label = "borgbase";
+      }
+    ];
+    source_directories = [
+      "/mnt/stalwart/"
+    ];
+    mariadb_databases = [
+      {
+        name = "stalwart";
+        hostname = "127.0.0.1";
+        port = 3306;
+        username = "stalwart";
+        password = "\${STARWART_PASSPHRASE}";
+      }
+    ];
   };
 
 }
