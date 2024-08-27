@@ -65,13 +65,6 @@
       l4 = "172.22.68.4";
     }
     {
-      name = "wg0577";
-      listen = 20577;
-      publickey = "SPfVzZHC6U+8oAJ0rd0foq0PH9xRYKGRVHLosV1WbXc=";
-      asn = 4242420577;
-      e6 = "fe80::577:1";
-    }
-    {
       name = "wg0585";
       listen = 20585;
       endpoint = "de1.dn42.atolm.net:21888";
@@ -208,14 +201,6 @@
       ipv6 = "fd21:5c0c:9b7e:4:3177::1/80";
     }
     {
-      name = "wg3396";
-      listen = 23396;
-      endpoint = "uk1.dn42.theresa.cafe:21888";
-      publickey = "zhDkw8DNmH5spOWh12790/zPA9NKblr2taIDPM5G/g4=";
-      asn = 4242423396;
-      e6 = "fe80::3396";
-    }
-    {
       name = "wg3814";
       listen = 23814;
       endpoint = "193.77.181.233:51820";
@@ -226,14 +211,6 @@
       l4 = "172.22.68.4";
       mpbgp = false;
       ipv6 = "fd21:5c0c:9b7e:4:3814::1/80";
-    }
-    {
-      name = "wg3847";
-      listen = 23847;
-      endpoint = "de-flk-dn42.0011.de:21888";
-      publickey = "b8jJ2n2CyAm3iGvVl95Rc9yINXqHd16y4OkW40zV0FQ=";
-      asn = 4242423847;
-      e6 = "fe80::42:3847:42:1888";
     }
     {
       name = "wg3914";

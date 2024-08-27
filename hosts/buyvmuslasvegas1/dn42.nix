@@ -62,16 +62,6 @@
       e6 = "fe80::585";
     }
     {
-      name = "wg0826";
-      e4 = "172.23.196.0";
-      l4 = "172.22.68.5";
-      listen = 20826;
-      asn = 4242420826;
-      e6 = "fe80::a0e:fb02";
-      endpoint = "v4.la.dn42.dgy.xyz:21888";
-      publickey = "IXjFALJFTr24HAhXKDsCnTRXmlc3kJHJiR4Nr44l5Uw=";
-    }
-    {
       name = "wg0864";
       listen = 20864;
       asn = 4242420864;
@@ -102,14 +92,6 @@
       publickey = "VCYdDHIKBDfHe+drn2CG6pw56HBzDeoRt6wAx6GUg0Y=";
       asn = 4242421350;
       e6 = "fe80::1350";
-    }
-    {
-      name = "wg1580";
-      listen = 21580;
-      endpoint = "sfo.dn42.noreinx.me:21888";
-      publickey = "uUKad5JFD+Zfx/sApOcqJVrrsRS25en9ac6Tri/cZQk=";
-      asn = 4242421580;
-      e6 = "fe80::1580:1";
     }
     {
       name = "wg1716";

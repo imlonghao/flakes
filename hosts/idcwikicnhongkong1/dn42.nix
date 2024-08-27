@@ -105,16 +105,6 @@
       publickey = "OlUDuWkUI9pKNsNo7Vjf/GKKVSBslh9kmqjbeYA4+34=";
     }
     {
-      name = "wg2399";
-      l4 = "172.22.68.3";
-      e4 = "172.20.222.128";
-      asn = 4242422399;
-      e6 = "fe80::adc5";
-      listen = 22399;
-      endpoint = "112.213.124.196:21888";
-      publickey = "A1HIKpYTO2vV8af3Fk/9wreY+W05f0HxlenN60CNnTY=";
-    }
-    {
       name = "wg2458";
       asn = 4242422458;
       e6 = "fe80::2458";

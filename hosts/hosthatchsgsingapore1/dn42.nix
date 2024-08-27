@@ -112,14 +112,6 @@
       e6 = "fe80::2246";
     }
     {
-      name = "wg2271";
-      listen = 22271;
-      endpoint = "185.212.61.190:21888";
-      publickey = "9RBImDH9X0NghJsVW6hAVQS1qaR+RXrsbVXisBAViHE=";
-      asn = 4242422271;
-      e6 = "fe80::2271";
-    }
-    {
       name = "wg2297";
       listen = 22297;
       endpoint = "[2001:448a:2020:906b::1]:21888";

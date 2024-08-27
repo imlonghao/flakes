@@ -28,14 +28,6 @@
       e6 = "fe80::0458";
     }
     {
-      name = "wg0459";
-      listen = 20459;
-      endpoint = "au1.fakemsp.cloud:21888";
-      publickey = "L/6MJt5U0sMMV6YqfQUdb1AUKg4G8Tvza3nEPMiR53s=";
-      asn = 4242420459;
-      e6 = "fe80::8523:45ff:fe20:8b5";
-    }
-    {
       name = "wg0566";
       listen = 20566;
       endpoint = "dn22.syd.surgebytes.com:31888";
