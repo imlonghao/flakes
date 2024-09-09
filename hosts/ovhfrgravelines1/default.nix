@@ -67,10 +67,12 @@ in {
     gobuster
     iptables
     lego
+    jq
     just
     mcfly
     mediainfo
     metasploit
+    moreutils
     mosh
     ncdu
     nix-update
