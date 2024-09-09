@@ -6,7 +6,7 @@
     # ./wireguard.nix
     profiles.mycore
     profiles.users.root
-    # profiles.pingfinder
+    profiles.pingfinder
     profiles.exporter.node
     profiles.etherguard.edge
     profiles.mtrsb
