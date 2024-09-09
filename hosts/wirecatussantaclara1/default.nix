@@ -75,6 +75,7 @@
       }
     ];
     source_directories = [
+      "/mnt/caddy/"
       "/mnt/stalwart/"
     ];
     mariadb_databases = [
