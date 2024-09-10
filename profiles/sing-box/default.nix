@@ -13,7 +13,9 @@
           version = 3;
           users = [{
             name = "toor";
-            password = { _secret = config.sops.secrets.sing-box-password.path; };
+            password = {
+              _secret = config.sops.secrets.sing-box-password.path;
+            };
           }];
           handshake = {
             server = "i0.hdslb.com";
@@ -33,7 +35,9 @@
           listen_port = 443;
           users = [{
             uuid = { _secret = config.sops.secrets.sing-box-uuid.path; };
-            password = { _secret = config.sops.secrets.sing-box-password.path; };
+            password = {
+              _secret = config.sops.secrets.sing-box-password.path;
+            };
           }];
           congestion_control = "bbr";
           tls = {

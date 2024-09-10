@@ -68,25 +68,18 @@
   # Borgmatic
   systemd.services.borgmatic.path = [ pkgs.mariadb ];
   services.borgmatic.settings = {
-    repositories = [
-      {
-        path = "ssh://alb8ug6d@alb8ug6d.repo.borgbase.com/./repo";
-        label = "borgbase";
-      }
-    ];
-    source_directories = [
-      "/mnt/caddy/"
-      "/mnt/stalwart/"
-    ];
-    mariadb_databases = [
-      {
-        name = "stalwart";
-        hostname = "127.0.0.1";
-        port = 3306;
-        username = "stalwart";
-        password = "\${STARWART_PASSPHRASE}";
-      }
-    ];
+    repositories = [{
+      path = "ssh://alb8ug6d@alb8ug6d.repo.borgbase.com/./repo";
+      label = "borgbase";
+    }];
+    source_directories = [ "/mnt/caddy/" "/mnt/stalwart/" ];
+    mariadb_databases = [{
+      name = "stalwart";
+      hostname = "127.0.0.1";
+      port = 3306;
+      username = "stalwart";
+      password = "\${STARWART_PASSPHRASE}";
+    }];
   };
 
 }
