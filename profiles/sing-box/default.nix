@@ -30,7 +30,7 @@
           listen = "127.0.0.1";
         }
         {
-          type = "sing-box";
+          type = "tuic";
           listen = "::";
           listen_port = 443;
           users = [{
