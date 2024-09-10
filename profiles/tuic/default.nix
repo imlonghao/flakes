@@ -20,7 +20,6 @@
             server_port = 443;
           };
           detour = "s5-in";
-          tcp_fast_open = true;
           tcp_multi_path = true;
         }
         {

@@ -23,7 +23,9 @@ in {
 
   boot.tmp.cleanOnBoot = true;
   boot.kernel.sysctl = {
+    "net.mptcp.checksum_enabled" = 1;
     "net.ipv4.tcp_congestion_control" = "bbr";
+    "net.ipv4.tcp_fastopen" = 3;
     "net.ipv4.conf.all.forwarding" = 1;
     "net.ipv6.conf.all.forwarding" = 1;
     "net.ipv4.conf.all.rp_filter" = 0;
