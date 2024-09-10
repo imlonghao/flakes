@@ -6,7 +6,7 @@
     profiles.mycore
     profiles.exporter.node
     profiles.users.root
-    profiles.tuic
+    profiles.sing-box
     profiles.etherguard.edge
     profiles.mtrsb
     profiles.bird-lg-go

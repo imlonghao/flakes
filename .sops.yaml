@@ -65,7 +65,7 @@ creation_rules:
           - *me_canokey
         age:
           - *vps_buyvmusmiami1
-  - path_regex: secrets/tuic.yml$
+  - path_regex: secrets/sing-box.yml$
     key_groups:
       - pgp:
           - *me_canokey

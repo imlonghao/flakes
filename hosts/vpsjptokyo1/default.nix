@@ -7,7 +7,7 @@
     profiles.exporter.blackbox
     profiles.etherguard.edge
     profiles.rsshc
-    profiles.tuic
+    profiles.sing-box
     profiles.mtrsb
   ];
 

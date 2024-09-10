@@ -6,7 +6,7 @@
     profiles.users.root
     profiles.exporter.node
     profiles.etherguard.edge
-    profiles.tuic
+    profiles.sing-box
     profiles.mtrsb
     profiles.rsshc
   ];

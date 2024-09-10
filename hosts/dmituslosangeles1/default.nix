@@ -4,7 +4,7 @@
     profiles.mycore
     profiles.users.root
     profiles.etherguard.edge
-    profiles.tuic
+    profiles.sing-box
     profiles.rsshc
     profiles.exporter.node
     profiles.docker

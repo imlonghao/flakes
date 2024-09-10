@@ -20,7 +20,7 @@ in {
     profiles.exporter.blackbox
     profiles.etherguard.edge
     profiles.bird-lg-go
-    profiles.tuic
+    profiles.sing-box
     profiles.mtrsb
     profiles.rsshc
     profiles.docker

@@ -6,7 +6,7 @@
     profiles.exporter.node
     profiles.etherguard.edge
     profiles.rsshc
-    profiles.tuic
+    profiles.sing-box
     profiles.mtrsb
     profiles.docker
   ];
