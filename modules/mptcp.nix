@@ -21,10 +21,11 @@ in {
     systemd.services.mptcp = {
       serviceConfig = {
         Type = "oneshot";
+        RemainAfterExit = true;
         ExecStartPre =
           "${pkgs.iproute2}/bin/ip mptcp limits set add_addr_accepted 8 subflows 8";
         ExecStart = map (x:
-          "${pkgs.iproute2}/bin/ip mptcp endpoint add ${x.address} dev ${x.dev} id ${
+          "${pkgs.iproute2}/bin/ip mptcp endpoint add ${x.address} signal dev ${x.dev} id ${
             toString x.id
           }" + (if x.port != null then " port ${x.port}" else "")) cfg.endpoint;
         ExecStop = map
