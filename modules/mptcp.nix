@@ -4,15 +4,17 @@ let cfg = config.mptcp;
 in {
   options.mptcp = {
     enable = mkEnableOption "mptcp server";
-    endpoint = types.listOf (types.submodule ({
-      options.address = mkOption { type = types.str; };
-      options.dev = mkOption { type = types.str; };
-      options.id = mkOption { type = types.int; };
-      options.port = mkOption {
-        type = types.nullOr types.port;
-        default = null;
-      };
-    }));
+    endpoint = mkOption {
+      type = types.listOf (types.submodule ({
+        options.address = mkOption { type = types.str; };
+        options.dev = mkOption { type = types.str; };
+        options.id = mkOption { type = types.int; };
+        options.port = mkOption {
+          type = types.nullOr types.port;
+          default = null;
+        };
+      }));
+    };
   };
   config = mkIf cfg.enable {
     boot.kernel.sysctl = { "net.mptcp.checksum_enabled" = 1; };
