@@ -27,10 +27,9 @@ in {
         ExecStart = map (x:
           "${pkgs.iproute2}/bin/ip mptcp endpoint add ${x.address} signal dev ${x.dev} id ${
             toString x.id
-          }" + (if x.port != null then " port ${x.port}" else "")) cfg.endpoint;
-        ExecStop = map
-          (x: "${pkgs.iproute2}/bin/ip mptcp endpoint del id ${toString x.id}")
+          }" + (if x.port != null then " port ${toString x.port}" else ""))
           cfg.endpoint;
+        ExecStopPost = "${pkgs.iproute2}/bin/ip mptcp endpoint flush";
       };
       wants = [ "network-online.target" ];
       after = [ "network-online.target" ];
