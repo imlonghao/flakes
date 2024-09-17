@@ -22,5 +22,14 @@
       e6 = "fe80::1588";
       l4 = "172.22.68.0";
     }
+    {
+      name = "wg3372";
+      listen = 23372;
+      endpoint = "qro.beckerit.cc:21888";
+      publickey = "okxcWYCduqtZfKfZVTLc4cCMxOXBYvUEkl8OLzxe3hQ=";
+      asn = 4242423372;
+      e6 = "fe80::3372";
+      mtu = 1312;
+    } 
   ];
 }
