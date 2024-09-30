@@ -136,18 +136,6 @@ in {
   services.borgmatic = {
     enable = true;
     configurations = {
-      photoprism = {
-        source_directories = [ "/persist/docker/photoprism" ];
-        repositories = [{
-          path = "ssh://bln02xkt@bln02xkt.repo.borgbase.com/./repo";
-          label = "borgbase";
-        }];
-        encryption_passphrase = "\${PHOTOPRISM_BORG_PASSPHRASE}";
-        compression = "zstd";
-        keep_daily = 7;
-        keep_weekly = 4;
-        keep_monthly = 6;
-      };
       filebrowser = {
         source_directories = [ "/persist/docker/filebrowser" ];
         repositories = [{
