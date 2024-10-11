@@ -21,6 +21,14 @@
       e6 = "fe80::aa:1111:41";
     }
     {
+      name = "wg0129";
+      listen = 20129;
+      endpoint = "de1.420129.xyz:21888";
+      publickey = "N9rGceoiFcc/obnHrqMAmVlrb/E2Br55+doekTKwNF8=";
+      asn = 4242420129;
+      e6 = "fe80::129:2";
+    }
+    {
       name = "wg0197";
       listen = 20197;
       endpoint = "himalia.dn42.n0emis.eu:21888";
