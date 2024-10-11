@@ -85,6 +85,7 @@
     systemCronJobs = [
       "0 1 * * * root ${pkgs.git}/bin/git -C /persist/pki pull"
       "* * * * * root ${pkgs.iptables}/bin/iptables -t nat -C PREROUTING -p tcp --dport 30465 -j DNAT --to-destination 148.251.67.66:465 || ${pkgs.iptables}/bin/iptables -t nat -A PREROUTING -p tcp --dport 30465 -j DNAT --to-destination 148.251.67.66:465"
+      "* * * * * root ${pkgs.iptables}/bin/iptables -t nat -C POSTROUTING ! -s 144.24.174.10 -p tcp --dport 465 -j SNAT --to-source 144.24.174.10 || ${pkgs.iptables}/bin/iptables -t nat -A POSTROUTING ! -s 144.24.174.10 -p tcp --dport 465 -j SNAT --to-source 144.24.174.10"
     ];
   };
 
