@@ -84,7 +84,7 @@
     enable = true;
     systemCronJobs = [
       "0 1 * * * root ${pkgs.git}/bin/git -C /persist/pki pull"
-      "* * * * * roor ${pkgs.iptables}/bin/iptables -t nat -C PREROUTING -p tcp --dport 30465 -j DNAT --to-destination 148.251.67.66:465 || ${pkgs.iptables}/bin/iptables -t nat -A PREROUTING -p tcp --dport 30465 -j DNAT --to-destination 148.251.67.66:465"
+      "* * * * * root ${pkgs.iptables}/bin/iptables -t nat -C PREROUTING -p tcp --dport 30465 -j DNAT --to-destination 148.251.67.66:465 || ${pkgs.iptables}/bin/iptables -t nat -A PREROUTING -p tcp --dport 30465 -j DNAT --to-destination 148.251.67.66:465"
     ];
   };
 
