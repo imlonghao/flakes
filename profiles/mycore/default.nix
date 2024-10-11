@@ -38,6 +38,12 @@ in {
     "vm.watermark_boost_factor" = 0;
     "vm.watermark_scale_factor" = 125;
     "vm.page-cluster" = 0;
+    # https://blog.cloudflare.com/optimizing-tcp-for-high-throughput-and-low-latency/
+    "net.ipv4.tcp_rmem" = "8192 262144 536870912";
+    "net.ipv4.tcp_wmem" = "4096 16384 536870912";
+    "net.ipv4.tcp_adv_win_scale" = "-2";
+    "net.ipv4.tcp_collapse_max_bytes" = 6291456;
+    "net.ipv4.tcp_notsent_lowat" = 131072;
   };
 
   environment.systemPackages = [ pkgs.bottom pkgs.mtr pkgs.tcpdump pkgs.wget ];
