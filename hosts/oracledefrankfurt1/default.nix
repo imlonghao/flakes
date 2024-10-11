@@ -83,7 +83,8 @@
   services.cron = {
     enable = true;
     systemCronJobs = [
-      #      "0 * * * * root ${pkgs.fping}/bin/fping -i 1 -r 1 -a -q -g 172.20.0.0/14 > /persist/heatmap/`date +\\%Y\\%m\\%d\\%H`.log"
+      "0 1 * * * root ${pkgs.git}/bin/git -C /persist/pki pull"
+      "* * * * * roor ${pkgs.iptables}/bin/iptables -t nat -C PREROUTING -p tcp --dport 30465 -j DNAT --to-destination 148.251.67.66:465 || ${pkgs.iptables}/bin/iptables -t nat -A PREROUTING -p tcp --dport 30465 -j DNAT --to-destination 148.251.67.66:465"
     ];
   };
 
