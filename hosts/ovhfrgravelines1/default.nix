@@ -136,10 +136,16 @@ in {
   services.borgmatic = {
     enable = true;
     configurations = {
-      filebrowser = {
-        source_directories = [ "/persist/docker/filebrowser" ];
+      ovh = {
+        source_directories = [ "/persist/docker" ];
+        exclude_patterns = [
+          "/persist/docker/meilisearch/data.ms"
+          "/persist/docker/bililive/*/"
+          "/persist/docker/act_runner/data/.local"
+          "/persist/docker/act_runner/data/cache"
+        ];
         repositories = [{
-          path = "ssh://v5zl57p2@v5zl57p2.repo.borgbase.com/./repo";
+          path = "ssh://q3924w6o@q3924w6o.repo.borgbase.com/./repo";
           label = "borgbase";
         }];
         encryption_passphrase = "\${FILEBROWSER_BORG_PASSPHRASE}";
