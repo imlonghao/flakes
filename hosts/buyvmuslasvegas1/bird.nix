@@ -29,6 +29,7 @@ in {
     config = generalConf + dn42Conf + ''
       protocol static {
         route 23.146.88.0/24 blackhole;
+        route 140.235.104.0/22 blackhole;
         ipv4 {
           import filter {
             bgp_large_community.add((30114, 1, 1));
