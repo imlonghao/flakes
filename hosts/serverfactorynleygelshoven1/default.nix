@@ -70,4 +70,12 @@
     ipv6 = "2602:feda:1bf:deaf::37/64";
   };
 
+  # Crontab
+  services.cron = {
+    enable = true;
+    systemCronJobs = [
+      "0 1 * * * root ${pkgs.git}/bin/git -C /persist/pki pull"
+    ];
+  };
+
 }
