@@ -89,11 +89,11 @@
         openobserve = {
           type = "http";
           inputs = [ "parse_json" ];
-          uri = "\${URI-default}";
+          uri = "\${O2_URI-default}";
           method = "post";
           auth.strategy = "basic";
-          auth.user = "\${USER-default}";
-          auth.password = "\${PASSWORD-default}";
+          auth.user = "\${O2_USER-default}";
+          auth.password = "\${O2_PASSWORD-default}";
           compression = "gzip";
           encoding.codec = "json";
           encoding.timestamp_format = "rfc3339";
