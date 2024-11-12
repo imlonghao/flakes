@@ -40,7 +40,7 @@
     {
       name = "wg0398";
       listen = 20398;
-      endpoint = "lax.dn42.akihi.me:21888";
+      endpoint = "lax.dn42.boletus.me:21888";
       publickey = "oAPy0U2qVuSR8PyPLmVLEgWLBKrOq4kcLNLAOVZL10M=";
       asn = 4242420398;
       e6 = "fe80::426f";
