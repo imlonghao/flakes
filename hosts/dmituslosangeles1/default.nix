@@ -103,7 +103,9 @@
     };
   };
   sops.secrets.openobserve = { sopsFile = "${self}/secrets/openobserve.yml"; };
-  systemd.services.vector.serviceConfig.EnvironmentFile =
-    config.sops.secrets.openobserve.path;
+  systemd.services.vector.serviceConfig = {
+    EnvironmentFile = config.sops.secrets.openobserve.path;
+    DynamicUser = false;
+  };
 
 }
