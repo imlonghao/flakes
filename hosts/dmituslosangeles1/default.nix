@@ -1,4 +1,4 @@
-{ config, pkgs, profiles, ... }: {
+{ config, pkgs, profiles, self, ... }: {
   imports = [
     ./hardware.nix
     profiles.mycore
