@@ -79,6 +79,12 @@ creation_rules:
           - *vps_hosthatchsgsingapore1
           - *vps_vpsjptokyo1
           - *vps_coalcloudcnhongkong1
+  - path_regex: secrets/openobserve.yml$
+    key_groups:
+      - pgp:
+          - *me_canokey
+        age:
+          - *vps_dmituslosangeles1
   - path_regex: hosts/mailcow/secrets.yml$
     key_groups:
       - pgp:
