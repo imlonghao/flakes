@@ -74,6 +74,7 @@ in {
     metasploit
     moreutils
     mosh
+    nali
     ncdu
     nix-update
     nixfmt
@@ -94,7 +95,7 @@ in {
   ];
 
   environment.persistence."/persist" = {
-    directories = [ "/var/lib" "/root/.ssh" "/root/.local" "/root/.ansible/" ];
+    directories = [ "/var/lib" "/root/.config" "/root/.ssh" "/root/.local" "/root/.ansible/" ];
     files = [ "/etc/machine-id" "/etc/ssh/ssh_host_ed25519_key" ];
   };
 
