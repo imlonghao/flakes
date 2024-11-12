@@ -1,4 +1,4 @@
-{ config, pkgs, profiles, self, ... }: {
+{ config, lib, pkgs, profiles, self, ... }: {
   imports = [
     ./hardware.nix
     profiles.mycore
@@ -105,7 +105,7 @@
   sops.secrets.openobserve = { sopsFile = "${self}/secrets/openobserve.yml"; };
   systemd.services.vector.serviceConfig = {
     EnvironmentFile = config.sops.secrets.openobserve.path;
-    DynamicUser = false;
+    DynamicUser = lib.mkForce false;
   };
 
 }
