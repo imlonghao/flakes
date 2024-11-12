@@ -94,7 +94,7 @@
           auth.strategy = "basic";
           auth.user = "\${USER-default}";
           auth.password = "\${PASSWORD-default}";
-          compression = "zstd";
+          compression = "gzip";
           encoding.codec = "json";
           encoding.timestamp_format = "rfc3339";
           healthcheck.enabled = false;
