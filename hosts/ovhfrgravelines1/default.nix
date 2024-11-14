@@ -1,4 +1,4 @@
-{ inputs, pkgs, profiles, sops, ... }:
+{ config, inputs, pkgs, profiles, sops, ... }:
 let
   cronJob = pkgs.writeShellScript "199632.sh" ''
     ip rule | grep -F 23.146.88.0 || ip rule add from 23.146.88.0/24 table 199632
@@ -86,6 +86,7 @@ in {
     rclone
     ripgrep
     socat
+    pkgs.sops
     step-cli
     tmux
     tree
@@ -165,5 +166,36 @@ in {
   programs.fish.shellInit = ''
     ${pkgs.mcfly}/bin/mcfly init fish | source
   '';
+
+  # Wrap
+  sops.secrets.wrap.sopsFile = ./secrets.yml;
+  networking.wireguard.interfaces.wrap = {
+    table = "913335";
+    privateKeyFile = config.sops.secrets.wrap.path;
+    ips = [
+      "172.16.0.2/32"
+      "2606:4700:110:899a:329c:9ece:ac7e:4b56/128"
+    ];
+    mtu = 1420;
+    postSetup = [
+      "${pkgs.iproute2}/bin/ip rule add from 10.133.35.0/24 table 913335"
+      "${pkgs.iproute2}/bin/ip -6 rule add from 133:35::/64 table 913335"
+    ];
+    postShutdown = [
+      "${pkgs.iproute2}/bin/ip rule del from 10.133.35.0/24 table 913335"
+      "${pkgs.iproute2}/bin/ip -6 rule del from 133:35::/64 table 913335"
+    ];
+    peers = [
+      {
+        endpoint = "engage.cloudflareclient.com:2408";
+        publicKey = "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=";
+        allowedIPs = [
+          "0.0.0.0/0"
+          "::/0"
+        ];
+        persistentKeepalive = 15;
+      }
+    ];
+  };
 
 }
