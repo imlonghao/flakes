@@ -82,14 +82,17 @@
         parse_json = {
           type = "remap";
           inputs = [ "docker" ];
-          source = ". = parse_json!(.message)";
+          source = ''
+            . = parse_json!(.message)
+            .hostname = get_hostname!()
+          '';
         };
       };
       sinks = {
-        openobserve = {
+        caddycdn = {
           type = "http";
           inputs = [ "parse_json" ];
-          uri = "\${O2_URI-default}";
+          uri = "https://o2.esd.cc/api/default/caddycdn/_json";
           method = "post";
           auth.strategy = "basic";
           auth.user = "\${O2_USER-default}";
