@@ -1,4 +1,4 @@
-{ config, libs, pkgs, profiles, ... }: {
+{ config, lib, pkgs, profiles, ... }: {
   imports = [
     ./dn42.nix
     ./bird.nix
