@@ -66,4 +66,48 @@
     ipv6 = "2602:feda:1bf:deaf::4/64";
   };
 
+  # Vector
+  services.vector = {
+    enable = true;
+    journaldAccess = true;
+    settings = {
+      sources = {
+        docker = {
+          type = "docker_logs";
+          include_containers = [ "caddy" ];
+        };
+      };
+      transforms = {
+        parse_json = {
+          type = "remap";
+          inputs = [ "docker" ];
+          source = ''
+            . = parse_json!(.message)
+            .hostname = get_hostname!()
+          '';
+        };
+      };
+      sinks = {
+        caddycdn = {
+          type = "http";
+          inputs = [ "parse_json" ];
+          uri = "https://o2.esd.cc/api/default/caddycdn/_json";
+          method = "post";
+          auth.strategy = "basic";
+          auth.user = "\${O2_USER-default}";
+          auth.password = "\${O2_PASSWORD-default}";
+          compression = "gzip";
+          encoding.codec = "json";
+          encoding.timestamp_format = "rfc3339";
+          healthcheck.enabled = false;
+        };
+      };
+    };
+  };
+  sops.secrets.openobserve = { sopsFile = "${self}/secrets/openobserve.yml"; };
+  systemd.services.vector.serviceConfig = {
+    EnvironmentFile = config.sops.secrets.openobserve.path;
+    DynamicUser = lib.mkForce false;
+  };
+
 }
