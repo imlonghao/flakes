@@ -1,4 +1,4 @@
-{ config, pkgs, profiles, sops, ... }: {
+{ config, libs, pkgs, profiles, sops, ... }: {
   imports = [
     ./dn42.nix
     ./hardware.nix
