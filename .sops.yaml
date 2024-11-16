@@ -90,6 +90,8 @@ creation_rules:
           - *vps_idcwikicnhongkong1
           - *vps_oracledefrankfurt1
           - *vps_hosthatchsgsingapore1
+          - *vps_buyvmuslasvegas1
+          - *vps_buyvmusmiami1
   - path_regex: hosts/mailcow/secrets.yml$
     key_groups:
       - pgp:

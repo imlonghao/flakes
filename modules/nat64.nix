@@ -17,9 +17,14 @@ let
 
     iptables -t nat -C POSTROUTING -o ${cfg.interface} -s 100.110.0.0/16 -j SNAT --to-source ${cfg.nat_start}-${cfg.nat_end} || iptables -t nat -A POSTROUTING -o ${cfg.interface} -s 100.110.0.0/16 -j SNAT --to-source ${cfg.nat_start}-${cfg.nat_end}
 
+    # Blacklist
+    ## ICMP Flooding @ 20241115
+    ip6tables -C FORWARD -d ${cfg.prefix}64::/96 -s 2001:da8::/32 -j REJECT --reject-with icmp6-adm-prohibited || ip6tables -I FORWARD -d ${cfg.prefix}64::/96 -s 2001:da8::/32 -j REJECT --reject-with icmp6-adm-prohibited
+    ## SPAM
+    ip6tables -C FORWARD -d ${cfg.prefix}64::/96 -p tcp -m multiport --dports 25,110,143,465,587,993,995,2525 -j REJECT --reject-with icmp6-adm-prohibited || ip6tables -I FORWARD -d ${cfg.prefix}64::/96 -p tcp -m multiport --dports 25,110,143,465,587,993,995,2525 -j REJECT --reject-with icmp6-adm-prohibited
+
     ip6tables -C FORWARD -d ${cfg.prefix}64::/96 -m state --state ESTABLISHED -j ACCEPT || ip6tables -A FORWARD -d ${cfg.prefix}64::/96 -m state --state ESTABLISHED -j ACCEPT
     ip6tables -C FORWARD -d ${cfg.prefix}64::/96 -j LOG --log-prefix "nat64: " || ip6tables -A FORWARD -d ${cfg.prefix}64::/96 -j LOG --log-prefix "nat64: "
-    ip6tables -C FORWARD -d ${cfg.prefix}64::/96 -p tcp -m multiport --dports 25,110,143,465,587,993,995,2525 -j REJECT --reject-with icmp6-adm-prohibited || ip6tables -A FORWARD -d ${cfg.prefix}64::/96 -p tcp -m multiport --dports 25,110,143,465,587,993,995,2525 -j REJECT --reject-with icmp6-adm-prohibited
   '';
 in {
   options.nat64 = {
@@ -100,27 +105,35 @@ in {
               }
               .message = replace(.message, r'nat64: ', "")
               .message = replace(.message, r' $', "")
-              .payload = parse_key_value!(.message)
-              .report_type = "nat64"
-              del(.message)
+              . = parse_key_value!(.message)
+              .hostname = get_hostname!()
             '';
           };
         };
         sinks = {
-          nr = {
-            type = "new_relic";
+          nat64 = {
+            type = "http";
             inputs = [ "filter" ];
-            account_id = "\${NEW_RELIC_ACCOUNT_ID-default}";
-            license_key = "\${NEW_RELIC_LICENSE_KEY-default}";
-            api = "logs";
+            uri = "https://o2.esd.cc/api/default/nat64/_json";
+            method = "post";
+            auth.strategy = "basic";
+            auth.user = "\${O2_USER-default}";
+            auth.password = "\${O2_PASSWORD-default}";
+            compression = "gzip";
+            encoding.codec = "json";
+            encoding.timestamp_format = "rfc3339";
+            healthcheck.enabled = false;
           };
         };
       };
     };
-    # Secrets
-    sops.secrets.vector = { sopsFile = "${self}/secrets/vector.yml"; };
-    systemd.services.vector.serviceConfig.EnvironmentFile =
-      config.sops.secrets.vector.path;
+    sops.secrets.openobserve = {
+      sopsFile = "${self}/secrets/openobserve.yml";
+    };
+    systemd.services.vector.serviceConfig = {
+      EnvironmentFile = config.sops.secrets.openobserve.path;
+      DynamicUser = lib.mkForce false;
+    };
     # Crontab
     services.cron = {
       enable = true;
