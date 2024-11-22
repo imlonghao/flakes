@@ -15,7 +15,7 @@
     dhcpcd.enable = false;
     defaultGateway = "154.17.16.1";
     defaultGateway6 = {
-      address = "fe80::5c3c:9dff:feca:8922";
+      address = "fe80::6436:5aff:fe53:bc6b";
       interface = "eth0";
     };
     interfaces = {
