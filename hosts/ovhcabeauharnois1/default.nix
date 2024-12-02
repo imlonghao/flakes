@@ -6,6 +6,7 @@
     profiles.exporter.node
     profiles.etherguard.edge
     profiles.rsshc
+    profiles.docker
   ];
 
   boot.loader.grub.device = "/dev/sda";
