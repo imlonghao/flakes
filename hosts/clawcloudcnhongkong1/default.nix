@@ -22,10 +22,6 @@
   services.realm = {
     enable = true;
     config = {
-      log = {
-        level = "warn";
-        output = "/var/log/realm.log";
-      };
       network = {
         use_udp = true;
       };
