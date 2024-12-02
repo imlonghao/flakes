@@ -29,6 +29,7 @@ keys:
   - &vps_vpsjptokyo1 age1un5x9uu4lf2zkfps27x0zph6htpnejlrdsgyzheq9w7ukmkaxvhqwdzl4s
   - &vps_coalcloudcnhongkong1 age139x2kfpn60v9lcmn94p396jyg6yn0az4h4hequgrxptwtjjqla0qdp22el
   - &vps_clawcloudcnhongkong1 age1gg4ex52vwueqf93f53334uzr4mh5lzqt36xh6th3ydz7f28m3yhsgc4g2a
+  - &vps_ovhcabeauharnois1 age15a0gm84zgxt0ah5a5csympuv7htrtpymrh0m8lm7y6w39p483p8sqrdu4x
 creation_rules:
   - path_regex: secrets/shadow.yml$
     key_groups:
@@ -61,6 +62,7 @@ creation_rules:
           - *vps_vpsjptokyo1
           - *vps_coalcloudcnhongkong1
           - *vps_clawcloudcnhongkong1
+          - *vps_ovhcabeauharnois1
   - path_regex: secrets/vector.yml$
     key_groups:
       - pgp:
@@ -268,3 +270,9 @@ creation_rules:
           - *me_canokey
         age:
           - *vps_clawcloudcnhongkong1
+  - path_regex: hosts/ovhcabeauharnois1/secrets.yml$
+    key_groups:
+      - pgp:
+          - *me_canokey
+        age:
+          - *vps_ovhcabeauharnois1
