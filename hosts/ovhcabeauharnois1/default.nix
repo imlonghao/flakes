@@ -8,6 +8,8 @@
     profiles.rsshc
   ];
 
+  boot.loader.grub.device = "/dev/sda";
+
   networking = {
     dhcpcd.allowInterfaces = [ "eno1" ];
   };
