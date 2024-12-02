@@ -146,6 +146,7 @@
         };
         vpsjptokyo1 = { hostname = "vps-jp-tokyo-1.ni.sb"; };
         coalcloudcnhongkong1 = { hostname = "coalcloud-cn-hongkong-1.ni.sb"; };
+        clawcloudcnhongkong1 = {hostname = "clawcloud-cn-hongkong-1.ni.sb"; };
       };
     };
 }
