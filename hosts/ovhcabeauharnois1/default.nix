@@ -13,6 +13,18 @@
 
   networking = {
     dhcpcd.allowInterfaces = [ "eno1" ];
+    defaultGateway6 = {
+      interface = "eno1";
+      address = "2607:5300:0060:7fff:00ff:00ff:00ff:00ff";
+    };
+    interfaces = {
+      eno1 = {
+        ipv6.addresses = [{
+          address = "2607:5300:60:7feb::1";
+          prefixLength = 128;
+        }];
+      };
+    };
   };
 
   environment.persistence."/persist" = {
