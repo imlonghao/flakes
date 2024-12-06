@@ -4,9 +4,7 @@
 { config, lib, pkgs, modulesPath, ... }:
 
 {
-  imports =
-    [ (modulesPath + "/installer/scan/not-detected.nix")
-    ];
+  imports = [ (modulesPath + "/installer/scan/not-detected.nix") ];
 
   boot.initrd.availableKernelModules = [ "ehci_pci" "ahci" "usbhid" "sd_mod" ];
   boot.initrd.kernelModules = [ ];
@@ -18,24 +16,24 @@
     options = [ "defaults" "mode=755" ];
   };
 
-  fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/4a25e14d-ca22-4eb1-9adb-9770b507a90a";
-      fsType = "btrfs";
-      options = [ "subvol=@boot" ];
-    };
+  fileSystems."/boot" = {
+    device = "/dev/disk/by-uuid/4a25e14d-ca22-4eb1-9adb-9770b507a90a";
+    fsType = "btrfs";
+    options = [ "subvol=@boot" ];
+  };
 
-  fileSystems."/nix" =
-    { device = "/dev/disk/by-uuid/4a25e14d-ca22-4eb1-9adb-9770b507a90a";
-      fsType = "btrfs";
-      options = [ "subvol=@nix" ];
-    };
+  fileSystems."/nix" = {
+    device = "/dev/disk/by-uuid/4a25e14d-ca22-4eb1-9adb-9770b507a90a";
+    fsType = "btrfs";
+    options = [ "subvol=@nix" "noatime" ];
+  };
 
-  fileSystems."/persist" =
-    { device = "/dev/disk/by-uuid/4a25e14d-ca22-4eb1-9adb-9770b507a90a";
-      fsType = "btrfs";
-      options = [ "subvol=@persist" ];
-      neededForBoot = true;
-    };
+  fileSystems."/persist" = {
+    device = "/dev/disk/by-uuid/4a25e14d-ca22-4eb1-9adb-9770b507a90a";
+    fsType = "btrfs";
+    options = [ "subvol=@persist" ];
+    neededForBoot = true;
+  };
 
   swapDevices = [ ];
 
@@ -48,5 +46,6 @@
   # networking.interfaces.eno2.useDHCP = lib.mkDefault true;
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
-  hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
+  hardware.cpu.intel.updateMicrocode =
+    lib.mkDefault config.hardware.enableRedistributableFirmware;
 }

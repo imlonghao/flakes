@@ -73,9 +73,8 @@
   # Crontab
   services.cron = {
     enable = true;
-    systemCronJobs = [
-      "0 1 * * * root ${pkgs.git}/bin/git -C /persist/pki pull"
-    ];
+    systemCronJobs =
+      [ "0 1 * * * root ${pkgs.git}/bin/git -C /persist/pki pull" ];
   };
 
   # Vector

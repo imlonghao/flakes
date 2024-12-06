@@ -8,9 +8,7 @@
     profiles.rsshc
   ];
 
-  networking = {
-    dhcpcd.allowInterfaces = [ "ens5" ];
-  };
+  networking = { dhcpcd.allowInterfaces = [ "ens5" ]; };
 
   # EtherGuard
   services.etherguard-edge = {
@@ -22,9 +20,7 @@
   services.realm = {
     enable = true;
     config = {
-      network = {
-        use_udp = true;
-      };
+      network = { use_udp = true; };
       endpoints = [
         {
           listen = "0.0.0.0:443";
