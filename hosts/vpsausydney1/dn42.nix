@@ -52,6 +52,15 @@
       e6 = "fe80::5614";
     }
     {
+      name = "wg1855";
+      listen = 21855;
+      endpoint = "[2402:1f00:8100:400::2274]:41105";
+      publickey = "zVWKR85D+zFtSsQVFDKL2rz3tUvxlKHB5HTXaYSfXwI=";
+      presharedkey = "04WpcjW20Z9SHwC6JhxjwGQ6D4337NDNETnKYQbtJ2g=";
+      asn = 4242421855;
+      e6 = "fe80::1855";
+    }
+    {
       name = "wg2633";
       listen = 22633;
       endpoint = "syd.eastbnd.com:21888";
