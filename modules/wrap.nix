@@ -2,7 +2,7 @@
 with lib;
 let cfg = config.wrap;
 in {
-  options.wrap = mkOption {
+  options.wrap = {
     enable = mkEnableOption "Cloudflare Wrap Tunnel";
     ip = mkOption { type = types.str; };
     path = mkOption { type = types.path; };
