@@ -9,6 +9,7 @@
     profiles.rsshc
     profiles.sing-box
     profiles.exporter.node
+    profiles.docker
     profiles.wrap
   ];
 
