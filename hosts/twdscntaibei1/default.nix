@@ -9,6 +9,7 @@
     profiles.rsshc
     profiles.sing-box
     profiles.exporter.node
+    profiles.wrap
   ];
 
   boot.loader.grub.device = "/dev/sda";
@@ -126,5 +127,7 @@
       PrivateNetwork = true;
     };
   };
+
+  wrap.ip = "2606:4700:110:89f1:9377:32d:af47:9f7a/128";
 
 }
