@@ -8,7 +8,6 @@ in {
     path = mkOption { type = types.path; };
   };
   config = mkIf cfg.enable {
-    sops.secrets.wrap.sopsFile = ./secrets.yml;
     networking.wireguard.interfaces.wrap = {
       table = "913335";
       privateKeyFile = cfg.path;
