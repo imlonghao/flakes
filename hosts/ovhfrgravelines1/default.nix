@@ -85,6 +85,7 @@ in {
     q
     rclone
     ripgrep
+    rustic
     socat
     pkgs.sops
     step-cli
