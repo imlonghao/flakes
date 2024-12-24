@@ -32,5 +32,14 @@
           command="${pkgs.borgbackup}/bin/borg serve --restrict-to-repository /persist/borg/nas/repo --append-only",restrict ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIA+HDK17YPUx571+Q3qzxC81SJv8Taj+HeCHLhsEUlTG root@nas''
       ];
     };
+    ovhca = {
+      group = "nogroup";
+      home = "/persist/ovhca";
+      createHome = true;
+      isNormalUser = true;
+      openssh.authorizedKeys.keys = [
+        "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDhndfh+m7XwpXcPBWKeDmTve2U4fbZzqRVJbvueZdxF root@ovhcabeauharnois1"
+      ];
+    };
   };
 }
