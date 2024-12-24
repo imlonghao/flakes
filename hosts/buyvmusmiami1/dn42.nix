@@ -40,6 +40,14 @@
       publickey = "hfurIssgtoOzzZM01AVfCM9vo+MxNCCLf15k7NbVxHM=";
     }
     {
+      name = "wg0566";
+      e6 = "fe80::566:9";
+      asn = 4242420566;
+      listen = 20566;
+      endpoint = "dn09.fl.surgebytes.com:31888";
+      publickey = "L1nrGl7ggHnyKejJ5eYAPmtVnTZK03ObhpG71FXNXxM=";
+    }
+    {
       name = "wg1080";
       e6 = "fe80::1080:119";
       asn = 4242421080;
