@@ -36,6 +36,8 @@
     ];
   };
 
+  environment.systemPackages = with pkgs; [ rclone rustic ];
+
   # EtherGuard
   services.etherguard-edge = {
     ipv4 = "100.64.88.44/24";
