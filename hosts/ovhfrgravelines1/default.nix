@@ -197,4 +197,17 @@ in {
     }];
   };
 
+  # Rustic
+  sops.secrets.rustic.sopsFile = ./secrets.yml;
+  services.autorustic = {
+    enable = true;
+    globs = [
+      "!/persist/docker/act_runner/data/{.local,cache}/**"
+      "!/persist/docker/meilisearch/data.ms/**"
+      "!/persist/docker/plausible/clickhouse/!(backup)/**"
+      "!/persist/docker/garage/data/**"
+    ];
+    sources = [ "/persist/docker" ];
+  };
+
 }
