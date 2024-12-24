@@ -52,19 +52,26 @@
   services.realm = {
     enable = true;
     config = {
-      network = { use_udp = true; };
       endpoints = [
         {
           listen = "0.0.0.0:443";
           remote = "157.254.178.55:443";
-        }
-        {
-          listen = "0.0.0.0:3389";
-          remote = "157.254.178.55:9102";
+          network = {
+            no_tcp = true;
+            use_udp = true;
+          };
         }
         {
           listen = "0.0.0.0:8443";
           remote = "103.147.22.112:443";
+          network = {
+            no_tcp = true;
+            use_udp = true;
+          };
+        }
+        {
+          listen = "0.0.0.0:3389";
+          remote = "157.254.178.55:9102";
         }
       ];
     };
