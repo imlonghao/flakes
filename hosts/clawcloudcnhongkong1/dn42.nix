@@ -53,28 +53,12 @@
       publickey = "unTYSat5YjkY+BY31Q9xLSfFhTUBvn3CiDCSZxbINVM=";
     }
     {
-      name = "wg1604";
-      listen = 21604;
-      endpoint = "hk1.vm.libecho.top:21888";
-      publickey = "hQgRGnAP4xBHym+R/jf7ScjGbBDz5RXi5gF6CF7RiWg=";
-      asn = 4242421604;
-      e6 = "fe80::1604";
-    }
-    {
       name = "wg1772";
       listen = 21772;
       endpoint = "154.12.177.103:41888";
       publickey = "MwKtHYi3qWDRlpZuF6MNTHZuathA96J89GeF7INPvmw=";
       asn = 4242421772;
       e6 = "fe80::1772";
-    }
-    {
-      name = "wg1816";
-      asn = 4242421816;
-      e6 = "fe80::1816";
-      listen = 21816;
-      endpoint = "hk1.dn42.potat0.cc:21888";
-      publickey = "Tv1+HniELrS4Br2i7oQgwqBJFXQKculsW8r+UOqQXH0=";
     }
     {
       name = "wg1817";
