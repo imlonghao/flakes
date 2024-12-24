@@ -41,6 +41,13 @@
     ipv6 = "2602:feda:1bf:deaf::43/64";
   };
 
+  # Crontab
+  services.cron = {
+    enable = true;
+    systemCronJobs =
+      [ "0 1 * * * root ${pkgs.git}/bin/git -C /persist/pki pull" ];
+  };
+
   # Realm
   services.realm = {
     enable = true;
