@@ -82,15 +82,6 @@
       publickey = "CudK5JJnGdSOAcpnerxfbp7nGb+fGUknL5SDTdTwkxI=";
     }
     {
-      name = "wg3088";
-      ipv6 = "fe80::abcd/64";
-      e6 = "fe80::3088:194";
-      asn = 4242423088;
-      listen = 42050;
-      endpoint = "nyc1-us.dn42.6700.cc:21888";
-      publickey = "wAI2D+0GeBnFUqm3xZsfvVlfGQ5iDWI/BykEBbkc62c=";
-    }
-    {
       name = "wg3914";
       l4 = "172.22.68.1";
       e4 = "172.20.53.98";
