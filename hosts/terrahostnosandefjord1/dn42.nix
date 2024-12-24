@@ -3,11 +3,11 @@
 {
   sops.secrets.wireguard.sopsFile = ./secrets.yml;
   dn42 = [{
-    name = "wg1816";
-    listen = 21816;
-    endpoint = "no1.dn42.potat0.cc:21888";
-    publickey = "H6HdsuQsav9puKyo8SJaML0vPU/a2lLQjTRc7dmiqjs=";
-    asn = 4242421816;
-    e6 = "fe80::1816";
+    name = "wg1604";
+    listen = 21604;
+    endpoint = "ru-mos.nodes.libecho.top:21888";
+    publickey = "1Gh8MJZpPk9R10eCUWgd9Sw7fA6P3FPn9n5JnBRi10U=";
+    asn = 4242421604;
+    e6 = "fe80::1604";
   }];
 }
