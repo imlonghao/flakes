@@ -22,14 +22,6 @@
       e6 = "fe80::0207";
     }
     {
-      name = "wg0253";
-      asn = 4242420253;
-      e6 = "fe80::0253";
-      listen = 20253;
-      endpoint = "sfo1.dn42.moe233.net:21888";
-      publickey = "C3SneO68SmagisYQ3wi5tYI2R9g5xedKkB56Y7rtPUo=";
-    }
-    {
       name = "wg0358";
       e6 = "fe80::358";
       asn = 4242420358;
@@ -110,12 +102,12 @@
       publickey = "9wjlepdAM+yr/G3VoI2bc6ogDUiPcE4UsUzadJn0jnA=";
     }
     {
-      name = "wg1816";
-      listen = 21816;
-      endpoint = "us1.dn42.potat0.cc:21888";
-      publickey = "LUwqKS6QrCPv510Pwt1eAIiHACYDsbMjrkrbGTJfviU=";
-      asn = 4242421816;
-      e6 = "fe80::1816";
+      name = "wg1771";
+      listen = 21771;
+      asn = 4242421771;
+      e6 = "fe80::afaf:bfbf:cdcf:2d";
+      endpoint = "148.135.56.215:32596";
+      publickey = "6oeRQx3cKLqZw/ncMNVIErZKz1sTaYKhqt5E9WoiRFQ=";
     }
     {
       name = "wg1817";
@@ -132,6 +124,13 @@
       e6 = "fe80::1d90";
       endpoint = "suzuran.lilynet.work:21888";
       publickey = "E/+f5HM2EEw7CV574nYj+51bRNJDOZ6C5BKSQBpMGgw=";
+    }
+    {
+      name = "wg2002";
+      e6 = "fe80::2002:4";
+      asn = 4242422002;
+      listen = 22002;
+      publickey = "oYVbaUTF3+6hiaQQsUqvwdzUD+USsXnwdaDDgxuGF0E=";
     }
     {
       name = "wg2032";
