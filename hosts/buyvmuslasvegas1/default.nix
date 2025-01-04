@@ -44,7 +44,7 @@
           prefixLength = 128;
         }
         {
-          address = "2602:fab0:29::";
+          address = "2602:fab0:29::1";
           prefixLength = 128;
         }
         {
