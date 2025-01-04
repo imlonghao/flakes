@@ -64,6 +64,13 @@
       publickey = "Ta5Dq6wr5OcY3m369cpnUbTzjFM2MSR631VRLM1Syyk=";
     }
     {
+      name = "wg2002";
+      e6 = "fe80::2002:1";
+      asn = 4242422002;
+      listen = 22002;
+      publickey = "CHXW5JLVxc7hksJ9eUFc/OCUoET3qPu1PcOCOhR2bTw=";
+    }
+    {
       name = "wg2464";
       e6 = "fe80::2464";
       asn = 4242422464;
