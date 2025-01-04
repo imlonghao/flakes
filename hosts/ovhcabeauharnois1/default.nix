@@ -36,7 +36,7 @@
     ];
   };
 
-  environment.systemPackages = with pkgs; [ rclone rustic ];
+  environment.systemPackages = with pkgs; [ ncdu rclone rustic tmux ];
 
   # EtherGuard
   services.etherguard-edge = {
