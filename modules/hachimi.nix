@@ -22,7 +22,7 @@ in {
     systemd.services.hachimi = {
       serviceConfig = {
         WorkingDirectory = "${pkgs.hachimi}/share/hachimi";
-        ExecStart = "${pkgs.hachimi}/bin/honeypo -configPath ${cfg.path}";
+        ExecStart = "${pkgs.hachimi}/bin/honeypot -configPath ${cfg.path}";
         ExecStartPost = cfg.postStart;
         ExecStopPost = cfg.postStop;
       };
