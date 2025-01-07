@@ -9,4 +9,5 @@ final: prev: {
   mtrsb = prev.callPackage ./mtrsb { };
   pingfinder = prev.callPackage ./pingfinder { };
   wtt = prev.callPackage ./wtt { };
+  hachimi = prev.callPackage ./hachimi { };
 }
