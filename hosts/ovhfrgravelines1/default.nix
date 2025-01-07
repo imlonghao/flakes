@@ -214,12 +214,12 @@ in {
   # Hachimi
   services.hachimi = {
     postStart = [
-      ${pkgs.iptables}/bin/iptables -t mangle -A PREROUTING -i eth0 -p tcp --dport 222 -j TPROXY --on-port 12345 --on-ip 127.0.0.1
-      ${pkgs.iptables}/bin/iptables -t mangle -A PREROUTING -i eth0 -p tcp --dport 2222 -j TPROXY --on-port 12345 --on-ip 127.0.0.1
+      "${pkgs.iptables}/bin/iptables -t mangle -A PREROUTING -i eth0 -p tcp --dport 222 -j TPROXY --on-port 12345 --on-ip 127.0.0.1"
+      "${pkgs.iptables}/bin/iptables -t mangle -A PREROUTING -i eth0 -p tcp --dport 2222 -j TPROXY --on-port 12345 --on-ip 127.0.0.1"
     ];
     postStop = [
-      ${pkgs.iptables}/bin/iptables -t mangle -D PREROUTING -i eth0 -p tcp --dport 222 -j TPROXY --on-port 12345 --on-ip 127.0.0.1
-      ${pkgs.iptables}/bin/iptables -t mangle -D PREROUTING -i eth0 -p tcp --dport 2222 -j TPROXY --on-port 12345 --on-ip 127.0.0.1
+      "${pkgs.iptables}/bin/iptables -t mangle -D PREROUTING -i eth0 -p tcp --dport 222 -j TPROXY --on-port 12345 --on-ip 127.0.0.1"
+      "${pkgs.iptables}/bin/iptables -t mangle -D PREROUTING -i eth0 -p tcp --dport 2222 -j TPROXY --on-port 12345 --on-ip 127.0.0.1"
     ];
   };
 }
