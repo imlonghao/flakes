@@ -90,6 +90,7 @@ in {
     socat
     pkgs.sops
     step-cli
+    tealdeer
     tmux
     tree
     uv
