@@ -11,6 +11,16 @@
       publickey = "2JHMpwkKaAMuMBrmapx9zqgGDIZOX9HZw5V2c1l66R8=";
     }
     {
+      name = "wg0222";
+      l4 = "172.22.68.0";
+      e4 = "172.20.142.2";
+      asn = 4242420222;
+      e6 = "fe80::222:2";
+      listen = 20222;
+      endpoint = "hk-1.dn42.saltwood.top:21888";
+      publickey = "0E4goqfQFKQu852QAqVSRfp9Si9MoTj8IllFiDG7gUc=";
+    }
+    {
       name = "wg0458";
       asn = 4242420458;
       e6 = "fe80::0458";
