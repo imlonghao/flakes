@@ -2,16 +2,16 @@
 
 buildGoModule rec {
   pname = "hachimi";
-  version = "a82b6daef18d9402739162c078ad98bb3846c6c5";
+  version = "7345ef472537feb62cddab7515c1d15f97a674ae";
 
   src = fetchFromGitHub ({
     owner = "burpheart";
     repo = pname;
     rev = version;
-    sha256 = "sha256-7fD11ITCRBB0w75a4kIc/N+m6msOliL3Ke/q1sIOfJE=";
+    sha256 = "sha256-Asu7viYl8z6NmWpipUI/Jttidkwz40yInhyaFN7dD2I=";
   });
 
-  vendorHash = "sha256-FiiFrXYvpuI623w4+vRJdxy1tTm94wVI/KqhNDYeXsw=";
+  vendorHash = "sha256-bEl9RYm2T7DsxQo97aEgUW3GihCaq23StJIOgCcZe54=";
 
   subPackages = [ "cmd/honeypot" ];
 
