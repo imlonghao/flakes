@@ -86,14 +86,6 @@
       publickey = "Z6OKJSR1sxMBgUd1uXEe/UxoBsOvRgbTnexy7z/ryUI=";
     }
     {
-      name = "wg1350";
-      listen = 21350;
-      endpoint = "sea.jvav.tech:21888";
-      publickey = "VCYdDHIKBDfHe+drn2CG6pw56HBzDeoRt6wAx6GUg0Y=";
-      asn = 4242421350;
-      e6 = "fe80::1350";
-    }
-    {
       name = "wg1716";
       e6 = "fe80::1716:1888";
       asn = 4242421716;
