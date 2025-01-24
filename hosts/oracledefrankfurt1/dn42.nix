@@ -115,13 +115,6 @@
       e6 = "fe80::1604";
     }
     {
-      name = "wg1817";
-      listen = 21817;
-      publickey = "Sxn9qXnzu3gSBQFZ0vCh5t5blUJYgD+iHlCCG2hexg4=";
-      asn = 4242421817;
-      e6 = "fe80::42:1817:a";
-    }
-    {
       name = "wg2164";
       listen = 22164;
       endpoint = "de1.dn42.izm.im:21888";
