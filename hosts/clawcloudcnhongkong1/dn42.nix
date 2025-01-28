@@ -186,5 +186,15 @@
       endpoint = "hk1.g-load.eu:21888";
       publickey = "sLbzTRr2gfLFb24NPzDOpy8j09Y6zI+a7NkeVMdVSR8=";
     }
+    {
+      name = "wg3999";
+      asn = 4242423999;
+      l4 = "172.22.68.0";
+      e4 = "172.22.144.64";
+      e6 = "fe80::3999";
+      listen = 23999;
+      endpoint = "cowgl.us.kg:31888";
+      publickey = "mGGBczSVKW+7UKRquI2GkbKrfxiATv9r4uF5WTP+vWI=";
+    }
   ];
 }
