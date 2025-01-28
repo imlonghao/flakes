@@ -195,6 +195,7 @@
       listen = 23999;
       endpoint = "cowgl.us.kg:31888";
       publickey = "mGGBczSVKW+7UKRquI2GkbKrfxiATv9r4uF5WTP+vWI=";
+      mpbgp = false;
     }
   ];
 }
