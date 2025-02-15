@@ -54,6 +54,7 @@ in {
 
   environment.systemPackages = with pkgs; [
     ansible
+    atuin
     bgpq4
     borgbackup
     borgmatic
@@ -70,7 +71,6 @@ in {
     lego
     jq
     just
-    mcfly
     mediainfo
     metasploit
     moreutils
@@ -173,7 +173,7 @@ in {
   virtualisation.libvirtd.enable = true;
 
   programs.fish.shellInit = ''
-    ${pkgs.mcfly}/bin/mcfly init fish | source
+    ${pkgs.atuin}/bin/atuin init fish --disable-up-arrow | source
   '';
 
   # Wrap
