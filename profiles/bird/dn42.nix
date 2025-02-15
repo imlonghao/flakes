@@ -53,9 +53,13 @@
   }
   filter dn42_filter_v4 {
     if is_valid_network() && source ~ [RTS_STATIC, RTS_BGP, RTS_DEVICE] then {
-      if is_self_net() && source ~ [RTS_STATIC, RTS_DEVICE] then {
-        bgp_community.add((64511, DN42_REGION));
-        bgp_community.add((64511, DN42_COUNTRY));
+      if source ~ [RTS_STATIC, RTS_DEVICE] then {
+        if is_self_net() then {
+          bgp_community.add((64511, DN42_REGION));
+          bgp_community.add((64511, DN42_COUNTRY));
+          accept;
+        }
+        reject;
       }
       accept;
     }
@@ -63,9 +67,13 @@
   }
   filter dn42_filter_v6 {
     if is_valid_network_v6() && source ~ [RTS_STATIC, RTS_BGP, RTS_DEVICE] then {
-      if is_self_net_v6() && source ~ [RTS_STATIC, RTS_DEVICE] then {
-        bgp_community.add((64511, DN42_REGION));
-        bgp_community.add((64511, DN42_COUNTRY));
+      if source ~ [RTS_STATIC, RTS_DEVICE] then {
+        if is_self_net_v6() then {
+          bgp_community.add((64511, DN42_REGION));
+          bgp_community.add((64511, DN42_COUNTRY));
+          accept;
+        }
+        reject;
       }
       accept;
     }
