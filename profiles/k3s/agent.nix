@@ -1,7 +1,10 @@
 { config, pkgs, self, sops, ... }:
 
 {
-  sops.secrets."k3s-agent".sopsFile = "${self}/secrets/k3s-agnet.txt";
+  sops.secrets."k3s-agent" = {
+    format = "binary";
+    sopsFile = "${self}/secrets/k3s-agnet.txt";
+  };
   services.k3s = {
     enable = true;
     role = "agent";
