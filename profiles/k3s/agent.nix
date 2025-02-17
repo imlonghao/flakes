@@ -8,7 +8,7 @@
     tokenFile = config.sops.secrets."k3s-agent".path;
     serverAddr = "https://k3s.ni.sb:6443";
     extraFlags = [
-      "--node-ip=${config.services.etherguard-edge.ipv4;}"
+      "--node-ip=${config.services.etherguard-edge.ipv4}"
     ];
   };
   services.k3s-no-ctstate-invalid.enable = true;

@@ -11,7 +11,7 @@
     extraFlags = [
       "--disable=traefik"
       "--tls-san=k3s.ni.sb"
-      "--node-ip=${config.services.etherguard-edge.ipv4;}"
+      "--node-ip=${config.services.etherguard-edge.ipv4}"
       "--agent-token-file=${config.sops.secrets.k3s-server.path}"
     ];
   };
