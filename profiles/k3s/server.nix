@@ -1,5 +1,8 @@
 { config, pkgs, self, sops, ... }:
-
+let
+  ip = builtins.replaceStrings [ "/24" ] [ "" ]
+    config.services.etherguard-edge.ipv4;
+in
 {
   sops.secrets."k3s-agent" = {
     format = "binary";
@@ -17,7 +20,7 @@
     extraFlags = [
       "--disable=traefik"
       "--tls-san=k3s.ni.sb"
-      "--node-ip=${config.services.etherguard-edge.ipv4}"
+      "--node-ip=${ip}"
       "--agent-token-file=${config.sops.secrets.k3s-agent.path}"
     ];
   };
