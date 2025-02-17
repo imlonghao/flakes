@@ -88,12 +88,16 @@
 
   # borgmatic
   services.borgmatic.settings = {
-    location = {
-      repositories = [
-        "ssh://sxvl8201@sxvl8201.repo.borgbase.com/./repo"
-        "ssh://zh2646@zh2646.rsync.net/./misakauklondon1"
-      ];
-      source_directories = [ "/persist/pomerium" ];
+    configurations = {
+      misaka = {
+        location = {
+          repositories = [
+            "ssh://sxvl8201@sxvl8201.repo.borgbase.com/./repo"
+            "ssh://zh2646@zh2646.rsync.net/./misakauklondon1"
+          ];
+          source_directories = [ "/persist/pomerium" ];
+        };
+      };
     };
   };
 
