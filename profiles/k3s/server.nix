@@ -3,7 +3,7 @@
 {
   sops.secrets."k3s-agent" = {
     format = "binary";
-    sopsFile = "${self}/secrets/k3s-agnet.txt";
+    sopsFile = "${self}/secrets/k3s-agent.txt";
   };
   sops.secrets."k3s-server" = {
     format = "binary";
