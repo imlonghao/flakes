@@ -9,6 +9,7 @@
     profiles.rsshc
     profiles.qemuGuest
     profiles.docker
+    profiles.k3s.server
   ];
 
   networking = {
