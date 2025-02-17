@@ -39,6 +39,14 @@
       l4 = "172.22.68.4";
     }
     {
+      name = "wg0202";
+      listen = 20202;
+      endpoint = "dn05.fr.de.sdubs.vip:21888";
+      publickey = "mdBALANoxIs4KR1hgh/oUQopMTqqdu1oXUWpffrRvXc=";
+      asn = 4242420202;
+      e6 = "fe80::202:5";
+    }
+    {
       name = "wg0207";
       listen = 20207;
       endpoint = "router.fra1.routedbits.com:51888";

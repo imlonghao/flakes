@@ -4,6 +4,14 @@
   sops.secrets.wireguard.sopsFile = ./secrets.yml;
   dn42 = [
     {
+      name = "wg0202";
+      listen = 20202;
+      endpoint = "dn06.tx.us.sdubs.vip:21888";
+      publickey = "BmeHi2lwxF0sX0w9IT5qk7q9A+deonRdN3XqnOpzvCw=";
+      asn = 4242420202;
+      e6 = "fe80::202:6";
+    }
+    {
       name = "wg1080";
       listen = 21080;
       endpoint = "202.5.26.208:21888";
