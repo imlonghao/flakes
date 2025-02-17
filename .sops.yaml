@@ -96,6 +96,18 @@ creation_rules:
           - *vps_hosthatchsgsingapore1
           - *vps_buyvmuslasvegas1
           - *vps_buyvmusmiami1
+  - path_regex: secrets/k3s-server.txt$
+    key_groups:
+      - pgp:
+          - *me_canokey
+        age:
+          - *vps_misakauklondon1
+  - path_regex: secrets/k3s-agent.txt$
+    key_groups:
+      - pgp:
+          - *me_canokey
+        age:
+          - *vps_misakauklondon1
   - path_regex: hosts/mailcow/secrets.yml$
     key_groups:
       - pgp:

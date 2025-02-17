@@ -10,6 +10,7 @@
     profiles.etherguard.edge
     profiles.mtrsb
     profiles.rsshc
+    profiles.k3s.server
   ];
 
   boot.loader.grub.device = "/dev/vda";
