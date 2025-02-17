@@ -123,7 +123,6 @@
         terrahostnosandefjord1 = {
           hostname = "terrahost-no-sandefjord-1.ni.sb";
         };
-        vpsdeduesseldorf1 = { hostname = "vps-de-duesseldorf-1.ni.sb"; };
         vpsausydney1 = { hostname = "vps-au-sydney-1.ni.sb"; };
         vpsussanjose1 = { hostname = "vps-us-sanjose-1.ni.sb"; };
         idcwikicnhongkong1 = { hostname = "idcwiki-cn-hongkong-1.ni.sb"; };
