@@ -10,6 +10,7 @@
     profiles.sing-box
     profiles.exporter.node
     profiles.exporter.blackbox
+    profiles.k3s.server
   ];
 
   boot.loader.grub.device = "/dev/vda";
