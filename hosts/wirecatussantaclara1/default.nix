@@ -10,6 +10,7 @@
     profiles.exporter.node
     profiles.docker
     profiles.borgmatic
+    profiles.k3s.agent
   ];
 
   boot.loader.grub.device = "/dev/vda";

@@ -9,6 +9,7 @@
     profiles.exporter.node
     profiles.mtrsb
     profiles.rsshc
+    profiles.k3s.agent
   ];
 
   boot.loader.grub.device = "/dev/vda";
