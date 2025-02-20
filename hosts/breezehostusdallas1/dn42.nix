@@ -6,11 +6,11 @@
     {
       name = "wg0202";
       listen = 20202;
-      endpoint = "dn06.tx.us.sdubs.vip:21888";
+      endpoint = "64.44.157.153:21888";
       publickey = "BmeHi2lwxF0sX0w9IT5qk7q9A+deonRdN3XqnOpzvCw=";
       asn = 4242420202;
       e6 = "fe80::202:6";
-    }
+    } # dn06.tx.us.sdubs.vip
     {
       name = "wg1080";
       listen = 21080;
