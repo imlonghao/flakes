@@ -7,6 +7,7 @@
     profiles.etherguard.edge
     profiles.rsshc
     profiles.docker
+    profiles.k3s.agent
   ];
 
   boot.loader.grub.device = "/dev/sda";

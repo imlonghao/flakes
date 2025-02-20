@@ -68,6 +68,7 @@ in {
     go
     gobuster
     iptables
+    kubernetes-helm
     lego
     jq
     just

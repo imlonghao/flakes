@@ -110,6 +110,7 @@ creation_rules:
           - *vps_misakauklondon1
           - *vps_misakadeberlin1
           - *vps_serverfactorynleygelshoven1
+          - *vps_ovhcabeauharnois1
   - path_regex: hosts/mailcow/secrets.yml$
     key_groups:
       - pgp:

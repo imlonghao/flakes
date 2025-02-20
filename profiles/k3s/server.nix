@@ -1,29 +1,19 @@
-{ config, pkgs, self, sops, ... }:
-let
-  ip = builtins.replaceStrings [ "/24" ] [ "" ]
-    config.services.etherguard-edge.ipv4;
-in
-{
-  sops.secrets."k3s-agent" = {
-    format = "binary";
-    sopsFile = "${self}/secrets/k3s-agent.txt";
-  };
+{ config, self, sops, ... }: {
+  imports = [ ./generic.nix ];
   sops.secrets."k3s-server" = {
     format = "binary";
     sopsFile = "${self}/secrets/k3s-server.txt";
   };
   services.k3s = {
-    enable = true;
     role = "server";
     tokenFile = config.sops.secrets."k3s-server".path;
-    serverAddr = "https://k3s.ni.sb:6443";
     extraFlags = [
       "--disable=traefik"
       "--tls-san=k3s.ni.sb"
-      "--node-ip=${ip}"
       "--agent-token-file=${config.sops.secrets.k3s-agent.path}"
+      "--cluster-cidr 10.42.0.0/16,fc00:42::/56"
+      "--service-cidr 10.43.0.0/16,fc00:43::/112"
+      "--flannel-ipv6-masq"
     ];
   };
-  services.k3s-no-ctstate-invalid.enable = true;
-  environment.systemPackages = [ pkgs.iptables ];
 }
