@@ -15,6 +15,7 @@
     profiles.mtrsb
     profiles.rsshc
     profiles.sing-box
+    profiles.k3s.agent
   ];
 
   boot.loader.grub.device = "/dev/vda";
