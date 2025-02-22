@@ -114,6 +114,7 @@ creation_rules:
           - *vps_wirecatussantaclara1
           - *vps_hosthatchsestockholm1
           - *vps_hosthatchsgsingapore1
+          - *vps_ovhfrgravelines1
   - path_regex: hosts/mailcow/secrets.yml$
     key_groups:
       - pgp:

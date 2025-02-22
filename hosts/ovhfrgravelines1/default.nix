@@ -17,6 +17,7 @@ in {
     profiles.rsshc
     profiles.exporter.node
     profiles.hachimi
+    profiles.k3s.agent
     #    "${inputs.latest}/nixos/modules/services/backup/borgmatic.nix"
   ];
 
