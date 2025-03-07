@@ -13,6 +13,7 @@
     profiles.rsshc
     profiles.borgmatic
     profiles.docker
+    profiles.k3s.agent
   ];
 
   # Config
@@ -56,7 +57,7 @@
   boot.loader.efi.canTouchEfiVariables = true;
 
   environment.persistence."/persist" = {
-    directories = [ "/var/lib" "/root/.ssh" ];
+    directories = [ "/etc/rancher" "/var/lib" "/root/.ssh" ];
     files = [
       "/etc/machine-id"
       "/etc/ssh/ssh_host_rsa_key"
