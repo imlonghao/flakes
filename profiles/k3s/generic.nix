@@ -12,7 +12,7 @@ in {
   services.k3s = {
     enable = true;
     serverAddr = "https://k3s.ni.sb:6443";
-    extraFlags = [ "--node-ip=${ip4},${ip6}" ];
+    extraFlags = [ "--node-ip=${ip4},${ip6}" "--flannel-iface=eg_net" ];
   };
   services.k3s-no-ctstate-invalid.enable = true;
   environment.systemPackages = [ pkgs.iptables pkgs.openiscsi ];
