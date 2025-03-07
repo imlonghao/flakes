@@ -4,8 +4,7 @@ channels: final: prev: {
 
   inherit (channels.latest)
     bgpq4 borgmatic cachix rage nixpkgs-fmt nomad deploy-rs teleport tuic
-    owncast garage autorestic just netdata netdataCloud hysteria sing-box
-    uv;
+    owncast garage autorestic just netdata netdataCloud hysteria sing-box uv;
 
   haskellPackages = prev.haskellPackages.override (old: {
     overrides = prev.lib.composeExtensions (old.overrides or (_: _: { }))

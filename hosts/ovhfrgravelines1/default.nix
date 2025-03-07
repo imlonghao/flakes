@@ -139,7 +139,7 @@ in {
       "0 1 * * * root ${pkgs.git}/bin/git -C /persist/pki pull"
       "5 12 * * * root bash -c 'cd /persist/archlinuxcn-pkgstats/ && bash cron.sh'"
       "* * * * * root ${cronJob} > /dev/null 2>&1"
-#      "* * * * * root /persist/random_email_sender/bin/run.py > /dev/null 2>&1"
+      #      "* * * * * root /persist/random_email_sender/bin/run.py > /dev/null 2>&1"
     ];
   };
 
@@ -214,7 +214,7 @@ in {
     ];
     sources = [ "/persist/docker" ];
   };
-  
+
   # Hachimi
   services.hachimi = {
     postStart = [
