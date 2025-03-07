@@ -42,7 +42,7 @@
       name = "wg0202";
       listen = 20202;
       endpoint = "dn05.fr.de.sdubs.vip:21888";
-      publickey = "mdBALANoxIs4KR1hgh/oUQopMTqqdu1oXUWpffrRvXc=";
+      publickey = "+CphUJP/d4amRiqmtTNtb/IURdhgb2BajgiAqpCl5C0=";
       asn = 4242420202;
       e6 = "fe80::202:5";
     }
