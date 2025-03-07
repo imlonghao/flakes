@@ -24,6 +24,7 @@ in {
       protocol static {
         route 2602:fab0:20::/48 blackhole;
         route 2602:fab0:21::/48 blackhole;
+        route 2602:fab0:30::/44 blackhole;
         ipv6 {
           import filter {
             bgp_large_community.add((30114, 1, 1));
