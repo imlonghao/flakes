@@ -102,6 +102,7 @@ in {
 
   environment.persistence."/persist" = {
     directories = [
+      "/etc/rancher"
       "/var/lib"
       "/root/.config"
       "/root/.ssh"

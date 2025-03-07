@@ -56,7 +56,7 @@
   };
 
   environment.persistence."/persist" = {
-    directories = [ "/var/lib" ];
+    directories = [ "/etc/rancher" "/var/lib" ];
     files = [ "/etc/machine-id" "/etc/ssh/ssh_host_ed25519_key" ];
   };
 

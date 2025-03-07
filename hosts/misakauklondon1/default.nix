@@ -56,7 +56,7 @@
   };
 
   environment.persistence."/persist" = {
-    directories = [ "/root/.ssh" "/var/lib" ];
+    directories = [ "/etc/rancher" "/root/.ssh" "/var/lib" ];
     files = [
       "/etc/machine-id"
       "/etc/ssh/ssh_host_rsa_key"
