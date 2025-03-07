@@ -24,6 +24,7 @@ in {
     profiles.mtrsb
     profiles.rsshc
     profiles.docker
+    profiles.k3s.agent
   ];
 
   networking = {

@@ -115,6 +115,8 @@ creation_rules:
           - *vps_hosthatchsestockholm1
           - *vps_hosthatchsgsingapore1
           - *vps_ovhfrgravelines1
+          - *vps_vpsausydney1
+          - *vps_clawcloudcnhongkong1
   - path_regex: hosts/mailcow/secrets.yml$
     key_groups:
       - pgp:

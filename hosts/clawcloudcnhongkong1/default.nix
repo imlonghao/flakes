@@ -12,6 +12,7 @@
     profiles.pingfinder
     profiles.docker
     profiles.bird-lg-go
+    profiles.k3s.agent
   ];
 
   networking = {
