@@ -88,6 +88,14 @@
       l4 = "172.22.68.2";
     }
     {
+      name = "wg1771";
+      listen = 21771;
+      endpoint = "sg1.exploro.one:32594";
+      publickey = "uEpQzyVnq0HfAqVOAVtA70KrVXnmlcjdvkjsmji1UCA=";
+      asn = 4242421771;
+      e6 = "fe80::1771";
+    }
+    {
       name = "wg2225";
       listen = 22225;
       endpoint = "dn42-sg.maraun.de:21888";

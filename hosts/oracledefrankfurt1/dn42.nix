@@ -123,6 +123,14 @@
       e6 = "fe80::1604";
     }
     {
+      name = "wg1771";
+      listen = 21771;
+      endpoint = "frank1.exploro.one:32615";
+      publickey = "FPdZR0zq5z2U8nmvN28Y5VnURyCmECqPXqmadM0U9jk=";
+      asn = 4242421771;
+      e6 = "fe80::8572:7797:4bfd:26b3";
+    }
+    {
       name = "wg2164";
       listen = 22164;
       endpoint = "de1.dn42.izm.im:21888";
