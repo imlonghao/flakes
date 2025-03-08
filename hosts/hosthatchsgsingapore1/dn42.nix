@@ -93,7 +93,7 @@
       endpoint = "sg1.exploro.one:32594";
       publickey = "uEpQzyVnq0HfAqVOAVtA70KrVXnmlcjdvkjsmji1UCA=";
       asn = 4242421771;
-      e6 = "fe80::1771";
+      e6 = "fe80::7e26:b335:a24d:e70e";
     }
     {
       name = "wg2225";
