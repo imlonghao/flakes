@@ -67,7 +67,7 @@ in {
           ikesa_table_size = 32
           ikesa_table_segments = 4
           reuse_ikesa = no
-          interfaces_use = eno1
+          interfaces_use = ${cfg.interface}
           port = 0
           port_nat_t = 15702
           retransmit_timeout = 30
