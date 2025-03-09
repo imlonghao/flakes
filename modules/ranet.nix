@@ -1,4 +1,4 @@
-{ config, pkgs, lib, ... }:
+{ config, pkgs, lib, sops, ... }:
 with lib;
 let
   cfg = config.services.ranet;
@@ -14,28 +14,22 @@ let
             ;;
     esac
   '';
-  configfile = pkgs.writeText "ranet.json" (builtins.toJSON {
+  configfile = pkgs.writeText "ranet.json" (builtins.toJSON ({
     organization = "imlonghao";
     common_name = config.networking.hostName;
-    endpoints = [];
-  } // (if cfg.ipv4 then {
-    endpoints = [
-      {
-        serial_number = "0";
-        address_family = "ip4";
-        port = cfg.port;
-        updown = updown;
-      }
-    ];
-  }) // (if cfg.ipv6 then {
-    endpoints = [
-      {
+    endpoints = [ ] ++ (if cfg.ipv4 then [{
+      serial_number = "0";
+      address_family = "ip4";
+      port = cfg.port;
+      updown = updown;
+    }] else
+      [ ]) ++ (if cfg.ipv6 then [{
         serial_number = "1";
         address_family = "ip6";
         port = cfg.port;
         updown = updown;
-      }
-    ];
+      }] else
+        [ ]);
   }));
 in {
   options.services.ranet = {
