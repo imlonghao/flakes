@@ -6,6 +6,6 @@ let
 in {
   services.bird2 = {
     enable = true;
-    config = generalConf + import profiles.bird.blackbgp { };
+    config = generalConf + kernelConf + import profiles.bird.blackbgp { };
   };
 }
