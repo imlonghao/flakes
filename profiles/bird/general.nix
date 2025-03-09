@@ -95,7 +95,6 @@ in ''
     }; 
     interface "swan*" {
       type tunnel;
-      link quality etx;
       rxcost 32;
       hello interval 20 s;
       rtt cost 1024;
