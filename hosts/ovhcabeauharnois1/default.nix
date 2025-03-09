@@ -37,12 +37,44 @@
     ];
   };
 
-  environment.systemPackages = with pkgs; [ ncdu rclone rustic tmux ];
+  environment.systemPackages = with pkgs; [ ncdu ranet rclone rustic tmux ];
 
   # EtherGuard
   services.etherguard-edge = {
     ipv4 = "100.64.88.44/24";
     ipv6 = "2602:feda:1bf:deaf::44/64";
+  };
+
+  # ranet
+  services.strongswan-swanctl = {
+    enable = true;
+    package = pkgs.strongswan;
+    strongswan.extraConfig = ''
+      charon {
+        ikesa_table_size = 32
+        ikesa_table_segments = 4
+        reuse_ikesa = no
+        interfaces_use = eno1
+        port = 0
+        port_nat_t = 15702
+        retransmit_timeout = 30
+        retransmit_base = 1
+        plugins {
+          socket-default {
+            set_source = yes
+            set_sourceif = yes
+          }
+          dhcp {
+            load = no
+          }
+        }
+      }
+      charon-systemd {
+        journal {
+          default = -1
+        }
+      }
+    '';
   };
 
 }

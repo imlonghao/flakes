@@ -1,4 +1,3 @@
-
 {
   description = "A highly structured configuration database.";
 
@@ -36,8 +35,8 @@
     ranet.inputs.nixpkgs.follows = "nixos";
   };
 
-  outputs = { self, digga, nixos, home, nur, deploy, impermanence, sops-nix, ranet, ...
-    }@inputs:
+  outputs = { self, digga, nixos, home, nur, deploy, impermanence, sops-nix
+    , ranet, ... }@inputs:
     digga.lib.mkFlake {
       inherit self inputs;
 
