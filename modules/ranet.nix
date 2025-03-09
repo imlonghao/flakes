@@ -2,7 +2,7 @@
 with lib;
 let
   cfg = config.services.ranet;
-  updown = writeShellScript "swan-updown" ''
+  updown = pkgs.writeShellScript "swan-updown" ''
     LINK=swan$(printf '%08x\n' "$PLUTO_IF_ID_OUT")
     case "$PLUTO_VERB" in
         up-client)
