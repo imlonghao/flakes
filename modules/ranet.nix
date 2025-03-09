@@ -1,4 +1,4 @@
-{ config, pkgs, lib, sops, ... }:
+{ config, pkgs, lib, sops, self, ... }:
 with lib;
 let
   cfg = config.services.ranet;
