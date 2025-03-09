@@ -55,7 +55,10 @@ in {
     };
   };
   config = mkIf cfg.enable {
-    sops.secrets.ranet.sopsFile = "${self}/secrets/ranet.txt";
+    sops.secrets.ranet = {
+      sopsFile = "${self}/secrets/ranet.txt";
+      format = "binary";
+    };
     services.strongswan-swanctl = {
       enable = true;
       package = pkgs.strongswan;
