@@ -1,3 +1,4 @@
+
 {
   description = "A highly structured configuration database.";
 
@@ -30,9 +31,12 @@
     sops-nix.inputs.nixpkgs.follows = "nixos";
 
     flake-utils-plus.url = "github:gytis-ivaskevicius/flake-utils-plus";
+
+    ranet.url = "github:NickCao/ranet";
+    ranet.inputs.nixpkgs.follows = "nixos";
   };
 
-  outputs = { self, digga, nixos, home, nur, deploy, impermanence, sops-nix, ...
+  outputs = { self, digga, nixos, home, nur, deploy, impermanence, sops-nix, ranet, ...
     }@inputs:
     digga.lib.mkFlake {
       inherit self inputs;
@@ -42,7 +46,7 @@
       channels = {
         nixos = {
           imports = [ (digga.lib.importOverlays ./overlays) ];
-          overlays = [ nur.overlay ./pkgs/default.nix ];
+          overlays = [ nur.overlay ./pkgs/default.nix ranet.overlays.default ];
         };
         latest = { };
       };

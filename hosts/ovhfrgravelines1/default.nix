@@ -86,6 +86,7 @@ in {
     openvpn
     (python3.withPackages (ps: with ps; [ requests ]))
     q
+    ranet
     rclone
     ripgrep
     rustic
