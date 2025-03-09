@@ -34,7 +34,7 @@ let
 in {
   options.services.ranet = {
     enable = mkEnableOption "ranet IPSEC";
-    intnerface = mkOption {
+    interface = mkOption {
       type = types.str;
       description = "interface";
     };
