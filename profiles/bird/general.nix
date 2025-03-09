@@ -88,4 +88,19 @@ in ''
       };
     };
   }
+  protocol babel {
+    ipv4 {
+      import where net ~ 100.64.0.0/24;
+      export where net ~ 100.64.0.0/24;
+    }; 
+    interface "swan*" {
+      type tunnel;
+      link quality etx;
+      rxcost 32;
+      hello interval 20 s;
+      rtt cost 1024;
+      rtt max 1024 ms;
+      rx buffer 1500;
+    };
+  }
 ''
