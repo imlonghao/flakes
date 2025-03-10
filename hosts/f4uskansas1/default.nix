@@ -90,4 +90,10 @@
     listen = "[2602:fab0:28::123]:9000";
   };
 
+  # ranet
+  services.ranet = {
+    enable = true;
+    interface = "ens18";
+  };
+
 }

@@ -107,4 +107,10 @@
       [ "0 1 * * * root ${pkgs.git}/bin/git -C /persist/pki pull" ];
   };
 
+  # ranet
+  services.ranet = {
+    enable = true;
+    interface = "enp3s0";
+  };
+
 }

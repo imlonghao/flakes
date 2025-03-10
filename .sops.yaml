@@ -125,6 +125,8 @@ creation_rules:
         age:
           - *vps_ovhcabeauharnois1
           - *vps_ovhfrgravelines1
+          - *vps_f4uskansas1
+          - *vps_misakauklondon1
   - path_regex: hosts/mailcow/secrets.yml$
     key_groups:
       - pgp:
