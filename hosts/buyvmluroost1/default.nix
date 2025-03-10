@@ -56,4 +56,10 @@
   # Docker
   virtualisation.docker.enable = true;
 
+  # ranet
+  services.ranet = {
+    enable = true;
+    interface = "eth0";
+  };
+
 }

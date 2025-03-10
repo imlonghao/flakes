@@ -105,4 +105,10 @@
     location = "las1";
   };
 
+  # ranet
+  services.ranet = {
+    enable = true;
+    interface = "ens3";
+  };
+
 }
