@@ -128,7 +128,6 @@
         };
         vpsausydney1 = { hostname = "vps-au-sydney-1.ni.sb"; };
         vpsussanjose1 = { hostname = "vps-us-sanjose-1.ni.sb"; };
-        idcwikicnhongkong1 = { hostname = "idcwiki-cn-hongkong-1.ni.sb"; };
         ovhfrgravelines1 = { hostname = "ovh-fr-gravelines-1.ni.sb"; };
         buyvmluroost1 = { hostname = "buyvm-lu-roost-1.ni.sb"; };
         vpsdefrankfurt1 = { hostname = "vps-de-frankfurt-1.ni.sb"; };
@@ -140,7 +139,6 @@
         serverfactorynleygelshoven1 = {
           hostname = "serverfactory-nl-eygelshoven-1.ni.sb";
         };
-        subledkcopenhagen1 = { hostname = "suble-dk-copenhagen-1.ni.sb"; };
         xentainusdallas1 = { hostname = "xentain-us-dallas-1.ni.sb"; };
         breezehostusdallas1 = {
           hostname = "breezehost-us-dallas-1.ni.sb";
