@@ -151,12 +151,6 @@ creation_rules:
           - *me_canokey
         age:
           - *vps_starrydnscnhongkong1
-  - path_regex: hosts/hertzdefalkenstein1/secrets.yml$
-    key_groups:
-      - pgp:
-          - *me_canokey
-        age:
-          - *vps_hertzdefalkenstein1
   - path_regex: hosts/hosthatchsestockholm1/secrets.yml$
     key_groups:
       - pgp:
