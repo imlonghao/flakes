@@ -25,12 +25,12 @@ in {
           10.100.0.0/14+,       # ChaosVPN
           10.127.0.0/16{16,32}, # neonetwork
           10.0.0.0/8{15,24}     # Freifunk.net
-        ];
+        ] && net !~ [10.42.0.0/24];
       }
       function is_valid_network_v6() {
         return net ~ [
           fd00::/8{44,64} # ULA address space as per RFC 4193
-        ];
+        ] && net !~ [fd99:100:64:1::/64];
       }
       protocol kernel {
         scan time 10;

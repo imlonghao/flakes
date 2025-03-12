@@ -109,6 +109,8 @@
   services.ranet = {
     enable = true;
     interface = "ens3";
+    ipv6 = false;
+    mtu = 1440;
   };
 
 }

@@ -1,5 +1,6 @@
 { pkgs, profiles, ... }: {
   imports = [
+    ./bird.nix
     ./hardware.nix
     profiles.mycore
     profiles.users.root
@@ -44,5 +45,11 @@
   };
 
   environment.systemPackages = with pkgs; [ wgcf wireguard-tools ];
+
+  # ranet
+  services.ranet = {
+    enable = true;
+    interface = "eth0";
+  };
 
 }

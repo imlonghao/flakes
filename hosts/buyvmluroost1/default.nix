@@ -60,6 +60,8 @@
   services.ranet = {
     enable = true;
     interface = "eth0";
+    ipv6 = false;
+    mtu = 1440;
   };
 
 }

@@ -1,5 +1,6 @@
 { pkgs, profiles, ... }: {
   imports = [
+    ./bird.nix
     ./hardware.nix
     profiles.mycore
     profiles.users.root
@@ -41,6 +42,12 @@
     enable = true;
     systemCronJobs =
       [ "0 1 * * * root ${pkgs.git}/bin/git -C /persist/pki pull" ];
+  };
+
+  # ranet
+  services.ranet = {
+    enable = true;
+    interface = "eth0";
   };
 
 }

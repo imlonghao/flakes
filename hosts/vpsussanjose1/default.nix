@@ -61,4 +61,10 @@ in {
     systemCronJobs = [ "* * * * * root ${cronJob} > /dev/null 2>&1" ];
   };
 
+  # ranet
+  services.ranet = {
+    enable = true;
+    interface = "eth0";
+  };
+
 }

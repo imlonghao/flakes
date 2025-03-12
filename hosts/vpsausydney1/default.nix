@@ -150,4 +150,10 @@ in {
     DynamicUser = lib.mkForce false;
   };
 
+  # ranet
+  services.ranet = {
+    enable = true;
+    interface = "enp6s18";
+  };
+
 }

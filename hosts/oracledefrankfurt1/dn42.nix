@@ -147,6 +147,15 @@
       e6 = "fe80::2189:e9";
     }
     {
+      name = "wg2308";
+      listen = 22308;
+      endpoint = "de-fra1.dn42.mirsal.fr:21888";
+      publickey = "iXu4yUw4w8/+hEHsOoQg26lByH8FAStv2pUnA0IeeXw=";
+      presharedkey = "SFSwgV64PmlmCmzOgXnPBKbh9ltQJYPOPdQUEL3UIRw=";
+      asn = 4242422308;
+      e6 = "fe80::2308";
+    }
+    {
       name = "wg2331";
       listen = 22331;
       endpoint = "lu208.dn42.williamgates.info:21888";

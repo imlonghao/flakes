@@ -63,4 +63,10 @@
     ipv6 = "2602:feda:1bf:deaf::28/64";
   };
 
+  # ranet
+  services.ranet = {
+    enable = true;
+    interface = "eth0";
+  };
+
 }

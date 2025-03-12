@@ -131,4 +131,10 @@
 
   wrap.ip = "2606:4700:110:89f1:9377:32d:af47:9f7a/128";
 
+  # ranet
+  services.ranet = {
+    enable = true;
+    interface = "ens18";
+  };
+
 }
