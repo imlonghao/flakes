@@ -50,4 +50,10 @@
     ipv6 = "2602:feda:1bf:deaf::16/64";
   };
 
+  # ranet
+  services.ranet = {
+    enable = true;
+    interface = "ens3";
+  };
+
 }

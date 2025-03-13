@@ -83,4 +83,10 @@
     }];
   };
 
+  # ranet
+  services.ranet = {
+    enable = true;
+    interface = "ens4";
+  };
+
 }
