@@ -22,16 +22,6 @@
       e6 = "fe80::0207";
     }
     {
-      name = "wg0247";
-      l4 = "172.22.68.1";
-      e4 = "172.23.250.81";
-      e6 = "fe80::247";
-      asn = 4242420247;
-      listen = 20247;
-      endpoint = "us1.dn42.as141776.net:41888";
-      publickey = "tRRiOqYhTsygV08ltrWtMkfJxCps1+HUyN4tb1J7Yn4=";
-    }
-    {
       name = "wg0358";
       e6 = "fe80::358";
       asn = 4242420358;
