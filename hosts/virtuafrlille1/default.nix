@@ -82,4 +82,11 @@
     listen = "[2602:fab0:27::123]:9000";
   };
 
+  # ranet
+  services.ranet = {
+    enable = true;
+    interfaces = "ens18";
+    id = 21;
+  };
+
 }
