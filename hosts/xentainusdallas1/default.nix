@@ -53,4 +53,11 @@
     ipv6 = "2602:feda:1bf:deaf::40/64";
   };
 
+  # ranet
+  services.ranet = {
+    enable = true;
+    interface = "ens3";
+    id = 26;
+  };
+
 }

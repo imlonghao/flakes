@@ -57,4 +57,12 @@
 
   services.qemuGuest.enable = true;
 
+  # ranet
+  services.ranet = {
+    enable = true;
+    interface = "ens18";
+    id = 24;
+    mtu = 1476;
+  };
+
 }

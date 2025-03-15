@@ -74,4 +74,11 @@
   # Docker
   virtualisation.docker.enable = true;
 
+  # ranet
+  services.ranet = {
+    enable = true;
+    interface = "ens18";
+    id = 25;
+  };
+
 }
