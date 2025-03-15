@@ -193,7 +193,7 @@
       e4 = "172.22.144.64";
       e6 = "fe80::3999";
       listen = 23999;
-      endpoint = "cowgl.us.kg:31888";
+      endpoint = "txg.node.cowgl.xyz:31888";
       publickey = "mGGBczSVKW+7UKRquI2GkbKrfxiATv9r4uF5WTP+vWI=";
       mpbgp = false;
     }
