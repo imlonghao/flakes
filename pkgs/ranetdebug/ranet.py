@@ -32,6 +32,6 @@ for line in routes:
     for idx in range(len(r)):
         if mapping.get(r[idx]) != None:
             if nodes[r[0]] == mapping.get(r[idx]):
-                print("{:15} {:25} {:10} {:25} {:10} {:5}".format(r[0], nodes[r[0]], 'direct', '', 'metrics', r[idx+1]))
+                print("{:15} {:30} {:10} {:30} {:8} {:5}".format(r[0], nodes[r[0]], 'direct', '', 'metrics', r[idx+1]))
             else:
-                print("{:15} {:25} {:10} {:25} {:10} {:5}".format(r[0], nodes[r[0]], 'via', mapping.get(r[idx]), 'metrics', r[idx+1]))
+                print("{:15} {:30} {:10} {:30} {:8} {:5}".format(r[0], nodes[r[0]], 'via', mapping.get(r[idx]), 'metrics', r[idx+1]))

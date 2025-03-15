@@ -1,7 +1,7 @@
 { lib, stdenv, bird-babel-rtt, python3, strongswan }:
 stdenv.mkDerivation rec {
   pname = "ranetdebug";
-  version = "1.0.0";
+  version = "1.0.1";
 
   src = ./ranet.py;
   dontUnpack = true;
