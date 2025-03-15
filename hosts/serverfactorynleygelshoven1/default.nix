@@ -122,4 +122,10 @@
     DynamicUser = lib.mkForce false;
   };
 
+  # ranet
+  services.ranet = {
+    enable = true;
+    interface = "eth0";
+  };
+
 }
