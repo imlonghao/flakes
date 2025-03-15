@@ -1,5 +1,6 @@
 { config, lib, pkgs, profiles, self, ... }: {
   imports = [
+    ./bird.nix
     ./hardware.nix
     profiles.mycore
     profiles.users.root
@@ -109,6 +110,13 @@
   systemd.services.vector.serviceConfig = {
     EnvironmentFile = config.sops.secrets.openobserve.path;
     DynamicUser = lib.mkForce false;
+  };
+
+  # ranet
+  services.ranet = {
+    enable = true;
+    interface = "eth0";
+    id = 23;
   };
 
 }
