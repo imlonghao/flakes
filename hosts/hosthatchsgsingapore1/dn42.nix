@@ -112,14 +112,6 @@
       e6 = "fe80::2225";
     }
     {
-      name = "wg2237";
-      listen = 22237;
-      endpoint = "sg-sin01.dn42.munsternet.eu:21888";
-      publickey = "09m8ilgZ/9jQvVgsGwu2ceR8u6gKAsd+VxH8AzduOHk=";
-      asn = 4242422237;
-      e6 = "fe80::42:2237";
-    }
-    {
       name = "wg2246";
       listen = 22246;
       endpoint = "sin05.dn42.ventilaar.net:31888";
