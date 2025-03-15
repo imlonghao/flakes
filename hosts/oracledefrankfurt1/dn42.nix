@@ -115,14 +115,6 @@
       l4 = "172.22.68.4";
     }
     {
-      name = "wg1604";
-      listen = 21604;
-      endpoint = "uk1.vm.libecho.top:21888";
-      publickey = "9U407vEN9S4jZ+MEEFYnYtMpb6H6VyQVMgJIK6oDUVo=";
-      asn = 4242421604;
-      e6 = "fe80::1604";
-    }
-    {
       name = "wg1771";
       listen = 21771;
       endpoint = "frank1.exploro.one:32615";
