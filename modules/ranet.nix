@@ -80,7 +80,6 @@ in {
     id = mkOption {
       type = types.int;
       description = "node id";
-      default = 0;
     };
   };
   config = mkIf cfg.enable {
