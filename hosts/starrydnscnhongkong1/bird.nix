@@ -13,7 +13,7 @@ let
 in {
   services.bird2 = {
     enable = true;
-    config = generalConf + ''
+    config = generalConf + import profiles.bird.kernel { } + ''
       protocol bgp starrydns4 {
         neighbor 103.205.9.1 as 134835;
         source address 103.205.9.90;
