@@ -203,6 +203,7 @@
   services.ranet = {
     enable = true;
     interface = "enp0s3";
+    id = 19;
   };
 
 }

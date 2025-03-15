@@ -50,6 +50,7 @@
   services.ranet = {
     enable = true;
     interface = "eno1";
+    id = 2;
   };
 
 }

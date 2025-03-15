@@ -87,6 +87,7 @@
   services.ranet = {
     enable = true;
     interface = "ens4";
+    id = 18;
   };
 
 }

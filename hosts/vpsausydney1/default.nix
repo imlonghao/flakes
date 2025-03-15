@@ -154,6 +154,7 @@ in {
   services.ranet = {
     enable = true;
     interface = "enp6s18";
+    id = 8;
   };
 
 }
