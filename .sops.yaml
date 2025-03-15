@@ -56,6 +56,7 @@ creation_rules:
           - *vps_coalcloudcnhongkong1
           - *vps_clawcloudcnhongkong1
           - *vps_ovhcabeauharnois1
+          - *vps_terrahostnosandefjord1
   - path_regex: secrets/vector.yml$
     key_groups:
       - pgp:
@@ -142,6 +143,7 @@ creation_rules:
           - *vps_clawcloudcnhongkong1
           - *vps_ovhcabeauharnois1
           - *vps_vpsussanjose1
+          - *vps_terrahostnosandefjord1
   - path_regex: hosts/buyvmuslasvegas1/secrets.yml$
     key_groups:
       - pgp:
