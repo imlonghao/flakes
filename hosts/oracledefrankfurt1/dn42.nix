@@ -206,15 +206,6 @@
       e6 = "fe80::3035:130";
     }
     {
-      name = "wg3088";
-      listen = 23088;
-      endpoint = "fra1-de.dn42.6700.cc:21888";
-      publickey = "TWQhJYK+ynNz7A4GMAQSHAyUUKTnAYrBfWTzzjzhAFs=";
-      asn = 4242423088;
-      ipv6 = "fe80::abcd/64";
-      e6 = "fe80::3088:195";
-    }
-    {
       name = "wg3177";
       listen = 23177;
       endpoint = "95.130.6.48:51820";
