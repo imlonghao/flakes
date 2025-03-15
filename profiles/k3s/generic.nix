@@ -1,9 +1,7 @@
 { config, pkgs, self, sops, ... }:
 let
-  ip4 = builtins.replaceStrings [ "/24" ] [ "" ]
-    config.services.etherguard-edge.ipv4;
-  ip6 = builtins.replaceStrings [ "/64" ] [ "" ]
-    config.services.etherguard-edge.ipv6;
+  ip4 = "100.64.1.${toString config.services.ranet.id}";
+  ip6 = "fd99:100:64:1::${toString config.services.ranet.id}";
 in {
   sops.secrets."k3s-agent" = {
     format = "binary";
@@ -12,7 +10,7 @@ in {
   services.k3s = {
     enable = true;
     serverAddr = "https://k3s.ni.sb:6443";
-    extraFlags = [ "--node-ip=${ip4},${ip6}" "--flannel-iface=eg_net" ];
+    extraFlags = [ "--node-ip=${ip4},${ip6}" "--flannel-iface=gravity" "--flannel-backend=host-gw" ];
   };
   services.k3s-no-ctstate-invalid.enable = true;
   environment.systemPackages = [ pkgs.iptables pkgs.openiscsi ];

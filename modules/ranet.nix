@@ -77,6 +77,11 @@ in {
       description = "internet ethernet mtu";
       default = 1500;
     };
+    id = mkOption {
+      type = types.int;
+      description = "node id";
+      default = 0;
+    };
   };
   config = mkIf cfg.enable {
     environment.systemPackages = [ pkgs.strongswan pkgs.ranet pkgs.ranetdebug ];
