@@ -14,6 +14,7 @@
       "--cluster-cidr 10.42.0.0/16,fc00:42::/56"
       "--service-cidr 10.43.0.0/16,fc00:43::/112"
       "--flannel-ipv6-masq"
+      "--flannel-backend=host-gw"
     ];
   };
 }
