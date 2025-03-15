@@ -11,4 +11,5 @@ final: prev: {
   wtt = prev.callPackage ./wtt { };
   hachimi = prev.callPackage ./hachimi { };
   bird-babel-rtt = prev.callPackage ./bird-babel-rtt { };
+  ranetdebug = prev.callPackage ./ranetdebug { };
 }

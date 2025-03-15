@@ -79,6 +79,7 @@ in {
     };
   };
   config = mkIf cfg.enable {
+    environment.systemPackages = [ pkgs.strongswan pkgs.ranet pkgs.ranetdebug ];
     services.bird2.package = pkgs.bird-babel-rtt;
     sops.secrets.ranet = {
       sopsFile = "${self}/secrets/ranet.txt";
@@ -125,7 +126,7 @@ in {
         ExecStart =
           "${pkgs.ranet}/bin/ranet --config ${configfile} --registry /persist/ranet-registry.json --key ${config.sops.secrets.ranet.path} up";
         ExecStartPost = "-${postScript}";
-        ConditionPathExists= [ "/persist/ranet-registry.json" ];
+        ConditionPathExists = [ "/persist/ranet-registry.json" ];
       };
       wants = [ "network-online.target" "strongswan-swanctl.service" ];
       after = [ "network-online.target" "strongswan-swanctl.service" ];
