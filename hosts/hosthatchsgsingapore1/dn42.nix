@@ -96,6 +96,14 @@
       e6 = "fe80::7e26:b335:a24d:e70e";
     }
     {
+      name = "wg2189";
+      asn = 4242422189;
+      e6 = "fe80::2189:119";
+      listen = 22189;
+      endpoint = "sg-sin.dn42.iedon.net:37682";
+      publickey = "XAmCHa9+dnC6uba+gFn5ucl7B69k8vmIAgJm3a8XlGQ=";
+    }
+    {
       name = "wg2225";
       listen = 22225;
       endpoint = "dn42-sg.maraun.de:21888";
