@@ -85,7 +85,7 @@
   # ranet
   services.ranet = {
     enable = true;
-    interfaces = "ens18";
+    interface = "ens18";
     id = 21;
   };
 
