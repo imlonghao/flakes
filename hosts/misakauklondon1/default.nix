@@ -111,6 +111,7 @@
   services.ranet = {
     enable = true;
     interface = "enp3s0";
+    id = 4;
   };
 
 }
