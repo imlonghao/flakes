@@ -76,4 +76,11 @@
 
   zramSwap.enable = lib.mkForce false;
 
+  # ranet
+  services.ranet = {
+    enable = true;
+    interface = "ens3";
+    id = 22;
+  };
+
 }
