@@ -204,5 +204,11 @@
       persistentKeepalive = 15;
     }];
   };
+  
+  # ranet
+  services.ranet = {
+    enable = true;
+    interface = "enp0s3";
+  };
 
 }
