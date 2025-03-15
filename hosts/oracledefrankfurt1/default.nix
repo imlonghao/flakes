@@ -117,12 +117,6 @@
     '';
   };
 
-  # wtt
-  services.wtt = {
-    enable = true;
-    listen = "100.64.88.17";
-  };
-
   # borgmatic
   services.borgmatic.settings = {
     repositories = [
