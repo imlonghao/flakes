@@ -82,8 +82,8 @@
   protocol bgp RR {
     local as 4242421888;
     neighbor internal;
-    neighbor fe80::dcad:beff:feef:1;
-    interface "eg_net";
+    neighbor fd99:100:64:1::4;
+    interface "gravity";
     direct;
     ipv4 {
       next hop self;

@@ -84,8 +84,8 @@ in {
       protocol bgp RR {
         local as 4242421888;
         neighbor internal;
-        neighbor range fe80::/64;
-        interface "eg_net";
+        neighbor range fd99:100:64:1::/64;
+        interface "gravity";
         rr client;
         direct;
         ipv4 {
