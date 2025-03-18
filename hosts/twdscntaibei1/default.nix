@@ -135,6 +135,7 @@
   services.ranet = {
     enable = true;
     interface = "ens18";
+    id = 12;
   };
 
 }

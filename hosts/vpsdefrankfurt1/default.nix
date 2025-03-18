@@ -67,6 +67,7 @@
   services.ranet = {
     enable = true;
     interface = "eth0";
+    id = 9;
   };
 
 }

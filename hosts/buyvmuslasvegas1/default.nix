@@ -111,6 +111,7 @@
     interface = "ens3";
     ipv6 = false;
     mtu = 1440;
+    id = 6;
   };
 
 }

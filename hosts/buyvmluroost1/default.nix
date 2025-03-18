@@ -62,6 +62,7 @@
     interface = "eth0";
     ipv6 = false;
     mtu = 1440;
+    id = 5;
   };
 
 }
