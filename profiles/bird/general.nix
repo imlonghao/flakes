@@ -72,8 +72,9 @@ in ''
       export ${ospf4};
     };
     area 0 {
-      interface "eg_net" {
+      interface "gravity" {
         type bcast;
+        tx length 1300;
       };
     };
   }
@@ -83,8 +84,9 @@ in ''
       export ${ospf6};
     };
     area 0 {
-      interface "eg_net" {
+      interface "gravity" {
         type bcast;
+        tx length 1300;
       };
     };
   }
