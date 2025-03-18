@@ -1,7 +1,6 @@
 { config, pkgs, ... }:
 let
-  ip = builtins.replaceStrings [ "/24" ] [ "" ]
-    config.services.etherguard-edge.ipv4;
+  ip = "100.64.1.${toString config.services.ranet.id}";
   # https://github.com/prometheus/blackbox_exporter/blob/master/CONFIGURATION.md
   blackboxConfig = {
     modules = {
@@ -18,5 +17,5 @@ in {
     configFile = pkgs.writeText "blackbox.yml" (builtins.toJSON blackboxConfig);
   };
   systemd.services."prometheus-blackbox-exporter".after =
-    [ "etherguard-edge.service" ];
+    [ "ranet.service" ];
 }

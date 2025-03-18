@@ -1,7 +1,6 @@
 { config, self, ... }:
 let
-  ip = builtins.replaceStrings [ "/24" ] [ "" ]
-    config.services.etherguard-edge.ipv4;
+  ip = "100.64.1.${toString config.services.ranet.id}";
 in {
   services.prometheus.exporters.node = {
     enable = true;
@@ -13,6 +12,5 @@ in {
     ];
   };
   systemd.services."prometheus-node-exporter".after =
-    [ "etherguard-edge.service" ];
+    [ "ranet.service" ];
 }
-
