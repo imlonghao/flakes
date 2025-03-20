@@ -82,7 +82,7 @@ in {
       };
 
       protocol bgp internalpve1 {
-        neighbor 2602:feda:1bf:deaf::39 as 30114;
+        neighbor fd99:100:64:1::29 as 30114;
         local as 30114;
         graceful restart on;
         ipv6 {
