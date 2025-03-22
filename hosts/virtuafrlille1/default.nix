@@ -11,6 +11,7 @@
   ];
 
   networking = {
+    dhcpcd.enable = false;
     nameservers = [ "8.8.8.8" "1.1.1.1" ];
     defaultGateway.address = "185.154.155.254";
     defaultGateway6 = {
