@@ -44,6 +44,14 @@
       e6 = "fe80::1080:125";
     }
     {
+      name = "wg1771";
+      listen = 21771;
+      endpoint = "sydney1.exploro.one:32584";
+      publickey = "wHTCO2N+h7Z8J7vgw7MsmZdVMDTy3eGfnuqqQuSf/AQ=";
+      asn = 4242421771;
+      e6 = "fe80::afaf:bfbf:cdcf:2e";
+    }
+    {
       name = "wg1815";
       listen = 21815;
       endpoint = "server1.rivensbane.com:21888";
