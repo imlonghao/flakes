@@ -142,5 +142,18 @@ in {
       };
       wantedBy = [ "timers.target" ];
     };
+    systemd.services.supervxlan = {
+      serviceConfig = {
+        Type = "simple";
+        ExecStart = "${pkgs.supervxlan}/bin/agent";
+        Environment = [
+          "ID=${toString cfg.id}"
+          "ENDPOINT=https://supervxlan.esd.cc"
+        ];
+      };
+      wants = [ "network-online.target" ];
+      after = [ "network-online.target" ];
+      wantedBy = [ "multi-user.target" ];
+    };
   };
 }

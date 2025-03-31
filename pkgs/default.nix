@@ -12,4 +12,5 @@ final: prev: {
   hachimi = prev.callPackage ./hachimi { };
   bird-babel-rtt = prev.callPackage ./bird-babel-rtt { };
   ranetdebug = prev.callPackage ./ranetdebug { };
+  supervxlan = prev.callPackage ./supervxlan { };
 }
