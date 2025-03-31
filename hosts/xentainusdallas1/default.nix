@@ -12,9 +12,9 @@
   networking = {
     nameservers = [ "2a09::" "2a11::" "1.1.1.1" "8.8.8.8" ];
     dhcpcd.enable = false;
-    defaultGateway = "170.39.49.1";
+    defaultGateway = "5.56.24.1";
     defaultGateway6 = {
-      address = "2602:fa11:40::1";
+      address = "2602:f71e:41::1";
       interface = "ens3";
     };
     interfaces = {
@@ -36,11 +36,11 @@
       };
       ens3 = {
         ipv4.addresses = [{
-          address = "170.39.49.189";
+          address = "5.56.24.146";
           prefixLength = 24;
         }];
         ipv6.addresses = [{
-          address = "2602:fa11:40:1015::a";
+          address = "2602:f71e:41:6f::a";
           prefixLength = 64;
         }];
       };

@@ -6,7 +6,7 @@ let
     ospf6 = "where net = 2602:fab0:40::/48 || net = 2602:fab0:41::/48";
   };
   kernelConf = import profiles.bird.kernel {
-    src4 = "170.39.49.189";
+    src4 = "5.56.24.146";
     src6 = "2602:fab0:40::";
   };
 in {
@@ -63,12 +63,12 @@ in {
       }
 
       protocol bgp AS15353v4 from tmpl_upstream {
-        neighbor 170.39.49.1 as 15353;
+        neighbor 5.56.24.4 as 15353;
         password "8wqY5P6H";
       };
       protocol bgp AS15353v6 from tmpl_upstream {
-        neighbor 2602:fa11:40::1 as 15353;
-        source address 2602:fa11:40:1015::a;
+        neighbor 2602:f71e:41:4:: as 15353;
+        source address 2602:f71e:41:6f::a;
         password "8wqY5P6H";
         multihop 20;
         ipv6 {
