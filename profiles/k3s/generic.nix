@@ -1,4 +1,4 @@
-{ config, pkgs, self, sops, ... }:
+{ config, pkgs, self, ... }:
 let
   ip4 = "100.64.1.${toString config.services.ranet.id}";
   ip6 = "fd99:100:64:1::${toString config.services.ranet.id}";

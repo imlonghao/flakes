@@ -1,4 +1,4 @@
-{ age, config, pkgs, self, sops, ... }:
+{ pkgs, ... }:
 
 {
   environment.systemPackages = [ pkgs.ranet ];

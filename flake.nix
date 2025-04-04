@@ -35,7 +35,7 @@
     ranet.inputs.nixpkgs.follows = "nixos";
   };
 
-  outputs = { self, digga, nixos, home, nur, deploy, impermanence, sops-nix
+  outputs = { self, digga, nixos, home, nur, impermanence, sops-nix
     , ranet, ... }@inputs:
     digga.lib.mkFlake {
       inherit self inputs;
@@ -53,9 +53,9 @@
       lib = import ./lib { lib = digga.lib // nixos.lib; };
 
       sharedOverlays = [
-        (final: prev: {
+        (_final: prev: {
           __dontExport = true;
-          lib = prev.lib.extend (lfinal: lprev: { our = self.lib; });
+          lib = prev.lib.extend (_lfinal: _lprev: { our = self.lib; });
         })
       ];
 

@@ -1,1 +1,1 @@
-{ lib }: lib.makeExtensible (self: { })
+{ lib }: lib.makeExtensible (_self: { })

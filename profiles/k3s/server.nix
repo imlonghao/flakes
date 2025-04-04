@@ -1,4 +1,4 @@
-{ config, self, sops, ... }: {
+{ config, self, ... }: {
   imports = [ ./generic.nix ];
   sops.secrets."k3s-server" = {
     format = "binary";

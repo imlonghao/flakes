@@ -1,4 +1,4 @@
-{ config, pkgs, self, sops, ... }:
+{ config, self, ... }:
 
 {
   sops.secrets."hysteria.yaml" = {

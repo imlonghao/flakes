@@ -1,4 +1,4 @@
-{ config, inputs, pkgs, self, sops, ... }:
+{ config, pkgs, self, ... }:
 
 {
   disabledModules = [ "services/backup/borgmatic.nix" ];

@@ -1,4 +1,4 @@
-{ sops, self, config, ... }: {
+{ self, config, ... }: {
   sops.secrets.hachimi.sopsFile =
     "${self}/hosts/${config.networking.hostName}/secrets.yml";
   services.hachimi = {

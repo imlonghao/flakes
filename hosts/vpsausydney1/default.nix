@@ -1,4 +1,4 @@
-{ config, lib, pkgs, profiles, self, ... }:
+{ config, pkgs, profiles, ... }:
 let
   cronJob = pkgs.writeShellScript "cron.sh" ''
     # Networking

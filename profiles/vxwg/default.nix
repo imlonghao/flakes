@@ -1,4 +1,4 @@
-{ config, lib, self, sops, ... }:
+{ config, lib, self, ... }:
 
 {
   sops.secrets.wireguard.sopsFile =

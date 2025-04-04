@@ -1,4 +1,4 @@
-{ config, self, sops, ... }:
+{ config, self, ... }:
 
 {
   sops.secrets.pingfinder.sopsFile =

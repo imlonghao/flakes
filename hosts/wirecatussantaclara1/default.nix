@@ -1,4 +1,4 @@
-{ config, pkgs, profiles, ... }: {
+{ pkgs, profiles, ... }: {
   imports = [
     ./hardware.nix
     ./bird.nix

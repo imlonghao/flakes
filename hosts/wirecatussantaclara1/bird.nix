@@ -1,4 +1,4 @@
-{ config, lib, profiles, ... }:
+{ config, profiles, ... }:
 let
   generalConf = import profiles.bird.general { config = config; };
   kernelConf = import profiles.bird.kernel { src6 = "2602:fab0:23::"; };

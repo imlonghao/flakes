@@ -1,4 +1,4 @@
-{ pkgs, profiles, sops, ... }: {
+{ pkgs, profiles, ... }: {
   imports = [
     ./bird.nix
     ./borg.nix

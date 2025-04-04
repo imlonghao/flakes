@@ -1,4 +1,4 @@
-{ age, config, pkgs, self, sops, ... }:
+{ config, pkgs, self, ... }:
 
 {
   environment.systemPackages = [ pkgs.restic pkgs.autorestic ];

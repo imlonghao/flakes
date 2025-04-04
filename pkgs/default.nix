@@ -1,4 +1,4 @@
-final: prev: {
+_final: prev: {
   bird-lg-go = prev.callPackage ./bird-lg-go { };
   chrony_exporter = prev.callPackage ./chrony_exporter { };
   coredns-nat64-rdns = prev.callPackage ./coredns-nat64-rdns { };

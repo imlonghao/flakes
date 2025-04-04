@@ -1,4 +1,4 @@
-{ age, config, pkgs, self, sops, ... }:
+{ config, self, ... }:
 
 {
   sops.secrets."etherguard.super" = {

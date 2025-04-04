@@ -1,4 +1,4 @@
-{ age, config, pkgs, self, sops, ... }:
+{ pkgs, ... }:
 let
   ca = pkgs.writeText "ca.crt" ''
     -----BEGIN CERTIFICATE-----

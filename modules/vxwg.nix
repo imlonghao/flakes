@@ -52,7 +52,7 @@ in {
         "${pkgs.iproute2}/bin/ip address add 2602:feda:1bf:1919::${id}/64 dev vmesh || true"
       ];
       postSetup = (forEach (catAttrs "id" (attrValues
-        (filterAttrs (k: v: k != config.networking.hostName) cfg.peers))) (x:
+        (filterAttrs (k: _v: k != config.networking.hostName) cfg.peers))) (x:
           "${pkgs.iproute2}/bin/bridge fdb append 00:00:00:00:00:00 dev vmesh dst 100.88.0.${
             toString x
           } via mesh")) ++ [ "${pkgs.iproute2}/bin/ip link set vmesh up" ];
@@ -65,7 +65,7 @@ in {
         publicKey = x.publicKey;
         allowedIPs = [ "100.88.0.${toString x.id}/32" ];
       }) (attrValues
-        (filterAttrs (k: v: k != config.networking.hostName) cfg.peers));
+        (filterAttrs (k: _v: k != config.networking.hostName) cfg.peers));
     };
   };
 }

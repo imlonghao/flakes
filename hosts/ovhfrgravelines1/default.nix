@@ -1,4 +1,4 @@
-{ config, inputs, pkgs, profiles, sops, ... }:
+{ config, pkgs, profiles, ... }:
 let
   cronJob = pkgs.writeShellScript "199632.sh" ''
     ip rule | grep -F 23.146.88.0 || ip rule add from 23.146.88.0/24 table 199632

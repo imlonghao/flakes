@@ -1,4 +1,4 @@
-{ config, self, ... }:
+{ ... }:
 
 {
   networking.nameservers = [ "100.64.0.53" "1.1.1.1" "8.8.8.8" ];

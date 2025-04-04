@@ -1,4 +1,4 @@
-channels: final: prev: {
+channels: _final: prev: {
 
   __dontExport = true; # overrides clutter up actual creations
 
@@ -8,7 +8,7 @@ channels: final: prev: {
 
   haskellPackages = prev.haskellPackages.override (old: {
     overrides = prev.lib.composeExtensions (old.overrides or (_: _: { }))
-      (hfinal: hprev:
+      (_hfinal: _hprev:
         let version = prev.lib.replaceChars [ "." ] [ "" ] prev.ghc.version;
         in {
           # same for haskell packages, matching ghc versions

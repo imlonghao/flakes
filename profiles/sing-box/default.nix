@@ -1,4 +1,4 @@
-{ config, self, sops, ... }: {
+{ config, self, ... }: {
   sops.secrets.sing-box-uuid.sopsFile = "${self}/secrets/sing-box.yml";
   sops.secrets.sing-box-password.sopsFile = "${self}/secrets/sing-box.yml";
   sops.secrets.sing-box-sni.sopsFile = "${self}/secrets/sing-box.yml";
