@@ -4,9 +4,7 @@
     profiles.mycore
     profiles.users.root
     profiles.exporter.node
-    profiles.etherguard.edge
     profiles.rsshc
-    profiles.docker
     profiles.k3s.agent
   ];
 
