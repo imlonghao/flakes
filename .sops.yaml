@@ -14,6 +14,7 @@ keys:
   - &vps_misakauklondon1 age1qsrtlhdmp8sfgkwux0r6frtv9z5apc38ggtgwv6n47pznf43k3zsv0ms8w
   - &vps_oracledefrankfurt1 age1a8n7e54k57fsczpu0zxqadmyp3aal9prc9ez3l729r6d6aqjnvaqzng7ar
   - &vps_ovhcabeauharnois1 age15a0gm84zgxt0ah5a5csympuv7htrtpymrh0m8lm7y6w39p483p8sqrdu4x
+  - &vps_ovhcabeauharnois2 age16fcxnydpjxw3l2ndngxtf8mqt5f3nj4cywh9atsuzstv49fxwcns450pcl
   - &vps_ovhfrgravelines1 age173tunxse0c6s9ppmdnszsd6quxmm7zft7tvx8p6c5qvq3rqhgagqh5m5pt
   - &vps_serverfactorynleygelshoven1 age1ds6c4dvtksgzmrsv7xpgn397xjjvs03zhta3vc9ta3uhygauz9dsdq0az6
   - &vps_starrydnscnhongkong1 age1w52xml8esykwg2hgvqn625q9fa0zfz3ynvcn5tugmsqau6jpcv0sezqzut
@@ -57,6 +58,7 @@ creation_rules:
           - *vps_clawcloudcnhongkong1
           - *vps_ovhcabeauharnois1
           - *vps_terrahostnosandefjord1
+          - *vps_ovhcabeauharnois2
   - path_regex: secrets/vector.yml$
     key_groups:
       - pgp:
@@ -113,6 +115,7 @@ creation_rules:
           - *vps_vpsausydney1
           - *vps_clawcloudcnhongkong1
           - *vps_oracledefrankfurt1
+          - *vps_ovhcabeauharnois2
   - path_regex: secrets/ranet.txt$
     key_groups:
       - pgp:
@@ -144,6 +147,7 @@ creation_rules:
           - *vps_ovhcabeauharnois1
           - *vps_vpsussanjose1
           - *vps_terrahostnosandefjord1
+          - *vps_ovhcabeauharnois2
   - path_regex: hosts/buyvmuslasvegas1/secrets.yml$
     key_groups:
       - pgp:

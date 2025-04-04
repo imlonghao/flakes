@@ -148,6 +148,7 @@
         coalcloudcnhongkong1 = { hostname = "coalcloud-cn-hongkong-1.ni.sb"; };
         clawcloudcnhongkong1 = { hostname = "clawcloud-cn-hongkong-1.ni.sb"; };
         ovhcabeauharnois1 = { hostname = "ovh-ca-beauharnois-1.ni.sb"; };
+        ovhcabeauharnois2 = { hostname = "ovh-ca-beauharnois-2.ni.sb"; };
       };
     };
 }
