@@ -1,5 +1,6 @@
 { pkgs, profiles, ... }: {
   imports = [
+    ./bird.nix
     ./hardware.nix
     profiles.mycore
     profiles.users.root

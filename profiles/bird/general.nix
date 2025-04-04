@@ -1,7 +1,6 @@
 { config, ospf4 ? "none", ospf6 ? "none", route4 ? "", route6 ? "" }:
 let
-  ip = builtins.replaceStrings [ "/24" ] [ "" ]
-    config.services.etherguard-edge.ipv4;
+  ip = "100.64.1.${toString config.services.ranet.id}";
 in ''
   router id ${ip};
   timeformat protocol iso long;

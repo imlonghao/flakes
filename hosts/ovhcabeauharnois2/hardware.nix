@@ -10,9 +10,8 @@
   boot.extraModulePackages = [ ];
 
   fileSystems."/" = {
-    device = "/dev/disk/by-uuid/9639bc45-f7cc-4aed-8e6b-8218914a5ced";
-    fsType = "btrfs";
-    options = [ "subvol=@root" ];
+    fsType = "tmpfs";
+    options = [ "defaults" "mode=755" ];
   };
 
   fileSystems."/boot" = {
