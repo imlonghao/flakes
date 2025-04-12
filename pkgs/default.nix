@@ -13,4 +13,5 @@ _final: prev: {
   bird-babel-rtt = prev.callPackage ./bird-babel-rtt { };
   ranetdebug = prev.callPackage ./ranetdebug { };
   supervxlan = prev.callPackage ./supervxlan { };
+  strongswan_6 = prev.callPackage ./strongswan_6 { };
 }

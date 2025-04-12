@@ -90,7 +90,7 @@ in {
     };
     services.strongswan-swanctl = {
       enable = true;
-      package = pkgs.strongswan;
+      package = pkgs.strongswan_6;
       strongswan.extraConfig = ''
         charon {
           ikesa_table_size = 32
