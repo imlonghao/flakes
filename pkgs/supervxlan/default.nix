@@ -2,17 +2,19 @@
 
 buildGoModule rec {
   pname = "supervxlan";
-  version = "c983716b2746dff96843f08c43a826a894c5a7a6";
+  version = "2473403d3d38ff59b723b62e62880fc161871e7a";
   src = fetchFromGitea {
     domain = "git.esd.cc";
     owner = "imlonghao";
     repo = pname;
     rev = version;
-    hash = "sha256-xcGoK05Y1U55sQb1rq6e6tVRCyJLN3hz5tEePG/Njio=";
+    hash = "sha256-aPKiTIeXL1WNtMnPGxZPTbdGfhtdrLSJLy3AXGph90s=";
   };
   vendorHash = "sha256-fJp906uP6TofwLddhv7jLQCsc1U1PUN53S9pbrPtp0Y=";
 
   subPackages = [ "cmd/agent" ];
+
+  ldflags = [ "-s" "-w" "-X main.VERSION=${version}" ];
 
   meta = with lib; {
     description = "A tool for managing VXLAN networks";
