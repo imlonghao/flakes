@@ -59,6 +59,7 @@ creation_rules:
           - *vps_ovhcabeauharnois1
           - *vps_terrahostnosandefjord1
           - *vps_ovhcabeauharnois2
+          - *vps_vpsussanjose1
   - path_regex: secrets/vector.yml$
     key_groups:
       - pgp:
