@@ -2,13 +2,13 @@
 
 buildGoModule rec {
   pname = "supervxlan";
-  version = "2473403d3d38ff59b723b62e62880fc161871e7a";
+  version = "3e711925a1789543b8e3078c0e2795dbd45c9ee0";
   src = fetchFromGitea {
     domain = "git.esd.cc";
     owner = "imlonghao";
     repo = pname;
     rev = version;
-    hash = "sha256-aPKiTIeXL1WNtMnPGxZPTbdGfhtdrLSJLy3AXGph90s=";
+    hash = "sha256-K8X+WTl2JWVbkwpR4riDmxMWsURL90vY/k92BibETLo=";
   };
   vendorHash = "sha256-fJp906uP6TofwLddhv7jLQCsc1U1PUN53S9pbrPtp0Y=";
 
