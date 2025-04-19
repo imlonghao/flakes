@@ -14,6 +14,14 @@
       publickey = "ClSMc4CO3PARJ4gRgcee4DDTAxa8tEeDxFDtBDb0bCk=";
     }
     {
+      name = "wg0202";
+      e6 = "fe80::202:13";
+      asn = 4242420202;
+      listen = 22002;
+      endpoint = "dn13.fl.us.sdubs.vip:21888";
+      publickey = "EmfS2i5so0cRHbMc/sY4pfojcHnQNnXaqlXZk0wS+xc=";
+    }
+    {
       name = "wg0207";
       listen = 20207;
       endpoint = "router.mia1.routedbits.com:51888";

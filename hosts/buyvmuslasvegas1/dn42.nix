@@ -14,6 +14,14 @@
       publickey = "uspTFQKijQUTbxUgh2IzbNaCUZgtdgrn0kUtbPDd5gM=";
     }
     {
+      name = "wg0202";
+      e6 = "fe80::202:10";
+      asn = 4242420202;
+      listen = 22002;
+      endpoint = "dn10.lax.us.sdubs.vip:21888";
+      publickey = "7Iif3zxkWZXdBr4jTvTftpZ7B16LyHb4ivPnKMuhoC4=";
+    }
+    {
       name = "wg0207";
       listen = 20207;
       endpoint = "router.lax1.routedbits.com:51888";

@@ -11,6 +11,14 @@
       e6 = "fe80::aa:1111:11";
     }
     {
+      name = "wg0202";
+      e6 = "fe80::202:9";
+      asn = 4242420202;
+      listen = 22002;
+      endpoint = "dn09.sg.sg.sdubs.vip:21888";
+      publickey = "XewX6S4HPoa40yaGmJvDjk8pX4WxczFTdoPLGvg3oU0=";
+    }
+    {
       name = "wg0207";
       listen = 20207;
       endpoint = "router.sin1.routedbits.com:51888";

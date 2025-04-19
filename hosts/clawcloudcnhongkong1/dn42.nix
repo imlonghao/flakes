@@ -11,6 +11,14 @@
       publickey = "2JHMpwkKaAMuMBrmapx9zqgGDIZOX9HZw5V2c1l66R8=";
     }
     {
+      name = "wg0202";
+      e6 = "fe80::202:2";
+      asn = 4242420202;
+      listen = 22002;
+      endpoint = "dn02.hk.hk.sdubs.vip:21888";
+      publickey = "5YcwL93bhJqzhTxi9b1Z1ZRt2UfGVoP5jMA+UXma6HM=";
+    }
+    {
       name = "wg0222";
       l4 = "172.22.68.0";
       e4 = "172.20.142.2";
