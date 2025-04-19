@@ -14,7 +14,7 @@
       name = "wg0202";
       e6 = "fe80::202:2";
       asn = 4242420202;
-      listen = 22002;
+      listen = 20202;
       endpoint = "dn02.hk.hk.sdubs.vip:21888";
       publickey = "5YcwL93bhJqzhTxi9b1Z1ZRt2UfGVoP5jMA+UXma6HM=";
     }

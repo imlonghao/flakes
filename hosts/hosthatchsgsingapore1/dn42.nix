@@ -14,7 +14,7 @@
       name = "wg0202";
       e6 = "fe80::202:9";
       asn = 4242420202;
-      listen = 22002;
+      listen = 20202;
       endpoint = "dn09.sg.sg.sdubs.vip:21888";
       publickey = "XewX6S4HPoa40yaGmJvDjk8pX4WxczFTdoPLGvg3oU0=";
     }
