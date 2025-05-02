@@ -29,6 +29,15 @@
       publickey = "0E4goqfQFKQu852QAqVSRfp9Si9MoTj8IllFiDG7gUc=";
     }
     {
+      name = "wg0298";
+      e6 = "fe80::0298";
+      asn = 4242420298;
+      listen = 20298;
+      endpoint = "node2.ox5.cc:21888";
+      publickey = "dvw9vCSfpR7f93oBpaQyCyGaoo17RRm7InZbt0n1QnI=";
+      presharedkey = "UcBb8jR3ERn09ncQLPp3ncfhUk/fV1+J5pjgdiisnww=";
+    }
+    {
       name = "wg0458";
       asn = 4242420458;
       e6 = "fe80::0458";
