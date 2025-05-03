@@ -23,12 +23,18 @@ jobs:
       - name: Build cache
         run: |
           sed -i "/access-tokens/d" /etc/nix/nix.conf
-          nix -Lv develop -c nix -Lv build ".#bird-lg-go" \
+          nix -Lv develop -c nix -Lv build ".#bird-babel-rtt" \
+            ".#bird-lg-go" \
             ".#chrony_exporter" \
             ".#coredns-nat64-rdns" \
             ".#deluge_exporter" \
+            ".#dn42debug" \
             ".#etherguard" \
+            ".#hachimi" \
             ".#juicity" \
             ".#mtrsb" \
             ".#pingfinder" \
+            ".#ranetdebug" \
+            ".#strongswan_6" \
+            ".#supervxlan" \
             ".#wtt"
