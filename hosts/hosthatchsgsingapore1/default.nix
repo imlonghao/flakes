@@ -139,6 +139,7 @@
   # borgmatic
   systemd.services.borgmatic.path = [ pkgs.mariadb ];
   services.borgmatic.settings = {
+    remote_path = "borg14";
     repositories = [
       {
         path = "ssh://m0yiu24x@m0yiu24x.repo.borgbase.com/./repo";

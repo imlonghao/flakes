@@ -119,6 +119,7 @@
 
   # borgmatic
   services.borgmatic.settings = {
+    remote_path = "borg14";
     repositories = [
       {
         label = "borgbase";
