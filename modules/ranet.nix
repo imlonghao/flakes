@@ -150,6 +150,7 @@ in {
           "ID=${toString cfg.id}"
           "ENDPOINT=https://supervxlan.esd.cc"
         ];
+        Restart = "on-failure";
       };
       wants = [ "network-online.target" ];
       after = [ "network-online.target" ];
