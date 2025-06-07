@@ -70,6 +70,14 @@
       publickey = "KlZg3oOjQsaQ0dNkUgHCKyOqULw8+u+llo97X1w5mV4=";
     }
     {
+      name = "wg1166";
+      asn = 4242421166;
+      e6 = "fe80::1166";
+      listen = 21166;
+      endpoint = "hk.dn42.milu.moe:21888";
+      publickey = "f9ZDh2U0UXxtEroHUYNWzaE6TZM3hhY3eLXQQpgkvBY=";
+    }
+    {
       name = "wg1588";
       l4 = "172.22.68.3";
       e4 = "172.20.16.145";
