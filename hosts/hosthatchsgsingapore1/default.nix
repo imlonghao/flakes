@@ -168,13 +168,6 @@
         username = "powerdns";
         password = "234567";
       }
-      {
-        name = "traccar";
-        hostname = "127.0.0.1";
-        port = 13307;
-        username = "traccar";
-        password = "\${TRACCAR_PASSWORD}";
-      }
     ];
   };
 
