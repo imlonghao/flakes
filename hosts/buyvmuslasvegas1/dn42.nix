@@ -220,5 +220,13 @@
       endpoint = "23.186.104.33:5602";
       publickey = "f34o02faoeQhoOWDxzyyLvoYrada7uE6r9emUZ689mM=";
     }
+    {
+      name = "wg3914";
+      listen = 23914;
+      asn = 4242423914;
+      e6 = "fe80::ade0";
+      endpoint = "us3.g-load.eu:21888";
+      publickey = "sLbzTRr2gfLFb24NPzDOpy8j09Y6zI+a7NkeVMdVSR8=";
+    }
   ];
 }
