@@ -21,6 +21,7 @@ in {
       ipv6 table as199632v6;
       protocol static {
         ipv4 { table as199632v4; };
+        route 0.0.0.0/0 via 100.64.1.5;
         route 100.64.88.0/24 via "eg_net";
       }
       protocol static {
@@ -54,22 +55,6 @@ in {
         import none;
         export all;
       }
-      protocol bgp internalvirtua {
-        neighbor 2602:feda:1bf:deaf::34 as 30114;
-        local as 30114;
-        graceful restart on;
-        ipv4 {
-          table as199632v4;
-          import all;
-          export none;
-        };
-        ipv6 {
-          table as199632v6;
-          import all;
-          export where net = 2602:fab0:31:1::/64;
-        };
-      };
-
     '';
   };
 }
