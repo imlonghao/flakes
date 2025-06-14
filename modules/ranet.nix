@@ -145,7 +145,7 @@ in {
     systemd.services.supervxlan = {
       serviceConfig = {
         Type = "simple";
-        ExecStart = "${pkgs.supervxlan}/bin/agent";
+        ExecStart = "${pkgs.supervxlan}/bin/supervxlan";
         Environment = [
           "ID=${toString cfg.id}"
           "ENDPOINT=https://supervxlan.esd.cc"

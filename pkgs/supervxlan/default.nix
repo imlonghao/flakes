@@ -16,6 +16,10 @@ buildGoModule rec {
 
   ldflags = [ "-s" "-w" "-X main.VERSION=${version}" ];
 
+  postInstall = ''
+    mv $out/bin/agent $out/bin/supervxlan
+  '';
+
   meta = with lib; {
     description = "A tool for managing VXLAN networks";
     homepage = "https://github.com/imlonghao/supervxlan";
