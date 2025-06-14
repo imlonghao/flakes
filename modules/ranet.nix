@@ -21,6 +21,7 @@ let
     myid=$(${pkgs.jq}/bin/jq -r '.[0].nodes[] | select(.common_name == "${config.networking.hostName}") | .remarks.id' /persist/ranet-registry.json)
     ${pkgs.iproute2}/bin/ip link show gravity || (
       ${pkgs.iproute2}/bin/ip link add gravity type vxlan local "100.64.0.$myid" id 114514 dstport 61919 noudpcsum &&
+      ${pkgs.procps}/bin/sysctl -w net.ipv4.conf.gravity.rp_filter=0 &&
       ${pkgs.iproute2}/bin/ip addr add "100.64.1.$myid/24" dev gravity &&
       ${pkgs.iproute2}/bin/ip addr add "fd99:100:64:1::$myid/64" dev gravity &&
       ${pkgs.iproute2}/bin/ip link set gravity mtu 1368 &&
