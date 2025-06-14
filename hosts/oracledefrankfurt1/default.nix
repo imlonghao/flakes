@@ -6,7 +6,6 @@
     profiles.mycore
     profiles.users.root
     profiles.exporter.node
-    profiles.etherguard.edge
     profiles.pingfinder
     profiles.bird-lg-go
     profiles.mtrsb
@@ -66,12 +65,6 @@
   };
 
   environment.systemPackages = with pkgs; [ deploy-rs git ];
-
-  # EtherGuard
-  services.etherguard-edge = {
-    ipv4 = "100.64.88.17/24";
-    ipv6 = "2602:feda:1bf:deaf::17/64";
-  };
 
   # OpenSSH
   users.users.root = {

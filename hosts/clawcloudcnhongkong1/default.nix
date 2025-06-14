@@ -7,7 +7,6 @@
     profiles.users.root
     profiles.exporter.node
     profiles.exporter.blackbox
-    profiles.etherguard.edge
     profiles.rsshc
     profiles.pingfinder
     profiles.docker
@@ -35,12 +34,6 @@
       };
     };
     dhcpcd.allowInterfaces = [ "ens5" ];
-  };
-
-  # EtherGuard
-  services.etherguard-edge = {
-    ipv4 = "100.64.88.43/24";
-    ipv6 = "2602:feda:1bf:deaf::43/64";
   };
 
   # Crontab

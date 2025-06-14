@@ -4,7 +4,6 @@
     ./hardware.nix
     profiles.mycore
     profiles.users.root
-    profiles.etherguard.edge
     profiles.mtrsb
     profiles.rsshc
     profiles.sing-box
@@ -73,12 +72,6 @@
   services.mysql = {
     enable = true;
     package = pkgs.mariadb;
-  };
-
-  # EtherGuard
-  services.etherguard-edge = {
-    ipv4 = "100.64.88.23/24";
-    ipv6 = "2602:feda:1bf:deaf::23/64";
   };
 
   # Docker

@@ -8,7 +8,6 @@
     profiles.pingfinder
     profiles.exporter.node
     profiles.exporter.bird
-    profiles.etherguard.edge
     profiles.bird-lg-go
     profiles.rsshc
     profiles.docker
@@ -47,12 +46,6 @@
         ];
       };
     };
-  };
-
-  # EtherGuard
-  services.etherguard-edge = {
-    ipv4 = "100.64.88.41/24";
-    ipv6 = "2602:feda:1bf:deaf::41/64";
   };
 
   services.qemuGuest.enable = true;

@@ -11,7 +11,6 @@ in {
     ./hardware.nix
     profiles.mycore
     profiles.users.root
-    profiles.etherguard.edge
     profiles.mtrsb
     profiles.rsshc
     profiles.qemuGuest
@@ -47,12 +46,6 @@ in {
         ];
       };
     };
-  };
-
-  # EtherGuard
-  services.etherguard-edge = {
-    ipv4 = "100.64.88.25/24";
-    ipv6 = "2602:feda:1bf:deaf::25/64";
   };
 
   # Crontab

@@ -5,7 +5,6 @@
     profiles.mycore
     profiles.users.root
     profiles.exporter.node
-    profiles.etherguard.edge
     profiles.sing-box
     profiles.mtrsb
     profiles.rsshc
@@ -47,12 +46,6 @@
       "/etc/ssh/ssh_host_rsa_key"
       "/etc/ssh/ssh_host_ed25519_key"
     ];
-  };
-
-  # EtherGuard
-  services.etherguard-edge = {
-    ipv4 = "100.64.88.6/24";
-    ipv6 = "2602:feda:1bf:deaf::8/64";
   };
 
   # Coredns IPv6 forwarder

@@ -9,7 +9,6 @@
     profiles.pingfinder
     profiles.exporter.node
     profiles.exporter.bird
-    profiles.etherguard.edge
     profiles.docker
     profiles.bird-lg-go
     profiles.mtrsb
@@ -83,12 +82,6 @@
     ];
   };
 
-  # EtherGuard
-  services.etherguard-edge = {
-    ipv4 = "100.64.88.62/24";
-    ipv6 = "2602:feda:1bf:deaf::6/64";
-  };
-
   services.powerdns = {
     enable = true;
     extraConfig = ''
@@ -102,7 +95,6 @@
       default-soa-content=ns.imlonghao.dn42. hostmaster.@ 0 7200 1800 1209600 3600
     '';
   };
-  systemd.services.pdns.after = [ "etherguard-edge.service" ];
   services.mysql = {
     enable = true;
     package = pkgs.mariadb;

@@ -6,8 +6,6 @@
     profiles.mycore
     profiles.users.root
     profiles.exporter.node
-    profiles.etherguard.super
-    profiles.etherguard.edge
     profiles.mtrsb
     profiles.rsshc
     profiles.k3s.server
@@ -68,12 +66,6 @@
 
   # Docker
   virtualisation.docker.enable = true;
-
-  # EtherGuard
-  services.etherguard-edge = {
-    ipv4 = "100.64.88.74/24";
-    ipv6 = "2602:feda:1bf:deaf::1/64";
-  };
 
   # Coredns IPv6 forwarder
   services.coredns = {

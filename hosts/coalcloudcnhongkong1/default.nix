@@ -5,7 +5,6 @@
     profiles.mycore
     profiles.users.root
     profiles.exporter.node
-    profiles.etherguard.edge
     profiles.rsshc
     profiles.sing-box
     profiles.mtrsb
@@ -29,12 +28,6 @@
         }];
       };
     };
-  };
-
-  # EtherGuard
-  services.etherguard-edge = {
-    ipv4 = "100.64.88.42/24";
-    ipv6 = "2602:feda:1bf:deaf::42/64";
   };
 
   # Crontab

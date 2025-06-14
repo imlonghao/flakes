@@ -4,7 +4,6 @@
     ./bird.nix
     profiles.mycore
     profiles.users.root
-    profiles.etherguard.edge
     profiles.mtrsb
     profiles.rsshc
     profiles.sing-box
@@ -47,12 +46,6 @@
   };
 
   environment.systemPackages = with pkgs; [ rclone tmux ];
-
-  # EtherGuard
-  services.etherguard-edge = {
-    ipv4 = "100.64.88.30/24";
-    ipv6 = "2602:feda:1bf:deaf::30/64";
-  };
 
   # OpenVPN
   sops.secrets.kskb-ix.sopsFile = ./secrets.yml;

@@ -12,7 +12,6 @@ in {
     ./hardware.nix
     profiles.mycore
     profiles.users.root
-    profiles.etherguard.edge
     profiles.docker
     profiles.rsshc
     profiles.exporter.node
@@ -111,12 +110,6 @@ in {
       "/root/.ansible/"
     ];
     files = [ "/etc/machine-id" "/etc/ssh/ssh_host_ed25519_key" ];
-  };
-
-  # EtherGuard
-  services.etherguard-edge = {
-    ipv4 = "100.64.88.24/24";
-    ipv6 = "2602:feda:1bf:deaf::24/64";
   };
 
   # Corp SSH Public Key

@@ -8,7 +8,6 @@
     profiles.pingfinder
     profiles.exporter.node
     profiles.exporter.bird
-    profiles.etherguard.edge
     profiles.bird-lg-go
     profiles.mtrsb
     profiles.rsshc
@@ -66,12 +65,6 @@
       "/etc/ssh/ssh_host_rsa_key"
       "/etc/ssh/ssh_host_ed25519_key"
     ];
-  };
-
-  # EtherGuard
-  services.etherguard-edge = {
-    ipv4 = "100.64.88.66/24";
-    ipv6 = "2602:feda:1bf:deaf::2/64";
   };
 
   # chrony

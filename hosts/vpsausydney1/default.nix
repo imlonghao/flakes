@@ -18,7 +18,6 @@ in {
     profiles.exporter.node
     profiles.exporter.bird
     profiles.exporter.blackbox
-    profiles.etherguard.edge
     profiles.bird-lg-go
     profiles.sing-box
     profiles.mtrsb
@@ -66,12 +65,6 @@ in {
         ];
       };
     };
-  };
-
-  # EtherGuard
-  services.etherguard-edge = {
-    ipv4 = "100.64.88.22/24";
-    ipv6 = "2602:feda:1bf:deaf::22/64";
   };
 
   # Crontab

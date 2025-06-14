@@ -5,7 +5,6 @@
     ./hardware.nix
     profiles.mycore
     profiles.users.root
-    profiles.etherguard.edge
     profiles.exporter.node
     profiles.mtrsb
     profiles.rsshc
@@ -43,12 +42,6 @@
 
   # Docker
   virtualisation.docker.enable = true;
-
-  # EtherGuard
-  services.etherguard-edge = {
-    ipv4 = "100.64.88.16/24";
-    ipv6 = "2602:feda:1bf:deaf::16/64";
-  };
 
   # ranet
   services.ranet = {

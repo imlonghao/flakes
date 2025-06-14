@@ -4,7 +4,6 @@
     ./bird.nix
     profiles.mycore
     profiles.users.root
-    profiles.etherguard.edge
     profiles.mtrsb
     profiles.rsshc
     profiles.exporter.node
@@ -58,12 +57,6 @@
   environment.persistence."/persist" = {
     directories = [ "/etc/rancher" "/var/lib" "/root/.ssh" ];
     files = [ "/etc/machine-id" "/etc/ssh/ssh_host_ed25519_key" ];
-  };
-
-  # EtherGuard
-  services.etherguard-edge = {
-    ipv4 = "100.64.88.29/24";
-    ipv6 = "2602:feda:1bf:deaf::29/64";
   };
 
   # Borgmatic

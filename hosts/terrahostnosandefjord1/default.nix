@@ -8,7 +8,6 @@
     profiles.pingfinder
     profiles.exporter.node
     profiles.exporter.bird
-    profiles.etherguard.edge
     profiles.bird-lg-go
     profiles.mtrsb
     profiles.rsshc
@@ -65,12 +64,6 @@
 
   # Boot
   boot.loader.grub.device = "/dev/sda";
-
-  # EtherGuard
-  services.etherguard-edge = {
-    ipv4 = "100.64.88.18/24";
-    ipv6 = "2602:feda:1bf:deaf::18/64";
-  };
 
   # Docker
   virtualisation.docker.enable = true;
