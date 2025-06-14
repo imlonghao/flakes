@@ -1,6 +1,5 @@
 { pkgs, profiles, ... }: {
   imports = [
-    ./bird.nix
     ./hardware.nix
     profiles.mycore
     profiles.users.root
@@ -43,23 +42,6 @@
   services.juicity.enable = true;
 
   services.qemuGuest.enable = true;
-
-  mptcp = {
-    enable = true;
-    endpoint = [
-      {
-        id = 1;
-        address = "100.64.88.36";
-        dev = "eg_net";
-      }
-      {
-        id = 2;
-        address = "104.192.93.183";
-        dev = "eth0";
-        port = 44444;
-      }
-    ];
-  };
 
   # ranet
   services.ranet = {
