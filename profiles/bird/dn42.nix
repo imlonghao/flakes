@@ -174,7 +174,7 @@
     };
   }
   protocol bgp flapalert from dnpeers {
-    neighbor 100.64.88.17 port 1790 as 4242421888;
+    neighbor 100.64.1.19 port 1790 as 4242421888;
   }
   ${builtins.concatStringsSep "\n" (lib.flip map (config.dn42) (x:
     if x.mpbgp then ''
