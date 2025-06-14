@@ -11,6 +11,7 @@
     profiles.bird-lg-go
     profiles.mtrsb
     profiles.rsshc
+    profiles.docker
   ];
 
   # Network
@@ -64,9 +65,6 @@
 
   # Boot
   boot.loader.grub.device = "/dev/sda";
-
-  # Docker
-  virtualisation.docker.enable = true;
 
   # ranet
   services.ranet = {

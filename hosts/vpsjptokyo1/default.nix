@@ -9,6 +9,7 @@
     profiles.rsshc
     profiles.sing-box
     profiles.mtrsb
+    profiles.docker
   ];
 
   networking = {

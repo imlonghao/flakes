@@ -7,6 +7,7 @@
     profiles.mtrsb
     profiles.exporter.node
     profiles.rsshc
+    profiles.docker
   ];
 
   boot.kernelParams = [ "net.ifnames=0" ];
@@ -45,9 +46,6 @@
       };
     };
   };
-
-  # Docker
-  virtualisation.docker.enable = true;
 
   # ranet
   services.ranet = {

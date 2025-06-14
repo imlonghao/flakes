@@ -9,6 +9,7 @@
     profiles.mtrsb
     profiles.rsshc
     profiles.k3s.server
+    profiles.docker
   ];
 
   boot.loader.grub.device = "/dev/vda";
@@ -63,9 +64,6 @@
   };
 
   environment.systemPackages = with pkgs; [ docker-compose ];
-
-  # Docker
-  virtualisation.docker.enable = true;
 
   # Coredns IPv6 forwarder
   services.coredns = {

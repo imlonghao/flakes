@@ -9,6 +9,7 @@
     profiles.mtrsb
     profiles.rsshc
     profiles.k3s.agent
+    profiles.docker
   ];
 
   boot.loader.grub.device = "/dev/vda";
@@ -39,9 +40,6 @@
   };
 
   environment.systemPackages = with pkgs; [ docker-compose ];
-
-  # Docker
-  virtualisation.docker.enable = true;
 
   # ranet
   services.ranet = {
