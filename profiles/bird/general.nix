@@ -19,7 +19,7 @@ in ''
     ${route6}
     ipv6;
   }
-  function is_martian_v4() {
+  function is_martian_v4() -> bool {
     return net ~ [
       0.0.0.0/8+,
       10.0.0.0/8+,
@@ -38,7 +38,7 @@ in ''
       240.0.0.0/4+
     ];
   }
-  function is_martian_v6() {
+  function is_martian_v6() -> bool {
     return net ~ [
       ::/8+,
       ::ffff:0.0.0.0/96+,

@@ -83,7 +83,6 @@ in {
   };
   config = mkIf cfg.enable {
     environment.systemPackages = [ pkgs.strongswan pkgs.ranet pkgs.ranetdebug ];
-    services.bird2.package = pkgs.bird-babel-rtt;
     sops.secrets.ranet = {
       sopsFile = "${self}/secrets/ranet.txt";
       format = "binary";
