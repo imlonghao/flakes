@@ -19,7 +19,7 @@ in {
         RestartSec = 10;
       };
       wants = [ "network-online.target" ];
-      after = [ "network-online.target" "etherguard-edge.service" ];
+      after = [ "network-online.target" "supervxlan.service" "ranet.service" ];
       wantedBy = [ "multi-user.target" ];
     };
   };
