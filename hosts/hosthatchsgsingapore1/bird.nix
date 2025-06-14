@@ -21,7 +21,7 @@ let
     lib = lib;
   };
 in {
-  services.bird2 = {
+  services.bird = {
     enable = true;
     config = generalConf + dn42Conf;
   };

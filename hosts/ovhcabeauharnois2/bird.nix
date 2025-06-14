@@ -4,7 +4,7 @@ let
     config = config;
   };
 in {
-  services.bird2 = {
+  services.bird = {
     enable = true;
     config = generalConf + import profiles.bird.kernel { } + import profiles.bird.blackbgp { };
   };

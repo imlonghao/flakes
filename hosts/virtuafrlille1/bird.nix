@@ -6,7 +6,7 @@ let
   };
   kernelConf = import profiles.bird.kernel { src6 = "2602:fab0:27::"; };
 in {
-  services.bird2 = {
+  services.bird = {
     enable = true;
     config = generalConf + kernelConf + import profiles.bird.blackbgp { } + ''
       protocol static {

@@ -10,7 +10,7 @@ let
     src6 = "2602:fab0:40::";
   };
 in {
-  services.bird2 = {
+  services.bird = {
     enable = true;
     config = generalConf + kernelConf + ''
       protocol static {

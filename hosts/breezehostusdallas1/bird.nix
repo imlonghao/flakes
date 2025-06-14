@@ -18,7 +18,7 @@ let
     lib = lib;
   };
 in {
-  services.bird2 = {
+  services.bird = {
     enable = true;
     config = generalConf + dn42Conf + ''
       protocol bgp AS4201270000 from dnpeers {

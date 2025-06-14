@@ -7,7 +7,7 @@ let
   };
   kernelConf = import profiles.bird.kernel { };
 in {
-  services.bird2 = {
+  services.bird = {
     enable = true;
     config = generalConf + kernelConf;
   };

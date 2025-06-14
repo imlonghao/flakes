@@ -11,7 +11,7 @@ let
     '';
   };
 in {
-  services.bird2 = {
+  services.bird = {
     enable = true;
     config = generalConf + import profiles.bird.kernel { } + ''
       protocol bgp starrydns4 {

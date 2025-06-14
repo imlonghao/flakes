@@ -14,7 +14,7 @@ let
   };
   kernelConf = import profiles.bird.kernel { src6 = "2602:fab0:31:1::"; };
 in {
-  services.bird2 = {
+  services.bird = {
     enable = true;
     config = generalConf + kernelConf + import profiles.bird.blackbgp { } + ''
       ipv4 table as199632v4;
