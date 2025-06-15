@@ -234,7 +234,7 @@
       endpoint = "lax.node.cowgl.xyz:31888";
       publickey = "jhOukGNAKHI8Ivn8uI1TS25n5ho/rVlKFfenGmwCVlg=";
       asn = 4242423999;
-      e6 = "fe80::3:3999";
+      e6 = "fe80::2:3999";
       e4 = "172.22.144.66";
       l4 = "172.22.68.0";
       mpbgp = false;
