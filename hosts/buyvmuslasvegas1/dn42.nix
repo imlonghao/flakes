@@ -210,6 +210,14 @@
       publickey = "QSAeFPotqFpF6fFe3CMrMjrpS5AL54AxWY2w1+Ot2Bo=";
     }
     {
+      name = "wg3377";
+      asn = 4242423377;
+      e6 = "fe80::3377";
+      listen = 23377;
+      endpoint = "los1-us.peer.dn42.leziblog.com:21888";
+      publickey = "Xzt9UrH2moj84QSH0jsw8Zj+jwXwdBLpApe4hHyfnAw=";
+    }
+    {
       name = "wg3797";
       listen = 23797;
       asn = 4242423797;

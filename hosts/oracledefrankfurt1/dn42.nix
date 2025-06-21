@@ -210,6 +210,14 @@
       ipv6 = "fd21:5c0c:9b7e:4:3177::1/80";
     }
     {
+      name = "wg3377";
+      asn = 4242423377;
+      e6 = "fe80::3377";
+      listen = 23377;
+      endpoint = "de1.peer.dn42.leziblog.com:21888";
+      publickey = "Kd5+CvZW3NRvUXpbdqGFt85VzMyReBtnVeDVXae06Qg=";
+    }
+    {
       name = "wg3814";
       listen = 23814;
       endpoint = "193.77.181.233:51820";
