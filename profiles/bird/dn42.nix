@@ -173,8 +173,19 @@
       export filter dn42_filter_v6;
     };
   }
-  protocol bgp flapalert from dnpeers {
+  protocol bgp flapalert {
+    local as 4242421888;
     neighbor 100.64.1.19 port 1790 as 4242421888;
+    ipv4 {
+        add paths on;
+        export all;
+        import none;
+    };
+    ipv6 {
+        add paths on;
+        export all;
+        import none;
+    };
   }
   ${builtins.concatStringsSep "\n" (lib.flip map (config.dn42) (x:
     if x.mpbgp then ''
