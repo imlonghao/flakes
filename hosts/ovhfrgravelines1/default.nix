@@ -87,6 +87,7 @@ in {
     q
     ranet
     rclone
+    rdap
     ripgrep
     rustic
     socat
