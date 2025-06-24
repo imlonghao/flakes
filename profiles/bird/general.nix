@@ -13,10 +13,12 @@ in ''
   }
   protocol static {
     ${route4}
+    route 172.20.0.0/14 blackhole;
     ipv4;
   }
   protocol static {
     ${route6}
+    route fd00::/8 blackhole;
     ipv6;
   }
   function is_martian_v4() -> bool {
