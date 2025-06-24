@@ -37,7 +37,6 @@
           prefixLength = 64;
         }];
       };
-    };
       eth0 = {
         ipv4.addresses = [{
           address = "193.32.149.99";
