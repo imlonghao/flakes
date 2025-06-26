@@ -12,6 +12,14 @@
       publickey = "1fBfqOJnkf9blffCy5/DfQm+Sea3BkKikxUwOJA8CAs=";
     }
     {
+      name = "wg1336";
+      asn = 4242421336;
+      e6 = "fe80::1336";
+      listen = 21336;
+      endpoint = "jp1.dn42.xeiu.top:21888";
+      publickey = "eacDn4IjHBMavV9IeilwPmrVDoVyKBkNhgK6qUBskiM=";
+    }
+    {
       name = "wg2189";
       asn = 4242422189;
       e6 = "fe80::2189:ee";

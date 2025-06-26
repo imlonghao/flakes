@@ -97,6 +97,14 @@
       e6 = "fe80::117";
     }
     {
+      name = "wg1336";
+      asn = 4242421336;
+      e6 = "fe80::1336";
+      listen = 21336;
+      endpoint = "fra1.dn42.xeiu.top:21888";
+      publickey = "Z5sN+emFAsZxrcpqcBnkww6X70FlHLRWkcuab4O7jzI=";
+    }
+    {
       name = "wg1411";
       listen = 21411;
       endpoint = "famfo.xyz:51888";
