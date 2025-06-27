@@ -99,7 +99,7 @@
     {
       name = "wg1336";
       asn = 4242421336;
-      e6 = "fe80::1336";
+      e6 = "fe80::2:1336";
       listen = 21336;
       endpoint = "fra1.dn42.xeiu.top:21888";
       publickey = "Z5sN+emFAsZxrcpqcBnkww6X70FlHLRWkcuab4O7jzI=";
