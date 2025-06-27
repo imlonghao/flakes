@@ -31,13 +31,6 @@
     };
   };
 
-  # Crontab
-  services.cron = {
-    enable = true;
-    systemCronJobs =
-      [ "0 1 * * * root ${pkgs.git}/bin/git -C /persist/pki pull" ];
-  };
-
   sops.secrets.juicity.sopsFile = ./secrets.yml;
   services.juicity.enable = true;
 

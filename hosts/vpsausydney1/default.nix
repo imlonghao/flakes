@@ -72,7 +72,6 @@ in {
     enable = true;
     systemCronJobs = [
       "* * * * * root ${cronJob} > /dev/null 2>&1"
-      "0 1 * * * root ${pkgs.git}/bin/git -C /persist/pki pull"
     ];
   };
 

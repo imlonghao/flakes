@@ -36,13 +36,6 @@
     dhcpcd.allowInterfaces = [ "ens5" ];
   };
 
-  # Crontab
-  services.cron = {
-    enable = true;
-    systemCronJobs =
-      [ "0 1 * * * root ${pkgs.git}/bin/git -C /persist/pki pull" ];
-  };
-
   # Realm
   services.realm = {
     enable = true;

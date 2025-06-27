@@ -77,7 +77,6 @@
   services.cron = {
     enable = true;
     systemCronJobs = [
-      "0 1 * * * root ${pkgs.git}/bin/git -C /persist/pki pull"
       "* * * * * root ${pkgs.iptables}/bin/iptables -t nat -C PREROUTING -p tcp --dport 30465 -j DNAT --to-destination 148.251.67.66:465 || ${pkgs.iptables}/bin/iptables -t nat -A PREROUTING -p tcp --dport 30465 -j DNAT --to-destination 148.251.67.66:465"
       "* * * * * root ${pkgs.iptables}/bin/iptables -t nat -C POSTROUTING ! -s 10.0.0.97 -p tcp --dport 465 -j SNAT --to-source 10.0.0.97 || ${pkgs.iptables}/bin/iptables -t nat -A POSTROUTING ! -s 10.0.0.97 -p tcp --dport 465 -j SNAT --to-source 10.0.0.97"
       "0 0,4,8,12,16,20 * * * root ${pkgs.iproute2}/bin/ip a a fd21:5c0c:9b7e:bc04::/64 dev lo"

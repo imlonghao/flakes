@@ -61,13 +61,6 @@
 
   environment.systemPackages = with pkgs; [ docker-compose ];
 
-  # Crontab
-  services.cron = {
-    enable = true;
-    systemCronJobs =
-      [ "0 1 * * * root ${pkgs.git}/bin/git -C /persist/pki pull" ];
-  };
-
   # Mariadb
   services.mysql = {
     enable = true;
