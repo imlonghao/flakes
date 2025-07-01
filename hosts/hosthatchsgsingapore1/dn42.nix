@@ -85,6 +85,14 @@
       e6 = "fe80::1080:39";
     }
     {
+      name = "wg1240";
+      listen = 21240;
+      endpoint = "sg-01.prefixlabs.net:21888";
+      publickey = "FzWgCU4/y4pyGibDF5UYS13LvDCQ3569uNZJRUEIXiI=";
+      asn = 4242421240;
+      e6 = "fe80::1240:7";
+    }
+    {
       name = "wg1588";
       listen = 21588;
       endpoint = "sg-sin01.dn42.tech9.io:59771";

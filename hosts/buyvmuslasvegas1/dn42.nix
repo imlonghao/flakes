@@ -94,6 +94,14 @@
       publickey = "Z6OKJSR1sxMBgUd1uXEe/UxoBsOvRgbTnexy7z/ryUI=";
     }
     {
+      name = "wg1240";
+      listen = 21240;
+      endpoint = "us-03.prefixlabs.net:21888";
+      publickey = "oNabDMpFKum4CRbvPcwVE0Y4QsAfH0Sh439dfQYhnkQ=";
+      asn = 4242421240;
+      e6 = "fe80::1240:4";
+    }
+    {
       name = "wg1716";
       e6 = "fe80::1716:1888";
       asn = 4242421716;
