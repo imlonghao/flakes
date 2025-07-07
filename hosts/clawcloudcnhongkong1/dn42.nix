@@ -78,6 +78,14 @@
       publickey = "f9ZDh2U0UXxtEroHUYNWzaE6TZM3hhY3eLXQQpgkvBY=";
     }
     {
+      name = "wg1331";
+      asn = 4242421331;
+      e6 = "fe80::1331";
+      listen = 21331;
+      endpoint = "apr1.hk.strexp.net:21888";
+      publickey = "tk/rTyA7TsSg/wmF8FmgQOuPJPxYFoyJZauw6UVO8Hw=";
+    }
+    {
       name = "wg1588";
       l4 = "172.22.68.3";
       e4 = "172.20.16.145";

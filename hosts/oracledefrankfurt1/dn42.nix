@@ -105,6 +105,14 @@
       e6 = "fe80::1240:11";
     }
     {
+      name = "wg1331";
+      asn = 4242421331;
+      e6 = "fe80::1331";
+      listen = 21331;
+      endpoint = "fra1.de.dn42.strexp.net:21888";
+      publickey = "5RETqytZq0UP7t3Ui6OSwkacYUtZc651rozouXYdajY=";
+    }
+    {
       name = "wg1336";
       asn = 4242421336;
       e6 = "fe80::2:1336";
