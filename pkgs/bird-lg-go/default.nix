@@ -2,17 +2,17 @@
 
 buildGoModule rec {
   pname = "bird-lg-go";
-  version = "v1.0.0";
+  version = "1.3.10";
   src = fetchFromGitHub ({
     owner = "xddxdd";
     repo = "bird-lg-go";
-    rev = "v1.0.0";
-    sha256 = "sha256-Fm1upm/jMnT3Lx1zPD75uYEfoF9mpQK12kR80Gm/mFw=";
+    rev = "v${version}";
+    sha256 = "sha256-PIdy0hypwhPBmtn2GtptRNhACfNj8QLzEQA1onJ/v9k=";
   });
 
   modRoot = "proxy";
 
-  vendorHash = "sha256-b4Md/LdwNhbKVXdnZ+LO4J/Y0hxBrCcvTW8J1mmysaY=";
+  vendorHash = "sha256-MAR+4o+BKd24uOpgcwsfMWoKWbRYxrCG6tMCrH8LS7Y=";
 
   meta = {
     description =
