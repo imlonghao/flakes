@@ -47,7 +47,7 @@
       ];
       lo.ipv6.addresses = [
         {
-          address = "fd21:5c0c:9b7e:6::";
+          address = "fd21:5c0c:9b7e:6::1";
           prefixLength = 64;
         }
 

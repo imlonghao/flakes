@@ -44,7 +44,7 @@
           prefixLength = 128;
         }
         {
-          address = "fd21:5c0c:9b7e:1::";
+          address = "fd21:5c0c:9b7e:1::1";
           prefixLength = 64;
         }
       ];

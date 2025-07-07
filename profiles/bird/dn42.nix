@@ -46,7 +46,7 @@
         if net = ::/0 then reject;
         if is_valid_network_v6() then krt_prefsrc = fd21:5c0c:9b7e:${
           toString ip
-        }::;
+        }::1;
         accept;
       };
     };

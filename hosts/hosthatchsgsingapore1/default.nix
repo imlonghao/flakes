@@ -59,7 +59,7 @@
         ];
         ipv6.addresses = [
           {
-            address = "fd21:5c0c:9b7e:2::";
+            address = "fd21:5c0c:9b7e:2::1";
             prefixLength = 64;
           }
           {
