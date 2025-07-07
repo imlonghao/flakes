@@ -14,6 +14,14 @@
       publickey = "ClSMc4CO3PARJ4gRgcee4DDTAxa8tEeDxFDtBDb0bCk=";
     }
     {
+      name = "wg0150";
+      e6 = "fe80::150";
+      asn = 4242420150;
+      listen = 20150;
+      endpoint = "iad.darkpoint.xyz:21888";
+      publickey = "1o0XfQvBM1gqknqzfuOnVmf2RjRTHuyMZYNipSSb2TQ=";
+    }
+    {
       name = "wg0202";
       e6 = "fe80::202:13";
       asn = 4242420202;
