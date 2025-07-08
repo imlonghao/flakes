@@ -136,6 +136,7 @@
         virtuafrlille1 = { hostname = "virtua-fr-lille-1.ni.sb"; };
         f4uskansas1 = { hostname = "f4-us-kansas-1.ni.sb"; };
         dmituslosangeles1 = { hostname = "dmit-us-losangeles-1.ni.sb"; };
+        dmitcnhongkong1 = { hostname = "dmit-cn-hongkong-1.ni.sb"; };
         serverfactorynleygelshoven1 = {
           hostname = "serverfactory-nl-eygelshoven-1.ni.sb";
         };
