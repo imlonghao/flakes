@@ -1,10 +1,16 @@
-{ config, pkgs, profiles, ... }:
+{
+  config,
+  pkgs,
+  profiles,
+  ...
+}:
 let
   cronJob = pkgs.writeShellScript "199632.sh" ''
     ip rule | grep -F 23.146.88.0 || ip rule add from 23.146.88.0/24 table 199632
     ip -6 rule | grep -F 2602:fab0:31::/48 || ip -6 rule add from 2602:fab0:31::/48 table 199632
   '';
-in {
+in
+{
   disabledModules = [ "services/backup/borgmatic.nix" ];
 
   imports = [
@@ -25,7 +31,10 @@ in {
   nix.gc.dates = "monthly";
 
   networking = {
-    nameservers = [ "1.1.1.1" "8.8.8.8" ];
+    nameservers = [
+      "1.1.1.1"
+      "8.8.8.8"
+    ];
     defaultGateway = "37.187.76.254";
     defaultGateway6 = {
       interface = "eth0";
@@ -34,20 +43,26 @@ in {
     dhcpcd.enable = false;
     interfaces = {
       lo = {
-        ipv4.addresses = [{
-          address = "23.146.88.6";
-          prefixLength = 32;
-        }];
+        ipv4.addresses = [
+          {
+            address = "23.146.88.6";
+            prefixLength = 32;
+          }
+        ];
       };
       eth0 = {
-        ipv4.addresses = [{
-          address = "37.187.76.11";
-          prefixLength = 24;
-        }];
-        ipv6.addresses = [{
-          address = "2001:41d0:a:2c0b::1";
-          prefixLength = 128;
-        }];
+        ipv4.addresses = [
+          {
+            address = "37.187.76.11";
+            prefixLength = 24;
+          }
+        ];
+        ipv6.addresses = [
+          {
+            address = "2001:41d0:a:2c0b::1";
+            prefixLength = 128;
+          }
+        ];
       };
     };
   };
@@ -99,6 +114,10 @@ in {
     uv
     virt-manager
     whois
+    # pre-commit with nixfmt env
+    pre-commit
+    cabal-install
+    ghc
   ];
 
   environment.persistence."/persist" = {
@@ -110,7 +129,10 @@ in {
       "/root/.local"
       "/root/.ansible/"
     ];
-    files = [ "/etc/machine-id" "/etc/ssh/ssh_host_ed25519_key" ];
+    files = [
+      "/etc/machine-id"
+      "/etc/ssh/ssh_host_ed25519_key"
+    ];
   };
 
   # Corp SSH Public Key
@@ -125,7 +147,9 @@ in {
   };
 
   # Docker
-  virtualisation.docker = { storageDriver = "overlay2"; };
+  virtualisation.docker = {
+    storageDriver = "overlay2";
+  };
 
   # CronJob
   services.cron = {
@@ -139,8 +163,7 @@ in {
 
   # Borgmatic
   sops.secrets.borgmatic.sopsFile = ./secrets.yml;
-  systemd.services.borgmatic.serviceConfig.EnvironmentFile =
-    "/run/secrets/borgmatic";
+  systemd.services.borgmatic.serviceConfig.EnvironmentFile = "/run/secrets/borgmatic";
   services.borgmatic = {
     enable = true;
     configurations = {
@@ -152,10 +175,12 @@ in {
           "/persist/docker/act_runner/data/.local"
           "/persist/docker/act_runner/data/cache"
         ];
-        repositories = [{
-          path = "ssh://q3924w6o@q3924w6o.repo.borgbase.com/./repo";
-          label = "borgbase";
-        }];
+        repositories = [
+          {
+            path = "ssh://q3924w6o@q3924w6o.repo.borgbase.com/./repo";
+            label = "borgbase";
+          }
+        ];
         encryption_passphrase = "\${FILEBROWSER_BORG_PASSPHRASE}";
         compression = "zstd";
         keep_daily = 7;
@@ -178,7 +203,10 @@ in {
   networking.wireguard.interfaces.wrap = {
     table = "913335";
     privateKeyFile = config.sops.secrets.wrap.path;
-    ips = [ "172.16.0.2/32" "2606:4700:110:899a:329c:9ece:ac7e:4b56/128" ];
+    ips = [
+      "172.16.0.2/32"
+      "2606:4700:110:899a:329c:9ece:ac7e:4b56/128"
+    ];
     mtu = 1420;
     postSetup = [
       "${pkgs.iproute2}/bin/ip rule add from 10.133.35.0/24 table 913335"
@@ -188,12 +216,17 @@ in {
       "${pkgs.iproute2}/bin/ip rule del from 10.133.35.0/24 table 913335"
       "${pkgs.iproute2}/bin/ip -6 rule del from 133:35::/64 table 913335"
     ];
-    peers = [{
-      endpoint = "engage.cloudflareclient.com:2408";
-      publicKey = "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=";
-      allowedIPs = [ "0.0.0.0/0" "::/0" ];
-      persistentKeepalive = 15;
-    }];
+    peers = [
+      {
+        endpoint = "engage.cloudflareclient.com:2408";
+        publicKey = "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=";
+        allowedIPs = [
+          "0.0.0.0/0"
+          "::/0"
+        ];
+        persistentKeepalive = 15;
+      }
+    ];
   };
 
   # Rustic
