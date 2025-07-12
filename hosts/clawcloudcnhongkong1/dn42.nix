@@ -104,6 +104,14 @@
       publickey = "unTYSat5YjkY+BY31Q9xLSfFhTUBvn3CiDCSZxbINVM=";
     }
     {
+      name = "wg1686";
+      asn = 4242421686;
+      e6 = "fe80::1686";
+      listen = 21686;
+      endpoint = "hk-1.dn42.guet.eu.org:21888";
+      publickey = "D4MBIR+HsCPeEGuPg1YziRe1RgaG7jaiTw4wmV8XZUY=";
+    }
+    {
       name = "wg1772";
       listen = 21772;
       endpoint = "154.12.177.103:41888";
