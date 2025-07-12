@@ -11,6 +11,6 @@ if [ -z "$target" ]; then
 fi
 
 ssh-keyscan "$target" | grep ed25519 | awk '{printf "%s %s", $2, $3}' > "$MYTMPDIR/ssh_host_ed25519_key.pub"
-step ssh certificate --host --sign "$target" "$MYTMPDIR/ssh_host_ed25519_key.pub"
+step ssh certificate --ca-url https://ca.esd.cc --root /nix/store/0m8vj70qibm55h07lazany0nshi5c31j-ca.crt --host --sign "$target" "$MYTMPDIR/ssh_host_ed25519_key.pub"
 cat "$MYTMPDIR/ssh_host_ed25519_key-cert.pub"
 scp "$MYTMPDIR/ssh_host_ed25519_key-cert.pub" "$target":/persist/etc/ssh/step-cert.pub
