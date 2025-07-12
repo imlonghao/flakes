@@ -212,6 +212,14 @@
       e6 = "fe80::2458";
     }
     {
+      name = "wg2575";
+      asn = 4242422575;
+      e6 = "fe80::2575:6";
+      listen = 22575;
+      endpoint = "zrh2-ch.androw.eu:21888";
+      publickey = "iXi9Hy4UsEsafmI50u7N5pi5tK+t/X6VdGE8b8GJIXg=";
+    }
+    {
       name = "wg2717";
       listen = 22717;
       endpoint = "nl.vm.whojk.com:23024";
