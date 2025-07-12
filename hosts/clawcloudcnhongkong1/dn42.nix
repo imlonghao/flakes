@@ -54,6 +54,14 @@
       publickey = "jtE83RMoN49bs8TOetxrGdzqywz2BI+uT1qJrGI7GVU=";
     }
     {
+      name = "wg0712";
+      asn = 4242420712;
+      e6 = "fe80::712";
+      listen = 20712;
+      endpoint = "dn42.hkg.luotianyi.us:21888";
+      publickey = "EdTexGeX46urgHTnPJYCRyRI5kV4h/jTPpN2JQKYXXo=";
+    }
+    {
       name = "wg0803";
       asn = 4242420803;
       e6 = "fe80::0803";

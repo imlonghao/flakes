@@ -89,6 +89,14 @@
       e6 = "fe80::585";
     }
     {
+      name = "wg0712";
+      asn = 4242420712;
+      e6 = "fe80::712";
+      listen = 20712;
+      endpoint = "dn42.ams.luotianyi.us:30105";
+      publickey = "GQl6mSdQB6BOQR9pnhtFUIBrlXaPsjp16tRSbVE8rCw=";
+    }
+    {
       name = "wg1080";
       listen = 21080;
       endpoint = "fra.peer.highdef.network:21888";
