@@ -1,26 +1,34 @@
-{ profiles, ... }: {
+{ profiles, ... }:
+{
   imports = [
     ./hardware.nix
     profiles.mycore
     profiles.users.root
+    profiles.docker
+    profiles.rsshc
   ];
 
   boot.loader.grub.device = "/dev/vda";
+
+  systemd.network = {
+    enable = true;
+    networks.eth0 = {
+      address = [ "154.3.37.101/32" ];
+      matchConfig.Name = "eth0";
+      routes = [
+        {
+          Gateway = "193.41.250.250";
+          GatewayOnLink = true;
+        }
+      ];
+    };
+  };
   networking = {
-    dhcpcd.enable = false;
-    nameservers = [ "8.8.8.8" "1.1.1.1" ];
-    defaultGateway = {
-      address = "193.41.250.250";
-      interface = "eth0";
-    };
-    interfaces = {
-      eth0 = {
-        ipv4.addresses = [{
-          address = "154.3.37.101";
-          prefixLength = 32;
-        }];
-      };
-    };
+    useDHCP = false;
+    nameservers = [
+      "8.8.8.8"
+      "1.1.1.1"
+    ];
   };
 
   environment.persistence."/persist" = {
