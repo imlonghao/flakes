@@ -155,6 +155,14 @@
       e6 = "fe80::1816";
     }
     {
+      name = "wg1999";
+      asn = 4242421999;
+      e6 = "fe80::1999";
+      listen = 21999;
+      endpoint = "fra1.dn42.luotianyi.sbs:21888";
+      publickey = "3zIlkokGMnHgL0VrLxySZ45ziIOzEMldXQH/LMe1PAk=";
+    }
+    {
       name = "wg2092";
       listen = 22092;
       endpoint = "de0.dn42.pebkac.gr:51888";
