@@ -1,7 +1,8 @@
 { config, ... }:
 let
   ip = "100.64.1.${toString config.services.ranet.id}";
-in {
+in
+{
   services.prometheus.exporters.node = {
     enable = true;
     listenAddress = ip;
@@ -11,6 +12,5 @@ in {
       "--collector.netdev.device-exclude=^(docker[0-9]|vboxnet[0-9]|br-.+|veth.+|swan.+)$"
     ];
   };
-  systemd.services."prometheus-node-exporter".after =
-    [ "ranet.service" ];
+  systemd.services."prometheus-node-exporter".after = [ "ranet.service" ];
 }

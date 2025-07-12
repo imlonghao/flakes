@@ -1,4 +1,10 @@
-{ config, pkgs, lib, self, ... }:
+{
+  config,
+  pkgs,
+  lib,
+  self,
+  ...
+}:
 with lib;
 let
   cfg = config.services.ranet;
@@ -33,24 +39,42 @@ let
       echo "$fdb" | grep " 100.64.0.$id " > /dev/null || ${pkgs.iproute2}/bin/bridge fdb append 00:00:00:00:00:00 dev gravity dst "100.64.0.$id"
     done
   '';
-  configfile = pkgs.writeText "ranet.json" (builtins.toJSON ({
-    organization = "imlonghao";
-    common_name = config.networking.hostName;
-    endpoints = [ ] ++ (if cfg.ipv4 then [{
-      serial_number = "0";
-      address_family = "ip4";
-      port = cfg.port;
-      updown = updown;
-    }] else
-      [ ]) ++ (if cfg.ipv6 then [{
-        serial_number = "1";
-        address_family = "ip6";
-        port = cfg.port;
-        updown = updown;
-      }] else
-        [ ]);
-  }));
-in {
+  configfile = pkgs.writeText "ranet.json" (
+    builtins.toJSON ({
+      organization = "imlonghao";
+      common_name = config.networking.hostName;
+      endpoints =
+        [ ]
+        ++ (
+          if cfg.ipv4 then
+            [
+              {
+                serial_number = "0";
+                address_family = "ip4";
+                port = cfg.port;
+                updown = updown;
+              }
+            ]
+          else
+            [ ]
+        )
+        ++ (
+          if cfg.ipv6 then
+            [
+              {
+                serial_number = "1";
+                address_family = "ip6";
+                port = cfg.port;
+                updown = updown;
+              }
+            ]
+          else
+            [ ]
+        );
+    })
+  );
+in
+{
   options.services.ranet = {
     enable = mkEnableOption "ranet IPSEC";
     interface = mkOption {
@@ -83,7 +107,11 @@ in {
     };
   };
   config = mkIf cfg.enable {
-    environment.systemPackages = [ pkgs.strongswan pkgs.ranet pkgs.ranetdebug ];
+    environment.systemPackages = [
+      pkgs.strongswan
+      pkgs.ranet
+      pkgs.ranetdebug
+    ];
     sops.secrets.ranet = {
       sopsFile = "${self}/secrets/ranet.txt";
       format = "binary";
@@ -124,15 +152,19 @@ in {
     systemd.services.ranet = {
       serviceConfig = {
         Type = "simple";
-        ExecStartPre =
-          "${pkgs.wget}/bin/wget -O /persist/ranet-registry.json https://f001.esd.cc/file/imlonghao-meow/2d6780b0-4c5e-4a02-9c0c-281102ee8354-registry.json";
-        ExecStart =
-          "${pkgs.ranet}/bin/ranet --config ${configfile} --registry /persist/ranet-registry.json --key ${config.sops.secrets.ranet.path} up";
+        ExecStartPre = "${pkgs.wget}/bin/wget -O /persist/ranet-registry.json https://f001.esd.cc/file/imlonghao-meow/2d6780b0-4c5e-4a02-9c0c-281102ee8354-registry.json";
+        ExecStart = "${pkgs.ranet}/bin/ranet --config ${configfile} --registry /persist/ranet-registry.json --key ${config.sops.secrets.ranet.path} up";
         ExecStartPost = "-${postScript}";
         ConditionPathExists = [ "/persist/ranet-registry.json" ];
       };
-      wants = [ "network-online.target" "strongswan-swanctl.service" ];
-      after = [ "network-online.target" "strongswan-swanctl.service" ];
+      wants = [
+        "network-online.target"
+        "strongswan-swanctl.service"
+      ];
+      after = [
+        "network-online.target"
+        "strongswan-swanctl.service"
+      ];
       wantedBy = [ "multi-user.target" ];
     };
     systemd.timers.ranet = {

@@ -1,12 +1,23 @@
 # SPDX-FileCopyrightText: 2020 Aluísio Augusto Silva Gonçalves <https://aasg.name>
 # SPDX-License-Identifier: MIT
 
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 let
-  inherit (lib) mkEnableOption mkIf mkOption types;
+  inherit (lib)
+    mkEnableOption
+    mkIf
+    mkOption
+    types
+    ;
 
   cfg = config.services.pingfinder;
-in {
+in
+{
   options = {
     services.pingfinder = {
       enable = mkEnableOption "dn42 peer finder client script";
@@ -56,8 +67,7 @@ in {
           "WARNLOCK=/tmp/pingfinder-warn.lock"
           "LOCKFILE=/tmp/pingfinder-exec.lock"
         ];
-        EnvironmentFile =
-          mkIf (cfg.environmentFile != null) [ cfg.environmentFile ];
+        EnvironmentFile = mkIf (cfg.environmentFile != null) [ cfg.environmentFile ];
         ExecStart = "${pkgs.pingfinder}/bin/pingfinder";
         DynamicUser = true;
         NoNewPrivileges = true;

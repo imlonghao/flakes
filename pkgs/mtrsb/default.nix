@@ -1,4 +1,10 @@
-{ fetchgit, buildGoModule, lib, pkgs, makeWrapper }:
+{
+  fetchgit,
+  buildGoModule,
+  lib,
+  pkgs,
+  makeWrapper,
+}:
 
 buildGoModule rec {
   pname = "mtrsb";
@@ -13,11 +19,19 @@ buildGoModule rec {
   };
   vendorHash = "sha256-nM2aCJollBdadvzBJm1VTE5QzLL2kg6YdKVE03En9Io=";
   subPackages = [ "cmd/worker" ];
-  ldflags = [ "-s" "-w" "-X main.Version=${version}" ];
+  ldflags = [
+    "-s"
+    "-w"
+    "-X main.Version=${version}"
+  ];
   nativeBuildInputs = [ makeWrapper ];
   postInstall = ''
     wrapProgram $out/bin/worker --suffix PATH : ${
-      lib.makeBinPath [ pkgs.iputils pkgs.traceroute pkgs.mtr ]
+      lib.makeBinPath [
+        pkgs.iputils
+        pkgs.traceroute
+        pkgs.mtr
+      ]
     }
   '';
   meta = with lib; {

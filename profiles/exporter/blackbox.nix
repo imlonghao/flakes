@@ -10,12 +10,12 @@ let
       };
     };
   };
-in {
+in
+{
   services.prometheus.exporters.blackbox = {
     enable = true;
     listenAddress = ip;
     configFile = pkgs.writeText "blackbox.yml" (builtins.toJSON blackboxConfig);
   };
-  systemd.services."prometheus-blackbox-exporter".after =
-    [ "ranet.service" ];
+  systemd.services."prometheus-blackbox-exporter".after = [ "ranet.service" ];
 }

@@ -1,4 +1,5 @@
-{ pkgs, profiles, ... }: {
+{ pkgs, profiles, ... }:
+{
   imports = [
     ./hardware.nix
     ./bird.nix
@@ -14,7 +15,10 @@
 
   boot.loader.grub.device = "/dev/vda";
   networking = {
-    nameservers = [ "1.1.1.1" "8.8.8.8" ];
+    nameservers = [
+      "1.1.1.1"
+      "8.8.8.8"
+    ];
     defaultGateway = {
       interface = "enp3s0";
       address = "100.100.0.0";
@@ -26,20 +30,26 @@
     dhcpcd.enable = false;
     interfaces = {
       enp3s0 = {
-        ipv4.addresses = [{
-          address = "45.142.244.141";
-          prefixLength = 32;
-        }];
-        ipv6.addresses = [{
-          address = "2a0f:3b03:101:12:5054:ff:fe16:e83c";
-          prefixLength = 64;
-        }];
+        ipv4.addresses = [
+          {
+            address = "45.142.244.141";
+            prefixLength = 32;
+          }
+        ];
+        ipv6.addresses = [
+          {
+            address = "2a0f:3b03:101:12:5054:ff:fe16:e83c";
+            prefixLength = 64;
+          }
+        ];
       };
       lo = {
-        ipv4.addresses = [{
-          address = "44.31.42.0";
-          prefixLength = 32;
-        }];
+        ipv4.addresses = [
+          {
+            address = "44.31.42.0";
+            prefixLength = 32;
+          }
+        ];
         ipv6.addresses = [
           {
             address = "2602:feda:1bf::";
@@ -55,7 +65,11 @@
   };
 
   environment.persistence."/persist" = {
-    directories = [ "/etc/rancher" "/root/.ssh" "/var/lib" ];
+    directories = [
+      "/etc/rancher"
+      "/root/.ssh"
+      "/var/lib"
+    ];
     files = [
       "/etc/machine-id"
       "/etc/ssh/ssh_host_rsa_key"

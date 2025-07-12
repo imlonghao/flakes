@@ -1,14 +1,28 @@
 { modulesPath, ... }:
-let mountOptions = [ "relatime" "compress-force=zstd" "space_cache=v2" ];
-in {
+let
+  mountOptions = [
+    "relatime"
+    "compress-force=zstd"
+    "space_cache=v2"
+  ];
+in
+{
   imports = [ (modulesPath + "/profiles/qemu-guest.nix") ];
 
-  boot.initrd.availableKernelModules =
-    [ "ata_piix" "uhci_hcd" "virtio_pci" "sr_mod" "virtio_blk" ];
+  boot.initrd.availableKernelModules = [
+    "ata_piix"
+    "uhci_hcd"
+    "virtio_pci"
+    "sr_mod"
+    "virtio_blk"
+  ];
 
   fileSystems."/" = {
     fsType = "tmpfs";
-    options = [ "defaults" "mode=755" ];
+    options = [
+      "defaults"
+      "mode=755"
+    ];
   };
   fileSystems."/boot" = {
     device = "/dev/disk/by-uuid/babd057c-d9ae-47ed-810d-cdfebd9be36c";

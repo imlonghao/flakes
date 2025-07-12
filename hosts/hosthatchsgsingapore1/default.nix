@@ -1,4 +1,10 @@
-{ config, pkgs, profiles, ... }: {
+{
+  config,
+  pkgs,
+  profiles,
+  ...
+}:
+{
   imports = [
     ./dn42.nix
     ./hardware.nix
@@ -20,7 +26,10 @@
   boot.loader.grub.device = "/dev/vda";
   networking = {
     dhcpcd.enable = false;
-    nameservers = [ "8.8.8.8" "1.1.1.1" ];
+    nameservers = [
+      "8.8.8.8"
+      "1.1.1.1"
+    ];
     defaultGateway = {
       interface = "ens3";
       address = "103.167.150.1";
@@ -31,10 +40,12 @@
     };
     interfaces = {
       ens3 = {
-        ipv4.addresses = [{
-          address = "103.167.150.135";
-          prefixLength = 24;
-        }];
+        ipv4.addresses = [
+          {
+            address = "103.167.150.135";
+            prefixLength = 24;
+          }
+        ];
         ipv6.addresses = [
           {
             address = "2406:ef80:2:e::1";
@@ -71,10 +82,17 @@
     };
   };
 
-  environment.systemPackages = with pkgs; [ rclone tmux ];
+  environment.systemPackages = with pkgs; [
+    rclone
+    tmux
+  ];
 
   environment.persistence."/persist" = {
-    directories = [ "/etc/rancher" "/root/.ssh" "/var/lib" ];
+    directories = [
+      "/etc/rancher"
+      "/root/.ssh"
+      "/var/lib"
+    ];
     files = [
       "/etc/machine-id"
       "/etc/ssh/ssh_host_rsa_key"
@@ -120,7 +138,10 @@
       };
       locations = {
         data = {
-          from = [ "/persist/docker" "/persist/etc" ];
+          from = [
+            "/persist/docker"
+            "/persist/etc"
+          ];
           to = [ "garage" ];
           cron = "0 1 * * *";
         };
@@ -171,7 +192,10 @@
   networking.wireguard.interfaces.wrap = {
     table = "913335";
     privateKeyFile = config.sops.secrets.wrap.path;
-    ips = [ "172.16.0.2/32" "2606:4700:110:8cd2:4dc2:3ed7:3305:10cd/128" ];
+    ips = [
+      "172.16.0.2/32"
+      "2606:4700:110:8cd2:4dc2:3ed7:3305:10cd/128"
+    ];
     mtu = 1420;
     postSetup = [
       "${pkgs.iproute2}/bin/ip rule add from 10.133.35.0/24 table 913335"
@@ -181,12 +205,17 @@
       "${pkgs.iproute2}/bin/ip rule del from 10.133.35.0/24 table 913335"
       "${pkgs.iproute2}/bin/ip -6 rule del from 133:35::/64 table 913335"
     ];
-    peers = [{
-      endpoint = "engage.cloudflareclient.com:2408";
-      publicKey = "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=";
-      allowedIPs = [ "0.0.0.0/0" "::/0" ];
-      persistentKeepalive = 15;
-    }];
+    peers = [
+      {
+        endpoint = "engage.cloudflareclient.com:2408";
+        publicKey = "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=";
+        allowedIPs = [
+          "0.0.0.0/0"
+          "::/0"
+        ];
+        persistentKeepalive = 15;
+      }
+    ];
   };
 
   # ranet

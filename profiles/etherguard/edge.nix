@@ -11,5 +11,7 @@
     path = config.sops.secrets."etherguard.edge".path;
   };
 
-  boot.kernel.sysctl = { "net.ipv4.conf.eg_net.rp_filter" = 0; };
+  boot.kernel.sysctl = {
+    "net.ipv4.conf.eg_net.rp_filter" = 0;
+  };
 }

@@ -13,48 +13,53 @@ let
     '';
   };
   kernelConf = import profiles.bird.kernel { src6 = "2602:fab0:31:1::"; };
-in {
+in
+{
   services.bird = {
     enable = true;
-    config = generalConf + kernelConf + import profiles.bird.blackbgp { } + ''
-      ipv4 table as199632v4;
-      ipv6 table as199632v6;
-      protocol static {
-        ipv4 { table as199632v4; };
-        route 0.0.0.0/0 via 100.64.1.5;
-        route 100.64.88.0/24 via "eg_net";
-      }
-      protocol static {
-        ipv6 { table as199632v6; };
-        route 2602:fab0:31:1::/64 via "virbr1";
-        route 2602:feda:1bf:deaf::/64 via "eg_net";
-      }
-      protocol kernel kern199632v4 {
-        ipv4 {
-          table as199632v4;
-          export filter {
-            krt_prefsrc = 23.146.88.6;
-            accept;
+    config =
+      generalConf
+      + kernelConf
+      + import profiles.bird.blackbgp { }
+      + ''
+        ipv4 table as199632v4;
+        ipv6 table as199632v6;
+        protocol static {
+          ipv4 { table as199632v4; };
+          route 0.0.0.0/0 via 100.64.1.5;
+          route 100.64.88.0/24 via "eg_net";
+        }
+        protocol static {
+          ipv6 { table as199632v6; };
+          route 2602:fab0:31:1::/64 via "virbr1";
+          route 2602:feda:1bf:deaf::/64 via "eg_net";
+        }
+        protocol kernel kern199632v4 {
+          ipv4 {
+            table as199632v4;
+            export filter {
+              krt_prefsrc = 23.146.88.6;
+              accept;
+            };
           };
-        };
-        kernel table 199632;
-      }
-      protocol kernel kern199632v6 {
-        ipv6 {
-          table as199632v6;
-          export filter {
-            krt_prefsrc = 2602:fab0:31:1::;
-            accept;
+          kernel table 199632;
+        }
+        protocol kernel kern199632v6 {
+          ipv6 {
+            table as199632v6;
+            export filter {
+              krt_prefsrc = 2602:fab0:31:1::;
+              accept;
+            };
           };
-        };
-        kernel table 199632;
-      }
-      protocol pipe {
-        table master4;
-        peer table as199632v4;
-        import none;
-        export all;
-      }
-    '';
+          kernel table 199632;
+        }
+        protocol pipe {
+          table master4;
+          peer table as199632v4;
+          import none;
+          export all;
+        }
+      '';
   };
 }

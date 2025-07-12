@@ -3,8 +3,14 @@
 {
   imports = [ (modulesPath + "/profiles/qemu-guest.nix") ];
 
-  boot.initrd.availableKernelModules =
-    [ "ata_piix" "uhci_hcd" "sym53c8xx" "ahci" "sd_mod" "sr_mod" ];
+  boot.initrd.availableKernelModules = [
+    "ata_piix"
+    "uhci_hcd"
+    "sym53c8xx"
+    "ahci"
+    "sd_mod"
+    "sr_mod"
+  ];
   boot.kernelModules = [ "kvm-intel" ];
   boot.loader.grub.device = "/dev/sda";
 

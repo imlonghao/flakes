@@ -1,4 +1,9 @@
-{ config, lib, profiles, ... }:
+{
+  config,
+  lib,
+  profiles,
+  ...
+}:
 let
   generalConf = import profiles.bird.general {
     config = config;
@@ -17,7 +22,8 @@ let
     config = config;
     lib = lib;
   };
-in {
+in
+{
   services.bird = {
     enable = true;
     config = generalConf + dn42Conf + import profiles.bird.blackbgp { };

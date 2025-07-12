@@ -1,4 +1,5 @@
-{ config, self, ... }: {
+{ config, self, ... }:
+{
   sops.secrets.kong = {
     sopsFile = "${self}/secrets/shadow.yml";
     neededForUsers = true;

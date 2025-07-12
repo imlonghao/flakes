@@ -1,4 +1,9 @@
-{ fetchFromGitHub, lib, stdenv, pkgs }:
+{
+  fetchFromGitHub,
+  lib,
+  stdenv,
+  pkgs,
+}:
 
 stdenv.mkDerivation rec {
   pname = "deluge_exporter";
@@ -12,8 +17,13 @@ stdenv.mkDerivation rec {
   };
 
   propagatedBuildInputs = [
-    (pkgs.python3.withPackages
-      (ps: with ps; [ deluge-client loguru prometheus-client ]))
+    (pkgs.python3.withPackages (
+      ps: with ps; [
+        deluge-client
+        loguru
+        prometheus-client
+      ]
+    ))
   ];
 
   buildPhase = "true";

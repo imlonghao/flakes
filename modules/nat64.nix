@@ -1,4 +1,10 @@
-{ config, pkgs, lib, self, ... }:
+{
+  config,
+  pkgs,
+  lib,
+  self,
+  ...
+}:
 with lib;
 let
   cfg = config.nat64;
@@ -26,7 +32,8 @@ let
     ip6tables -C FORWARD -d ${cfg.prefix}64::/96 -m state --state ESTABLISHED -j ACCEPT || ip6tables -A FORWARD -d ${cfg.prefix}64::/96 -m state --state ESTABLISHED -j ACCEPT
     ip6tables -C FORWARD -d ${cfg.prefix}64::/96 -j LOG --log-prefix "nat64: " || ip6tables -A FORWARD -d ${cfg.prefix}64::/96 -j LOG --log-prefix "nat64: "
   '';
-in {
+in
+{
   options.nat64 = {
     enable = mkEnableOption "NAT64 server";
     gateway = mkOption {
@@ -91,7 +98,9 @@ in {
         sources = {
           kernel = {
             type = "journald";
-            include_matches = { "_TRANSPORT" = [ "kernel" ]; };
+            include_matches = {
+              "_TRANSPORT" = [ "kernel" ];
+            };
           };
         };
         transforms = {
@@ -140,10 +149,12 @@ in {
       systemCronJobs = [ "* * * * * root ${cronJob} > /dev/null 2>&1" ];
     };
     # CoreDNS
-    networking.interfaces.lo.ipv6.addresses = [{
-      address = "${cfg.prefix}53::";
-      prefixLength = 128;
-    }];
+    networking.interfaces.lo.ipv6.addresses = [
+      {
+        address = "${cfg.prefix}53::";
+        prefixLength = 128;
+      }
+    ];
     services.coredns = {
       enable = true;
       package = pkgs.coredns-nat64-rdns;

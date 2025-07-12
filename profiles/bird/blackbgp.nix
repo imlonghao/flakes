@@ -1,4 +1,5 @@
-{ }: ''
+{ }:
+''
   protocol static {
     route 198.51.100.1/32 blackhole;
     ipv4;

@@ -1,8 +1,12 @@
-{ config, lib, self, ... }:
+{
+  config,
+  lib,
+  self,
+  ...
+}:
 
 {
-  sops.secrets.wireguard.sopsFile =
-    lib.mkForce "${self}/hosts/${config.networking.hostName}/secrets.yml";
+  sops.secrets.wireguard.sopsFile = lib.mkForce "${self}/hosts/${config.networking.hostName}/secrets.yml";
   vxwg = {
     enable = true;
     peers = {
@@ -93,4 +97,3 @@
     };
   };
 }
-

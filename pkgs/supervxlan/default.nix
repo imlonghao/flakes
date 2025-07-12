@@ -1,4 +1,8 @@
-{ buildGoModule, fetchFromGitea, lib }:
+{
+  buildGoModule,
+  fetchFromGitea,
+  lib,
+}:
 
 buildGoModule rec {
   pname = "supervxlan";
@@ -14,7 +18,11 @@ buildGoModule rec {
 
   subPackages = [ "cmd/agent" ];
 
-  ldflags = [ "-s" "-w" "-X main.VERSION=${version}" ];
+  ldflags = [
+    "-s"
+    "-w"
+    "-X main.VERSION=${version}"
+  ];
 
   postInstall = ''
     mv $out/bin/agent $out/bin/supervxlan

@@ -1,15 +1,21 @@
-{ config, pkgs, self, ... }:
+{
+  config,
+  pkgs,
+  self,
+  ...
+}:
 
 {
   disabledModules = [ "services/backup/borgmatic.nix" ];
   #  imports = [ "${inputs.latest}/nixos/modules/services/backup/borgmatic.nix" ];
 
-  environment.systemPackages = [ pkgs.borgbackup pkgs.borgmatic ];
+  environment.systemPackages = [
+    pkgs.borgbackup
+    pkgs.borgmatic
+  ];
 
-  sops.secrets.borgmatic.sopsFile =
-    "${self}/hosts/${config.networking.hostName}/secrets.yml";
-  systemd.services.borgmatic.serviceConfig.EnvironmentFile =
-    "/run/secrets/borgmatic";
+  sops.secrets.borgmatic.sopsFile = "${self}/hosts/${config.networking.hostName}/secrets.yml";
+  systemd.services.borgmatic.serviceConfig.EnvironmentFile = "/run/secrets/borgmatic";
 
   services.borgmatic = {
     enable = true;

@@ -1,4 +1,5 @@
-{ hmUsers, ... }: {
+{ hmUsers, ... }:
+{
   home-manager.users = { inherit (hmUsers) nixos; };
 
   users.users.nixos = {

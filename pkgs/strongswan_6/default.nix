@@ -31,93 +31,92 @@
   enableTPM2 ? false,
 }:
 let
-  features =
-    rec {
-      nm = enableNetworkManager;
-      cmd = true;
-      stroke = true;
-      swanctl = true;
-      systemd = stdenv.hostPlatform.isLinux;
+  features = rec {
+    nm = enableNetworkManager;
+    cmd = true;
+    stroke = true;
+    swanctl = true;
+    systemd = stdenv.hostPlatform.isLinux;
 
-      openssl = true;
+    openssl = true;
 
-      farp = stdenv.hostPlatform.isLinux;
-      dhcp = stdenv.hostPlatform.isLinux;
-      af-alg = stdenv.hostPlatform.isLinux;
-      resolve = stdenv.hostPlatform.isLinux;
-      scripts = stdenv.hostPlatform.isLinux;
-      connmark = stdenv.hostPlatform.isLinux;
-      forecast = stdenv.hostPlatform.isLinux;
-      kernel-netlink = stdenv.hostPlatform.isLinux;
+    farp = stdenv.hostPlatform.isLinux;
+    dhcp = stdenv.hostPlatform.isLinux;
+    af-alg = stdenv.hostPlatform.isLinux;
+    resolve = stdenv.hostPlatform.isLinux;
+    scripts = stdenv.hostPlatform.isLinux;
+    connmark = stdenv.hostPlatform.isLinux;
+    forecast = stdenv.hostPlatform.isLinux;
+    kernel-netlink = stdenv.hostPlatform.isLinux;
 
-      aesni = stdenv.hostPlatform.isx86_64;
-      rdrand = stdenv.hostPlatform.isx86_64;
-      padlock = stdenv.hostPlatform.system == "i686-linux";
+    aesni = stdenv.hostPlatform.isx86_64;
+    rdrand = stdenv.hostPlatform.isx86_64;
+    padlock = stdenv.hostPlatform.system == "i686-linux";
 
-      kernel-pfkey = stdenv.hostPlatform.isDarwin || stdenv.hostPlatform.isFreeBSD;
-      kernel-pfroute = stdenv.hostPlatform.isDarwin || stdenv.hostPlatform.isFreeBSD;
-      kernel-libipsec = stdenv.hostPlatform.isDarwin || stdenv.hostPlatform.isFreeBSD;
+    kernel-pfkey = stdenv.hostPlatform.isDarwin || stdenv.hostPlatform.isFreeBSD;
+    kernel-pfroute = stdenv.hostPlatform.isDarwin || stdenv.hostPlatform.isFreeBSD;
+    kernel-libipsec = stdenv.hostPlatform.isDarwin || stdenv.hostPlatform.isFreeBSD;
 
-      keychain = stdenv.hostPlatform.isDarwin;
-      osx-attr = stdenv.hostPlatform.isDarwin;
+    keychain = stdenv.hostPlatform.isDarwin;
+    osx-attr = stdenv.hostPlatform.isDarwin;
 
-      ml = true;
-      curl = true;
-      acert = true;
-      pkcs11 = true;
-      dnscert = true;
-      unbound = true;
-      chapoly = true;
-      ext-auth = true;
-      socket-dynamic = true;
+    ml = true;
+    curl = true;
+    acert = true;
+    pkcs11 = true;
+    dnscert = true;
+    unbound = true;
+    chapoly = true;
+    ext-auth = true;
+    socket-dynamic = true;
 
-      eap-sim = true;
-      eap-sim-file = true;
-      eap-sim-pcsc = true;
-      eap-simaka-pseudonym = true;
-      eap-simaka-reauth = true;
-      eap-identity = true;
-      eap-md5 = true;
-      eap-gtc = true;
-      eap-aka = true;
-      eap-aka-3gpp = true;
-      eap-aka-3gpp2 = true;
-      eap-mschapv2 = true;
-      eap-tls = true;
-      eap-peap = true;
-      eap-radius = true;
+    eap-sim = true;
+    eap-sim-file = true;
+    eap-sim-pcsc = true;
+    eap-simaka-pseudonym = true;
+    eap-simaka-reauth = true;
+    eap-identity = true;
+    eap-md5 = true;
+    eap-gtc = true;
+    eap-aka = true;
+    eap-aka-3gpp = true;
+    eap-aka-3gpp2 = true;
+    eap-mschapv2 = true;
+    eap-tls = true;
+    eap-peap = true;
+    eap-radius = true;
 
-      xauth-eap = true;
-      xauth-pam = stdenv.hostPlatform.isLinux;
-      xauth-noauth = true;
+    xauth-eap = true;
+    xauth-pam = stdenv.hostPlatform.isLinux;
+    xauth-noauth = true;
 
-      gmp = eap-aka-3gpp2;
-    }
-    // lib.optionalAttrs enableTNC {
-      eap-tnc = true;
-      eap-ttls = true;
-      eap-dynamic = true;
+    gmp = eap-aka-3gpp2;
+  }
+  // lib.optionalAttrs enableTNC {
+    eap-tnc = true;
+    eap-ttls = true;
+    eap-dynamic = true;
 
-      tnccs-20 = true;
+    tnccs-20 = true;
 
-      tnc-imc = true;
-      tnc-imv = true;
-      tnc-ifmap = true;
+    tnc-imc = true;
+    tnc-imv = true;
+    tnc-ifmap = true;
 
-      imc-os = true;
-      imv-os = true;
-      imc-attestation = true;
-      imv-attestation = true;
+    imc-os = true;
+    imv-os = true;
+    imc-attestation = true;
+    imv-attestation = true;
 
-      aikgen = true;
-      tss-trousers = true;
+    aikgen = true;
+    tss-trousers = true;
 
-      sqlite = true;
-    }
-    // lib.optionalAttrs enableTPM2 {
-      tpm = true;
-      tss-tss2 = true;
-    };
+    sqlite = true;
+  }
+  // lib.optionalAttrs enableTPM2 {
+    tpm = true;
+    tss-tss2 = true;
+  };
 in
 stdenv.mkDerivation rec {
   pname = "strongswan";
@@ -165,9 +164,7 @@ stdenv.mkDerivation rec {
       networkmanager
       glib
     ]
-    ++ lib.optionals stdenv.hostPlatform.isDarwin [
-      apple-sdk_13
-    ];
+    ++ lib.optionals stdenv.hostPlatform.isDarwin [ apple-sdk_13 ];
 
   configureFlags = (lib.mapAttrsToList (lib.flip lib.enableFeature)) features ++ [
     "--sysconfdir=/etc"
@@ -176,9 +173,7 @@ stdenv.mkDerivation rec {
     ) "systemdsystemunitdir" "${placeholder "out"}/etc/systemd/system")
   ];
 
-  installFlags = [
-    "sysconfdir=${placeholder "out"}/etc"
-  ];
+  installFlags = [ "sysconfdir=${placeholder "out"}/etc" ];
 
   enableParallelBuilding = true;
 

@@ -1,13 +1,24 @@
 # SPDX-FileCopyrightText: 2020 Aluísio Augusto Silva Gonçalves <https://aasg.name>
 # SPDX-License-Identifier: MIT
 
-{ lib, stdenv, makeWrapper, writeScriptBin, coreutils, curl, gnugrep, iputils
-, which, util-linux }:
+{
+  lib,
+  stdenv,
+  makeWrapper,
+  writeScriptBin,
+  coreutils,
+  curl,
+  gnugrep,
+  iputils,
+  which,
+  util-linux,
+}:
 let
   silentWhich = writeScriptBin "which" ''
     exec "${which}/bin/which" "$@" 2>/dev/null
   '';
-in stdenv.mkDerivation rec {
+in
+stdenv.mkDerivation rec {
   pname = "pingfinder";
   version = "r52-8fd1af682d";
 
@@ -20,7 +31,14 @@ in stdenv.mkDerivation rec {
     runHook preInstall
     install -D "${src}" "$out/bin/pingfinder"
     wrapProgram "$out/bin/pingfinder" --set PATH "${
-      lib.makeBinPath [ coreutils curl gnugrep iputils silentWhich util-linux ]
+      lib.makeBinPath [
+        coreutils
+        curl
+        gnugrep
+        iputils
+        silentWhich
+        util-linux
+      ]
     }"
     runHook postInstall
   '';

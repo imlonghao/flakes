@@ -1,7 +1,14 @@
-{ config, pkgs, lib, ... }:
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}:
 with lib;
-let cfg = config.services.mygarage;
-in {
+let
+  cfg = config.services.mygarage;
+in
+{
   options.services.mygarage = {
     enable = mkEnableOption "Garage Data Store";
     path = mkOption {
@@ -15,7 +22,10 @@ in {
       serviceConfig = {
         Type = "simple";
         ExecStart = "${pkgs.garage}/bin/garage -c ${cfg.path} server";
-        Environment = [ "RUST_LOG=garage=info" "RUST_BACKTRACE=1" ];
+        Environment = [
+          "RUST_LOG=garage=info"
+          "RUST_BACKTRACE=1"
+        ];
         StateDirectory = "garage";
         ProtectHome = true;
         NoNewPrivileges = true;

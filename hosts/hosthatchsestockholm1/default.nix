@@ -1,4 +1,5 @@
-{ pkgs, profiles, ... }: {
+{ pkgs, profiles, ... }:
+{
   imports = [
     ./bird.nix
     ./borg.nix
@@ -15,23 +16,31 @@
   boot.loader.grub.device = "/dev/vda";
   networking = {
     dhcpcd.allowInterfaces = [ "ens3" ];
-    nameservers = [ "8.8.8.8" "1.1.1.1" ];
+    nameservers = [
+      "8.8.8.8"
+      "1.1.1.1"
+    ];
     defaultGateway6 = {
       interface = "ens3";
       address = "fe80::1";
     };
     interfaces = {
       ens3 = {
-        ipv6.addresses = [{
-          address = "2a0e:dc0:2:cf29::1919";
-          prefixLength = 64;
-        }];
+        ipv6.addresses = [
+          {
+            address = "2a0e:dc0:2:cf29::1919";
+            prefixLength = 64;
+          }
+        ];
       };
     };
   };
 
   environment.persistence."/persist" = {
-    directories = [ "/etc/rancher" "/var/lib" ];
+    directories = [
+      "/etc/rancher"
+      "/var/lib"
+    ];
     files = [
       "/etc/machine-id"
       "/etc/ssh/ssh_host_rsa_key"

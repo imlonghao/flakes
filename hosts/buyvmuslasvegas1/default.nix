@@ -1,4 +1,5 @@
-{ profiles, ... }: {
+{ profiles, ... }:
+{
   imports = [
     ./hardware.nix
     ./bird.nix
@@ -17,7 +18,10 @@
   networking = {
     dhcpcd.allowInterfaces = [ "ens3" ];
     defaultGateway6 = "2605:6400:20::1";
-    nameservers = [ "8.8.8.8" "1.1.1.1" ];
+    nameservers = [
+      "8.8.8.8"
+      "1.1.1.1"
+    ];
     interfaces = {
       lo.ipv4.addresses = [
         {
@@ -51,10 +55,12 @@
           prefixLength = 128;
         }
       ];
-      ens3.ipv6.addresses = [{
-        address = "2605:6400:20:803::";
-        prefixLength = 48;
-      }];
+      ens3.ipv6.addresses = [
+        {
+          address = "2605:6400:20:803::";
+          prefixLength = 48;
+        }
+      ];
     };
   };
 

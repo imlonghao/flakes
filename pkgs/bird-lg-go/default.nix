@@ -1,4 +1,8 @@
-{ fetchFromGitHub, buildGoModule, lib }:
+{
+  fetchFromGitHub,
+  buildGoModule,
+  lib,
+}:
 
 buildGoModule rec {
   pname = "bird-lg-go";
@@ -15,8 +19,7 @@ buildGoModule rec {
   vendorHash = "sha256-MAR+4o+BKd24uOpgcwsfMWoKWbRYxrCG6tMCrH8LS7Y=";
 
   meta = {
-    description =
-      "BIRD looking glass in Go, for better maintainability, easier deployment & smaller memory footprint";
+    description = "BIRD looking glass in Go, for better maintainability, easier deployment & smaller memory footprint";
     homepage = "https://github.com/xddxdd/bird-lg-go";
     license = lib.licenses.gpl3Only;
   };

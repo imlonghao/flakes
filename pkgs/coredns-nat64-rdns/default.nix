@@ -1,4 +1,8 @@
-{ buildGoModule, fetchFromGitea, lib }:
+{
+  buildGoModule,
+  fetchFromGitea,
+  lib,
+}:
 
 buildGoModule rec {
   pname = "coredns-nat64-rdns";

@@ -1,4 +1,5 @@
-{ pkgs, profiles, ... }: {
+{ pkgs, profiles, ... }:
+{
   imports = [
     ./bird.nix
     ./hardware.nix
@@ -20,23 +21,35 @@
     };
     interfaces = {
       eno1 = {
-        ipv6.addresses = [{
-          address = "2607:5300:60:4617::1";
-          prefixLength = 128;
-        }];
+        ipv6.addresses = [
+          {
+            address = "2607:5300:60:4617::1";
+            prefixLength = 128;
+          }
+        ];
       };
     };
   };
 
   environment.persistence."/persist" = {
-    directories = [ "/etc/rancher" "/var/lib" "/root/.ssh" ];
+    directories = [
+      "/etc/rancher"
+      "/var/lib"
+      "/root/.ssh"
+    ];
     files = [
       "/etc/machine-id"
       "/etc/ssh/ssh_host_ed25519_key"
     ];
   };
 
-  environment.systemPackages = with pkgs; [ ncdu ranet rclone rustic tmux ];
+  environment.systemPackages = with pkgs; [
+    ncdu
+    ranet
+    rclone
+    rustic
+    tmux
+  ];
 
   # ranet
   services.ranet = {

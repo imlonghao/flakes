@@ -1,4 +1,5 @@
-{ config, ... }: {
+{ config, ... }:
+{
   imports = [ ./generic.nix ];
   services.k3s = {
     role = "agent";

@@ -1,8 +1,9 @@
 { pkgs, ... }:
 
 {
-  systemd.services.docker.serviceConfig.ExecStartPost =
-    [ "${pkgs.iptables}/bin/ip6tables -P FORWARD ACCEPT" ];
+  systemd.services.docker.serviceConfig.ExecStartPost = [
+    "${pkgs.iptables}/bin/ip6tables -P FORWARD ACCEPT"
+  ];
   virtualisation.docker = {
     enable = true;
     package = pkgs.docker_27;

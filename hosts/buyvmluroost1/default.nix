@@ -1,4 +1,5 @@
-{ profiles, ... }: {
+{ profiles, ... }:
+{
   imports = [
     ./hardware.nix
     ./bird.nix
@@ -16,23 +17,32 @@
     dhcpcd.enable = false;
     defaultGateway = "107.189.8.1";
     defaultGateway6 = "2605:6400:30::1";
-    nameservers = [ "8.8.8.8" "1.1.1.1" ];
+    nameservers = [
+      "8.8.8.8"
+      "1.1.1.1"
+    ];
     interfaces = {
       eth0 = {
-        ipv4.addresses = [{
-          address = "107.189.8.121";
-          prefixLength = 24;
-        }];
-        ipv6.addresses = [{
-          address = "2605:6400:30:eb56::";
-          prefixLength = 48;
-        }];
+        ipv4.addresses = [
+          {
+            address = "107.189.8.121";
+            prefixLength = 24;
+          }
+        ];
+        ipv6.addresses = [
+          {
+            address = "2605:6400:30:eb56::";
+            prefixLength = 48;
+          }
+        ];
       };
       lo = {
-        ipv4.addresses = [{
-          address = "23.146.88.0";
-          prefixLength = 32;
-        }];
+        ipv4.addresses = [
+          {
+            address = "23.146.88.0";
+            prefixLength = 32;
+          }
+        ];
         ipv6.addresses = [
           {
             address = "2602:fab0:20::";

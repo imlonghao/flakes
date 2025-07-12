@@ -1,7 +1,14 @@
-{ config, pkgs, lib, ... }:
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}:
 with lib;
-let cfg = config.services.wtt;
-in {
+let
+  cfg = config.services.wtt;
+in
+{
   options.services.wtt = {
     enable = mkEnableOption "WatchTheTraffic";
     listen = mkOption {
@@ -17,7 +24,10 @@ in {
       };
       preStart = "${pkgs.wtt}/bin/generator";
       wants = [ "network-online.target" ];
-      after = [ "network-online.target" "etherguard-edge.service" ];
+      after = [
+        "network-online.target"
+        "etherguard-edge.service"
+      ];
       wantedBy = [ "multi-user.target" ];
     };
   };

@@ -1,12 +1,18 @@
-{ config, pkgs, lib, ... }:
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}:
 with lib;
-let cfg = config.services.autorestic;
-in {
+let
+  cfg = config.services.autorestic;
+in
+{
   options.services.autorestic = {
     enable = mkEnableOption "autorestic";
     settings = mkOption {
-      type =
-        types.submodule { freeformType = with lib.types; attrsOf anything; };
+      type = types.submodule { freeformType = with lib.types; attrsOf anything; };
     };
   };
   config = mkIf cfg.enable {
@@ -15,8 +21,7 @@ in {
       serviceConfig = {
         Type = "exec";
         EnvironmentFile = "/run/secrets/autorestic";
-        ExecStart =
-          "${pkgs.autorestic}/bin/autorestic -c /etc/autorestic.yml --restic-bin ${pkgs.restic}/bin/restic --ci cron";
+        ExecStart = "${pkgs.autorestic}/bin/autorestic -c /etc/autorestic.yml --restic-bin ${pkgs.restic}/bin/restic --ci cron";
       };
       wants = [ "network-online.target" ];
       after = [ "network-online.target" ];

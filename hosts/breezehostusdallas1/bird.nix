@@ -1,4 +1,9 @@
-{ config, lib, profiles, ... }:
+{
+  config,
+  lib,
+  profiles,
+  ...
+}:
 let
   generalConf = import profiles.bird.general {
     config = config;
@@ -17,19 +22,23 @@ let
     config = config;
     lib = lib;
   };
-in {
+in
+{
   services.bird = {
     enable = true;
-    config = generalConf + dn42Conf + ''
-      protocol bgp AS4201270000 from dnpeers {
-        neighbor 2602:fab0:41::42:0127:0000 as 4201270000;
-      }
-      protocol bgp AS4242420458 from dnpeers {
-        neighbor fe80::42:4242:0458 % 'ens18' as 4242420458;
-      }
-      protocol bgp AS4242422032 from dnpeers {
-        neighbor fe80::42:4242:2032 % 'ens18' as 4242422032;
-      }
-    '';
+    config =
+      generalConf
+      + dn42Conf
+      + ''
+        protocol bgp AS4201270000 from dnpeers {
+          neighbor 2602:fab0:41::42:0127:0000 as 4201270000;
+        }
+        protocol bgp AS4242420458 from dnpeers {
+          neighbor fe80::42:4242:0458 % 'ens18' as 4242420458;
+        }
+        protocol bgp AS4242422032 from dnpeers {
+          neighbor fe80::42:4242:2032 % 'ens18' as 4242422032;
+        }
+      '';
   };
 }

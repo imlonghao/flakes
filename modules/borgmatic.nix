@@ -1,4 +1,9 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 with lib;
 
@@ -6,7 +11,8 @@ let
   cfg = config.services.borgmatic;
   settingsFormat = pkgs.formats.yaml { };
 
-  repository = with types;
+  repository =
+    with types;
     submodule {
       options = {
         path = mkOption {
@@ -23,7 +29,8 @@ let
         };
       };
     };
-  cfgType = with types;
+  cfgType =
+    with types;
     submodule {
       freeformType = settingsFormat.type;
       options = {
@@ -34,8 +41,12 @@ let
             List of source directories and files to backup. Globs and tildes are
             expanded. Do not backslash spaces in path names.
           '';
-          example =
-            [ "/home" "/etc" "/var/log/syslog*" "/home/user/path with spaces" ];
+          example = [
+            "/home"
+            "/etc"
+            "/var/log/syslog*"
+            "/home/user/path with spaces"
+          ];
         };
         repositories = mkOption {
           type = listOf repository;
@@ -65,7 +76,8 @@ let
     };
 
   cfgfile = settingsFormat.generate "config.yaml" cfg.settings;
-in {
+in
+{
   disabledModules = [ "services/backup/borgmatic.nix" ];
 
   options.services.borgmatic = {
@@ -90,19 +102,27 @@ in {
 
   config = mkIf cfg.enable {
 
-    warnings = [ ] ++ optional (cfg.settings != null && cfg.settings ? location)
-      "`services.borgmatic.settings.location` is deprecated, please move your options out of sections to the global scope"
-      ++ optional (catAttrs "location" (attrValues cfg.configurations) != [ ])
-      "`services.borgmatic.configurations.<name>.location` is deprecated, please move your options out of sections to the global scope";
+    warnings =
+      [ ]
+      ++
+        optional (cfg.settings != null && cfg.settings ? location)
+          "`services.borgmatic.settings.location` is deprecated, please move your options out of sections to the global scope"
+      ++
+        optional (catAttrs "location" (attrValues cfg.configurations) != [ ])
+          "`services.borgmatic.configurations.<name>.location` is deprecated, please move your options out of sections to the global scope";
 
     environment.systemPackages = [ pkgs.borgmatic ];
 
-    environment.etc = (optionalAttrs (cfg.settings != null) {
-      "borgmatic/config.yaml".source = cfgfile;
-    }) // mapAttrs' (name: value:
-      nameValuePair "borgmatic.d/${name}.yaml" {
-        source = settingsFormat.generate "${name}.yaml" value;
-      }) cfg.configurations;
+    environment.etc =
+      (optionalAttrs (cfg.settings != null) {
+        "borgmatic/config.yaml".source = cfgfile;
+      })
+      // mapAttrs' (
+        name: value:
+        nameValuePair "borgmatic.d/${name}.yaml" {
+          source = settingsFormat.generate "${name}.yaml" value;
+        }
+      ) cfg.configurations;
 
     systemd.packages = [ pkgs.borgmatic ];
 

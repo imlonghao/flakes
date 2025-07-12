@@ -6,7 +6,8 @@ let
     route6 = "";
   };
   kernelConf = import profiles.bird.kernel { };
-in {
+in
+{
   services.bird = {
     enable = true;
     config = generalConf + kernelConf;

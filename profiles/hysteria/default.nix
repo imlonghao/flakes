@@ -12,4 +12,3 @@
     path = config.sops.secrets."hysteria.yaml".path;
   };
 }
-

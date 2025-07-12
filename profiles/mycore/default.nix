@@ -1,8 +1,8 @@
 { pkgs, ... }:
 let
-  trustedUserCAKeys = pkgs.writeText "user_ca.pub"
-    "ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBCRbFsPcCoFmDEXeflbVOboRpFKG69mOS8gtrohxWuewuc8bUgUFpgPDedbN77eKHdEDnnGec8Q9Yco5LpUu6eY=";
-in {
+  trustedUserCAKeys = pkgs.writeText "user_ca.pub" "ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBCRbFsPcCoFmDEXeflbVOboRpFKG69mOS8gtrohxWuewuc8bUgUFpgPDedbN77eKHdEDnnGec8Q9Yco5LpUu6eY=";
+in
+{
   imports = [ ../cachix ];
 
   nix = {
@@ -15,7 +15,10 @@ in {
       auto-optimise-store = true;
       sandbox = true;
       allowed-users = [ "@wheel" ];
-      trusted-users = [ "root" "@wheel" ];
+      trusted-users = [
+        "root"
+        "@wheel"
+      ];
     };
   };
 
@@ -70,7 +73,12 @@ in {
     "net.ipv4.tcp_rfc1337" = 1;
   };
 
-  environment.systemPackages = [ pkgs.bottom pkgs.mtr pkgs.tcpdump pkgs.wget ];
+  environment.systemPackages = [
+    pkgs.bottom
+    pkgs.mtr
+    pkgs.tcpdump
+    pkgs.wget
+  ];
 
   i18n.supportedLocales = [ "en_US.UTF-8/UTF-8" ];
 
@@ -84,14 +92,12 @@ in {
       TrustedUserCAKeys ${trustedUserCAKeys}
     '';
     knownHosts.ca = {
-      publicKey =
-        "ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBO5G2CWEODVl6DJKYy36co6J6K12Y+OftCXUihhGpvKbKNM5/vImNTwDzAyCKrKcM8Da+1WTIJnIZM9qlLG8ZdY=";
+      publicKey = "ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBO5G2CWEODVl6DJKYy36co6J6K12Y+OftCXUihhGpvKbKNM5/vImNTwDzAyCKrKcM8Da+1WTIJnIZM9qlLG8ZdY=";
       hostNames = [ "*" ];
       certAuthority = true;
     };
     knownHosts.step-ca = {
-      publicKey =
-        "ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBH0r5oq3zgEQkOWsN0q8Y9Q451cT0PVp3rTJw14B4QuHLmULYfAfjXUa/ve3EtIFetGefyiDUJa2r60Cd5gBOM4=";
+      publicKey = "ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBH0r5oq3zgEQkOWsN0q8Y9Q451cT0PVp3rTJw14B4QuHLmULYfAfjXUa/ve3EtIFetGefyiDUJa2r60Cd5gBOM4=";
       hostNames = [ "*" ];
       certAuthority = true;
     };
@@ -114,43 +120,47 @@ in {
 
   programs.fish.enable = true;
 
-  security.pam.loginLimits = [{
-    domain = "*";
-    type = "soft";
-    item = "nofile";
-    value = "40960";
-  }];
+  security.pam.loginLimits = [
+    {
+      domain = "*";
+      type = "soft";
+      item = "nofile";
+      value = "40960";
+    }
+  ];
 
-  security.pki.certificates = [''
-    imlonghao Root CA
-    =========
-    -----BEGIN CERTIFICATE-----
-    MIIB0jCCAVigAwIBAgIIYrwQ5kKMldwwCgYIKoZIzj0EAwMwMDESMBAGA1UEChMJ
-    aW1sb25naGFvMRowGAYDVQQDExFpbWxvbmdoYW8gUm9vdCBDQTAeFw0yMzA0Mjgw
-    MDAwMDBaFw00ODA0MjcyMzU5NTlaMDAxEjAQBgNVBAoTCWltbG9uZ2hhbzEaMBgG
-    A1UEAxMRaW1sb25naGFvIFJvb3QgQ0EwdjAQBgcqhkjOPQIBBgUrgQQAIgNiAATW
-    MRUOUlhMCGrMxsCVLHnRxqqnV/jPXpfAxyLyAqub33j05pzM+n/nmxriyWLdYWpA
-    8LmYAZuW+NgSyGSY2MNkaodgad/AmEP8yKHKN0lCE1vnaI6rahr84LZeLxAhAduj
-    PzA9MA8GA1UdEwEB/wQFMAMBAf8wHQYDVR0OBBYEFA5n5ZGOEHiSBzZBQNxSPNNx
-    8xjeMAsGA1UdDwQEAwIBBjAKBggqhkjOPQQDAwNoADBlAjEA9e/c7DsX/y2QV0yp
-    YvyzR4pbqFKVlz6TvtmI1iBF5DZ/eewpep6XUYtnZHZ6iDB3AjBpe1teuAQUzOr+
-    sNAFvntNFUFAdc0qKX7voeDPEguMblmOJvyV2iiQQm4dQAgG5fA=
-    -----END CERTIFICATE-----
+  security.pki.certificates = [
+    ''
+      imlonghao Root CA
+      =========
+      -----BEGIN CERTIFICATE-----
+      MIIB0jCCAVigAwIBAgIIYrwQ5kKMldwwCgYIKoZIzj0EAwMwMDESMBAGA1UEChMJ
+      aW1sb25naGFvMRowGAYDVQQDExFpbWxvbmdoYW8gUm9vdCBDQTAeFw0yMzA0Mjgw
+      MDAwMDBaFw00ODA0MjcyMzU5NTlaMDAxEjAQBgNVBAoTCWltbG9uZ2hhbzEaMBgG
+      A1UEAxMRaW1sb25naGFvIFJvb3QgQ0EwdjAQBgcqhkjOPQIBBgUrgQQAIgNiAATW
+      MRUOUlhMCGrMxsCVLHnRxqqnV/jPXpfAxyLyAqub33j05pzM+n/nmxriyWLdYWpA
+      8LmYAZuW+NgSyGSY2MNkaodgad/AmEP8yKHKN0lCE1vnaI6rahr84LZeLxAhAduj
+      PzA9MA8GA1UdEwEB/wQFMAMBAf8wHQYDVR0OBBYEFA5n5ZGOEHiSBzZBQNxSPNNx
+      8xjeMAsGA1UdDwQEAwIBBjAKBggqhkjOPQQDAwNoADBlAjEA9e/c7DsX/y2QV0yp
+      YvyzR4pbqFKVlz6TvtmI1iBF5DZ/eewpep6XUYtnZHZ6iDB3AjBpe1teuAQUzOr+
+      sNAFvntNFUFAdc0qKX7voeDPEguMblmOJvyV2iiQQm4dQAgG5fA=
+      -----END CERTIFICATE-----
 
-    imlonghao Root CA (step-ca)
-    =========
-    -----BEGIN CERTIFICATE-----
-    MIIBozCCAUqgAwIBAgIRAPNyvyHMBh1vgQFB9R/gDOowCgYIKoZIzj0EAwIwMDES
-    MBAGA1UEChMJaW1sb25naGFvMRowGAYDVQQDExFpbWxvbmdoYW8gUm9vdCBDQTAe
-    Fw0yMzEyMTAxMTI0NTRaFw0zMzEyMDcxMTI0NTRaMDAxEjAQBgNVBAoTCWltbG9u
-    Z2hhbzEaMBgGA1UEAxMRaW1sb25naGFvIFJvb3QgQ0EwWTATBgcqhkjOPQIBBggq
-    hkjOPQMBBwNCAAQHAdWXqylu6Yn9NtnE/K3l7vL0cQbMEYd/Rti+2l5m+UVW37jB
-    ERA5NCym/xq4q0oflcEOr04xjtXP4kAMjb/To0UwQzAOBgNVHQ8BAf8EBAMCAQYw
-    EgYDVR0TAQH/BAgwBgEB/wIBATAdBgNVHQ4EFgQUw+daBEc1HLovYD1n0lZjDXk7
-    sIkwCgYIKoZIzj0EAwIDRwAwRAIgQz5bAOfSGLHliTwMIsP7N9ZeGOq9d1+BEm1F
-    gv7EeZ4CIHFAg1O33OZ40uyet9XoSSLH44OCUmByJ5OItY4kJyml
-    -----END CERTIFICATE-----
-  ''];
+      imlonghao Root CA (step-ca)
+      =========
+      -----BEGIN CERTIFICATE-----
+      MIIBozCCAUqgAwIBAgIRAPNyvyHMBh1vgQFB9R/gDOowCgYIKoZIzj0EAwIwMDES
+      MBAGA1UEChMJaW1sb25naGFvMRowGAYDVQQDExFpbWxvbmdoYW8gUm9vdCBDQTAe
+      Fw0yMzEyMTAxMTI0NTRaFw0zMzEyMDcxMTI0NTRaMDAxEjAQBgNVBAoTCWltbG9u
+      Z2hhbzEaMBgGA1UEAxMRaW1sb25naGFvIFJvb3QgQ0EwWTATBgcqhkjOPQIBBggq
+      hkjOPQMBBwNCAAQHAdWXqylu6Yn9NtnE/K3l7vL0cQbMEYd/Rti+2l5m+UVW37jB
+      ERA5NCym/xq4q0oflcEOr04xjtXP4kAMjb/To0UwQzAOBgNVHQ8BAf8EBAMCAQYw
+      EgYDVR0TAQH/BAgwBgEB/wIBATAdBgNVHQ4EFgQUw+daBEc1HLovYD1n0lZjDXk7
+      sIkwCgYIKoZIzj0EAwIDRwAwRAIgQz5bAOfSGLHliTwMIsP7N9ZeGOq9d1+BEm1F
+      gv7EeZ4CIHFAg1O33OZ40uyet9XoSSLH44OCUmByJ5OItY4kJyml
+      -----END CERTIFICATE-----
+    ''
+  ];
 
   zramSwap = {
     enable = true;

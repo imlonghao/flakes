@@ -10,7 +10,8 @@ let
       route 2a09:b280:ff85::/48 blackhole;
     '';
   };
-in {
+in
+{
   services.bird = {
     enable = true;
     config = generalConf + ''

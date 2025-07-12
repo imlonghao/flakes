@@ -1,4 +1,10 @@
-{ lib, stdenv, bird-babel-rtt, python3, strongswan }:
+{
+  lib,
+  stdenv,
+  bird-babel-rtt,
+  python3,
+  strongswan,
+}:
 stdenv.mkDerivation rec {
   pname = "ranetdebug";
   version = "1.0.1";
@@ -6,7 +12,11 @@ stdenv.mkDerivation rec {
   src = ./ranet.py;
   dontUnpack = true;
 
-  propagatedBuildInputs = [ bird-babel-rtt python3 strongswan ];
+  propagatedBuildInputs = [
+    bird-babel-rtt
+    python3
+    strongswan
+  ];
 
   installPhase = ''
     runHook preInstall

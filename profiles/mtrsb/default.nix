@@ -16,9 +16,12 @@ let
     0nu4yY/alEEPQgy616SLlak=
     -----END CERTIFICATE-----
   '';
-in {
+in
+{
   environment.etc."mtr.sb/worker.hcl".text = ''
     server_ca_path = "${ca}"
   '';
-  services.mtrsb = { enable = true; };
+  services.mtrsb = {
+    enable = true;
+  };
 }

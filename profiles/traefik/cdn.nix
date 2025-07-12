@@ -1,15 +1,20 @@
-{ ... }: {
+{ ... }:
+{
   services.traefik = {
     enable = true;
     staticConfigOptions = {
       entryPoints = {
-        web = { address = ":80"; };
+        web = {
+          address = ":80";
+        };
         websecure = {
           address = ":443";
           http3 = { };
         };
       };
-      providers = { etcd.endpoints = [ "100.64.88.23:2379" ]; };
+      providers = {
+        etcd.endpoints = [ "100.64.88.23:2379" ];
+      };
     };
     dynamicConfigOptions = {
       tls = {

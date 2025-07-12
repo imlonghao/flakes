@@ -1,6 +1,13 @@
-{ config, pkgs, lib, ... }:
-let cfg = config.services.hachimi;
-in {
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}:
+let
+  cfg = config.services.hachimi;
+in
+{
   options.services.hachimi = {
     enable = lib.mkEnableOption "Hachimi Honeypot";
     path = lib.mkOption {

@@ -1,9 +1,15 @@
-{ config, pkgs, lib, ... }:
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}:
 let
   cfg = config.services.autorustic;
   glob = pkgs.writeText "glob.txt" (lib.concatLines cfg.globs);
   source = lib.concatStringsSep " " cfg.sources;
-in {
+in
+{
   options.services.autorustic = {
     enable = lib.mkEnableOption "autorustic";
     globs = lib.mkOption { type = lib.types.listOf lib.types.str; };
@@ -14,8 +20,7 @@ in {
       serviceConfig = {
         Type = "oneshot";
         EnvironmentFile = "/run/secrets/rustic";
-        ExecStart =
-          "${pkgs.rustic}/bin/rustic backup --cache-dir /persist/rustic --glob-file ${glob} ${source}";
+        ExecStart = "${pkgs.rustic}/bin/rustic backup --cache-dir /persist/rustic --glob-file ${glob} ${source}";
       };
       wants = [ "network-online.target" ];
       after = [ "network-online.target" ];
@@ -33,8 +38,7 @@ in {
       serviceConfig = {
         Type = "exec";
         EnvironmentFile = "/run/secrets/rustic";
-        ExecStart =
-          "${pkgs.rustic}/bin/rustic forget --prune --keep-last 3 --keep-daily 13 --keep-weekly 8 --keep-monthly 11";
+        ExecStart = "${pkgs.rustic}/bin/rustic forget --prune --keep-last 3 --keep-daily 13 --keep-weekly 8 --keep-monthly 11";
       };
       wants = [ "network-online.target" ];
       after = [ "network-online.target" ];

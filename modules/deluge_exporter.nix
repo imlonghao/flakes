@@ -1,7 +1,14 @@
-{ config, pkgs, lib, ... }:
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}:
 with lib;
-let cfg = config.services.deluge_exporter;
-in {
+let
+  cfg = config.services.deluge_exporter;
+in
+{
   options.services.deluge_exporter = {
     enable = mkEnableOption "deluge_exporter";
   };
@@ -18,7 +25,10 @@ in {
         Group = "deluge";
       };
       wants = [ "network-online.target" ];
-      after = [ "network-online.target" "etherguard-edge.service" ];
+      after = [
+        "network-online.target"
+        "etherguard-edge.service"
+      ];
       wantedBy = [ "multi-user.target" ];
     };
   };

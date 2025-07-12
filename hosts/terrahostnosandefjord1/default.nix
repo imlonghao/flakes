@@ -1,4 +1,5 @@
-{ profiles, ... }: {
+{ profiles, ... }:
+{
   imports = [
     ./bird.nix
     ./dn42.nix
@@ -17,7 +18,10 @@
   # Network
   networking = {
     dhcpcd.enable = false;
-    nameservers = [ "8.8.8.8" "1.1.1.1" ];
+    nameservers = [
+      "8.8.8.8"
+      "1.1.1.1"
+    ];
     defaultGateway = {
       interface = "ens18";
       address = "185.243.216.1";
@@ -27,14 +31,18 @@
       address = "2a03:94e0:ffff:185:243:216::1";
     };
     interfaces = {
-      ens18.ipv4.addresses = [{
-        address = "185.243.216.252";
-        prefixLength = 24;
-      }];
-      ens18.ipv6.addresses = [{
-        address = "2a03:94e0:ffff:185:243:216::252";
-        prefixLength = 118;
-      }];
+      ens18.ipv4.addresses = [
+        {
+          address = "185.243.216.252";
+          prefixLength = 24;
+        }
+      ];
+      ens18.ipv6.addresses = [
+        {
+          address = "2a03:94e0:ffff:185:243:216::252";
+          prefixLength = 118;
+        }
+      ];
       lo.ipv4.addresses = [
         {
           address = "172.22.68.0";

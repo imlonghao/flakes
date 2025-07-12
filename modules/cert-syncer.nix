@@ -1,4 +1,10 @@
-{ config, pkgs, lib, self, ... }:
+{
+  config,
+  pkgs,
+  lib,
+  self,
+  ...
+}:
 with lib;
 let
   cfg = config.services.cert-syncer;
@@ -19,7 +25,8 @@ let
       fi
     done
   '';
-in {
+in
+{
   options.services.cert-syncer = {
     enable = mkEnableOption "Download certificates from certimate";
     wishlist = mkOption {

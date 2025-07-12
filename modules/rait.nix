@@ -1,7 +1,14 @@
-{ config, pkgs, lib, ... }:
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}:
 with lib;
-let cfg = config.services.rait;
-in {
+let
+  cfg = config.services.rait;
+in
+{
   options.services.rait = {
     enable = mkEnableOption "R.A.I.T. - Redundant Array of Inexpensive Tunnels";
     path = mkOption {
