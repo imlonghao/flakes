@@ -104,6 +104,14 @@
       e6 = "fe80::1772";
     }
     {
+      name = "wg1816";
+      listen = 21816;
+      endpoint = "hkg.node.potat0.cc:21888";
+      publickey = "Tv1+HniELrS4Br2i7oQgwqBJFXQKculsW8r+UOqQXH0=";
+      asn = 4242421816;
+      e6 = "fe80::1816";
+    }
+    {
       name = "wg1817";
       l4 = "172.22.68.3";
       e4 = "172.22.77.33";

@@ -147,6 +147,14 @@
       e6 = "fe80::8572:7797:4bfd:26b3";
     }
     {
+      name = "wg1816";
+      listen = 21816;
+      endpoint = "fra.node.potat0.cc:21888";
+      publickey = "H6HdsuQsav9puKyo8SJaML0vPU/a2lLQjTRc7dmiqjs=";
+      asn = 4242421816;
+      e6 = "fe80::1816";
+    }
+    {
       name = "wg2164";
       listen = 22164;
       endpoint = "de1.dn42.izm.im:21888";

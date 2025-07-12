@@ -118,6 +118,14 @@
       publickey = "6oeRQx3cKLqZw/ncMNVIErZKz1sTaYKhqt5E9WoiRFQ=";
     }
     {
+      name = "wg1816";
+      listen = 21816;
+      endpoint = "las.node.potat0.cc:21888";
+      publickey = "LUwqKS6QrCPv510Pwt1eAIiHACYDsbMjrkrbGTJfviU=";
+      asn = 4242421816;
+      e6 = "fe80::1816";
+    }
+    {
       name = "wg1817";
       listen = 21817;
       asn = 4242421817;
@@ -232,7 +240,7 @@
       e4 = "172.22.130.161";
       l4 = "172.22.68.0";
       e6 = "fe80::bad1:1888";
-#      endpoint = "7c30aed15ce418a630ed9d8e0ded877dccbbc44d.dc.badaimweeb.me:5602";
+      #      endpoint = "7c30aed15ce418a630ed9d8e0ded877dccbbc44d.dc.badaimweeb.me:5602";
       endpoint = "23.186.104.33:5602";
       publickey = "f34o02faoeQhoOWDxzyyLvoYrada7uE6r9emUZ689mM=";
     }
