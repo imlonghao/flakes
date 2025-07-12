@@ -78,14 +78,6 @@
       publickey = "Ta5Dq6wr5OcY3m369cpnUbTzjFM2MSR631VRLM1Syyk=";
     }
     {
-      name = "wg1999";
-      asn = 4242421999;
-      e6 = "fe80::1999";
-      listen = 21999;
-      endpoint = "sjc1.dn42.luotianyi.sbs:21888";
-      publickey = "Eu3QrI2o1LTR3g8lXDYAm1q5Loy7XjfCrpVrg6ol5Ac=";
-    }
-    {
       name = "wg2002";
       e6 = "fe80::2002:1";
       asn = 4242422002;
