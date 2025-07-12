@@ -85,6 +85,14 @@
       publickey = "CHXW5JLVxc7hksJ9eUFc/OCUoET3qPu1PcOCOhR2bTw=";
     }
     {
+      name = "wg2092";
+      listen = 22092;
+      endpoint = "us0.dn42.pebkac.gr:51888";
+      publickey = "NnIsCmxiGctp5hR9ViuNRjZXr8lxtjn382sIwsV+GBU=";
+      asn = 4242422092;
+      e6 = "fe80::ffff:2092";
+    }
+    {
       name = "wg2464";
       e6 = "fe80::2464";
       asn = 4242422464;

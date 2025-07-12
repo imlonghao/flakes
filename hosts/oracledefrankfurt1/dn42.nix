@@ -155,6 +155,14 @@
       e6 = "fe80::1816";
     }
     {
+      name = "wg2092";
+      listen = 22092;
+      endpoint = "de0.dn42.pebkac.gr:51888";
+      publickey = "g4MJv6qMPwbffxNjUKmIa5Yhf5ZzRqjIMzMHCSiFQgs=";
+      asn = 4242422092;
+      e6 = "fe80::ffff:2092";
+    }
+    {
       name = "wg2164";
       listen = 22164;
       endpoint = "de1.dn42.izm.im:21888";
