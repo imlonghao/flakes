@@ -55,15 +55,6 @@
       e6 = "fe80::0207";
     }
     {
-      name = "wg0263";
-      asn = 4242420263;
-      e6 = "fe80:1263::1:8";
-      ipv6 = "fe80:1263::2:8/64";
-      listen = 20263;
-      endpoint = "fr-par1.flap42.eu:52008";
-      publickey = "/kwo9FiQRtgNyhMARTW9SvyvXIN7I7LfoICTytHjfA4=";
-    }
-    {
       name = "wg0392";
       listen = 20392;
       endpoint = "hackclub.app:21888";
