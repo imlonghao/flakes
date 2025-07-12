@@ -28,6 +28,14 @@
       publickey = "vzCKl611U0MVeaIcNyb8gJgWk1p6HY6oHr1oE846Py8=";
     }
     {
+      name = "wg2024";
+      asn = 4242422024;
+      e6 = "fe80::2024";
+      listen = 22024;
+      endpoint = "ipv4.tyo-jp.ecs.iyoroy-infra.top:21888";
+      publickey = "Sh62ZCxnEcXyLq49mLP1jF4C2vWKhKMxjtZHxVUAQg4=";
+    }
+    {
       name = "wg2189";
       asn = 4242422189;
       e6 = "fe80::2189:ee";
