@@ -58,6 +58,7 @@
       name = "wg0263";
       asn = 4242420263;
       e6 = "fe80:1263::1:8";
+      l6 = "fe80:1263::2:8/64";
       listen = 20263;
       endpoint = "fr-par1.flap42.eu:52008";
       publickey = "/kwo9FiQRtgNyhMARTW9SvyvXIN7I7LfoICTytHjfA4=";
