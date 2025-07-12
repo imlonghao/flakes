@@ -130,6 +130,14 @@
       publickey = "jxCsSXtUSVjaP+eMWOyRsHg3JShQfBFEtyssMKWQaS8=";
     }
     {
+      name = "wg2024";
+      asn = 4242422024;
+      e6 = "fe80::2024";
+      listen = 22024;
+      endpoint = "ipv4.hk2-cn.ecs.iyoroy-infra.top:21888";
+      publickey = "bg+KnzVupBrOQntHFFVzvBx+3sqYVoyJRantT6m5fm8=";
+    }
+    {
       name = "wg2025";
       l4 = "172.22.68.3";
       e4 = "172.20.222.33";
