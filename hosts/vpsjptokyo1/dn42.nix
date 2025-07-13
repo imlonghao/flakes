@@ -43,5 +43,16 @@
       endpoint = "jp-tyo.dn42.iedon.net:53538";
       publickey = "u2ImAJn9ewce9YHN6HaqrR3Sr4Xsy5UaaJOLJ7gkSzs=";
     }
+    {
+      name = "wg3999";
+      asn = 4242423999;
+      e4 = "172.22.144.65";
+      e6 = "fe80::1:3999";
+      l4 = "172.22.68.10";
+      listen = 23999;
+      endpoint = "tyo.node.cowgl.xyz:31888";
+      publickey = "mMGGxtEqsagrx1Raw57C2H3Stl6ch/cUuF7y08eVgBE=";
+      mpbgp = false;
+    }
   ];
 }
