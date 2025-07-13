@@ -49,6 +49,14 @@
       e6 = "fe80::0207";
     }
     {
+      name = "wg0253";
+      asn = 4242420253;
+      e6 = "fe80::253";
+      listen = 20253;
+      endpoint = "lv.dn42.moe233.net:21889";
+      publickey = "C3SneO68SmagisYQ3wi5tYI2R9g5xedKkB56Y7rtPUo=";
+    }
+    {
       name = "wg0358";
       e6 = "fe80::358";
       asn = 4242420358;
