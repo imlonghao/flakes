@@ -14,6 +14,16 @@
       publickey = "uspTFQKijQUTbxUgh2IzbNaCUZgtdgrn0kUtbPDd5gM=";
     }
     {
+      name = "wg0057";
+      asn = 4242420057;
+      e4 = "172.22.159.16";
+      e6 = "fd48:ce37:a00f:fff::1";
+      ipv6 = "fd48:ce37:a00f:fff::2/126";
+      listen = 20057;
+      endpoint = "home.tompkel.net:13247";
+      publickey = "ubA2cl37qxbE0kXJv5FAjloGrFMvAepN8svG/I01fxA=";
+    }
+    {
       name = "wg0202";
       e6 = "fe80::202:10";
       asn = 4242420202;
