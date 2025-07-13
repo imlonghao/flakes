@@ -21,6 +21,14 @@
       e6 = "fe80::aa:1111:41";
     }
     {
+      name = "wg0014";
+      asn = 4242420014;
+      e6 = "fe80::0014:10";
+      listen = 20014;
+      endpoint = "de.dn42.fxnet.top:21888";
+      publickey = "qqib9JVb+Nugiv6VJeq5q0QsKv++9girnuOMgQSyi0o=";
+    }
+    {
       name = "wg0129";
       listen = 20129;
       endpoint = "de1.420129.xyz:21888";

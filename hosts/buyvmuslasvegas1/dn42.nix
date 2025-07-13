@@ -14,6 +14,14 @@
       publickey = "uspTFQKijQUTbxUgh2IzbNaCUZgtdgrn0kUtbPDd5gM=";
     }
     {
+      name = "wg0014";
+      asn = 4242420014;
+      e6 = "fe80::0014:11";
+      listen = 20014;
+      endpoint = "us.dn42.fxnet.top:21888";
+      publickey = "2SjnP1Q/JZck2QUBeal6jTpTiqIlPwIyUjKxYS9wgBs=";
+    }
+    {
       name = "wg0057";
       asn = 4242420057;
       e4 = "172.22.159.16";

@@ -4,6 +4,14 @@
   sops.secrets.wireguard.sopsFile = ./secrets.yml;
   dn42 = [
     {
+      name = "wg0014";
+      asn = 4242420014;
+      e6 = "fe80::0014:1";
+      listen = 20014;
+      endpoint = "jp.dn42.fxnet.top:21888";
+      publickey = "ixYWNm89pSNvvyr4x4IquXVaTEoJHZg/yXCJ6mj7W2g=";
+    }
+    {
       name = "wg0088";
       asn = 4242420088;
       e6 = "fe80::88:3";
