@@ -224,6 +224,14 @@
       publickey = "viR4CoaJTBHROo/Bgbb27hQ2ttr8AbByGY/yOz3D3GY=";
     }
     {
+      name = "wg2601";
+      asn = 4242422601;
+      e6 = "fe80::42:2601:2a:1";
+      listen = 22601;
+      endpoint = "dn42-us-lax1.burble.com:21888";
+      publickey = "lrZvYNx07GCJyYN6yd/hvdaKa6f0eaQzEN+ykkbQO0o=";
+    }
+    {
       name = "wg2688";
       listen = 22688;
       asn = 4242422688;

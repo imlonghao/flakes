@@ -236,6 +236,14 @@
       publickey = "iXi9Hy4UsEsafmI50u7N5pi5tK+t/X6VdGE8b8GJIXg=";
     }
     {
+      name = "wg2601";
+      asn = 4242422601;
+      e6 = "fe80::42:2601:31:1";
+      listen = 22601;
+      endpoint = "dn42-de-fra1.burble.com:21888";
+      publickey = "wdNV+4kcy5HZBGXWro1Zq2SoIiQPhg2G/vY+eC42QhQ=";
+    }
+    {
       name = "wg2717";
       listen = 22717;
       endpoint = "nl.vm.whojk.com:23024";
