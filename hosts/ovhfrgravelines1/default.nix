@@ -128,6 +128,7 @@ in
       "/root/.ssh"
       "/root/.local"
       "/root/.ansible/"
+      "/root/.step"
     ];
     files = [
       "/etc/machine-id"
