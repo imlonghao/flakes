@@ -14,6 +14,16 @@
       l4 = "172.22.68.4";
     }
     {
+      name = "wg76190";
+      listen = 76190;
+      publickey = "uYzLhWuZRhAlhE+6KsqzclEZASInk/dDllfBAx5PnkQ=";
+      asn = 36190;
+      e4 = "172.23.235.1";
+      e6 = "fe80::1299:e";
+      l4 = "172.22.68.4";
+      mpbgp = false;
+    }
+    {
       name = "wg31111";
       listen = 31111;
       publickey = "YnoqhBTjO0+2vj/1lXqzOmvKeCwZ4q3BJzNyxN/zQ00=";
