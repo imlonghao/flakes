@@ -90,13 +90,6 @@
     git
   ];
 
-  # OpenSSH
-  users.users.root = {
-    openssh.authorizedKeys.keys = [
-      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINwH+SQ2Zn0yAjNrsXSIZL7ViulHom4LixUAZQ5e+DoW root@nixos"
-    ];
-  };
-
   # Crontab
   services.cron = {
     enable = true;
