@@ -12,9 +12,9 @@
   users.users.root = {
     hashedPasswordFile = config.sops.secrets.root.path;
     openssh.authorizedKeys.keys = [
-      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKv5fgCyrSdHw1z4Yvdi28fLs413vLFYk5sYyfC1YHJz imlonghao@imlonghao"
-      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOeDCr6dY6ScASSNauNDZx1hOjTg80Ih5LWW4z0HDDS2 root@ovhfrgravelines1"
-      "sk-ssh-ed25519@openssh.com AAAAGnNrLXNzaC1lZDI1NTE5QG9wZW5zc2guY29tAAAAIPssSSxz4ZxCS/Tp4TSC4/6P0FQ+bvXWsrl3FTB5denvAAAABHNzaDo= CanoKey"
+      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIH8PcjHlCpkP7we75CoRX6gkKrI7/072xj8G6Y1qisNm openpgp:0xDA96745E"
+      "sk-ssh-ed25519@openssh.com AAAAGnNrLXNzaC1lZDI1NTE5QG9wZW5zc2guY29tAAAAIPssSSxz4ZxCS/Tp4TSC4/6P0FQ+bvXWsrl3FTB5denvAAAABHNzaDo= Pigeon@CanoKey"
+      "sk-ssh-ed25519@openssh.com AAAAGnNrLXNzaC1lZDI1NTE5QG9wZW5zc2guY29tAAAAIB851g+j7f3CPa0FHBiSKu8hlTh2E9wpsv/H0VYpLlj2AAAABHNzaDo= Canary@CanoKey"
     ];
     shell = pkgs.fish;
   };

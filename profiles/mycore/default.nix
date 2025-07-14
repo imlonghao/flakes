@@ -91,11 +91,6 @@ in
     extraConfig = ''
       TrustedUserCAKeys ${trustedUserCAKeys}
     '';
-    knownHosts.ca = {
-      publicKey = "ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBO5G2CWEODVl6DJKYy36co6J6K12Y+OftCXUihhGpvKbKNM5/vImNTwDzAyCKrKcM8Da+1WTIJnIZM9qlLG8ZdY=";
-      hostNames = [ "*" ];
-      certAuthority = true;
-    };
     knownHosts.step-ca = {
       publicKey = "ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBH0r5oq3zgEQkOWsN0q8Y9Q451cT0PVp3rTJw14B4QuHLmULYfAfjXUa/ve3EtIFetGefyiDUJa2r60Cd5gBOM4=";
       hostNames = [ "*" ];
