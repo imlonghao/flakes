@@ -15,9 +15,9 @@
     }
     {
       name = "wg76190";
-      listen = 76190;
+      listen = 36190;
       publickey = "uYzLhWuZRhAlhE+6KsqzclEZASInk/dDllfBAx5PnkQ=";
-      asn = 36190;
+      asn = 76190;
       e4 = "172.23.235.1";
       e6 = "fe80::1299:e";
       l4 = "172.22.68.4";
