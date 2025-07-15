@@ -62,6 +62,14 @@
       publickey = "jtE83RMoN49bs8TOetxrGdzqywz2BI+uT1qJrGI7GVU=";
     }
     {
+      name = "wg0555";
+      asn = 4242420555;
+      e6 = "fe80::d555";
+      listen = 20555;
+      endpoint = "hk-01.node.dn42.0xptr.top:21888";
+      publickey = "xin3e9mT1MVzPUVGG7pVIZ/FIkwOIGQNN2cVpCTLNS8=";
+    }
+    {
       name = "wg0712";
       asn = 4242420712;
       e6 = "fe80::712";
