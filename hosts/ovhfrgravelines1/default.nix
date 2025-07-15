@@ -136,11 +136,6 @@ in
     ];
   };
 
-  # Corp SSH Public Key
-  users.users.root.openssh.authorizedKeys.keys = [
-    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOUNJVlqv8ZadxMk0XSlTpFmOHcxpbngu5GBZ9rSM77M Corp"
-  ];
-
   # fish alias
   programs.fish.shellAliases = {
     nttcom = "whois -h rr.ntt.net";
