@@ -73,6 +73,7 @@ in
     bgpq4
     borgbackup
     borgmatic
+    claude-code
     croc
     deploy-rs
     dnsutils
@@ -96,6 +97,7 @@ in
     nix-update
     nixfmt
     nmap
+    nodejs
     openssl
     openvpn
     (python3.withPackages (ps: with ps; [ requests ]))
