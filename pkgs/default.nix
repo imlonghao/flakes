@@ -14,4 +14,5 @@ _final: prev: {
   ranetdebug = prev.callPackage ./ranetdebug { };
   supervxlan = prev.callPackage ./supervxlan { };
   strongswan_6 = prev.callPackage ./strongswan_6 { };
+  claude-code = prev.callPackage ./claude-code { };
 }
