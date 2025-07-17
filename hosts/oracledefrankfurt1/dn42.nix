@@ -39,6 +39,15 @@
       publickey = "qqib9JVb+Nugiv6VJeq5q0QsKv++9girnuOMgQSyi0o=";
     }
     {
+      name = "wg0020";
+      listen = 20020;
+      endpoint = "dn42.diigg.tech:21888";
+      publickey = "MJd3RQEM6+uFx1376rpIC99XWanD9e3iE3aFS2wa9TI=";
+#      presharedkey = "MJd3RQEM6+uFx1376rpIC99XWanD9e3iE3aFS2wa9TI=";
+      asn = 4242420020;
+      e6 = "fe80::d311";
+    }
+    {
       name = "wg0129";
       listen = 20129;
       endpoint = "de1.420129.xyz:21888";
