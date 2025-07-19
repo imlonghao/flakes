@@ -50,6 +50,14 @@
         e6 = "fe80::d311";
       }
       {
+        name = "wg0070";
+        asn = 4242420070;
+        e6 = "fe80::0070:4";
+        listen = 20070;
+        endpoint = "de.dn42.lie-kong.top:21888";
+        publickey = "aCvY8RpD6hrAeQWjhQSREruFPOmOnsq8bpqr8soFa3Y=";
+      }
+      {
         name = "wg0129";
         listen = 20129;
         endpoint = "de1.420129.xyz:21888";

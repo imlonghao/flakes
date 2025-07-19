@@ -14,6 +14,14 @@
         publickey = "ixYWNm89pSNvvyr4x4IquXVaTEoJHZg/yXCJ6mj7W2g=";
       }
       {
+        name = "wg0070";
+        asn = 4242420070;
+        e6 = "fe80::0070:1";
+        listen = 20070;
+        endpoint = "jp.dn42.lie-kong.top:21888";
+        publickey = "PA5hDpcgaKsYKUyI3lLMcYojivg5LRfBuyOSsKTq1mY=";
+      }
+      {
         name = "wg0088";
         asn = 4242420088;
         e6 = "fe80::88:3";

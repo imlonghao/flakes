@@ -21,6 +21,14 @@
         publickey = "y5D4KE+anbxbZ8p+JvzqDRv+PY/FPAu+TD26/9bmYC0=";
       }
       {
+        name = "wg0070";
+        asn = 4242420070;
+        e6 = "fe80::0070:2";
+        listen = 20070;
+        endpoint = "hk.dn42.lie-kong.top:21888";
+        publickey = "3Qhit0K7maW6oMVt57KUkWDiDfZ/OWOYwzu/fYrk6iE=";
+      }
+      {
         name = "wg0202";
         e6 = "fe80::202:2";
         asn = 4242420202;
