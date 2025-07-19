@@ -95,6 +95,14 @@
         e6 = "fe80::ffff:2092";
       }
       {
+        name = "wg2189";
+        asn = 4242422189;
+        e6 = "fe80::2189:124";
+        listen = 22189;
+        endpoint = "us-nyc.dn42.iedon.net:46152";
+        publickey = "2Wmv10a9eVSni9nfZ7YPsyl3ZC5z7vHq0sTZGgk5WGo=";
+      }
+      {
         name = "wg2464";
         e6 = "fe80::2464";
         asn = 4242422464;
