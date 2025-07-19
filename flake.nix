@@ -174,9 +174,6 @@
         twdscntaibei1 = {
           targetHost = "twds-cn-taibei-1.ni.sb";
         };
-        virtuafrlille1 = {
-          targetHost = "virtua-fr-lille-1.ni.sb";
-        };
         f4uskansas1 = {
           targetHost = "f4-us-kansas-1.ni.sb";
         };
@@ -200,9 +197,6 @@
         };
         vpsjptokyo1 = {
           targetHost = "vps-jp-tokyo-1.ni.sb";
-        };
-        coalcloudcnhongkong1 = {
-          targetHost = "coalcloud-cn-hongkong-1.ni.sb";
         };
         clawcloudcnhongkong1 = {
           targetHost = "clawcloud-cn-hongkong-1.ni.sb";
