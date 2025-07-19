@@ -45,7 +45,7 @@
         listen = 20020;
         endpoint = "dn42.diigg.tech:21888";
         publickey = "MJd3RQEM6+uFx1376rpIC99XWanD9e3iE3aFS2wa9TI=";
-        #      presharedkey = "MJd3RQEM6+uFx1376rpIC99XWanD9e3iE3aFS2wa9TI=";
+        presharedkey = "Af7vnJ7uqhRmw7gDo7WMrOAVceFh1qeWKfwXfxtdagg=";
         asn = 4242420020;
         e6 = "fe80::d311";
       }
