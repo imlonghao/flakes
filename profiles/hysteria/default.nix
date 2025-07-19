@@ -2,7 +2,7 @@
 
 {
   sops.secrets."hysteria.yaml" = {
-    sopsFile = "${self}/hosts/${config.networking.hostName}/secrets.yml";
+    sopsFile = "${self}/hosts/${config.nixpkgs.system}/${config.networking.hostName}/secrets.yml";
     owner = "hysteria";
     group = "hysteria";
   };

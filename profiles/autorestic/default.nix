@@ -11,7 +11,8 @@
     pkgs.autorestic
   ];
 
-  sops.secrets."autorestic".sopsFile = "${self}/hosts/${config.networking.hostName}/secrets.yml";
+  sops.secrets."autorestic".sopsFile =
+    "${self}/hosts/${config.nixpkgs.system}/${config.networking.hostName}/secrets.yml";
 
   services.autorestic = {
     enable = true;

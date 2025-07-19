@@ -108,9 +108,8 @@ in
   };
   config = mkIf cfg.enable {
     environment.systemPackages = [
-      pkgs.strongswan
+      pkgs.strongswan_6
       pkgs.ranet
-      pkgs.ranetdebug
     ];
     sops.secrets.ranet = {
       sopsFile = "${self}/secrets/ranet.txt";

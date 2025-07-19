@@ -14,7 +14,7 @@
     pkgs.borgmatic
   ];
 
-  sops.secrets.borgmatic.sopsFile = "${self}/hosts/${config.networking.hostName}/secrets.yml";
+  sops.secrets.borgmatic.sopsFile = "${self}/hosts/${config.nixpkgs.system}/${config.networking.hostName}/secrets.yml";
   systemd.services.borgmatic.serviceConfig.EnvironmentFile = "/run/secrets/borgmatic";
 
   services.borgmatic = {

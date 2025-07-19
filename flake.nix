@@ -1,231 +1,223 @@
 {
-  description = "A highly structured configuration database.";
+  description = "imlonghao's Nix flakes config";
 
-  nixConfig.extra-experimental-features = "nix-command flakes";
-  nixConfig.extra-substituters = "https://imlonghao.cachix.org https://nrdxp.cachix.org https://nix-community.cachix.org";
-  nixConfig.extra-trusted-public-keys = "imlonghao.cachix.org-1:KGQ7+R1BXo2NsoeAxKLPfGAiHz5ofCmZO4hih7u/2Q8= nrdxp.cachix.org-1:Fc5PSqY2Jm1TrWfm88l6cvGWwz3s93c6IOifQWnhNW4= nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs=";
+  nixConfig = {
+    extra-experimental-features = "nix-command flakes";
+    extra-substituters = "https://imlonghao.cachix.org https://nrdxp.cachix.org https://nix-community.cachix.org";
+    extra-trusted-public-keys = "imlonghao.cachix.org-1:KGQ7+R1BXo2NsoeAxKLPfGAiHz5ofCmZO4hih7u/2Q8= nrdxp.cachix.org-1:Fc5PSqY2Jm1TrWfm88l6cvGWwz3s93c6IOifQWnhNW4= nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs=";
+  };
 
   inputs = {
-    nixos.url = "github:nixos/nixpkgs/release-25.05";
-    latest.url = "github:nixos/nixpkgs/nixos-unstable";
-
-    digga.url = "github:divnix/digga";
-    digga.inputs.nixpkgs.follows = "nixos";
-    digga.inputs.nixlib.follows = "nixos";
-    digga.inputs.home-manager.follows = "home";
-    digga.inputs.deploy.follows = "deploy";
-    digga.inputs.flake-utils-plus.follows = "flake-utils-plus";
-
-    home.url = "github:nix-community/home-manager/release-25.05";
-    home.inputs.nixpkgs.follows = "nixos";
-
-    deploy.url = "github:serokell/deploy-rs";
-    deploy.inputs.nixpkgs.follows = "nixos";
-
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    flake-parts.url = "github:hercules-ci/flake-parts";
+    colmena-flake.url = "github:juspay/colmena-flake";
+    sops-nix = {
+      url = "github:Mic92/sops-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    ranet = {
+      url = "github:NickCao/ranet";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     impermanence.url = "github:nix-community/impermanence";
-
-    sops-nix.url = "github:Mic92/sops-nix";
-    sops-nix.inputs.nixpkgs.follows = "nixos";
-
-    flake-utils-plus.url = "github:gytis-ivaskevicius/flake-utils-plus";
-
-    ranet.url = "github:NickCao/ranet";
-    ranet.inputs.nixpkgs.follows = "nixos";
+    devshell = {
+      url = "github:numtide/devshell";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
-    {
-      self,
-      digga,
-      nixos,
-      home,
-      nur,
-      impermanence,
-      sops-nix,
-      ranet,
-      ...
-    }@inputs:
-    digga.lib.mkFlake {
-      inherit self inputs;
-
-      channelsConfig = {
-        allowUnfree = true;
-      };
-
-      channels = {
-        nixos = {
-          imports = [ (digga.lib.importOverlays ./overlays) ];
-          overlays = [
-            nur.overlay
-            ./pkgs/default.nix
-            ranet.overlays.default
-          ];
-        };
-        latest = { };
-      };
-
-      lib = import ./lib { lib = digga.lib // nixos.lib; };
-
-      sharedOverlays = [
-        (_final: prev: {
-          __dontExport = true;
-          lib = prev.lib.extend (_lfinal: _lprev: { our = self.lib; });
-        })
+    inputs@{ self, flake-parts, ... }:
+    flake-parts.lib.mkFlake { inherit inputs; } {
+      imports = [
+        inputs.colmena-flake.flakeModules.default
+        inputs.devshell.flakeModule
       ];
-
-      nixos = {
-        hostDefaults = {
-          system = "x86_64-linux";
-          channelName = "nixos";
-          imports = [ (digga.lib.importExportableModules ./modules) ];
-          modules = [
-            { lib.our = self.lib; }
-            digga.nixosModules.bootstrapIso
-            digga.nixosModules.nixConfig
-            home.nixosModules.home-manager
-            impermanence.nixosModules.impermanence
-            sops-nix.nixosModules.sops
-          ];
-        };
-
-        imports = [ (digga.lib.importHosts ./hosts) ];
-        hosts = {
-          # set host specific properties here
-          oracledefrankfurt1 = {
-            system = "aarch64-linux";
+      systems = builtins.attrNames (builtins.readDir ./hosts);
+      perSystem =
+        {
+          lib,
+          config,
+          self',
+          inputs',
+          pkgs,
+          system,
+          ...
+        }:
+        {
+          packages = lib.packagesFromDirectoryRecursive {
+            inherit (pkgs) callPackage;
+            directory = ./pkgs;
           };
-        };
-        importables = rec {
-          profiles = digga.lib.rakeLeaves ./profiles // {
-            users = digga.lib.rakeLeaves ./users;
-          };
-          suites = with profiles; rec {
-            base = [
-              core
-              users.nixos
-              users.root
+          devshells.default = {
+            packages = [
+              pkgs.colmena
             ];
           };
         };
-      };
-
-      home = {
-        imports = [ (digga.lib.importExportableModules ./users/modules) ];
-        modules = [ ];
-        importables = rec {
-          profiles = digga.lib.rakeLeaves ./users/profiles;
-          suites = with profiles; rec {
-            base = [
-              direnv
-              git
-            ];
+      flake = {
+        nixosConfigurations = builtins.listToAttrs (
+          builtins.concatLists (
+            map (
+              arch:
+              map (hostName: {
+                name = "${hostName}";
+                value = inputs.nixpkgs.lib.nixosSystem {
+                  system = arch;
+                  specialArgs = { inherit self inputs; };
+                  modules = [
+                    {
+                      nixpkgs = {
+                        config.allowUnfree = true;
+                        overlays = [
+                          self.overlays.default
+                          inputs.ranet.overlays.default
+                        ];
+                        system = arch;
+                      };
+                      imports = [
+                        self.nixosModules.default
+                        inputs.sops-nix.nixosModules.sops
+                        inputs.impermanence.nixosModules.impermanence
+                      ];
+                      networking.hostName = hostName;
+                    }
+                    ./hosts/${arch}/${hostName}
+                  ];
+                };
+              }) (builtins.attrNames (builtins.readDir ./hosts/${arch}))
+            ) (builtins.attrNames (builtins.readDir ./hosts))
+          )
+        );
+        nixosModules.default =
+          { ... }:
+          {
+            imports = builtins.map (f: ./modules/${f}) (builtins.attrNames (builtins.readDir ./modules));
           };
-        };
-        users = {
-          nixos =
-            { suites, ... }:
-            {
-              imports = suites.base;
-            };
-        }; # digga.lib.importers.rakeLeaves ./users/hm;
+        overlays.default =
+          final: prev:
+          prev.lib.packagesFromDirectoryRecursive {
+            inherit (prev) callPackage;
+            directory = ./pkgs;
+          };
       };
-
-      devshell = ./shell;
-
-      homeConfigurations = digga.lib.mkHomeConfigurations self.nixosConfigurations;
-
-      deploy.nodes = digga.lib.mkDeployNodes self.nixosConfigurations {
+      colmena-flake.deployment = {
         virmachustampa1 = {
-          hostname = "virmach-us-tampa-1.ni.sb";
-          sshUser = "root";
+          targetHost = "virmach-us-tampa-1.ni.sb";
         };
         hosthatchsgsingapore1 = {
-          hostname = "hosthatch-sg-singapore-1.ni.sb";
-        };
-        buyvmuslasvegas1 = {
-          hostname = "buyvm-us-lasvegas-1.ni.sb";
-        };
-        buyvmusmiami1 = {
-          hostname = "buyvm-us-miami-1.ni.sb";
-        };
-        starrydnscnhongkong1 = {
-          hostname = "starrydns-cn-hongkong-1.ni.sb";
-        };
-        misakadeberlin1 = {
-          hostname = "misaka-de-berlin-1.ni.sb";
-        };
-        misakauklondon1 = {
-          hostname = "misaka-uk-london-1.ni.sb";
-        };
-        hosthatchsestockholm1 = {
-          hostname = "hosthatch-se-stockholm-1.ni.sb";
-        };
-        oracledefrankfurt1 = {
-          hostname = "oracle-de-frankfurt-1.ni.sb";
-        };
-        terrahostnosandefjord1 = {
-          hostname = "terrahost-no-sandefjord-1.ni.sb";
-        };
-        vpsausydney1 = {
-          hostname = "vps-au-sydney-1.ni.sb";
-        };
-        vpsussanjose1 = {
-          hostname = "vps-us-sanjose-1.ni.sb";
-        };
-        ovhfrgravelines1 = {
-          hostname = "ovh-fr-gravelines-1.ni.sb";
-        };
-        buyvmluroost1 = {
-          hostname = "buyvm-lu-roost-1.ni.sb";
-        };
-        vpsdefrankfurt1 = {
-          hostname = "vps-de-frankfurt-1.ni.sb";
-        };
-        wirecatussantaclara1 = {
-          hostname = "wirecat-us-santaclara-1.ni.sb";
-        };
-        twdscntaibei1 = {
-          hostname = "twds-cn-taibei-1.ni.sb";
-        };
-        virtuafrlille1 = {
-          hostname = "virtua-fr-lille-1.ni.sb";
-        };
-        f4uskansas1 = {
-          hostname = "f4-us-kansas-1.ni.sb";
-        };
-        dmituslosangeles1 = {
-          hostname = "dmit-us-losangeles-1.ni.sb";
-        };
-        dmitcnhongkong1 = {
-          hostname = "dmit-cn-hongkong-1.ni.sb";
-        };
-        serverfactorynleygelshoven1 = {
-          hostname = "serverfactory-nl-eygelshoven-1.ni.sb";
-        };
-        xentainusdallas1 = {
-          hostname = "xentain-us-dallas-1.ni.sb";
-        };
-        breezehostusdallas1 = {
-          hostname = "breezehost-us-dallas-1.ni.sb";
-          sshOpts = [
-            "-p"
-            "10222"
+          targetHost = "hosthatch-sg-singapore-1.ni.sb";
+          tags = [
+            "dn42"
+            "k3s-agent"
           ];
         };
+        buyvmuslasvegas1 = {
+          targetHost = "buyvm-us-lasvegas-1.ni.sb";
+          tags = [ "dn42" ];
+        };
+        buyvmusmiami1 = {
+          targetHost = "buyvm-us-miami-1.ni.sb";
+          tags = [ "dn42" ];
+        };
+        starrydnscnhongkong1 = {
+          targetHost = "starrydns-cn-hongkong-1.ni.sb";
+        };
+        misakadeberlin1 = {
+          targetHost = "misaka-de-berlin-1.ni.sb";
+          tags = [ "k3s-server" ];
+        };
+        misakauklondon1 = {
+          targetHost = "misaka-uk-london-1.ni.sb";
+          tags = [ "k3s-server" ];
+        };
+        hosthatchsestockholm1 = {
+          targetHost = "hosthatch-se-stockholm-1.ni.sb";
+          tags = [ "k3s-agent" ];
+        };
+        oracledefrankfurt1 = {
+          targetHost = "oracle-de-frankfurt-1.ni.sb";
+          buildOnTarget = true;
+          tags = [
+            "dn42"
+            "k3s-agent"
+          ];
+        };
+        terrahostnosandefjord1 = {
+          targetHost = "terrahost-no-sandefjord-1.ni.sb";
+          tags = [ "dn42" ];
+        };
+        vpsausydney1 = {
+          targetHost = "vps-au-sydney-1.ni.sb";
+          tags = [
+            "dn42"
+            "k3s-agent"
+          ];
+        };
+        vpsussanjose1 = {
+          targetHost = "vps-us-sanjose-1.ni.sb";
+        };
+        ovhfrgravelines1 = {
+          targetHost = "ovh-fr-gravelines-1.ni.sb";
+          tags = [ "k3s-agent" ];
+        };
+        buyvmluroost1 = {
+          targetHost = "buyvm-lu-roost-1.ni.sb";
+        };
+        vpsdefrankfurt1 = {
+          targetHost = "vps-de-frankfurt-1.ni.sb";
+        };
+        wirecatussantaclara1 = {
+          targetHost = "wirecat-us-santaclara-1.ni.sb";
+          tags = [ "k3s-agent" ];
+        };
+        twdscntaibei1 = {
+          targetHost = "twds-cn-taibei-1.ni.sb";
+        };
+        virtuafrlille1 = {
+          targetHost = "virtua-fr-lille-1.ni.sb";
+        };
+        f4uskansas1 = {
+          targetHost = "f4-us-kansas-1.ni.sb";
+        };
+        dmituslosangeles1 = {
+          targetHost = "dmit-us-losangeles-1.ni.sb";
+        };
+        dmitcnhongkong1 = {
+          targetHost = "dmit-cn-hongkong-1.ni.sb";
+        };
+        serverfactorynleygelshoven1 = {
+          targetHost = "serverfactory-nl-eygelshoven-1.ni.sb";
+          tags = [ "k3s-server" ];
+        };
+        xentainusdallas1 = {
+          targetHost = "xentain-us-dallas-1.ni.sb";
+        };
+        breezehostusdallas1 = {
+          targetHost = "breezehost-us-dallas-1.ni.sb";
+          targetPort = 10222;
+          tags = [ "dn42" ];
+        };
         vpsjptokyo1 = {
-          hostname = "vps-jp-tokyo-1.ni.sb";
+          targetHost = "vps-jp-tokyo-1.ni.sb";
         };
         coalcloudcnhongkong1 = {
-          hostname = "coalcloud-cn-hongkong-1.ni.sb";
+          targetHost = "coalcloud-cn-hongkong-1.ni.sb";
         };
         clawcloudcnhongkong1 = {
-          hostname = "clawcloud-cn-hongkong-1.ni.sb";
+          targetHost = "clawcloud-cn-hongkong-1.ni.sb";
+          tags = [
+            "dn42"
+            "k3s-agent"
+          ];
         };
         ovhcabeauharnois1 = {
-          hostname = "ovh-ca-beauharnois-1.ni.sb";
+          targetHost = "ovh-ca-beauharnois-1.ni.sb";
+          tags = [ "k3s-agent" ];
         };
         ovhcabeauharnois2 = {
-          hostname = "ovh-ca-beauharnois-2.ni.sb";
+          targetHost = "ovh-ca-beauharnois-2.ni.sb";
+          tags = [ "k3s-agent" ];
         };
       };
     };

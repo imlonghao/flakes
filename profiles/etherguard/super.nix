@@ -2,7 +2,7 @@
 
 {
   sops.secrets."etherguard.super" = {
-    sopsFile = "${self}/hosts/${config.networking.hostName}/secrets.yml";
+    sopsFile = "${self}/hosts/${config.nixpkgs.system}/${config.networking.hostName}/secrets.yml";
     restartUnits = [ "etherguard-super.service" ];
   };
 

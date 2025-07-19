@@ -6,7 +6,7 @@
   ];
   virtualisation.docker = {
     enable = true;
-    package = pkgs.docker_27;
+    package = pkgs.docker_28;
     daemon.settings = {
       "default-address-pools" = [
         {

@@ -6,7 +6,7 @@
 }:
 
 {
-  sops.secrets.wireguard.sopsFile = lib.mkForce "${self}/hosts/${config.networking.hostName}/secrets.yml";
+  sops.secrets.wireguard.sopsFile = lib.mkForce "${self}/hosts/${config.nixpkgs.system}/${config.networking.hostName}/secrets.yml";
   vxwg = {
     enable = true;
     peers = {
