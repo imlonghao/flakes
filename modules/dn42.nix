@@ -9,78 +9,83 @@ let
   cfg = config.dn42;
 in
 {
-  options.dn42 = mkOption {
-    type = types.listOf (
-      types.submodule ({
-        options.name = mkOption {
-          type = types.str;
-          description = "name";
-        };
-        options.ipv4 = mkOption {
-          type = types.str;
-          description = "ipv4";
-          default = "172.22.68.0";
-        };
-        options.ipv6 = mkOption {
-          type = types.str;
-          description = "ipv6";
-          default = "fe80::1888/64";
-        };
-        options.listen = mkOption {
-          type = types.nullOr types.port;
-          description = "port";
-          default = null;
-        };
-        options.endpoint = mkOption {
-          type = types.nullOr types.str;
-          description = "endpoint";
-          default = null;
-        };
-        options.publickey = mkOption {
-          type = types.str;
-          description = "publickey";
-        };
-        options.presharedkey = mkOption {
-          type = types.nullOr types.str;
-          description = "presharedkey";
-          default = null;
-        };
-        options.asn = mkOption {
-          type = types.int;
-          description = "asn";
-        };
-        options.e4 = mkOption {
-          type = types.nullOr types.str;
-          description = "endpoint IPv4";
-          default = null;
-        };
-        options.e6 = mkOption {
-          type = types.nullOr types.str;
-          description = "endpoint IPv6";
-          default = null;
-        };
-        options.mpbgp = mkOption {
-          type = types.bool;
-          description = "support Multiprotocol BGP";
-          default = true;
-        };
-        options.l4 = mkOption {
-          type = types.nullOr types.str;
-          description = "local IPv4 address";
-          default = null;
-        };
-        options.mtu = mkOption {
-          type = types.nullOr types.int;
-          description = "mtu";
-          default = null;
-        };
-      })
-    );
-    description = "internal wireguard interfaces";
-    default = [ ];
+  options.dn42 = {
+    enable = mkEnableOption "dn42";
+    peers = mkOption {
+      type = types.listOf (
+        types.submodule ({
+          options.name = mkOption {
+            type = types.str;
+            description = "name";
+          };
+          options.ipv4 = mkOption {
+            type = types.str;
+            description = "ipv4";
+            default = "172.22.68.0";
+          };
+          options.ipv6 = mkOption {
+            type = types.str;
+            description = "ipv6";
+            default = "fe80::1888/64";
+          };
+          options.listen = mkOption {
+            type = types.nullOr types.port;
+            description = "port";
+            default = null;
+          };
+          options.endpoint = mkOption {
+            type = types.nullOr types.str;
+            description = "endpoint";
+            default = null;
+          };
+          options.publickey = mkOption {
+            type = types.str;
+            description = "publickey";
+          };
+          options.presharedkey = mkOption {
+            type = types.nullOr types.str;
+            description = "presharedkey";
+            default = null;
+          };
+          options.asn = mkOption {
+            type = types.int;
+            description = "asn";
+          };
+          options.e4 = mkOption {
+            type = types.nullOr types.str;
+            description = "endpoint IPv4";
+            default = null;
+          };
+          options.e6 = mkOption {
+            type = types.nullOr types.str;
+            description = "endpoint IPv6";
+            default = null;
+          };
+          options.mpbgp = mkOption {
+            type = types.bool;
+            description = "support Multiprotocol BGP";
+            default = true;
+          };
+          options.l4 = mkOption {
+            type = types.nullOr types.str;
+            description = "local IPv4 address";
+            default = null;
+          };
+          options.mtu = mkOption {
+            type = types.nullOr types.int;
+            description = "mtu";
+            default = null;
+          };
+        })
+      );
+      description = "internal wireguard interfaces";
+      default = [ ];
+    };
   };
-  config = {
-    boot.kernel.sysctl = listToAttrs (map (x: nameValuePair "net.ipv4.conf.${x.name}.rp_filter" 0) cfg);
+  config = mkIf cfg.enable {
+    boot.kernel.sysctl = listToAttrs (
+      map (x: nameValuePair "net.ipv4.conf.${x.name}.rp_filter" 0) cfg.peers
+    );
     environment.systemPackages = [ pkgs.dn42debug ];
     networking.wireguard.interfaces = listToAttrs (
       map (
@@ -110,7 +115,7 @@ in
             }
           ];
         }
-      ) cfg
+      ) cfg.peers
     );
   };
 }
