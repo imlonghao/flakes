@@ -17,7 +17,7 @@
       createHome = true;
       isNormalUser = true;
       openssh.authorizedKeys.keys = [
-        ''command="${pkgs.borgbackup}/bin/borg serve --restrict-to-repository /persist/borg/cloudiplcuslosangeles1/repo --append-only",restrict ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOd9q7yYhjYQcxiSmybWtbHYa/cn../../../fYP4mVV0AH root@cloudiplcuslosangeles1''
+        ''command="${pkgs.borgbackup}/bin/borg serve --restrict-to-repository /persist/borg/cloudiplcuslosangeles1/repo --append-only",restrict ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOd9q7yYhjYQcxiSmybWtbHYa/cnwK/uz/fYP4mVV0AH root@cloudiplcuslosangeles1''
       ];
     };
     nas = {

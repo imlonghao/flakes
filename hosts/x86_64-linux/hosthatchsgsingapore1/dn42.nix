@@ -40,7 +40,7 @@
         name = "wg0566";
         listen = 20566;
         endpoint = "dn18.sin.surgebytes.com:31888";
-        publickey = "9xIkI9iCuJUpapOeVYxs../../../A93biWKow8qMD5mHY=";
+        publickey = "9xIkI9iCuJUpapOeVYxsDP/Wl/A93biWKow8qMD5mHY=";
         asn = 4242420566;
         e6 = "fe80::0566:18";
       }
