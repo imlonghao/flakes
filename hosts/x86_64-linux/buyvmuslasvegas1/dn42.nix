@@ -131,6 +131,14 @@
         publickey = "Z6OKJSR1sxMBgUd1uXEe/UxoBsOvRgbTnexy7z/ryUI=";
       }
       {
+        name = "wg1131";
+        asn = 4242421131;
+        e6 = "fe80::1131";
+        listen = 21131;
+        endpoint = "phoenix.us.dn42.yuzu.im:21888";
+        publickey = "abDdEXgpaUNfEVPYLv1GTA+1TjkRbk5MNUi0fczYflw=";
+      }
+      {
         name = "wg1240";
         listen = 21240;
         endpoint = "us-03.prefixlabs.net:21888";

@@ -134,6 +134,14 @@
         e6 = "fe80::117";
       }
       {
+        name = "wg1131";
+        asn = 4242421131;
+        e6 = "fe80::1131";
+        listen = 21131;
+        endpoint = "amsterdam.netherlands.dn42.yuzu.im:21888";
+        publickey = "EIuDaCH5fa0k33R/RrwqCsdn4mw8KPggo0AAMTUUdBI=";
+      }
+      {
         name = "wg1240";
         listen = 21240;
         endpoint = "de-01.prefixlabs.net:21888";

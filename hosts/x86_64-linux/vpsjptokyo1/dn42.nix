@@ -20,6 +20,14 @@
       publickey = "1fBfqOJnkf9blffCy5/DfQm+Sea3BkKikxUwOJA8CAs=";
     }
     {
+      name = "wg1131";
+      asn = 4242421131;
+      e6 = "fe80::1131";
+      listen = 21131;
+      endpoint = "tokyo.japan.dn42.yuzu.im:21888";
+      publickey = "7ZLEhruv0R7V9DUEv+BHLr5fszpp/B55aKFtVoIACno=";
+    }
+    {
       name = "wg1336";
       asn = 4242421336;
       e6 = "fe80::1336";
