@@ -193,7 +193,7 @@
     };
   }
   ${builtins.concatStringsSep "\n" (
-    lib.flip map (config.dn42) (
+    lib.flip map (config.dn42.peers) (
       x:
       if x.mpbgp then
         ''
