@@ -25,4 +25,6 @@ jobs:
           authToken: '${{ secrets.CACHIX_AUTH_TOKEN }}'
       - name: Build cache
         run: |
-          nix -Lv develop -c colmena build -v --on $(ls hosts/x86_64-linux/|xargs|sed 's/ /,/g')
+          for pkg in $(ls pkgs); do
+            echo "Building $pkg"
+            nix build -vL ".#$pkg"
