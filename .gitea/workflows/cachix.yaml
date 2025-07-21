@@ -28,3 +28,4 @@ jobs:
           for pkg in $(ls pkgs); do
             echo "Building $pkg"
             nix build -vL ".#$pkg"
+          done
