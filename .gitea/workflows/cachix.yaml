@@ -25,5 +25,5 @@ jobs:
           for pkg in $(ls pkgs); do
             echo "> Building $pkg"
             rm -rf /homeless-shelter
-            NIXPKGS_ALLOW_UNFREE=1 nix develop --impure -c nix --option sandbox false build --impure -vL ".#$pkg"
+            NIXPKGS_ALLOW_UNFREE=1 nix develop --impure -c nix build --impure -vL ".#$pkg"
           done
