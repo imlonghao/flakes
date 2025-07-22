@@ -22,9 +22,7 @@ jobs:
           authToken: '${{ secrets.CACHIX_AUTH_TOKEN }}'
       - name: Build cache
         run: |
-          mkdir -p ~/.config/nixpkgs
-          echo "{ allowUnfree = true; }" >> ~/.config/nixpkgs/config.nix
           for pkg in $(ls pkgs); do
             echo "> Building $pkg"
-            nix develop -c nix --option sandbox false build -vL ".#$pkg"
+            NIXPKGS_ALLOW_UNFREE=1 nix develop --impure -c nix --option sandbox false build -vL ".#$pkg"
           done
