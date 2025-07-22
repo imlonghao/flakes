@@ -24,5 +24,5 @@ jobs:
         run: |
           for pkg in $(ls pkgs); do
             echo "> Building $pkg"
-            nix --option sandbox false build -vL ".#$pkg"
+            nix develop -c nix --option sandbox false build -vL ".#$pkg"
           done
