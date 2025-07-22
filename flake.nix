@@ -50,6 +50,12 @@
             directory = ./pkgs;
           };
           devshells.default = {
+            env = [
+              {
+                name = "NIXPKGS_ALLOW_UNFREE";
+                value = 1;
+              }
+            ];
             packages = [
               pkgs.colmena
             ];
