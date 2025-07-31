@@ -2,7 +2,8 @@
   lib,
   fetchFromGitHub,
   buildGoModule,
-  pkgs,
+  vnstat,
+  makeWrapper,
 }:
 buildGoModule rec {
   pname = "komari-agent";
@@ -23,6 +24,15 @@ buildGoModule rec {
   ];
 
   doCheck = false;
+
+  nativeBuildInputs = [
+    makeWrapper
+  ];
+
+  postInstall = ''
+    wrapProgram $out/bin/komari-agent \
+     --prefix PATH : ${lib.makeBinPath [ vnstat ]}
+  '';
 
   meta = with lib; {
     homepage = "https://github.com/komari-monitor/komari-agent";
