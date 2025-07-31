@@ -11,5 +11,6 @@
     enable = true;
     endpoint = "https://komari.esd.cc";
     token = "/run/secrets/komari-agent";
+    include-mountpoint = [ "/persist" ];
   };
 }

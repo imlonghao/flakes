@@ -62,7 +62,7 @@
 
   services.komari-agent = {
     month-rotate = 26;
-    include-mountpoint = "/boot;/persist";
+    include-mountpoint = [ "/boot" ];
   };
 
 }

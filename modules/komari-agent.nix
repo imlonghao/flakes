@@ -24,19 +24,14 @@ in
       default = 0;
     };
     include-mountpoint = lib.mkOption {
-      type = lib.types.nullOr lib.types.str;
-      description = "Semicolon-separated list of mount points to include for disk statistics";
-      default = null;
+      type = lib.types.listOf lib.types.str;
+      description = "List of mount points to include for disk statistics";
     };
   };
   config = lib.mkIf cfg.enable {
     systemd.services.komari-agent = {
       serviceConfig = {
-        ExecStart = "${pkgs.bash}/bin/bash -c '${pkgs.komari-agent}/bin/komari-agent --disable-auto-update --disable-web-ssh -e ${cfg.endpoint} -t $(cat ${cfg.token}) --month-rotate ${toString cfg.month-rotate} ${
-          lib.optionalString (
-            cfg.include-mountpoint != null
-          ) " --include-mountpoint \"${cfg.include-mountpoint}\""
-        }'";
+        ExecStart = "${pkgs.bash}/bin/bash -c '${pkgs.komari-agent}/bin/komari-agent --disable-auto-update --disable-web-ssh -e ${cfg.endpoint} -t $(cat ${cfg.token}) --month-rotate ${toString cfg.month-rotate} --include-mountpoint \"${lib.strings.concatStringsSep ";" cfg.include-mountpoint}\"'";
       };
       wants = [ "network-online.target" ];
       after = [ "network-online.target" ];
