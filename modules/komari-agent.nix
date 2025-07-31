@@ -35,7 +35,7 @@ in
         ExecStart = "${pkgs.bash}/bin/bash -c '${pkgs.komari-agent}/bin/komari-agent --disable-auto-update --disable-web-ssh -e ${cfg.endpoint} -t $(cat ${cfg.token}) --month-rotate ${toString cfg.month-rotate} ${
           lib.optionalString (
             cfg.include-mountpoint != null
-          ) " --include-mountpoint ${cfg.include-mountpoint}"
+          ) " --include-mountpoint \"${cfg.include-mountpoint}\""
         }'";
       };
       wants = [ "network-online.target" ];
