@@ -182,6 +182,7 @@
         };
         dmitcnhongkong1 = {
           targetHost = "dmit-cn-hongkong-1.ni.sb";
+          tags = [ "dn42" ];
         };
         serverfactorynleygelshoven1 = {
           targetHost = "serverfactory-nl-eygelshoven-1.ni.sb";
