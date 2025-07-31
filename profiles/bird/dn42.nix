@@ -9,7 +9,7 @@
   define DN42_REGION = ${toString region};
   define DN42_COUNTRY = ${toString country};
   define DN42_BLACKLIST_ASN = [
-    4242423658, # Jason Xu
+    4242423658 # Jason Xu
   ];
   function is_self_net() {
     return net ~ 172.22.68.0/27;
