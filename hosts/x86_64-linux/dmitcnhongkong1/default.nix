@@ -60,6 +60,9 @@
     id = 30;
   };
 
-  services.komari-agent.month-rotate = 26;
+  services.komari-agent = {
+    month-rotate = 26;
+    include-mountpoint = "/boot;/persist";
+  };
 
 }
