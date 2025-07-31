@@ -60,4 +60,6 @@
     id = 30;
   };
 
+  services.komari-agent.month-rotate = 26;
+
 }
