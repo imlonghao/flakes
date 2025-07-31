@@ -145,151 +145,151 @@ creation_rules:
           - *vps_vpsussanjose1
           - *vps_terrahostnosandefjord1
           - *vps_ovhcabeauharnois2
-  - path_regex: hosts/buyvmuslasvegas1/secrets.yml$
+  - path_regex: hosts/x86_64-linux/buyvmuslasvegas1/secrets.yml$
     key_groups:
       - pgp:
           - *me_canokey
         age:
           - *vps_buyvmuslasvegas1
-  - path_regex: hosts/buyvmusmiami1/secrets.yml$
+  - path_regex: hosts/x86_64-linux/buyvmusmiami1/secrets.yml$
     key_groups:
       - pgp:
           - *me_canokey
         age:
           - *vps_buyvmusmiami1
-  - path_regex: hosts/hosthatchsgsingapore1/secrets.yml$
+  - path_regex: hosts/x86_64-linux/hosthatchsgsingapore1/secrets.yml$
     key_groups:
       - pgp:
           - *me_canokey
         age:
           - *vps_hosthatchsgsingapore1
-  - path_regex: hosts/misakauklondon1/secrets.yml$
+  - path_regex: hosts/x86_64-linux/misakauklondon1/secrets.yml$
     key_groups:
       - pgp:
           - *me_canokey
         age:
           - *vps_misakauklondon1
-  - path_regex: hosts/starrydnscnhongkong1/secrets.yml$
+  - path_regex: hosts/x86_64-linux/starrydnscnhongkong1/secrets.yml$
     key_groups:
       - pgp:
           - *me_canokey
         age:
           - *vps_starrydnscnhongkong1
-  - path_regex: hosts/hosthatchsestockholm1/secrets.yml$
+  - path_regex: hosts/x86_64-linux/hosthatchsestockholm1/secrets.yml$
     key_groups:
       - pgp:
           - *me_canokey
         age:
           - *vps_hosthatchsestockholm1
-  - path_regex: hosts/oracledefrankfurt1/secrets.yml$
+  - path_regex: hosts/aarch64-linux/oracledefrankfurt1/secrets.yml$
     key_groups:
       - pgp:
           - *me_canokey
         age:
           - *vps_oracledefrankfurt1
-  - path_regex: hosts/terrahostnosandefjord1/secrets.yml$
+  - path_regex: hosts/x86_64-linux/terrahostnosandefjord1/secrets.yml$
     key_groups:
       - pgp:
           - *me_canokey
         age:
           - *vps_terrahostnosandefjord1
-  - path_regex: hosts/vpsausydney1/secrets.yml$
+  - path_regex: hosts/x86_64-linux/vpsausydney1/secrets.yml$
     key_groups:
       - pgp:
           - *me_canokey
         age:
           - *vps_vpsausydney1
-  - path_regex: hosts/misakadeberlin1/secrets.yml$
+  - path_regex: hosts/x86_64-linux/misakadeberlin1/secrets.yml$
     key_groups:
       - pgp:
           - *me_canokey
         age:
           - *vps_misakadeberlin1
-  - path_regex: hosts/vpsussanjose1/secrets.yml$
+  - path_regex: hosts/x86_64-linux/vpsussanjose1/secrets.yml$
     key_groups:
       - pgp:
           - *me_canokey
         age:
           - *vps_vpsussanjose1
-  - path_regex: hosts/ovhfrgravelines1/secrets.yml$
+  - path_regex: hosts/x86_64-linux/ovhfrgravelines1/secrets.yml$
     key_groups:
       - pgp:
           - *me_canokey
         age:
           - *vps_ovhfrgravelines1
-  - path_regex: hosts/buyvmluroost1/secrets.yml$
+  - path_regex: hosts/x86_64-linux/buyvmluroost1/secrets.yml$
     key_groups:
       - pgp:
           - *me_canokey
         age:
           - *vps_buyvmluroost1
-  - path_regex: hosts/vpsdefrankfurt1/secrets.yml$
+  - path_regex: hosts/x86_64-linux/vpsdefrankfurt1/secrets.yml$
     key_groups:
       - pgp:
           - *me_canokey
         age:
           - *vps_vpsdefrankfurt1
-  - path_regex: hosts/wirecatussantaclara1/secrets.yml$
+  - path_regex: hosts/x86_64-linux/wirecatussantaclara1/secrets.yml$
     key_groups:
       - pgp:
           - *me_canokey
         age:
           - *vps_wirecatussantaclara1
-  - path_regex: hosts/twdscntaibei1/secrets.yml$
+  - path_regex: hosts/x86_64-linux/twdscntaibei1/secrets.yml$
     key_groups:
       - pgp:
           - *me_canokey
         age:
           - *vps_twdscntaibei1
-  - path_regex: hosts/f4uskansas1/secrets.yml$
+  - path_regex: hosts/x86_64-linux/f4uskansas1/secrets.yml$
     key_groups:
       - pgp:
           - *me_canokey
         age:
           - *vps_f4uskansas1
-  - path_regex: hosts/dmituslosangeles1/secrets.yml$
+  - path_regex: hosts/x86_64-linux/dmituslosangeles1/secrets.yml$
     key_groups:
       - pgp:
           - *me_canokey
         age:
           - *vps_dmituslosangeles1
-  - path_regex: hosts/dmitcnhongkong1/secrets.yml$
+  - path_regex: hosts/x86_64-linux/dmitcnhongkong1/secrets.yml$
     key_groups:
       - pgp:
           - *me_canokey
         age:
           - *vps_dmitcnhongkong1
-  - path_regex: hosts/serverfactorynleygelshoven1/secrets.yml$
+  - path_regex: hosts/x86_64-linux/serverfactorynleygelshoven1/secrets.yml$
     key_groups:
       - pgp:
           - *me_canokey
         age:
           - *vps_serverfactorynleygelshoven1
-  - path_regex: hosts/xentainusdallas1/secrets.yml$
+  - path_regex: hosts/x86_64-linux/xentainusdallas1/secrets.yml$
     key_groups:
       - pgp:
           - *me_canokey
         age:
           - *vps_xentainusdallas1
-  - path_regex: hosts/breezehostusdallas1/secrets.yml$
+  - path_regex: hosts/x86_64-linux/breezehostusdallas1/secrets.yml$
     key_groups:
       - pgp:
           - *me_canokey
         age:
           - *vps_breezehostusdallas1
-  - path_regex: hosts/vpsjptokyo1/secrets.yml$
+  - path_regex: hosts/x86_64-linux/vpsjptokyo1/secrets.yml$
     key_groups:
       - pgp:
           - *me_canokey
         age:
           - *vps_vpsjptokyo1
-  - path_regex: hosts/clawcloudcnhongkong1/secrets.yml$
+  - path_regex: hosts/x86_64-linux/clawcloudcnhongkong1/secrets.yml$
     key_groups:
       - pgp:
           - *me_canokey
         age:
           - *vps_clawcloudcnhongkong1
-  - path_regex: hosts/ovhcabeauharnois1/secrets.yml$
+  - path_regex: hosts/x86_64-linux/ovhcabeauharnois1/secrets.yml$
     key_groups:
       - pgp:
           - *me_canokey
