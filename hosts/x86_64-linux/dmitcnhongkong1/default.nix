@@ -1,11 +1,15 @@
 { self, ... }:
 {
   imports = [
+    ./dn42.nix
+    ./bird.nix
     ./hardware.nix
     "${self}/profiles/mycore"
     "${self}/users/root"
     "${self}/profiles/docker"
     "${self}/profiles/rsshc"
+    "${self}/profiles/pingfinder"
+    "${self}/profiles/bird-lg-go"
   ];
 
   boot.loader.grub.device = "/dev/vda";
@@ -21,6 +25,14 @@
           GatewayOnLink = true;
         }
       ];
+    };
+    networks.lo = {
+      address = [
+        "172.22.68.0/32"
+        "172.22.68.3/32"
+        "fd21:5c0c:9b7e:3::1/64"
+      ];
+      matchConfig.Name = "lo";
     };
   };
   networking = {
