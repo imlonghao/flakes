@@ -200,13 +200,6 @@
           targetHost = "vps-jp-tokyo-1.ni.sb";
           tags = [ "dn42" ];
         };
-        clawcloudcnhongkong1 = {
-          targetHost = "clawcloud-cn-hongkong-1.ni.sb";
-          tags = [
-            "dn42"
-            "k3s-agent"
-          ];
-        };
         ovhcabeauharnois1 = {
           targetHost = "ovh-ca-beauharnois-1.ni.sb";
           tags = [ "k3s-agent" ];
