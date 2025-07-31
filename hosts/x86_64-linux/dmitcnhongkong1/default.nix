@@ -10,6 +10,7 @@
     "${self}/profiles/rsshc"
     "${self}/profiles/pingfinder"
     "${self}/profiles/bird-lg-go"
+    "${self}/profiles/komari-agent"
   ];
 
   boot.loader.grub.device = "/dev/vda";
