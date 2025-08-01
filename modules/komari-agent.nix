@@ -27,11 +27,24 @@ in
       type = lib.types.listOf lib.types.str;
       description = "List of mount points to include for disk statistics";
     };
+    include-nics = lib.mkOption {
+      type = lib.types.listOf lib.types.str;
+      description = "List of network interfaces to include";
+      default = [ ];
+    };
   };
   config = lib.mkIf cfg.enable {
     systemd.services.komari-agent = {
       serviceConfig = {
-        ExecStart = "${pkgs.bash}/bin/bash -c '${pkgs.komari-agent}/bin/komari-agent --disable-auto-update --disable-web-ssh -e ${cfg.endpoint} -t $(cat ${cfg.token}) --month-rotate ${toString cfg.month-rotate} --include-mountpoint \"${lib.strings.concatStringsSep ";" cfg.include-mountpoint}\"'";
+        ExecStart =
+          "${pkgs.bash}/bin/bash -c '"
+          + "${pkgs.komari-agent}/bin/komari-agent --disable-auto-update --disable-web-ssh"
+          + " -e ${cfg.endpoint} -t $(cat ${cfg.token}) --month-rotate ${toString cfg.month-rotate}"
+          + " --include-mountpoint \"${lib.strings.concatStringsSep ";" cfg.include-mountpoint}\""
+          + (lib.optionalString (
+            cfg.include-nics != [ ]
+          ) " --include-nics ${lib.strings.concatStringsSep "," cfg.include-nics}")
+          + "'";
         Restart = "always";
         DynamicUser = "yes";
         ProtectSystem = "strict";
