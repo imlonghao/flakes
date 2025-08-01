@@ -262,4 +262,6 @@ in
     id = 1;
   };
 
+  services.komari-agent.include-nics = [ "eth0" ];
+
 }
