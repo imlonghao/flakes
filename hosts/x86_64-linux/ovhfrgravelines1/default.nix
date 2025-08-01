@@ -23,6 +23,7 @@ in
     "${self}/profiles/exporter/node.nix"
     "${self}/profiles/hachimi"
     "${self}/profiles/k3s/agent.nix"
+    "${self}/profiles/komari-agent"
     #    "${inputs.latest}/nixos/modules/services/backup/borgmatic.nix"
   ];
 
