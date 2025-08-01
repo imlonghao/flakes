@@ -143,6 +143,14 @@
         endpoint = "us2.g-load.eu:21888";
         publickey = "6Cylr9h1xFduAO+5nyXhFI1XJ0+Sw9jCpCDvcqErF1s=";
       }
+      {
+        name = "wg3997";
+        asn = 4242423997;
+        e6 = "fe80::3997";
+        listen = 23997;
+        endpoint = "us1.dn42.bitrate.studio:21888";
+        publickey = "fVPguFQdWzddNaroGp8AfsgEqrAUywgNq5nu6iV1mzE=";
+      }
     ];
   };
 }

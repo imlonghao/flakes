@@ -166,6 +166,14 @@
         asn = 4242422717;
         e6 = "fe80::2717";
       }
+      {
+        name = "wg3997";
+        asn = 4242423997;
+        e6 = "fe80::3997";
+        listen = 23997;
+        endpoint = "sg1.dn42.bitrate.studio:21888";
+        publickey = "KbgYTN54OAVA5pa+FSbJIgYv0jdGDxefp3AKZ4WnG2E=";
+      }
     ];
   };
 }

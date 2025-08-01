@@ -365,6 +365,14 @@
         e6 = "fe80::ade0";
       }
       {
+        name = "wg3997";
+        asn = 4242423997;
+        e6 = "fe80::3997";
+        listen = 23997;
+        endpoint = "uk1.dn42.bitrate.studio:21888";
+        publickey = "7uqGJcYhftxmM+8WrYZbGKnUi4ye8PD6A1/KrfSjXno=";
+      }
+      {
         name = "wg3999";
         listen = 23999;
         endpoint = "ams.node.cowgl.xyz:31888";

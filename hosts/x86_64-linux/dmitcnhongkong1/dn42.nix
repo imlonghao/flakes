@@ -286,6 +286,14 @@
         publickey = "sLbzTRr2gfLFb24NPzDOpy8j09Y6zI+a7NkeVMdVSR8=";
       }
       {
+        name = "wg3997";
+        asn = 4242423997;
+        e6 = "fe80::3997";
+        listen = 23997;
+        endpoint = "hk1.dn42.bitrate.studio:21888";
+        publickey = "BwDwBx+r7zTrUZHdUeKsQFkEVEgx4iH13+0LQnCtpEE=";
+      }
+      {
         name = "wg3999";
         asn = 4242423999;
         l4 = "172.22.68.0";
