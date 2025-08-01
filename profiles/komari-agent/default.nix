@@ -6,7 +6,10 @@
 }:
 
 {
-  sops.secrets.komari-agent.sopsFile = "${self}/hosts/${config.nixpkgs.system}/${config.networking.hostName}/secrets.yml";
+  sops.secrets.komari-agent = {
+    sopsFile = "${self}/hosts/${config.nixpkgs.system}/${config.networking.hostName}/secrets.yml";
+    mode = "0444";
+  };
   services.komari-agent = {
     enable = true;
     endpoint = "https://komari.esd.cc";
