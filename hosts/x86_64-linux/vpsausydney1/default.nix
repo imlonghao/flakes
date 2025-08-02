@@ -30,6 +30,7 @@ in
     "${self}/profiles/rsshc"
     "${self}/profiles/docker"
     "${self}/profiles/k3s/agent.nix"
+    "${self}/profiles/komari-agent"
   ];
 
   networking = {
@@ -92,5 +93,7 @@ in
     interface = "enp6s18";
     id = 8;
   };
+
+  services.komari-agent.include-nics = [ "enp6s18" ];
 
 }
