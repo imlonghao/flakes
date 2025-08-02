@@ -2,6 +2,7 @@
   config,
   pkgs,
   self,
+  lib,
   ...
 }:
 let
@@ -94,6 +95,9 @@ in
     id = 8;
   };
 
-  services.komari-agent.include-nics = [ "enp6s18" ];
+  services.komari-agent = {
+    include-mountpoint = lib.mkForce [ "/" ];
+    include-nics = [ "enp6s18" ];
+  };
 
 }
