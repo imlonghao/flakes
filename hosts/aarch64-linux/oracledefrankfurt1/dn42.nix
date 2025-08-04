@@ -226,6 +226,14 @@
         publickey = "3zIlkokGMnHgL0VrLxySZ45ziIOzEMldXQH/LMe1PAk=";
       }
       {
+        name = "wg2016";
+        listen = 22016;
+        endpoint = "fsn1.dn42.sidereal.ca:21888";
+        publickey = "Lqmjk6hqNdReob93K6iYnzwvbWadJKaT/cL96ij2Fm4=";
+        asn = 4242422016;
+        e6 = "fe80::2016";
+      }
+      {
         name = "wg2092";
         listen = 22092;
         endpoint = "de0.dn42.pebkac.gr:51888";

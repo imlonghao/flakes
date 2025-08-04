@@ -33,15 +33,6 @@
         l4 = "172.22.68.0";
       }
       {
-        name = "wg2016";
-        listen = 22016;
-        endpoint = "64.44.157.31:21888";
-        publickey = "/eDmMZFpvmWRJ6Nz/lUpLIIFH0AJjyMWI/AXkW9ABVc=";
-        asn = 4242422016;
-        e6 = "fe80::1588";
-        mtu = 1312;
-      } # dal1.dn42.sidereal.ca
-      {
         name = "wg3372";
         listen = 23372;
         endpoint = "qro.beckerit.cc:21888";

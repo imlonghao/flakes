@@ -114,6 +114,14 @@
         e6 = "fe80::7e26:b335:a24d:e70e";
       }
       {
+        name = "wg2016";
+        listen = 22016;
+        endpoint = "sin1.dn42.sidereal.ca:21888";
+        publickey = "V9+Lxlqn3scNI7hkULY3NsHbI/s1weObxLy0R2SLQjI=";
+        asn = 4242422016;
+        e6 = "fe80::2016";
+      }
+      {
         name = "wg2189";
         asn = 4242422189;
         e6 = "fe80::2189:119";
