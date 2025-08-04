@@ -1,7 +1,7 @@
 keys:
   - &me_canokey 86962971BE75940CBB19297D29B038B368839CB5
   - &vps_breezehostusdallas1 age1shcwxwjp6sysq2frdxq4zjzwwza9hzjlpv82yy8jl3g0dq9hv43qfd0lx2
-  - &vps_buyvmluroost1 age13pa3dsvdsygpxxlc2hannvxx4qh03280me3s7xdrmenuvf7mmcvsdckylx
+  - &vps_buyvmchbern1 age13pa3dsvdsygpxxlc2hannvxx4qh03280me3s7xdrmenuvf7mmcvsdckylx
   - &vps_buyvmuslasvegas1 age1tn2crgjwffdhvn8k7h2yd7et7ze3pqcuzqm80v2pq9pglcdkwyys5fuqyk
   - &vps_buyvmusmiami1 age17udapsqm2lx6u6jkcugwlu2a90sv6uasfzap0vd2du5ecxrsn44q6e82pu
   - &vps_dmitcnhongkong1 age1kplhd4zrmjgegmx6epzjpq0xug6uz9wuvjgdx5ns6thtkmz0nyrqcd43nx
@@ -41,7 +41,7 @@ creation_rules:
           - *vps_vpsausydney1
           - *vps_misakadeberlin1
           - *vps_ovhfrgravelines1
-          - *vps_buyvmluroost1
+          - *vps_buyvmchbern1
           - *vps_vpsdefrankfurt1
           - *vps_wirecatussantaclara1
           - *vps_twdscntaibei1
@@ -125,7 +125,7 @@ creation_rules:
           - *vps_vpsausydney1
           - *vps_misakadeberlin1
           - *vps_ovhfrgravelines1
-          - *vps_buyvmluroost1
+          - *vps_buyvmchbern1
           - *vps_vpsdefrankfurt1
           - *vps_wirecatussantaclara1
           - *vps_twdscntaibei1
@@ -212,12 +212,12 @@ creation_rules:
           - *me_canokey
         age:
           - *vps_ovhfrgravelines1
-  - path_regex: hosts/x86_64-linux/buyvmluroost1/secrets.yml$
+  - path_regex: hosts/x86_64-linux/buyvmchbern1/secrets.yml$
     key_groups:
       - pgp:
           - *me_canokey
         age:
-          - *vps_buyvmluroost1
+          - *vps_buyvmchbern1
   - path_regex: hosts/x86_64-linux/vpsdefrankfurt1/secrets.yml$
     key_groups:
       - pgp:

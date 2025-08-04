@@ -161,8 +161,8 @@
           targetHost = "ovh-fr-gravelines-1.ni.sb";
           tags = [ "k3s-agent" ];
         };
-        buyvmluroost1 = {
-          targetHost = "buyvm-lu-roost-1.ni.sb";
+        buyvmchbern1 = {
+          targetHost = "buyvm-ch-bern-1.ni.sb";
         };
         vpsdefrankfurt1 = {
           targetHost = "vps-de-frankfurt-1.ni.sb";
