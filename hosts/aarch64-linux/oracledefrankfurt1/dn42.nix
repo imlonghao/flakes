@@ -202,6 +202,14 @@
         l4 = "172.22.68.4";
       }
       {
+        name = "wg1604";
+        asn = 4242421604;
+        e6 = "fe80::1604";
+        listen = 21604;
+        endpoint = "ru-mos.nodes.libecho.top:21888";
+        publickey = "1Gh8MJZpPk9R10eCUWgd9Sw7fA6P3FPn9n5JnBRi10U=";
+      }
+      {
         name = "wg1771";
         listen = 21771;
         endpoint = "frank1.exploro.one:32615";

@@ -130,6 +130,14 @@
         publickey = "unTYSat5YjkY+BY31Q9xLSfFhTUBvn3CiDCSZxbINVM=";
       }
       {
+        name = "wg1604";
+        asn = 4242421604;
+        e6 = "fe80::1604";
+        listen = 21604;
+        endpoint = "cn-hkg.nodes.libecho.top:21888";
+        publickey = "T/sArG5+D8/IqJ3X39emADEKQEhg2Y+s/tytyfH7Wz8=";
+      }
+      {
         name = "wg1686";
         asn = 4242421686;
         e6 = "fe80::1686";

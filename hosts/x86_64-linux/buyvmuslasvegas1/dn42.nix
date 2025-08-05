@@ -155,6 +155,14 @@
         e6 = "fe80::1240:4";
       }
       {
+        name = "wg1604";
+        asn = 4242421604;
+        e6 = "fe80::1604";
+        listen = 21604;
+        endpoint = "us-las.nodes.libecho.top:21888";
+        publickey = "29IQWwA7m+0TUqStc9oG4NlqMIwa6sDIiSp+ytDeaHo=";
+      }
+      {
         name = "wg1716";
         e6 = "fe80::1716:1888";
         asn = 4242421716;
