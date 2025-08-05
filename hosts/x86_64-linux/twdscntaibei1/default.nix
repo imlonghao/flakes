@@ -6,6 +6,7 @@
 }:
 {
   imports = [
+    ./dn42.nix
     ./hardware.nix
     ./bird.nix
     "${self}/profiles/mycore"
@@ -15,6 +16,9 @@
     "${self}/profiles/sing-box"
     "${self}/profiles/exporter/node.nix"
     "${self}/profiles/docker"
+    "${self}/profiles/pingfinder"
+    "${self}/profiles/bird-lg-go"
+    "${self}/profiles/komari-agent"
   ];
 
   boot.loader.grub.device = "/dev/sda";
@@ -27,6 +31,16 @@
     ];
     interfaces = {
       lo = {
+        ipv4.addresses = [
+          {
+            address = "172.22.68.0";
+            prefixLength = 32;
+          }
+          {
+            address = "172.22.68.12";
+            prefixLength = 32;
+          }
+        ];
         ipv6.addresses = [
           {
             address = "2602:fab0:20::";
@@ -34,6 +48,10 @@
           }
           {
             address = "2602:fab0:24::1";
+            prefixLength = 128;
+          }
+          {
+            address = "fd21:5c0c:9b7e:12::1";
             prefixLength = 128;
           }
         ];

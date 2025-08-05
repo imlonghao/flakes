@@ -1,12 +1,29 @@
-{ config, self, ... }:
+{
+  config,
+  self,
+  lib,
+  ...
+}:
 let
   generalConf = import "${self}/profiles/bird/general.nix" {
     config = config;
+    route4 = ''
+      route 172.22.68.0/27 blackhole;
+      route 172.22.68.12/32 blackhole;
+    '';
     route6 = ''
+      route fd21:5c0c:9b7e:12::/64 blackhole;
       route 2602:fab0:24:ffff::/64 via 2602:feda:1bf:deaf::19;
     '';
   };
   kernelConf = import "${self}/profiles/bird/kernel.nix" { src6 = "2602:fab0:24::1"; };
+  dn42Conf = import "${self}/profiles/bird/dn42.nix" {
+    region = 52;
+    country = 1158;
+    ip = 12;
+    config = config;
+    lib = lib;
+  };
 in
 {
   services.bird = {
@@ -14,6 +31,7 @@ in
     config =
       generalConf
       + kernelConf
+      + dn42Conf
       + import "${self}/profiles/bird/blackbgp.nix" { }
       + ''
         protocol static {
