@@ -28,6 +28,9 @@ let
     config = config;
     lib = lib;
   };
+  kernelConf = import "${self}/profiles/bird/kernel.nix" {
+    dn42 = 5;
+  };
 in
 {
   services.bird = {
@@ -35,6 +38,7 @@ in
     config =
       generalConf
       + dn42Conf
+      + kernelConf
       + ''
         protocol static {
           route 23.146.88.0/24 blackhole;

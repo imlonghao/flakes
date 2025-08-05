@@ -35,30 +35,6 @@
       fd00::/8{44,64} # ULA address space as per RFC 4193
     ] && net != fd99:100:64:1::/64;
   }
-  protocol kernel {
-    scan time 10;
-    graceful restart on;
-    ipv4 {
-      import none;
-      export filter {
-        if net = 0.0.0.0/0 then reject;
-        if is_valid_network() then krt_prefsrc = 172.22.68.${toString ip};
-        accept;
-      };
-    };
-  }
-  protocol kernel {
-    scan time 10;
-    graceful restart on;
-    ipv6 {
-      import none;
-      export filter {
-        if net = ::/0 then reject;
-        if is_valid_network_v6() then krt_prefsrc = fd21:5c0c:9b7e:${toString ip}::1;
-        accept;
-      };
-    };
-  }
   filter dn42_filter_v4 {
     if is_valid_network() && source ~ [RTS_STATIC, RTS_BGP, RTS_DEVICE] then {
       if source ~ [RTS_STATIC, RTS_DEVICE] then {

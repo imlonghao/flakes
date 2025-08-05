@@ -25,6 +25,9 @@ let
     config = config;
     lib = lib;
   };
+  kernelConf = import "${self}/profiles/bird/kernel.nix" {
+    dn42 = 6;
+  };
 in
 {
   services.bird = {
@@ -32,6 +35,7 @@ in
     config =
       generalConf
       + dn42Conf
+      + kernelConf
       + ''
         protocol bgp AS56655a {
           neighbor 2a03:94e0:fef0:: as 56655;

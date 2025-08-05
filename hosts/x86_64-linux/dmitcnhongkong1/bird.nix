@@ -22,10 +22,13 @@ let
     config = config;
     lib = lib;
   };
+  kernelConf = import "${self}/profiles/bird/kernel.nix" {
+    dn42 = 3;
+  };
 in
 {
   services.bird = {
     enable = true;
-    config = generalConf + dn42Conf + import "${self}/profiles/bird/blackbgp.nix" { };
+    config = generalConf + dn42Conf + kernelConf + import "${self}/profiles/bird/blackbgp.nix" { };
   };
 }

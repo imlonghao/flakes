@@ -16,7 +16,10 @@ let
       route 2602:fab0:24:ffff::/64 via 2602:feda:1bf:deaf::19;
     '';
   };
-  kernelConf = import "${self}/profiles/bird/kernel.nix" { src6 = "2602:fab0:24::1"; };
+  kernelConf = import "${self}/profiles/bird/kernel.nix" {
+    src6 = "2602:fab0:24::1";
+    dn42 = 12;
+  };
   dn42Conf = import "${self}/profiles/bird/dn42.nix" {
     region = 52;
     country = 1158;
@@ -30,8 +33,8 @@ in
     enable = true;
     config =
       generalConf
-      + kernelConf
       + dn42Conf
+      + kernelConf
       + import "${self}/profiles/bird/blackbgp.nix" { }
       + ''
         protocol static {
