@@ -155,4 +155,9 @@
     id = 12;
   };
 
+  services.komari-agent.include-nics = [
+    "ens18"
+    "ens19"
+  ];
+
 }

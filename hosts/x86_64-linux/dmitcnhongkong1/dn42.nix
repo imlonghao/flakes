@@ -301,17 +301,6 @@
         endpoint = "hk1.dn42.bitrate.studio:21888";
         publickey = "BwDwBx+r7zTrUZHdUeKsQFkEVEgx4iH13+0LQnCtpEE=";
       }
-      {
-        name = "wg3999";
-        asn = 4242423999;
-        l4 = "172.22.68.0";
-        e4 = "172.22.144.64";
-        e6 = "fe80::3999";
-        listen = 23999;
-        endpoint = "txg.node.cowgl.xyz:31888";
-        publickey = "mGGBczSVKW+7UKRquI2GkbKrfxiATv9r4uF5WTP+vWI=";
-        mpbgp = false;
-      }
     ];
   };
 }

@@ -7,12 +7,15 @@ let
   ssrc4 = if src4 == "" then "" else "krt_prefsrc = ${src4};";
   ssrc6 = if src6 == "" then "" else "krt_prefsrc = ${src6};";
   dn42_v4 =
-    if dn42 == 0 then "" else "if is_valid_network() then krt_prefsrc = 172.22.68.${toString dn42};";
+    if dn42 == 0 then
+      ""
+    else
+      "if is_valid_network() then { krt_prefsrc = 172.22.68.${toString dn42}; accept; }";
   dn42_v6 =
     if dn42 == 0 then
       ""
     else
-      "if is_valid_network_v6() then krt_prefsrc = fd21:5c0c:9b7e:${toString dn42}::1;";
+      "if is_valid_network_v6() then { krt_prefsrc = fd21:5c0c:9b7e:${toString dn42}::1; accept; }";
 in
 ''
   protocol kernel {

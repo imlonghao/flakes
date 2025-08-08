@@ -98,6 +98,7 @@
       "* * * * * root ${pkgs.iptables}/bin/iptables -t nat -C POSTROUTING ! -s 10.0.0.97 -p tcp --dport 465 -j SNAT --to-source 10.0.0.97 || ${pkgs.iptables}/bin/iptables -t nat -A POSTROUTING ! -s 10.0.0.97 -p tcp --dport 465 -j SNAT --to-source 10.0.0.97"
       "0 0,4,8,12,16,20 * * * root ${pkgs.iproute2}/bin/ip a a fd21:5c0c:9b7e:bc04::/64 dev lo"
       "0 2,6,10,14,18,22 * * * root ${pkgs.iproute2}/bin/ip a d fd21:5c0c:9b7e:bc04::/64 dev lo"
+      "* * * * * root /persist/zombies/run.sh"
     ];
   };
 
