@@ -9,7 +9,9 @@
   define DN42_REGION = ${toString region};
   define DN42_COUNTRY = ${toString country};
   define DN42_BLACKLIST_ASN = [
-    4242423658 # Jason Xu
+    0
+    , 4242421260 # Misconfigured
+    , 4242423658 # Jason Xu
   ];
   function is_self_net() {
     return net ~ 172.22.68.0/27;
@@ -124,7 +126,7 @@
           print "[dn42] ROA check failed for ", net, " ASN ", bgp_path.last;
           reject;
         }
-        if !is_valid_network() || bgp_path.last ~ DN42_BLACKLIST_ASN then {
+        if !is_valid_network() || bgp_path ~ DN42_BLACKLIST_ASN then {
           reject;
         }
         if bgp_path.len = 1 then bgp_local_pref = bgp_local_pref + 10;
@@ -144,7 +146,7 @@
           print "[dn42] ROA check failed for ", net, " ASN ", bgp_path.last;
           reject;
         }
-        if !is_valid_network_v6() || bgp_path.last ~ DN42_BLACKLIST_ASN then {
+        if !is_valid_network_v6() || bgp_path ~ DN42_BLACKLIST_ASN then {
           reject;
         }
         if bgp_path.len = 1 then bgp_local_pref = bgp_local_pref + 10;
