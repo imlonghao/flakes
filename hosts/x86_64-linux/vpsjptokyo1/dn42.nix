@@ -70,6 +70,14 @@
         publickey = "u2ImAJn9ewce9YHN6HaqrR3Sr4Xsy5UaaJOLJ7gkSzs=";
       }
       {
+        name = "wg3035";
+        asn = 4242423035;
+        e6 = "fe80::3035:134";
+        listen = 23035;
+        endpoint = "jp01.dn42.lare.cc:21888";
+        publickey = "oTPdRylNhX2O80e6rLejT9Fwzo7KWKZ7a3PUF4G9oEM=";
+      }
+      {
         name = "wg3997";
         asn = 4242423997;
         e6 = "fe80::3997";
