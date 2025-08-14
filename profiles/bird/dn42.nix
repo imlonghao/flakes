@@ -10,7 +10,6 @@
   define DN42_COUNTRY = ${toString country};
   define DN42_BLACKLIST_ASN = [
     0
-    , 4242421260 # Misconfigured
     , 4242423658 # Jason Xu
   ];
   function is_self_net() {
