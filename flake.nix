@@ -71,6 +71,7 @@
                         config.allowUnfree = true;
                         overlays = [
                           self.overlays.default
+                          self.overlays.pyinfra
                           inputs.ranet.overlays.default
                         ];
                         system = arch;
@@ -99,6 +100,38 @@
           prev.lib.packagesFromDirectoryRecursive {
             inherit (prev) callPackage;
             directory = ./pkgs;
+          };
+        overlays.pyinfra =
+          final: prev:
+          let
+            pytestOverlay = pythonFinal: pythonPrev: {
+              paramiko = pythonPrev.paramiko.overridePythonAttrs (oldAttrs: {
+                patches = oldAttrs.patches ++ [
+                  (prev.fetchpatch {
+                    url = "https://patch-diff.githubusercontent.com/raw/paramiko/paramiko/pull/2475.patch";
+                    hash = "sha256-7PfeDR4EPaAkIbQWevPIv+HyJVXvy+T5kIz6G5w+svk=";
+                  })
+                ];
+              });
+              pyinfra = pythonPrev.pyinfra.overridePythonAttrs (oldAttrs: {
+                version = "3.4.1";
+                src = prev.fetchFromGitHub {
+                  owner = "Fizzadar";
+                  repo = "pyinfra";
+                  tag = "v3.4.1";
+                  hash = "sha256-7bNkDm5SyIgVkrGQ95/q7AiY/JnxtWx+jkDO/rJQ2WQ=";
+                };
+                dependencies = oldAttrs.dependencies ++ [ pythonPrev.pyyaml ];
+                doCheck = false;
+              });
+            };
+            python3 = prev.python3.override {
+              packageOverrides = pytestOverlay;
+            };
+          in
+          {
+            inherit python3;
+            python3Packages = python3.pkgs;
           };
       };
       colmena-flake.deployment = {
