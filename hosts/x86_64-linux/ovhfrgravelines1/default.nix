@@ -72,6 +72,7 @@ in
     ansible
     atuin
     bgpq4
+    black
     borgbackup
     borgmatic
     claude-code
@@ -101,6 +102,7 @@ in
     nodejs
     openssl
     openvpn
+    pyinfra
     (python3.withPackages (ps: with ps; [ requests ]))
     q
     ranet
