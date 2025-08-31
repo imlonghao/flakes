@@ -71,7 +71,6 @@
                         config.allowUnfree = true;
                         overlays = [
                           self.overlays.default
-                          self.overlays.pyinfra
                           inputs.ranet.overlays.default
                         ];
                         system = arch;
