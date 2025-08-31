@@ -98,4 +98,5 @@ in
       };
     };
   }
+  protocol bfd {};
 ''
