@@ -39,7 +39,7 @@
   networking = {
     useDHCP = false;
     nameservers = [
-      "8.8.8.8"
+      "127.0.0.1"
       "1.1.1.1"
     ];
   };
@@ -70,7 +70,12 @@
   services.coredns = {
     enable = true;
     config = ''
+      . {
+        bind 127.0.0.1
+        forward . [2a09::]:53 [2a11::]:53 1.1.1.1:53 1.0.0.1:53 8.8.8.8:53 8.8.4.4:53
+      }
       dn42 neo 20.172.in-addr.arpa 21.172.in-addr.arpa 22.172.in-addr.arpa 23.172.in-addr.arpa 10.in-addr.arpa d.f.ip6.arpa {
+        bind 127.0.0.1
         forward . 172.20.0.53:53 172.23.0.53:53 [fd42:d42:d42:54::1]:53 [fd42:d42:d42:53::1]:53
       }
     '';
