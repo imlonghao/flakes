@@ -43,6 +43,7 @@
       "1.1.1.1"
     ];
   };
+  services.resolved.enable = false;
 
   environment.persistence."/persist" = {
     directories = [ "/var/lib" ];
@@ -63,6 +64,16 @@
   services.komari-agent = {
     month-rotate = 26;
     include-mountpoint = [ "/boot" ];
+  };
+
+  # Coredns
+  services.coredns = {
+    enable = true;
+    config = ''
+      dn42 neo 20.172.in-addr.arpa 21.172.in-addr.arpa 22.172.in-addr.arpa 23.172.in-addr.arpa 10.in-addr.arpa d.f.ip6.arpa {
+        forward . 172.20.0.53:53 172.23.0.53:53 [fd42:d42:d42:54::1]:53 [fd42:d42:d42:53::1]:53
+      }
+    '';
   };
 
 }
