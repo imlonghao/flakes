@@ -311,6 +311,14 @@
         publickey = "Xzt9UrH2moj84QSH0jsw8Zj+jwXwdBLpApe4hHyfnAw=";
       }
       {
+        name = "wg3508";
+        asn = 4242423508;
+        e6 = "fe80::3508:101";
+        listen = 23508;
+        endpoint = "us-sjc.dn42.ydkf.me:58346";
+        publickey = "i+gpz13fipOUCHgAn1WWnhymGqpGv7bGb87lGYTHL10=";
+      }
+      {
         name = "wg3797";
         listen = 23797;
         asn = 4242423797;

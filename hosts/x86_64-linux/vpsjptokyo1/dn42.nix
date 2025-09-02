@@ -78,6 +78,14 @@
         publickey = "oTPdRylNhX2O80e6rLejT9Fwzo7KWKZ7a3PUF4G9oEM=";
       }
       {
+        name = "wg3508";
+        asn = 4242423508;
+        e6 = "fe80::3508:100";
+        listen = 23508;
+        endpoint = "jp-tyo.dn42.ydkf.me:40644";
+        publickey = "gMlu6MvagM0Bvywjv0KXkqHX5JI3zY0rXx1c8Xt2zzc=";
+      }
+      {
         name = "wg3997";
         asn = 4242423997;
         e6 = "fe80::3997";
