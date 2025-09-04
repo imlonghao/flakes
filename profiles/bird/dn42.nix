@@ -134,7 +134,7 @@
           print "[dn42] ROA check failed for ", net, " ASN ", bgp_path.last;
           reject;
         }
-        if !is_valid_network_v6() || bgp_path ~ DN42_BLACKLIST_ASN then {
+        if !is_valid_network() || bgp_path ~ DN42_BLACKLIST_ASN then {
           reject;
         }
         if bgp_path.len = 1 then bgp_local_pref = bgp_local_pref + 10;
