@@ -15,7 +15,7 @@ let
     if dn42 == 0 then
       ""
     else
-      "if is_valid_network_v6() then { krt_prefsrc = fd21:5c0c:9b7e:${toString dn42}::1; accept; }";
+      "if is_valid_network() then { krt_prefsrc = fd21:5c0c:9b7e:${toString dn42}::1; accept; }";
 in
 ''
   protocol kernel {
