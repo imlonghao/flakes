@@ -26,6 +26,7 @@ in
     #    "${inputs.latest}/nixos/modules/services/backup/borgmatic.nix"
     # Container
     "${self}/containers/act-runner.nix"
+    "${self}/containers/mtrsb.nix"
   ];
 
   nixpkgs.overlays = [ self.overlays.pyinfra ];
@@ -86,6 +87,7 @@ in
     ffmpeg
     git
     gitui
+    gnupg
     go
     gobuster
     iptables
