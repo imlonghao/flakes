@@ -12,48 +12,36 @@
     0
     , 4242423658 # Jason Xu
   ];
-  function is_self_net() {
-    return net ~ 172.22.68.0/27;
+  function is_self_net() -> bool {
+    case net.type {
+      NET_IP4: return net ~ 172.22.68.0/27;
+      NET_IP6: return net ~ fd21:5c0c:9b7e::/48;
+    }
+    return false;
   }
-  function is_self_net_v6() {
-    return net ~ fd21:5c0c:9b7e::/48;
+  function is_valid_network() -> bool {
+    case net.type {
+      NET_IP4: return net ~ [
+        172.20.0.0/14{21,29}, # dn42
+        172.20.0.0/24{28,32}, # dn42 Anycast
+        172.21.0.0/24{28,32}, # dn42 Anycast
+        172.22.0.0/24{28,32}, # dn42 Anycast
+        172.23.0.0/24{28,32}, # dn42 Anycast
+        172.31.0.0/16+,       # ChaosVPN
+        10.100.0.0/14+,       # ChaosVPN
+        10.127.0.0/16{16,32}, # neonetwork
+        10.0.0.0/8{15,24}     # Freifunk.net
+      ];
+      NET_IP6: return net ~ [
+        fd00::/8{44,64} # ULA address space as per RFC 4193
+      ] && net != fd99:100:64:1::/64;
+    }
+    return false;
   }
-  function is_valid_network() {
-    return net ~ [
-      172.20.0.0/14{21,29}, # dn42
-      172.20.0.0/24{28,32}, # dn42 Anycast
-      172.21.0.0/24{28,32}, # dn42 Anycast
-      172.22.0.0/24{28,32}, # dn42 Anycast
-      172.23.0.0/24{28,32}, # dn42 Anycast
-      172.31.0.0/16+,       # ChaosVPN
-      10.100.0.0/14+,       # ChaosVPN
-      10.127.0.0/16{16,32}, # neonetwork
-      10.0.0.0/8{15,24}     # Freifunk.net
-    ];
-  }
-  function is_valid_network_v6() {
-    return net ~ [
-      fd00::/8{44,64} # ULA address space as per RFC 4193
-    ] && net != fd99:100:64:1::/64;
-  }
-  filter dn42_filter_v4 {
+  filter dn42_filter {
     if is_valid_network() && source ~ [RTS_STATIC, RTS_BGP, RTS_DEVICE] then {
       if source ~ [RTS_STATIC, RTS_DEVICE] then {
         if is_self_net() then {
-          bgp_community.add((64511, DN42_REGION));
-          bgp_community.add((64511, DN42_COUNTRY));
-          accept;
-        }
-        reject;
-      }
-      accept;
-    }
-    reject;
-  }
-  filter dn42_filter_v6 {
-    if is_valid_network_v6() && source ~ [RTS_STATIC, RTS_BGP, RTS_DEVICE] then {
-      if source ~ [RTS_STATIC, RTS_DEVICE] then {
-        if is_self_net_v6() then {
           bgp_community.add((64511, DN42_REGION));
           bgp_community.add((64511, DN42_COUNTRY));
           accept;
@@ -89,12 +77,12 @@
       next hop self;
       import all;
       export filter {
-        if is_self_net_v6() && source ~ [RTS_STATIC, RTS_DEVICE] then {
+        if is_self_net() && source ~ [RTS_STATIC, RTS_DEVICE] then {
           bgp_community.add((64511, DN42_REGION));
           bgp_community.add((64511, DN42_COUNTRY));
           accept;
         }
-        if is_valid_network_v6() && source ~ [RTS_STATIC, RTS_BGP] then {
+        if is_valid_network() && source ~ [RTS_STATIC, RTS_BGP] then {
           accept;
         }
         reject;
@@ -136,7 +124,7 @@
         bgp_large_community.add((4242421888, 101, DN42_COUNTRY));
         accept;
       };
-      export filter dn42_filter_v4;
+      export filter dn42_filter;
     };
     ipv6 {
       import keep filtered on;
@@ -156,7 +144,7 @@
         bgp_large_community.add((4242421888, 101, DN42_COUNTRY));
         accept;
       };
-      export filter dn42_filter_v6;
+      export filter dn42_filter;
     };
   }
   protocol bgp flapalert {
