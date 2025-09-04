@@ -140,6 +140,13 @@ creation_rules:
           - *vps_vpsussanjose1
           - *vps_terrahostnosandefjord1
           - *vps_ovhcabeauharnois2
+  - path_regex: secrets/act-runner.txt$
+    key_groups:
+      - pgp:
+          - *me_canokey
+        age:
+          - *vps_ovhfrgravelines1
+          - *vps_oracledefrankfurt1
   - path_regex: hosts/x86_64-linux/buyvmuslasvegas1/secrets.yml$
     key_groups:
       - pgp:

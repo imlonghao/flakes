@@ -17,8 +17,9 @@
     "${self}/profiles/mtrsb"
     "${self}/profiles/rsshc"
     "${self}/profiles/borgmatic"
-    "${self}/profiles/docker"
     "${self}/profiles/k3s/agent.nix"
+    # Container
+    "${self}/containers/act-runner.nix"
   ];
 
   # Config
@@ -182,6 +183,15 @@
     enable = true;
     interface = "enp0s3";
     id = 19;
+  };
+
+  # Act Runner
+  virtualisation.oci-containers.containers = {
+    act-runner = {
+      environment = {
+        GITEA_RUNNER_LABELS = "dn42-arm:docker://ghcr.io/catthehacker/ubuntu:act-latest";
+      };
+    };
   };
 
 }

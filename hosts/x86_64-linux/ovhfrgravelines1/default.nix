@@ -18,13 +18,14 @@ in
     ./hardware.nix
     "${self}/profiles/mycore"
     "${self}/users/root"
-    "${self}/profiles/docker"
     "${self}/profiles/rsshc"
     "${self}/profiles/exporter/node.nix"
     "${self}/profiles/hachimi"
     "${self}/profiles/k3s/agent.nix"
     "${self}/profiles/komari-agent"
     #    "${inputs.latest}/nixos/modules/services/backup/borgmatic.nix"
+    # Container
+    "${self}/containers/act-runner.nix"
   ];
 
   nixpkgs.overlays = [ self.overlays.pyinfra ];
@@ -267,5 +268,13 @@ in
   };
 
   services.komari-agent.include-nics = [ "eth0" ];
+
+  virtualisation.oci-containers.containers = {
+    act-runner = {
+      environment = {
+        GITEA_RUNNER_MAX_PARALLEL_JOBS = "2";
+      };
+    };
+  };
 
 }
