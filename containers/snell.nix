@@ -1,7 +1,6 @@
 { config, self, ... }:
 {
   sops.secrets."snell" = {
-    format = "binary";
     sopsFile = "${self}/hosts/${config.nixpkgs.system}/${config.networking.hostName}/secrets.yml";
   };
   virtualisation.oci-containers.containers = {
