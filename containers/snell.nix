@@ -7,7 +7,7 @@
     snell = {
       image = "geekdada/snell-server:5.0.0";
       environmentFiles = [ config.sops.secrets.snell.path ];
-      networks = [ "hosts" ];
+      networks = [ "host" ];
     };
   };
 }
