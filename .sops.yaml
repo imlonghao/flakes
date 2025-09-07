@@ -147,6 +147,13 @@ creation_rules:
         age:
           - *vps_ovhfrgravelines1
           - *vps_oracledefrankfurt1
+  - path_regex: secrets/globalping.txt$
+    key_groups:
+      - pgp:
+          - *me_canokey
+        age:
+          - *vps_twdscntaibei1
+          - *vps_vpsjptokyo1
   - path_regex: hosts/x86_64-linux/buyvmuslasvegas1/secrets.yml$
     key_groups:
       - pgp:
