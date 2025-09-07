@@ -6,11 +6,13 @@
     ./hardware.nix
     "${self}/profiles/mycore"
     "${self}/users/root"
-    "${self}/profiles/docker"
     "${self}/profiles/rsshc"
     "${self}/profiles/pingfinder"
     "${self}/profiles/bird-lg-go"
     "${self}/profiles/komari-agent"
+    # Containers
+    "${self}/containers/cloudflared.nix"
+    "${self}/containers/snell.nix"
   ];
 
   boot.loader.grub.device = "/dev/vda";
