@@ -20,6 +20,7 @@
     "${self}/profiles/k3s/agent.nix"
     # Container
     "${self}/containers/act-runner.nix"
+    "${self}/containers/cloudflared.nix"
   ];
 
   # Config
