@@ -19,6 +19,8 @@
     "${self}/profiles/pingfinder"
     "${self}/profiles/bird-lg-go"
     "${self}/profiles/komari-agent"
+    # Containers
+    "${self}/containers/snell"
   ];
 
   boot.loader.grub.device = "/dev/sda";
