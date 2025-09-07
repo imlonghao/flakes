@@ -9,11 +9,11 @@
     "${self}/profiles/exporter/node.nix"
     "${self}/profiles/exporter/blackbox.nix"
     "${self}/profiles/rsshc"
-    "${self}/profiles/sing-box"
     "${self}/profiles/mtrsb"
     "${self}/profiles/pingfinder"
     "${self}/profiles/bird-lg-go"
     # Containers
+    "${self}/containers/snell.nix"
     "${self}/containers/globalping.nix"
   ];
 
