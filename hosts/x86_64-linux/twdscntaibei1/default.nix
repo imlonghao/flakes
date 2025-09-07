@@ -20,7 +20,7 @@
     "${self}/profiles/bird-lg-go"
     "${self}/profiles/komari-agent"
     # Containers
-    "${self}/containers/snell"
+    "${self}/containers/snell.nix"
   ];
 
   boot.loader.grub.device = "/dev/sda";
