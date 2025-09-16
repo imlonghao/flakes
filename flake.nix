@@ -113,12 +113,12 @@
                 ];
               });
               pyinfra = pythonPrev.pyinfra.overridePythonAttrs (oldAttrs: {
-                version = "3.4.1";
+                version = "3.5";
                 src = prev.fetchFromGitHub {
                   owner = "Fizzadar";
                   repo = "pyinfra";
-                  tag = "v3.4.1";
-                  hash = "sha256-7bNkDm5SyIgVkrGQ95/q7AiY/JnxtWx+jkDO/rJQ2WQ=";
+                  tag = "v3.5";
+                  hash = "sha256-zO4S4ccn9miF7GDP8evBLSEgvdzzpjh1MjjN3Cv8o+g=";
                 };
                 dependencies = oldAttrs.dependencies ++ [ pythonPrev.pyyaml ];
                 doCheck = false;
