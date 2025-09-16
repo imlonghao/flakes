@@ -176,7 +176,7 @@
         asn = 4242422024;
         e6 = "fe80::2024";
         listen = 22024;
-        endpoint = "ipv4.hk2-cn.ecs.iyoroy-infra.top:21888";
+        endpoint = "hkg02-cn.ecs.iyoroy-infra.top:21888";
         publickey = "bg+KnzVupBrOQntHFFVzvBx+3sqYVoyJRantT6m5fm8=";
       }
       {
