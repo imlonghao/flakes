@@ -95,7 +95,7 @@
         name = "wg0263";
         listen = 20263;
         endpoint = "fr-par1.flap42.eu:52008";
-        publickey = "kwo9FiQRtgNyhMARTW9SvyvXIN7I7LfoICTytHjfA4=";
+        publickey = "/kwo9FiQRtgNyhMARTW9SvyvXIN7I7LfoICTytHjfA4=";
         asn = 4242420263;
         e6 = "fe80::263";
       }
