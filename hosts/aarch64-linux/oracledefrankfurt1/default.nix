@@ -18,9 +18,11 @@
     "${self}/profiles/rsshc"
     "${self}/profiles/borgmatic"
     "${self}/profiles/k3s/agent.nix"
+    "${self}/profiles/etcd"
     # Container
     "${self}/containers/act-runner.nix"
     "${self}/containers/cloudflared.nix"
+    "${self}/containers/patroni.nix"
   ];
 
   # Config

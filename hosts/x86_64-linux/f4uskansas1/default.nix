@@ -8,6 +8,7 @@
     "${self}/profiles/mtrsb"
     "${self}/profiles/exporter/node.nix"
     "${self}/profiles/rsshc"
+    "${self}/profiles/etcd"
   ];
 
   networking = {

@@ -11,6 +11,7 @@
     "${self}/profiles/docker"
     "${self}/profiles/borgmatic"
     "${self}/profiles/k3s/agent.nix"
+    "${self}/profiles/etcd"
   ];
 
   boot.loader.grub.device = "/dev/vda";
@@ -103,6 +104,11 @@
     enable = true;
     interface = "ens4";
     id = 18;
+  };
+
+  services.cert-syncer = {
+    enable = true;
+    wishlist = [ "go9mail.com" ];
   };
 
 }
