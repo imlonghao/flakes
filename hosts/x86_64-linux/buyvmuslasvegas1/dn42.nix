@@ -337,6 +337,17 @@
         publickey = "sLbzTRr2gfLFb24NPzDOpy8j09Y6zI+a7NkeVMdVSR8=";
       }
       {
+        name = "wg3942";
+        listen = 23942;
+        endpoint = "192.161.163.236:21888";
+        publickey = "vUtdpRO5g/sTLW005E8nZAMoYEkoJk9qU+aHIK2iYTM=";
+        asn = 4242423942;
+        e4 = "172.21.66.66";
+        e6 = "fe80::3942";
+        l4 = "172.22.68.0";
+        mpbgp = false;
+      }
+      {
         name = "wg3999";
         listen = 23999;
         endpoint = "lax.node.cowgl.xyz:31888";
