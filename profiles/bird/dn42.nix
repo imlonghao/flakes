@@ -11,6 +11,7 @@
   define DN42_BLACKLIST_ASN = [
     0
     , 4242423658 # Jason Xu
+    , 4242423947 # Flapping 20251002
   ];
   function is_self_net() -> bool {
     case net.type {
