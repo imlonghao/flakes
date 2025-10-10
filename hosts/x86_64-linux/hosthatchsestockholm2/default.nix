@@ -16,7 +16,7 @@
       "8.8.8.8"
       "1.1.1.1"
     ];
-    defaultGateway4 = {
+    defaultGateway = {
       interface = "eth0";
       address = "185.213.24.1";
     };
