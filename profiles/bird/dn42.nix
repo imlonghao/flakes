@@ -162,6 +162,21 @@
         import none;
     };
   }
+  protocol bgp ROUTE_COLLECTOR {
+    local as 4242421888;
+    neighbor fd42:4242:2601:ac12::1 as 4242422602;
+    multihop;
+    ipv4 {
+      add paths tx;
+      import none;
+      export filter dn42_filter;
+    };
+    ipv6 {
+      add paths tx;
+      import none;
+      export filter dn42_filter;
+    };
+  }
   ${builtins.concatStringsSep "\n" (
     lib.flip map (config.dn42.peers) (
       x:
