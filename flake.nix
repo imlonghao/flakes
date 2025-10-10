@@ -167,6 +167,10 @@
           targetHost = "hosthatch-se-stockholm-1.ni.sb";
           tags = [ "k3s-agent" ];
         };
+        hosthatchsestockholm2 = {
+          targetHost = "hosthatch-se-stockholm-2.ni.sb";
+          tags = [ "k3s-agent" ];
+        };
         oracledefrankfurt1 = {
           targetHost = "oracle-de-frankfurt-1.ni.sb";
           buildOnTarget = true;

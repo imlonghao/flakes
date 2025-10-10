@@ -8,6 +8,7 @@ keys:
   - &vps_dmituslosangeles1 age1mxrjyaswxznnvfa8m6hv0eewge6nvedst5nl9wml4ehww9kgjvqsqugpsz
   - &vps_f4uskansas1 age1hsukvd00p3k8mt9cmlau5fc4tjfrwhwhxx8la3h9lad5k5ga0e2qc8t7y8
   - &vps_hosthatchsestockholm1 age1x7lktd64mjxar0hahhmz4pkp3gk74vcm46tfmyvet5e2x93usyksufjrtc
+  - &vps_hosthatchsestockholm2 age1h6kd8cc7st94vaxekwsc82qf6mwtm8q0eu35u05zxvpyprp7svas29d6py
   - &vps_hosthatchsgsingapore1 age1m7e9lwfnu8x2eele4rmflhn8s8vhcf85s4lpt5x4jgd9kyu25s3s3jn3cg
   - &vps_misakadeberlin1 age1dyk0dt4kzj59yxhj2dxwkxwecy6c9xh9k5p8722r94sg45fcvu8qmkf5m6
   - &vps_misakauklondon1 age1qsrtlhdmp8sfgkwux0r6frtv9z5apc38ggtgwv6n47pznf43k3zsv0ms8w
@@ -37,6 +38,7 @@ creation_rules:
           - *vps_misakauklondon1
           - *vps_starrydnscnhongkong1
           - *vps_hosthatchsestockholm1
+          - *vps_hosthatchsestockholm2
           - *vps_oracledefrankfurt1
           - *vps_vpsausydney1
           - *vps_misakadeberlin1
@@ -105,6 +107,7 @@ creation_rules:
           - *vps_ovhcabeauharnois1
           - *vps_wirecatussantaclara1
           - *vps_hosthatchsestockholm1
+          - *vps_hosthatchsestockholm2
           - *vps_hosthatchsgsingapore1
           - *vps_ovhfrgravelines1
           - *vps_vpsausydney1
@@ -121,6 +124,7 @@ creation_rules:
           - *vps_misakauklondon1
           - *vps_starrydnscnhongkong1
           - *vps_hosthatchsestockholm1
+          - *vps_hosthatchsestockholm2
           - *vps_oracledefrankfurt1
           - *vps_vpsausydney1
           - *vps_misakadeberlin1
@@ -190,6 +194,12 @@ creation_rules:
           - *me_canokey
         age:
           - *vps_hosthatchsestockholm1
+  - path_regex: hosts/x86_64-linux/hosthatchsestockholm2/secrets.yml$
+    key_groups:
+      - pgp:
+          - *me_canokey
+        age:
+          - *vps_hosthatchsestockholm2
   - path_regex: hosts/aarch64-linux/oracledefrankfurt1/secrets.yml$
     key_groups:
       - pgp:
