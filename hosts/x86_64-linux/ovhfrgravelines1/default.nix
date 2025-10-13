@@ -80,6 +80,7 @@ in
     borgbackup
     borgmatic
     claude-code
+    codex
     croc
     deploy-rs
     dnsutils
