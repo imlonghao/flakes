@@ -339,16 +339,6 @@
         e6 = "fe80::2923";
       }
       {
-        name = "wg2980";
-        listen = 22980;
-        endpoint = "fra1.de.dn42.yuuta.moe:21888";
-        publickey = "GYEhSHmPD0pVX3xBKa7SAwnuCyMA2oOsaHBgFpPO4X4=";
-        presharedkey = "iHxtuu7sFtvR/nsOA2m3T4Lt3w8P4VzvLKHWAm23a1w=";
-        asn = 4242422980;
-        ipv6 = "fe80::1888:4/64";
-        e6 = "fe80::2980";
-      }
-      {
         name = "wg3035";
         listen = 23035;
         endpoint = "de01.dn42.lare.cc:21888";
