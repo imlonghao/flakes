@@ -108,7 +108,7 @@ in
   };
   config = mkIf cfg.enable {
     environment.systemPackages = [
-      pkgs.strongswan_6
+      pkgs.strongswan
       pkgs.ranet
     ];
     sops.secrets.ranet = {
@@ -117,7 +117,7 @@ in
     };
     services.strongswan-swanctl = {
       enable = true;
-      package = pkgs.strongswan_6;
+      package = pkgs.strongswan;
       strongswan.extraConfig = ''
         charon {
           ikesa_table_size = 32

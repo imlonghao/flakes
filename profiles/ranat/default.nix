@@ -5,7 +5,7 @@
 
   services.strongswan-swanctl = {
     enable = true;
-    package = pkgs.strongswan_6;
+    package = pkgs.strongswan;
     strongswan.extraConfig = ''
       charon {
         ikesa_table_size = 32
