@@ -291,14 +291,6 @@
         e6 = "fe80::2308";
       }
       {
-        name = "wg2331";
-        listen = 22331;
-        endpoint = "lu208.dn42.williamgates.info:21888";
-        publickey = "c4AZZVNUzXCASWG96CKUpY+gQLdGwA1rbqkYCHXnW10=";
-        asn = 4242422331;
-        e6 = "fe80::2331";
-      }
-      {
         name = "wg2458";
         listen = 22458;
         endpoint = "nl-ams-a.nodes.pigeonhole.eu.org:51888";
