@@ -7,16 +7,16 @@
 }:
 buildGoModule rec {
   pname = "komari-agent";
-  version = "1.0.40";
+  version = "1.1.12";
 
   src = fetchFromGitHub {
     owner = "komari-monitor";
     repo = pname;
     rev = version;
-    hash = "sha256-CAkszhqxjrhc4cyIZQBWGpbuCmcC1fLHUtofmjABnVM=";
+    hash = "sha256-DcSI206Lm4h933pKmywrtcg52Atp+ow6wJiPFNS23ms=";
   };
 
-  vendorHash = "sha256-Wt2A3rGnY8vpdbWRz9tWBz+PcVxATCjjCwm/YXQz1RY=";
+  vendorHash = "sha256-m2XD3KgMnetpgDontK8Kk+PRHcqM2eLV2NvikR5zAWg=";
 
   ldflags = [
     "-s -w"
