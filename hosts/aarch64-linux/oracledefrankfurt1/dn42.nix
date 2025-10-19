@@ -66,6 +66,14 @@
         e6 = "fe80::129:2";
       }
       {
+        name = "wg0150";
+        listen = 20150;
+        endpoint = "fra.darkpoint.xyz:21818";
+        publickey = "nfoxTtmJdBdxNR3TmfVLG13KA5E+ZtU+uIGCegxrxxw=";
+        asn = 4242420150;
+        e6 = "fe80::150";
+      }
+      {
         name = "wg0197";
         listen = 20197;
         endpoint = "himalia.dn42.n0emis.eu:21888";
