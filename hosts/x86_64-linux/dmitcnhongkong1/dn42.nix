@@ -120,6 +120,14 @@
         publickey = "tk/rTyA7TsSg/wmF8FmgQOuPJPxYFoyJZauw6UVO8Hw=";
       }
       {
+        name = "wg1534";
+        listen = 21534;
+        endpoint = "hk-hkg.factor2431.com:21888";
+        publickey = "VncCNj0rfJ8xF4ms7yqvt+WzAS0ePC+pLiiG4FPPHkw=";
+        asn = 4242421534;
+        e6 = "fe80::1534";
+      }
+      {
         name = "wg1588";
         l4 = "172.22.68.3";
         e4 = "172.20.16.145";
