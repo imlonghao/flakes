@@ -274,19 +274,6 @@
         publickey = "bs3UoHA1NcJzfXdBubSrHbfcwfAW1tTHTlhUyoQa9lU=";
       }
       {
-        name = "wg2980";
-        ipv4 = "172.22.68.5";
-        ipv6 = "fe80::1888:5/64";
-        e4 = "172.23.105.3";
-        l4 = "172.22.68.5";
-        listen = 22980;
-        asn = 4242422980;
-        e6 = "fe80::2980";
-        endpoint = "sjc1.us.dn42.yuuta.moe:21888";
-        publickey = "2ev+fMK6mIP/v0S9Sq7MlqLhNn0La1VpYiPomgPTD2g=";
-        presharedkey = "eDDRji2SoboBoAjQJUCZdsXN9iJJdaxy679BR6F0ukI=";
-      }
-      {
         name = "wg3035";
         listen = 23035;
         endpoint = "usw1.dn42.lare.cc:21888";
