@@ -129,14 +129,6 @@
         publickey = "rTOD+9hPk4TQ5YDPXzTMsp7msHpvW3hOMo5r/PRlzAU=";
       }
       {
-        name = "wg2825";
-        e6 = "fe80::1588:e";
-        asn = 4242422825;
-        listen = 22825;
-        endpoint = "evo.pve.ibeep.com:21888";
-        publickey = "CudK5JJnGdSOAcpnerxfbp7nGb+fGUknL5SDTdTwkxI=";
-      }
-      {
         name = "wg3914";
         e6 = "fe80::ade0";
         asn = 4242423914;
