@@ -31,6 +31,7 @@ in
         }
         protocol static {
           ipv6 { table as199632v6; };
+          route ::/0 via fd99:100:64:1::5;
           route 2602:fab0:31:1::/64 via "virbr1";
           route 2602:feda:1bf:deaf::/64 via "eg_net";
         }
