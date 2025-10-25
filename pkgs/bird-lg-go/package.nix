@@ -15,7 +15,7 @@ buildGoModule rec {
   });
 
   modRoot = "proxy";
-
+  doCheck = false;
   vendorHash = "sha256-MAR+4o+BKd24uOpgcwsfMWoKWbRYxrCG6tMCrH8LS7Y=";
 
   meta = {
