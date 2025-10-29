@@ -140,6 +140,7 @@ in
       "/root/.local"
       "/root/.ansible/"
       "/root/.step"
+      "/root/.codex"
     ];
     files = [
       "/etc/machine-id"
