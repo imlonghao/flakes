@@ -79,6 +79,14 @@
         asn = 4242423290;
         e6 = "fe80::3290";
       }
+      {
+        name = "wg3797";
+        listen = 23797;
+        asn = 4242423797;
+        e6 = "fe80::3797";
+        endpoint = "au-syd1.rc.badaimweeb.me:50052";
+        publickey = "tS7iDDIWQJQoHCc60Jz7I2grikAAAFhNApC3jEeUcxk=";
+      }
     ];
   };
 }

@@ -367,6 +367,14 @@
         e6 = "fe80::3508:102";
       }
       {
+        name = "wg3797";
+        listen = 23797;
+        asn = 4242423797;
+        e6 = "fe80::3797";
+        endpoint = "de-fra1.rc.badaimweeb.me:50053";
+        publickey = "wFmaGUJlOfY2pzd0/jYELDhKeuDyAnM+yKOkVjKbJns=";
+      }
+      {
         name = "wg3814";
         listen = 23814;
         endpoint = "193.77.181.233:51820";

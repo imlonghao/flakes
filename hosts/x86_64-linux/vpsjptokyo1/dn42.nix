@@ -86,6 +86,14 @@
         publickey = "gMlu6MvagM0Bvywjv0KXkqHX5JI3zY0rXx1c8Xt2zzc=";
       }
       {
+        name = "wg3797";
+        listen = 23797;
+        asn = 4242423797;
+        e6 = "fe80::3797";
+        endpoint = "jp-hnd1.rc.badaimweeb.me:50055";
+        publickey = "OxNi54DlP+v7TImF0X5WFdDDZMJbQeBD9oY3Qa877HI=";
+      }
+      {
         name = "wg3997";
         asn = 4242423997;
         e6 = "fe80::3997";

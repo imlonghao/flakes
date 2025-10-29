@@ -281,6 +281,14 @@
         publickey = "7t0RGOTU6KTNMp+dz1jmnsZDccXp8EQ6p9J6ZbgJkQQ=";
       }
       {
+        name = "wg3797";
+        listen = 23797;
+        asn = 4242423797;
+        e6 = "fe80::3797";
+        endpoint = "hk-hkg1.rc.badaimweeb.me:50051";
+        publickey = "4Kyabql4m5Aay43m0jToCyU9BPRa1aLYBWN6IBSaSW4=";
+      }
+      {
         name = "wg3914";
         asn = 4242423914;
         e6 = "fe80::ade0";

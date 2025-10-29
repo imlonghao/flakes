@@ -6,6 +6,14 @@
     enable = true;
     peers = [
       {
+        name = "wg3797";
+        listen = 23797;
+        asn = 4242423797;
+        e6 = "fe80::3797";
+        endpoint = "tw-tpe1.rc.badaimweeb.me:50054";
+        publickey = "oV/BMBeChhH1Rrb7/IOUibsiEJltIfIUlbMudKaTmzQ=";
+      }
+      {
         name = "wg3999";
         asn = 4242423999;
         l4 = "172.22.68.12";

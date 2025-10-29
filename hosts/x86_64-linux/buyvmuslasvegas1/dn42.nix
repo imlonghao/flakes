@@ -301,11 +301,9 @@
         name = "wg3797";
         listen = 23797;
         asn = 4242423797;
-        e4 = "172.22.130.161";
-        l4 = "172.22.68.0";
-        e6 = "fe80::bad1:1888";
-        endpoint = "7c30aed15ce418a630ed9d8e0ded877dccbbc44d.dc.badaimweeb.me:5602";
-        publickey = "f34o02faoeQhoOWDxzyyLvoYrada7uE6r9emUZ689mM=";
+        e6 = "fe80::3797";
+        endpoint = "us-lax1.rc.badaimweeb.me:50049";
+        publickey = "JxIrs/06Hpmk/Na8ojx3mOZBVUFf91+Ktoy8q1cpbFE=";
       }
       {
         name = "wg3914";

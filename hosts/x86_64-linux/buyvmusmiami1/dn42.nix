@@ -129,6 +129,14 @@
         publickey = "rTOD+9hPk4TQ5YDPXzTMsp7msHpvW3hOMo5r/PRlzAU=";
       }
       {
+        name = "wg3797";
+        listen = 23797;
+        asn = 4242423797;
+        e6 = "fe80::3797";
+        endpoint = "us-tpa1.rc.badaimweeb.me:50050";
+        publickey = "xesp2bh4nYHIGnElkjDyJ3hnmJF0FtfF10UETTLDuTg=";
+      }
+      {
         name = "wg3914";
         e6 = "fe80::ade0";
         asn = 4242423914;
