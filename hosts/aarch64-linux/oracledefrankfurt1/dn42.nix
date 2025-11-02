@@ -282,6 +282,14 @@
         e6 = "fe80::2189:e9";
       }
       {
+        name = "wg2279";
+        listen = 22279;
+        endpoint = "de-fra1.bb.mhr.hk:21888";
+        publickey = "pYtAsy+hgo8lRHqxLeoU+/Gh5X6x1lh13TX3LFTRaXY=";
+        asn = 4242422279;
+        e6 = "fe80::2279";
+      }
+      {
         name = "wg2308";
         listen = 22308;
         endpoint = "de-fra1.dn42.mirsal.fr:21888";

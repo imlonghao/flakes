@@ -70,6 +70,14 @@
         publickey = "u2ImAJn9ewce9YHN6HaqrR3Sr4Xsy5UaaJOLJ7gkSzs=";
       }
       {
+        name = "wg2279";
+        listen = 22279;
+        endpoint = "jp-nrt1.bb.mhr.hk:21888";
+        publickey = "uowdto28iYS7tlmrhsrtpWu0XIl7iln4SQvwJRbLdz4=";
+        asn = 4242422279;
+        e6 = "fe80::2279";
+      }
+      {
         name = "wg3035";
         asn = 4242423035;
         e6 = "fe80::3035:134";

@@ -146,6 +146,14 @@
         e6 = "fe80::2246";
       }
       {
+        name = "wg2279";
+        listen = 22279;
+        endpoint = "sg-sin1.bb.mhr.hk:21888";
+        publickey = "Yu5PP+dKWqFCWSOqzEd2d3YGPZDOs7bgxQfZiNJjJH4=";
+        asn = 4242422279;
+        e6 = "fe80::2279";
+      }
+      {
         name = "wg2297";
         listen = 22297;
         endpoint = "[2001:448a:2020:906b::1]:21888";

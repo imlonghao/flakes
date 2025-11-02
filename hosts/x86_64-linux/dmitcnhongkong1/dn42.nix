@@ -206,6 +206,14 @@
         publickey = "OlUDuWkUI9pKNsNo7Vjf/GKKVSBslh9kmqjbeYA4+34=";
       }
       {
+        name = "wg2279";
+        listen = 22279;
+        endpoint = "hk-hkg1.bb.mhr.hk:21888";
+        publickey = "PUjqyQ3ATLp8Cxp3YFVQ44QLoZEpoPgdXsbMfXhDMRk=";
+        asn = 4242422279;
+        e6 = "fe80::2279";
+      }
+      {
         name = "wg2458";
         asn = 4242422458;
         e6 = "fe80::2458";
