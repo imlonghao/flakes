@@ -73,6 +73,7 @@ in
   };
 
   environment.systemPackages = with pkgs; [
+    aerc
     ansible
     atuin
     bgpq4
@@ -123,6 +124,7 @@ in
     tmux
     tree
     uv
+    vim
     virt-manager
     whois
     # pre-commit with nixfmt env
@@ -152,6 +154,7 @@ in
   programs.fish.shellAliases = {
     nttcom = "whois -h rr.ntt.net";
     radb = "whois -h whois.radb.net";
+    aercc = "EDITOR=vim aerc";
   };
 
   # Docker
