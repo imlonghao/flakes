@@ -147,6 +147,14 @@
         e6 = "fe80::1240:4";
       }
       {
+        name = "wg1534";
+        listen = 21534;
+        asn = 4242421534;
+        e6 = "fe80::1534";
+        endpoint = "us-lax.factor2431.com:21888";
+        publickey = "2ULgc/w+4jx5CKqpTeT1FoZhL3DrlELrI8Nvl/Hq7To=";
+      }
+      {
         name = "wg1604";
         asn = 4242421604;
         e6 = "fe80::1604";
