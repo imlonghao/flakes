@@ -30,6 +30,14 @@
         publickey = "1fBfqOJnkf9blffCy5/DfQm+Sea3BkKikxUwOJA8CAs=";
       }
       {
+        name = "wg1024";
+        asn = 4242421024;
+        e6 = "fe80::1024";
+        listen = 21024;
+        endpoint = "osa.dn42.moesoft.org:21888";
+        publickey = "fzFVoGbO+an6rH00yWkhISfHQEZeXINGElM9GFwSmGc=";
+      }
+      {
         name = "wg1131";
         asn = 4242421131;
         e6 = "fe80::1131";
