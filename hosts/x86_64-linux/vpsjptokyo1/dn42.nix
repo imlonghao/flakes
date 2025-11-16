@@ -46,6 +46,14 @@
         publickey = "eacDn4IjHBMavV9IeilwPmrVDoVyKBkNhgK6qUBskiM=";
       }
       {
+        name = "wg1534";
+        asn = 4242421534;
+        e6 = "fe80::1534";
+        listen = 21534;
+        endpoint = "jp-tyo.factor2431.com:21888";
+        publickey = "XYyk/uk3LTHk7vOqtDsDh/AcPtdT3qQptqhggzZCRio=";
+      }
+      {
         name = "wg1999";
         asn = 4242421999;
         e6 = "fe80::1999";
