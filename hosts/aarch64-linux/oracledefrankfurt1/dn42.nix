@@ -150,6 +150,14 @@
         publickey = "GQl6mSdQB6BOQR9pnhtFUIBrlXaPsjp16tRSbVE8rCw=";
       }
       {
+        name = "wg0900";
+        asn = 4242420900;
+        e6 = "fe80::0900";
+        listen = 20900;
+        endpoint = "dn42.selud02.zyner.net:21888";
+        publickey = "KP7CO5UNilwZEvILtUF6MeYCzgBW+Atu3vl6fsfQrkg=";
+      }
+      {
         name = "wg1080";
         listen = 21080;
         endpoint = "fra.peer.highdef.network:21888";
