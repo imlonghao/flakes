@@ -11,7 +11,6 @@
   define DN42_BLACKLIST_ASN = [
     0
     , 4242423658 # Jason Xu
-    , 4242423947 # Flapping 20251002
   ];
   function is_self_net() -> bool {
     case net.type {
@@ -153,12 +152,12 @@
     neighbor 100.64.1.19 port 1790 as 4242421888;
     ipv4 {
         add paths on;
-        export all;
+        export filter dn42_filter;
         import none;
     };
     ipv6 {
         add paths on;
-        export all;
+        export filter dn42_filter;
         import none;
     };
   }
