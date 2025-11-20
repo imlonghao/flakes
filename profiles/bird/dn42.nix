@@ -101,6 +101,7 @@
   }
   template bgp dnpeers {
     local as 4242421888;
+    enforce first as on;
     graceful restart on;
     long lived graceful restart on;
     prefer older on;
