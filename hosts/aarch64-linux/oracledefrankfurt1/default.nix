@@ -19,6 +19,7 @@
     "${self}/profiles/borgmatic"
     "${self}/profiles/k3s/agent.nix"
     "${self}/profiles/etcd"
+    "${self}/profiles/komari-agent"
     # Container
     "${self}/containers/act-runner.nix"
     "${self}/containers/cloudflared.nix"
@@ -195,6 +196,12 @@
         GITEA_RUNNER_LABELS = "dn42-arm:docker://ghcr.io/catthehacker/ubuntu:act-latest";
       };
     };
+  };
+
+  # komari-agent
+  services.komari-agent = {
+    month-rotate = 21;
+    include-nics = [ "enp0s3" ];
   };
 
 }
