@@ -66,6 +66,7 @@
   services.komari-agent = {
     month-rotate = 26;
     include-mountpoint = [ "/boot" ];
+    include-nics = [ "eth0" ];
   };
 
   # Coredns
