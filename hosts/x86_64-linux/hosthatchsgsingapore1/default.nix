@@ -23,6 +23,7 @@
     "${self}/profiles/k3s/agent.nix"
   ];
 
+  boot.kernelParams = [ "net.ifnames=0" ];
   boot.loader.grub.device = "/dev/vda";
   networking = {
     dhcpcd.enable = false;
@@ -31,15 +32,15 @@
       "1.1.1.1"
     ];
     defaultGateway = {
-      interface = "ens3";
+      interface = "eth0";
       address = "103.167.150.1";
     };
     defaultGateway6 = {
-      interface = "ens3";
+      interface = "eth0";
       address = "fe80::1";
     };
     interfaces = {
-      ens3 = {
+      eth0 = {
         ipv4.addresses = [
           {
             address = "103.167.150.135";
@@ -221,7 +222,7 @@
   # ranet
   services.ranet = {
     enable = true;
-    interface = "ens3";
+    interface = "eth0";
     id = 17;
   };
 
