@@ -28,6 +28,7 @@ in
       timerConfig = {
         OnCalendar = "weekly";
         Unit = "rsshc.service";
+        RandomizedDelaySec = "86400";
       };
       wantedBy = [ "timers.target" ];
     };
