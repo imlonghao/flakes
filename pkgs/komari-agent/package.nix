@@ -2,21 +2,20 @@
   lib,
   fetchFromGitHub,
   buildGoModule,
-  vnstat,
   makeWrapper,
 }:
 buildGoModule rec {
   pname = "komari-agent";
-  version = "1.1.12";
+  version = "1.1.34";
 
   src = fetchFromGitHub {
     owner = "komari-monitor";
     repo = pname;
     rev = version;
-    hash = "sha256-DcSI206Lm4h933pKmywrtcg52Atp+ow6wJiPFNS23ms=";
+    hash = "sha256-7+AdA80wgDso6wlR65eG3W0+EWBM29oBsq4bynzZIG4=";
   };
 
-  vendorHash = "sha256-m2XD3KgMnetpgDontK8Kk+PRHcqM2eLV2NvikR5zAWg=";
+  vendorHash = "sha256-5RL/dDR/Or9GRCPVQmUYKTV82q7xuN2Mqc4/86WmbqY=";
 
   ldflags = [
     "-s -w"
@@ -28,11 +27,6 @@ buildGoModule rec {
   nativeBuildInputs = [
     makeWrapper
   ];
-
-  postInstall = ''
-    wrapProgram $out/bin/komari-agent \
-     --prefix PATH : ${lib.makeBinPath [ vnstat ]}
-  '';
 
   meta = with lib; {
     homepage = "https://github.com/komari-monitor/komari-agent";

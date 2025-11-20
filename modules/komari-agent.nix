@@ -46,6 +46,8 @@ in
           ) " --include-nics ${lib.strings.concatStringsSep "," cfg.include-nics}")
           + "'";
         Restart = "always";
+        WorkingDirectory = "/var/lib/komari-agent";
+        StateDirectory = "komari-agent";
         DynamicUser = "yes";
         ProtectSystem = "strict";
         ProtectHome = "true";
