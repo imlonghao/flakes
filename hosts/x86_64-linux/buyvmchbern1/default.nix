@@ -9,6 +9,7 @@
     "${self}/profiles/exporter/node.nix"
     "${self}/profiles/rsshc"
     "${self}/profiles/docker"
+    "${self}/profiles/komari-agent"
   ];
 
   boot.kernelParams = [ "net.ifnames=0" ];
@@ -64,6 +65,11 @@
     ipv6 = false;
     mtu = 1440;
     id = 5;
+  };
+
+  # komari-agent
+  services.komari-agent = {
+    include-nics = [ "eth0" ];
   };
 
 }

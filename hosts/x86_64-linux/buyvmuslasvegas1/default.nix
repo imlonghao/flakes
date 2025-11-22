@@ -12,6 +12,7 @@
     "${self}/profiles/bird-lg-go"
     "${self}/profiles/mtrsb"
     "${self}/profiles/rsshc"
+    "${self}/profiles/komari-agent"
   ];
 
   boot.loader.grub.device = "/dev/vda";
@@ -111,6 +112,11 @@
     ipv6 = false;
     mtu = 1440;
     id = 6;
+  };
+
+  # komari-agent
+  services.komari-agent = {
+    include-nics = [ "ens3" ];
   };
 
 }

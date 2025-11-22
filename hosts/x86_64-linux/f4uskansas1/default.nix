@@ -9,6 +9,7 @@
     "${self}/profiles/exporter/node.nix"
     "${self}/profiles/rsshc"
     "${self}/profiles/etcd"
+    "${self}/profiles/komari-agent"
   ];
 
   networking = {
@@ -101,6 +102,14 @@
     enable = true;
     interface = "ens18";
     id = 3;
+  };
+
+  # komari-agent
+  services.komari-agent = {
+    include-nics = [
+      "ens18"
+      "ens19"
+    ];
   };
 
 }
