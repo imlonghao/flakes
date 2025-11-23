@@ -16,6 +16,7 @@ in
     "${self}/profiles/rsshc"
     "${self}/profiles/qemuGuest"
     "${self}/profiles/exporter/node.nix"
+    "${self}/profiles/komari-agent"
   ];
 
   networking = {
@@ -67,6 +68,12 @@ in
     enable = true;
     interface = "eth0";
     id = 11;
+  };
+
+  # komari-agent
+  services.komari-agent = {
+    month-rotate = 1;
+    include-nics = [ "eth0" ];
   };
 
 }

@@ -8,6 +8,7 @@
     "${self}/profiles/mtrsb"
     "${self}/profiles/rsshc"
     "${self}/profiles/exporter/node.nix"
+    "${self}/profiles/komari-agent"
   ];
 
   boot.kernelParams = [ "net.ifnames=0" ];
@@ -75,6 +76,15 @@
     enable = true;
     interface = "eth0";
     id = 9;
+  };
+
+  # komari-agent
+  services.komari-agent = {
+    month-rotate = 1;
+    include-nics = [
+      "eth0"
+      "eth1"
+    ];
   };
 
 }

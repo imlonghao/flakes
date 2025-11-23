@@ -12,6 +12,7 @@
     "${self}/profiles/mtrsb"
     "${self}/profiles/pingfinder"
     "${self}/profiles/bird-lg-go"
+    "${self}/profiles/komari-agent"
     # Containers
     "${self}/containers/snell.nix"
     "${self}/containers/globalping.nix"
@@ -71,6 +72,12 @@
     enable = true;
     interface = "eth0";
     id = 10;
+  };
+
+  # komari-agent
+  services.komari-agent = {
+    month-rotate = 20;
+    include-nics = [ "eth0" ];
   };
 
 }

@@ -12,6 +12,7 @@
     "${self}/profiles/borgmatic"
     "${self}/profiles/k3s/agent.nix"
     "${self}/profiles/etcd"
+    "${self}/profiles/komari-agent"
   ];
 
   boot.loader.grub.device = "/dev/vda";
@@ -100,6 +101,11 @@
   services.cert-syncer = {
     enable = true;
     wishlist = [ "go9mail.com" ];
+  };
+
+  # komari-agent
+  services.komari-agent = {
+    include-nics = [ "ens4" ];
   };
 
 }
