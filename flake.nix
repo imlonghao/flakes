@@ -151,15 +151,14 @@
           };
       };
       colmena-flake.deployment = {
-        virmachustampa1 = {
-          targetHost = "virmach-us-tampa-1.ni.sb";
+        # keep-sorted start block=yes
+        breezehostusdallas1 = {
+          targetHost = "breezehost-us-dallas-1.ni.sb";
+          targetPort = 10222;
+          tags = [ "dn42" ];
         };
-        hosthatchsgsingapore1 = {
-          targetHost = "hosthatch-sg-singapore-1.ni.sb";
-          tags = [
-            "dn42"
-            "k3s-agent"
-          ];
+        buyvmchbern1 = {
+          targetHost = "buyvm-ch-bern-1.ni.sb";
         };
         buyvmuslasvegas1 = {
           targetHost = "buyvm-us-lasvegas-1.ni.sb";
@@ -169,16 +168,15 @@
           targetHost = "buyvm-us-miami-1.ni.sb";
           tags = [ "dn42" ];
         };
-        starrydnscnhongkong1 = {
-          targetHost = "starrydns-cn-hongkong-1.ni.sb";
+        dmitcnhongkong1 = {
+          targetHost = "dmit-cn-hongkong-1.ni.sb";
+          tags = [ "dn42" ];
         };
-        misakadeberlin1 = {
-          targetHost = "misaka-de-berlin-1.ni.sb";
-          tags = [ "k3s-server" ];
+        dmituslosangeles1 = {
+          targetHost = "dmit-us-losangeles-1.ni.sb";
         };
-        misakauklondon1 = {
-          targetHost = "misaka-uk-london-1.ni.sb";
-          tags = [ "k3s-server" ];
+        f4uskansas1 = {
+          targetHost = "f4-us-kansas-1.ni.sb";
         };
         hosthatchsestockholm1 = {
           targetHost = "hosthatch-se-stockholm-1.ni.sb";
@@ -188,6 +186,21 @@
           targetHost = "hosthatch-se-stockholm-2.ni.sb";
           tags = [ "k3s-agent" ];
         };
+        hosthatchsgsingapore1 = {
+          targetHost = "hosthatch-sg-singapore-1.ni.sb";
+          tags = [
+            "dn42"
+            "k3s-agent"
+          ];
+        };
+        misakadeberlin1 = {
+          targetHost = "misaka-de-berlin-1.ni.sb";
+          tags = [ "k3s-server" ];
+        };
+        misakauklondon1 = {
+          targetHost = "misaka-uk-london-1.ni.sb";
+          tags = [ "k3s-server" ];
+        };
         oracledefrankfurt1 = {
           targetHost = "oracle-de-frankfurt-1.ni.sb";
           buildOnTarget = true;
@@ -195,64 +208,6 @@
             "dn42"
             "k3s-agent"
           ];
-        };
-        terrahostnosandefjord1 = {
-          targetHost = "terrahost-no-sandefjord-1.ni.sb";
-          tags = [ "dn42" ];
-        };
-        vpsausydney1 = {
-          targetHost = "vps-au-sydney-1.ni.sb";
-          tags = [
-            "dn42"
-            "k3s-agent"
-          ];
-        };
-        vpsussanjose1 = {
-          targetHost = "vps-us-sanjose-1.ni.sb";
-        };
-        ovhfrgravelines1 = {
-          targetHost = "ovh-fr-gravelines-1.ni.sb";
-          tags = [ "k3s-agent" ];
-        };
-        buyvmchbern1 = {
-          targetHost = "buyvm-ch-bern-1.ni.sb";
-        };
-        vpsdefrankfurt1 = {
-          targetHost = "vps-de-frankfurt-1.ni.sb";
-        };
-        wirecatussantaclara1 = {
-          targetHost = "wirecat-us-santaclara-1.ni.sb";
-          tags = [ "k3s-agent" ];
-        };
-        twdscntaibei1 = {
-          targetHost = "twds-cn-taibei-1.ni.sb";
-          tags = [ "dn42" ];
-        };
-        f4uskansas1 = {
-          targetHost = "f4-us-kansas-1.ni.sb";
-        };
-        dmituslosangeles1 = {
-          targetHost = "dmit-us-losangeles-1.ni.sb";
-        };
-        dmitcnhongkong1 = {
-          targetHost = "dmit-cn-hongkong-1.ni.sb";
-          tags = [ "dn42" ];
-        };
-        serverfactorynleygelshoven1 = {
-          targetHost = "serverfactory-nl-eygelshoven-1.ni.sb";
-          tags = [ "k3s-server" ];
-        };
-        xentainusdallas1 = {
-          targetHost = "xentain-us-dallas-1.ni.sb";
-        };
-        breezehostusdallas1 = {
-          targetHost = "breezehost-us-dallas-1.ni.sb";
-          targetPort = 10222;
-          tags = [ "dn42" ];
-        };
-        vpsjptokyo1 = {
-          targetHost = "vps-jp-tokyo-1.ni.sb";
-          tags = [ "dn42" ];
         };
         ovhcabeauharnois1 = {
           targetHost = "ovh-ca-beauharnois-1.ni.sb";
@@ -262,6 +217,53 @@
           targetHost = "ovh-ca-beauharnois-2.ni.sb";
           tags = [ "k3s-agent" ];
         };
+        ovhfrgravelines1 = {
+          targetHost = "ovh-fr-gravelines-1.ni.sb";
+          tags = [ "k3s-agent" ];
+        };
+        serverfactorynleygelshoven1 = {
+          targetHost = "serverfactory-nl-eygelshoven-1.ni.sb";
+          tags = [ "k3s-server" ];
+        };
+        starrydnscnhongkong1 = {
+          targetHost = "starrydns-cn-hongkong-1.ni.sb";
+        };
+        terrahostnosandefjord1 = {
+          targetHost = "terrahost-no-sandefjord-1.ni.sb";
+          tags = [ "dn42" ];
+        };
+        twdscntaibei1 = {
+          targetHost = "twds-cn-taibei-1.ni.sb";
+          tags = [ "dn42" ];
+        };
+        virmachustampa1 = {
+          targetHost = "virmach-us-tampa-1.ni.sb";
+        };
+        vpsausydney1 = {
+          targetHost = "vps-au-sydney-1.ni.sb";
+          tags = [
+            "dn42"
+            "k3s-agent"
+          ];
+        };
+        vpsdefrankfurt1 = {
+          targetHost = "vps-de-frankfurt-1.ni.sb";
+        };
+        vpsjptokyo1 = {
+          targetHost = "vps-jp-tokyo-1.ni.sb";
+          tags = [ "dn42" ];
+        };
+        vpsussanjose1 = {
+          targetHost = "vps-us-sanjose-1.ni.sb";
+        };
+        wirecatussantaclara1 = {
+          targetHost = "wirecat-us-santaclara-1.ni.sb";
+          tags = [ "k3s-agent" ];
+        };
+        xentainusdallas1 = {
+          targetHost = "xentain-us-dallas-1.ni.sb";
+        };
+        # keep-sorted end
       };
     };
 }
