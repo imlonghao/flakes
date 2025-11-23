@@ -226,6 +226,7 @@
         };
         twdscntaibei1 = {
           targetHost = "twds-cn-taibei-1.ni.sb";
+          tags = [ "dn42" ];
         };
         f4uskansas1 = {
           targetHost = "f4-us-kansas-1.ni.sb";
