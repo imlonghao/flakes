@@ -250,6 +250,14 @@
         e6 = "fe80::1816";
       }
       {
+        name = "wg1927";
+        asn = 4242421927;
+        e6 = "fe80::66:cc:ff:1";
+        listen = 21927;
+        endpoint = "ifog-london.cloud.chariri.moe:21888";
+        publickey = "HdKV79N2zdeTnxuFMzhyHd1wlgaIXnGbK/4LN/dreGU=";
+      }
+      {
         name = "wg1999";
         asn = 4242421999;
         e6 = "fe80::1999";
