@@ -73,6 +73,8 @@ in
   };
 
   environment.systemPackages = with pkgs; [
+    # keep-sorted start
+    (python3.withPackages (ps: with ps; [ requests ]))
     aerc
     ansible
     atuin
@@ -80,6 +82,7 @@ in
     black
     borgbackup
     borgmatic
+    cabal-install
     claude-code
     codex
     croc
@@ -87,16 +90,17 @@ in
     dnsutils
     exploitdb
     ffmpeg
+    ghc
     git
     gitui
     gnupg
     go
     gobuster
     iptables
-    kubernetes-helm
-    lego
     jq
     just
+    kubernetes-helm
+    lego
     mediainfo
     metasploit
     moreutils
@@ -107,10 +111,12 @@ in
     nixfmt-rfc-style
     nmap
     nodejs
+    oha
     openssl
     openvpn
+    pkgs.sops
+    pre-commit
     pyinfra
-    (python3.withPackages (ps: with ps; [ requests ]))
     q
     ranet
     rclone
@@ -118,7 +124,6 @@ in
     ripgrep
     rustic
     socat
-    pkgs.sops
     step-cli
     tealdeer
     tmux
@@ -127,10 +132,7 @@ in
     vim
     virt-manager
     whois
-    # pre-commit with nixfmt env
-    pre-commit
-    cabal-install
-    ghc
+    # keep-sorted end
   ];
 
   environment.persistence."/persist" = {
@@ -149,6 +151,9 @@ in
       "/etc/ssh/ssh_host_ed25519_key"
     ];
   };
+
+  # Fix ld
+  programs.nix-ld.enable = true;
 
   # fish alias
   programs.fish.shellAliases = {
