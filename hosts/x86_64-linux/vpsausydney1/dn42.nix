@@ -63,6 +63,14 @@
         e6 = "fe80::1855";
       }
       {
+        name = "wg2189";
+        asn = 4242422189;
+        e6 = "fe80::2189:126";
+        listen = 22189;
+        endpoint = "au-syd.dn42.iedon.net:54255";
+        publickey = "Yl8pmNGEmxI8drpE0e2GeLRhFpd94Bg82COzbCWl0go=";
+      }
+      {
         name = "wg2633";
         listen = 22633;
         endpoint = "syd.eastbnd.com:21888";
