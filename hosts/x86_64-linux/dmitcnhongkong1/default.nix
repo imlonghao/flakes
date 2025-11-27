@@ -16,6 +16,7 @@
   ];
 
   boot.loader.grub.device = "/dev/vda";
+  boot.kernelParams = [ "net.ifnames=0" ];
 
   systemd.network = {
     enable = true;
@@ -82,6 +83,11 @@
         forward . 172.20.0.53:53 172.23.0.53:53 [fd42:d42:d42:54::1]:53 [fd42:d42:d42:53::1]:53
       }
     '';
+  };
+
+  # LotSpeed
+  services.lotspeed = {
+    enable = true;
   };
 
 }
