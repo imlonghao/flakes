@@ -177,4 +177,6 @@ in
   # Bird3 is unstable
   services.bird.package = pkgs.bird2;
 
+  services.rp_filter.enable = true;
+
 }
