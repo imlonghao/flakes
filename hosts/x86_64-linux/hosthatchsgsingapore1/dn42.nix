@@ -13,6 +13,14 @@
         e6 = "fe80::aa:1111:11";
       }
       {
+        name = "wg0150";
+        asn = 4242420150;
+        e6 = "fe80::150";
+        listen = 20150;
+        endpoint = "sin.darkpoint.xyz:21888";
+        publickey = "LbAFxxPonoNUzWiaxa/ulNYfv0d729DG6qAmg2X5egc=";
+      }
+      {
         name = "wg0202";
         e6 = "fe80::202:9";
         asn = 4242420202;
