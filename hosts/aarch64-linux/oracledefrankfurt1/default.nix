@@ -204,4 +204,6 @@
     include-nics = [ "enp0s3" ];
   };
 
+  services.tailscale.enable = true;
+
 }

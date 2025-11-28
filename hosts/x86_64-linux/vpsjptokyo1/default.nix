@@ -80,4 +80,6 @@
     include-nics = [ "eth0" ];
   };
 
+  services.tailscale.enable = true;
+
 }
