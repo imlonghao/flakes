@@ -91,7 +91,7 @@
   };
 
   services.tailscale.enable = true;
-  systemd.services.tailscale.serviceConfig = {
+  systemd.services.tailscaled.serviceConfig = {
     ExecStartPost = [
       "${pkgs.iptables}/bin/iptables -t mangle -A PREROUTING -i tailscale0 -d 172.20.0.0/14 -j MARK --set-mark 0x1888"
       "${pkgs.iptables}/bin/iptables -t nat -A POSTROUTING -m mark --mark 0x1888 -j SNAT --to-source 172.22.68.3"
