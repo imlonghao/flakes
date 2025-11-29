@@ -205,5 +205,19 @@
   };
 
   services.tailscale.enable = true;
+  systemd.services.tailscale.serviceConfig = {
+    ExecStartPost = [
+      "${pkgs.iptables}/bin/iptables -t mangle -A PREROUTING -i tailscale0 -d 172.20.0.0/14 -j MARK --set-mark 0x1888"
+      "${pkgs.iptables}/bin/iptables -t nat -A POSTROUTING -m mark --mark 0x1888 -j SNAT --to-source 172.22.68.4"
+      "${pkgs.iptables}/bin/ip6tables -t mangle -A PREROUTING -i tailscale0 -d fd00::/8 -j MARK --set-mark 0x1888"
+      "${pkgs.iptables}/bin/ip6tables -t nat -A POSTROUTING -m mark --mark 0x1888 -j SNAT --to-source fd21:5c0c:9b7e:4::1"
+    ];
+    ExecStopPost = [
+      "${pkgs.iptables}/bin/iptables -t mangle -D PREROUTING -i tailscale0 -d 172.20.0.0/14 -j MARK --set-mark 0x1888"
+      "${pkgs.iptables}/bin/iptables -t nat -D POSTROUTING -m mark --mark 0x1888 -j SNAT --to-source 172.22.68.4"
+      "${pkgs.iptables}/bin/ip6tables -t mangle -D PREROUTING -i tailscale0 -d fd00::/8 -j MARK --set-mark 0x1888"
+      "${pkgs.iptables}/bin/ip6tables -t nat -D POSTROUTING -m mark --mark 0x1888 -j SNAT --to-source fd21:5c0c:9b7e:4::1"
+    ];
+  };
 
 }
