@@ -50,6 +50,17 @@
         e6 = "fe80::d311";
       }
       {
+        name = "wg0123";
+        asn = 4242420123;
+        e4 = "172.23.149.5";
+        e6 = "fe80::149:5";
+        l4 = "172.22.68.4";
+        listen = 20123;
+        endpoint = "teutates.grmml.net:51888";
+        publickey = "egRL/LWdFjSXtuB7bQ8Q5aBej2KkE6p2zlmYGQntUgg=";
+        mpbgp = false;
+      }
+      {
         name = "wg0070";
         asn = 4242420070;
         e6 = "fe80::0070:4";
