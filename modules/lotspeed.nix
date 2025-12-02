@@ -15,6 +15,11 @@ in
       description = "Global physical bandwidth limit";
       default = 125000000;
     };
+    start_rate = lib.mkOption {
+      type = lib.types.int;
+      description = "Soft start initial rate";
+      default = 6250000;
+    };
     gain = lib.mkOption {
       type = lib.types.int;
       description = "Pacing Gain";
@@ -40,6 +45,11 @@ in
       description = "Turbo";
       default = 0;
     };
+    safe_mode = lib.mkOption {
+      type = lib.types.int;
+      description = "Safe mode";
+      default = 1;
+    };
   };
   config = lib.mkIf cfg.enable {
     boot = {
@@ -52,6 +62,7 @@ in
       extraModprobeConfig = ''
         options lotspeed lotserver_rate=${toString cfg.rate} lotserver_gain=${toString cfg.gain} lotserver_beta=${toString cfg.beta}
         options lotspeed lotserver_min_cwnd=${toString cfg.min_cwnd} lotserver_max_cwnd=${toString cfg.max_cwnd} lotserver_turbo=${toString cfg.turbo}
+        options lotspeed lotserver_start_rate=${toString cfg.start_rate} lotserver_safe_mode=${toString cfg.safe_mode}
       '';
     };
   };
