@@ -162,4 +162,9 @@
     "ens19"
   ];
 
+  # LotSpeed
+  services.lotspeed = {
+    enable = true;
+  };
+
 }
