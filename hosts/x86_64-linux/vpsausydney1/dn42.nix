@@ -54,6 +54,14 @@
         e6 = "fe80::5614";
       }
       {
+        name = "wg1816";
+        asn = 4242421816;
+        e6 = "fe80::1816";
+        listen = 21816;
+        endpoint = "syd.node.potat0.cc:21888";
+        publickey = "BRBdho23apYZttFbSFvLLEhR59F0dBQgKB3YFychGHQ=";
+      }
+      {
         name = "wg1855";
         listen = 21855;
         endpoint = "[2402:1f00:8100:400::2274]:41105";
