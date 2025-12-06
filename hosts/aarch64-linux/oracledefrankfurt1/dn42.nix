@@ -326,6 +326,14 @@
         e6 = "fe80::2308";
       }
       {
+        name = "wg2338";
+        asn = 4242422338;
+        e6 = "fe80::2338:1";
+        listen = 22338;
+        endpoint = "54.36.188.134:21888";
+        publickey = "USNPQDO2yqeti5YhFYkXedonxsRmSG9RsK0LgI1gxyM=";
+      }
+      {
         name = "wg2458";
         listen = 22458;
         endpoint = "nl-ams-a.nodes.pigeonhole.eu.org:51888";
