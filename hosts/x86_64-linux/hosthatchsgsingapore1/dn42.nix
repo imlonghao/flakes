@@ -191,6 +191,14 @@
         e6 = "fe80::2717";
       }
       {
+        name = "wg3914";
+        asn = 4242423914;
+        e6 = "fe80::ade0";
+        listen = 23914;
+        endpoint = "sg1.g-load.eu:21888";
+        publickey = "jLVjxykR8WSveNIJV1Of6utpp0fwANu3jgWmLnkFkWw=";
+      }
+      {
         name = "wg3997";
         asn = 4242423997;
         e6 = "fe80::3997";
