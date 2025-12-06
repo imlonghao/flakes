@@ -9,7 +9,6 @@ let
     config = config;
     ospf4 = "where net ~ 23.146.88.0/24";
     route4 = ''
-      route 172.22.68.0/27 blackhole;
       route 172.22.68.5/32 blackhole;
 
       route 23.146.88.240/29 blackhole;

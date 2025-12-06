@@ -8,7 +8,6 @@ let
   generalConf = import "${self}/profiles/bird/general.nix" {
     config = config;
     route4 = ''
-      route 172.22.68.0/27 blackhole;
       route 172.22.68.11/32 blackhole;
     '';
     route6 = ''
