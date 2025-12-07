@@ -120,6 +120,10 @@
     reject;
   }
   filter internal_filter {
+    if bgp_path ~ DN42_AUTOPEER then bgp_local_pref = bgp_local_pref - 10;
+    if bgp_path.len = 1 then bgp_local_pref = bgp_local_pref + 10;
+    if (64511, DN42_REGION) ~ bgp_community then bgp_local_pref = bgp_local_pref + 10;
+    if (64511, DN42_COUNTRY) ~ bgp_community then bgp_local_pref = bgp_local_pref + 10;
     if is_self_net_internal() && source ~ [RTS_STATIC, RTS_DEVICE] then {
       bgp_community.add((64511, DN42_REGION));
       bgp_community.add((64511, DN42_COUNTRY));
