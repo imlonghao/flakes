@@ -18,11 +18,15 @@
   ];
   define DN42_AUTOPEER = [
     0
-    , 4242423914 # Kioubit Network
-    , 4242422189 # IEDON-NET-AS
+    # keep-sorted start
+    , 4242420207 # ROUTEDBITS
     , 4242421588 # TECH9-CORE-NETWORK
     , 4242421816 # POTAT0-AS
-    , 4242420207 # ROUTEDBITS
+    , 4242422189 # IEDON-NET-AS
+    , 4242423035 # AS-LARE-DN42
+    , 4242423088 # SUNNET
+    , 4242423914 # Kioubit Network
+    # keep-sorted end
   ];
   roa4 table dn42_roa;
   roa6 table dn42_roa_v6;
