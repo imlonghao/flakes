@@ -16,6 +16,14 @@
     0
     , 4242423999 # COWGL-AS
   ];
+  define DN42_AUTOPEER = [
+    0
+    , 4242423914 # Kioubit Network
+    , 4242422189 # IEDON-NET-AS
+    , 4242421588 # TECH9-CORE-NETWORK
+    , 4242421816 # POTAT0-AS
+    , 4242420207 # ROUTEDBITS
+  ];
   roa4 table dn42_roa;
   roa6 table dn42_roa_v6;
   protocol static {
@@ -80,12 +88,9 @@
       print "[dn42] ROA check failed for ", net, " ASN ", bgp_path.last;
       reject;
     }
-    if !is_valid_network() || bgp_path ~ DN42_BLACKLIST_ASN then {
-      reject;
-    }
-    if bgp_path ~ DN42_NO_TRANSIT && bgp_path.len > 1 then {
-      reject;
-    }
+    if !is_valid_network() || bgp_path ~ DN42_BLACKLIST_ASN then reject;
+    if bgp_path ~ DN42_NO_TRANSIT && bgp_path.len > 1 then reject;
+    if bgp_path ~ DN42_AUTOPEER then bgp_local_pref = bgp_local_pref - 10;
     if bgp_path.len = 1 then bgp_local_pref = bgp_local_pref + 10;
     if (64511, DN42_REGION) ~ bgp_community then bgp_local_pref = bgp_local_pref + 10;
     if (64511, DN42_COUNTRY) ~ bgp_community then bgp_local_pref = bgp_local_pref + 10;
