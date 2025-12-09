@@ -8,13 +8,13 @@
 
 stdenv.mkDerivation rec {
   pname = "lotspeed-${kernel.modDirVersion}";
-  version = "b1eaf1cd74152ed1c75615350db917f78b6f84e7"; # zeta-tcp
+  version = "3ead9ea39231f9d1087a3f651a49edb22c99c5e2"; # zeta-tcp
 
   src = fetchFromGitHub {
     owner = "uk0";
     repo = "lotspeed";
     rev = version;
-    hash = "sha256-5cpQGc2qXKC7yePwKf+EowhU9/hSjv1KazAKSUV0Lhw=";
+    hash = "sha256-E4k/aWVsAXzPoKJuxU9OxfoBt01GmHzZdMDrqh1vHY0=";
   };
 
   makeFlags = "KERNEL_DIR=${kernel.dev}/lib/modules/${kernel.modDirVersion}/build";
