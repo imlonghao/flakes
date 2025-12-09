@@ -55,8 +55,8 @@ in
     boot = {
       extraModulePackages = [ pkgs.lotspeed ];
       kernelModules = [ "lotspeed" ];
-      kernel.sysctl = lib.mkForce {
-        "net.ipv4.tcp_congestion_control" = "lotspeed";
+      kernel.sysctl = {
+        "net.ipv4.tcp_congestion_control" = lib.mkForce "lotspeed";
         "net.ipv4.tcp_no_metrics_save" = 1;
       };
       extraModprobeConfig = ''
