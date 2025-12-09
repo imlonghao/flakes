@@ -30,6 +30,14 @@
         publickey = "1fBfqOJnkf9blffCy5/DfQm+Sea3BkKikxUwOJA8CAs=";
       }
       {
+        name = "wg0398";
+        asn = 4242420398;
+        e6 = "fe80::398";
+        listen = 20398;
+        endpoint = "nrt.dn42.boletus.icu:21888";
+        publickey = "QQecM/0eCbRu5TNdyRxGpJTCo6aGolMb0kZAqLH5Oho=";
+      }
+      {
         name = "wg1024";
         asn = 4242421024;
         e6 = "fe80::1024";

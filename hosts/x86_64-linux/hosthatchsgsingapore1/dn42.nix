@@ -37,6 +37,14 @@
         e6 = "fe80::0207";
       }
       {
+        name = "wg0398";
+        asn = 4242420398;
+        e6 = "fe80::398";
+        listen = 20398;
+        endpoint = "sin.dn42.boletus.icu:21888";
+        publickey = "/e/4YHiRtemDguCdT1/5BtL1NAAQ2cayBfHcUBhg02s=";
+      }
+      {
         name = "wg0458";
         listen = 20458;
         endpoint = "sg1.nodes.huajinet.org:21888";
