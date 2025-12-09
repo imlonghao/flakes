@@ -9,7 +9,7 @@ imlonghao's Nix flakes config
 - `./pkgs`: 软件包配置
 - `./profiles`: 供主机使用的通用配置
 - `./scripts`: 常用脚本
-- `./secrets`: 主机秘文，加密后的配置属性等，通过 `sops` 管理
+- `./secrets`: 主机密文，加密后的配置属性等，通过 `sops` 管理
 - `./users`: 系统用户定义
 
 ## 常用流程
@@ -29,3 +29,10 @@ imlonghao's Nix flakes config
     - `e6`: 目标的 IPv6 地址，一般以 `fe80::` 开头
 - 如果目标不支持 Multiprotocol BGP，则需要设置 `mpbgp=false`
 - 如果目标不支持 Extended Next Hop，则需要设置 `e4` 和 `l4`，`l4` 一般为 `172.22.68.0`
+
+### 节点下线
+
+1. 删除 `./hosts/$arch/$hostname` 目录
+2. 清理 `./flake.nix` 中该主机相关的部署信息
+3. 根据 `./.sops.yaml` 配置文件，去除 `./secrets` 目录密文中相对应的主机密钥，使用命令 `sops -r -i --rm-age $age $filename` 执行
+4. 清理 `./.sops.yaml` 中该主机相关的密钥信息
