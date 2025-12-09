@@ -178,10 +178,6 @@
         f4uskansas1 = {
           targetHost = "f4-us-kansas-1.ni.sb";
         };
-        hosthatchsestockholm1 = {
-          targetHost = "hosthatch-se-stockholm-1.ni.sb";
-          tags = [ "k3s-agent" ];
-        };
         hosthatchsestockholm2 = {
           targetHost = "hosthatch-se-stockholm-2.ni.sb";
           tags = [ "k3s-agent" ];
