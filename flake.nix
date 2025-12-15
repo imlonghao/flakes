@@ -9,6 +9,7 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixpkgs-latest.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
     flake-parts.url = "github:hercules-ci/flake-parts";
     colmena-flake.url = "github:juspay/colmena-flake";
     sops-nix = {
@@ -71,6 +72,7 @@
                         config.allowUnfree = true;
                         overlays = [
                           self.overlays.default
+                          self.overlays.latest
                           inputs.ranet.overlays.default
                         ];
                         system = arch;
@@ -100,6 +102,22 @@
             inherit (prev) callPackage;
             directory = ./pkgs;
           };
+        overlays.latest =
+          final: prev:
+          let
+            pkgs-latest = (
+              import inputs.nixpkgs-latest {
+                config.allowUnfree = true;
+                localSystem = prev.stdenv.hostPlatform.system;
+              }
+            );
+          in
+          prev.lib.attrsets.genAttrs [
+            # keep-sorted start
+            "claude-code"
+            "codex"
+            # keep-sorted end
+          ] (name: pkgs-latest.${name});
         overlays.pyinfra =
           final: prev:
           let

@@ -102,6 +102,22 @@
         "type": "github"
       }
     },
+    "nixpkgs-latest": {
+      "locked": {
+        "lastModified": 1765644376,
+        "narHash": "sha256-yqHBL2wYGwjGL2GUF2w3tofWl8qO9tZEuI4wSqbCrtE=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "23735a82a828372c4ef92c660864e82fbe2f5fbe",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixpkgs-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
     "nixpkgs-lib": {
       "locked": {
         "lastModified": 1754788789,
@@ -125,11 +141,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1748397450,
-        "narHash": "sha256-2IU/AwUke6eUP8U4U7SWz4aoNeEhk0h3fO+deogGEy4=",
+        "lastModified": 1765770467,
+        "narHash": "sha256-XuB6nHOEkzZl/V48pGHvgmoPineEBFa8dI1yuXB9pTM=",
         "owner": "NickCao",
         "repo": "ranet",
-        "rev": "11614870f46996ef60358771e389b7286e039a1d",
+        "rev": "3a8d2d588b09ee019e6ad837838f43da94890bc0",
         "type": "github"
       },
       "original": {
@@ -145,6 +161,7 @@
         "flake-parts": "flake-parts",
         "impermanence": "impermanence",
         "nixpkgs": "nixpkgs",
+        "nixpkgs-latest": "nixpkgs-latest",
         "ranet": "ranet",
         "sops-nix": "sops-nix"
       }
