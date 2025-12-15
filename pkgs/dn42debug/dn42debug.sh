@@ -21,6 +21,7 @@ if [ ! -z "$wg" ]; then
   endpoint_host=$(echo "$wg"|awk -F ':' '{for (i=1; i<NF; i++) printf "%s:", $i}'|tr -d '[]'|sed 's/:$//g')
   endpoint_port=$(echo "$wg"|awk -F ':' '{print $NF}')
 fi
+mtu=$(ip link show "$interface"|grep -F mtu|awk '{print $5}')
 
 run () {
   echo "#" "$@"
@@ -36,3 +37,4 @@ if [ ! -z "$wg" ]; then
 fi
 run timeout 30 tcpdump -i "$interface" -c 10 -n
 run ping -c 10 "$neighbor"
+run ping -M do -s $(expr $mtu - 48) -c 3 "$neighbor"
