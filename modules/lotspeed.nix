@@ -53,7 +53,9 @@ in
   };
   config = lib.mkIf cfg.enable {
     boot = {
-      extraModulePackages = [ pkgs.lotspeed ];
+      extraModulePackages = [
+        (pkgs.lotspeed.passthru.forKernelPackages config.boot.kernelPackages)
+      ];
       kernelModules = [ "lotspeed" ];
       kernel.sysctl = {
         "net.ipv4.tcp_congestion_control" = lib.mkForce "lotspeed";
