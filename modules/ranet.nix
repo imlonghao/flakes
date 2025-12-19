@@ -8,7 +8,8 @@
 with lib;
 let
   cfg = config.services.ranet;
-  swanMtu = cfg.mtu - 82;
+  swanMtu = if cfg.iptfs then 4200 else cfg.mtu - 82;
+  gravityMtu = if cfg.iptfs then 4150 else 1368;
   updown = pkgs.writeShellScript "swan-updown" ''
     id=$(${pkgs.jq}/bin/jq -r '.[0].nodes[] | select(.common_name == "${config.networking.hostName}") | .remarks.id' /persist/ranet-registry.json)
     LINK=swan$(printf '%08x\n' "$PLUTO_IF_ID_OUT")
@@ -31,7 +32,7 @@ let
       ${pkgs.procps}/bin/sysctl -w net.ipv4.conf.gravity.rp_filter=0 &&
       ${pkgs.iproute2}/bin/ip addr add "100.64.1.$myid/24" dev gravity &&
       ${pkgs.iproute2}/bin/ip addr add "fd99:100:64:1::$myid/64" dev gravity &&
-      ${pkgs.iproute2}/bin/ip link set gravity mtu 1368 &&
+      ${pkgs.iproute2}/bin/ip link set gravity mtu ${toString gravityMtu} &&
       ${pkgs.iproute2}/bin/ip link set gravity up
     ) || { ${pkgs.iproute2}/bin/ip link del gravity; exit; }
     fdb=$(${pkgs.iproute2}/bin/bridge fdb show dev gravity)
@@ -44,6 +45,9 @@ let
     builtins.toJSON ({
       organization = "imlonghao";
       common_name = config.networking.hostName;
+      experimental = {
+        iptfs = cfg.iptfs;
+      };
       endpoints =
         [ ]
         ++ (
@@ -105,6 +109,11 @@ in
     id = mkOption {
       type = types.int;
       description = "node id";
+    };
+    iptfs = mkOption {
+      type = types.bool;
+      description = "AGGFRAG Mode / IP-TFS";
+      default = false;
     };
   };
   config = mkIf cfg.enable {
