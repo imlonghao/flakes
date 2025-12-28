@@ -398,6 +398,14 @@
         e6 = "fe80::3035:130";
       }
       {
+        name = "wg3088";
+        listen = 23088;
+        endpoint = "ams1-nl.dn42.6700.cc:21888";
+        publickey = "AgXewx4akBG9QI9ClbJMcflmDY1rsdOslRTI/CL4PHk=";
+        asn = 4242423088;
+        e6 = "fe80::3088:194";
+      }
+      {
         name = "wg3177";
         listen = 23177;
         endpoint = "95.130.6.48:51820";
