@@ -220,4 +220,16 @@
     ];
   };
 
+  services.yggdrasil = {
+    enable = true;
+    persistentKeys = true;
+    settings = {
+      Peers = [
+        "tls://n.ygg.yt:443"
+        "tcp://ygg1.mk16.de:1337?key=0000000087ee9949eeab56bd430ee8f324cad55abf3993ed9b9be63ce693e18a"
+        "tls://yggdrasil.su:62586"
+      ];
+    };
+  };
+
 }
