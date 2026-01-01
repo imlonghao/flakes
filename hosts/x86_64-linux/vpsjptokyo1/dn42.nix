@@ -46,6 +46,14 @@
         publickey = "fzFVoGbO+an6rH00yWkhISfHQEZeXINGElM9GFwSmGc=";
       }
       {
+        name = "wg1117";
+        asn = 4242421117;
+        e6 = "fe80::1117";
+        listen = 21117;
+        endpoint = "jp01.dn42.yuyuko.com:21888";
+        publickey = "vZXB25Od9elWU4RKWp42MWNJrNtxJFgdmBkyYH/8Sj8=";
+      }
+      {
         name = "wg1131";
         asn = 4242421131;
         e6 = "fe80::1131";
