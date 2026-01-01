@@ -36,6 +36,9 @@ in
       + kernelConf
       + import "${self}/profiles/bird/blackbgp.nix" { }
       + ''
+        protocol bgp AS213605 from dnpeers {
+          neighbor 2a0f:5707:ffe3::170 as 213605;
+        }
         protocol static {
           route 2602:fab0:20::/48 blackhole;
           route 2602:fab0:24::/48 blackhole;
