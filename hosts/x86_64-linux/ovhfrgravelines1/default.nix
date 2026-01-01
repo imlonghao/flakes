@@ -289,4 +289,30 @@ in
     };
   };
 
+  services.yggdrasil = {
+    enable = true;
+    persistentKeys = true;
+    settings = {
+      Peers = [
+        "tcp://s2.i2pd.xyz:39565"
+        "tls://yggpeer.tilde.green:59454"
+        "tls://ygg.jholden.org:1555"
+      ];
+      MulticastInterfaces = [
+        {
+          Regex = "e.*";
+          Beacon = true;
+          Listen = true;
+          Password = "";
+        }
+        {
+          Regex = "gravity";
+          Beacon = true;
+          Listen = true;
+          Password = "";
+        }
+      ];
+    };
+  };
+
 }
