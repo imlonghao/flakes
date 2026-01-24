@@ -96,12 +96,14 @@ in
     gnupg
     go
     gobuster
+    infisical
     iptables
     jq
     just
     kubernetes-helm
     lego
     mediainfo
+    meli
     metasploit
     moreutils
     mosh
