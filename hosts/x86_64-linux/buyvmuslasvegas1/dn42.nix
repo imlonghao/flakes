@@ -35,14 +35,6 @@
         publickey = "ubA2cl37qxbE0kXJv5FAjloGrFMvAepN8svG/I01fxA=";
       }
       {
-        name = "wg0070";
-        asn = 4242420070;
-        e6 = "fe80::0070:5";
-        listen = 20070;
-        endpoint = "us2.dn42.lie-kong.top:21888";
-        publickey = "vUm7bnK/W0nFL/zREr6GG5ieOccJdB+CxERyMgITWm0=";
-      }
-      {
         name = "wg0202";
         e6 = "fe80::202:10";
         asn = 4242420202;
