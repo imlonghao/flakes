@@ -12,7 +12,6 @@
     "${self}/profiles/mycore"
     "${self}/users/root"
     "${self}/profiles/exporter/node.nix"
-    "${self}/profiles/pingfinder"
     "${self}/profiles/bird-lg-go"
     "${self}/profiles/mtrsb"
     "${self}/profiles/rsshc"
