@@ -331,7 +331,7 @@
       {
         name = "wg3999";
         listen = 23999;
-        endpoint = "hkg.node.cowgl.xyz:31888";
+        endpoint = "hkg.node.cowgl.tech:31888";
         publickey = "mGGBczSVKW+7UKRquI2GkbKrfxiATv9r4uF5WTP+vWI=";
         asn = 4242423999;
         e4 = "172.22.144.64";

@@ -351,7 +351,7 @@
       {
         name = "wg3999";
         listen = 23999;
-        endpoint = "lax.node.cowgl.xyz:31888";
+        endpoint = "lax.node.cowgl.tech:31888";
         publickey = "jhOukGNAKHI8Ivn8uI1TS25n5ho/rVlKFfenGmwCVlg=";
         asn = 4242423999;
         e6 = "fe80::2:3999";

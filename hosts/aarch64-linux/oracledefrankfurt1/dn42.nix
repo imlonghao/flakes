@@ -488,7 +488,7 @@
       {
         name = "wg3999";
         listen = 23999;
-        endpoint = "ams.node.cowgl.xyz:31888";
+        endpoint = "ams.node.cowgl.tech:31888";
         publickey = "sHPUV74X+hqUK5wFj3m5kCga0rlPCxImUBwZ/oLiEn4=";
         asn = 4242423999;
         e6 = "fe80::3:3999";

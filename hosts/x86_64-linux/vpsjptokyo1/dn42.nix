@@ -148,7 +148,7 @@
         e6 = "fe80::1:3999";
         l4 = "172.22.68.10";
         listen = 23999;
-        endpoint = "tyo.node.cowgl.xyz:31888";
+        endpoint = "tyo.node.cowgl.tech:31888";
         publickey = "mMGGxtEqsagrx1Raw57C2H3Stl6ch/cUuF7y08eVgBE=";
         mpbgp = false;
       }
