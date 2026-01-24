@@ -56,6 +56,7 @@ in
         template bgp tmpl_upstream {
           local as 30114;
           graceful restart on;
+          local role customer;
           ipv4 {
             import none;
             export where bgp_large_community ~ [(30114, 1, 1), (30114, 1, 5)];
@@ -66,23 +67,12 @@ in
           };
         }
 
-        protocol bgp AS15353v4 from tmpl_upstream {
-          neighbor 5.56.24.4 as 15353;
-          password "8wqY5P6H";
+        protocol bgp AS62553v4 from tmpl_upstream {
+          neighbor 172.29.47.12 as 62553;
         };
-        protocol bgp AS15353v6 from tmpl_upstream {
-          neighbor 2602:f71e:41:4:: as 15353;
-          source address 2602:f71e:41:6f::a;
-          password "8wqY5P6H";
-          multihop 20;
-          ipv6 {
-            export filter {
-              if net = 2602:fab0:20::/48 then {
-                bgp_path.prepend(30114);
-              }
-              if bgp_large_community ~ [(30114, 1, 1), (30114, 1, 5)] then accept;
-            };
-          };
+        protocol bgp AS62553v6 from tmpl_upstream {
+          neighbor 2602:f71e::75a2:1 as 62553;
+          source address 2602:f71e::75a2:2;
         };
 
         protocol bgp internalpve1 {
