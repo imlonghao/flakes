@@ -43,7 +43,7 @@
       {
         name = "wg0020";
         listen = 20020;
-        endpoint = "dn42.diigg.tech:21888";
+        endpoint = "dn42.iputils.de:21888";
         publickey = "MJd3RQEM6+uFx1376rpIC99XWanD9e3iE3aFS2wa9TI=";
         presharedkey = "Af7vnJ7uqhRmw7gDo7WMrOAVceFh1qeWKfwXfxtdagg=";
         asn = 4242420020;
@@ -229,7 +229,7 @@
         asn = 4242421336;
         e6 = "fe80::2:1336";
         listen = 21336;
-        endpoint = "fra1.dn42.xeiu.top:21888";
+        endpoint = "fr1.dn42.xeiu.top:21888";
         publickey = "Z5sN+emFAsZxrcpqcBnkww6X70FlHLRWkcuab4O7jzI=";
       }
       {
@@ -356,6 +356,14 @@
         listen = 22338;
         endpoint = "54.36.188.134:21888";
         publickey = "USNPQDO2yqeti5YhFYkXedonxsRmSG9RsK0LgI1gxyM=";
+      }
+      {
+        name = "wg2225";
+        listen = 22225;
+        endpoint = "dn42-de.maraun.de:21888";
+        publickey = "uS1AYe7zTGAP48XeNn0vppNjg7q0hawyh8Y0bvvAWhk=";
+        asn = 4242422225;
+        e6 = "fe80::2225";
       }
       {
         name = "wg2458";
