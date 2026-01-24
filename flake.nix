@@ -117,6 +117,7 @@
             "claude-code"
             "codex"
             "komari-agent"
+            "meli"
             # keep-sorted end
           ] (name: pkgs-latest.${name});
         overlays.pyinfra =
