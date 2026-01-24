@@ -22,6 +22,12 @@
       address = "2602:f71e:41::1";
       interface = "ens3";
     };
+    vlans = {
+      vlan102 = {
+        id = 102;
+        interface = "ens3";
+      };
+    };
     interfaces = {
       lo = {
         ipv4.addresses = [
@@ -52,6 +58,20 @@
           {
             address = "2602:f71e:41:6f::a";
             prefixLength = 64;
+          }
+        ];
+      };
+      vlan102 = {
+        ipv4.addresses = [
+          {
+            address = "172.29.47.13";
+            prefixLength = 31;
+          }
+        ];
+        ipv6.addresses = [
+          {
+            address = "2602:f71e::75a2:2";
+            prefixLength = 126;
           }
         ];
       };
