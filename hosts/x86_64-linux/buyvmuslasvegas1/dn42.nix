@@ -349,6 +349,14 @@
         mpbgp = false;
       }
       {
+        name = "wg3965";
+        listen = 23965;
+        endpoint = "vultr-lax.pubnode.dn42.saitewasreset.net:21888";
+        publickey = "14K+x2jXvS+Cs1u3CPN4cdV3jLa02QpqnoFCMuZcp1Y=";
+        asn = 4242423965;
+        e6 = "fe80::3965";
+      }
+      {
         name = "wg3999";
         listen = 23999;
         endpoint = "lax.node.cowgl.tech:31888";
