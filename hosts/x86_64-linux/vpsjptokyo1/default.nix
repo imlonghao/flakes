@@ -10,7 +10,6 @@
     "${self}/profiles/exporter/blackbox.nix"
     "${self}/profiles/rsshc"
     "${self}/profiles/mtrsb"
-    "${self}/profiles/pingfinder"
     "${self}/profiles/bird-lg-go"
     "${self}/profiles/komari-agent"
     # Containers

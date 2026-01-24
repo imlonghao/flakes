@@ -6,7 +6,6 @@
     ./hardware.nix
     "${self}/profiles/mycore"
     "${self}/users/root"
-    "${self}/profiles/pingfinder"
     "${self}/profiles/exporter/node.nix"
     "${self}/profiles/exporter/bird.nix"
     "${self}/profiles/bird-lg-go"
@@ -58,7 +57,6 @@
           address = "fd21:5c0c:9b7e:6::1";
           prefixLength = 64;
         }
-
         {
           address = "2602:feda:1bf::";
           prefixLength = 128;

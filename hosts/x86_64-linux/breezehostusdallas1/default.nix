@@ -6,7 +6,6 @@
     ./hardware.nix
     "${self}/profiles/mycore"
     "${self}/users/root"
-    "${self}/profiles/pingfinder"
     "${self}/profiles/exporter/node.nix"
     "${self}/profiles/exporter/bird.nix"
     "${self}/profiles/bird-lg-go"

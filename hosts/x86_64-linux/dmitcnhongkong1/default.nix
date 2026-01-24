@@ -7,7 +7,6 @@
     "${self}/profiles/mycore"
     "${self}/users/root"
     "${self}/profiles/rsshc"
-    "${self}/profiles/pingfinder"
     "${self}/profiles/bird-lg-go"
     "${self}/profiles/komari-agent"
     # Containers

@@ -7,7 +7,6 @@
     # ./wireguard.nix
     "${self}/profiles/mycore"
     "${self}/users/root"
-    "${self}/profiles/pingfinder"
     "${self}/profiles/exporter/node.nix"
     "${self}/profiles/mtrsb"
     "${self}/profiles/rsshc"

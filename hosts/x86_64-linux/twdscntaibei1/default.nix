@@ -15,7 +15,6 @@
     "${self}/profiles/rsshc"
     "${self}/profiles/sing-box"
     "${self}/profiles/exporter/node.nix"
-    "${self}/profiles/pingfinder"
     "${self}/profiles/bird-lg-go"
     "${self}/profiles/komari-agent"
     # Containers
