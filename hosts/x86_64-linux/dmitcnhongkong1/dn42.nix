@@ -162,6 +162,14 @@
         publickey = "D4MBIR+HsCPeEGuPg1YziRe1RgaG7jaiTw4wmV8XZUY=";
       }
       {
+        name = "wg1733";
+        asn = 4242421733;
+        e6 = "fe80::1733";
+        listen = 21733;
+        endpoint = "hkg.entry.dn42.hk:21888";
+        publickey = "rHUqrpHKeqJo2QpgG4fTU8B47XF8Bu51opKYfRwq3Rg=";
+      }
+      {
         name = "wg1772";
         listen = 21772;
         endpoint = "154.12.177.103:41888";
