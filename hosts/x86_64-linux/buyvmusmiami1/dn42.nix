@@ -56,6 +56,14 @@
         publickey = "L1nrGl7ggHnyKejJ5eYAPmtVnTZK03ObhpG71FXNXxM=";
       }
       {
+        name = "wg1047";
+        e6 = "fe80::1047:1888";
+        asn = 4242421047;
+        listen = 21047;
+        endpoint = "skaia.b1.barr0w.net:21888";
+        publickey = "TyALMTHM2mHyDfFsAdiu/2xS9Vs1a892ixSEIxhWpgw=";
+      }
+      {
         name = "wg1080";
         e6 = "fe80::1080:119";
         asn = 4242421080;
