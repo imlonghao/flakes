@@ -77,14 +77,6 @@
         e6 = "fe80::129:2";
       }
       {
-        name = "wg0150";
-        listen = 20150;
-        endpoint = "fra.darkpoint.xyz:21818";
-        publickey = "nfoxTtmJdBdxNR3TmfVLG13KA5E+ZtU+uIGCegxrxxw=";
-        asn = 4242420150;
-        e6 = "fe80::150";
-      }
-      {
         name = "wg0167";
         listen = 20167;
         endpoint = "ams1.dn42.42420167.xyz:21888";
