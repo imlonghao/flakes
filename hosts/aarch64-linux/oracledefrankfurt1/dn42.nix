@@ -161,6 +161,14 @@
         e6 = "fe80::585";
       }
       {
+        name = "wg0714";
+        asn = 4242420714;
+        e6 = "fe80::0714";
+        listen = 20714;
+        endpoint = "tundra-express.echonet.red:1888";
+        publickey = "kDc6bdDKdzb9D0UgcPGIjGWGuC4HwpjdIcHrxM7zuFQ=";
+      }
+      {
         name = "wg0900";
         asn = 4242420900;
         e6 = "fe80::0900";
