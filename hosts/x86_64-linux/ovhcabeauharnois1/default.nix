@@ -36,6 +36,8 @@
       "/etc/rancher"
       "/var/lib"
       "/root/.ssh"
+      "/root/.cache/kopia"
+      "/root/.config/kopia"
     ];
     files = [
       "/etc/machine-id"
@@ -45,6 +47,7 @@
   };
 
   environment.systemPackages = with pkgs; [
+    kopia
     ncdu
     ranet
     rclone
@@ -57,6 +60,14 @@
     enable = true;
     interface = "eno1";
     id = 2;
+  };
+
+  # kopia
+  systemd.services.kopia = {
+    serviceConfig = {
+      ExecStart = "${pkgs.kopia}/bin/kopia server start --config-file /root/.config/kopia/repository.config --tls-cert-file /root/.config/kopia/ssl.crt --tls-key-file /root/.config/kopia/ssl.key --address 0.0.0.0:51515 --server-control-username control";
+    };
+    wantedBy = [ "multi-user.target" ];
   };
 
 }
