@@ -99,14 +99,6 @@
         e6 = "fe80::0625";
       }
       {
-        name = "wg0712";
-        asn = 4242420712;
-        e6 = "fe80::712";
-        listen = 20712;
-        endpoint = "dn42.lax.luotianyi.us:21888";
-        publickey = "nF0mxeLneU+NFRcS2lNai1caGMb3845LYVtpivLC3Bw=";
-      }
-      {
         name = "wg0864";
         listen = 20864;
         asn = 4242420864;
