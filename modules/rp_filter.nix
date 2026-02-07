@@ -7,6 +7,11 @@
 with lib;
 let
   cfg = config.services.rp_filter;
+  script = pkgs.writeShellScript "rp_filter.sh" ''
+    for i in /proc/sys/net/ipv4/conf/*; do
+      echo 0 > $i/rp_filter
+    done
+  '';
 in
 {
   options.services.rp_filter = {
@@ -15,14 +20,13 @@ in
   config = mkIf cfg.enable {
     systemd.services.rp_filter = {
       serviceConfig = {
-        ExecStart = "${pkgs.bash}/bin/bash -c 'for i in /proc/sys/net/ipv4/conf/*; do echo 0 > $i/rp_filter; done'";
+        ExecStart = "${script}";
       };
       wantedBy = [ "multi-user.target" ];
     };
     systemd.timers.rp_filter = {
       timerConfig = {
-        OnCalendar = "5m";
-        Unit = "rp_filter.service";
+        OnUnitActiveSec = "5m";
         RandomizedDelaySec = "30";
       };
       wantedBy = [ "timers.target" ];

@@ -164,7 +164,6 @@ in
         ExecStartPre = "${pkgs.wget}/bin/wget -O /persist/ranet-registry.json https://f001.esd.cc/file/imlonghao-meow/2d6780b0-4c5e-4a02-9c0c-281102ee8354-registry.json";
         ExecStart = "${pkgs.ranet}/bin/ranet --config ${configfile} --registry /persist/ranet-registry.json --key ${config.sops.secrets.ranet.path} up";
         ExecStartPost = "-${postScript}";
-        ConditionPathExists = [ "/persist/ranet-registry.json" ];
       };
       wants = [
         "network-online.target"
