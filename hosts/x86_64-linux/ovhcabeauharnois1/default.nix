@@ -70,4 +70,23 @@
     wantedBy = [ "multi-user.target" ];
   };
 
+  services.cert-syncer = {
+    enable = true;
+    wishlist = [ "esd.cc" ];
+  };
+
+  services.restic.server = {
+    enable = true;
+    prometheus = true;
+    privateRepos = true;
+    appendOnly = true;
+    extraFlags = [
+      "--tls"
+      "--tls-cert"
+      "/persist/certs/esd.cc.crt"
+      "--tls-key"
+      "/persist/certs/esd.cc.key"
+    ];
+  };
+
 }
