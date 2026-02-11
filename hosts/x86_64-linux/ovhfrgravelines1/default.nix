@@ -103,7 +103,6 @@ in
     kubernetes-helm
     lego
     mediainfo
-    meli
     metasploit
     moreutils
     mosh
