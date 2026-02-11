@@ -116,6 +116,7 @@ in
     oha
     openssl
     openvpn
+    pi-coding-agent
     pkgs.sops
     pre-commit
     pyinfra
@@ -147,6 +148,7 @@ in
       "/root/.ansible/"
       "/root/.step"
       "/root/.codex"
+      "/root/.pi"
     ];
     files = [
       "/etc/machine-id"
