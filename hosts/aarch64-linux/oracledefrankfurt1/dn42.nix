@@ -390,6 +390,14 @@
         e6 = "fe80::2717";
       }
       {
+        name = "wg2884";
+        listen = 22884;
+        endpoint = "dn42-de-fra01.datenfass.com:21888";
+        publickey = "JLwAo75IQ8WTaqGA8zGUidUpjh6ANT4d+i5Xj8hEk0o=";
+        asn = 4242422884;
+        e6 = "fe80::2884";
+      }
+      {
         name = "wg2923";
         listen = 22923;
         endpoint = "p2p-node.de:51888";
