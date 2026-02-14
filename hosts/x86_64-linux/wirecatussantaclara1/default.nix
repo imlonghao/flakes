@@ -69,16 +69,13 @@
       "/etc/rancher"
       "/var/lib"
       "/root/.ssh"
-      "/root/.config/kopia"
+      "/root/.cache/rustic"
     ];
     files = [
       "/etc/machine-id"
       "/etc/ssh/ssh_host_ed25519_key"
     ];
   };
-  environment.systemPackages = with pkgs; [
-    kopia
-  ];
 
   # Borgmatic
   systemd.services.borgmatic.path = [ pkgs.mariadb ];
@@ -112,21 +109,23 @@
     include-nics = [ "ens4" ];
   };
 
-  # kopia
-  systemd.services.kopia = {
+  # rustic
+  sops.secrets.rustic.sopsFile = ./secrets.yml;
+  systemd.services.rustic = {
     serviceConfig = {
       ExecStart = [
-        "${pkgs.kopia}/bin/kopia snapshot create --config-file /root/.config/kopia/repository.config /mnt"
+        "${pkgs.rustic}/bin/rustic backup /mnt"
         "${pkgs.curl}/bin/curl -fsS -m 10 --retry 5 -o /dev/null https://hc-ping.com/3ca805c2-17e1-4969-9e78-8d8381136e70"
       ];
       Type = "oneshot";
+      EnvironmentFile = "/run/secrets/rustic";
     };
   };
-  systemd.timers.kopia = {
+  systemd.timers.rustic = {
     timerConfig = {
       OnCalendar = "daily";
       Persistent = "true";
-      RandomizedDelaySec = "1h";
+      RandomizedDelaySec = "8h";
     };
     wantedBy = [ "timers.target" ];
   };
