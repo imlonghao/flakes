@@ -22,6 +22,14 @@
         publickey = "1fBfqOJnkf9blffCy5/DfQm+Sea3BkKikxUwOJA8CAs=";
       }
       {
+        name = "wg0207";
+        listen = 20207;
+        endpoint = "router.tyo1.routedbits.com:51888";
+        publickey = "Urnj0In2/ba5zBJ0+TvGN6/A3JFXZwWfJ3EVkc5A4Cs=";
+        asn = 4242420207;
+        e6 = "fe80::207";
+      }
+      {
         name = "wg0398";
         asn = 4242420398;
         e6 = "fe80::398";
