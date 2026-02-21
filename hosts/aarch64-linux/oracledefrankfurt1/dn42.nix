@@ -233,6 +233,14 @@
         e6 = "fe80::1411:1";
       }
       {
+        name = "wg1510";
+        e6 = "fe80::93d4:3358:1";
+        asn = 4242421510;
+        listen = 21510;
+        endpoint = "de01.dn42.moitr.com:21888";
+        publickey = "l8Cfwb5+f+ThOU1KbdaY5/JQwKnl1utPLkLW29IF3E4=";
+      }
+      {
         name = "wg1534";
         listen = 21534;
         endpoint = "37.221.197.64:21888";
