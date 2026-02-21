@@ -135,6 +135,14 @@
         publickey = "HDe0cq/D1TLW11m7d5ub4+dlM8fXeUSyZOujJemaOUM=";
       }
       {
+        name = "wg0454";
+        asn = 4242420454;
+        e6 = "fe80::454:102";
+        listen = 20454;
+        endpoint = "dn42c.nedifinita.com:43507";
+        publickey = "pCTgngczpFgIDbZzfxtz6tiaiFo59b2GbeJEEc21mA0=";
+      }
+      {
         name = "wg0458";
         listen = 20458;
         endpoint = "eu-west1.nodes.huajinet.org:21888";
