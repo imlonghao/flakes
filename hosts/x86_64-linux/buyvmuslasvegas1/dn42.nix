@@ -298,6 +298,14 @@
         publickey = "QSAeFPotqFpF6fFe3CMrMjrpS5AL54AxWY2w1+Ot2Bo=";
       }
       {
+        name = "wg3310";
+        asn = 4242423310;
+        e6 = "fe80::1888:3310";
+        listen = 23310;
+        endpoint = "lax01.edge.r1.tmpfs.dev:21888";
+        publickey = "qEffOA35Oe2IFUFXv7KTGGZ5SV3XmrM+IxTdzHEDmCg=";
+      }
+      {
         name = "wg3377";
         asn = 4242423377;
         e6 = "fe80::3377";
