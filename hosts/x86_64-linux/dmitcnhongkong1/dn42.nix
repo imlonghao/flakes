@@ -196,6 +196,14 @@
         publickey = "jxCsSXtUSVjaP+eMWOyRsHg3JShQfBFEtyssMKWQaS8=";
       }
       {
+        name = "wg2020";
+        asn = 4242422020;
+        e6 = "fe80::2020";
+        listen = 22020;
+        endpoint = "tnn-1.dn42.redbean0721.com:21888";
+        publickey = "iJvLbmyVJjPH2V2gK79UNdgyDEPyxotIKfWmsSlDl38=";
+      }
+      {
         name = "wg2024";
         asn = 4242422024;
         e6 = "fe80::2024";
