@@ -289,6 +289,14 @@
         publickey = "aC9pjzMWZhbA/sLPljUFGU1K28MSopHbKNj5yyv4uzg=";
       }
       {
+        name = "wg3322";
+        asn = 4242423322;
+        e6 = "fe80::3322";
+        listen = 23322;
+        endpoint = "hk.node.vconet.top:21888";
+        publickey = "AHEJ0dXDDxJF0EapR7Ssx2eQV9ReB/OvkWPu7ypWbkA=";
+      }
+      {
         name = "wg3374";
         asn = 4242423374;
         e6 = "fe80::2999:225";
