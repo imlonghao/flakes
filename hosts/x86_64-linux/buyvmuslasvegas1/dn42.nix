@@ -306,6 +306,14 @@
         publickey = "qEffOA35Oe2IFUFXv7KTGGZ5SV3XmrM+IxTdzHEDmCg=";
       }
       {
+        name = "wg3374";
+        asn = 4242423374;
+        e6 = "fe80::2999:229";
+        listen = 23374;
+        endpoint = "us01.dn42.baka.pub:21888";
+        publickey = "p8ADoxb0sVm1ZBp9Fkom6IaP04dm1DLrpHQLfI9HpGY=";
+      }
+      {
         name = "wg3377";
         asn = 4242423377;
         e6 = "fe80::3377";

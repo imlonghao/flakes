@@ -458,6 +458,14 @@
         publickey = "Kd5+CvZW3NRvUXpbdqGFt85VzMyReBtnVeDVXae06Qg=";
       }
       {
+        name = "wg3374";
+        asn = 4242423374;
+        e6 = "fe80::2999:232";
+        listen = 23374;
+        endpoint = "de01.dn42.baka.pub:21888";
+        publickey = "xFZ0S57R5ykjq5lThYEvLLWHhv2+De5D26p4bX5wdSo=";
+      }
+      {
         name = "wg3508";
         listen = 23508;
         endpoint = "nl-ams.dn42.ydkf.me:41106";
