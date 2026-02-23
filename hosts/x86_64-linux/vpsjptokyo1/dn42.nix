@@ -30,6 +30,14 @@
         e6 = "fe80::207";
       }
       {
+        name = "wg0298";
+        asn = 4242420298;
+        e6 = "fe80::0298";
+        listen = 20298;
+        endpoint = "node5.ox5.cc:21888";
+        publickey = "kYYvoqiavXIbli1p9OCwStnTLc0TRdRKBMsIQ7kVlDM=";
+      }
+      {
         name = "wg0398";
         asn = 4242420398;
         e6 = "fe80::398";
