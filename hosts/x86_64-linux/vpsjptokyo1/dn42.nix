@@ -46,6 +46,14 @@
         publickey = "QQecM/0eCbRu5TNdyRxGpJTCo6aGolMb0kZAqLH5Oho=";
       }
       {
+        name = "wg1023";
+        asn = 4242421023;
+        e6 = "fe80::1023:2";
+        listen = 21023;
+        endpoint = "tyo-01.node.svc.moe:21888";
+        publickey = "pv0bwaUm/ppI7Yaoi7w0qrXX5EW7Qo2njTSNG19AHgM=";
+      }
+      {
         name = "wg1024";
         asn = 4242421024;
         e6 = "fe80::1024";

@@ -107,6 +107,14 @@
         publickey = "mOQs7kIucUmSDXqRHvwfUxLAFkUDg9ssH5Gqn+6oj0s=";
       }
       {
+        name = "wg1023";
+        asn = 4242421023;
+        e6 = "fe80::1023:2";
+        listen = 21023;
+        endpoint = "lax-01.node.svc.moe:21888";
+        publickey = "nwMyp5pohAUDaaT2oVQQZiE/EI31DnnxVqAcKIWSuiM=";
+      }
+      {
         name = "wg1080";
         listen = 21080;
         asn = 4242421080;

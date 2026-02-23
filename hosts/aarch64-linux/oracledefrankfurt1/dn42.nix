@@ -185,6 +185,14 @@
         publickey = "KP7CO5UNilwZEvILtUF6MeYCzgBW+Atu3vl6fsfQrkg=";
       }
       {
+        name = "wg1023";
+        asn = 4242421023;
+        e6 = "fe80::1023:2";
+        listen = 21023;
+        endpoint = "ams-01.node.svc.moe:21888";
+        publickey = "EERaAzJ1oDMhWZCMIWbK4Gd523BDM2YlV1O7AB1th1Y=";
+      }
+      {
         name = "wg1080";
         listen = 21080;
         endpoint = "fra.peer.highdef.network:21888";

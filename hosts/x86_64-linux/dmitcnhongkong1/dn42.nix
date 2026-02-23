@@ -104,6 +104,14 @@
         publickey = "KlZg3oOjQsaQ0dNkUgHCKyOqULw8+u+llo97X1w5mV4=";
       }
       {
+        name = "wg1023";
+        asn = 4242421023;
+        e6 = "fe80::1023:2";
+        listen = 21023;
+        endpoint = "hkg-01.node.svc.moe:21888";
+        publickey = "dPTukyAM6scP2dlCYiP55BDb0lmuBhX7Rm4G8p/9awA=";
+      }
+      {
         name = "wg1117";
         asn = 4242421117;
         e6 = "fe80::1117";
