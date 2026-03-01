@@ -87,7 +87,6 @@
     enable = true;
     interface = "ens3";
     id = 22;
-    iptfs = true;
   };
 
 }
