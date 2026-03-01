@@ -71,6 +71,7 @@
     enable = true;
     interface = "eth0";
     id = 10;
+    iptfs = true;
   };
 
   # komari-agent
