@@ -12,7 +12,6 @@ in
     "xhci_pci"
     "ahci"
     "sd_mod"
-    "ip6_tables"
   ];
   boot.kernelModules = [ "kvm-intel" ];
 

@@ -109,7 +109,7 @@ in
     nali
     ncdu
     nix-update
-    nixfmt-rfc-style
+    nixfmt
     nmap
     nodejs
     oha
