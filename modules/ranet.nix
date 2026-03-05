@@ -8,8 +8,8 @@
 with lib;
 let
   cfg = config.services.ranet;
-  swanMtu = if cfg.iptfs then 4200 else cfg.mtu - 82;
-  gravityMtu = if cfg.iptfs then 4150 else 1368;
+  swanMtu = if cfg.iptfs then 2800 else cfg.mtu - 82;
+  gravityMtu = if cfg.iptfs then 2750 else 1368;
   updown = pkgs.writeShellScript "swan-updown" ''
     id=$(${pkgs.jq}/bin/jq -r '.[0].nodes[] | select(.common_name == "${config.networking.hostName}") | .remarks.id' /persist/ranet-registry.json)
     LINK=swan$(printf '%08x\n' "$PLUTO_IF_ID_OUT")
@@ -149,6 +149,12 @@ in
             dhcp {
               load = no
             }
+          }
+          iptfs {
+            drop_time = 3000000
+            reorder_window = 8
+            init_delay = 300
+            max_queue_size = 4194304
           }
         }
         charon-systemd {
