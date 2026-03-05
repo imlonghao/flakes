@@ -72,6 +72,20 @@ in
       ff00::/8+
     ];
   }
+  protocol rip rip_v4 {
+    ipv4 {
+      import all;
+      export ${ospf4};
+    };
+    interface "gravity" {};
+  }
+  protocol rip rip_v6 {
+    ipv4 {
+      import all;
+      export ${ospf6};
+    };
+    interface "gravity" {};
+  }
   protocol ospf v3 intranet_v4 {
     ipv4 {
       import all;
@@ -96,6 +110,7 @@ in
       };
     };
   }
+
   protocol bfd {
     interface "wg*" {
       min tx interval 200ms;
