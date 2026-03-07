@@ -10,16 +10,16 @@
 
 rustPlatform.buildRustPackage rec {
   pname = "vykar";
-  version = "0.11.3";
+  version = "0.11.8";
 
   src = fetchFromGitHub {
     owner = "borgbase";
     repo = "vykar";
     rev = "v${version}";
-    hash = "sha256-WMIVeh9JNjzjiXGuGo9Ok3r6sV5X2bWrDf2GfJoMFPk=";
+    hash = "sha256-iEG//jX7CEgPlW5cnCRq8n60V3ASjr/WkGTOXfRK010=";
   };
 
-  cargoHash = "sha256-Dplp+ro1e0rAMQlurxZhMi7YGYE5itqnT7SqfgXYv0M=";
+  cargoHash = "sha256-Z6iqVyMdu7SvY+xm104DGFXWZ6R1inSQGR4i2X8pyyU=";
 
   nativeBuildInputs = [
     pkg-config
