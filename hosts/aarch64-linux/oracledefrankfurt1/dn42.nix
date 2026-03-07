@@ -285,6 +285,14 @@
         publickey = "1Gh8MJZpPk9R10eCUWgd9Sw7fA6P3FPn9n5JnBRi10U=";
       }
       {
+        name = "wg1732";
+        listen = 21732;
+        endpoint = "chr-fr01.as215887.net:21888";
+        publickey = "SpFk6mynvJCrMvAf/uD8OOCm+2KlAb91tdXkWNbbNV8=";
+        asn = 4242421732;
+        e6 = "fe80::1732";
+      }
+      {
         name = "wg1771";
         listen = 21771;
         endpoint = "frank1.exploro.one:32615";
