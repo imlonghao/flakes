@@ -14,6 +14,7 @@
     "${self}/profiles/sing-box"
     "${self}/profiles/mtrsb"
     "${self}/profiles/rsshc"
+    "${self}/profiles/docker"
   ];
 
   boot.loader.grub.device = "/dev/vda";
@@ -87,6 +88,11 @@
     enable = true;
     interface = "ens3";
     id = 22;
+  };
+
+  services.cert-syncer = {
+    enable = true;
+    wishlist = [ "esd.cc" ];
   };
 
 }
