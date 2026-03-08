@@ -142,6 +142,14 @@
         e6 = "fe80::3088:190";
       }
       {
+        name = "wg3374";
+        asn = 4242423374;
+        e6 = "fe80::2999:226";
+        listen = 23374;
+        endpoint = "jp01.dn42.baka.pub:21888";
+        publickey = "N7iQzqWLPb6lpRlf7grQG6rEzQOvDZWkmsRDkRnniH0=";
+      }
+      {
         name = "wg3508";
         asn = 4242423508;
         e6 = "fe80::3508:100";
