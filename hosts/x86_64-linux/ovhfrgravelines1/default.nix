@@ -99,6 +99,7 @@ in
     infisical
     iptables
     jq
+    jujutsu
     just
     kubernetes-helm
     lego
