@@ -120,7 +120,6 @@
             "claude-code"
             "codex"
             "komari-agent"
-            "netbird"
             # keep-sorted end
           ] (name: pkgs-latest.${name});
         overlays.pyinfra =
