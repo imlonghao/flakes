@@ -13,14 +13,6 @@
         publickey = "2JHMpwkKaAMuMBrmapx9zqgGDIZOX9HZw5V2c1l66R8=";
       }
       {
-        name = "wg0014";
-        asn = 4242420014;
-        e6 = "fe80::14:3";
-        listen = 20014;
-        endpoint = "hk.dn42.fxnet.top:21888";
-        publickey = "y5D4KE+anbxbZ8p+JvzqDRv+PY/FPAu+TD26/9bmYC0=";
-      }
-      {
         name = "wg0202";
         e6 = "fe80::202:2";
         asn = 4242420202;
