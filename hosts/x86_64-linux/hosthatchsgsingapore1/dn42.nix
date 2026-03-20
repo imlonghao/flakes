@@ -53,14 +53,6 @@
         e6 = "fe80::0566:18";
       }
       {
-        name = "wg0585";
-        listen = 20585;
-        endpoint = "sg1.dn42.atolm.net:21888";
-        publickey = "nI/itxRxKHntsWiBpawMZe2vOFho1rrOJdK7th0ZxFg=";
-        asn = 4242420585;
-        e6 = "fe80::585";
-      }
-      {
         name = "wg0604";
         listen = 20604;
         endpoint = "sgp1.dn42.cas7.moe:21888";
