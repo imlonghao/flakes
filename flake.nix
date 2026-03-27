@@ -28,6 +28,10 @@
       url = "github:numtide/devshell";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    llm-agents = {
+      url = "github:numtide/llm-agents.nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -77,6 +81,7 @@
                           self.overlays.default
                           self.overlays.latest
                           inputs.ranet.overlays.default
+                          inputs.llm-agents.overlays.default
                         ];
                         system = arch;
                       };

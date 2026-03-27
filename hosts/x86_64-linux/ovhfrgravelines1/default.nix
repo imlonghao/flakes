@@ -116,7 +116,7 @@ in
     oha
     openssl
     openvpn
-    pi-coding-agent
+    llm-agents.pi
     pkgs.sops
     pre-commit
     pyinfra
