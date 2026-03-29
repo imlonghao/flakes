@@ -43,6 +43,15 @@
         e6 = "fe80::0207";
       }
       {
+        name = "wg0214";
+        listen = 31888;
+        endpoint = "fantasea.origincode.me:31888";
+        publickey = "1Q2u5SDcXtePzQ0e68aGe6i8uqCUlXcth2n2VdkoY2g=";
+        presharedkey = "5rF28u9trYAYUu2QjcrY5l+pANlXjWGvtX9e1yU+2sE=";
+        asn = 4242420214;
+        e6 = "fe80::214";
+      }
+      {
         name = "wg0253";
         asn = 4242420253;
         e6 = "fe80::253";
