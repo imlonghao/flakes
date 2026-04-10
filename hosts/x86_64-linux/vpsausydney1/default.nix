@@ -55,7 +55,8 @@ in
           }
         ];
       };
-      lo = {
+      dummy = {
+        virtual = true;
         ipv4.addresses = [
           {
             address = "172.22.68.0";

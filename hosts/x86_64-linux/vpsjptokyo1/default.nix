@@ -26,7 +26,8 @@
     defaultGateway6 = "2a12:a301:2013::1";
     dhcpcd.enable = false;
     interfaces = {
-      lo = {
+      dummy = {
+        virtual = true;
         ipv4.addresses = [
           {
             address = "172.22.68.0";

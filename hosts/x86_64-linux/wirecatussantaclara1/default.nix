@@ -45,7 +45,8 @@
           }
         ];
       };
-      lo = {
+      dummy = {
+        virtual = true;
         ipv6.addresses = [
           {
             address = "2602:fab0:20::";

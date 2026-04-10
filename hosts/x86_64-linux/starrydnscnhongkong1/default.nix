@@ -30,30 +30,35 @@
       "1.1.1.1"
     ];
     interfaces = {
-      ens3.ipv4.addresses = [
-        {
-          address = "103.205.9.90";
-          prefixLength = 24;
-        }
-      ];
-      ens3.ipv6.addresses = [
-        {
-          address = "2403:ad80:98:c60::f6f4";
-          prefixLength = 64;
-        }
-      ];
-      lo.ipv4.addresses = [
-        {
-          address = "44.31.42.0";
-          prefixLength = 32;
-        }
-      ];
-      lo.ipv6.addresses = [
-        {
-          address = "2a09:b280:ff81::";
-          prefixLength = 48;
-        }
-      ];
+      ens3 = {
+        ipv4.addresses = [
+          {
+            address = "103.205.9.90";
+            prefixLength = 24;
+          }
+        ];
+        ipv6.addresses = [
+          {
+            address = "2403:ad80:98:c60::f6f4";
+            prefixLength = 64;
+          }
+        ];
+      };
+      dummy = {
+        virtual = true;
+        ipv4.addresses = [
+          {
+            address = "44.31.42.0";
+            prefixLength = 32;
+          }
+        ];
+        ipv6.addresses = [
+          {
+            address = "2a09:b280:ff81::";
+            prefixLength = 48;
+          }
+        ];
+      };
     };
   };
 

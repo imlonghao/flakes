@@ -22,7 +22,8 @@
     defaultGateway = "31.41.249.1";
     defaultGateway6 = "2a07:e042::1";
     interfaces = {
-      lo = {
+      dummy = {
+        virtual = true;
         ipv4.addresses = [
           {
             address = "23.146.88.0";

@@ -42,7 +42,8 @@ in
           }
         ];
       };
-      lo = {
+      dummy = {
+        virtual = true;
         ipv6.addresses = [
           {
             address = "2602:feda:1bf::";

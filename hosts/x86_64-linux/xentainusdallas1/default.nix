@@ -29,7 +29,8 @@
       };
     };
     interfaces = {
-      lo = {
+      dummy = {
+        virtual = true;
         ipv4.addresses = [
           {
             address = "23.146.88.0";
