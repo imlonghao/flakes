@@ -6,10 +6,11 @@ in
   imports = [ ../cachix ];
 
   nix = {
+    package = pkgs.lixPackageSets.stable.lix;
     gc.automatic = true;
     optimise.automatic = true;
     extraOptions = ''
-      experimental-features = nix-command flakes ca-derivations
+      experimental-features = nix-command flakes
     '';
     settings = {
       auto-optimise-store = true;
