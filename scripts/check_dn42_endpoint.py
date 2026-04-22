@@ -35,6 +35,10 @@ def resolve_host(host: str) -> bool:
 
 def iter_endpoints(path: Path):
     for lineno, line in enumerate(path.read_text().splitlines(), start=1):
+        stripped = line.lstrip()
+        if stripped.startswith('#'):
+            continue
+
         match = ENDPOINT_RE.search(line)
         if match:
             yield lineno, match.group(1)

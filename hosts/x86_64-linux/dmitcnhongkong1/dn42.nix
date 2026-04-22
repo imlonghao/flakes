@@ -366,7 +366,7 @@
         asn = 4242423997;
         e6 = "fe80::3997";
         listen = 23997;
-        endpoint = "hk1.dn42.bitrate.studio:21888";
+        # endpoint = "hk1.dn42.bitrate.studio:21888";
         publickey = "BwDwBx+r7zTrUZHdUeKsQFkEVEgx4iH13+0LQnCtpEE=";
       }
       {
