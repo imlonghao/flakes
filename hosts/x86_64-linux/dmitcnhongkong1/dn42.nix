@@ -13,6 +13,15 @@
         publickey = "2JHMpwkKaAMuMBrmapx9zqgGDIZOX9HZw5V2c1l66R8=";
       }
       {
+        name = "wg0129";
+        listen = 20129;
+        endpoint = "hk1.420129.xyz:21888";
+        publickey = "m724+HXrsdr3t357/+hHc5dyG9FhedlOO+xBziLs4Gg=";
+        presharedkey = "GEFvVAKtohqma+By7CD69gPGxgRpyM1Q1ShPbCa2cBU=";
+        asn = 4242420129;
+        e6 = "fe80::129:12";
+      }
+      {
         name = "wg0202";
         e6 = "fe80::202:2";
         asn = 4242420202;

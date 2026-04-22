@@ -21,6 +21,15 @@
         publickey = "XewX6S4HPoa40yaGmJvDjk8pX4WxczFTdoPLGvg3oU0=";
       }
       {
+        name = "wg0129";
+        listen = 20129;
+        endpoint = "sg1.420129.xyz:21888";
+        publickey = "m724+4sLngpVK/fX1XGmtDdQALK8vMuubGPi5WcHdz8=";
+        presharedkey = "LAcJCMJT6HOhxwrq0XWay+1MV10Fjd4HsRY0tcp3mG4=";
+        asn = 4242420129;
+        e6 = "fe80::129:11";
+      }
+      {
         name = "wg0207";
         listen = 20207;
         endpoint = "router.sin1.routedbits.com:51888";

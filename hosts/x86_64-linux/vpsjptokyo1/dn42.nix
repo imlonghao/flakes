@@ -14,6 +14,15 @@
         publickey = "1fBfqOJnkf9blffCy5/DfQm+Sea3BkKikxUwOJA8CAs=";
       }
       {
+        name = "wg0129";
+        listen = 20129;
+        endpoint = "jp1.420129.xyz:19513";
+        publickey = "m724+4PZXSXT0ore24ROXYy7s9pKrTnKU7Whqzw3HjA=";
+        presharedkey = "xzMrdNu/M1P8BfgwfKsnI2/9l8iV0OKEJgIGc+uoYw0=";
+        asn = 4242420129;
+        e6 = "fe80::129:13";
+      }
+      {
         name = "wg0207";
         listen = 20207;
         endpoint = "router.tyo1.routedbits.com:51888";
