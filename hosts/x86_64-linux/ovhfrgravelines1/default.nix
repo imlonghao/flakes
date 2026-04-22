@@ -37,8 +37,8 @@ in
 
   networking = {
     nameservers = [
-      "1.1.1.1"
-      "8.8.8.8"
+      "185.222.222.222"
+      "45.11.45.11"
     ];
     defaultGateway = "37.187.76.254";
     defaultGateway6 = {
