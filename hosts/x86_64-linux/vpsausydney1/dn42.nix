@@ -96,14 +96,6 @@
         publickey = "Yl8pmNGEmxI8drpE0e2GeLRhFpd94Bg82COzbCWl0go=";
       }
       {
-        name = "wg2633";
-        listen = 22633;
-        endpoint = "syd.eastbnd.com:21888";
-        publickey = "LCiWfrhsgJ28FDu0m/xxCwrxIiiqQNh7Df9j2393JkQ=";
-        asn = 4242422633;
-        e6 = "fe80::2633";
-      }
-      {
         name = "wg3290";
         listen = 23290;
         endpoint = "119.224.65.18:21888";

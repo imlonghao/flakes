@@ -73,14 +73,6 @@
         publickey = "WmKjRCtf9ZlIDkSuEOrjk5B7YdRZNGhhlbfz2waDAgQ=";
       }
       {
-        name = "wg0549";
-        asn = 4242420549;
-        e6 = "fe80::549:3441:0:1";
-        listen = 20549;
-        endpoint = "hkg.dn42.bb-pgqm.com:21888";
-        publickey = "jtE83RMoN49bs8TOetxrGdzqywz2BI+uT1qJrGI7GVU=";
-      }
-      {
         name = "wg0555";
         asn = 4242420555;
         e6 = "fe80::d555";
