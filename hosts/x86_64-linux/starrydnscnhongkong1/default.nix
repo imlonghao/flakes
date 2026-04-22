@@ -17,7 +17,10 @@
     "${self}/profiles/docker"
   ];
 
-  boot.loader.grub.device = "/dev/vda";
+  boot.loader.grub.devices = [
+    "/dev/vda"
+    "/dev/vdb"
+  ];
   networking = {
     dhcpcd.enable = false;
     defaultGateway = "103.205.9.1";
