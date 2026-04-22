@@ -10,6 +10,7 @@
     "${self}/profiles/k3s/agent.nix"
   ];
 
+  nix.gc.dates = "monthly";
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
@@ -33,9 +34,14 @@
 
   environment.persistence."/persist" = {
     directories = [
+      # keep-sorted start
       "/etc/rancher"
-      "/var/lib"
+      "/root/.config"
+      "/root/.local"
+      "/root/.pi"
       "/root/.ssh"
+      "/var/lib"
+      # keep-sorted end
     ];
     files = [
       "/etc/machine-id"
@@ -44,11 +50,38 @@
   };
 
   environment.systemPackages = with pkgs; [
+    # keep-sorted start
+    (python3.withPackages (ps: with ps; [ requests ]))
+    atuin
+    black
+    git
+    gnupg
+    go
+    iptables
+    jq
+    jujutsu
+    keep-sorted
+    llm-agents.omp
+    llm-agents.pi
     ncdu
+    nix-update
+    nixfmt
+    nodejs
+    oha
+    openssl
+    pkgs.sops
     ranet
     rclone
+    ripgrep
+    rtk
     rustic
+    socat
     tmux
+    tree
+    uv
+    vim
+    whois
+    # keep-sorted end
   ];
 
   # ranet
