@@ -102,8 +102,10 @@ in
     jq
     jujutsu
     just
+    keep-sorted
     kubernetes-helm
     lego
+    llm-agents.pi
     mediainfo
     metasploit
     moreutils
@@ -117,7 +119,6 @@ in
     oha
     openssl
     openvpn
-    llm-agents.pi
     pkgs.sops
     pre-commit
     pyinfra
@@ -126,6 +127,7 @@ in
     rclone
     rdap
     ripgrep
+    rtk
     rustic
     socat
     step-cli
