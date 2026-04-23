@@ -117,6 +117,14 @@
         publickey = "mOQs7kIucUmSDXqRHvwfUxLAFkUDg9ssH5Gqn+6oj0s=";
       }
       {
+        name = "wg0893";
+        asn = 4242420893;
+        e6 = "fe80::893";
+        listen = 20893;
+        endpoint = "uc01.dn42.maiyun.me:24288";
+        publickey = "6BFCe8vi6R9magcs/BqZbSqblNNqR/jcrNt1E7/NDD8=";
+      }
+      {
         name = "wg1023";
         asn = 4242421023;
         e6 = "fe80::1023:2";
