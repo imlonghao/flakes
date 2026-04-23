@@ -91,4 +91,8 @@
     id = 31;
   };
 
+  programs.fish.shellInit = ''
+    ${pkgs.atuin}/bin/atuin init fish --disable-up-arrow | source
+  '';
+
 }
