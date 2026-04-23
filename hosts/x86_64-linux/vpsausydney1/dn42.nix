@@ -31,6 +31,14 @@
         e6 = "fe80::0207";
       }
       {
+        name = "wg0454";
+        listen = 20454;
+        endpoint = "dn42e.nedifinita.com:56037";
+        publickey = "8auu/+HFce5JAexe1b5MDg+nh4vutQVlXd0kJySXVGc=";
+        asn = 4242420454;
+        e6 = "fe80::454:113";
+      }
+      {
         name = "wg0458";
         listen = 20458;
         endpoint = "au-east1.nodes.huajinet.org:21888";
