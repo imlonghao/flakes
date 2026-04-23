@@ -54,6 +54,7 @@
     (python3.withPackages (ps: with ps; [ requests ]))
     atuin
     black
+    bun
     git
     gnupg
     go
