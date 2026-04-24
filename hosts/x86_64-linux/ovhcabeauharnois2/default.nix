@@ -15,6 +15,10 @@
   boot.loader.efi.canTouchEfiVariables = true;
 
   networking = {
+    nameservers = [
+      "185.222.222.222"
+      "45.11.45.11"
+    ];
     dhcpcd.allowInterfaces = [ "eno1" ];
     defaultGateway6 = {
       interface = "eno1";
