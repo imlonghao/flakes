@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 
+import concurrent.futures
 import ipaddress
 import re
 import socket
@@ -25,12 +26,24 @@ def is_ip_address(value: str) -> bool:
     return True
 
 
-def resolve_host(host: str) -> bool:
-    try:
-        socket.getaddrinfo(host, None)
-    except socket.gaierror:
-        return False
-    return True
+def resolve_host(host: str, timeout: float = 5.0) -> bool:
+    """Return True if host resolves to at least one address.
+
+    Queries IPv6 first since DN42 is IPv6-based, then IPv4.
+    Each family is wrapped with a timeout to avoid hanging on
+    unresponsive DNS servers (common with CNAME chains where
+    only one address family has records).
+    """
+    for family in (socket.AF_INET6, socket.AF_INET):
+        try:
+            with concurrent.futures.ThreadPoolExecutor(max_workers=1) as executor:
+                future = executor.submit(socket.getaddrinfo, host, None, family)
+                result = future.result(timeout=timeout)
+            if result:
+                return True
+        except (socket.gaierror, concurrent.futures.TimeoutError):
+            continue
+    return False
 
 
 def iter_endpoints(path: Path):
