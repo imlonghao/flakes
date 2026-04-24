@@ -21,11 +21,20 @@
     0
     # keep-sorted start
     , 4242420207 # ROUTEDBITS
+    , 4242420253 # moe233
+    , 4242420263 # FLIPFLAP-DN42
+    , 4242420454 # Nedifinita Network
+    , 4242421023 # Iris Network
     , 4242421588 # TECH9-CORE-NETWORK
     , 4242421816 # POTAT0-AS
     , 4242422189 # IEDON-NET-AS
+    , 4242422225 # MARAUN
+    , 4242422227 # PUDUNET
+    , 4242422244 # ICEZ-DN42
+    , 4242422717 # JK-Network
     , 4242423035 # AS-LARE-DN42
     , 4242423088 # SUNNET
+    , 4242423374 # Bingxin Network
     , 4242423914 # Kioubit Network
     # keep-sorted end
   ];
