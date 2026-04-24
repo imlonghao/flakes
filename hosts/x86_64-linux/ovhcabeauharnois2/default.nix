@@ -55,6 +55,7 @@
     atuin
     black
     bun
+    dig
     git
     gnupg
     go
