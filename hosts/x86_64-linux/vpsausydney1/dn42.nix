@@ -55,6 +55,14 @@
         e6 = "fe80::566:22";
       }
       {
+        name = "wg0842";
+        listen = 20842;
+        endpoint = "s1.headscarf175.net:20024";
+        publickey = "ywWuEIEOiV6uSkllmhZ64BqXLkCyGJFhUKTfMyg+Y0A=";
+        asn = 4242420842;
+        e6 = "fe80::842";
+      }
+      {
         name = "wg1080";
         listen = 21080;
         endpoint = "syd.peer.highdef.network:21888";
