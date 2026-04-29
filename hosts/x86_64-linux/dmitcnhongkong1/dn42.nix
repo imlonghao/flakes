@@ -255,6 +255,15 @@
         publickey = "Yhn4+izxfHjrX2rTNzPCdjRKGzMrew6RE+dXQnpWwig=";
       }
       {
+        name = "wg2466";
+        asn = 4242422466;
+        e6 = "fe80::2466";
+        listen = 22466;
+        endpoint = "mazarino-s-end.xhustudio.eu.org:21888";
+        publickey = "25F5Kt0fg7bTien58apDN2dLUyCN2DSe7W+Nvw7eCT4=";
+        mtu = 1332;
+      }
+      {
         name = "wg2717";
         l4 = "172.22.68.3";
         e4 = "172.22.66.66";
