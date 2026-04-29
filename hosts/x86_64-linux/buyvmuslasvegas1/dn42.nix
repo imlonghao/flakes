@@ -93,14 +93,6 @@
         publickey = "Y13v0Xzf6zJQGtL2qJSwVyLNSxipYoGpq4y/5aU7omg=";
       }
       {
-        name = "wg0585";
-        listen = 20585;
-        endpoint = "us1.dn42.atolm.net:21888";
-        publickey = "mhnMFoFExt6OFbSe83Er2MCuFldlZfCb5LP9tBkVfEE=";
-        asn = 4242420585;
-        e6 = "fe80::585";
-      }
-      {
         name = "wg0625";
         listen = 20625;
         endpoint = "arcenotas.com:21888";

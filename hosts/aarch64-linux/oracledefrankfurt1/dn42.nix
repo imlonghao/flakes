@@ -153,14 +153,6 @@
         l4 = "172.22.68.4";
       }
       {
-        name = "wg0585";
-        listen = 20585;
-        endpoint = "de1.dn42.atolm.net:21888";
-        publickey = "r5u1s5OY8ISJqv7oc1ZCA7RXMrJ/UOMgFdFVZ7qaPi4=";
-        asn = 4242420585;
-        e6 = "fe80::585";
-      }
-      {
         name = "wg0714";
         asn = 4242420714;
         e6 = "fe80::0714";
