@@ -10,7 +10,6 @@
     "${self}/profiles/bird-lg-go"
     "${self}/profiles/komari-agent"
     # Containers
-    "${self}/containers/cloudflared.nix"
     "${self}/containers/snell.nix"
   ];
 
