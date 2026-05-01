@@ -199,9 +199,6 @@
           targetHost = "dmit-cn-hongkong-1.ni.sb";
           tags = [ "dn42" ];
         };
-        dmituslosangeles1 = {
-          targetHost = "dmit-us-losangeles-1.ni.sb";
-        };
         f4uskansas1 = {
           targetHost = "f4-us-kansas-1.ni.sb";
         };

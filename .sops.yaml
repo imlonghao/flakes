@@ -6,7 +6,6 @@ keys:
   - &vps_buyvmuslasvegas1 age1tn2crgjwffdhvn8k7h2yd7et7ze3pqcuzqm80v2pq9pglcdkwyys5fuqyk
   - &vps_buyvmusmiami1 age17udapsqm2lx6u6jkcugwlu2a90sv6uasfzap0vd2du5ecxrsn44q6e82pu
   - &vps_dmitcnhongkong1 age1kplhd4zrmjgegmx6epzjpq0xug6uz9wuvjgdx5ns6thtkmz0nyrqcd43nx
-  - &vps_dmituslosangeles1 age1mxrjyaswxznnvfa8m6hv0eewge6nvedst5nl9wml4ehww9kgjvqsqugpsz
   - &vps_f4uskansas1 age1hsukvd00p3k8mt9cmlau5fc4tjfrwhwhxx8la3h9lad5k5ga0e2qc8t7y8
   - &vps_hosthatchsestockholm2 age1h6kd8cc7st94vaxekwsc82qf6mwtm8q0eu35u05zxvpyprp7svas29d6py
   - &vps_hosthatchsgsingapore1 age1m7e9lwfnu8x2eele4rmflhn8s8vhcf85s4lpt5x4jgd9kyu25s3s3jn3cg
@@ -65,12 +64,6 @@ creation_rules:
           - *me_canokey
         age:
           - *vps_dmitcnhongkong1
-  - path_regex: hosts/x86_64-linux/dmituslosangeles1/secrets.yml$
-    key_groups:
-      - pgp:
-          - *me_canokey
-        age:
-          - *vps_dmituslosangeles1
   - path_regex: hosts/x86_64-linux/f4uskansas1/secrets.yml$
     key_groups:
       - pgp:
@@ -223,7 +216,6 @@ creation_rules:
           # keep-sorted start
           - *vps_buyvmuslasvegas1
           - *vps_buyvmusmiami1
-          - *vps_dmituslosangeles1
           - *vps_hosthatchsgsingapore1
           - *vps_oracledefrankfurt1
           - *vps_serverfactorynleygelshoven1
@@ -240,7 +232,6 @@ creation_rules:
           - *vps_buyvmuslasvegas1
           - *vps_buyvmusmiami1
           - *vps_dmitcnhongkong1
-          - *vps_dmituslosangeles1
           - *vps_f4uskansas1
           - *vps_hosthatchsestockholm2
           - *vps_hosthatchsgsingapore1
@@ -272,7 +263,6 @@ creation_rules:
           - *vps_buyvmuslasvegas1
           - *vps_buyvmusmiami1
           - *vps_dmitcnhongkong1
-          - *vps_dmituslosangeles1
           - *vps_f4uskansas1
           - *vps_hosthatchsestockholm2
           - *vps_hosthatchsgsingapore1
@@ -299,7 +289,6 @@ creation_rules:
           - *me_canokey
         age:
           # keep-sorted start
-          - *vps_dmituslosangeles1
           - *vps_hosthatchsgsingapore1
           - *vps_misakadeberlin1
           - *vps_starrydnscnhongkong1
