@@ -42,6 +42,7 @@
       "/etc/rancher"
       "/root/.config"
       "/root/.local"
+      "/root/.omp"
       "/root/.pi"
       "/root/.ssh"
       "/var/lib"
