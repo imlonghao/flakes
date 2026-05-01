@@ -185,9 +185,6 @@
     ];
   };
 
-  # Incus
-  virtualisation.incus.enable = true;
-
   # Wrap
   sops.secrets.wrap.sopsFile = ./secrets.yml;
   networking.wireguard.interfaces.wrap = {
