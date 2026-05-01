@@ -161,6 +161,14 @@
         publickey = "kDc6bdDKdzb9D0UgcPGIjGWGuC4HwpjdIcHrxM7zuFQ=";
       }
       {
+        name = "wg0769";
+        asn = 4242420769;
+        e6 = "fe80::20e:eb5d:1";
+        listen = 20769;
+        endpoint = "[2603:c026:c102:7042::d42]:42443";
+        publickey = "NJbQQVPkfMf1B501Mu1y5lj5RusoQIboeeOCNNSFF2k=";
+      }
+      {
         name = "wg0900";
         asn = 4242420900;
         e6 = "fe80::0900";
