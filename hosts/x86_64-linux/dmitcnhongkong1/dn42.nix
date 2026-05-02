@@ -6,6 +6,14 @@
     enable = true;
     peers = [
       {
+        name = "wg213605";
+        asn = 213605;
+        e6 = "fe80::616b:6979";
+        listen = 13605;
+        endpoint = "hk-dn42.akae.re:51888";
+        publickey = "tByhSmo8XuGZ5yplfdDYQRXUAjEzJzeY1Y4uF0xA0kk=";
+      }
+      {
         name = "wg31111";
         asn = 4201271111;
         e6 = "fe80::aa:1111:1";
