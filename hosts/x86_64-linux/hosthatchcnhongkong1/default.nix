@@ -7,6 +7,8 @@
     ./hardware.nix
     "${self}/profiles/mycore"
     "${self}/users/root"
+    "${self}/profiles/docker"
+    "${self}/profiles/komari-agent"
   ];
 
   boot.kernelParams = [ "net.ifnames=0" ];
@@ -61,5 +63,15 @@
     interface = "eth0";
     id = 34;
   };
+
+  # komari-agent
+  services.komari-agent = {
+    month-rotate = 1;
+    include-nics = [
+      "eth0"
+    ];
+  };
+
+  services.tailscale.enable = true;
 
 }

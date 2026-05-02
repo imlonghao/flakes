@@ -29,12 +29,6 @@ keys:
   # keep-sorted end
 creation_rules:
   # keep-sorted start block=yes
-  - path_regex: hosts/aarch64-linux/hosthatchcnhongkong1/secrets.yml$
-    key_groups:
-      - pgp:
-          - *me_canokey
-        age:
-          - *vps_hosthatchcnhongkong1
   - path_regex: hosts/aarch64-linux/oracledefrankfurt1/secrets.yml$
     key_groups:
       - pgp:
@@ -77,6 +71,12 @@ creation_rules:
           - *me_canokey
         age:
           - *vps_f4uskansas1
+  - path_regex: hosts/x86_64-linux/hosthatchcnhongkong1/secrets.yml$
+    key_groups:
+      - pgp:
+          - *me_canokey
+        age:
+          - *vps_hosthatchcnhongkong1
   - path_regex: hosts/x86_64-linux/hosthatchsestockholm2/secrets.yml$
     key_groups:
       - pgp:
