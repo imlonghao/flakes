@@ -285,6 +285,14 @@
         e6 = "fe80::1732";
       }
       {
+        name = "wg1733";
+        asn = 4242421733;
+        e6 = "fe80::1733";
+        listen = 21733;
+        endpoint = "nue.entry.dn42.hk:21888";
+        publickey = "Q7pleX/k7NKlhUMJUaKwF2b7MQifriTcsu5uCKyVEHk=";
+      }
+      {
         name = "wg1771";
         listen = 21771;
         endpoint = "frank1.exploro.one:32615";

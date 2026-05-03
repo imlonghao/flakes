@@ -175,8 +175,8 @@
         asn = 4242421733;
         e6 = "fe80::1733";
         listen = 21733;
-        endpoint = "hkg.entry.dn42.hk:21888";
-        publickey = "rHUqrpHKeqJo2QpgG4fTU8B47XF8Bu51opKYfRwq3Rg=";
+        endpoint = "hkg1.entry.dn42.hk:21888";
+        publickey = "kceZbHZekCVvlC8ZU+C3XZAe1WQ7T5vsi8Ec94+MMm8=";
       }
       {
         name = "wg1772";

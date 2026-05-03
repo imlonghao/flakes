@@ -189,6 +189,14 @@
         publickey = "9wjlepdAM+yr/G3VoI2bc6ogDUiPcE4UsUzadJn0jnA=";
       }
       {
+        name = "wg1733";
+        asn = 4242421733;
+        e6 = "fe80::1733";
+        listen = 21733;
+        endpoint = "las.entry.dn42.hk:21888";
+        publickey = "td/JcMulHppDgcdjf+u8qH6muCfFwhIrMzn0MMKKOSk=";
+      }
+      {
         name = "wg1771";
         listen = 21771;
         asn = 4242421771;
