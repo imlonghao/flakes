@@ -6,7 +6,6 @@
     enable = true;
     peers = [
       {
-      {
         name = "wg1733";
         asn = 4242421733;
         e6 = "fe80::1733";
