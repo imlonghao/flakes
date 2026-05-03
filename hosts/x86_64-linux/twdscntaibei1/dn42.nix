@@ -13,6 +13,7 @@
         endpoint = "tpe.entry.dn42.hk:21888";
         publickey = "kceZbHZekCVvlC8ZU+C3XZAe1WQ7T5vsi8Ec94+MMm8=";
       }
+      {
         name = "wg3797";
         listen = 23797;
         asn = 4242423797;
