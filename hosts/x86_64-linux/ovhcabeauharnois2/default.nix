@@ -57,6 +57,7 @@
   environment.systemPackages = with pkgs; [
     # keep-sorted start
     (python3.withPackages (ps: with ps; [ requests ]))
+    aerc
     atuin
     black
     bun
@@ -98,6 +99,12 @@
     id = 31;
   };
 
+  # fish
+  programs.fish.shellAliases = {
+    nttcom = "whois -h rr.ntt.net";
+    radb = "whois -h whois.radb.net";
+    aercc = "EDITOR=vim aerc";
+  };
   programs.fish.shellInit = ''
     ${pkgs.atuin}/bin/atuin init fish --disable-up-arrow | source
   '';
