@@ -137,6 +137,15 @@
         publickey = "tk/rTyA7TsSg/wmF8FmgQOuPJPxYFoyJZauw6UVO8Hw=";
       }
       {
+        name = "wg1510";
+        asn = 4242421510;
+        e6 = "fe80::93d4:3358:6";
+        listen = 21510;
+        endpoint = "hk01.dn42.moitr.com:21888";
+        publickey = "KxBQoQM6EZV2QaCsXpI2vcp2jJRYB7I+EqKQLW77xk8=";
+        mtu = 1408;
+      }
+      {
         name = "wg1534";
         listen = 21534;
         endpoint = "hk-hkg.factor2431.com:21888";
