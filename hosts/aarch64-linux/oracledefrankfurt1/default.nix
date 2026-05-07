@@ -21,7 +21,6 @@
     "${self}/profiles/komari-agent"
     # Container
     "${self}/containers/act-runner.nix"
-    "${self}/containers/patroni.nix"
   ];
 
   # Config
