@@ -59,6 +59,7 @@
     (python3.withPackages (ps: with ps; [ requests ]))
     aerc
     atuin
+    bitwarden-cli
     black
     bun
     chezmoi
