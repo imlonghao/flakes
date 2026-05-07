@@ -29,8 +29,6 @@ in
     "${self}/containers/mtrsb.nix"
   ];
 
-  nixpkgs.overlays = [ self.overlays.pyinfra ];
-
   boot.loader.grub.device = "/dev/sda";
   boot.kernelParams = [ "net.ifnames=0" ];
   nix.gc.dates = "monthly";
@@ -121,7 +119,6 @@ in
     openvpn
     pkgs.sops
     pre-commit
-    pyinfra
     q
     ranet
     rclone

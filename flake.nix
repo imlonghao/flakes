@@ -127,55 +127,6 @@
             "komari-agent"
             # keep-sorted end
           ] (name: pkgs-latest.${name});
-        overlays.pyinfra =
-          final: prev:
-          let
-            pytestOverlay = pythonFinal: pythonPrev: {
-              paramiko = pythonPrev.paramiko.overridePythonAttrs (oldAttrs: {
-                version = "3.5.1";
-                src = prev.fetchPypi {
-                  pname = "paramiko";
-                  version = "3.5.1";
-                  hash = "sha256-ssZlvEWyshW9fX8DmQGxSwZ9oA86EeZkCZX9WPJmSCI=";
-                };
-                patches = [
-                  # Fix usage of dsa keys
-                  # https://github.com/paramiko/paramiko/pull/1606/
-                  (prev.fetchpatch {
-                    url = "https://github.com/paramiko/paramiko/commit/18e38b99f515056071fb27b9c1a4f472005c324a.patch";
-                    hash = "sha256-bPDghPeLo3NiOg+JwD5CJRRLv2VEqmSx1rOF2Tf8ZDA=";
-                  })
-                  # Fix AttributeError(public_blob)
-                  (prev.fetchpatch {
-                    url = "https://patch-diff.githubusercontent.com/raw/paramiko/paramiko/pull/2475.patch";
-                    hash = "sha256-7PfeDR4EPaAkIbQWevPIv+HyJVXvy+T5kIz6G5w+svk=";
-                  })
-                ];
-              });
-              pyinfra = pythonPrev.pyinfra.overridePythonAttrs (oldAttrs: {
-                version = "3.5.1";
-                src = prev.fetchFromGitHub {
-                  owner = "Fizzadar";
-                  repo = "pyinfra";
-                  tag = "v3.5.1";
-                  hash = "sha256-xOwofPQFUqtmvmmXh70FnVrP8aAbNvsEVGGfk9kp/Uc=";
-                };
-                dependencies = oldAttrs.dependencies ++ [
-                  pythonPrev.pyyaml
-                  pythonPrev.hatchling
-                  pythonPrev.uv-dynamic-versioning
-                ];
-                doCheck = false;
-              });
-            };
-            python3 = prev.python3.override {
-              packageOverrides = pytestOverlay;
-            };
-          in
-          {
-            inherit python3;
-            python3Packages = python3.pkgs;
-          };
       };
       colmena-flake.deployment = {
         # keep-sorted start block=yes
