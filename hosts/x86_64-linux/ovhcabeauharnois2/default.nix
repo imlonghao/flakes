@@ -61,6 +61,7 @@
     atuin
     black
     bun
+    chezmoi
     dig
     git
     gnupg
