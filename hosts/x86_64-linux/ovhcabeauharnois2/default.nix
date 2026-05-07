@@ -78,6 +78,7 @@
     oha
     openssl
     pkgs.sops
+    pyinfra
     ranet
     rclone
     ripgrep
