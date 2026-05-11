@@ -64,6 +64,7 @@
     bun
     chezmoi
     dig
+    flyctl
     git
     gnupg
     go
