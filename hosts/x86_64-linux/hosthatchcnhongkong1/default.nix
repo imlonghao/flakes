@@ -9,6 +9,7 @@
     "${self}/users/root"
     "${self}/profiles/docker"
     "${self}/profiles/komari-agent"
+    "${self}/profiles/exporter/node.nix"
   ];
 
   boot.kernelParams = [ "net.ifnames=0" ];
