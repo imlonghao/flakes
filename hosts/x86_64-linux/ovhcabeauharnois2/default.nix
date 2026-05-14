@@ -81,9 +81,11 @@
     oha
     openssl
     pkgs.sops
+    pnpm
     pyinfra
     ranet
     rclone
+    rdap
     ripgrep
     rtk
     rustic
