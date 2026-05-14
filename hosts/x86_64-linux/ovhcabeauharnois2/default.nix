@@ -74,6 +74,7 @@
     keep-sorted
     llm-agents.omp
     llm-agents.pi
+    llm-agents.codex
     ncdu
     nix-update
     nixfmt
