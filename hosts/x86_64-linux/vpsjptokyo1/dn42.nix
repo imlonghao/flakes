@@ -151,6 +151,15 @@
         e6 = "fe80::2279";
       }
       {
+        name = "wg2363";
+        asn = 4242422363;
+        e6 = "fe80::ca73:2363:1888";
+        listen = 22363;
+        endpoint = "oraclearm-jp-v6.ca73.org:23639";
+        publickey = "6cq9qCMW/Lh04IEUrmjAP7kQKfi7diPXufwN0Ls4hVc=";
+        mtu = 1420;
+      }
+      {
         name = "wg2426";
         asn = 4242422426;
         e6 = "fe80::2426:3";
