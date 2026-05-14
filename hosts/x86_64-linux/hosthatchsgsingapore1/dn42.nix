@@ -190,6 +190,14 @@
         publickey = "O3zvtZQNT6InSXgYDloIuQ4jP6PHO06WtsKz6coylBs=";
       }
       {
+        name = "wg3432";
+        asn = 4242423432;
+        e6 = "fe80::3432";
+        listen = 23432;
+        endpoint = "sin1.dn42.s6v.net:42006";
+        publickey = "Pw1kDf+C03PlfWpu2M25KV3YEPwjoSbCLaXap8wBDCw=";
+      }
+      {
         name = "wg3914";
         asn = 4242423914;
         e6 = "fe80::ade0";
