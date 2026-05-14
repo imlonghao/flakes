@@ -151,6 +151,15 @@
         e6 = "fe80::2279";
       }
       {
+        name = "wg2426";
+        asn = 4242422426;
+        e6 = "fe80::2426:3";
+        listen = 22426;
+        endpoint = "6.jp.sisy.cc:21888";
+        publickey = "Lxky3cJSIBcAbovBWcLg82XldTbzaDoNJwQyf4cpFA8=";
+        presharedkey = "RaWkKmtltUxP07VHo2q/u2YHIdhQTosKdG96sOrNsFI=";
+      }
+      {
         name = "wg3035";
         asn = 4242423035;
         e6 = "fe80::3035:134";
