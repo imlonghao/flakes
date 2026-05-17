@@ -364,6 +364,14 @@
         publickey = "7t0RGOTU6KTNMp+dz1jmnsZDccXp8EQ6p9J6ZbgJkQQ=";
       }
       {
+        name = "wg3729";
+        asn = 4242423729;
+        e6 = "fe80::3729";
+        listen = 23729;
+        endpoint = "hkg1.pixiainfra.pixia.eu.org:21888";
+        publickey = "ycv1p8vlGzfV/LMEEvfmE+hcKmOHMokKMr85yFBaNR0=";
+      }
+      {
         name = "wg3797";
         listen = 23797;
         asn = 4242423797;

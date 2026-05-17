@@ -490,6 +490,14 @@
         e6 = "fe80::3508:102";
       }
       {
+        name = "wg3729";
+        asn = 4242423729;
+        e6 = "fe80::3729";
+        listen = 23729;
+        endpoint = "ams1.pixiainfra.pixia.eu.org:21888";
+        publickey = "TbyUZ7/u1wlAPkOqW8kngIwFBMfVt+oryJQqQb2jfzY=";
+      }
+      {
         name = "wg3797";
         listen = 23797;
         asn = 4242423797;
