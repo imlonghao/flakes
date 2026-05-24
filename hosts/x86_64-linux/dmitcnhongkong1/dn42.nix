@@ -372,6 +372,14 @@
         publickey = "ycv1p8vlGzfV/LMEEvfmE+hcKmOHMokKMr85yFBaNR0=";
       }
       {
+        name = "wg3777";
+        asn = 4242423777;
+        e6 = "fe80::3777";
+        listen = 23777;
+        endpoint = "hk.dn42.cloudc.dev:23777";
+        publickey = "ZynDjBdOWAS1YjZzwdiSI4kbthisE2xgPiOHopdfIxQ=";
+      }
+      {
         name = "wg3797";
         listen = 23797;
         asn = 4242423797;

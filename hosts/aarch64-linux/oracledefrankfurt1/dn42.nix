@@ -498,6 +498,14 @@
         publickey = "TbyUZ7/u1wlAPkOqW8kngIwFBMfVt+oryJQqQb2jfzY=";
       }
       {
+        name = "wg3777";
+        asn = 4242423777;
+        e6 = "fe80::3777";
+        listen = 23777;
+        endpoint = "de.dn42.cloudc.dev:23777";
+        publickey = "yJy4AxORf1c2VNvmVCzM9HYd6+xru17rc/N+946PODQ=";
+      }
+      {
         name = "wg3797";
         listen = 23797;
         asn = 4242423797;
