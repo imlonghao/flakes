@@ -256,6 +256,14 @@
         e6 = "fe80::2279";
       }
       {
+        name = "wg2289";
+        asn = 4242422289;
+        e6 = "fe80::2289";
+        listen = 22289;
+        endpoint = "cn-hk01.pmman.tech:21888";
+        publickey = "KPNG8VM+/+Ix9mPeWIVPyu6GPzGvqAgrkPogQO5yYTc=";
+      }
+      {
         name = "wg2458";
         asn = 4242422458;
         e6 = "fe80::2458";
