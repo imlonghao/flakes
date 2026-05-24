@@ -72,9 +72,10 @@
     jq
     jujutsu
     keep-sorted
+    llm-agents.claude-code
+    llm-agents.codex
     llm-agents.omp
     llm-agents.pi
-    llm-agents.codex
     ncdu
     nix-update
     nixfmt
