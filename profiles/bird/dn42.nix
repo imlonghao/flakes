@@ -40,6 +40,8 @@
   ];
   roa4 table dn42_roa;
   roa6 table dn42_roa_v6;
+  roa4 table dn42_flap;
+  roa6 table dn42_flap_v6;
   protocol static {
     route 172.20.0.0/14 blackhole;
     route 172.22.68.0/27 blackhole;
@@ -97,11 +99,19 @@
     }
     return false;
   }
+  function roa_flap_check() -> bool {
+    case net.type {
+      NET_IP4: return roa_check(dn42_flap, net, bgp_path.last) = ROA_INVALID;
+      NET_IP6: return roa_check(dn42_flap_v6, net, bgp_path.last) = ROA_INVALID;
+    }
+    return false;
+  }
   filter dn42_import_filter {
     if roa_aio_check() then {
       print "[dn42] ROA check failed for ", net, " ASN ", bgp_path.last;
       reject;
     }
+    if roa_flap_check() then bgp_community.add((65535, 65281));
     if !is_valid_network() || bgp_path ~ DN42_BLACKLIST_ASN then reject;
     if bgp_path ~ DN42_NO_TRANSIT && bgp_path.len > 1 then reject;
     if bgp_path ~ DN42_AUTOPEER then bgp_local_pref = bgp_local_pref - 10;
@@ -115,7 +125,7 @@
     accept;
   }
   filter dn42_export_filter {
-    if is_self_net_detail() then {
+    if is_self_net_detail() || (65535, 65281) ~ bgp_community then {
       reject;
     }
     if is_valid_network() && source ~ [RTS_STATIC, RTS_BGP, RTS_DEVICE] then {
@@ -187,6 +197,14 @@
     retry 300;
     expire 7200;
   }
+  protocol rpki rpki_flap42 {
+    roa4 { table dn42_flap; };
+    roa6 { table dn42_flap_v6; };
+    remote "fd00:1926:817:20::" port 8083;
+    retry keep 120;
+    refresh keep 300;
+    expire keep 600;
+  }
   template bgp dnpeers {
     local as 4242421888;
     enforce first as on;
@@ -214,12 +232,12 @@
     ipv4 {
         add paths on;
         import none;
-        export filter dn42_export_filter;
+        export filter internal_filter;
     };
     ipv6 {
         add paths on;
         import none;
-        export filter dn42_export_filter;
+        export filter internal_filter;
     };
   }
   protocol bgp ROUTE_COLLECTOR {
