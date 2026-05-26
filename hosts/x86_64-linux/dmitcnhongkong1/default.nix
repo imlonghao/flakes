@@ -10,6 +10,7 @@
     "${self}/profiles/bird-lg-go"
     "${self}/profiles/komari-agent"
     "${self}/profiles/exporter/node.nix"
+    "${self}/profiles/exporter/bird.nix"
     # Containers
     "${self}/containers/snell.nix"
   ];

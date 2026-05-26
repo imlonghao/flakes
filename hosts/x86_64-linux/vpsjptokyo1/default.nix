@@ -7,6 +7,7 @@
     "${self}/profiles/mycore"
     "${self}/users/root"
     "${self}/profiles/exporter/node.nix"
+    "${self}/profiles/exporter/bird.nix"
     "${self}/profiles/exporter/blackbox.nix"
     "${self}/profiles/rsshc"
     "${self}/profiles/mtrsb"
