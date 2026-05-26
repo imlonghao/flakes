@@ -9,6 +9,7 @@
     "${self}/profiles/rsshc"
     "${self}/profiles/bird-lg-go"
     "${self}/profiles/komari-agent"
+    "${self}/profiles/exporter/node.nix"
     # Containers
     "${self}/containers/snell.nix"
   ];
