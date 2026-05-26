@@ -48,6 +48,14 @@
         publickey = "0E4goqfQFKQu852QAqVSRfp9Si9MoTj8IllFiDG7gUc=";
       }
       {
+        name = "wg0251";
+        asn = 4242420251;
+        e6 = "fe80::0251";
+        listen = 20251;
+        endpoint = "hktx.s.iabc.work:21888";
+        publickey = "89C5dRKR41huEk4yG24+spwLSHRM0KcqNCR/lKqFO2s=";
+      }
+      {
         name = "wg0298";
         e6 = "fe80::0298";
         asn = 4242420298;
