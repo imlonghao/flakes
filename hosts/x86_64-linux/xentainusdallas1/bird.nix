@@ -2,8 +2,8 @@
 let
   generalConf = import "${self}/profiles/bird/general.nix" {
     config = config;
-    ospf4 = "where net ~ 23.146.88.0/24";
-    ospf6 = "where net = 2602:fab0:40::/48 || net = 2602:fab0:41::/48";
+    rip4 = "where net ~ 23.146.88.0/24";
+    rip6 = "where net = 2602:fab0:40::/48 || net = 2602:fab0:41::/48";
   };
   kernelConf = import "${self}/profiles/bird/kernel.nix" {
     src4 = "5.56.24.146";

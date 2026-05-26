@@ -1,7 +1,7 @@
 {
   config,
-  ospf4 ? "none",
-  ospf6 ? "none",
+  rip4 ? "none",
+  rip6 ? "none",
   route4 ? "",
   route6 ? "",
 }:
@@ -75,40 +75,16 @@ in
   protocol rip rip_v4 {
     ipv4 {
       import all;
-      export ${ospf4};
+      export ${rip4};
     };
     interface "gravity" {};
   }
   protocol rip rip_v6 {
     ipv4 {
       import all;
-      export ${ospf6};
+      export ${rip6};
     };
     interface "gravity" {};
-  }
-  protocol ospf v3 intranet_v4 {
-    ipv4 {
-      import all;
-      export ${ospf4};
-    };
-    area 0 {
-      interface "gravity" {
-        type bcast;
-        tx length 1300;
-      };
-    };
-  }
-  protocol ospf v3 intranet_v6 {
-    ipv6 {
-      import all;
-      export ${ospf6};
-    };
-    area 0 {
-      interface "gravity" {
-        type bcast;
-        tx length 1300;
-      };
-    };
   }
 
   protocol bfd {

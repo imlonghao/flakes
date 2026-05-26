@@ -2,8 +2,8 @@
 let
   generalConf = import "${self}/profiles/bird/general.nix" {
     config = config;
-    ospf4 = "where net ~ 23.146.88.0/24";
-    ospf6 = "where net = 2602:fab0:31::/48";
+    rip4 = "where net ~ 23.146.88.0/24";
+    rip6 = "where net = 2602:fab0:31::/48";
     route4 = ''
       route 23.146.88.2/32 via 192.168.77.3;
       route 23.146.88.6/32 blackhole;

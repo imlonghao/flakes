@@ -2,7 +2,7 @@
 let
   generalConf = import "${self}/profiles/bird/general.nix" {
     config = config;
-    ospf4 = "where net ~ 23.146.88.0/24";
+    rip4 = "where net ~ 23.146.88.0/24";
   };
   kernelConf = import "${self}/profiles/bird/kernel.nix" { src6 = "2602:fab0:28::"; };
 in
