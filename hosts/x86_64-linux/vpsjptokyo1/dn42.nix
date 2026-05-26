@@ -47,6 +47,14 @@
         publickey = "QQecM/0eCbRu5TNdyRxGpJTCo6aGolMb0kZAqLH5Oho=";
       }
       {
+        name = "wg0827";
+        listen = 20827;
+        endpoint = "tyo-jp.dn42.mzknet.work:21888";
+        publickey = "3zPEkjECgrpIMsGIEEAFx4+dTr8VwIyncL3G9T1NOSk=";
+        asn = 4242420827;
+        e6 = "fe80::827";
+      }
+      {
         name = "wg0893";
         asn = 4242420893;
         e6 = "fe80::893";
