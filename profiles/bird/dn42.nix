@@ -108,6 +108,8 @@
     if bgp_path.len = 1 then bgp_local_pref = bgp_local_pref + 10;
     if (64511, DN42_REGION) ~ bgp_community then bgp_local_pref = bgp_local_pref + 10;
     if (64511, DN42_COUNTRY) ~ bgp_community then bgp_local_pref = bgp_local_pref + 10;
+    if (4242420207, 130, 1) ~ bgp_large_community && (4242420207, 140, DN42_REGION) ~ bgp_large_community then bgp_local_pref = bgp_local_pref + 10; # https://dn42.routedbits.io/communitieshttps://dn42.routedbits.io/communities
+    if (4242422189, 101, DN42_REGION) ~ bgp_large_community then bgp_local_pref = bgp_local_pref + 10; # https://iedon.net/post/16
     bgp_large_community.add((4242421888, 100, DN42_REGION));
     bgp_large_community.add((4242421888, 101, DN42_COUNTRY));
     accept;
