@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ lib, pkgs, config, ... }:
 let
   trustedUserCAKeys = pkgs.writeText "user_ca.pub" "ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBCRbFsPcCoFmDEXeflbVOboRpFKG69mOS8gtrohxWuewuc8bUgUFpgPDedbN77eKHdEDnnGec8Q9Yco5LpUu6eY=";
 in
@@ -177,6 +177,7 @@ in
 
   # Bird3 is unstable
   services.bird.package = pkgs.bird2;
+  systemd.services.bird.serviceConfig.CPUQuota = lib.mkIf config.services.bird.enable "25%";
 
   services.rp_filter.enable = true;
 
