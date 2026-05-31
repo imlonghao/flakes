@@ -86,11 +86,4 @@ in
     };
     interface "gravity" {};
   }
-
-  protocol bfd {
-    interface "wg*" {
-      min tx interval 200ms;
-      idle tx interval 10s;
-    };
-  }
 ''

@@ -211,7 +211,6 @@
     graceful restart on;
     long lived graceful restart on;
     prefer older on;
-    bfd graceful;
     ipv4 {
       import keep filtered on;
       import table;
