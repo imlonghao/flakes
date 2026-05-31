@@ -177,6 +177,13 @@
         publickey = "KP7CO5UNilwZEvILtUF6MeYCzgBW+Atu3vl6fsfQrkg=";
       }
       {
+        name = "wg0925";
+        listen = 20925;
+        publickey = "JmjoF9DosETYg6++oO82eC3VvysK08ym7DTc/Z2RjB8=";
+        asn = 4242420925;
+        e6 = "fe80::925";
+      }
+      {
         name = "wg1023";
         asn = 4242421023;
         e6 = "fe80::1023:2";
