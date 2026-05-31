@@ -10,8 +10,8 @@
   define DN42_COUNTRY = ${toString country};
   define DN42_BLACKLIST_ASN = [
     0
-    , 4242423119 # Flap
     , 4242423658 # Jason Xu
+    , 4242423419 # NICKYDEV
   ];
   define DN42_NO_TRANSIT = [
     0
