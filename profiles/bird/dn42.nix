@@ -218,12 +218,14 @@
       extended next hop;
       import filter dn42_import_filter;
       export filter dn42_export_filter;
+      import limit 1350 action block;
     };
     ipv6 {
       import keep filtered on;
       import table;
       import filter dn42_import_filter;
       export filter dn42_export_filter;
+      import limit 1350 action block;
     };
   }
   protocol bgp flapalert {
