@@ -8,6 +8,7 @@
     "${self}/profiles/exporter/node.nix"
     "${self}/profiles/rsshc"
     "${self}/profiles/k3s/agent.nix"
+    "${self}/profiles/nixbuild"
   ];
 
   nix.gc.dates = "monthly";
