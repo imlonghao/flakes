@@ -18,7 +18,6 @@
     "${self}/profiles/bird-lg-go"
     "${self}/profiles/mtrsb"
     "${self}/profiles/rsshc"
-    "${self}/profiles/sing-box"
     "${self}/profiles/k3s/agent.nix"
   ];
 

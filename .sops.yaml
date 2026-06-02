@@ -292,19 +292,6 @@ creation_rules:
           - *vps_wirecatussantaclara1
           - *vps_xentainusdallas1
           # keep-sorted end
-  - path_regex: secrets/sing-box.yml$
-    key_groups:
-      - pgp:
-          - *me_canokey
-        age:
-          # keep-sorted start
-          - *vps_hosthatchsgsingapore1
-          - *vps_misakadeberlin1
-          - *vps_starrydnscnhongkong1
-          - *vps_twdscntaibei1
-          - *vps_vpsausydney1
-          - *vps_vpsjptokyo1
-          # keep-sorted end
   - path_regex: secrets/vector.yml$
     key_groups:
       - pgp:

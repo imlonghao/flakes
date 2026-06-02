@@ -24,7 +24,6 @@ in
     "${self}/profiles/exporter/bird.nix"
     "${self}/profiles/exporter/blackbox.nix"
     "${self}/profiles/bird-lg-go"
-    "${self}/profiles/sing-box"
     "${self}/profiles/mtrsb"
     "${self}/profiles/rsshc"
     "${self}/profiles/docker"
