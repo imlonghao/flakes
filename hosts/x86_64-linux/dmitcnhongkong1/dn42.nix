@@ -85,7 +85,7 @@
         asn = 4242420458;
         e6 = "fe80::0458";
         listen = 20458;
-        endpoint = "hk1.nodes.huajinet.org:21888";
+        # endpoint = "hk1.nodes.huajinet.org:21888";
         publickey = "WmKjRCtf9ZlIDkSuEOrjk5B7YdRZNGhhlbfz2waDAgQ=";
       }
       {

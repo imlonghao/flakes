@@ -137,7 +137,7 @@
       {
         name = "wg0458";
         listen = 20458;
-        endpoint = "eu-west1.nodes.huajinet.org:21888";
+        # endpoint = "eu-west1.nodes.huajinet.org:21888";
         publickey = "J/EptroniSBNvzHhk0lQReRoHwV/m9vQo2l2CY69pXA=";
         asn = 4242420458;
         e6 = "fe80::0458";
