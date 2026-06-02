@@ -32,6 +32,10 @@
       url = "github:numtide/llm-agents.nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    herdr = {
+      url = "github:ogulcancelik/herdr";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -82,6 +86,7 @@
                           self.overlays.latest
                           inputs.ranet.overlays.default
                           inputs.llm-agents.overlays.default
+                          inputs.herdr.overlays.default
                         ];
                         system = arch;
                       };

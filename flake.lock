@@ -151,6 +151,26 @@
         "type": "github"
       }
     },
+    "herdr": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1780276762,
+        "narHash": "sha256-QLpxhbJ4aUMb07rQOvQwPxRINwkSdZKlw4chqsClXuk=",
+        "owner": "ogulcancelik",
+        "repo": "herdr",
+        "rev": "043968dd97e8a864f4473f1651e9df9ecd6ed99d",
+        "type": "github"
+      },
+      "original": {
+        "owner": "ogulcancelik",
+        "repo": "herdr",
+        "type": "github"
+      }
+    },
     "home-manager": {
       "inputs": {
         "nixpkgs": [
@@ -291,6 +311,7 @@
         "colmena-flake": "colmena-flake",
         "devshell": "devshell",
         "flake-parts": "flake-parts",
+        "herdr": "herdr",
         "impermanence": "impermanence",
         "llm-agents": "llm-agents",
         "nixpkgs": "nixpkgs",

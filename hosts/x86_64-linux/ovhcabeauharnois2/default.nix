@@ -69,6 +69,7 @@
     git
     gnupg
     go
+    herdr
     iptables
     jq
     jujutsu
