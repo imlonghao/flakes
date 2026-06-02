@@ -74,10 +74,7 @@
     jq
     jujutsu
     keep-sorted
-    llm-agents.claude-code
-    llm-agents.codex
     llm-agents.omp
-    llm-agents.pi
     ncdu
     nix-update
     nixfmt
