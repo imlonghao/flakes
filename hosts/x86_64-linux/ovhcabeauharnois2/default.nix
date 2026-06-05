@@ -116,4 +116,12 @@
     ${pkgs.atuin}/bin/atuin init fish --disable-up-arrow | source
   '';
 
+  # nix-ld
+  programs.nix-ld = {
+    enable = true;
+    libraries = with pkgs; [
+      libgcc.lib
+    ];
+  };
+
 }
