@@ -36,6 +36,10 @@
       url = "github:ogulcancelik/herdr";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    fast-nix-gc = {
+      url = "github:Mic92/fast-nix-gc";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -94,6 +98,7 @@
                         self.nixosModules.default
                         inputs.sops-nix.nixosModules.sops
                         inputs.impermanence.nixosModules.impermanence
+                        inputs.fast-nix-gc.nixosModules.default
                       ];
                       networking.hostName = hostName;
                     }

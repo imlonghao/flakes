@@ -31,7 +31,6 @@ in
 
   boot.loader.grub.device = "/dev/sda";
   boot.kernelParams = [ "net.ifnames=0" ];
-  nix.gc.dates = "monthly";
 
   networking = {
     nameservers = [

@@ -12,8 +12,6 @@ in
 
   nix = {
     package = pkgs.lixPackageSets.stable.lix;
-    gc.automatic = true;
-    optimise.automatic = true;
     extraOptions = ''
       experimental-features = nix-command flakes
     '';
@@ -189,5 +187,20 @@ in
   systemd.services.bird.serviceConfig.CPUQuota = lib.mkIf config.services.bird.enable "25%";
 
   services.rp_filter.enable = true;
+
+  services.fast-nix-gc = {
+    enable = true;
+    automatic = true;
+    dates = "weekly";
+    randomizedDelaySec = "3600";
+    deleteOlderThan = "30d";
+    keepRecent = "7d";
+  };
+  services.fast-nix-optimise = {
+    enable = true;
+    automatic = true;
+    dates = "weekly";
+    randomizedDelaySec = "7200";
+  };
 
 }
