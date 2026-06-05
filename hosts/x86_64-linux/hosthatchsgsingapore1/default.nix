@@ -19,6 +19,7 @@
     "${self}/profiles/mtrsb"
     "${self}/profiles/rsshc"
     "${self}/profiles/k3s/agent.nix"
+    "${self}/containers/snell.nix"
   ];
 
   boot.kernelParams = [ "net.ifnames=0" ];

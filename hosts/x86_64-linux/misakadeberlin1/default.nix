@@ -10,6 +10,7 @@
     "${self}/profiles/exporter/node.nix"
     "${self}/profiles/exporter/blackbox.nix"
     "${self}/profiles/k3s/server.nix"
+    "${self}/containers/snell.nix"
   ];
 
   boot.loader.grub.device = "/dev/vda";
