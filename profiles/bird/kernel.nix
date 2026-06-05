@@ -21,6 +21,7 @@ in
   protocol kernel {
     scan time 10;
     graceful restart on;
+    merge paths on limit 3;
     ipv4 {
       import none;
       export filter {
@@ -35,6 +36,7 @@ in
   protocol kernel {
     scan time 10;
     graceful restart on;
+    merge paths on limit 3;
     ipv6 {
       import none;
       export filter {

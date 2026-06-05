@@ -1,4 +1,9 @@
-{ lib, pkgs, config, ... }:
+{
+  lib,
+  pkgs,
+  config,
+  ...
+}:
 let
   trustedUserCAKeys = pkgs.writeText "user_ca.pub" "ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBCRbFsPcCoFmDEXeflbVOboRpFKG69mOS8gtrohxWuewuc8bUgUFpgPDedbN77eKHdEDnnGec8Q9Yco5LpUu6eY=";
 in
@@ -72,6 +77,10 @@ in
     "net.ipv4.tcp_congestion_control" = "bbr";
     "net.ipv4.tcp_syncookies" = 1;
     "net.ipv4.tcp_rfc1337" = 1;
+    # ECMP
+    "net.ipv4_fib_multipath_hash_policy" = 1;
+    "net.ipv6_fib_multipath_hash_policy" = 1;
+    "net.ipv4_fib_multipath_use_neigh" = 1;
   };
 
   environment.systemPackages = [
