@@ -6,7 +6,7 @@
   };
   virtualisation.oci-containers.containers = {
     act-runner = {
-      image = "vegardit/gitea-act-runner:0.2.13";
+      image = "vegardit/gitea-act-runner:1.0.8";
       environment = {
         GITEA_INSTANCE_URL = "https://git.esd.cc";
         GITEA_RUNNER_NAME = config.networking.hostName;
