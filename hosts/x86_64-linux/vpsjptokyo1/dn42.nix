@@ -119,6 +119,14 @@
         publickey = "4KZ0OVselhQFSfTEhzbYgxRuL9oG1sn3xsle6TVSfnE=";
       }
       {
+        name = "wg1857";
+        asn = 4242421857;
+        e6 = "fe80::1857:239";
+        listen = 21857;
+        endpoint = "jp1.dn42.luocynet.com:21888";
+        publickey = "4mrkVld0RCE5Tkn0v0xkiyMiT+cDQSRfL6AoMb3rzQg=";
+      }
+      {
         name = "wg1999";
         asn = 4242421999;
         e6 = "fe80::1999";
