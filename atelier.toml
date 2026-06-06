@@ -1,0 +1,8 @@
+systems = ["x86_64-linux"]
+include = ["nixosConfigurations.*"]
+exclude = []
+substituters = [
+  "https://imlonghao.cachix.org",
+  "https://nix-community.cachix.org",
+  "https://cache.numtide.com"
+]

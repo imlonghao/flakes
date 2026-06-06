@@ -1,0 +1,13 @@
+name: CI
+on:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+  checks: write
+  id-token: write
+
+jobs:
+  Atelier:
+    uses: stepbrobd/atelier/.github/workflows/discover.yaml@3d3411d45242cd32dd7d325c30c8e5bf1bdd18f8
