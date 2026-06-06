@@ -1,5 +1,11 @@
-systems = ["x86_64-linux"]
-include = ["nixosConfigurations.*"]
+systems = [
+  "x86_64-linux",
+  "aarch64-linux"
+]
+include = [
+  "nixosConfigurations.*",
+  "devShells.x86_64-linux.*"
+]
 exclude = []
 substituters = [
   "https://imlonghao.cachix.org",
