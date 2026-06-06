@@ -7,11 +7,13 @@
       "https://imlonghao.cachix.org"
       "https://nix-community.cachix.org"
       "https://cache.numtide.com"
+      "https://niks3.esd.cc"
     ];
     extra-trusted-public-keys = [
       "imlonghao.cachix.org-1:KGQ7+R1BXo2NsoeAxKLPfGAiHz5ofCmZO4hih7u/2Q8="
       "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
       "niks3.numtide.com-1:DTx8wZduET09hRmMtKdQDxNNthLQETkc/yaX7M4qK0g="
+      "niks3.esd.cc-1:/6X3iYzeJlsVO1/MtjnllvR7T4OZZi9g33O417sYWYA="
     ];
   };
 
