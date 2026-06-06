@@ -6,5 +6,5 @@ substituters = [
   "https://nix-community.cachix.org",
   "https://cache.numtide.com",
   "https://cache.ysun.co",
-  "https://niks3.esd.cc"
+  "https://cache.esd.cc"
 ]

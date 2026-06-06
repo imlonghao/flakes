@@ -7,7 +7,7 @@
       "https://imlonghao.cachix.org"
       "https://nix-community.cachix.org"
       "https://cache.numtide.com"
-      "https://niks3.esd.cc"
+      "https://cache.esd.cc"
     ];
     extra-trusted-public-keys = [
       "imlonghao.cachix.org-1:KGQ7+R1BXo2NsoeAxKLPfGAiHz5ofCmZO4hih7u/2Q8="
