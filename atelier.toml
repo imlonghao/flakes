@@ -4,7 +4,7 @@ exclude = []
 substituters = [
   "https://imlonghao.cachix.org",
   "https://nix-community.cachix.org",
-  "https://cache.numtide.com"
-  "https://cache.ysun.co"
+  "https://cache.numtide.com",
+  "https://cache.ysun.co",
   "https://niks3.esd.cc"
 ]
