@@ -229,6 +229,14 @@
         publickey = "jxCsSXtUSVjaP+eMWOyRsHg3JShQfBFEtyssMKWQaS8=";
       }
       {
+        name = "wg1857";
+        asn = 4242421857;
+        e6 = "fe80::1857:6";
+        listen = 41857;
+        endpoint = "216.236.6.5:21888";
+        publickey = "P7vHiRrE43ngXX5liQ5S8V01IHNTIqKVQzdG2lUpCh4=";
+      }
+      {
         name = "wg2020";
         asn = 4242422020;
         e6 = "fe80::2020";
