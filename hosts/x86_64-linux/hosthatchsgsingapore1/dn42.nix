@@ -80,6 +80,14 @@
         l4 = "172.22.68.2";
       }
       {
+        name = "wg0762";
+        asn = 4242420762;
+        e6 = "fe80::762";
+        listen = 20762;
+        endpoint = "az1.ymzymz.me:21888";
+        publickey = "za30KzYI1HK6oNjsA5kQqU4eiiZhEN++2n3JIiEPmH4=";
+      }
+      {
         name = "wg0831";
         listen = 20831;
         endpoint = "sg.dn42.tms.im:21888";
