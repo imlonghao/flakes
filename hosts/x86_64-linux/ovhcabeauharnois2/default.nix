@@ -74,6 +74,7 @@
     jujutsu
     keep-sorted
     llm-agents.omp
+    llm-agents.pi
     ncdu
     nix-update
     nixfmt
