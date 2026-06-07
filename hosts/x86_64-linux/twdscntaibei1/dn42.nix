@@ -14,6 +14,14 @@
         publickey = "kceZbHZekCVvlC8ZU+C3XZAe1WQ7T5vsi8Ec94+MMm8=";
       }
       {
+        name = "wg2189";
+        asn = 4242422189;
+        e6 = "fe80::2189:179";
+        listen = 22189;
+        endpoint = "tw-txg.dn42.iedon.net:52252";
+        publickey = "HVNrF2blJH57JsIOxvCOlNihoJDqqAcZeD3rlotRBig=";
+      }
+      {
         name = "wg3797";
         listen = 23797;
         asn = 4242423797;
