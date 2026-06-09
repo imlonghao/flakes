@@ -85,7 +85,7 @@
         e6 = "fe80::762";
         listen = 20762;
         endpoint = "az1.ymzymz.me:21888";
-        publickey = "za30KzYI1HK6oNjsA5kQqU4eiiZhEN++2n3JIiEPmH4=";
+        publickey = "za30KzYI1HK6oNjsA5kQqU4eiiZhEN++2nJ3EiEPmH4=";
       }
       {
         name = "wg0831";
