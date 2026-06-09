@@ -47,6 +47,10 @@
       url = "github:Mic92/fast-nix-gc";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    niks3 = {
+      url = "github:Mic92/niks3";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -106,6 +110,7 @@
                         inputs.sops-nix.nixosModules.sops
                         inputs.impermanence.nixosModules.impermanence
                         inputs.fast-nix-gc.nixosModules.default
+                        inputs.niks3.nixosModules.niks3-auto-upload
                       ];
                       networking.hostName = hostName;
                     }

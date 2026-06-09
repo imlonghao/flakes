@@ -215,6 +215,14 @@ creation_rules:
           - *vps_misakauklondon1
           - *vps_serverfactorynleygelshoven1
           # keep-sorted end
+  - path_regex: secrets/niks3.txt$
+    key_groups:
+      - pgp:
+          - *me_canokey
+        age:
+          # keep-sorted start
+          - *vps_ovhcabeauharnois2
+          # keep-sorted end
   - path_regex: secrets/openobserve.yml$
     key_groups:
       - pgp:

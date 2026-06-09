@@ -9,6 +9,7 @@
     "${self}/profiles/rsshc"
     "${self}/profiles/k3s/agent.nix"
     "${self}/profiles/nixbuild"
+    "${self}/profiles/niks3"
   ];
 
   boot.loader.systemd-boot.enable = true;
