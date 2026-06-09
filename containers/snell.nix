@@ -5,7 +5,7 @@
   };
   virtualisation.oci-containers.containers = {
     snell = {
-      image = "geekdada/snell-server:5.0.0";
+      image = "geekdada/snell-server:5.0.1";
       environmentFiles = [ config.sops.secrets.snell.path ];
       networks = [ "host" ];
     };
