@@ -31,7 +31,7 @@
         e6 = "fe80::616b:7979";
         listen = 13605;
         endpoint = "ams-dn42.akae.re:51888";
-        publickey = "NoJ/5iddGjySp3hNI6yR+7QESJsUEzn6uspfk8Gs0io=";
+        publickey = "noJ/5iddGjySp3hNI6yR+7QESJsUEzn6uspfk8Gs0io=";
       }
       {
         name = "wg31111";
