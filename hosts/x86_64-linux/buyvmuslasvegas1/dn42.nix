@@ -316,6 +316,14 @@
         publickey = "bs3UoHA1NcJzfXdBubSrHbfcwfAW1tTHTlhUyoQa9lU=";
       }
       {
+        name = "wg2921";
+        asn = 4242422921;
+        e6 = "fe80::2921";
+        listen = 22921;
+        endpoint = "45.202.243.95:21888";
+        publickey = "ki4mnFa0PeY7SY9OlZdS6Tw9k5Xdgq/PdYVOef2SSBc=";
+      }
+      {
         name = "wg3035";
         listen = 23035;
         endpoint = "usw1.dn42.lare.cc:21888";

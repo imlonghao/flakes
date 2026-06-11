@@ -445,6 +445,14 @@
         e6 = "fe80::2884";
       }
       {
+        name = "wg2921";
+        asn = 4242422921;
+        e6 = "fe80::2921";
+        listen = 22921;
+        endpoint = "156.226.175.73:21888";
+        publickey = "wZ939wRW+xLa1VV2STTxF4oss7UxqNJCZzEUEJ5ImRM=";
+      }
+      {
         name = "wg2923";
         listen = 22923;
         endpoint = "p2p-node.de:51888";

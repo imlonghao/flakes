@@ -185,6 +185,14 @@
         presharedkey = "RaWkKmtltUxP07VHo2q/u2YHIdhQTosKdG96sOrNsFI=";
       }
       {
+        name = "wg2921";
+        asn = 4242422921;
+        e6 = "fe80::2921";
+        listen = 22921;
+        endpoint = "156.231.116.81:21888";
+        publickey = "nLyNhDOzsFUQ5LK5lrpHBlkKYkUzpzOm/p2iThlX3Dg=";
+      }
+      {
         name = "wg3035";
         asn = 4242423035;
         e6 = "fe80::3035:134";

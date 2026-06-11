@@ -322,6 +322,14 @@
         publickey = "ifN+KmnL5XLHG8nDi2nN9l26snGUP/1157p8mOSPE1c=";
       }
       {
+        name = "wg2921";
+        asn = 4242422921;
+        e6 = "fe80::2921";
+        listen = 22921;
+        endpoint = "154.37.219.205:21888";
+        publickey = "c7Nx4qyVnIHAzV/VUn4wdiyNFMF84Vhsblk1UyCUqD8=";
+      }
+      {
         name = "wg2923";
         asn = 4242422923;
         e6 = "fe80::2925";
