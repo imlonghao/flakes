@@ -16,7 +16,7 @@
   networking = {
     useDHCP = false;
     defaultGateway = "100.66.0.1";
-    defaultGateway6 = "2602:fab0:41::1";
+    defaultGateway6 = "2602:fa62:200:4:4242::1";
     nameservers = [
       "8.8.8.8"
       "1.1.1.1"
@@ -48,8 +48,8 @@
         ];
         ipv6.addresses = [
           {
-            address = "2602:fab0:41::42:4242:1888";
-            prefixLength = 64;
+            address = "2602:fa62:200:4:4242::1888";
+            prefixLength = 80;
           }
           {
             address = "fe80::42:4242:1888";

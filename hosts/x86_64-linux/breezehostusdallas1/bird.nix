@@ -42,6 +42,9 @@ in
         protocol bgp AS4242422032 from dnpeers {
           neighbor fe80::42:4242:2032 % 'ens18' as 4242422032;
         }
+        protocol bgp RS from dnpeers {
+          neighbor 2602:fa62:200:4:4242::ffff as 65424;
+        }
       '';
   };
 }
