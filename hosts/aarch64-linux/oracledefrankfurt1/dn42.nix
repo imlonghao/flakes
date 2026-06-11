@@ -26,6 +26,14 @@
         mpbgp = false;
       }
       {
+        name = "wg213605";
+        asn = 213605;
+        e6 = "fe80::616b:7979";
+        listen = 13605;
+        endpoint = "ams-dn42.akae.re:51888";
+        publickey = "NoJ/5iddGjySp3hNI6yR+7QESJsUEzn6uspfk8Gs0io=";
+      }
+      {
         name = "wg31111";
         listen = 31111;
         publickey = "YnoqhBTjO0+2vj/1lXqzOmvKeCwZ4q3BJzNyxN/zQ00=";
