@@ -15,7 +15,7 @@
     "${self}/profiles/rsshc"
     "${self}/profiles/exporter/node.nix"
     "${self}/profiles/exporter/bird.nix"
-    "${self}/profiles/bird-lg-go"
+    "${self}/profiles/bird-lg-proxy"
     "${self}/profiles/komari-agent"
     # Containers
     "${self}/containers/snell.nix"

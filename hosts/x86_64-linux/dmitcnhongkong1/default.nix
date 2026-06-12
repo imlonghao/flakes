@@ -7,7 +7,7 @@
     "${self}/profiles/mycore"
     "${self}/users/root"
     "${self}/profiles/rsshc"
-    "${self}/profiles/bird-lg-go"
+    "${self}/profiles/bird-lg-proxy"
     "${self}/profiles/komari-agent"
     "${self}/profiles/exporter/node.nix"
     "${self}/profiles/exporter/bird.nix"

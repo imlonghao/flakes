@@ -8,7 +8,7 @@
     "${self}/users/root"
     "${self}/profiles/exporter/node.nix"
     "${self}/profiles/exporter/bird.nix"
-    "${self}/profiles/bird-lg-go"
+    "${self}/profiles/bird-lg-proxy"
     "${self}/profiles/mtrsb"
     "${self}/profiles/rsshc"
     "${self}/profiles/docker"
