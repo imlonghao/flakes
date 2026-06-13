@@ -45,9 +45,6 @@ in
         protocol bgp AS4242422189 from dnpeers {
           neighbor 2602:fa62:200:4:4242::2189 as 4242422189;
         }
-        protocol bgp RS {
-          neighbor 2602:fa62:200:4:4242::ffff as 65424;
-        }
       '';
   };
 }
