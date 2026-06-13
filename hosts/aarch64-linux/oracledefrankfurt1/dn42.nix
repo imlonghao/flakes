@@ -135,6 +135,14 @@
         publickey = "HDe0cq/D1TLW11m7d5ub4+dlM8fXeUSyZOujJemaOUM=";
       }
       {
+        name = "wg0401";
+        asn = 4242420401;
+        e6 = "fe80::401";
+        listen = 20401;
+        endpoint = "de01.dn42.markround.com:21888";
+        publickey = "ZPwzKog7ii0RVJsvRKRz2WdFHU0FWujMKDVqk9UKbF0=";
+      }
+      {
         name = "wg0454";
         asn = 4242420454;
         e6 = "fe80::454:102";

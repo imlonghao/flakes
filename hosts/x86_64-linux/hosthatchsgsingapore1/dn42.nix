@@ -46,6 +46,14 @@
         publickey = "/e/4YHiRtemDguCdT1/5BtL1NAAQ2cayBfHcUBhg02s=";
       }
       {
+        name = "wg0401";
+        asn = 4242420401;
+        e6 = "fe80::401";
+        listen = 20401;
+        endpoint = "sg01.dn42.markround.com:21888";
+        publickey = "v5H1F+F3AkTRepoIxXZE+xdZhi89Kg46Xuzp3It4/Ec=";
+      }
+      {
         name = "wg0458";
         listen = 20458;
         # endpoint = "sg1.nodes.huajinet.org:21888";
