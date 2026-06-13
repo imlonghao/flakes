@@ -112,6 +112,14 @@
         publickey = "Yl8pmNGEmxI8drpE0e2GeLRhFpd94Bg82COzbCWl0go=";
       }
       {
+        name = "wg3003";
+        listen = 23003;
+        endpoint = "syd1.dn42.fitzy.cloud:21888";
+        publickey = "HDLJbiy2QNiYxylYTxTRd61bZSqD6EXmWq/9OJHXriM=";
+        asn = 4242423003;
+        e6 = "fe80::3003";
+      }
+      {
         name = "wg3290";
         listen = 23290;
         endpoint = "119.224.65.18:21888";
