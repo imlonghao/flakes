@@ -64,6 +64,14 @@
         publickey = "gbhhdvAIHVuv5e+tIG/m9T9fDaGoAGVgSUHq+rKTLyY=";
       }
       {
+        name = "wg1233";
+        listen = 21233;
+        endpoint = "4.ac-us3.atr.dn42.sbs:21888";
+        publickey = "un7zhZZstDgPu8UvVBEdgawGnM9Tlv/OW3BMenvOJm4=";
+        asn = 4242421233;
+        e6 = "fe80::1233:99";
+      }
+      {
         name = "wg1240";
         listen = 21240;
         endpoint = "us-04.prefixlabs.net:21888";

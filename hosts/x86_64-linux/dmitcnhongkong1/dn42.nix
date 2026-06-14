@@ -144,6 +144,14 @@
         publickey = "f9ZDh2U0UXxtEroHUYNWzaE6TZM3hhY3eLXQQpgkvBY=";
       }
       {
+        name = "wg1233";
+        listen = 21233;
+        endpoint = "ayano.atr.dn42.sbs:21888";
+        publickey = "yT6qjVNHXcdS0rYw9FTyF1yosW3zC080h03lfOJ8dkk=";
+        asn = 4242421233;
+        e6 = "fe80::1233:c067";
+      }
+      {
         name = "wg1331";
         asn = 4242421331;
         e6 = "fe80::1331";

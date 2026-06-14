@@ -103,6 +103,14 @@
         publickey = "7ZLEhruv0R7V9DUEv+BHLr5fszpp/B55aKFtVoIACno=";
       }
       {
+        name = "wg1233";
+        listen = 21233;
+        endpoint = "ax-jp1.atr.dn42.sbs:21888";
+        publickey = "zn6lGMi7OYgNxkdFnVOgbiB0f5XdGwiXdFSPdMO+oV8=";
+        asn = 4242421233;
+        e6 = "fe80::1233:119";
+      }
+      {
         name = "wg1336";
         asn = 4242421336;
         e6 = "fe80::1336";

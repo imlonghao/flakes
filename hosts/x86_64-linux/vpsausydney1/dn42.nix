@@ -71,6 +71,14 @@
         e6 = "fe80::1080:125";
       }
       {
+        name = "wg1233";
+        listen = 21233;
+        endpoint = "ac-au2.atr.dn42.sbs:21888";
+        publickey = "eRpcy/51rBfxgmuBslkVBmsWSebveMweoMFtJcmIsi0=";
+        asn = 4242421233;
+        e6 = "fe80::1233:121";
+      }
+      {
         name = "wg1771";
         listen = 21771;
         endpoint = "akl1-v4.exploro.one:32582";
