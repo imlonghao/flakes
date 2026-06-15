@@ -509,8 +509,8 @@
         asn = 4242423377;
         e6 = "fe80::3377";
         listen = 23377;
-        endpoint = "de1.peer.dn42.leziblog.com:21888";
-        publickey = "Kd5+CvZW3NRvUXpbdqGFt85VzMyReBtnVeDVXae06Qg=";
+        endpoint = "de2-fra.peer.dn42.leziblog.com:21888";
+        publickey = "vhinCXmELAil8ZBqmkHgAS/I7PxgjacCW8qZjm1hsxg=";
       }
       {
         name = "wg3374";
