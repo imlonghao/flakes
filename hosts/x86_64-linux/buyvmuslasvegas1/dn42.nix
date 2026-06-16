@@ -153,8 +153,8 @@
         listen = 21123;
         asn = 4242421123;
         e6 = "fe80::1123";
-        endpoint = "lax.ccp.ovh:21888";
         publickey = "Z6OKJSR1sxMBgUd1uXEe/UxoBsOvRgbTnexy7z/ryUI=";
+        mtu = 1340;
       }
       {
         name = "wg1131";

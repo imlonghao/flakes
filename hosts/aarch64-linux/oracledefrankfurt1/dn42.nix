@@ -232,6 +232,14 @@
         publickey = "9oVGKPUnxykn9y/CeNmHbImnX2WRsHk6VzSIAQfy0hc=";
       }
       {
+        name = "wg1123";
+        asn = 4242421123;
+        e6 = "fe80::1123";
+        listen = 21123;
+        publickey = "e5X1ZlZUOVtTFeWi+d6cUqqNaXB0F2UHwbquAKU4z3I=";
+        mtu = 1340;
+      }
+      {
         name = "wg1131";
         asn = 4242421131;
         e6 = "fe80::1131";
