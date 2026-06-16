@@ -573,6 +573,14 @@
         publickey = "nAvTJaKj65MTFHIqL+0OV0A3o99c7y2qbnXkAM0DtmY=";
       }
       {
+        name = "wg3868";
+        listen = 23868;
+        endpoint = "de-nbg.dn42.cio.bz:21888";
+        publickey = "AXczhLFNSHSqXMdQHS7cg8Y5NUn3Ti7/9v4l8JA6Zl4=";
+        asn = 4242423868;
+        e6 = "fe80::3868";
+      }
+      {
         name = "wg3914";
         listen = 23914;
         endpoint = "de2.g-load.eu:21888";
