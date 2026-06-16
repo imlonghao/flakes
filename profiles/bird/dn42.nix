@@ -114,7 +114,7 @@
     }
     if roa_flap_check() then bgp_community.add((65535, 65281));
     if !is_valid_network() || bgp_path ~ DN42_BLACKLIST_ASN then reject;
-    if bgp_path ~ DN42_NO_TRANSIT && bgp_path.len > 1 then reject;
+    if bgp_path ~ DN42_NO_TRANSIT && bgp_path.last !~ DN42_NO_TRANSIT then reject;
     if bgp_path ~ DN42_AUTOPEER then bgp_local_pref = bgp_local_pref - 10;
     if bgp_path.len = 1 then bgp_local_pref = bgp_local_pref + 10;
     if (64511, DN42_REGION) ~ bgp_community then bgp_local_pref = bgp_local_pref + 10;
