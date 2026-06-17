@@ -8,6 +8,7 @@
 ''
   define DN42_REGION = ${toString region};
   define DN42_COUNTRY = ${toString country};
+  define DN42_NODEID = ${toString ip};
   define DN42_BLACKLIST_ASN = [
     0
     , 4242423658 # Jason Xu
@@ -123,6 +124,7 @@
     if (4242422189, 101, DN42_REGION) ~ bgp_large_community then bgp_local_pref = bgp_local_pref + 10; # https://iedon.net/post/16
     bgp_large_community.add((4242421888, 100, DN42_REGION));
     bgp_large_community.add((4242421888, 101, DN42_COUNTRY));
+    bgp_large_community.add((4242421888, 102, DN42_NODEID));
     accept;
   }
   filter dn42_export_filter {
@@ -143,16 +145,12 @@
     reject;
   }
   filter internal_filter {
-    if bgp_path ~ DN42_AUTOPEER then bgp_local_pref = bgp_local_pref - 10;
-    if bgp_path.len = 1 then bgp_local_pref = bgp_local_pref + 10;
-    if (64511, DN42_REGION) ~ bgp_community then bgp_local_pref = bgp_local_pref + 10;
-    if (64511, DN42_COUNTRY) ~ bgp_community then bgp_local_pref = bgp_local_pref + 10;
     if is_self_net_internal() && source ~ [RTS_STATIC, RTS_DEVICE] then {
       bgp_community.add((64511, DN42_REGION));
       bgp_community.add((64511, DN42_COUNTRY));
       accept;
     }
-    if is_valid_network() && source ~ [RTS_STATIC, RTS_BGP] then {
+    if is_valid_network() && source ~ [RTS_STATIC, RTS_BGP] && (4242421888, 102, DN42_NODEID) ~ bgp_large_community then {
       accept;
     }
     reject;
