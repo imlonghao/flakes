@@ -245,6 +245,14 @@
         publickey = "P7vHiRrE43ngXX5liQ5S8V01IHNTIqKVQzdG2lUpCh4=";
       }
       {
+        name = "wg2018";
+        asn = 4242422018;
+        e6 = "fe80::2018";
+        listen = 22018;
+        endpoint = "xiaobai.hkg.butlanys.de:21888";
+        publickey = "J8LY0vaOzaxH1k3Qrhjv7/U3ATj5B29HwgmednA5rUI=";
+      }
+      {
         name = "wg2020";
         asn = 4242422020;
         e6 = "fe80::2020";
