@@ -77,6 +77,7 @@
     llm-agents.omp
     llm-agents.pi
     ncdu
+    nil
     nix-update
     nixfmt
     nodejs
