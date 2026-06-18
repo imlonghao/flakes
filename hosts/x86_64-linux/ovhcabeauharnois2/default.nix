@@ -66,6 +66,7 @@
     chezmoi
     dig
     flyctl
+    fresh-editor
     git
     gnupg
     go
