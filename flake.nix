@@ -158,8 +158,6 @@
           in
           prev.lib.attrsets.genAttrs [
             # keep-sorted start
-            "claude-code"
-            "codex"
             "komari-agent"
             # keep-sorted end
           ] (name: pkgs-latest.${name});
