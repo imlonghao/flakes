@@ -128,9 +128,23 @@
           };
         overlays.default =
           final: prev:
-          prev.lib.packagesFromDirectoryRecursive {
+          (prev.lib.packagesFromDirectoryRecursive {
             inherit (prev) callPackage;
             directory = ./pkgs;
+          })
+          // {
+            aerc = prev.aerc.overrideAttrs (_: {
+              version = "0.21.0-b5c16ebe";
+              src = prev.fetchFromSourcehut {
+                owner = "~rjarry";
+                repo = "aerc";
+                rev = "b5c16ebe1835d6bc3fabd30ef7e94b90a2214eb7";
+                hash = "sha256-IH6AK8gLMzwlDR0yZ0QjQa89qrFrliA8Ar1UVrzUh4o=";
+              };
+              vendorHash = "sha256-JVfysb8Z65UMvS9izFDaa50nYmR/hky2a1AxRlXgYQ8=";
+              patches = [ ];
+              doInstallCheck = false;
+            });
           };
         overlays.latest =
           final: prev:
