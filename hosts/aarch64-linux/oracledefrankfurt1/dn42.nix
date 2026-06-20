@@ -208,6 +208,14 @@
         e6 = "fe80::925";
       }
       {
+        name = "wg1013";
+        listen = 21013;
+        endpoint = "fin.dn42.naomu.net:59027";
+        publickey = "PBWmMVZtNIxRbcwcgDzWtadY7yOhtYkuicStjBjoOAc=";
+        asn = 4242421013;
+        e6 = "fe80::1013";
+      }
+      {
         name = "wg1023";
         asn = 4242421023;
         e6 = "fe80::1023:2";
