@@ -111,6 +111,14 @@
         publickey = "2Wmv10a9eVSni9nfZ7YPsyl3ZC5z7vHq0sTZGgk5WGo=";
       }
       {
+        name = "wg2394";
+        listen = 22394;
+        endpoint = "71.64.6.23:51820";
+        publickey = "CtywsRH2SbyJKtMUa1zKbAAo9ZblRgKb6NkcLqsDSxQ=";
+        asn = 4242422394;
+        e6 = "fe80::2394";
+      }
+      {
         name = "wg2464";
         e6 = "fe80::2464";
         asn = 4242422464;
