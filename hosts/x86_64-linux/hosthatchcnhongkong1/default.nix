@@ -4,6 +4,7 @@
 }:
 {
   imports = [
+    ./bird.nix
     ./hardware.nix
     "${self}/profiles/mycore"
     "${self}/users/root"
