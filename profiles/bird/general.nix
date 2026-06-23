@@ -79,8 +79,8 @@ in
     };
     interface "gravity" {};
   }
-  protocol rip rip_v6 {
-    ipv4 {
+  protocol rip ng rip_v6 {
+    ipv6 {
       import all;
       export ${rip6};
     };
