@@ -25,7 +25,6 @@ in
     "${self}/profiles/komari-agent"
     #    "${inputs.latest}/nixos/modules/services/backup/borgmatic.nix"
     # Container
-    "${self}/containers/act-runner.nix"
     "${self}/containers/mtrsb.nix"
   ];
 
@@ -314,6 +313,24 @@ in
           Listen = true;
           Password = "";
         }
+      ];
+    };
+  };
+
+  # Forgejo Runner
+  sops.secrets.forgejo-runner.sopsFile = ./secrets.yml;
+  services.gitea-actions-runner = {
+    package = pkgs.forgejo-runner;
+    instances.default = {
+      enable = true;
+      name = "ovhfrgravelines1";
+      url = "https://git.esd.cc";
+      tokenFile = config.sops.secrets.forgejo-runner.path;
+      labels = [
+        "ubuntu-latest:docker://ghcr.io/catthehacker/ubuntu:act-latest"
+        "ubuntu-24.04:docker://ghcr.io/catthehacker/ubuntu:act-24.04"
+        "ubuntu-22.04:docker://ghcr.io/catthehacker/ubuntu:act-22.04"
+        "ubuntu-20.04:docker://ghcr.io/catthehacker/ubuntu:act-20.04"
       ];
     };
   };
