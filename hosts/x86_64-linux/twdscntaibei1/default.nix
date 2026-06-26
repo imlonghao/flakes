@@ -23,6 +23,9 @@
   ];
 
   boot.loader.grub.device = "/dev/sda";
+  boot.kernel.sysctl = {
+    "net.ipv6.conf.ens20.addr_gen_mode" = 1;
+  };
   networking = {
     dhcpcd.enable = false;
     defaultGateway = "103.147.22.254";
@@ -70,6 +73,14 @@
         ipv6.addresses = [
           {
             address = "2a0f:5707:ffe3::89";
+            prefixLength = 64;
+          }
+        ];
+      };
+      ens20 = {
+        ipv6.addresses = [
+          {
+            address = "fe80::42:4242:1888";
             prefixLength = 64;
           }
         ];
