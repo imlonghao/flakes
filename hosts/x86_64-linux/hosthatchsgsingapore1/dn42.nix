@@ -139,6 +139,14 @@
         e6 = "fe80::7e26:b335:a24d:e70e";
       }
       {
+        name = "wg1810";
+        listen = 21810;
+        endpoint = "sg42.sabrinaishere.party:21888";
+        publickey = "NE/yrvI1qAMq//q2Rqg0lsZ4i2RjQIx5k1/7p2RU/jk=";
+        asn = 4242421810;
+        e6 = "fe80::1810";
+      }
+      {
         name = "wg2016";
         listen = 22016;
         endpoint = "sin1.dn42.sidereal.ca:21888";
