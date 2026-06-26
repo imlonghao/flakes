@@ -6,7 +6,8 @@
   };
   virtualisation.oci-containers.containers = {
     act-runner = {
-      image = "vegardit/gitea-act-runner:1.0.8";
+      image = "vegardit/gitea-act-runner:dind-rootless-1.0.8";
+      privileged = true;
       environment = {
         GITEA_INSTANCE_URL = "https://git.esd.cc";
         GITEA_RUNNER_NAME = config.networking.hostName;
@@ -14,7 +15,6 @@
       environmentFiles = [ config.sops.secrets.act-runner.path ];
       volumes = [
         "/persist/docker/act_runner/data:/data"
-        "/run/podman/podman.sock:/var/run/docker.sock"
       ];
     };
   };
