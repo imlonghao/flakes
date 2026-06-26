@@ -283,14 +283,6 @@ in
 
   services.komari-agent.include-nics = [ "eth0" ];
 
-  virtualisation.oci-containers.containers = {
-    act-runner = {
-      environment = {
-        GITEA_RUNNER_MAX_PARALLEL_JOBS = "2";
-      };
-    };
-  };
-
   services.yggdrasil = {
     enable = true;
     persistentKeys = true;
