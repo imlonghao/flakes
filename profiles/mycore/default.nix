@@ -203,6 +203,4 @@ in
     randomizedDelaySec = "7200";
   };
 
-  virtualisation.oci-containers.backend = "docker";
-
 }

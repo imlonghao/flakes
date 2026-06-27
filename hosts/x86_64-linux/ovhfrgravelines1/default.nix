@@ -313,7 +313,7 @@ in
   sops.secrets.forgejo-runner.sopsFile = ./secrets.yml;
   services.gitea-actions-runner = {
     package = pkgs.forgejo-runner;
-    instances.default = {
+    instances.imlonghao = {
       enable = true;
       name = "ovhfrgravelines1";
       url = "https://git.esd.cc";
@@ -324,6 +324,9 @@ in
         "ubuntu-22.04:docker://ghcr.io/catthehacker/ubuntu:act-22.04"
         "ubuntu-20.04:docker://ghcr.io/catthehacker/ubuntu:act-20.04"
       ];
+      settings = {
+        container.docker_host = "automount";
+      };
     };
   };
 
