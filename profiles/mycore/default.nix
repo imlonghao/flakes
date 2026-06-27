@@ -203,6 +203,6 @@ in
     randomizedDelaySec = "7200";
   };
 
-  virtualisation.podman.dockerSocket.enable = lib.mkIf config.virtualisation.podman.enable true;
+  virtualisation.oci-containers.backend = "docker";
 
 }
