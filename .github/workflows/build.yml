@@ -10,4 +10,4 @@ permissions:
 
 jobs:
   Atelier:
-    uses: stepbrobd/atelier/.github/workflows/discover.yaml@3d3411d45242cd32dd7d325c30c8e5bf1bdd18f8
+    uses: stepbrobd/atelier/.github/workflows/discover.yaml@6cf255b6e35733e746ef42208389159912ecbde2

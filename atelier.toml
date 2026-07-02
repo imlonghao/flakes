@@ -14,3 +14,10 @@ substituters = [
   "https://cache.ysun.co",
   "https://cache.esd.cc"
 ]
+trusted-public-keys = [
+  "imlonghao.cachix.org-1:KGQ7+R1BXo2NsoeAxKLPfGAiHz5ofCmZO4hih7u/2Q8=",
+  "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs=",
+  "niks3.numtide.com-1:DTx8wZduET09hRmMtKdQDxNNthLQETkc/yaX7M4qK0g=",
+  "cache.ysun.co-1:WxPYwT5g3kt9XhUhHPpNLZKI9HIOsVVAuqSHpok8Qt4=",
+  "niks3.esd.cc-1:/6X3iYzeJlsVO1/MtjnllvR7T4OZZi9g33O417sYWYA="
+]
