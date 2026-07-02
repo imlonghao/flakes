@@ -451,14 +451,6 @@
         publickey = "4Kyabql4m5Aay43m0jToCyU9BPRa1aLYBWN6IBSaSW4=";
       }
       {
-        name = "wg3845";
-        asn = 4242423845;
-        e6 = "fe80::114";
-        listen = 23845;
-        endpoint = "hkg1.dn42.aerodefense.co.uk:21888";
-        publickey = "jR21mrHsYv4KHPrRgtPPTl4BNU2by6dRV110nUIVfU4=";
-      }
-      {
         name = "wg3868";
         asn = 4242423868;
         e6 = "fe80::3868";

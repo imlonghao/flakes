@@ -55,14 +55,6 @@
         publickey = "ezOq3YaDR8wqJ8q42zq49YDBs8vC2mcDIxhJNvlpuE4=";
       }
       {
-        name = "wg0827";
-        listen = 20827;
-        endpoint = "tyo-jp.dn42.mzknet.work:21888";
-        publickey = "3zPEkjECgrpIMsGIEEAFx4+dTr8VwIyncL3G9T1NOSk=";
-        asn = 4242420827;
-        e6 = "fe80::827";
-      }
-      {
         name = "wg0893";
         asn = 4242420893;
         e6 = "fe80::893";
@@ -117,14 +109,6 @@
         publickey = "zn6lGMi7OYgNxkdFnVOgbiB0f5XdGwiXdFSPdMO+oV8=";
         asn = 4242421233;
         e6 = "fe80::1233:119";
-      }
-      {
-        name = "wg1336";
-        asn = 4242421336;
-        e6 = "fe80::1336";
-        listen = 21336;
-        endpoint = "jp1.dn42.xeiu.top:21888";
-        publickey = "eacDn4IjHBMavV9IeilwPmrVDoVyKBkNhgK6qUBskiM=";
       }
       {
         name = "wg1534";

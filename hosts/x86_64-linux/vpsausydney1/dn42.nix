@@ -63,14 +63,6 @@
         e6 = "fe80::842";
       }
       {
-        name = "wg1080";
-        listen = 21080;
-        endpoint = "syd.peer.highdef.network:21888";
-        publickey = "Xk9wCuwp3zK4WflTeAKBIjgIlr3+qUwIFCkF2uMyyF8=";
-        asn = 4242421080;
-        e6 = "fe80::1080:125";
-      }
-      {
         name = "wg1233";
         listen = 21233;
         endpoint = "ac-au2.atr.dn42.sbs:21888";

@@ -589,14 +589,6 @@
         ipv6 = "fd21:5c0c:9b7e:4:3814::1/80";
       }
       {
-        name = "wg3845";
-        asn = 4242423845;
-        e6 = "fe80::114";
-        listen = 23845;
-        endpoint = "fra1.dn42.aerodefense.co.uk:21888";
-        publickey = "nAvTJaKj65MTFHIqL+0OV0A3o99c7y2qbnXkAM0DtmY=";
-      }
-      {
         name = "wg3868";
         listen = 23868;
         endpoint = "de-nbg.dn42.cio.bz:21888";

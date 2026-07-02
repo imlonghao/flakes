@@ -104,14 +104,6 @@
         e6 = "fe80::0831";
       }
       {
-        name = "wg1080";
-        listen = 21080;
-        endpoint = "sgp.peer.highdef.network:21888";
-        publickey = "X3m9VMzZYN4Oe2QUb7DcnmVymwKSLbPUCB5ElD8igjo=";
-        asn = 4242421080;
-        e6 = "fe80::1080:39";
-      }
-      {
         name = "wg1240";
         listen = 21240;
         endpoint = "sg-01.prefixlabs.net:21888";
