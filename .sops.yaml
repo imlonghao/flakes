@@ -5,6 +5,7 @@ keys:
   - &vps_buyvmchbern1 age13pa3dsvdsygpxxlc2hannvxx4qh03280me3s7xdrmenuvf7mmcvsdckylx
   - &vps_buyvmuslasvegas1 age1tn2crgjwffdhvn8k7h2yd7et7ze3pqcuzqm80v2pq9pglcdkwyys5fuqyk
   - &vps_buyvmusmiami1 age17udapsqm2lx6u6jkcugwlu2a90sv6uasfzap0vd2du5ecxrsn44q6e82pu
+  - &vps_dedirockusnewyork1 age1p6hp892j8tztztvqzy69pdm5ms83sxklax6fl2qeaylg5q329e6qnf80au
   - &vps_dmitcnhongkong1 age1kplhd4zrmjgegmx6epzjpq0xug6uz9wuvjgdx5ns6thtkmz0nyrqcd43nx
   - &vps_f4uskansas1 age1hsukvd00p3k8mt9cmlau5fc4tjfrwhwhxx8la3h9lad5k5ga0e2qc8t7y8
   - &vps_hosthatchcnhongkong1 age1zmh6el6fdmaf4gljqvu9u0dgmu59lylthg89sxfjxt3eufvrxv5s7f3yhe
@@ -137,6 +138,12 @@ creation_rules:
           - *me_canokey
         age:
           - *vps_twdscntaibei1
+  - path_regex: hosts/x86_64-linux/vps_dedirockusnewyork1/secrets.yml$
+    key_groups:
+      - pgp:
+          - *me_canokey
+        age:
+          - *vps_dedirockusnewyork1
   - path_regex: hosts/x86_64-linux/vpsausydney1/secrets.yml$
     key_groups:
       - pgp:
@@ -278,6 +285,7 @@ creation_rules:
           - *vps_buyvmchbern1
           - *vps_buyvmuslasvegas1
           - *vps_buyvmusmiami1
+          - *vps_dedirockusnewyork1
           - *vps_dmitcnhongkong1
           - *vps_f4uskansas1
           - *vps_hosthatchcnhongkong1
