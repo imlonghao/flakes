@@ -253,6 +253,7 @@ creation_rules:
           - *vps_buyvmchbern1
           - *vps_buyvmuslasvegas1
           - *vps_buyvmusmiami1
+          - *vps_dedirockusnewyork1
           - *vps_dmitcnhongkong1
           - *vps_f4uskansas1
           - *vps_hosthatchcnhongkong1
