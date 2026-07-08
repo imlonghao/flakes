@@ -113,6 +113,14 @@
         publickey = "KlZg3oOjQsaQ0dNkUgHCKyOqULw8+u+llo97X1w5mV4=";
       }
       {
+        name = "wg0842";
+        asn = 4242420842;
+        e6 = "fe80::842";
+        listen = 20842;
+        endpoint = "hk-hkg01.headscarf175.net:21888";
+        publickey = "uj6uvqPX3PJTFIXPPV8Ot1BJRwqFSkkrufnRSMdbfQQ=";
+      }
+      {
         name = "wg0925";
         listen = 20925;
         publickey = "/kho8uODEgOH/nhb/1FggrM9nkGCqe7jEopY70oSZyE=";

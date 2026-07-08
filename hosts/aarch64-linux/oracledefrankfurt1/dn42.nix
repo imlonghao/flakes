@@ -193,6 +193,14 @@
         publickey = "NJbQQVPkfMf1B501Mu1y5lj5RusoQIboeeOCNNSFF2k=";
       }
       {
+        name = "wg0842";
+        asn = 4242420842;
+        e6 = "fe80::842";
+        listen = 20842;
+        endpoint = "de-fra01.headscarf175.net:21888";
+        publickey = "5Cd+Qg30+FbCQGuLWigm5lSTqK9lgR6o6iSmooI8Fkw=";
+      }
+      {
         name = "wg0900";
         asn = 4242420900;
         e6 = "fe80::0900";

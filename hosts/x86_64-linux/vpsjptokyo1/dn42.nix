@@ -55,6 +55,14 @@
         publickey = "ezOq3YaDR8wqJ8q42zq49YDBs8vC2mcDIxhJNvlpuE4=";
       }
       {
+        name = "wg0842";
+        asn = 4242420842;
+        e6 = "fe80::842";
+        listen = 20842;
+        endpoint = "jp-tyo01.headscarf175.net:21888";
+        publickey = "bYaGFC+RkFvSFEOVf7sW8op2L4v18pK5yV/gC7yzG2M=";
+      }
+      {
         name = "wg0893";
         asn = 4242420893;
         e6 = "fe80::893";

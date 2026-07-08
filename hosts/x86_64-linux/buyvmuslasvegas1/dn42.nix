@@ -109,6 +109,14 @@
         e6 = "fe80::0625";
       }
       {
+        name = "wg0842";
+        asn = 4242420842;
+        e6 = "fe80::842";
+        listen = 20842;
+        endpoint = "us-lax01.headscarf175.net:21888";
+        publickey = "urPzSwUlqcJiJjpgz9JGBgLSwnSDEHsE4+ZnixQXpDI=";
+      }
+      {
         name = "wg0864";
         listen = 20864;
         asn = 4242420864;
