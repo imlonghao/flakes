@@ -181,6 +181,9 @@
           targetHost = "buyvm-us-miami-1.ni.sb";
           tags = [ "dn42" ];
         };
+        dedirockusnewyork1 = {
+          targetHost = "dedirock-us-newyork-1.ni.sb";
+        };
         dmitcnhongkong1 = {
           targetHost = "dmit-cn-hongkong-1.ni.sb";
           tags = [ "dn42" ];
