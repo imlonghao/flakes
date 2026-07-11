@@ -21,12 +21,22 @@
       address = "23.94.79.1";
       interface = "eth0";
     };
+    defaultGateway6 = {
+      address = "2605:6f01:2000:01bd::1";
+      interface = "eth0";
+    };
     interfaces = {
       eth0 = {
         ipv4.addresses = [
           {
             address = "23.94.79.12";
             prefixLength = 25;
+          }
+        ];
+        ipv6.addresses = [
+          {
+            address = "2605:6f01:2000:1bd::f58b:5cbe";
+            prefixLength = 64;
           }
         ];
       };
