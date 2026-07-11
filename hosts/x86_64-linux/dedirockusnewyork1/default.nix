@@ -1,6 +1,8 @@
 { self, ... }:
 {
   imports = [
+    ./bird.nix
+    ./dn42.nix
     ./hardware.nix
     "${self}/profiles/mycore"
     "${self}/users/root"
@@ -26,6 +28,21 @@
       interface = "eth0";
     };
     interfaces = {
+      dummy = {
+        virtual = true;
+        ipv4.addresses = [
+          {
+            address = "172.22.68.13";
+            prefixLength = 32;
+          }
+        ];
+        ipv6.addresses = [
+          {
+            address = "fd21:5c0c:9b7e:13::1";
+            prefixLength = 128;
+          }
+        ];
+      };
       eth0 = {
         ipv4.addresses = [
           {

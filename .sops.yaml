@@ -60,6 +60,12 @@ creation_rules:
           - *me_canokey
         age:
           - *vps_buyvmusmiami1
+  - path_regex: hosts/x86_64-linux/dedirockusnewyork1/secrets.yml$
+    key_groups:
+      - pgp:
+          - *me_canokey
+        age:
+          - *vps_dedirockusnewyork1
   - path_regex: hosts/x86_64-linux/dmitcnhongkong1/secrets.yml$
     key_groups:
       - pgp:
@@ -138,12 +144,6 @@ creation_rules:
           - *me_canokey
         age:
           - *vps_twdscntaibei1
-  - path_regex: hosts/x86_64-linux/vps_dedirockusnewyork1/secrets.yml$
-    key_groups:
-      - pgp:
-          - *me_canokey
-        age:
-          - *vps_dedirockusnewyork1
   - path_regex: hosts/x86_64-linux/vpsausydney1/secrets.yml$
     key_groups:
       - pgp:
