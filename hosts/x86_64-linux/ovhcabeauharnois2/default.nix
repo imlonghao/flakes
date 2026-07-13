@@ -114,6 +114,18 @@
     nttcom = "whois -h rr.ntt.net";
     radb = "whois -h whois.radb.net";
     aercc = "EDITOR=vim aerc";
+    pi = ''
+      ${pkgs.bubblewrap}/bin/bwrap \
+        --ro-bind /etc /etc \
+        --ro-bind /nix /nix \
+        --ro-bind /run/current-system/sw/bin /run/current-system/sw/bin \
+        --ro-bind /root/.config/herdr/herdr.sock /root/.config/herdr/herdr.sock \
+        --bind "$PWD" "$PWD" \
+        --bind /root/.pi /root/.pi \
+        --proc /proc --dev /dev \
+        --unshare-all --share-net \
+        --die-with-parent --new-session \
+        ${pkgs.llm-agents.pi}/bin/pi'';
   };
   programs.fish.shellInit = ''
     ${pkgs.atuin}/bin/atuin init fish --disable-up-arrow | source
