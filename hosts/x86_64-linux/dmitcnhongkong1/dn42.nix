@@ -21,6 +21,14 @@
         publickey = "2JHMpwkKaAMuMBrmapx9zqgGDIZOX9HZw5V2c1l66R8=";
       }
       {
+        name = "wg0078";
+        asn = 4242420078;
+        e6 = "fe80::78";
+        listen = 20078;
+        endpoint = "hk01.tes286.top:21888";
+        publickey = "1OcvI9jSlO3k3MHvi1FzmIG9M/ubeemnxzkmbFZSTS4=";
+      }
+      {
         name = "wg0129";
         listen = 20129;
         endpoint = "hk1.420129.xyz:21888";
