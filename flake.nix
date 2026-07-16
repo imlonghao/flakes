@@ -100,7 +100,7 @@
                           self.overlays.default
                           self.overlays.latest
                           inputs.ranet.overlays.default
-                          inputs.llm-agents.overlays.default
+                          inputs.llm-agents.overlays.shared-nixpkgs
                           inputs.herdr.overlays.default
                         ];
                         system = arch;
