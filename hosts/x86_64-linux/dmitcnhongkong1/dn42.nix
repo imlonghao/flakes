@@ -501,14 +501,6 @@
         l4 = "172.22.68.0";
         mpbgp = false;
       }
-      {
-        name = "wgiedon";
-        asn = 4242422189;
-        e6 = "fe80::2189:191";
-        listen = 54505;
-        endpoint = "hk.grc.dn42.iedon.net:54505";
-        publickey = "T/s3VJ2c3Evr4Ie2OEXsAWKsRImd1cIzE1UvEpVOwSQ=";
-      }
     ];
   };
 }
