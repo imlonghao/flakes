@@ -61,14 +61,6 @@
         e6 = "fe80::214";
       }
       {
-        name = "wg0223";
-        listen = 20223;
-        endpoint = "us0.dn42.quickso.cn:21888";
-        publickey = "fhWRgFGheALhbd0kmtUNgT9KYkwKN9udd0cpNKPFeDU=";
-        asn = 4242420223;
-        e6 = "fe80::1233";
-      }
-      {
         name = "wg0253";
         asn = 4242420253;
         e6 = "fe80::253";
