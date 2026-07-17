@@ -117,6 +117,7 @@
     aercc = "EDITOR=vim aerc";
     pi = ''
       ${pkgs.bubblewrap}/bin/bwrap \
+        --ro-bind /bin /bin \
         --ro-bind /etc /etc \
         --ro-bind /nix /nix \
         --ro-bind /run/current-system/sw/bin /run/current-system/sw/bin \
