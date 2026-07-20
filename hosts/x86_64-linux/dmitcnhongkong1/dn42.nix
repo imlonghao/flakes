@@ -29,6 +29,14 @@
         publickey = "1OcvI9jSlO3k3MHvi1FzmIG9M/ubeemnxzkmbFZSTS4=";
       }
       {
+        name = "wg0083";
+        asn = 4242420083;
+        e6 = "fe80::83";
+        listen = 20083;
+        endpoint = "hk1.dn42.50335033.xyz:21888";
+        publickey = "yg3fHatQenIR+cXaRhGgTYz1wL2zdESWqdqYa39Znmo=";
+      }
+      {
         name = "wg0129";
         listen = 20129;
         endpoint = "hk1.420129.xyz:21888";
