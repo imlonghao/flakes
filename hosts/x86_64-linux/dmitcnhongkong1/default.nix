@@ -18,35 +18,41 @@
   boot.loader.grub.device = "/dev/vda";
   boot.kernelParams = [ "net.ifnames=0" ];
 
-  systemd.network = {
-    enable = true;
-    networks.eth0 = {
-      address = [ "154.3.37.101/32" ];
-      matchConfig.Name = "eth0";
-      routes = [
-        {
-          Gateway = "193.41.250.250";
-          GatewayOnLink = true;
-        }
-      ];
-    };
-    networks.lo = {
-      address = [
-        "172.22.68.0/32"
-        "172.22.68.3/32"
-        "fd21:5c0c:9b7e:3::1/64"
-      ];
-      matchConfig.Name = "lo";
-    };
-  };
   networking = {
-    useDHCP = false;
+    dhcpcd = {
+      enable = true;
+      allowInterfaces = [ "eth0" ];
+      extraConfig = ''
+        interface eth0
+        arp_persistdefence
+      '';
+    };
     nameservers = [
-      "127.0.0.1"
+      "185.222.222.222"
       "1.1.1.1"
     ];
+    interfaces = {
+      dummy = {
+        virtual = true;
+        ipv4.addresses = [
+          {
+            address = "172.22.68.0";
+            prefixLength = 32;
+          }
+          {
+            address = "172.22.68.3";
+            prefixLength = 32;
+          }
+        ];
+        ipv6.addresses = [
+          {
+            address = "fd21:5c0c:9b7e:3::1";
+            prefixLength = 64;
+          }
+        ];
+      };
+    };
   };
-  services.resolved.enable = false;
 
   environment.persistence."/persist" = {
     directories = [ "/var/lib" ];
