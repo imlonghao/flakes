@@ -184,6 +184,7 @@
         };
         dedirockusnewyork1 = {
           targetHost = "dedirock-us-newyork-1.ni.sb";
+          tags = [ "dn42" ];
         };
         dmitcnhongkong1 = {
           targetHost = "dmit-cn-hongkong-1.ni.sb";
