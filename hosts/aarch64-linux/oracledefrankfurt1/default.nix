@@ -58,6 +58,10 @@
         virtual = true;
         ipv4.addresses = [
           {
+            address = "172.22.68.0";
+            prefixLength = 32;
+          }
+          {
             address = "172.22.68.4";
             prefixLength = 32;
           }
