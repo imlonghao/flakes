@@ -324,6 +324,14 @@
         publickey = "ki4mnFa0PeY7SY9OlZdS6Tw9k5Xdgq/PdYVOef2SSBc=";
       }
       {
+        name = "wg3003";
+        asn = 4242423003;
+        e6 = "fe80::3003";
+        listen = 23003;
+        endpoint = "us-sjc1.dn42.fitzy.cloud:51596";
+        publickey = "4AMr66Tm/SKhMpITB0msSvBmsbm7CvQhbYR5sF0xMQw=";
+      }
+      {
         name = "wg3035";
         listen = 23035;
         endpoint = "usw1.dn42.lare.cc:21888";
