@@ -246,6 +246,7 @@
     multihop;
     ipv4 {
       add paths tx;
+      extended next hop;
       import none;
       export filter dn42_export_filter;
     };
