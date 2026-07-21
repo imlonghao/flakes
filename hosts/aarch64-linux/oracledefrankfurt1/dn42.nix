@@ -509,6 +509,14 @@
         e6 = "fe80::3035:130";
       }
       {
+        name = "wg3077";
+        listen = 23077;
+        endpoint = "de-1.dn42.ferrets.space:21888";
+        publickey = "N4Fy6nVSGZWa2mHYrZVHZ9m80q5gv5/4zSfDCPxTkHA=";
+        asn = 4242423077;
+        e6 = "fe80::3077";
+      }
+      {
         name = "wg3088";
         listen = 23088;
         endpoint = "ams1-nl.dn42.6700.cc:21888";
