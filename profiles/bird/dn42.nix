@@ -240,9 +240,9 @@
         export filter internal_filter;
     };
   }
-  protocol bgp ROUTE_COLLECTOR {
+  protocol bgp ROUTE_COLLECTOR_RRC_Asia {
     local as 4242421888;
-    neighbor fd42:d42:d42:179::1 as 4242422602;
+    neighbor fd42:4242:2189:191::1 as 4242422189;
     multihop;
     ipv4 {
       add paths tx;
