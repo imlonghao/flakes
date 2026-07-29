@@ -473,6 +473,14 @@
         publickey = "XF6V487+h1uHZcVjV0ZBI6KbaqrN7W2vBug3Dzr4wAo=";
       }
       {
+        name = "wg3883";
+        asn = 4242423883;
+        e6 = "fe80::3883";
+        listen = 23883;
+        endpoint = "hk.dn42.42423883.xyz:21888";
+        publickey = "FPojjnIOs4jRVZgtc11czAVh7u7aZvthkF4W0NkJVRM=";
+      }
+      {
         name = "wg3914";
         asn = 4242423914;
         e6 = "fe80::ade0";
