@@ -11,6 +11,7 @@
     "${self}/profiles/bird-lg-proxy"
     "${self}/profiles/rsshc"
     "${self}/profiles/docker"
+    "${self}/profiles/peerfinder-agent"
   ];
 
   networking = {

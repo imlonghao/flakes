@@ -6,6 +6,7 @@
     ./hardware.nix
     "${self}/profiles/mycore"
     "${self}/users/root"
+    "${self}/profiles/peerfinder-agent"
   ];
 
   boot.kernelParams = [

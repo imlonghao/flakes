@@ -13,6 +13,7 @@
     "${self}/profiles/rsshc"
     "${self}/profiles/bird-lg-proxy"
     "${self}/profiles/komari-agent"
+    "${self}/profiles/peerfinder-agent"
   ];
 
   boot.loader.grub.device = "/dev/vda";

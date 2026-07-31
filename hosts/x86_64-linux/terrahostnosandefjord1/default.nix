@@ -12,6 +12,7 @@
     "${self}/profiles/mtrsb"
     "${self}/profiles/rsshc"
     "${self}/profiles/docker"
+    "${self}/profiles/peerfinder-agent"
   ];
 
   # Network

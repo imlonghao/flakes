@@ -20,6 +20,7 @@
     "${self}/profiles/k3s/agent.nix"
     "${self}/profiles/etcd"
     "${self}/profiles/komari-agent"
+    "${self}/profiles/peerfinder-agent"
     # Container
     "${self}/containers/act-runner.nix"
   ];

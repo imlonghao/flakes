@@ -17,6 +17,7 @@
     "${self}/profiles/exporter/bird.nix"
     "${self}/profiles/bird-lg-proxy"
     "${self}/profiles/komari-agent"
+    "${self}/profiles/peerfinder-agent"
     # Containers
     "${self}/containers/snell.nix"
     "${self}/containers/globalping.nix"

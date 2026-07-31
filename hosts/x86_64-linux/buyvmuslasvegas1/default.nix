@@ -12,6 +12,7 @@
     "${self}/profiles/mtrsb"
     "${self}/profiles/rsshc"
     "${self}/profiles/komari-agent"
+    "${self}/profiles/peerfinder-agent"
   ];
 
   boot.loader.grub.device = "/dev/vda";
