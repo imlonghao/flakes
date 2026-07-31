@@ -201,6 +201,14 @@
         presharedkey = "RaWkKmtltUxP07VHo2q/u2YHIdhQTosKdG96sOrNsFI=";
       }
       {
+        name = "wg2670";
+        listen = 22670;
+        endpoint = "jp1.dn42.mofu.party:21888";
+        publickey = "I8/j47KK47mFA4Pj+2jKwUEtjoIhMP6rQ4S+72MbAVc=";
+        asn = 4242422670;
+        e6 = "fe80::2670";
+      }
+      {
         name = "wg2921";
         asn = 4242422921;
         e6 = "fe80::2921";

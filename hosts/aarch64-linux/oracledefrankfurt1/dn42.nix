@@ -477,6 +477,15 @@
         publickey = "wdNV+4kcy5HZBGXWro1Zq2SoIiQPhg2G/vY+eC42QhQ=";
       }
       {
+        name = "wg2670";
+        listen = 22670;
+        endpoint = "nl1.dn42.mofu.party:21888";
+        publickey = "XcMuI3fRdYcRzlsHaQhWHBcb1Nlz0wJa91H5+JCA3RU=";
+        asn = 4242422670;
+        e6 = "fe80::2670";
+        mtu = 1280;
+      }
+      {
         name = "wg2717";
         listen = 22717;
         endpoint = "nl.vm.whojk.com:23024";

@@ -350,6 +350,14 @@
         mtu = 1332;
       }
       {
+        name = "wg2670";
+        listen = 22670;
+        endpoint = "hk1.dn42.mofu.party:21888";
+        publickey = "DsNVeGbnXAdubPgu8KlDUwg+It5kkuDGxV2O7NcbrR8=";
+        asn = 4242422670;
+        e6 = "fe80::2670";
+      }
+      {
         name = "wg2717";
         l4 = "172.22.68.3";
         e4 = "172.22.66.66";

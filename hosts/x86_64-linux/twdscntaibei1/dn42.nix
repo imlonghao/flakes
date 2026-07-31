@@ -22,6 +22,14 @@
         publickey = "HVNrF2blJH57JsIOxvCOlNihoJDqqAcZeD3rlotRBig=";
       }
       {
+        name = "wg2670";
+        listen = 22670;
+        endpoint = "tw1.dn42.mofu.party:21888";
+        publickey = "35W3y1U1eRelEYpmlmUDsY8PH/VUPjMH12bBgR6G1C8=";
+        asn = 4242422670;
+        e6 = "fe80::2670";
+      }
+      {
         name = "wg3797";
         listen = 23797;
         asn = 4242423797;

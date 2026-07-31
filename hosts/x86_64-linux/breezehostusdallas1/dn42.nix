@@ -32,6 +32,15 @@
         e6 = "fe80::1588";
         l4 = "172.22.68.0";
       }
+      {
+        name = "wg2670";
+        listen = 22670;
+        endpoint = "us1.dn42.mofu.party:21888";
+        publickey = "wQsa3S9uxGRoO8vwEit5vM/fIehJJdkZJRhadgiN60g=";
+        asn = 4242422670;
+        e6 = "fe80::2670";
+        mtu = 1380;
+      }
     ];
   };
 }
