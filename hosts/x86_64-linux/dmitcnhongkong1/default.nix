@@ -11,6 +11,7 @@
     "${self}/profiles/komari-agent"
     "${self}/profiles/exporter/node.nix"
     "${self}/profiles/exporter/bird.nix"
+    "${self}/profiles/peerfinder-agent"
     # Containers
     "${self}/containers/snell.nix"
   ];

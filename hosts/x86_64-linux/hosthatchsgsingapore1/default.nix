@@ -19,6 +19,7 @@
     "${self}/profiles/mtrsb"
     "${self}/profiles/rsshc"
     "${self}/profiles/k3s/agent.nix"
+    "${self}/profiles/peerfinder-agent"
     "${self}/containers/snell.nix"
   ];
 
