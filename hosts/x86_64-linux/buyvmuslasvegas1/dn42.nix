@@ -93,14 +93,6 @@
         publickey = "Y13v0Xzf6zJQGtL2qJSwVyLNSxipYoGpq4y/5aU7omg=";
       }
       {
-        name = "wg0625";
-        listen = 20625;
-        endpoint = "arcenotas.com:21888";
-        publickey = "8l+9N8cEygZTv/yhqb4giA230o2/DGn2P6wytYVHrHw=";
-        asn = 4242420625;
-        e6 = "fe80::0625";
-      }
-      {
         name = "wg0842";
         asn = 4242420842;
         e6 = "fe80::842";
