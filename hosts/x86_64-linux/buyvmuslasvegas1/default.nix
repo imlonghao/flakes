@@ -126,4 +126,6 @@
     include-nics = [ "ens3" ];
   };
 
+  services.peerfinder-agent.listenPort = 9001;
+
 }
