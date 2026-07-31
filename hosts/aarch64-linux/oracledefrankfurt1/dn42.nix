@@ -232,6 +232,14 @@
         publickey = "EERaAzJ1oDMhWZCMIWbK4Gd523BDM2YlV1O7AB1th1Y=";
       }
       {
+        name = "wg1033";
+        asn = 4242421033;
+        e6 = "fe80::1033:1888";
+        listen = 21033;
+        endpoint = "eu1.dn42.franta.us:21888";
+        publickey = "0RxjUFbso8GO83HHx3zQ10w+tPQ2GqyMzFQETC+USzA=";
+      }
+      {
         name = "wg1080";
         listen = 21080;
         endpoint = "fra.peer.highdef.network:21888";
