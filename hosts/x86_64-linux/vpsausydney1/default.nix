@@ -1,5 +1,4 @@
 {
-  config,
   pkgs,
   self,
   ...
@@ -29,6 +28,7 @@ in
     "${self}/profiles/docker"
     "${self}/profiles/k3s/agent.nix"
     "${self}/profiles/komari-agent"
+    "${self}/profiles/peerfinder-agent"
     "${self}/containers/snell.nix"
   ];
 
