@@ -6,7 +6,7 @@ let
     rip6 = "where net = 2602:fab0:40::/48 || net = 2602:fab0:41::/48";
   };
   kernelConf = import "${self}/profiles/bird/kernel.nix" {
-    src4 = "5.56.24.146";
+    src4 = "216.109.177.217";
     src6 = "2602:fab0:40::";
   };
 in

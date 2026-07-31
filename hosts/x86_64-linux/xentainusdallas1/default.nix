@@ -17,7 +17,7 @@
       "8.8.8.8"
     ];
     dhcpcd.enable = false;
-    defaultGateway = "5.56.24.1";
+    defaultGateway = "216.109.177.129";
     defaultGateway6 = {
       address = "2602:f71e:41::1";
       interface = "ens3";
@@ -51,8 +51,8 @@
       ens3 = {
         ipv4.addresses = [
           {
-            address = "5.56.24.146";
-            prefixLength = 24;
+            address = "216.109.177.217";
+            prefixLength = 25;
           }
         ];
         ipv6.addresses = [
