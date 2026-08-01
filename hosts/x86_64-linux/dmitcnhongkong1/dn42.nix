@@ -345,9 +345,8 @@
         asn = 4242422466;
         e6 = "fe80::2466";
         listen = 22466;
-        endpoint = "mazarino-s-end.xhustudio.eu.org:21888";
+        endpoint = "hydrogen.xhustudio.eu.org:21888";
         publickey = "25F5Kt0fg7bTien58apDN2dLUyCN2DSe7W+Nvw7eCT4=";
-        mtu = 1332;
       }
       {
         name = "wg2670";
