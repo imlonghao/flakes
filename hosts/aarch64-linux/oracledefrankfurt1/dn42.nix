@@ -518,6 +518,14 @@
         e6 = "fe80::2923";
       }
       {
+        name = "wg3003";
+        listen = 23003;
+        endpoint = "de-fra-ix.dn42.fitzy.cloud:21888";
+        publickey = "/RPzXR38p2/FTNix6PPh1JOr6vf+uu0lKIiBFdJYl2g=";
+        asn = 4242423003;
+        e6 = "fe80::3003";
+      }
+      {
         name = "wg3035";
         listen = 23035;
         endpoint = "de01.dn42.lare.cc:21888";
