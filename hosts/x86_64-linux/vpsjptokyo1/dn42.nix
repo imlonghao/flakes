@@ -79,6 +79,15 @@
         publickey = "J5aq5AYRv/GHfr90mVEOPRCQeLInGS3mnSpckuyWt04=";
       }
       {
+        name = "wg0998";
+        listen = 20998;
+        endpoint = "jp1.dn42.moenet.work:31888";
+        publickey = "OkZGn8FGwUNuC9pt3kYIFeDNIx/wsGGEWikfOsBDFl8=";
+        presharedkey = "ObCCkhk8QbD3SKpqM55sJw2fq9AiBqqrN8pAZRzM6dk=";
+        asn = 4242420998;
+        e6 = "fe80::998:101:1:1";
+      }
+      {
         name = "wg1023";
         asn = 4242421023;
         e6 = "fe80::1023:2";

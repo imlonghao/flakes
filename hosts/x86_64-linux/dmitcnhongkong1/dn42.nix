@@ -134,6 +134,15 @@
         e6 = "fe80::925";
       }
       {
+        name = "wg0998";
+        listen = 20998;
+        endpoint = "hk1.dn42.moenet.work:31888";
+        publickey = "VybhOlwo8lIETTv0GZKvYO1T113x1OUseJOhIz5sqDA=";
+        presharedkey = "XmHuryEwA7mijZnKxCK4QKgPuWC+y+4326i0lWYlgfQ=";
+        asn = 4242420998;
+        e6 = "fe80::998:101:3:1";
+      }
+      {
         name = "wg1023";
         asn = 4242421023;
         e6 = "fe80::1023:2";
