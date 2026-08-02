@@ -586,6 +586,14 @@
         publickey = "xFZ0S57R5ykjq5lThYEvLLWHhv2+De5D26p4bX5wdSo=";
       }
       {
+        name = "wg3432";
+        asn = 4242423432;
+        e6 = "fe80::3432";
+        listen = 23432;
+        endpoint = "ams1.dn42.s6v.net:42056";
+        publickey = "PUokFJVsNIO5+W3F4pHLWEvKuvaobLMraRTn+UqzGGQ=";
+      }
+      {
         name = "wg3508";
         listen = 23508;
         endpoint = "nl-ams.dn42.ydkf.me:41106";
