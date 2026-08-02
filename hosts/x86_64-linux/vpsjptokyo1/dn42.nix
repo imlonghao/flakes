@@ -152,6 +152,14 @@
         publickey = "4KZ0OVselhQFSfTEhzbYgxRuL9oG1sn3xsle6TVSfnE=";
       }
       {
+        name = "wg1810";
+        asn = 4242421810;
+        e6 = "fe80::1810";
+        listen = 21810;
+        endpoint = "jp42.sabrinaishere.party:21888";
+        publickey = "JHMaawRETQJlhfv0UX8h+uafeOSNYmF3nUaYxEn7jBs=";
+      }
+      {
         name = "wg1857";
         asn = 4242421857;
         e6 = "fe80::1857:239";

@@ -214,6 +214,14 @@
         publickey = "6oeRQx3cKLqZw/ncMNVIErZKz1sTaYKhqt5E9WoiRFQ=";
       }
       {
+        name = "wg1810";
+        asn = 4242421810;
+        e6 = "fe80::1810";
+        listen = 21810;
+        endpoint = "us42.sabrinaishere.party:21888";
+        publickey = "PhT2Z3rVbgRvJ2jrn0DePRKtlYEi6/5ZyimsdrGXlS8=";
+      }
+      {
         name = "wg1816";
         listen = 21816;
         endpoint = "las.node.potat0.cc:21888";
