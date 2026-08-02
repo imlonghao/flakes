@@ -5,6 +5,7 @@
     ./dn42.nix
     ./hardware.nix
     "${self}/profiles/mycore"
+    "${self}/profiles/rsshc"
     "${self}/users/root"
     "${self}/profiles/peerfinder-agent"
   ];
