@@ -111,6 +111,14 @@
         e6 = "fe80::0207";
       }
       {
+        name = "wg0253";
+        asn = 4242420253;
+        e6 = "fe80::253";
+        listen = 20253;
+        endpoint = "[2001:bc8:1640:5bb5:dc00:ff:fe60:c33f]:21888";
+        publickey = "vRRfNnGL7jpKGBJjLZg612vHQulDOtICkgXCC++1+2g=";
+      }
+      {
         name = "wg0263";
         listen = 20263;
         endpoint = "fr-par1.flap42.eu:52008";
