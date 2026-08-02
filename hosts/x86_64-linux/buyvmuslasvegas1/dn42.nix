@@ -253,6 +253,14 @@
         publickey = "oYVbaUTF3+6hiaQQsUqvwdzUD+USsXnwdaDDgxuGF0E=";
       }
       {
+        name = "wg2016";
+        asn = 4242422016;
+        e6 = "fe80::2016";
+        listen = 22016;
+        endpoint = "v6.phx1.dn42.sidereal.ca:21888";
+        publickey = "3hy0FIf64sxSVLY6/CwhtMfCmQEkG5hsyKxM/Dttvz0=";
+      }
+      {
         name = "wg2032";
         listen = 22032;
         asn = 4242422032;
