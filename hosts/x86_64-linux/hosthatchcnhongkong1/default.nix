@@ -11,6 +11,7 @@
     "${self}/profiles/docker"
     "${self}/profiles/komari-agent"
     "${self}/profiles/exporter/node.nix"
+    "${self}/profiles/rsshc"
   ];
 
   boot.kernelParams = [ "net.ifnames=0" ];
