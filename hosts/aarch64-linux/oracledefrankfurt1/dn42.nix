@@ -50,6 +50,13 @@
         e6 = "fe80::d311";
       }
       {
+        name = "wg0028";
+        listen = 20028;
+        publickey = "lv4vDtsybzmQ96lfCcvbo0X+ZhD5vE8AbCUqRXIccFI=";
+        asn = 4242420028;
+        e6 = "fe80::28";
+      }
+      {
         name = "wg0123";
         asn = 4242420123;
         e4 = "172.23.149.5";

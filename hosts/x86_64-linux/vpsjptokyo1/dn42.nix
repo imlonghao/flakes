@@ -6,6 +6,14 @@
     enable = true;
     peers = [
       {
+        name = "wg0028";
+        listen = 20028;
+        endpoint = "tyo1.edge.ngworks.org:51800";
+        publickey = "nh7YJr4zF23R2HCBsCDC9KNNTE16nHICr4XwhMf63jo=";
+        asn = 4242420028;
+        e6 = "fe80::28";
+      }
+      {
         name = "wg0078";
         asn = 4242420078;
         e6 = "fe80::78";

@@ -16,6 +16,14 @@
         publickey = "uspTFQKijQUTbxUgh2IzbNaCUZgtdgrn0kUtbPDd5gM=";
       }
       {
+        name = "wg0028";
+        listen = 20028;
+        endpoint = "lax1.edge.ngworks.org:51804";
+        publickey = "1i1Tv7fM+wIfX8w5b50KiBdUhcNy1CxAfzr+Jfft93c=";
+        asn = 4242420028;
+        e6 = "fe80::28";
+      }
+      {
         name = "wg0057";
         asn = 4242420057;
         e4 = "172.22.159.16";
