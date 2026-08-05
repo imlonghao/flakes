@@ -76,6 +76,7 @@
     jq
     jujutsu
     keep-sorted
+    llm-agents.nono
     llm-agents.omp
     llm-agents.pi
     ncdu
