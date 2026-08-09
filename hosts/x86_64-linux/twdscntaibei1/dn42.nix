@@ -14,6 +14,14 @@
         e6 = "fe80::28";
       }
       {
+        name = "wg0454";
+        asn = 4242420454;
+        e6 = "fe80::454";
+        listen = 20454;
+        endpoint = "dn42d.nedifinita.com:21888";
+        publickey = "8auu/+HFce5JAexe1b5MDg+nh4vutQVlXd0kJySXVGc=";
+      }
+      {
         name = "wg1733";
         asn = 4242421733;
         e6 = "fe80::1733";

@@ -63,6 +63,14 @@
         publickey = "QQecM/0eCbRu5TNdyRxGpJTCo6aGolMb0kZAqLH5Oho=";
       }
       {
+        name = "wg0454";
+        asn = 4242420454;
+        e6 = "fe80::454";
+        listen = 20454;
+        endpoint = "dn42z.nedifinita.com:21888";
+        publickey = "8auu/+HFce5JAexe1b5MDg+nh4vutQVlXd0kJySXVGc=";
+      }
+      {
         name = "wg0762";
         asn = 4242420762;
         e6 = "fe80::762";
