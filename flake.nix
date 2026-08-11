@@ -18,8 +18,8 @@
   };
 
   inputs = {
+    multiverse.url = "github:fzakaria/nixpkgs-multiverse";
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    nixpkgs-latest.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
     flake-parts.url = "github:hercules-ci/flake-parts";
     colmena-flake.url = "github:juspay/colmena-flake";
     sops-nix = {
@@ -150,11 +150,11 @@
           final: prev:
           let
             pkgs-latest = (
-              import inputs.nixpkgs-latest {
+              inputs.multiverse.lib.mkMultiverse {
                 config.allowUnfree = true;
-                localSystem = prev.stdenv.hostPlatform.system;
+                system = prev.stdenv.hostPlatform.system;
               }
-            );
+            ).latest;
           in
           prev.lib.attrsets.genAttrs [
             # keep-sorted start
