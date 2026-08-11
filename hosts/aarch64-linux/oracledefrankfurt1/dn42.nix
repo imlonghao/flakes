@@ -118,6 +118,14 @@
         e6 = "fe80::0207";
       }
       {
+        name = "wg0248";
+        listen = 20248;
+        endpoint = "gw.netbot.it:41888";
+        publickey = "NJwdmHCKgH+EvxePosgyQHZZ0ze+7wobLGkh8mm/SUc=";
+        asn = 4242420248;
+        e6 = "fe80::108";
+      }
+      {
         name = "wg0253";
         asn = 4242420253;
         e6 = "fe80::253";
