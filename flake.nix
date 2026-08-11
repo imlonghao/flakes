@@ -158,7 +158,6 @@
           in
           prev.lib.attrsets.genAttrs [
             # keep-sorted start
-            "codegraph"
             "fresh-editor"
             "komari-agent"
             # keep-sorted end

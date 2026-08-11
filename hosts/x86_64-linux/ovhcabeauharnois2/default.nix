@@ -64,7 +64,6 @@
     black
     bun
     chezmoi
-    codegraph
     dig
     flyctl
     fresh-editor
