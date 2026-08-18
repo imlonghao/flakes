@@ -16,6 +16,7 @@
   ];
   define DN42_NO_TRANSIT = [
     0
+    , 4242420728 # Flapping
     , 4242420903 # REGION/COUNTRY community
     , 4242422717 # Flapping
     , 4242423999 # COWGL-AS
