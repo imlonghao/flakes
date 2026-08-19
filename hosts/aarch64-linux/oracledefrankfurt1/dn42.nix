@@ -57,6 +57,23 @@
         e6 = "fe80::28";
       }
       {
+        name = "wg0070";
+        asn = 4242420070;
+        e6 = "fe80::0070:4";
+        listen = 20070;
+        endpoint = "de.dn42.lie-kong.top:21888";
+        publickey = "aCvY8RpD6hrAeQWjhQSREruFPOmOnsq8bpqr8soFa3Y=";
+      }
+      {
+        name = "wg0078";
+        listen = 20078;
+        endpoint = "de01.tes286.top:21888";
+        publickey = "NJBIM3oCSUffmLaYs0Tu7LLkZKSSGmTHB7E+7YgSdEY=";
+        asn = 4242420078;
+        e6 = "fe80::78";
+        mtu = 1376;
+      }
+      {
         name = "wg0123";
         asn = 4242420123;
         e4 = "172.23.149.5";
@@ -66,14 +83,6 @@
         endpoint = "teutates.grmml.net:51888";
         publickey = "egRL/LWdFjSXtuB7bQ8Q5aBej2KkE6p2zlmYGQntUgg=";
         mpbgp = false;
-      }
-      {
-        name = "wg0070";
-        asn = 4242420070;
-        e6 = "fe80::0070:4";
-        listen = 20070;
-        endpoint = "de.dn42.lie-kong.top:21888";
-        publickey = "aCvY8RpD6hrAeQWjhQSREruFPOmOnsq8bpqr8soFa3Y=";
       }
       {
         name = "wg0129";

@@ -35,6 +35,15 @@
         publickey = "ubA2cl37qxbE0kXJv5FAjloGrFMvAepN8svG/I01fxA=";
       }
       {
+        name = "wg0078";
+        listen = 20078;
+        endpoint = "us02.tes286.top:21888";
+        publickey = "Gb+Ja7Z2AUhNih9ciFCCfSM1k9xdv2nY0j3IpHCL4m4=";
+        asn = 4242420078;
+        e6 = "fe80::78";
+        mtu = 1400;
+      }
+      {
         name = "wg0129";
         listen = 20129;
         endpoint = "usc1.420129.xyz:21888";

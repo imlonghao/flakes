@@ -6,6 +6,14 @@
     enable = true;
     peers = [
       {
+        name = "wg0078";
+        listen = 20078;
+        endpoint = "us01.tes286.top:21888";
+        publickey = "7Tg2GpJ2VvlHrLgBV5YJHgEZm6B7h0cj2zGfxiAvb2A=";
+        asn = 4242420078;
+        e6 = "fe80::78";
+      }
+      {
         name = "wg0202";
         listen = 20202;
         endpoint = "64.44.157.153:21888";
