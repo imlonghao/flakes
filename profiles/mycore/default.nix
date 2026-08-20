@@ -113,6 +113,7 @@ in
     enableRTCTrimming = false;
   };
   services.vnstat.enable = true;
+  programs.zoxide.enable = true;
 
   sops.gnupg.sshKeyPaths = [ ];
   sops.age.sshKeyPaths = [ "/persist/etc/ssh/ssh_host_ed25519_key" ];
