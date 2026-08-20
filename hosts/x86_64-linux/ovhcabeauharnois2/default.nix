@@ -1,4 +1,12 @@
-{ self, pkgs, ... }:
+{
+  inputs,
+  self,
+  pkgs,
+  ...
+}:
+let
+  llm-agents = inputs.llm-agents.packages.${pkgs.stdenv.hostPlatform.system};
+in
 {
   imports = [
     ./bird.nix
@@ -126,7 +134,7 @@
         --proc /proc --dev /dev \
         --unshare-all --share-net \
         --die-with-parent --new-session \
-        ${pkgs.llm-agents.pi}/bin/pi'';
+        ${llm-agents.pi}/bin/pi'';
   };
   programs.fish.shellInit = ''
     ${pkgs.atuin}/bin/atuin init fish --disable-up-arrow | source

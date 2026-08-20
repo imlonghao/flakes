@@ -1,10 +1,12 @@
 {
   config,
+  inputs,
   pkgs,
   self,
   ...
 }:
 let
+  llm-agents = inputs.llm-agents.packages.${pkgs.stdenv.hostPlatform.system};
   cronJob = pkgs.writeShellScript "199632.sh" ''
     ip rule | grep -F 23.146.88.0 || ip rule add from 23.146.88.0/24 table 199632
     ip -6 rule | grep -F 2602:fab0:31::/48 || ip -6 rule add from 2602:fab0:31::/48 table 199632

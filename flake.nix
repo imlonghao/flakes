@@ -100,7 +100,6 @@
                           self.overlays.default
                           self.overlays.latest
                           inputs.ranet.overlays.default
-                          inputs.llm-agents.overlays.shared-nixpkgs
                           inputs.herdr.overlays.default
                         ];
                         system = arch;
@@ -149,12 +148,11 @@
         overlays.latest =
           final: prev:
           let
-            pkgs-latest = (
-              inputs.multiverse.lib.mkMultiverse {
+            pkgs-latest =
+              (inputs.multiverse.lib.mkMultiverse {
                 config.allowUnfree = true;
                 system = prev.stdenv.hostPlatform.system;
-              }
-            ).latest;
+              }).latest;
           in
           prev.lib.attrsets.genAttrs [
             # keep-sorted start
