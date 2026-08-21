@@ -208,6 +208,14 @@
         e6 = "fe80::1534";
       }
       {
+        name = "wg1573";
+        asn = 4242421573;
+        e6 = "fe80::1573";
+        listen = 21573;
+        endpoint = "hkg-1.dn42.sironeko.moe:21888";
+        publickey = "R8+3qMEkqi4f3rHyb8131iTYiZuA3SyNE27oQ/y+tQ8=";
+      }
+      {
         name = "wg1588";
         l4 = "172.22.68.3";
         e4 = "172.20.16.145";
