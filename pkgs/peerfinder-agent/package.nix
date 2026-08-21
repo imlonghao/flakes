@@ -9,11 +9,11 @@
 
 stdenvNoCC.mkDerivation {
   pname = "peerfinder-agent";
-  version = "1.0.6";
+  version = "1.2.0";
 
   src = fetchurl {
     url = "https://peerfinder.dn42.dev/agent/peerfinder-agent.py";
-    hash = "sha256-BQqbTJGkYMFZYV9G/VnvP2Ma8QVbo5CGJqs2WhYUJjo=";
+    hash = "sha256-nL4sIU3EQmKiTyGV+ljk4erz7ihYTsWkO0WlCzeKVV4=";
   };
 
   dontUnpack = true;
