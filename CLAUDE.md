@@ -36,3 +36,10 @@ imlonghao's Nix flakes config
 2. 清理 `./flake.nix` 中该主机相关的部署信息
 3. 根据 `./.sops.yaml` 配置文件，去除 `./secrets` 目录密文中相对应的主机密钥，使用命令 `sops -r -i --rm-age $age $filename` 执行
 4. 清理 `./.sops.yaml` 中该主机相关的密钥信息
+
+### 更新本地角色
+
+1. 请求 https://api.iedon.com/dn42/ranking 获取最新排名
+2. Peer ASN 属于 Rank 1-20 的，local_role 设置为 customer
+3. Peer ASN 属于 Rank 21-300 的，local_role 设置为 peer
+4. 其余的保留为空，默认为 provider ，或保持其他特殊角色

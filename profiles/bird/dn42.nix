@@ -264,15 +264,18 @@
       if x.mpbgp then
         ''
           protocol bgp AS${builtins.toString x.asn} from dnpeers {
+            local role ${x.local_role};
             neighbor ${x.e6} % '${x.name}' as ${toString x.asn};
           }
         ''
       else
         ''
           protocol bgp AS${builtins.toString x.asn}v4 from dnpeers {
+            local role ${x.local_role};
             neighbor ${x.e4} as ${toString x.asn};
           }
           protocol bgp AS${builtins.toString x.asn}v6 from dnpeers {
+            local role ${x.local_role};
             neighbor ${x.e6} % '${x.name}' as ${toString x.asn};
           }
         ''

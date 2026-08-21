@@ -66,6 +66,11 @@ in
             description = "support Multiprotocol BGP";
             default = true;
           };
+          options.local_role = mkOption {
+            type = types.str;
+            description = "BGP local role";
+            default = "provider";
+          };
           options.l4 = mkOption {
             type = types.nullOr types.str;
             description = "local IPv4 address";
