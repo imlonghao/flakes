@@ -83,7 +83,6 @@ in
     jq
     jujutsu
     keep-sorted
-    llm-agents.nono
     llm-agents.pi
     ncdu
     nil
