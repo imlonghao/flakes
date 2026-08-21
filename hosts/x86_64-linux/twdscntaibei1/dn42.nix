@@ -37,6 +37,7 @@
         local_role = "customer";
         e6 = "fe80::2189:179";
         listen = 22189;
+        mtu = 1370;
         endpoint = "tw-txg.dn42.iedon.net:52252";
         publickey = "HVNrF2blJH57JsIOxvCOlNihoJDqqAcZeD3rlotRBig=";
       }
