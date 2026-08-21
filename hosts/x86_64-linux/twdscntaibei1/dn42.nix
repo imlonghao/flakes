@@ -11,11 +11,13 @@
         endpoint = "tpe1.edge.ngworks.org:51800";
         publickey = "xrI6PtNid+TDc/EWgYBZVfRRKI0qawfOyZ4LLYmqNTY=";
         asn = 4242420028;
+        local_role = "peer";
         e6 = "fe80::28";
       }
       {
         name = "wg0454";
         asn = 4242420454;
+        local_role = "customer";
         e6 = "fe80::454";
         listen = 20454;
         endpoint = "dn42d.nedifinita.com:21888";
@@ -32,6 +34,7 @@
       {
         name = "wg2189";
         asn = 4242422189;
+        local_role = "customer";
         e6 = "fe80::2189:179";
         listen = 22189;
         endpoint = "tw-txg.dn42.iedon.net:52252";
@@ -43,12 +46,14 @@
         endpoint = "tw1.dn42.mofu.party:21888";
         publickey = "35W3y1U1eRelEYpmlmUDsY8PH/VUPjMH12bBgR6G1C8=";
         asn = 4242422670;
+        local_role = "peer";
         e6 = "fe80::2670";
       }
       {
         name = "wg3797";
         listen = 23797;
         asn = 4242423797;
+        local_role = "peer";
         e6 = "fe80::3797";
         endpoint = "tw-tpe1.rc.badaimweeb.me:50054";
         publickey = "oV/BMBeChhH1Rrb7/IOUibsiEJltIfIUlbMudKaTmzQ=";
@@ -56,6 +61,7 @@
       {
         name = "wg3999";
         asn = 4242423999;
+        local_role = "customer";
         l4 = "172.22.68.12";
         e4 = "172.22.144.80";
         e6 = "fe80::3999";

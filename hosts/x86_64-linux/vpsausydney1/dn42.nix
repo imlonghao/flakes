@@ -20,6 +20,7 @@
         publickey = "m724+7BIpY7B218iabYWzx5PGiCf3qH1QmIPiwFOXQA=";
         presharedkey = "y3VUdnyi/oophl1605ROWxQMmCfFH/q7OdWGC90h3Yw=";
         asn = 4242420129;
+        local_role = "peer";
         e6 = "fe80::129:17";
       }
       {
@@ -28,6 +29,7 @@
         endpoint = "router.syd1.routedbits.com:51888";
         publickey = "wgCrE2lSvrfctVSngdHo6iAT/RRK7gNldJcFIFKi/Go=";
         asn = 4242420207;
+        local_role = "customer";
         e6 = "fe80::0207";
       }
       {
@@ -36,6 +38,7 @@
         # endpoint = "au-east1.nodes.huajinet.org:21888";
         publickey = "LeNGkX12n1Dcq8eNE1HhvpnFxrPlzgWlNncFlHdi5DY=";
         asn = 4242420458;
+        local_role = "peer";
         e6 = "fe80::0458";
       }
       {
@@ -44,6 +47,7 @@
         endpoint = "dn22.syd.surgebytes.com:31888";
         publickey = "m8HdhB90mg8NcBgWGeplQBpc5BgPLVk80OZWZyOXqVk=";
         asn = 4242420566;
+        local_role = "peer";
         e6 = "fe80::566:22";
       }
       {
@@ -52,6 +56,7 @@
         endpoint = "s1.headscarf175.net:20024";
         publickey = "ywWuEIEOiV6uSkllmhZ64BqXLkCyGJFhUKTfMyg+Y0A=";
         asn = 4242420842;
+        local_role = "peer";
         e6 = "fe80::842";
       }
       {
@@ -60,6 +65,7 @@
         endpoint = "ac-au2.atr.dn42.sbs:21888";
         publickey = "eRpcy/51rBfxgmuBslkVBmsWSebveMweoMFtJcmIsi0=";
         asn = 4242421233;
+        local_role = "peer";
         e6 = "fe80::1233:121";
       }
       {
@@ -76,11 +82,13 @@
         endpoint = "server1.rivensbane.com:21888";
         publickey = "SzxSzCLbWGpzPeYtnSXHJCVJmrjjCcJR1L13KVFTKW8=";
         asn = 4242421815;
+        local_role = "peer";
         e6 = "fe80::5614";
       }
       {
         name = "wg1816";
         asn = 4242421816;
+        local_role = "customer";
         e6 = "fe80::1816";
         listen = 21816;
         endpoint = "syd.node.potat0.cc:21888";
@@ -98,6 +106,7 @@
       {
         name = "wg2189";
         asn = 4242422189;
+        local_role = "customer";
         e6 = "fe80::2189:126";
         listen = 22189;
         endpoint = "au-syd.dn42.iedon.net:54255";
@@ -109,6 +118,7 @@
         endpoint = "syd1.dn42.fitzy.cloud:21888";
         publickey = "HDLJbiy2QNiYxylYTxTRd61bZSqD6EXmWq/9OJHXriM=";
         asn = 4242423003;
+        local_role = "peer";
         e6 = "fe80::3003";
       }
       {
@@ -124,6 +134,7 @@
         name = "wg3797";
         listen = 23797;
         asn = 4242423797;
+        local_role = "peer";
         e6 = "fe80::3797";
         endpoint = "au-syd1.rc.badaimweeb.me:50052";
         publickey = "tS7iDDIWQJQoHCc60Jz7I2grikAAAFhNApC3jEeUcxk=";

@@ -10,12 +10,14 @@
         listen = 31111;
         publickey = "7TIbiifNzh8HxLUM8cBvwmBo/kuaCAUCRahbBMoVA1Q=";
         asn = 4201271111;
+        local_role = "peer";
         e6 = "fe80::aa:1111:11";
       }
       {
         name = "wg0202";
         e6 = "fe80::202:9";
         asn = 4242420202;
+        local_role = "peer";
         listen = 20202;
         endpoint = "dn09.sg.sg.sdubs.vip:21888";
         publickey = "XewX6S4HPoa40yaGmJvDjk8pX4WxczFTdoPLGvg3oU0=";
@@ -27,6 +29,7 @@
         publickey = "m724+4sLngpVK/fX1XGmtDdQALK8vMuubGPi5WcHdz8=";
         presharedkey = "LAcJCMJT6HOhxwrq0XWay+1MV10Fjd4HsRY0tcp3mG4=";
         asn = 4242420129;
+        local_role = "peer";
         e6 = "fe80::129:11";
       }
       {
@@ -35,11 +38,13 @@
         endpoint = "router.sin1.routedbits.com:51888";
         publickey = "8sTnWN7ykPaDe1WIZOlnqECiGMJzwXB8TXWHcT7qnEw=";
         asn = 4242420207;
+        local_role = "customer";
         e6 = "fe80::0207";
       }
       {
         name = "wg0398";
         asn = 4242420398;
+        local_role = "peer";
         e6 = "fe80::398";
         listen = 20398;
         endpoint = "sin.dn42.boletus.icu:21888";
@@ -48,6 +53,7 @@
       {
         name = "wg0401";
         asn = 4242420401;
+        local_role = "peer";
         e6 = "fe80::401";
         listen = 20401;
         endpoint = "sg01.dn42.markround.com:21888";
@@ -59,6 +65,7 @@
         # endpoint = "sg1.nodes.huajinet.org:21888";
         publickey = "uVQSqDCJZzbMND7rRmoOR3QpANgl2SbTlv28aw0kh3w=";
         asn = 4242420458;
+        local_role = "peer";
         e6 = "fe80::0458";
       }
       {
@@ -67,6 +74,7 @@
         endpoint = "dn18.sin.surgebytes.com:31888";
         publickey = "9xIkI9iCuJUpapOeVYxsDP/Wl/A93biWKow8qMD5mHY=";
         asn = 4242420566;
+        local_role = "peer";
         e6 = "fe80::0566:18";
       }
       {
@@ -75,6 +83,7 @@
         endpoint = "sgp1.dn42.cas7.moe:21888";
         publickey = "R8iyaSzF6xx/t4+1wKlYWZWyZOxJDCXlA2BE3OZnsAY=";
         asn = 4242420604;
+        local_role = "peer";
         e6 = "fe80::0604";
       }
       {
@@ -90,6 +99,7 @@
       {
         name = "wg0762";
         asn = 4242420762;
+        local_role = "peer";
         e6 = "fe80::762";
         listen = 20762;
         endpoint = "az1.ymzymz.me:21888";
@@ -101,6 +111,7 @@
         endpoint = "sg.dn42.tms.im:21888";
         publickey = "KlZg3oOjQsaQ0dNkUgHCKyOqULw8+u+llo97X1w5mV4=";
         asn = 4242420831;
+        local_role = "peer";
         e6 = "fe80::0831";
       }
       {
@@ -109,6 +120,7 @@
         endpoint = "sg-01.prefixlabs.net:21888";
         publickey = "FzWgCU4/y4pyGibDF5UYS13LvDCQ3569uNZJRUEIXiI=";
         asn = 4242421240;
+        local_role = "customer";
         e6 = "fe80::1240:7";
       }
       {
@@ -117,6 +129,7 @@
         endpoint = "sg-sin01.dn42.tech9.io:59771";
         publickey = "4qLIJ9zpc/Xgvy+uo90rGso75cSrT2F5tBEv+6aqDkY=";
         asn = 4242421588;
+        local_role = "customer";
         ipv6 = "fe80::100/64";
         e4 = "172.20.16.142";
         e6 = "fe80::1588";
@@ -136,6 +149,7 @@
         endpoint = "sg42.sabrinaishere.party:21888";
         publickey = "NE/yrvI1qAMq//q2Rqg0lsZ4i2RjQIx5k1/7p2RU/jk=";
         asn = 4242421810;
+        local_role = "peer";
         e6 = "fe80::1810";
       }
       {
@@ -144,11 +158,13 @@
         endpoint = "sin1.dn42.sidereal.ca:21888";
         publickey = "V9+Lxlqn3scNI7hkULY3NsHbI/s1weObxLy0R2SLQjI=";
         asn = 4242422016;
+        local_role = "peer";
         e6 = "fe80::2016";
       }
       {
         name = "wg2189";
         asn = 4242422189;
+        local_role = "customer";
         e6 = "fe80::2189:119";
         listen = 22189;
         endpoint = "sg-sin.dn42.iedon.net:37682";
@@ -160,6 +176,7 @@
         endpoint = "dn42-sg.maraun.de:21888";
         publickey = "rWTIK93+XJaP4sRvrk1gqXxAZgkz6y/axLC4mjuay1I=";
         asn = 4242422225;
+        local_role = "customer";
         e6 = "fe80::2225";
       }
       {
@@ -168,6 +185,7 @@
         endpoint = "sin05.dn42.ventilaar.net:31888";
         publickey = "+VyvdteLe/IRArhjFhqszJdKVDMkJWrbbINEaL7WGyc=";
         asn = 4242422246;
+        local_role = "peer";
         e6 = "fe80::2246";
       }
       {
@@ -176,6 +194,7 @@
         endpoint = "sg-sin1.bb.mhr.hk:21888";
         publickey = "Yu5PP+dKWqFCWSOqzEd2d3YGPZDOs7bgxQfZiNJjJH4=";
         asn = 4242422279;
+        local_role = "peer";
         e6 = "fe80::2279";
       }
       {
@@ -195,11 +214,13 @@
         endpoint = "sg.vm.whojk.com:24103";
         publickey = "vCtn1DbfIiTgcMapuEGB/+/HnLeEPKPjxJbt/sjviTs=";
         asn = 4242422717;
+        local_role = "customer";
         e6 = "fe80::2717";
       }
       {
         name = "wg3374";
         asn = 4242423374;
+        local_role = "customer";
         e6 = "fe80::2999:227";
         listen = 23374;
         endpoint = "sg01.dn42.baka.pub:21888";
@@ -208,6 +229,7 @@
       {
         name = "wg3432";
         asn = 4242423432;
+        local_role = "peer";
         e6 = "fe80::3432";
         listen = 23432;
         endpoint = "sin1.dn42.s6v.net:42006";
@@ -216,6 +238,7 @@
       {
         name = "wg3777";
         asn = 4242423777;
+        local_role = "peer";
         e6 = "fe80::3777";
         listen = 23777;
         endpoint = "sg.dn42.cloudc.dev:23777";
@@ -224,6 +247,7 @@
       {
         name = "wg3914";
         asn = 4242423914;
+        local_role = "customer";
         e6 = "fe80::ade0";
         listen = 23914;
         endpoint = "sg1.g-load.eu:21888";

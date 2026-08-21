@@ -8,6 +8,7 @@
       {
         name = "wg213605";
         asn = 213605;
+        local_role = "peer";
         e6 = "fe80::616b:6979";
         listen = 13605;
         endpoint = "hk-dn42.akae.re:51888";
@@ -16,6 +17,7 @@
       {
         name = "wg31111";
         asn = 4201271111;
+        local_role = "peer";
         e6 = "fe80::aa:1111:1";
         listen = 31111;
         publickey = "2JHMpwkKaAMuMBrmapx9zqgGDIZOX9HZw5V2c1l66R8=";
@@ -26,11 +28,13 @@
         endpoint = "hkg1.edge.ngworks.org:51800";
         publickey = "Q9kncPFCcdOKxfcP6ai2rg3QlwVVnp4W5TahwlY3RBc=";
         asn = 4242420028;
+        local_role = "peer";
         e6 = "fe80::28";
       }
       {
         name = "wg0078";
         asn = 4242420078;
+        local_role = "peer";
         e6 = "fe80::78";
         listen = 20078;
         endpoint = "hk01.tes286.top:21888";
@@ -39,6 +43,7 @@
       {
         name = "wg0083";
         asn = 4242420083;
+        local_role = "peer";
         e6 = "fe80::83";
         listen = 20083;
         endpoint = "hk1.dn42.50335033.xyz:21888";
@@ -51,12 +56,14 @@
         publickey = "m724+HXrsdr3t357/+hHc5dyG9FhedlOO+xBziLs4Gg=";
         presharedkey = "GEFvVAKtohqma+By7CD69gPGxgRpyM1Q1ShPbCa2cBU=";
         asn = 4242420129;
+        local_role = "peer";
         e6 = "fe80::129:12";
       }
       {
         name = "wg0202";
         e6 = "fe80::202:2";
         asn = 4242420202;
+        local_role = "peer";
         listen = 20202;
         endpoint = "dn02.hk.hk.sdubs.vip:21888";
         publickey = "5YcwL93bhJqzhTxi9b1Z1ZRt2UfGVoP5jMA+UXma6HM=";
@@ -64,6 +71,7 @@
       {
         name = "wg0251";
         asn = 4242420251;
+        local_role = "peer";
         e6 = "fe80::0251";
         listen = 20251;
         endpoint = "hktx.s.iabc.work:21888";
@@ -73,6 +81,7 @@
         name = "wg0298";
         e6 = "fe80::0298";
         asn = 4242420298;
+        local_role = "customer";
         listen = 20298;
         endpoint = "node2.ox5.cc:21888";
         publickey = "dvw9vCSfpR7f93oBpaQyCyGaoo17RRm7InZbt0n1QnI=";
@@ -81,6 +90,7 @@
       {
         name = "wg0398";
         asn = 4242420398;
+        local_role = "peer";
         e6 = "fe80::398";
         listen = 20398;
         endpoint = "hkl.dn42.boletus.icu:21888";
@@ -89,6 +99,7 @@
       {
         name = "wg0454";
         asn = 4242420454;
+        local_role = "customer";
         e6 = "fe80::454";
         listen = 20454;
         endpoint = "dn42k.nedifinita.com:21888";
@@ -97,6 +108,7 @@
       {
         name = "wg0458";
         asn = 4242420458;
+        local_role = "peer";
         e6 = "fe80::0458";
         listen = 20458;
         # endpoint = "hk1.nodes.huajinet.org:21888";
@@ -105,6 +117,7 @@
       {
         name = "wg0555";
         asn = 4242420555;
+        local_role = "peer";
         e6 = "fe80::d555";
         listen = 20555;
         endpoint = "hk-01.node.dn42.0xptr.top:21888";
@@ -113,6 +126,7 @@
       {
         name = "wg0803";
         asn = 4242420803;
+        local_role = "peer";
         e6 = "fe80::0803";
         listen = 20803;
         endpoint = "hk.billchen.bid:21888";
@@ -121,6 +135,7 @@
       {
         name = "wg0831";
         asn = 4242420831;
+        local_role = "peer";
         e6 = "fe80::0831";
         listen = 20831;
         endpoint = "hk.dn42.tms.im:21888";
@@ -129,6 +144,7 @@
       {
         name = "wg0842";
         asn = 4242420842;
+        local_role = "peer";
         e6 = "fe80::842";
         listen = 20842;
         endpoint = "hk-hkg01.headscarf175.net:21888";
@@ -139,6 +155,7 @@
         listen = 20925;
         publickey = "/kho8uODEgOH/nhb/1FggrM9nkGCqe7jEopY70oSZyE=";
         asn = 4242420925;
+        local_role = "peer";
         e6 = "fe80::925";
       }
       {
@@ -153,6 +170,7 @@
       {
         name = "wg1023";
         asn = 4242421023;
+        local_role = "peer";
         e6 = "fe80::1023:2";
         listen = 21023;
         endpoint = "hkg-01.node.svc.moe:21888";
@@ -161,6 +179,7 @@
       {
         name = "wg1117";
         asn = 4242421117;
+        local_role = "customer";
         e6 = "fe80::1117";
         listen = 21117;
         endpoint = "hk01.dn42.yuyuko.com:21888";
@@ -180,11 +199,13 @@
         endpoint = "ayano.atr.dn42.sbs:21888";
         publickey = "yT6qjVNHXcdS0rYw9FTyF1yosW3zC080h03lfOJ8dkk=";
         asn = 4242421233;
+        local_role = "peer";
         e6 = "fe80::1233:c067";
       }
       {
         name = "wg1331";
         asn = 4242421331;
+        local_role = "peer";
         e6 = "fe80::1331";
         listen = 21331;
         endpoint = "apr1.hk.strexp.net:21888";
@@ -193,6 +214,7 @@
       {
         name = "wg1510";
         asn = 4242421510;
+        local_role = "peer";
         e6 = "fe80::93d4:3358:6";
         listen = 21510;
         endpoint = "hk01.dn42.moitr.com:21888";
@@ -205,11 +227,13 @@
         endpoint = "hk-hkg.factor2431.com:21888";
         publickey = "VncCNj0rfJ8xF4ms7yqvt+WzAS0ePC+pLiiG4FPPHkw=";
         asn = 4242421534;
+        local_role = "peer";
         e6 = "fe80::1534";
       }
       {
         name = "wg1573";
         asn = 4242421573;
+        local_role = "peer";
         e6 = "fe80::1573";
         listen = 21573;
         endpoint = "hkg-1.dn42.sironeko.moe:21888";
@@ -220,6 +244,7 @@
         l4 = "172.22.68.3";
         e4 = "172.20.16.145";
         asn = 4242421588;
+        local_role = "customer";
         e6 = "fe80::1588";
         listen = 21588;
         endpoint = "jp-tyo01.dn42.tech9.io:54012";
@@ -228,6 +253,7 @@
       {
         name = "wg1604";
         asn = 4242421604;
+        local_role = "peer";
         e6 = "fe80::1604";
         listen = 21604;
         endpoint = "cn-hkg.nodes.libecho.top:21888";
@@ -236,6 +262,7 @@
       {
         name = "wg1686";
         asn = 4242421686;
+        local_role = "peer";
         e6 = "fe80::1686";
         listen = 21686;
         endpoint = "hk-1.dn42.guet.eu.org:21888";
@@ -263,6 +290,7 @@
         endpoint = "hk42.sabrinaishere.party:21888";
         publickey = "Q09qYo+am/qkseqy/Q5nrb+jtMAeTgHsVZ+er/cypXw=";
         asn = 4242421810;
+        local_role = "peer";
         e6 = "fe80::1810";
       }
       {
@@ -271,6 +299,7 @@
         endpoint = "hkg.node.potat0.cc:21888";
         publickey = "Tv1+HniELrS4Br2i7oQgwqBJFXQKculsW8r+UOqQXH0=";
         asn = 4242421816;
+        local_role = "customer";
         e6 = "fe80::1816";
       }
       {
@@ -278,6 +307,7 @@
         l4 = "172.22.68.3";
         e4 = "172.22.77.33";
         asn = 4242421817;
+        local_role = "peer";
         e6 = "fe80::42:1817:1";
         listen = 21817;
         endpoint = "tw.kskb.eu.org:21818";
@@ -286,6 +316,7 @@
       {
         name = "wg1857";
         asn = 4242421857;
+        local_role = "peer";
         e6 = "fe80::1857:6";
         listen = 21857;
         endpoint = "216.236.6.5:21888";
@@ -294,6 +325,7 @@
       {
         name = "wg2018";
         asn = 4242422018;
+        local_role = "peer";
         e6 = "fe80::2018";
         listen = 22018;
         endpoint = "xiaobai.hkg.butlanys.de:21888";
@@ -302,6 +334,7 @@
       {
         name = "wg2020";
         asn = 4242422020;
+        local_role = "peer";
         e6 = "fe80::2020";
         listen = 22020;
         endpoint = "tnn-1.dn42.redbean0721.com:21888";
@@ -310,6 +343,7 @@
       {
         name = "wg2024";
         asn = 4242422024;
+        local_role = "peer";
         e6 = "fe80::2024";
         listen = 22024;
         endpoint = "hkg02-cn.ecs.iyoroy-infra.top:21888";
@@ -328,6 +362,7 @@
       {
         name = "wg2189";
         asn = 4242422189;
+        local_role = "customer";
         e6 = "fe80::2189:120";
         listen = 22189;
         endpoint = "hk-hkg.dn42.kuu.moe:44383";
@@ -339,11 +374,13 @@
         endpoint = "hk-hkg1.bb.mhr.hk:21888";
         publickey = "PUjqyQ3ATLp8Cxp3YFVQ44QLoZEpoPgdXsbMfXhDMRk=";
         asn = 4242422279;
+        local_role = "peer";
         e6 = "fe80::2279";
       }
       {
         name = "wg2289";
         asn = 4242422289;
+        local_role = "peer";
         e6 = "fe80::2289";
         listen = 22289;
         endpoint = "cn-hk01.pmman.tech:21888";
@@ -360,6 +397,7 @@
       {
         name = "wg2464";
         asn = 4242422464;
+        local_role = "peer";
         e6 = "fe80::2464";
         listen = 22464;
         endpoint = "aper.dneo.moeternet.com:21888";
@@ -368,6 +406,7 @@
       {
         name = "wg2466";
         asn = 4242422466;
+        local_role = "customer";
         e6 = "fe80::2466";
         listen = 22466;
         endpoint = "hydrogen.xhustudio.eu.org:21888";
@@ -379,6 +418,7 @@
         endpoint = "hk1.dn42.mofu.party:21888";
         publickey = "DsNVeGbnXAdubPgu8KlDUwg+It5kkuDGxV2O7NcbrR8=";
         asn = 4242422670;
+        local_role = "peer";
         e6 = "fe80::2670";
       }
       {
@@ -386,6 +426,7 @@
         l4 = "172.22.68.3";
         e4 = "172.22.66.66";
         asn = 4242422717;
+        local_role = "customer";
         e6 = "fe80::104:50:2030";
         listen = 22717;
         endpoint = "ncu.tw.dn42.hujk.eu.org:23022";
@@ -394,6 +435,7 @@
       {
         name = "wg2921";
         asn = 4242422921;
+        local_role = "peer";
         e6 = "fe80::2921";
         listen = 22921;
         endpoint = "154.37.219.205:21888";
@@ -402,6 +444,7 @@
       {
         name = "wg2923";
         asn = 4242422923;
+        local_role = "customer";
         e6 = "fe80::2925";
         listen = 22923;
         endpoint = "herzstein.mk16.de:51888";
@@ -413,6 +456,7 @@
         endpoint = "hk1-hk.dn42.6700.cc:21888";
         publickey = "rBTH+JyZB0X/DkwHByrCjCojxBKr/kEOm1dTAFGHR1w=";
         asn = 4242423088;
+        local_role = "customer";
         ipv6 = "fe80::abcd/64";
         e6 = "fe80::3088:192";
       }
@@ -427,6 +471,7 @@
       {
         name = "wg3310";
         asn = 4242423310;
+        local_role = "peer";
         e6 = "fe80::1888:3310";
         listen = 23310;
         endpoint = "hkg01.edge.r1.tmpfs.dev:21888";
@@ -435,6 +480,7 @@
       {
         name = "wg3322";
         asn = 4242423322;
+        local_role = "peer";
         e6 = "fe80::3322";
         listen = 23322;
         endpoint = "hk.node.vconet.top:21888";
@@ -443,6 +489,7 @@
       {
         name = "wg3374";
         asn = 4242423374;
+        local_role = "customer";
         e6 = "fe80::2999:225";
         listen = 23374;
         endpoint = "hk01.dn42.baka.pub:21888";
@@ -451,6 +498,7 @@
       {
         name = "wg3377";
         asn = 4242423377;
+        local_role = "customer";
         e6 = "fe80::3377";
         listen = 23377;
         endpoint = "hk1.peer.dn42.leziblog.com:21888";
@@ -459,6 +507,7 @@
       {
         name = "wg3618";
         asn = 4242423618;
+        local_role = "peer";
         e6 = "fe80::3618";
         listen = 23618;
         endpoint = "05.dyn.neo.jerryxiao.cc:50107";
@@ -475,6 +524,7 @@
       {
         name = "wg3729";
         asn = 4242423729;
+        local_role = "peer";
         e6 = "fe80::3729";
         listen = 23729;
         endpoint = "hkg1.pixiainfra.pixia.eu.org:21888";
@@ -483,6 +533,7 @@
       {
         name = "wg3777";
         asn = 4242423777;
+        local_role = "peer";
         e6 = "fe80::3777";
         listen = 23777;
         endpoint = "hk.dn42.cloudc.dev:23777";
@@ -492,6 +543,7 @@
         name = "wg3797";
         listen = 23797;
         asn = 4242423797;
+        local_role = "peer";
         e6 = "fe80::3797";
         endpoint = "hk-hkg1.rc.badaimweeb.me:50051";
         publickey = "4Kyabql4m5Aay43m0jToCyU9BPRa1aLYBWN6IBSaSW4=";
@@ -499,6 +551,7 @@
       {
         name = "wg3868";
         asn = 4242423868;
+        local_role = "peer";
         e6 = "fe80::3868";
         listen = 23868;
         endpoint = "45.207.152.237:21888";
@@ -507,6 +560,7 @@
       {
         name = "wg3883";
         asn = 4242423883;
+        local_role = "peer";
         e6 = "fe80::3883";
         listen = 23883;
         endpoint = "hk.dn42.42423883.xyz:21888";
@@ -515,6 +569,7 @@
       {
         name = "wg3914";
         asn = 4242423914;
+        local_role = "customer";
         e6 = "fe80::ade0";
         listen = 23914;
         endpoint = "hk1.g-load.eu:21888";
@@ -534,6 +589,7 @@
         endpoint = "hkg.node.cowgl.tech:31888";
         publickey = "mGGBczSVKW+7UKRquI2GkbKrfxiATv9r4uF5WTP+vWI=";
         asn = 4242423999;
+        local_role = "customer";
         e4 = "172.22.144.64";
         e6 = "fe80::3999";
         l4 = "172.22.68.0";

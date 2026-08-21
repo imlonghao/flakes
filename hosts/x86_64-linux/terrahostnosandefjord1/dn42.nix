@@ -11,6 +11,7 @@
         endpoint = "gw-osl-no.dn42.grmml.net:51888";
         publickey = "2R1KLm5HJGXhUQkUlA1XsiynkBhZqRaTV8G2xrldag8=";
         asn = 4242420123;
+        local_role = "peer";
         e6 = "fe80::149:c";
       }
       {
@@ -20,6 +21,7 @@
         publickey = "m724+dPvbZAoOI680+Add37Qdy8wuV1MfyFkHKTWaUM=";
         presharedkey = "bMj7QnOxYsVglAYt6eE0nfd7yZxbizeKwUO7Ffp6ftk=";
         asn = 4242420129;
+        local_role = "peer";
         e6 = "fe80::129:a";
       }
     ];
