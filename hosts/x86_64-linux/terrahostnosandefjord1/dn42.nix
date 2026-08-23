@@ -24,6 +24,14 @@
         local_role = "peer";
         e6 = "fe80::129:a";
       }
+      {
+        name = "wg3155";
+        listen = 23155;
+        endpoint = "r.home.skym.fi:52673";
+        publickey = "X2XTlhMRTkIQRU6P4r6OeOM3JHXvxTcHqCHM+40dKEw=";
+        asn = 4242423155;
+        e6 = "fe80::5f65:d396:1311:4e42";
+      }
     ];
   };
 }
