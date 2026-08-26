@@ -74,8 +74,8 @@
         local_role = "peer";
         e6 = "fe80::0251";
         listen = 20251;
-        endpoint = "hktx.s.iabc.work:21888";
-        publickey = "89C5dRKR41huEk4yG24+spwLSHRM0KcqNCR/lKqFO2s=";
+        endpoint = "hkciallo.s.iabc.work:21888";
+        publickey = "eVbDQzn4gps8auch/chrR5eD96fWr2DzIEw17OHeZUM=";
       }
       {
         name = "wg0298";
