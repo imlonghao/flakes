@@ -115,6 +115,15 @@
         e6 = "fe80::0831";
       }
       {
+        name = "wg0842";
+        listen = 20842;
+        endpoint = "sg-sin01.headscarf175.net:21888";
+        publickey = "7I1KFz9WufbmuRmfWCmiRMCZMA3LbC5ME/+ZQezjvTU=";
+        asn = 4242420842;
+        local_role = "peer";
+        e6 = "fe80::842";
+      }
+      {
         name = "wg1240";
         listen = 21240;
         endpoint = "sg-01.prefixlabs.net:21888";
