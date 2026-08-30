@@ -481,14 +481,6 @@
         e6 = "fe80::ffff:2092";
       }
       {
-        name = "wg2164";
-        listen = 22164;
-        endpoint = "de1.dn42.izm.im:21888";
-        publickey = "OW3p16NOVEtm6/YrLu/ZpJon5ZKFHtdv1WImR2wwzW0=";
-        asn = 4242422164;
-        e6 = "fe80::2164";
-      }
-      {
         name = "wg2189";
         listen = 22189;
         endpoint = "de-fra.dn42.kuu.moe:57353";
