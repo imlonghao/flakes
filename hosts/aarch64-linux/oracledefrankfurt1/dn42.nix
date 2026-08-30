@@ -526,15 +526,6 @@
         publickey = "USNPQDO2yqeti5YhFYkXedonxsRmSG9RsK0LgI1gxyM=";
       }
       {
-        name = "wg2225";
-        listen = 22225;
-        endpoint = "dn42-de.maraun.de:21888";
-        publickey = "uS1AYe7zTGAP48XeNn0vppNjg7q0hawyh8Y0bvvAWhk=";
-        asn = 4242422225;
-        local_role = "customer";
-        e6 = "fe80::2225";
-      }
-      {
         name = "wg2458";
         listen = 22458;
         endpoint = "nl-ams-a.nodes.pigeonhole.eu.org:51888";

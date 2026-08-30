@@ -180,15 +180,6 @@
         publickey = "XAmCHa9+dnC6uba+gFn5ucl7B69k8vmIAgJm3a8XlGQ=";
       }
       {
-        name = "wg2225";
-        listen = 22225;
-        endpoint = "dn42-sg.maraun.de:21888";
-        publickey = "rWTIK93+XJaP4sRvrk1gqXxAZgkz6y/axLC4mjuay1I=";
-        asn = 4242422225;
-        local_role = "customer";
-        e6 = "fe80::2225";
-      }
-      {
         name = "wg2246";
         listen = 22246;
         endpoint = "sin05.dn42.ventilaar.net:31888";
