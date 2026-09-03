@@ -25,22 +25,24 @@ in
     ];
   };
   fileSystems."/boot" = {
-    device = "/dev/disk/by-uuid/babd057c-d9ae-47ed-810d-cdfebd9be36c";
-    fsType = "btrfs";
-    options = [ "subvol=@boot" ] ++ mountOptions;
+    device = "/dev/vda2";
+    fsType = "vfat";
+    options = [
+      "fmask=0077"
+      "dmask=0077"
+    ];
   };
   fileSystems."/nix" = {
-    device = "/dev/disk/by-uuid/babd057c-d9ae-47ed-810d-cdfebd9be36c";
+    device = "/dev/vda3";
     fsType = "btrfs";
     options = [ "subvol=@nix" ] ++ mountOptions;
   };
   fileSystems."/persist" = {
-    device = "/dev/disk/by-uuid/babd057c-d9ae-47ed-810d-cdfebd9be36c";
+    device = "/dev/vda3";
     fsType = "btrfs";
     options = [ "subvol=@persist" ] ++ mountOptions;
     neededForBoot = true;
   };
-
   fileSystems."/mnt" = {
     device = "vdc";
     fsType = "virtiofs";

@@ -25,7 +25,7 @@ keys:
   - &vps_vpsdefrankfurt1 age1x8zq7qr5prjktk6j6emu98vzl2rgcjq804kuwp34cfj6jgh2pf5q46gma2
   - &vps_vpsjptokyo1 age1un5x9uu4lf2zkfps27x0zph6htpnejlrdsgyzheq9w7ukmkaxvhqwdzl4s
   - &vps_vpsussanjose1 age1mvq9x84yde6a9gaer77t84dekpe23wsnxrrjw286kj0gsu6y6ens70kzuk
-  - &vps_wirecatussantaclara1 age1xccl6xa43q4v4gacen5942djrpd3ms7422ent0362u7dtpdd0c6sq7ccwf
+  - &vps_wirecatussantaclara1 age1jc22h5gl59eaytudxyl09luxt0twy8sx5f7v2fnzmrwy64e83y9s55gp5q
   - &vps_xentainusdallas1 age15tfsen4ekuh9s4l3v0rjstnc7uaeplmwuqehnd0grh5sz70h944sr32xal
   # keep-sorted end
 creation_rules:

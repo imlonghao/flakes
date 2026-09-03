@@ -15,6 +15,10 @@
     "${self}/profiles/komari-agent"
   ];
 
+  boot.kernelParams = [
+    "audit=0"
+    "net.ifnames=0"
+  ];
   boot.loader.grub.device = "/dev/vda";
   networking = {
     dhcpcd.enable = false;
@@ -24,14 +28,14 @@
     ];
     defaultGateway = {
       address = "169.254.0.1";
-      interface = "ens4";
+      interface = "eth0";
     };
     defaultGateway6 = {
       address = "fe80::1";
-      interface = "ens4";
+      interface = "eth0";
     };
     interfaces = {
-      ens4 = {
+      eth0 = {
         ipv4.addresses = [
           {
             address = "45.45.224.73";
@@ -96,7 +100,7 @@
   # ranet
   services.ranet = {
     enable = true;
-    interface = "ens4";
+    interface = "eth0";
     id = 18;
   };
 
@@ -107,7 +111,7 @@
 
   # komari-agent
   services.komari-agent = {
-    include-nics = [ "ens4" ];
+    include-nics = [ "eth0" ];
   };
 
   # rustic
