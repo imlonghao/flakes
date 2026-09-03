@@ -70,7 +70,6 @@
 
   environment.persistence."/persist" = {
     directories = [
-      "/etc/rancher"
       "/var/lib"
       "/root/.ssh"
       "/root/.cache/rustic"
@@ -91,8 +90,7 @@
       }
     ];
     source_directories = [
-      "/mnt/caddy/"
-      "/mnt/stalwart/"
+      "/mnt/"
     ];
   };
 
