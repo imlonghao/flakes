@@ -5,6 +5,7 @@ in
 {
   services.etcd = {
     enable = true;
+    initialClusterState = "existing";
     advertiseClientUrls = [ "http://${ip}:2379" ];
     listenPeerUrls = [ "http://${ip}:2380" ];
     listenClientUrls = [
