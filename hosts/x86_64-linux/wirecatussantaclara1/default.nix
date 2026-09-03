@@ -10,7 +10,6 @@
     "${self}/profiles/exporter/node.nix"
     "${self}/profiles/docker"
     "${self}/profiles/borgmatic"
-    "${self}/profiles/k3s/agent.nix"
     "${self}/profiles/etcd"
     "${self}/profiles/komari-agent"
   ];
