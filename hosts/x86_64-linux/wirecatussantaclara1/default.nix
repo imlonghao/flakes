@@ -92,6 +92,16 @@
     source_directories = [
       "/mnt/"
     ];
+    commands = [
+      {
+        after = "everything";
+        when = [ "create" ];
+        run = [
+          "${pkgs.curl}/bin/curl -fsS -m 10 --retry 5 -o /dev/null https://pulse.updown.io/qh7z/N4H6VSdK"
+        ];
+        states = [ "finish" ];
+      }
+    ];
   };
 
   # ranet
@@ -117,7 +127,7 @@
     serviceConfig = {
       ExecStart = [
         "${pkgs.rustic}/bin/rustic backup /mnt"
-        "${pkgs.curl}/bin/curl -fsS -m 10 --retry 5 -o /dev/null https://hc-ping.com/3ca805c2-17e1-4969-9e78-8d8381136e70"
+        "${pkgs.curl}/bin/curl -fsS -m 10 --retry 5 -o /dev/null https://pulse.updown.io/lyym/TwBLKtyL"
       ];
       Type = "oneshot";
       EnvironmentFile = "/run/secrets/rustic";
