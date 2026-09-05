@@ -6,7 +6,7 @@
 
 buildGoModule rec {
   pname = "supervxlan";
-  version = "fa165491f6e77a7bb21f49498e1552e9f1d77d83";
+  version = "e84674010721bd764c0d10f4ba58e7b0dfbb0298";
   src = fetchFromGitea {
     domain = "git.esd.cc";
     owner = "imlonghao";
