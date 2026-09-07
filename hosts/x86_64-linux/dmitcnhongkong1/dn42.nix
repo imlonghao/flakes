@@ -194,6 +194,15 @@
         publickey = "f9ZDh2U0UXxtEroHUYNWzaE6TZM3hhY3eLXQQpgkvBY=";
       }
       {
+        name = "wg1230";
+        asn = 4242421230;
+        local_role = "peer";
+        e6 = "fe80::1230";
+        listen = 21230;
+        endpoint = "154.83.84.246:21888";
+        publickey = "scprpSYQztQ21MYsL9dau/mNTLcxHqtlwc+jUyKN13M=";
+      }
+      {
         name = "wg1233";
         listen = 21233;
         endpoint = "ayano.atr.dn42.sbs:21888";
