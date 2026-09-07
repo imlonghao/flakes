@@ -6,6 +6,7 @@
     "${self}/users/root"
     "${self}/profiles/rsshc"
     "${self}/profiles/exporter/node.nix"
+    "${self}/profiles/docker"
   ];
 
   boot.kernelParams = [
@@ -65,5 +66,10 @@
     enable = true;
     interface = "eth0";
     id = 14;
+  };
+
+  services.cert-syncer = {
+    enable = true;
+    wishlist = [ "go9mail.com" ];
   };
 }
