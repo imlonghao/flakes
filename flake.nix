@@ -190,6 +190,9 @@
         f4uskansas1 = {
           targetHost = "f4-us-kansas-1.ni.sb";
         };
+        greencloudussanjose1 = {
+          targetHost = "greencloud-us-sanjose-1.ni.sb";
+        };
         hosthatchcnhongkong1 = {
           targetHost = "hosthatch-cn-hongkong-1.ni.sb";
         };
