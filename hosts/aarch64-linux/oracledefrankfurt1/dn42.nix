@@ -345,6 +345,15 @@
         e6 = "fe80::1240:11";
       }
       {
+        name = "wg1248";
+        asn = 4242421248;
+        local_role = "peer";
+        e6 = "fe80::1248";
+        listen = 21248;
+        endpoint = "ch-zrh.dn42.stalkr.net:51821";
+        publickey = "gw1IkpXTD0cnFwqluSBWSS+DJFx45D6F3h7gSKA1+Ts=";
+      }
+      {
         name = "wg1331";
         asn = 4242421331;
         local_role = "peer";
