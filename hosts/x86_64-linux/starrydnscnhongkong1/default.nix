@@ -100,6 +100,7 @@
   services.cert-syncer = {
     enable = true;
     wishlist = [ "esd.cc" ];
+    postHook = "docker restart traefik";
   };
 
 }

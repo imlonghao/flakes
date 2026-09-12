@@ -73,6 +73,7 @@
   services.cert-syncer = {
     enable = true;
     wishlist = [ "esd.cc" ];
+    postHook = "systemctl restart restic-rest-server.service";
   };
 
   services.restic.server = {
