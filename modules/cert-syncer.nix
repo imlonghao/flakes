@@ -11,6 +11,7 @@ let
   shell = pkgs.writeShellScript "cert-syncer.sh" ''
     [ -e /persist/certs ] || mkdir -p /persist/certs
     cd /persist/certs
+    updated=false
     for certificateName in ${concatStringsSep " " cfg.wishlist}; do
       rawFile="$certificateName.raw"
       rawFileTmp="$rawFile.tmp"
@@ -51,11 +52,17 @@ let
           rm -f "$rawFileTmp" "$crtFileTmp" "$keyFileTmp"
           continue
         fi
-        mv "$crtFileTmp" "$crtFile"
-        mv "$keyFileTmp" "$keyFile"
+        mv "$crtFileTmp" "$crtFile" || exit 1
+        mv "$keyFileTmp" "$keyFile" || exit 1
+        updated=true
       fi
       mv "$rawFileTmp" "$rawFile"
     done
+    ${optionalString (cfg.postHook != "") ''
+      if [ "$updated" = true ]; then
+        ${pkgs.writeShellScript "cert-syncer-post-hook" cfg.postHook}
+      fi
+    ''}
   '';
 in
 {
@@ -64,6 +71,17 @@ in
     wishlist = mkOption {
       type = types.listOf types.str;
       description = "list of certificates";
+    };
+    postHook = mkOption {
+      type = types.lines;
+      default = "";
+      description = ''
+        Shell commands run once after syncing if at least one certificate was
+        updated or its missing files were restored. Runs in /persist/certs.
+      '';
+      example = ''
+        systemctl reload nginx.service
+      '';
     };
   };
   config = mkIf cfg.enable {
