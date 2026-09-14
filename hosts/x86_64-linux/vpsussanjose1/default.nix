@@ -17,6 +17,7 @@ in
     "${self}/profiles/qemuGuest"
     "${self}/profiles/exporter/node.nix"
     "${self}/profiles/komari-agent"
+    "${self}/profiles/hysteria2"
   ];
 
   networking = {
@@ -75,6 +76,12 @@ in
   services.komari-agent = {
     month-rotate = 1;
     include-nics = [ "eth0" ];
+  };
+
+  services.cert-syncer = {
+    enable = true;
+    wishlist = [ "esd.cc" ];
+    postHook = "systemctl restart hysteria2";
   };
 
 }
