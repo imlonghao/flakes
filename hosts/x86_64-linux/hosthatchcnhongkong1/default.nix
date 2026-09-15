@@ -12,6 +12,7 @@
     "${self}/profiles/komari-agent"
     "${self}/profiles/exporter/node.nix"
     "${self}/profiles/rsshc"
+    "${self}/profiles/hysteria2"
   ];
 
   boot.kernelParams = [ "net.ifnames=0" ];
