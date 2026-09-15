@@ -80,4 +80,11 @@
     enable = true;
     ui.enable = true;
   };
+
+  services.cert-syncer = {
+    enable = true;
+    wishlist = [ "esd.cc" ];
+    postHook = "systemctl restart hysteria2";
+  };
+
 }
