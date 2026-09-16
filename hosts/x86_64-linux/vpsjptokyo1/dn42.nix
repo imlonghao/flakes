@@ -296,6 +296,15 @@
         e6 = "fe80::3088:190";
       }
       {
+        name = "wg3143";
+        listen = 23143;
+        endpoint = "jp7-dn42.akilab.meme:21888";
+        publickey = "ma9vpr25iBDKthbd8tUFuCxbyzfJ2YHJ+K8bgdzOqzk=";
+        asn = 4242423143;
+        local_role = "peer";
+        e6 = "fe80::3143";
+      }
+      {
         name = "wg3374";
         asn = 4242423374;
         local_role = "customer";
