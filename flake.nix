@@ -65,10 +65,7 @@
         {
           lib,
           config,
-          self',
-          inputs',
           pkgs,
-          system,
           ...
         }:
         {
@@ -126,7 +123,7 @@
             imports = builtins.map (f: ./modules/${f}) (builtins.attrNames (builtins.readDir ./modules));
           };
         overlays.default =
-          final: prev:
+          _final: prev:
           (prev.lib.packagesFromDirectoryRecursive {
             inherit (prev) callPackage;
             directory = ./pkgs;
@@ -146,7 +143,7 @@
             });
           };
         overlays.latest =
-          final: prev:
+          _final: prev:
           let
             pkgs-latest =
               (inputs.multiverse.lib.mkMultiverse {
