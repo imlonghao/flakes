@@ -36,8 +36,14 @@ in
         StateDirectory = "hysteria2";
         WorkingDirectory = "/var/lib/hysteria2";
         Environment = "HOME=/var/lib/hysteria2";
-        AmbientCapabilities = [ "CAP_NET_BIND_SERVICE" ];
-        CapabilityBoundingSet = [ "CAP_NET_BIND_SERVICE" ];
+        AmbientCapabilities = [
+          "CAP_NET_BIND_SERVICE"
+          "CAP_NET_ADMIN"
+        ];
+        CapabilityBoundingSet = [
+          "CAP_NET_BIND_SERVICE"
+          "CAP_NET_ADMIN"
+        ];
         NoNewPrivileges = true;
         PrivateTmp = true;
         ProtectHome = true;
