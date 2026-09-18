@@ -26,6 +26,7 @@ in
       wants = [ "network-online.target" ];
       after = [ "network-online.target" ];
       wantedBy = [ "multi-user.target" ];
+      path = [ pkgs.iptables ];
       serviceConfig = {
         ExecStart = "${pkgs.hysteria}/bin/hysteria server --config %d/config.yaml";
         LoadCredential = "config.yaml:${cfg.configFile}";
