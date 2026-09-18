@@ -1,4 +1,4 @@
-{ self, ... }:
+{ self, pkgs, ... }:
 {
   imports = [
     ./hardware.nix
@@ -43,6 +43,8 @@
       ];
     };
   };
+
+  environment.systemPackages = [ pkgs.iptables ];
 
   environment.persistence."/persist" = {
     directories = [
