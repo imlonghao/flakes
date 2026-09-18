@@ -267,6 +267,9 @@
           targetHost = "vps-jp-tokyo-1.ni.sb";
           tags = [ "dn42" ];
         };
+        vpsjptokyo2 = {
+          targetHost = "vps-jp-tokyo-2.ni.sb";
+        };
         vpsussanjose1 = {
           targetHost = "vps-us-sanjose-1.ni.sb";
         };

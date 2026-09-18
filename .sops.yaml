@@ -25,6 +25,7 @@ keys:
   - &vps_vpsausydney1 age10hs4v4utyhykkgwdyagqng54apnf4qsjunjnlarwcg4l0ydm4f3qhz49sj
   - &vps_vpsdefrankfurt1 age1x8zq7qr5prjktk6j6emu98vzl2rgcjq804kuwp34cfj6jgh2pf5q46gma2
   - &vps_vpsjptokyo1 age1un5x9uu4lf2zkfps27x0zph6htpnejlrdsgyzheq9w7ukmkaxvhqwdzl4s
+  - &vps_vpsjptokyo2 age155f02yv5wxuupfte6ycnnyzmlnmyxk3a2n08h7kadrx3q246d34s259k54
   - &vps_vpsussanjose1 age1mvq9x84yde6a9gaer77t84dekpe23wsnxrrjw286kj0gsu6y6ens70kzuk
   - &vps_wirecatussantaclara1 age1jc22h5gl59eaytudxyl09luxt0twy8sx5f7v2fnzmrwy64e83y9s55gp5q
   - &vps_xentainusdallas1 age15tfsen4ekuh9s4l3v0rjstnc7uaeplmwuqehnd0grh5sz70h944sr32xal
@@ -169,6 +170,12 @@ creation_rules:
           - *me_canokey
         age:
           - *vps_vpsjptokyo1
+  - path_regex: hosts/x86_64-linux/vpsjptokyo2/secrets.yml$
+    key_groups:
+      - pgp:
+          - *me_canokey
+        age:
+          - *vps_vpsjptokyo2
   - path_regex: hosts/x86_64-linux/vpsussanjose1/secrets.yml$
     key_groups:
       - pgp:
@@ -280,6 +287,7 @@ creation_rules:
           - *vps_vpsausydney1
           - *vps_vpsdefrankfurt1
           - *vps_vpsjptokyo1
+          - *vps_vpsjptokyo2
           - *vps_vpsussanjose1
           - *vps_wirecatussantaclara1
           - *vps_xentainusdallas1
@@ -314,6 +322,7 @@ creation_rules:
           - *vps_vpsausydney1
           - *vps_vpsdefrankfurt1
           - *vps_vpsjptokyo1
+          - *vps_vpsjptokyo2
           - *vps_vpsussanjose1
           - *vps_wirecatussantaclara1
           - *vps_xentainusdallas1
