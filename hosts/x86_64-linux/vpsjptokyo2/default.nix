@@ -6,6 +6,7 @@
     "${self}/users/root"
     "${self}/profiles/rsshc"
     "${self}/profiles/exporter/node.nix"
+    "${self}/profiles/hysteria2"
   ];
 
   boot.kernelParams = [
