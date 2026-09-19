@@ -58,7 +58,10 @@
 
   services.tailscale.enable = true;
 
-  services.komari-agent.include-nics = [ "eth0" ];
+  services.komari-agent = {
+    month-rotate = 18;
+    include-nics = [ "eth0" ];
+  };
 
   services.ranet = {
     enable = true;
