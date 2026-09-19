@@ -7,6 +7,7 @@
     "${self}/profiles/rsshc"
     "${self}/profiles/exporter/node.nix"
     "${self}/profiles/hysteria2"
+    "${self}/profiles/komari-agent"
   ];
 
   boot.kernelParams = [
@@ -56,6 +57,8 @@
   };
 
   services.tailscale.enable = true;
+
+  services.komari-agent.include-nics = [ "eth0" ];
 
   services.ranet = {
     enable = true;
