@@ -55,6 +55,8 @@
     ];
   };
 
+  services.tailscale.enable = true;
+
   services.ranet = {
     enable = true;
     interface = "eth0";
