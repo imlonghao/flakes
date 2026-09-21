@@ -247,9 +247,6 @@
           targetHost = "twds-cn-taibei-1.ni.sb";
           tags = [ "dn42" ];
         };
-        virmachustampa1 = {
-          targetHost = "virmach-us-tampa-1.ni.sb";
-        };
         vpsausydney1 = {
           targetHost = "vps-au-sydney-1.ni.sb";
           tags = [
