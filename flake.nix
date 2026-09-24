@@ -21,7 +21,10 @@
     multiverse.url = "github:fzakaria/nixpkgs-multiverse";
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     flake-parts.url = "github:hercules-ci/flake-parts";
-    colmena-flake.url = "github:juspay/colmena-flake";
+    colmena = {
+      url = "github:nix-community/colmena";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     sops-nix = {
       url = "github:Mic92/sops-nix";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -57,7 +60,6 @@
     inputs@{ self, flake-parts, ... }:
     flake-parts.lib.mkFlake { inherit inputs; } {
       imports = [
-        inputs.colmena-flake.flakeModules.default
         inputs.devshell.flakeModule
       ];
       systems = builtins.attrNames (builtins.readDir ./hosts);
@@ -80,6 +82,21 @@
           };
         };
       flake = {
+        colmena = {
+          meta = {
+            nixpkgs = import inputs.nixpkgs {
+              system = "x86_64-linux";
+              overlays = [ ];
+            };
+            nodeSpecialArgs = builtins.mapAttrs (_: value: value._module.specialArgs) self.nixosConfigurations;
+          };
+        }
+        // builtins.mapAttrs (name: deployment: {
+          imports = self.nixosConfigurations.${name}._module.args.modules ++ [
+            { inherit deployment; }
+          ];
+        }) self.deployments;
+        colmenaHive = inputs.colmena.lib.makeHive self.colmena;
         nixosConfigurations = builtins.listToAttrs (
           builtins.concatLists (
             map (
@@ -158,7 +175,7 @@
             # keep-sorted end
           ] (name: pkgs-latest.${name});
       };
-      colmena-flake.deployment = {
+      flake.deployments = {
         # keep-sorted start block=yes
         breezehostusdallas1 = {
           targetHost = "breezehost-us-dallas-1.ni.sb";
