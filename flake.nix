@@ -75,7 +75,7 @@
           };
           devshells.default = {
             packages = [
-              config.packages.colmena
+              pkgs.colmena
             ];
           };
         };
