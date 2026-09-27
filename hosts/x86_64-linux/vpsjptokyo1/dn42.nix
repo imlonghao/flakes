@@ -178,14 +178,6 @@
         publickey = "XYyk/uk3LTHk7vOqtDsDh/AcPtdT3qQptqhggzZCRio=";
       }
       {
-        name = "wg1733";
-        asn = 4242421733;
-        e6 = "fe80::1733";
-        listen = 21733;
-        endpoint = "tyo1.entry.dn42.hk:21888";
-        publickey = "4KZ0OVselhQFSfTEhzbYgxRuL9oG1sn3xsle6TVSfnE=";
-      }
-      {
         name = "wg1810";
         asn = 4242421810;
         local_role = "peer";
