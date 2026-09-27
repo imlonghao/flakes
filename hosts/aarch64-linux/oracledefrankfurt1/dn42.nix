@@ -95,7 +95,6 @@
       {
         name = "wg0129";
         listen = 20129;
-        endpoint = "de1.420129.xyz:21888";
         publickey = "N9rGceoiFcc/obnHrqMAmVlrb/E2Br55+doekTKwNF8=";
         asn = 4242420129;
         local_role = "peer";

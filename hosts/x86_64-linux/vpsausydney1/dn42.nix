@@ -16,7 +16,6 @@
       {
         name = "wg0129";
         listen = 20129;
-        endpoint = "au1.420129.xyz:21888";
         publickey = "m724+7BIpY7B218iabYWzx5PGiCf3qH1QmIPiwFOXQA=";
         presharedkey = "y3VUdnyi/oophl1605ROWxQMmCfFH/q7OdWGC90h3Yw=";
         asn = 4242420129;
