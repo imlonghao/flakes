@@ -9,6 +9,7 @@
     "${self}/profiles/rsshc"
     "${self}/profiles/bird-lg-proxy"
     "${self}/profiles/komari-agent"
+    "${self}/profiles/monitor-agent"
     "${self}/profiles/exporter/node.nix"
     "${self}/profiles/exporter/bird.nix"
     "${self}/profiles/peerfinder-agent"
@@ -112,5 +113,7 @@
       "${pkgs.iptables}/bin/ip6tables -t nat -D POSTROUTING -m mark --mark 0x1888 -j SNAT --to-source fd21:5c0c:9b7e:3::1"
     ];
   };
+
+  services.monitor-agent.include-nics = [ "eth0" ];
 
 }

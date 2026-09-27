@@ -3,6 +3,7 @@
   imports = [
     ./hardware.nix
     "${self}/profiles/mycore"
+    "${self}/profiles/monitor-agent"
     "${self}/users/root"
     "${self}/profiles/exporter/node.nix"
     "${self}/profiles/rsshc"
@@ -76,5 +77,7 @@
     interface = "eth0";
     id = 20;
   };
+
+  services.monitor-agent.include-nics = [ "eth0" ];
 
 }

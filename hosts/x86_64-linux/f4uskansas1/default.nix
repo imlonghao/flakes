@@ -10,6 +10,7 @@
     "${self}/profiles/rsshc"
     "${self}/profiles/etcd"
     "${self}/profiles/komari-agent"
+    "${self}/profiles/monitor-agent"
   ];
 
   networking = {
@@ -112,5 +113,10 @@
       "ens19"
     ];
   };
+
+  services.monitor-agent.include-nics = [
+    "ens18"
+    "ens19"
+  ];
 
 }

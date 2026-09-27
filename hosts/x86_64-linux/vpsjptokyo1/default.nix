@@ -13,6 +13,7 @@
     "${self}/profiles/mtrsb"
     "${self}/profiles/bird-lg-proxy"
     "${self}/profiles/komari-agent"
+    "${self}/profiles/monitor-agent"
     "${self}/profiles/peerfinder-agent"
     # Containers
     "${self}/containers/snell.nix"
@@ -97,5 +98,7 @@
       "${pkgs.iptables}/bin/ip6tables -t nat -D POSTROUTING -m mark --mark 0x1888 -j SNAT --to-source fd21:5c0c:9b7e:10::1"
     ];
   };
+
+  services.monitor-agent.include-nics = [ "eth0" ];
 
 }

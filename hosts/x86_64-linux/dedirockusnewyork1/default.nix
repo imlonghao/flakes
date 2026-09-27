@@ -5,6 +5,7 @@
     ./dn42.nix
     ./hardware.nix
     "${self}/profiles/mycore"
+    "${self}/profiles/monitor-agent"
     "${self}/profiles/rsshc"
     "${self}/users/root"
     "${self}/profiles/peerfinder-agent"
@@ -82,5 +83,7 @@
     interface = "eth0";
     id = 13;
   };
+
+  services.monitor-agent.include-nics = [ "eth0" ];
 
 }

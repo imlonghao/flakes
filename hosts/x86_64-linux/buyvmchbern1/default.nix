@@ -10,6 +10,7 @@
     "${self}/profiles/rsshc"
     "${self}/profiles/docker"
     "${self}/profiles/komari-agent"
+    "${self}/profiles/monitor-agent"
   ];
 
   boot.kernelParams = [ "net.ifnames=0" ];
@@ -72,5 +73,7 @@
   services.komari-agent = {
     include-nics = [ "eth0" ];
   };
+
+  services.monitor-agent.include-nics = [ "eth0" ];
 
 }

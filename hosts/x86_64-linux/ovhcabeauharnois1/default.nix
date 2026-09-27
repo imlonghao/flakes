@@ -4,6 +4,7 @@
     ./bird.nix
     ./hardware.nix
     "${self}/profiles/mycore"
+    "${self}/profiles/monitor-agent"
     "${self}/users/root"
     "${self}/profiles/exporter/node.nix"
     "${self}/profiles/rsshc"
@@ -89,5 +90,7 @@
       "/persist/certs/esd.cc.key"
     ];
   };
+
+  services.monitor-agent.include-nics = [ "eno1" ];
 
 }

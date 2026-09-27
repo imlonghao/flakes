@@ -4,6 +4,7 @@
     ./bird.nix
     ./hardware.nix
     "${self}/profiles/mycore"
+    "${self}/profiles/monitor-agent"
     "${self}/users/root"
     "${self}/profiles/exporter/node.nix"
     "${self}/profiles/rsshc"
@@ -85,5 +86,7 @@
     interface = "ens3";
     id = 26;
   };
+
+  services.monitor-agent.include-nics = [ "ens3" ];
 
 }

@@ -10,6 +10,7 @@
     "${self}/users/root"
     "${self}/profiles/docker"
     "${self}/profiles/komari-agent"
+    "${self}/profiles/monitor-agent"
     "${self}/profiles/exporter/node.nix"
     "${self}/profiles/rsshc"
     "${self}/profiles/hysteria2"
@@ -86,5 +87,7 @@
     wishlist = [ "esd.cc" ];
     postHook = "systemctl restart hysteria2";
   };
+
+  services.monitor-agent.include-nics = [ "eth0" ];
 
 }

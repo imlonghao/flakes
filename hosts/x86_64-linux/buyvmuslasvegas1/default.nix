@@ -12,6 +12,7 @@
     "${self}/profiles/mtrsb"
     "${self}/profiles/rsshc"
     "${self}/profiles/komari-agent"
+    "${self}/profiles/monitor-agent"
     "${self}/profiles/peerfinder-agent"
   ];
 
@@ -127,5 +128,7 @@
   };
 
   services.peerfinder-agent.listenPort = 9001;
+
+  services.monitor-agent.include-nics = [ "ens3" ];
 
 }

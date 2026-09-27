@@ -8,6 +8,7 @@
     "${self}/profiles/exporter/node.nix"
     "${self}/profiles/hysteria2"
     "${self}/profiles/komari-agent"
+    "${self}/profiles/monitor-agent"
   ];
 
   boot.kernelParams = [
@@ -68,4 +69,7 @@
     interface = "eth0";
     id = 16;
   };
+
+  services.monitor-agent.include-nics = [ "eth0" ];
+
 }

@@ -9,6 +9,7 @@
     "${self}/profiles/rsshc"
     "${self}/profiles/exporter/node.nix"
     "${self}/profiles/komari-agent"
+    "${self}/profiles/monitor-agent"
   ];
 
   boot.kernelParams = [ "net.ifnames=0" ];
@@ -87,5 +88,10 @@
       "eth1"
     ];
   };
+
+  services.monitor-agent.include-nics = [
+    "eth0"
+    "eth1"
+  ];
 
 }

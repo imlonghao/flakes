@@ -122,6 +122,12 @@ creation_rules:
           - *me_canokey
         age:
           - *vps_ovhcabeauharnois1
+  - path_regex: hosts/x86_64-linux/ovhcabeauharnois2/secrets.yml$
+    key_groups:
+      - pgp:
+          - *me_canokey
+        age:
+          - *vps_ovhcabeauharnois2
   - path_regex: hosts/x86_64-linux/ovhfrgravelines1/secrets.yml$
     key_groups:
       - pgp:

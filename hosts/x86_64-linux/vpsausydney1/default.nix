@@ -28,6 +28,7 @@ in
     "${self}/profiles/docker"
     "${self}/profiles/k3s/agent.nix"
     "${self}/profiles/komari-agent"
+    "${self}/profiles/monitor-agent"
     "${self}/profiles/peerfinder-agent"
     "${self}/containers/snell.nix"
   ];
@@ -98,5 +99,7 @@ in
     month-rotate = 1;
     include-nics = [ "enp6s18" ];
   };
+
+  services.monitor-agent.include-nics = [ "enp6s18" ];
 
 }

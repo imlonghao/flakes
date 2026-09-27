@@ -4,6 +4,7 @@
     ./bird.nix
     ./hardware.nix
     "${self}/profiles/mycore"
+    "${self}/profiles/monitor-agent"
     "${self}/users/root"
     "${self}/profiles/mtrsb"
     "${self}/profiles/rsshc"
@@ -119,5 +120,7 @@
     interface = "eth0";
     id = 15;
   };
+
+  services.monitor-agent.include-nics = [ "eth0" ];
 
 }

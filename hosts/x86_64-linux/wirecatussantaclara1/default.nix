@@ -12,6 +12,7 @@
     "${self}/profiles/borgmatic"
     "${self}/profiles/etcd"
     "${self}/profiles/komari-agent"
+    "${self}/profiles/monitor-agent"
   ];
 
   boot.kernelParams = [
@@ -141,5 +142,7 @@
     };
     wantedBy = [ "timers.target" ];
   };
+
+  services.monitor-agent.include-nics = [ "eth0" ];
 
 }

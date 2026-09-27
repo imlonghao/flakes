@@ -17,6 +17,7 @@ in
     "${self}/profiles/qemuGuest"
     "${self}/profiles/exporter/node.nix"
     "${self}/profiles/komari-agent"
+    "${self}/profiles/monitor-agent"
     "${self}/profiles/hysteria2"
   ];
 
@@ -83,5 +84,7 @@ in
     wishlist = [ "esd.cc" ];
     postHook = "systemctl restart hysteria2";
   };
+
+  services.monitor-agent.include-nics = [ "eth0" ];
 
 }

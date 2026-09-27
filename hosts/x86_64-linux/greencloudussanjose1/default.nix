@@ -3,6 +3,7 @@
   imports = [
     ./hardware.nix
     "${self}/profiles/mycore"
+    "${self}/profiles/monitor-agent"
     "${self}/users/root"
     "${self}/profiles/rsshc"
     "${self}/profiles/exporter/node.nix"
@@ -72,4 +73,7 @@
     enable = true;
     wishlist = [ "go9mail.com" ];
   };
+
+  services.monitor-agent.include-nics = [ "eth0" ];
+
 }

@@ -5,6 +5,7 @@
     ./dn42.nix
     ./hardware.nix
     "${self}/profiles/mycore"
+    "${self}/profiles/monitor-agent"
     "${self}/users/root"
     "${self}/profiles/exporter/node.nix"
     "${self}/profiles/exporter/bird.nix"
@@ -74,5 +75,7 @@
     id = 24;
     mtu = 1476;
   };
+
+  services.monitor-agent.include-nics = [ "ens18" ];
 
 }

@@ -11,6 +11,7 @@
     ./bird.nix
     "${self}/profiles/borgmatic"
     "${self}/profiles/mycore"
+    "${self}/profiles/monitor-agent"
     "${self}/users/root"
     "${self}/profiles/exporter/node.nix"
     "${self}/profiles/exporter/bird.nix"
@@ -227,5 +228,7 @@
     interface = "eth0";
     id = 17;
   };
+
+  services.monitor-agent.include-nics = [ "eth0" ];
 
 }

@@ -25,6 +25,7 @@ in
     "${self}/profiles/hachimi"
     "${self}/profiles/k3s/agent.nix"
     "${self}/profiles/komari-agent"
+    "${self}/profiles/monitor-agent"
     #    "${inputs.latest}/nixos/modules/services/backup/borgmatic.nix"
     # Container
     "${self}/containers/mtrsb.nix"
@@ -331,5 +332,7 @@ in
       };
     };
   };
+
+  services.monitor-agent.include-nics = [ "eth0" ];
 
 }

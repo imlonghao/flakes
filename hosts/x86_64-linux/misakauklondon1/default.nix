@@ -5,6 +5,7 @@
     ./bird.nix
     "${self}/profiles/borgmatic"
     "${self}/profiles/mycore"
+    "${self}/profiles/monitor-agent"
     "${self}/users/root"
     "${self}/profiles/exporter/node.nix"
     "${self}/profiles/mtrsb"
@@ -112,5 +113,7 @@
     interface = "enp3s0";
     id = 4;
   };
+
+  services.monitor-agent.include-nics = [ "enp3s0" ];
 
 }

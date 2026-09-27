@@ -8,6 +8,7 @@
     ./hardware.nix
     ./bird.nix
     "${self}/profiles/mycore"
+    "${self}/profiles/monitor-agent"
     "${self}/users/root"
     "${self}/profiles/exporter/node.nix"
     "${self}/profiles/mtrsb"
@@ -101,5 +102,7 @@
     wishlist = [ "esd.cc" ];
     postHook = "docker restart traefik";
   };
+
+  services.monitor-agent.include-nics = [ "ens3" ];
 
 }

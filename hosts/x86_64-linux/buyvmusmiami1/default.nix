@@ -13,6 +13,7 @@
     "${self}/profiles/rsshc"
     "${self}/profiles/bird-lg-proxy"
     "${self}/profiles/komari-agent"
+    "${self}/profiles/monitor-agent"
     "${self}/profiles/peerfinder-agent"
   ];
 
@@ -110,5 +111,7 @@
   services.komari-agent = {
     include-nics = [ "ens3" ];
   };
+
+  services.monitor-agent.include-nics = [ "ens3" ];
 
 }
