@@ -59,6 +59,15 @@
         e6 = "fe80::842";
       }
       {
+        name = "wg1169";
+        listen = 21169;
+        endpoint = "akl1.dn42.netctrl.net:20006";
+        publickey = "ku4/RZKCIYm2iCK1ve7Av41Wx9mXF/qKywXHdLY3xEQ=";
+        asn = 4242421169;
+        ipv6 = "fd21:5c0c:9b7e:9:1169::1/80";
+        e6 = "fd21:5c0c:9b7e:9:1169::2";
+      }
+      {
         name = "wg1233";
         listen = 21233;
         endpoint = "ac-au2.atr.dn42.sbs:21888";
