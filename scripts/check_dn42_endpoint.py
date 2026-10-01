@@ -1,14 +1,24 @@
 #!/usr/bin/env python3
 
-import concurrent.futures
 import ipaddress
 import re
 import socket
+import subprocess
 import sys
 from pathlib import Path
 
 ENDPOINT_RE = re.compile(r'endpoint\s*=\s*"([^"]+)"\s*;')
 HOST_RE = re.compile(r'^\[(?P<ipv6>[^\]]+)\](?::(?P<port>\d+))?$|^(?P<host>[^:]+)(?::(?P<port2>\d+))?$')
+DNS_QUERY = '''
+import socket
+import sys
+
+try:
+    addresses = socket.getaddrinfo(sys.argv[1], None, int(sys.argv[2]))
+except socket.gaierror:
+    sys.exit(1)
+sys.exit(0 if addresses else 1)
+'''
 
 
 def parse_host(endpoint: str) -> str | None:
@@ -30,18 +40,21 @@ def resolve_host(host: str, timeout: float = 5.0) -> bool:
     """Return True if host resolves to at least one address.
 
     Queries IPv6 first since DN42 is IPv6-based, then IPv4.
-    Each family is wrapped with a timeout to avoid hanging on
-    unresponsive DNS servers (common with CNAME chains where
-    only one address family has records).
+    Each family runs in a separate process that is killed and reaped on
+    timeout, so a stuck system resolver cannot delay return or script exit.
     """
     for family in (socket.AF_INET6, socket.AF_INET):
         try:
-            with concurrent.futures.ThreadPoolExecutor(max_workers=1) as executor:
-                future = executor.submit(socket.getaddrinfo, host, None, family)
-                result = future.result(timeout=timeout)
-            if result:
+            result = subprocess.run(
+                [sys.executable, '-c', DNS_QUERY, host, str(int(family))],
+                stdin=subprocess.DEVNULL,
+                stdout=subprocess.DEVNULL,
+                stderr=subprocess.DEVNULL,
+                timeout=timeout,
+            )
+            if result.returncode == 0:
                 return True
-        except (socket.gaierror, concurrent.futures.TimeoutError):
+        except subprocess.TimeoutExpired:
             continue
     return False
 
