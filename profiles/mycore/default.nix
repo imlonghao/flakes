@@ -44,8 +44,6 @@ in
     "vm.watermark_scale_factor" = 125;
     "vm.page-cluster" = 0;
     # https://blog.cloudflare.com/optimizing-tcp-for-high-throughput-and-low-latency/
-    "net.ipv4.tcp_adv_win_scale" = "-2";
-    "net.ipv4.tcp_collapse_max_bytes" = 6291456;
     "net.ipv4.tcp_notsent_lowat" = 131072;
     # https://wiki.archlinux.org/title/Sysctl
     "net.core.netdev_max_backlog" = 16384;
@@ -76,9 +74,9 @@ in
     "net.ipv4.tcp_syncookies" = 1;
     "net.ipv4.tcp_rfc1337" = 1;
     # ECMP
-    "net.ipv4_fib_multipath_hash_policy" = 1;
-    "net.ipv6_fib_multipath_hash_policy" = 1;
-    "net.ipv4_fib_multipath_use_neigh" = 1;
+    "net.ipv4.fib_multipath_hash_policy" = 1;
+    "net.ipv6.fib_multipath_hash_policy" = 1;
+    "net.ipv4.fib_multipath_use_neigh" = 1;
   };
 
   environment.systemPackages = [
