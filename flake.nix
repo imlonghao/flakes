@@ -158,6 +158,7 @@
               patches = [ ];
               doInstallCheck = false;
             });
+            # https://github.com/podman-container-tools/podman/issues/29805
             podman =
               (inputs.multiverse.lib.mkMultiverse {
                 config.allowUnfree = true;
