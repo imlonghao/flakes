@@ -158,6 +158,11 @@
               patches = [ ];
               doInstallCheck = false;
             });
+            podman =
+              (inputs.multiverse.lib.mkMultiverse {
+                config.allowUnfree = true;
+                system = prev.stdenv.hostPlatform.system;
+              }).versions.podman."5.8.4";
           };
         overlays.latest =
           _final: prev:
