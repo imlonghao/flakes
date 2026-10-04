@@ -517,6 +517,15 @@
         e6 = "fe80::2458";
       }
       {
+        name = "wg2550";
+        listen = 22550;
+        endpoint = "fsn1.aerioncloud.com:21888";
+        publickey = "v3Mggu7yzM3geWHsSKXkXqPNqyUCs4ll8JRyFYVOggM=";
+        asn = 4242422550;
+        local_role = "peer";
+        e6 = "fe80::abc1";
+      }
+      {
         name = "wg2575";
         asn = 4242422575;
         local_role = "peer";
