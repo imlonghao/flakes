@@ -6,16 +6,16 @@
 
 rustPlatform.buildRustPackage rec {
   pname = "monitor-agent";
-  version = "1.1.0";
+  version = "1.2.0";
 
   src = fetchFromGitHub {
     owner = "monitor-probe";
     repo = "agent";
     tag = "v${version}";
-    hash = "sha256-b3lMMkFrY8BSlSMPO4WAADEMMaMumoclAtxiZdmJeYw=";
+    hash = "sha256-tqJpvFmq7TvdvusUXSF689tln+rXfZwFUKn9s1ixFIs=";
   };
 
-  cargoHash = "sha256-jqoS4Sk0r+vOUjoHSF2eFFH9ksKfHqMYYk7+yjJxj3Q=";
+  cargoHash = "sha256-TAbrvHrN7k4rKA0DENtbYvwrGeNCWgf5ppFxeFr5WK4=";
 
   # These tests require a real host's network interfaces and filesystem metrics.
   checkFlags = [
