@@ -17,10 +17,12 @@ rustPlatform.buildRustPackage rec {
 
   cargoHash = "sha256-TAbrvHrN7k4rKA0DENtbYvwrGeNCWgf5ppFxeFr5WK4=";
 
-  # These tests require a real host's network interfaces and filesystem metrics.
+  # These tests require a real host's network interfaces, filesystem metrics,
+  # and virtualization environment, plus external tools such as systemd-detect-virt.
   checkFlags = [
     "--skip=collect::tests::real_host_collection_is_sane"
     "--skip=collect::crosscheck::memory_and_disk_agree_with_free_and_df_on_this_machine"
+    "--skip=collect::crosscheck::virtualization_agrees_with_systemd_detect_virt"
   ];
 
   meta = {
