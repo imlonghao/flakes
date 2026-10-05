@@ -172,6 +172,15 @@ in
     storageDriver = "overlay2";
   };
 
+  # Postgresql
+  services.postgresql = {
+    enable = true;
+    enableTCPIP = true;
+    authentication = ''
+      host blackbgp blackbgp 0.0.0.0/0 scram-sha-256
+    '';
+  };
+
   # CronJob
   services.cron = {
     enable = true;

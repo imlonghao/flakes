@@ -97,23 +97,6 @@
     };
   };
 
-  # Postgresql
-  services.postgresql = {
-    enable = true;
-    enableTCPIP = true;
-    authentication = ''
-      host kong kong 0.0.0.0/0 scram-sha-256
-      host blackbgp blackbgp 0.0.0.0/0 scram-sha-256
-    '';
-    ensureDatabases = [ "kong" ];
-    ensureUsers = [
-      {
-        name = "kong";
-        ensureDBOwnership = true;
-      }
-    ];
-  };
-
   # ranet
   services.ranet = {
     enable = true;
