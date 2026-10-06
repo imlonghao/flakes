@@ -81,6 +81,15 @@
         mtu = 1376;
       }
       {
+        name = "wg0108";
+        listen = 20108;
+        endpoint = "core.dn42.fra.light-network.de:52007";
+        publickey = "WDnPkGotKXNX/fsum31M0XtWGw4OWuULBs5T+GWHLEI=";
+        asn = 4242420108;
+        local_role = "peer";
+        e6 = "fe80::108";
+      }
+      {
         name = "wg0123";
         asn = 4242420123;
         local_role = "peer";
