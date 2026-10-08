@@ -164,31 +164,6 @@ in
           neighbor 2602:fa3d:f4:1::2 as 36090;
         };
 
-        protocol bgp AS401538v4 from tmpl_peer {
-          neighbor 149.112.75.13 as 401538;
-          description "NOVA86 LLC";
-          ipv4 {
-            import filter {
-              bgp_large_community.add((30114, 1, 3));
-              bgp_large_community.add((30114, 2, 2));
-              bgp_large_community.add((30114, 3, 840));
-              if net ~ 'ARIN::AS-NOVA86-LLC::v4' then accept;
-            };
-          };
-        };
-        protocol bgp AS401538v6 from tmpl_peer {
-          neighbor 2602:fa3d:f4:1::ca as 401538;
-          description "NOVA86 LLC";
-          ipv6 {
-            import filter {
-              bgp_large_community.add((30114, 1, 3));
-              bgp_large_community.add((30114, 2, 2));
-              bgp_large_community.add((30114, 3, 840));
-              if net ~ 'ARIN::AS-NOVA86-LLC::v6' then accept;
-            };
-          };
-        };
-
       '';
   };
 }
