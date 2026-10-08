@@ -60,21 +60,11 @@ in
           local as 30114;
           graceful restart on;
           ipv4 {
-            import filter {
-              bgp_large_community.add((30114, 1, 2));
-              bgp_large_community.add((30114, 2, 2));
-              bgp_large_community.add((30114, 3, 840));
-              accept;
-            };
+            import none;
             export where bgp_large_community ~ [(30114, 1, 1), (30114, 1, 5)];
           };
           ipv6 {
-            import filter {
-              bgp_large_community.add((30114, 1, 2));
-              bgp_large_community.add((30114, 2, 2));
-              bgp_large_community.add((30114, 3, 840));
-              accept;
-            };
+            import none;
             export where bgp_large_community ~ [(30114, 1, 1), (30114, 1, 5)];
           };
         }
