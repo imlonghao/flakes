@@ -18,8 +18,8 @@
   };
 
   inputs = {
+    nixpkgs.url = "https://channels.nixos.org/nixos-unstable/nixexprs.tar.zst";
     multiverse.url = "github:fzakaria/nixpkgs-multiverse";
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     flake-parts.url = "github:hercules-ci/flake-parts";
     colmena = {
       url = "github:nix-community/colmena";
