@@ -523,8 +523,8 @@
         local_role = "peer";
         e6 = "fe80::2338:1";
         listen = 22338;
-        endpoint = "54.36.188.134:21888";
-        publickey = "USNPQDO2yqeti5YhFYkXedonxsRmSG9RsK0LgI1gxyM=";
+        endpoint = "82.64.220.254:42446";
+        publickey = "IFQxOb0HQ2hBhF2b/pjLBnqOiJYbQ9gdZFrIhg+U7V0=";
       }
       {
         name = "wg2458";
