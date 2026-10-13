@@ -60,15 +60,6 @@
         publickey = "kYYvoqiavXIbli1p9OCwStnTLc0TRdRKBMsIQ7kVlDM=";
       }
       {
-        name = "wg0398";
-        asn = 4242420398;
-        local_role = "peer";
-        e6 = "fe80::398";
-        listen = 20398;
-        endpoint = "nrt.dn42.boletus.icu:21888";
-        publickey = "QQecM/0eCbRu5TNdyRxGpJTCo6aGolMb0kZAqLH5Oho=";
-      }
-      {
         name = "wg0454";
         asn = 4242420454;
         local_role = "customer";

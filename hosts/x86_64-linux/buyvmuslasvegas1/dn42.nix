@@ -103,15 +103,6 @@
         publickey = "7HzHyeA2M7yo/zVmc+e0zG+I7j2SnIx+7ZpXOca93mg=";
       }
       {
-        name = "wg0398";
-        asn = 4242420398;
-        local_role = "peer";
-        e6 = "fe80::398";
-        listen = 20398;
-        endpoint = "lax.dn42.boletus.icu:21888";
-        publickey = "oAPy0U2qVuSR8PyPLmVLEgWLBKrOq4kcLNLAOVZL10M=";
-      }
-      {
         name = "wg0458";
         listen = 20458;
         asn = 4242420458;

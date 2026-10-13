@@ -87,15 +87,6 @@
         presharedkey = "UcBb8jR3ERn09ncQLPp3ncfhUk/fV1+J5pjgdiisnww=";
       }
       {
-        name = "wg0398";
-        asn = 4242420398;
-        local_role = "peer";
-        e6 = "fe80::398";
-        listen = 20398;
-        endpoint = "hkl.dn42.boletus.icu:21888";
-        publickey = "XD66eoHp06VmDUNFUguJeOY8gFLiLZ7Lkyz/WsMQSWU=";
-      }
-      {
         name = "wg0454";
         asn = 4242420454;
         local_role = "customer";

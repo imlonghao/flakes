@@ -41,15 +41,6 @@
         e6 = "fe80::0207";
       }
       {
-        name = "wg0398";
-        asn = 4242420398;
-        local_role = "peer";
-        e6 = "fe80::398";
-        listen = 20398;
-        endpoint = "sin.dn42.boletus.icu:21888";
-        publickey = "/e/4YHiRtemDguCdT1/5BtL1NAAQ2cayBfHcUBhg02s=";
-      }
-      {
         name = "wg0401";
         asn = 4242420401;
         local_role = "peer";
