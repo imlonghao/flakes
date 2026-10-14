@@ -608,6 +608,15 @@
         e6 = "fe80::3003";
       }
       {
+        name = "wg3024";
+        listen = 23024;
+        endpoint = "fs.dn42.weil-isso.de:21888";
+        publickey = "qsJd1MjpBcOChrESLGfDapYuJH5Ko77qamZ7ZggNIG0=";
+        presharedkey = "sFKt9llLXzP4gJaHwd2gsE5uGrYbT8cfLHrRWJ6VXAI=";
+        asn = 4242423024;
+        e6 = "fe80::3024";
+      }
+      {
         name = "wg3035";
         listen = 23035;
         endpoint = "de01.dn42.lare.cc:21888";
