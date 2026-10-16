@@ -9,7 +9,6 @@
     "${self}/profiles/mycore"
     "${self}/users/root"
     "${self}/profiles/docker"
-    "${self}/profiles/komari-agent"
     "${self}/profiles/monitor-agent"
     "${self}/profiles/exporter/node.nix"
     "${self}/profiles/rsshc"
@@ -67,14 +66,6 @@
     enable = true;
     interface = "eth0";
     id = 34;
-  };
-
-  # komari-agent
-  services.komari-agent = {
-    month-rotate = 1;
-    include-nics = [
-      "eth0"
-    ];
   };
 
   virtualisation.incus = {

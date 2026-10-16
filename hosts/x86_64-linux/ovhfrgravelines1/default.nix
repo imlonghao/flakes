@@ -24,7 +24,6 @@ in
     "${self}/profiles/exporter/node.nix"
     "${self}/profiles/hachimi"
     "${self}/profiles/k3s/agent.nix"
-    "${self}/profiles/komari-agent"
     "${self}/profiles/monitor-agent"
     #    "${inputs.latest}/nixos/modules/services/backup/borgmatic.nix"
     # Container
@@ -292,8 +291,6 @@ in
     interface = "eth0";
     id = 1;
   };
-
-  services.komari-agent.include-nics = [ "eth0" ];
 
   services.yggdrasil = {
     enable = true;

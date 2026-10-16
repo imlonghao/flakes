@@ -8,7 +8,6 @@
     "${self}/profiles/mtrsb"
     "${self}/profiles/rsshc"
     "${self}/profiles/exporter/node.nix"
-    "${self}/profiles/komari-agent"
     "${self}/profiles/monitor-agent"
   ];
 
@@ -78,15 +77,6 @@
     enable = true;
     interface = "eth0";
     id = 9;
-  };
-
-  # komari-agent
-  services.komari-agent = {
-    month-rotate = 1;
-    include-nics = [
-      "eth0"
-      "eth1"
-    ];
   };
 
   services.monitor-agent.include-nics = [

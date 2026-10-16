@@ -11,7 +11,6 @@
     "${self}/profiles/docker"
     "${self}/profiles/borgmatic"
     "${self}/profiles/etcd"
-    "${self}/profiles/komari-agent"
     "${self}/profiles/monitor-agent"
   ];
 
@@ -115,11 +114,6 @@
   services.cert-syncer = {
     enable = true;
     wishlist = [ "go9mail.com" ];
-  };
-
-  # komari-agent
-  services.komari-agent = {
-    include-nics = [ "eth0" ];
   };
 
   # rustic

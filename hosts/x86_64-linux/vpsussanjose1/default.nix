@@ -16,7 +16,6 @@ in
     "${self}/profiles/rsshc"
     "${self}/profiles/qemuGuest"
     "${self}/profiles/exporter/node.nix"
-    "${self}/profiles/komari-agent"
     "${self}/profiles/monitor-agent"
     "${self}/profiles/hysteria2"
   ];
@@ -71,12 +70,6 @@ in
     enable = true;
     interface = "eth0";
     id = 11;
-  };
-
-  # komari-agent
-  services.komari-agent = {
-    month-rotate = 1;
-    include-nics = [ "eth0" ];
   };
 
   services.cert-syncer = {

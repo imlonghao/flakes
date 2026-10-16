@@ -12,7 +12,6 @@
     "${self}/profiles/rsshc"
     "${self}/profiles/mtrsb"
     "${self}/profiles/bird-lg-proxy"
-    "${self}/profiles/komari-agent"
     "${self}/profiles/monitor-agent"
     "${self}/profiles/peerfinder-agent"
     # Containers
@@ -75,12 +74,6 @@
     enable = true;
     interface = "eth0";
     id = 10;
-  };
-
-  # komari-agent
-  services.komari-agent = {
-    month-rotate = 20;
-    include-nics = [ "eth0" ];
   };
 
   services.tailscale.enable = true;

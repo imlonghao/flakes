@@ -16,7 +16,6 @@
     "${self}/profiles/exporter/node.nix"
     "${self}/profiles/exporter/bird.nix"
     "${self}/profiles/bird-lg-proxy"
-    "${self}/profiles/komari-agent"
     "${self}/profiles/monitor-agent"
     "${self}/profiles/peerfinder-agent"
     # Containers
@@ -123,11 +122,6 @@
     interface = "ens18";
     id = 12;
   };
-
-  services.komari-agent.include-nics = [
-    "ens18"
-    "ens19"
-  ];
 
   services.monitor-agent.include-nics = [
     "ens18"

@@ -9,7 +9,6 @@
     "${self}/profiles/exporter/node.nix"
     "${self}/profiles/rsshc"
     "${self}/profiles/docker"
-    "${self}/profiles/komari-agent"
     "${self}/profiles/monitor-agent"
   ];
 
@@ -67,11 +66,6 @@
     ipv6 = false;
     mtu = 1440;
     id = 5;
-  };
-
-  # komari-agent
-  services.komari-agent = {
-    include-nics = [ "eth0" ];
   };
 
   services.monitor-agent.include-nics = [ "eth0" ];

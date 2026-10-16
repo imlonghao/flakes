@@ -177,7 +177,6 @@
           prev.lib.attrsets.genAttrs [
             # keep-sorted start
             "fresh-editor"
-            "komari-agent"
             # keep-sorted end
           ] (name: pkgs-latest.${name});
       };

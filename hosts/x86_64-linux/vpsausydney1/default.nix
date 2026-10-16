@@ -27,7 +27,6 @@ in
     "${self}/profiles/rsshc"
     "${self}/profiles/docker"
     "${self}/profiles/k3s/agent.nix"
-    "${self}/profiles/komari-agent"
     "${self}/profiles/monitor-agent"
     "${self}/profiles/peerfinder-agent"
     "${self}/containers/snell.nix"
@@ -93,11 +92,6 @@ in
     enable = true;
     interface = "enp6s18";
     id = 8;
-  };
-
-  services.komari-agent = {
-    month-rotate = 1;
-    include-nics = [ "enp6s18" ];
   };
 
   services.monitor-agent.include-nics = [ "enp6s18" ];

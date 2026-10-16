@@ -8,7 +8,6 @@
     "${self}/users/root"
     "${self}/profiles/rsshc"
     "${self}/profiles/bird-lg-proxy"
-    "${self}/profiles/komari-agent"
     "${self}/profiles/monitor-agent"
     "${self}/profiles/exporter/node.nix"
     "${self}/profiles/exporter/bird.nix"
@@ -70,12 +69,6 @@
     enable = true;
     interface = "eth0";
     id = 30;
-  };
-
-  services.komari-agent = {
-    month-rotate = 26;
-    include-mountpoint = [ "/boot" ];
-    include-nics = [ "eth0" ];
   };
 
   # Coredns

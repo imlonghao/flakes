@@ -11,7 +11,6 @@
     "${self}/profiles/bird-lg-proxy"
     "${self}/profiles/mtrsb"
     "${self}/profiles/rsshc"
-    "${self}/profiles/komari-agent"
     "${self}/profiles/monitor-agent"
     "${self}/profiles/peerfinder-agent"
   ];
@@ -124,11 +123,6 @@
     ipv6 = false;
     mtu = 1440;
     id = 6;
-  };
-
-  # komari-agent
-  services.komari-agent = {
-    include-nics = [ "ens3" ];
   };
 
   services.peerfinder-agent.listenPort = 9001;
