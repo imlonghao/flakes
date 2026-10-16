@@ -86,11 +86,6 @@
     '';
   };
 
-  # LotSpeed
-  services.lotspeed = {
-    enable = true;
-  };
-
   services.tailscale.enable = true;
   systemd.services.tailscaled.serviceConfig = {
     ExecStartPost = [

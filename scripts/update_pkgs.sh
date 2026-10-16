@@ -59,9 +59,6 @@ for package in "${packages[@]}"; do
     dn42debug)
       reason='local source; no upstream version'
       ;;
-    lotspeed)
-      reason='pinned zeta-tcp commit; select the intended revision manually'
-      ;;
     peerfinder-agent)
       reason='unversioned download URL; check version and source hash manually'
       ;;
