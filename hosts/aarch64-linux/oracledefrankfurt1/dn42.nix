@@ -472,15 +472,6 @@
         e6 = "fe80::2016";
       }
       {
-        name = "wg2092";
-        listen = 22092;
-        endpoint = "de0.dn42.pebkac.gr:51888";
-        publickey = "g4MJv6qMPwbffxNjUKmIa5Yhf5ZzRqjIMzMHCSiFQgs=";
-        asn = 4242422092;
-        local_role = "peer";
-        e6 = "fe80::ffff:2092";
-      }
-      {
         name = "wg2189";
         listen = 22189;
         endpoint = "de-fra.dn42.kuu.moe:57353";
