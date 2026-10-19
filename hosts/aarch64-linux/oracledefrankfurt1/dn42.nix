@@ -380,17 +380,6 @@
         publickey = "l8Cfwb5+f+ThOU1KbdaY5/JQwKnl1utPLkLW29IF3E4=";
       }
       {
-        name = "wg1534";
-        listen = 21534;
-        endpoint = "37.221.197.64:21888";
-        publickey = "zqAdZe/+apFCJk8ReZRyRsJ1MIVOLaMF1oDZCfNhWlY=";
-        presharedkey = "Kg410zy6/xOwSPTSZGLZgoBjyt2Q3yijZuYrCFBg+j8=";
-        asn = 4242421534;
-        local_role = "peer";
-        e6 = "fdf4:be86:71d9:e678::1";
-        ipv6 = "fdf4:be86:71d9:e678:59db:4a6d:b196:e3f7/64";
-      }
-      {
         name = "wg1592";
         listen = 21592;
         endpoint = "de01.dn42.ca.melusfer.us:41888";

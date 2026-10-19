@@ -221,15 +221,6 @@
         mtu = 1408;
       }
       {
-        name = "wg1534";
-        listen = 21534;
-        endpoint = "hk-hkg.factor2431.com:21888";
-        publickey = "VncCNj0rfJ8xF4ms7yqvt+WzAS0ePC+pLiiG4FPPHkw=";
-        asn = 4242421534;
-        local_role = "peer";
-        e6 = "fe80::1534";
-      }
-      {
         name = "wg1573";
         asn = 4242421573;
         local_role = "peer";

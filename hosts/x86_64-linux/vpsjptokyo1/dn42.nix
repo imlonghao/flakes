@@ -159,15 +159,6 @@
         e6 = "fe80::1233:119";
       }
       {
-        name = "wg1534";
-        asn = 4242421534;
-        local_role = "peer";
-        e6 = "fe80::1534";
-        listen = 21534;
-        endpoint = "jp-tyo.factor2431.com:21888";
-        publickey = "XYyk/uk3LTHk7vOqtDsDh/AcPtdT3qQptqhggzZCRio=";
-      }
-      {
         name = "wg1810";
         asn = 4242421810;
         local_role = "peer";
