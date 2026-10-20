@@ -15,6 +15,16 @@
         e6 = "fe80::0207";
       }
       {
+        name = "wg1144";
+        asn = 4242421144;
+        local_role = "peer";
+        e6 = "fe80::1";
+        ipv6 = "fe80::2/64";
+        listen = 21144;
+        endpoint = "nyc1.dn1144.zz.ac:21888";
+        publickey = "CQof/aNHN7T+mWZKjj1GJh9M2xb0nAQb7MoiTivbqD8=";
+      }
+      {
         name = "wg3432";
         asn = 4242423432;
         local_role = "peer";

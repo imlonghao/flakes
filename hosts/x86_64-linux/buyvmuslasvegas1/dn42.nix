@@ -192,6 +192,16 @@
         publickey = "abDdEXgpaUNfEVPYLv1GTA+1TjkRbk5MNUi0fczYflw=";
       }
       {
+        name = "wg1144";
+        asn = 4242421144;
+        local_role = "peer";
+        e6 = "fe80::1";
+        ipv6 = "fe80::2/64";
+        listen = 21144;
+        endpoint = "lax1.dn1144.zz.ac:21888";
+        publickey = "hi5gAXESqnPvnfL5KRj4Q9ur/h0aGGdxPSzXR6FU+wQ=";
+      }
+      {
         name = "wg1240";
         listen = 21240;
         endpoint = "us-03.prefixlabs.net:21888";
