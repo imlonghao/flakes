@@ -219,6 +219,15 @@
         l4 = "172.22.68.4";
       }
       {
+        name = "wg0504";
+        listen = 20504;
+        endpoint = "199.47.240.165:51837";
+        publickey = "+XgOhbcEZtfAZf+YkFcZURzo23Op9IjCfJJ8l+OurDY=";
+        asn = 4242420504;
+        local_role = "peer";
+        e6 = "fe80::504";
+      }
+      {
         name = "wg0714";
         asn = 4242420714;
         local_role = "peer";

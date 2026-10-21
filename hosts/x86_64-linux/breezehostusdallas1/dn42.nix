@@ -24,6 +24,15 @@
         e6 = "fe80::202:6";
       } # dn06.tx.us.sdubs.vip
       {
+        name = "wg0504";
+        listen = 20504;
+        endpoint = "[2600:1700:8070:d400::1]:51837";
+        publickey = "E65T8X/gDkR1epaDlrfWiUzEjEr7WdCenfxvin68fUE=";
+        asn = 4242420504;
+        local_role = "peer";
+        e6 = "fe80::504";
+      }
+      {
         name = "wg1080";
         listen = 21080;
         endpoint = "202.5.26.208:21888";
