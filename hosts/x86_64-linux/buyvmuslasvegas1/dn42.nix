@@ -26,18 +26,6 @@
         e6 = "fe80::28";
       }
       {
-        name = "wg0057";
-        asn = 4242420057;
-        local_role = "peer";
-        e4 = "172.22.159.16";
-        e6 = "fd48:ce37:a00f:fff::1";
-        l4 = "172.22.68.5";
-        ipv6 = "fd48:ce37:a00f:fff::2/126";
-        listen = 20057;
-        endpoint = "home.tompkel.net:13247";
-        publickey = "ubA2cl37qxbE0kXJv5FAjloGrFMvAepN8svG/I01fxA=";
-      }
-      {
         name = "wg0078";
         listen = 20078;
         endpoint = "us02.tes286.top:21888";
