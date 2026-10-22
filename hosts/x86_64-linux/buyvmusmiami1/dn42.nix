@@ -140,7 +140,7 @@
         local_role = "peer";
         listen = 22547;
         endpoint = "virmach-ny1g.lantian.pub:21888";
-        publickey = "a+zL2tDWjwxBXd2bho2OjR/BEmRe2tJF9DHFmZIE+Rk=";
+        publickey = "2Q6m6AZfkTPy9sJTFyYbUvMXv0AsAqDP+K3atit0mXU=";
       }
       {
         name = "wg2601";
