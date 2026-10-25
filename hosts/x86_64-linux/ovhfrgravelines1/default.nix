@@ -320,14 +320,15 @@ in
 
   # Forgejo Runner
   sops.secrets.forgejo-runner.sopsFile = ./secrets.yml;
-  services.gitea-actions-runner = {
-    package = pkgs.forgejo-runner;
+  services.forgejo-runner = {
     instances.imlonghao = {
       enable = true;
-      name = "ovhfrgravelines1";
-      url = "https://git.esd.cc";
-      tokenFile = config.sops.secrets.forgejo-runner.path;
-      labels = [
+      secrets.server.connections.default.token_url = config.sops.secrets.forgejo-runner.path;
+      settings.server.connections.default = {
+        url = "https://git.esd.cc";
+        uuid = "12078767-7bbb-4b78-8b26-1dd07075fd34";
+      };
+      settings.runner.labels = [
         "ubuntu-latest:docker://ghcr.io/catthehacker/ubuntu:act-latest"
         "ubuntu-24.04:docker://ghcr.io/catthehacker/ubuntu:act-24.04"
         "ubuntu-22.04:docker://ghcr.io/catthehacker/ubuntu:act-22.04"
