@@ -335,7 +335,7 @@ in
         "ubuntu-20.04:docker://ghcr.io/catthehacker/ubuntu:act-20.04"
       ];
       settings = {
-        container.docker_host = "automount";
+        container.docker_host = "unix:///run/podman/podman.sock";
       };
     };
   };
