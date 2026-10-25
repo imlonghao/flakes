@@ -195,6 +195,15 @@
         publickey = "Sh62ZCxnEcXyLq49mLP1jF4C2vWKhKMxjtZHxVUAQg4=";
       }
       {
+        name = "wg2054";
+        listen = 22054;
+        endpoint = "tyo.dn42.16lab.tech:21888";
+        publickey = "We84lDTeTFShG54P0MZ0jjEVN2OQQawerrFRNJJ+/DE=";
+        asn = 4242422054;
+        local_role = "peer";
+        e6 = "fe80::2054:4";
+      }
+      {
         name = "wg2189";
         asn = 4242422189;
         local_role = "customer";

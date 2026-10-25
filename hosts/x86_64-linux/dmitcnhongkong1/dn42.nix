@@ -342,6 +342,15 @@
         publickey = "hIkTqemBb7E55I5JXDZ/5V9c/FLUI8BDUM1HHHcd63g=";
       }
       {
+        name = "wg2054";
+        listen = 22054;
+        endpoint = "hkg.dn42.16lab.tech:21888";
+        publickey = "3C/iVpKcM86rEvLn63xP/qqcD0T5K9NEyrAnqxDmCyw=";
+        asn = 4242422054;
+        local_role = "peer";
+        e6 = "fe80::2054:1";
+      }
+      {
         name = "wg2189";
         asn = 4242422189;
         local_role = "customer";

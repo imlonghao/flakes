@@ -293,6 +293,15 @@
         publickey = "KlvNQ7wBwoey0N8YpJYsYuHDrxjpIzHqCh9osAzcEyA=";
       }
       {
+        name = "wg2054";
+        listen = 22054;
+        endpoint = "sjc.dn42.16lab.tech:21888";
+        publickey = "WuX2GIlJDNW7K1QKZ1rVf2tcL9raNstq2vEyfAndKRU=";
+        asn = 4242422054;
+        local_role = "peer";
+        e6 = "fe80::2054:2";
+      }
+      {
         name = "wg2189";
         listen = 22189;
         asn = 4242422189;
