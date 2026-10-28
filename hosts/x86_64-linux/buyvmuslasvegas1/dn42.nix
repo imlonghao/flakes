@@ -320,14 +320,6 @@
         e6 = "fe80::2279";
       }
       {
-        name = "wg2458";
-        listen = 22458;
-        asn = 4242422458;
-        e6 = "fe80::2458";
-        endpoint = "us-sjc-a.nodes.pigeonhole.eu.org:51888";
-        publickey = "usSOnTQKWozKiB3CM65TY3hv64dxQLnIx9ywc0J9awY=";
-      }
-      {
         name = "wg2464";
         listen = 22464;
         asn = 4242422464;

@@ -259,14 +259,6 @@
         publickey = "D4MBIR+HsCPeEGuPg1YziRe1RgaG7jaiTw4wmV8XZUY=";
       }
       {
-        name = "wg1772";
-        listen = 21772;
-        endpoint = "154.12.177.103:41888";
-        publickey = "MwKtHYi3qWDRlpZuF6MNTHZuathA96J89GeF7INPvmw=";
-        asn = 4242421772;
-        e6 = "fe80::1772";
-      }
-      {
         name = "wg1810";
         listen = 21810;
         endpoint = "hk42.sabrinaishere.party:21888";
@@ -376,14 +368,6 @@
         listen = 22289;
         endpoint = "cn-hk01.pmman.tech:21888";
         publickey = "KPNG8VM+/+Ix9mPeWIVPyu6GPzGvqAgrkPogQO5yYTc=";
-      }
-      {
-        name = "wg2458";
-        asn = 4242422458;
-        e6 = "fe80::2458";
-        listen = 22458;
-        endpoint = "cn-hkg-a.nodes.pigeonhole.eu.org:51888";
-        publickey = "9O4ABGmh+EXPnOynhW60aByE3qorcV7UsAC9n55g6CQ=";
       }
       {
         name = "wg2464";

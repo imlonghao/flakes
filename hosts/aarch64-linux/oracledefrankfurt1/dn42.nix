@@ -508,14 +508,6 @@
         publickey = "IFQxOb0HQ2hBhF2b/pjLBnqOiJYbQ9gdZFrIhg+U7V0=";
       }
       {
-        name = "wg2458";
-        listen = 22458;
-        endpoint = "nl-ams-a.nodes.pigeonhole.eu.org:51888";
-        publickey = "QJnmWUnPS9wKKkLHHuWBYMGAI20MH9OEo28O4qr5DV8=";
-        asn = 4242422458;
-        e6 = "fe80::2458";
-      }
-      {
         name = "wg2550";
         listen = 22550;
         endpoint = "fsn1.aerioncloud.com:21888";
@@ -707,18 +699,6 @@
         e6 = "fe80::3797";
         endpoint = "de-fra1.rc.badaimweeb.me:50053";
         publickey = "wFmaGUJlOfY2pzd0/jYELDhKeuDyAnM+yKOkVjKbJns=";
-      }
-      {
-        name = "wg3814";
-        listen = 23814;
-        endpoint = "193.77.181.233:51820";
-        publickey = "F+esDrnKGU1I9/vwvg2cx8hTLft9ui21uLZIBgDo81M=";
-        asn = 4242423814;
-        e4 = "172.20.43.65";
-        e6 = "fd21:5c0c:9b7e:4:3814::2";
-        l4 = "172.22.68.4";
-        mpbgp = false;
-        ipv6 = "fd21:5c0c:9b7e:4:3814::1/80";
       }
       {
         name = "wg3868";

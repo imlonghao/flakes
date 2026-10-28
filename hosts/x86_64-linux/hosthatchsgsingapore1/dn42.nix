@@ -188,17 +188,6 @@
         e6 = "fe80::2279";
       }
       {
-        name = "wg2297";
-        listen = 22297;
-        endpoint = "[2001:448a:2020:906b::1]:21888";
-        publickey = "dwsCsA9BHq1u0f17OYNjOd5wP7X402PSVXjm3PeM8yE=";
-        asn = 4242422297;
-        e6 = "fe80::770b:2b0:f41:1ead";
-        e4 = "172.23.9.128";
-        l4 = "172.22.68.0";
-        mpbgp = false;
-      }
-      {
         name = "wg2717";
         listen = 22717;
         endpoint = "sg.vm.whojk.com:24103";
