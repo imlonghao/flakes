@@ -12,9 +12,9 @@ buildGoModule rec {
     owner = "imlonghao";
     repo = pname;
     rev = version;
-    hash = "sha256-0f9HiOwPbg4o0QEhwfHNhhRj9OcUQTr0RVCzSgQDnbE=";
+    hash = "sha256-jhRGloNMzHTH0/MuV68kh32VWVAaSuzqGxUKo+UHzrk=";
   };
-  vendorHash = "sha256-mhztklDaOsqaVtD2l2uS5AOGLl1sW4YF5/FTuIq2E14=";
+  vendorHash = "sha256-SJazRQj8GTz3z451RyyGYpuys0qg9P/rqCu/gfzJf3k=";
 
   subPackages = [ "cmd/agent" ];
 
