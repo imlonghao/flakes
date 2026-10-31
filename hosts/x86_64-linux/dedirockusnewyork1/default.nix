@@ -9,6 +9,7 @@
     "${self}/profiles/rsshc"
     "${self}/users/root"
     "${self}/profiles/peerfinder-agent"
+    "${self}/profiles/bird-lg-proxy"
   ];
 
   boot.kernelParams = [
