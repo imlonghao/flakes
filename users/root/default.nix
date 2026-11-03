@@ -12,9 +12,8 @@
   users.users.root = {
     hashedPasswordFile = config.sops.secrets.root.path;
     openssh.authorizedKeys.keys = [
-      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIH8PcjHlCpkP7we75CoRX6gkKrI7/072xj8G6Y1qisNm openpgp:0xDA96745E"
-      "sk-ssh-ed25519@openssh.com AAAAGnNrLXNzaC1lZDI1NTE5QG9wZW5zc2guY29tAAAAIPssSSxz4ZxCS/Tp4TSC4/6P0FQ+bvXWsrl3FTB5denvAAAABHNzaDo= Pigeon@CanoKey"
-      "sk-ssh-ed25519@openssh.com AAAAGnNrLXNzaC1lZDI1NTE5QG9wZW5zc2guY29tAAAAIB851g+j7f3CPa0FHBiSKu8hlTh2E9wpsv/H0VYpLlj2AAAABHNzaDo= Canary@CanoKey"
+      "sk-ssh-ed25519@openssh.com AAAAGnNrLXNzaC1lZDI1NTE5QG9wZW5zc2guY29tAAAAIBSpTSskzZHanRkpylPPORmidJ4z/jT7OgtIbi4ZwjgeAAAAEXNzaDpDYW5vS2V5Q2FuYXJ5 Canary@CanoKey"
+      "sk-ssh-ed25519@openssh.com AAAAGnNrLXNzaC1lZDI1NTE5QG9wZW5zc2guY29tAAAAIM2jioeqCNdMHq5vlsn40H/2JEXH8ag9QQNx/tXefSzzAAAACnNzaDpSUDIzNTA= RP2350"
     ];
     shell = pkgs.fish;
   };
