@@ -54,6 +54,15 @@
         l4 = "172.22.68.0";
       }
       {
+        name = "wg2338";
+        listen = 22338;
+        endpoint = "[2a11:6c7:2000:665d::2]:21888";
+        publickey = "gyycbbB/xGHwFIPbYCRBHGHtaDc3aZeTB4i6RYK5Mi8=";
+        asn = 4242422338;
+        local_role = "peer";
+        e6 = "fe80::2338";
+      }
+      {
         name = "wg2670";
         listen = 22670;
         endpoint = "us1.dn42.mofu.party:21888";
