@@ -84,6 +84,7 @@ in
     jq
     jujutsu
     keep-sorted
+    llm-agents.maki
     llm-agents.pi
     ncdu
     nil
