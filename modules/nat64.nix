@@ -30,6 +30,10 @@ let
     ## SPAM
     ip6tables -C FORWARD -d ${cfg.prefix}64::/96 -p tcp -m multiport --dports 25,110,143,465,587,993,995,2525 -j REJECT --reject-with icmp6-adm-prohibited || ip6tables -I FORWARD -d ${cfg.prefix}64::/96 -p tcp -m multiport --dports 25,110,143,465,587,993,995,2525 -j REJECT --reject-with icmp6-adm-prohibited
 
+    # Drop ping to local and translated NAT64 addresses.
+    ip6tables -C INPUT -d ${cfg.prefix}64::/96 -p ipv6-icmp --icmpv6-type echo-request -j DROP || ip6tables -I INPUT -d ${cfg.prefix}64::/96 -p ipv6-icmp --icmpv6-type echo-request -j DROP
+    ip6tables -C FORWARD -d ${cfg.prefix}64::/96 -p ipv6-icmp --icmpv6-type echo-request -j DROP || ip6tables -I FORWARD -d ${cfg.prefix}64::/96 -p ipv6-icmp --icmpv6-type echo-request -j DROP
+
     ip6tables -C FORWARD -d ${cfg.prefix}64::/96 -m state --state ESTABLISHED -j ACCEPT || ip6tables -A FORWARD -d ${cfg.prefix}64::/96 -m state --state ESTABLISHED -j ACCEPT
     ip6tables -C FORWARD -d ${cfg.prefix}64::/96 -j LOG --log-prefix "nat64: " || ip6tables -A FORWARD -d ${cfg.prefix}64::/96 -j LOG --log-prefix "nat64: "
   '';
