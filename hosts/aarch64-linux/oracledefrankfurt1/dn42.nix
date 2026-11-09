@@ -489,6 +489,15 @@
         e6 = "fe80::2279";
       }
       {
+        name = "wg2281";
+        listen = 22281;
+        endpoint = "185.204.1.110:42208";
+        publickey = "wltmQ1q5LRKgD5enHgWLqsnJCWhj/zQOIcJHa94jyxU=";
+        asn = 4242422281;
+        local_role = "peer";
+        e6 = "fe80::2281";
+      }
+      {
         name = "wg2308";
         listen = 22308;
         endpoint = "de-fra1.dn42.mirsal.fr:21888";
