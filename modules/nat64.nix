@@ -24,6 +24,7 @@ let
     iptables -t nat -C POSTROUTING -o ${cfg.interface} -s 100.110.0.0/16 -j SNAT --to-source ${cfg.nat_start}-${cfg.nat_end} || iptables -t nat -A POSTROUTING -o ${cfg.interface} -s 100.110.0.0/16 -j SNAT --to-source ${cfg.nat_start}-${cfg.nat_end}
 
     # Blacklist
+    ip6tables -C FORWARD -d ${cfg.prefix}64::/96 -s 2604:a880:400::/48 -j REJECT --reject-with icmp6-adm-prohibited || ip6tables -I FORWARD -d ${cfg.prefix}64::/96 -s 2604:a880:400::/48 -j REJECT --reject-with icmp6-adm-prohibited
     ## ICMP Flooding @ 20241115
     ip6tables -C FORWARD -d ${cfg.prefix}64::/96 -s 2001:da8::/32 -j REJECT --reject-with icmp6-adm-prohibited || ip6tables -I FORWARD -d ${cfg.prefix}64::/96 -s 2001:da8::/32 -j REJECT --reject-with icmp6-adm-prohibited
     ## SPAM
