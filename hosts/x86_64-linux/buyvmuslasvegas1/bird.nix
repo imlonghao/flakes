@@ -38,6 +38,7 @@ in
       generalConf
       + dn42Conf
       + kernelConf
+      + import "${self}/profiles/bird/blackbgp.nix" { }
       + ''
         protocol static {
           route 23.146.88.0/24 blackhole;
