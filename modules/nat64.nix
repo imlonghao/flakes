@@ -95,6 +95,10 @@ in
       enable = true;
       journaldAccess = true;
       settings = {
+        secret.openobserve = {
+          type = "file";
+          path = "/run/credentials/vector.service/openobserve";
+        };
         sources = {
           kernel = {
             type = "journald";
@@ -126,8 +130,8 @@ in
             uri = "https://o2.esd.cc/api/default/nat64/_json";
             method = "post";
             auth.strategy = "basic";
-            auth.user = "\${O2_USER-default}";
-            auth.password = "\${O2_PASSWORD-default}";
+            auth.user = "SECRET[openobserve.username]";
+            auth.password = "SECRET[openobserve.password]";
             compression = "gzip";
             encoding.codec = "json";
             encoding.timestamp_format = "rfc3339";
@@ -138,11 +142,11 @@ in
     };
     sops.secrets.openobserve = {
       sopsFile = "${self}/secrets/openobserve.yml";
+      restartUnits = [ "vector.service" ];
     };
-    systemd.services.vector.serviceConfig = {
-      EnvironmentFile = config.sops.secrets.openobserve.path;
-      DynamicUser = lib.mkForce false;
-    };
+    systemd.services.vector.serviceConfig.LoadCredential = [
+      "openobserve:${config.sops.secrets.openobserve.path}"
+    ];
     # Crontab
     services.cron = {
       enable = true;
