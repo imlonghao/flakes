@@ -176,7 +176,6 @@
           in
           prev.lib.attrsets.genAttrs [
             # keep-sorted start
-            "fresh-editor"
             # keep-sorted end
           ] (name: pkgs-latest.${name});
       };
