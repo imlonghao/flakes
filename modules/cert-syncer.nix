@@ -12,9 +12,13 @@ let
     set -euo pipefail
 
     : "''${ROLE_ID:?Missing OpenBao ROLE_ID}" "''${SECRET_ID:?Missing OpenBao SECRET_ID}"
+    # Log in over HTTP so the CLI does not try to load a token helper without HOME.
     if ! BAO_TOKEN=$(
       ${pkgs.jq}/bin/jq -n '{role_id: env.ROLE_ID, secret_id: env.SECRET_ID}' \
-        | ${pkgs.openbao}/bin/bao write -format=json auth/approle/login - \
+        | ${pkgs.curl}/bin/curl --disable --fail --silent --show-error --max-time 60 \
+          --request POST --header 'Content-Type: application/json' \
+          --header "X-Vault-Namespace: $BAO_NAMESPACE" \
+          --data-binary @- "$BAO_ADDR/v1/auth/approle/login" \
         | ${pkgs.jq}/bin/jq -er '.auth.client_token | select(type == "string" and length > 0)'
     ); then
       echo "Failed to log in to OpenBao; keeping existing files" >&2
@@ -102,8 +106,6 @@ in
       restartUnits = [ "cert-syncer.service" ];
     };
     systemd.services.cert-syncer = {
-      # OpenBao invokes sh when resolving its CLI configuration and token helper.
-      path = [ pkgs.bash ];
       environment = {
         BAO_ADDR = "https://openbao.esd.cc";
         BAO_NAMESPACE = "imlonghao";
