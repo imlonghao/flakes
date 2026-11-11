@@ -102,6 +102,8 @@ in
       restartUnits = [ "cert-syncer.service" ];
     };
     systemd.services.cert-syncer = {
+      # OpenBao invokes sh when resolving its CLI configuration and token helper.
+      path = [ pkgs.bash ];
       environment = {
         BAO_ADDR = "https://openbao.esd.cc";
         BAO_NAMESPACE = "imlonghao";
