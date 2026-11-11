@@ -24,6 +24,13 @@
         e6 = "fe80::129:a";
       }
       {
+        name = "wg0165";
+        listen = 20165;
+        publickey = "M7o0ZaGgOxaolreyT2uhm80FH+60/Cic6NRQQoYF/hg=";
+        asn = 4242420165;
+        e6 = "fe80::165";
+      }
+      {
         name = "wg3155";
         listen = 23155;
         endpoint = "r.home.skym.fi:52673";
