@@ -6,6 +6,7 @@
     "${self}/users/root"
     "${self}/profiles/rsshc"
     "${self}/profiles/exporter/node.nix"
+    "${self}/profiles/hikyaku"
     "${self}/profiles/hysteria2"
     "${self}/profiles/monitor-agent"
   ];
@@ -57,6 +58,8 @@
   };
 
   services.tailscale.enable = true;
+
+  services.hikyaku-server.listenPort = 3389;
 
   services.ranet = {
     enable = true;
