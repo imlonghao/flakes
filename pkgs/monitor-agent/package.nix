@@ -6,16 +6,16 @@
 
 rustPlatform.buildRustPackage rec {
   pname = "monitor-agent";
-  version = "1.2.3";
+  version = "1.2.4";
 
   src = fetchFromGitHub {
     owner = "monitor-probe";
     repo = "agent";
     tag = "v${version}";
-    hash = "sha256-W33vLIzg9cYSU1Q08w2oaRTkhKyultj0lNxAlpJqtk8=";
+    hash = "sha256-gpBxLnZNveMi9tnYx4dstF1wjfH7aCER7U8GaTsfsa4=";
   };
 
-  cargoHash = "sha256-lfm8HeMC0MBU3lRaIVv0XxFsrTEOHcCq4vmg2e6P8X0=";
+  cargoHash = "sha256-4jLXINDOUiS1QyugtyKYBOiBVCk952G5scYK1d7G6Ys=";
 
   # These tests require a real host's network interfaces, filesystem metrics,
   # and virtualization environment, plus external tools such as systemd-detect-virt.
