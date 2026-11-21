@@ -343,6 +343,15 @@
         e6 = "fe80::2054:1";
       }
       {
+        name = "wg2080";
+        asn = 4242422080;
+        local_role = "peer";
+        e6 = "fe80::2080";
+        listen = 22080;
+        endpoint = "001.hkg.nodes.dn42.hatsnet.work:21888";
+        publickey = "IiaeEm5PLl83rBQGL1jSsZc00RbUXcHhRL79ri7vvHU=";
+      }
+      {
         name = "wg2189";
         asn = 4242422189;
         local_role = "customer";

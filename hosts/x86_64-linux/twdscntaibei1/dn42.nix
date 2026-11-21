@@ -24,6 +24,15 @@
         publickey = "8auu/+HFce5JAexe1b5MDg+nh4vutQVlXd0kJySXVGc=";
       }
       {
+        name = "wg2080";
+        asn = 4242422080;
+        local_role = "peer";
+        e6 = "fe80::2080";
+        listen = 22080;
+        endpoint = "003.twn.nodes.dn42.hatsnet.work:21888";
+        publickey = "Kh+4Bi/CguEw3ttCFSslWKse0XohxtPJyC9N7Ii5XmE=";
+      }
+      {
         name = "wg2189";
         asn = 4242422189;
         local_role = "customer";
